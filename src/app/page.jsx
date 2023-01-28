@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import WelcomeBackModel from 'components/Home/WelcomeBackModel'
+import MenuCard from 'components/Card/MenuCard'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -99,6 +102,12 @@ export default function Home() {
         quality={100}
         alt="loader"
       />
+
+      {/* <WelcomeBackModel /> */}
+
+      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10'>
+        <MenuCard />
+      </div>
     </div>
 
 

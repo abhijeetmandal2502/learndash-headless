@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.8",
+    "@material-tailwind/react": "^1.2.5",
     "@next/font": "13.1.5",
     "next": "13.1.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
