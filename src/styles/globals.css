@@ -48,3 +48,45 @@ a {
 .Boxshadow {
   box-shadow: 0px 4px 52px 4px rgba(10, 6, 22, 0.08);
 }
+
+
+.image-card img {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.zoom-effect-container:hover .image-card img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+
+.lineUp{
+  display:none;
+}
+
+.zoom-effect-container:hover .lineUp  {
+  display: block;
+  animation: 6s anim-lineUp ease-out ease-in ;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+.zoom-effect-container:hover h3{
+  color:purple;
+}
