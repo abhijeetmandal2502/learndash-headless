@@ -55,6 +55,12 @@ a {
   transition: 0.4s ease;
 }
 
+.zoom-effect-container:hover{
+  background: rgba(128, 128, 128, 0.164);
+}
+
+ 
+
 .zoom-effect-container:hover .image-card img {
   -webkit-transform: scale(1.08);
   transform: scale(1.08);
@@ -71,7 +77,7 @@ a {
 @keyframes anim-lineUp {
   0% {
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(80%);
   }
   20% {
     opacity: 0;
