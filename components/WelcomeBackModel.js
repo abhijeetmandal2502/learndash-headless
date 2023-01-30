@@ -33,7 +33,7 @@ const WelcomeBackModel = () => {
             </button>
 
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10 " onClose={closeModal}>
+                <Dialog as="div" className="relative z-10 bg-white h-screen " onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -53,7 +53,7 @@ const WelcomeBackModel = () => {
 
                     </div>
 
-                    <div className="fixed top-1/4 left-[60%] overflow-y-auto ">
+                    <div className="fixed top-1/4 left-[60%] overflow-y-auto  ">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
@@ -64,7 +64,7 @@ const WelcomeBackModel = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="  w-full max-w-lg transform overflow-hidden border border-gray bg-transparent p-3 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className=" bg-white  w-full max-w-lg transform overflow-hidden border border-gray bg-transparent p-3 text-left align-middle shadow-xl transition-all">
                                     <div className='flex justify-between items-center'>
                                         <Dialog.Title
                                             as="h2"
