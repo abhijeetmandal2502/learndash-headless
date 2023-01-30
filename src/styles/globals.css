@@ -1,16 +1,16 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
- 
+@tailwind utilities;
 
- 
+
+
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
- @layer base {
+@layer base {
   h1 {
     @apply text-4xl;
   }
@@ -51,48 +51,56 @@ a {
 
 
 .image-card img {
-  -webkit-transition: 0.4s ease;
-  transition: 0.4s ease;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
 }
 
-.zoom-effect-container:hover{
+.zoom-effect-container:hover {
   background: rgba(128, 128, 128, 0.164);
 }
 
- 
+
 
 .zoom-effect-container:hover .image-card img {
-  -webkit-transform: scale(1.08);
-  transform: scale(1.08);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari 3-8 */
+  transform: scale(1.1);
+
 }
 
-.lineUp{
-  display:none;
+.hide {
+  display: none;
 }
 
-.zoom-effect-container:hover .lineUp  {
+.zoom-effect-container:hover .hide {
   display: block;
-  animation: 6s anim-lineUp ease-out ease-in ;
+  animation: 1.5s anim-lineUp ease;
 }
+
+.zoom-effect-container:hover .lineUp {
+
+  animation: 1.5s anim-lineUp ease;
+}
+
 @keyframes anim-lineUp {
   0% {
     opacity: 0;
     transform: translateY(80%);
   }
-  20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+
+
+
   100% {
     opacity: 1;
     transform: translateY(0%);
   }
+
+
 }
 
 
-.zoom-effect-container:hover h3{
-  color:purple;
+.zoom-effect-container:hover h3 {
+  color: purple;
 }
