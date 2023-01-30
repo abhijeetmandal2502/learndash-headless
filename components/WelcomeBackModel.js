@@ -1,7 +1,6 @@
 
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import { Checkbox } from "@material-tailwind/react";
 import Link from 'next/link'
 import { AiOutlineClose } from 'react-icons/ai'
 import Image from 'next/image'
@@ -20,11 +19,6 @@ const WelcomeBackModel = () => {
 
     return (
         <>
-
-
-
-
-
             <button
                 type="button"
                 onClick={openModal}
@@ -37,8 +31,6 @@ const WelcomeBackModel = () => {
                     </div>
                 </div>
             </button>
-
-
 
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10 " onClose={closeModal}>
@@ -72,7 +64,7 @@ const WelcomeBackModel = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="  w-full max-w-sm transform overflow-hidden border border-gray bg-transparent p-3 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="  w-full max-w-lg transform overflow-hidden border border-gray bg-transparent p-3 text-left align-middle shadow-xl transition-all">
                                     <div className='flex justify-between items-center'>
                                         <Dialog.Title
                                             as="h2"
@@ -124,10 +116,12 @@ const WelcomeBackModel = () => {
                                                 </div>
                                                 <div className='flex justify-between items-center'>
                                                     <div className='flex space-x-1 items-center'>
-                                                        <Fragment>
-                                                            <Checkbox id="ripple-on" ripple={true} />
 
-                                                        </Fragment>
+                                                        <div class="form-check">
+                                                            <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+
+                                                        </div>
+
                                                         <p>remember me</p>
                                                     </div>
                                                     <Link href="#">
