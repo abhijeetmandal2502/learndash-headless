@@ -108,23 +108,76 @@ a {
 
 /* animation for model components */
 
-.animate {
-  position: absolute;
+.animateUp {
   animation-name: example;
-  animation-duration: 10s;
-  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-fill-mode: both;
 
 }
 
 @keyframes example {
-  0% {
-    left: 0px;
-    bottom: 0px;
+  from {
+    left: -150px;
+    bottom: -300px;
+    opacity: 0.8;
   }
 
-  100% {
-    left: 0px;
-    top: 0px;
 
+  to {
+    left: -150px;
+    bottom: -5px;
+    opacity: 1;
+
+  }
+}
+
+
+.animateDown {
+  animation-name: example2;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+
+}
+
+@keyframes example2 {
+
+
+
+  from {
+    left: -150px;
+    bottom: -5px;
+    opacity: 1;
+
+  }
+
+  to {
+    left: -150px;
+    bottom: -100px;
+    opacity: 0;
+  }
+}
+
+
+
+
+.animateMain {
+  animation-name: example3;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+
+}
+
+@keyframes example3 {
+
+
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+    opacity: 1;
   }
 }
