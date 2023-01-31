@@ -8,13 +8,13 @@ import { FaAlignLeft } from 'react-icons/fa'
 import Link from 'next/link';
 import { AiOutlineClose } from 'react-icons/ai'
 import Fade from 'react-reveal/Fade';
+import MusicCard from 'components/card/MusicCard'
 
 const Test = () => {
 
     const [clicked, setClicked] = useState(false);
 
-    const [open, setOpen] = useState(false)
-
+    const [open, setOpen] = useState(false);
     const HandleClick = () => {
         setClicked(true)
     }
@@ -99,74 +99,70 @@ const Test = () => {
                         </div>
                     </div>
                 </div> : <div className=' col-span-5 relative '>
-                    <Fade up>
-                        <div className={`  absolute  top-1 left-1 transition-all  `}>
 
-                            <div className="   mt-48 px-40">
+                    <div className={`animate top-1 left-1`}>
 
-
-                                <div className="w-full  m-auto bg-transparent  border border-bordergray p-4 lg:max-w-sm">
-                                    <div className='flex justify-between items-center'>
-                                        <h2 className='font-semibold py-2'>Welcome Back !</h2>
-                                        <button onClick={() => setOpen(false)}><AiOutlineClose /></button>
-                                    </div>
-
-                                    <form className="">
-                                        <div className="mb-2">
-                                            <label
-                                                for="email"
-                                                className="block text-sm font-semibold text-gray-800"
-                                            >
-                                                Email
-                                            </label>
-                                            <input
-                                                type="email"
-                                                className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray   focus:outline-none "
-                                                placeholder='enter your mail'
-                                            />
-                                        </div>
-                                        <div className="mb-2">
-                                            <label
-                                                for="password"
-                                                className="block text-sm font-semibold text-gray-800"
-
-                                            >
-                                                Password
-                                            </label>
-                                            <input
-                                                type="password"
-                                                className="block w-full px-4 py-2 mt-2  bg-white border  border-bordergray    focus:outline-none "
-                                                placeholder='**********'
-                                            />
-                                        </div>
-                                        <div className='flex justify-between items-center'>
-                                            <div className='flex space-x-1 items-center'>
-
-                                                <div class="form-check">
-                                                    <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
-
-                                                </div>
-
-                                                <p>remember me</p>
-                                            </div>
-                                            <Link href="#">
-                                                <p className='font-bold'>forget Password</p>
-                                            </Link>
-
-                                        </div>
-                                        <div className="mt-6 mx-6">
-                                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black rounded-3xl focus:outline-none">
-                                                Login
-                                            </button>
-                                        </div>
-                                    </form>
+                        <div className="   mt-48 px-40">
+                            <div className="w-full  m-auto bg-transparent  border border-bordergray p-4 lg:max-w-sm">
+                                <div className='flex justify-between items-center'>
+                                    <h2 className='font-semibold py-2'>Welcome Back !</h2>
+                                    <button onClick={() => setOpen(false)}><AiOutlineClose /></button>
                                 </div>
 
+                                <form className="">
+                                    <div className="mb-2">
+                                        <label
+                                            for="email"
+                                            className="block text-sm font-semibold text-gray-800"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray   focus:outline-none "
+                                            placeholder='enter your mail'
+                                        />
+                                    </div>
+                                    <div className="mb-2">
+                                        <label
+                                            for="password"
+                                            className="block text-sm font-semibold text-gray-800"
+
+                                        >
+                                            Password
+                                        </label>
+                                        <input
+                                            type="password"
+                                            className="block w-full px-4 py-2 mt-2  bg-white border  border-bordergray    focus:outline-none "
+                                            placeholder='**********'
+                                        />
+                                    </div>
+                                    <div className='flex justify-between items-center'>
+                                        <div className='flex space-x-1 items-center'>
+
+                                            <div class="form-check">
+                                                <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+
+                                            </div>
+
+                                            <p>remember me</p>
+                                        </div>
+                                        <Link href="#">
+                                            <p className='font-bold'>forget Password</p>
+                                        </Link>
+
+                                    </div>
+                                    <div className="mt-6 mx-6">
+                                        <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black rounded-3xl focus:outline-none">
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
 
-
                         </div>
-                    </Fade>
+                    </div>
+
                 </div>}
 
 
@@ -176,9 +172,8 @@ const Test = () => {
                         <p className='font-semibold'>menu</p>
                         <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" />
                     </div>
-                    <div className='flex items-center justify-center space-x-2 absolute bottom-5 '>
-                        <p className='font-semibold'>on</p>
-                        <Image src="/images/sound.png" width={25} height={25} alt="sound" />
+                    <div className=' absolute bottom-5 '>
+                        <MusicCard />
                     </div>
                 </div>
 

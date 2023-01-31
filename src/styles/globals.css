@@ -104,3 +104,27 @@ a {
 .zoom-effect-container:hover h3 {
   color: purple;
 }
+
+
+/* animation for model components */
+
+.animate {
+  position: absolute;
+  animation-name: example;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes example {
+  0% {
+    left: 0px;
+    bottom: 0px;
+  }
+
+  100% {
+    left: 0px;
+    top: 0px;
+
+  }
+}

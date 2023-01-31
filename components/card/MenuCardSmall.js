@@ -1,29 +1,53 @@
-import React from 'react'
-import Image from 'next/image'
 
+import React, { useState, useRef } from 'react';
+import CSSTransition from 'react-transition-group';
 const MenuCardSmall = () => {
+    const [showButton, setShowButton] = useState(true);
+    const [showMessage, setShowMessage] = useState(false);
+    const nodeRef = useRef(null);
     return (
-        <>
-
-            <div className='relative border-b border-x'>
-                <div className=' hover:shadow-md '>
-                    <Image src="/images/door.png" width="400" height="100" className='h-[310px]' />
-
-                    <h2 className='text-center font-bold  '>Start</h2>
-                    <p className='text-center font-bold py-2 opacity-0 hover:opacity-100'>Have any quistion get in touch </p>
-
+        <div style={{ paddingTop: '2rem' }}>
+            {showButton && (
+                <button
+                    onClick={() => setShowMessage(true)}
+                    size="lg"
+                >
+                    Show Message
+                </button>
+            )}
+            <CSSTransition
+                in={showMessage}
+                nodeRef={nodeRef}
+                timeout={300}
+                classNames="alert"
+                unmountOnExit
+                onEnter={() => setShowButton(false)}
+                onExited={() => setShowButton(true)}
+            >
+                <div
+                    ref={nodeRef}
+                    variant="primary"
+                    dismissible
+                    onClose={() => setShowMessage(false)}
+                >
+                    <div>
+                        Animated alert message
+                    </div>
+                    <p>
+                        This alert message is being transitioned in and
+                        out of the DOM.
+                    </p>
+                    <button
+                        variant="primary"
+                        onClick={() => setShowMessage(false)}
+                    >
+                        Close
+                    </button>
                 </div>
-                <div className=' absolute top-0 right-0 shadow-md opacity-0 hover:opacity-100 hover:text-voilet'>
-                    <Image src="/images/door.png" width="400" height="100" className='h-[310px]' />
-
-                    <h2 className='text-center font-bold  '>Start</h2>
-                    <p className='text-center text-gray py-2'>Have any quistion get in touch </p>
-
-                </div>
-
-            </div>
-        </>
-    )
+            </CSSTransition>
+        </div>
+    );
 }
+
 
 export default MenuCardSmall
