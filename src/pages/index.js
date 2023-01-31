@@ -1,7 +1,7 @@
 import MenuCard from 'components/card/MenuCard'
 import MenuCardSmall from 'components/card/MenuCardSmall'
 import WelcomeBackModel from 'components/WelcomeBackModel'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { FaAlignLeft } from 'react-icons/fa'
@@ -19,8 +19,15 @@ const Test = () => {
 
     const changeDuration = () => {
 
-        setTimeout(() => setOpen(!open), 1000);
+        setTimeout(() => setOpen(false), 1200);
+        setTimeout(() => setDown(false), 1200);
     }
+
+
+
+
+    console.log('open', open);
+    console.log('down', down);
 
     return (
         <>
@@ -110,7 +117,7 @@ const Test = () => {
                         <div className="w-full  m-auto bg-transparent  border border-bordergray p-4 lg:max-w-sm">
                             <div className='flex justify-between items-center'>
                                 <h2 className='font-semibold py-2'>Welcome Back !</h2>
-                                <button onClick={() => { setDown(true), changeDuration() }}><AiOutlineClose /></button>
+                                <button onClick={() => { setDown(true); changeDuration() }}><AiOutlineClose /></button>
                             </div>
 
                             <form className="">
