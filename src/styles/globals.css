@@ -117,15 +117,15 @@ a {
 
 @keyframes example {
   from {
-    left: 0px;
-    bottom: -200px;
+    left: -150px;
+    bottom: -300px;
     opacity: 0.8;
   }
 
 
   to {
-    left: 0px;
-    bottom: 0px;
+    left: -150px;
+    bottom: -5px;
     opacity: 1;
 
   }
@@ -144,15 +144,15 @@ a {
 
 
   from {
-    left: 0px;
+    left: -150px;
     bottom: -5px;
     opacity: 1;
 
   }
 
   to {
-    left: 0px;
-    bottom: -100px;
+    left: -150px;
+    bottom: -350px;
     opacity: 0;
   }
 }
@@ -163,7 +163,8 @@ a {
 .animateMain {
   animation-name: example3;
   animation-duration: 2s;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
+
 
 }
 
@@ -171,13 +172,18 @@ a {
 
 
 
-  from {
+  0% {
 
     opacity: 0;
-
   }
 
-  to {
+
+  50% {
+
+    opacity: 0.5;
+  }
+
+  100% {
     opacity: 1;
   }
 }

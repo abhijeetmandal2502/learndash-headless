@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { AiOutlineClose } from 'react-icons/ai'
 import MusicCard from 'components/card/MusicCard'
+import styles from '../styles/NewIndex.module.css'
 
 const NewIndex = () => {
     const [open, setOpen] = useState(false);
