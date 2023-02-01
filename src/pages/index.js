@@ -113,7 +113,7 @@ const Test = () => {
                 </div> : ""}
 
                 {open ? <div className={` col-span-5 relative  animateUp ${down == true ? 'animateDown' : ""} `} >
-                    <div className=" mt-10  px-40">
+                    <div className=" my-10  px-10">
                         <div className="w-full  m-auto bg-transparent  border border-bordergray p-4 lg:max-w-sm">
                             <div className='flex justify-between items-center'>
                                 <h2 className='font-semibold py-2'>Welcome Back !</h2>
