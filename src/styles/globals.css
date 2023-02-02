@@ -165,7 +165,6 @@ a {
   animation-duration: 2s;
   animation-fill-mode: forwards;
 
-
 }
 
 @keyframes example3 {
@@ -175,15 +174,18 @@ a {
   0% {
 
     opacity: 0;
+    transition: opacity 0.5s linear;
   }
 
 
   50% {
 
     opacity: 0.5;
+    transition: opacity 0.5s linear;
   }
 
   100% {
     opacity: 1;
+    transition: opacity 0.5s linear;
   }
 }

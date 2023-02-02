@@ -10,6 +10,7 @@ import styles from '../styles/NewIndex.module.css'
 const NewIndex = () => {
     const [open, setOpen] = useState(false);
     const [down, setDown] = useState(false);
+
     const HandleClick = () => {
         setTimeout(() => { setOpen(true) }, 100)
     }
@@ -18,8 +19,18 @@ const NewIndex = () => {
         setTimeout(() => setDown(false), 2000);
     }
 
-    // console.log('open', open);
-    // console.log('down', down);
+    const AddAnimation = () => {
+
+        setTimeout(() => {
+            if (!open === true) {
+
+                setOpen({ opacity: '1' })
+            }
+        }, 2000)
+    }
+
+    console.log("open", open);
+
 
     return (
         <>
@@ -37,7 +48,7 @@ const NewIndex = () => {
                 </div>
 
 
-                {!open ? <div className={`col-span-5 grid grid-cols-12 ${!open ? 'animateMain' : ""} `}>
+                {!open ? <div className={`col-span-5 grid grid-cols-12 open ${!open ? 'animateMain' : ""} `}>
                     <div className='col-span-6 md:h-screen md:col-span-6'>
                         <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
                             <div className='flex flex-col justify-center border-l border-l-bordergray  p-2 zoom-effect-container'>
@@ -50,7 +61,7 @@ const NewIndex = () => {
                                 </div>
                             </div>
 
-                            <div className='flex flex-col justify-center p-2 zoom-effect-container border-l border-l-bordergray' onClick={() => HandleClick()}>
+                            <div className='flex flex-col justify-center p-2 zoom-effect-container border-l border-l-bordergray' onClick={() => { HandleClick(); AddAnimation() }}>
 
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                     <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
@@ -61,10 +72,6 @@ const NewIndex = () => {
                                 </div>
 
                             </div>
-
-
-
-
                         </div>
                     </div>
 
@@ -112,7 +119,7 @@ const NewIndex = () => {
                                 <button onClick={() => { setDown(true); changeDuration() }}><AiOutlineClose /></button>
                             </div>
 
-                            <form className="">
+                            <form className="" method="POST" action="api/login">
                                 <div className="mb-2">
                                     <label
                                         for="email"
@@ -122,8 +129,10 @@ const NewIndex = () => {
                                     </label>
                                     <input
                                         type="email"
-                                        className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray   focus:outline-none "
+                                        className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none "
                                         placeholder='enter your mail'
+
+                                        value="admin"
                                     />
                                 </div>
                                 <div className="mb-2">
@@ -138,6 +147,8 @@ const NewIndex = () => {
                                         type="password"
                                         className="block w-full px-4 py-2 mt-2  bg-white border  border-bordergray    focus:outline-none "
                                         placeholder='**********'
+
+                                        value="admin"
                                     />
                                 </div>
                                 <div className='flex justify-between items-center'>
@@ -156,7 +167,7 @@ const NewIndex = () => {
 
                                 </div>
                                 <div className="mt-6 mx-6">
-                                    <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none">
+                                    <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type='submit' value="Login">
                                         Login
                                     </button>
                                 </div>
