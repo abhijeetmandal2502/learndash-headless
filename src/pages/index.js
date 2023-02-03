@@ -93,24 +93,30 @@ const Home = () => {
             <Head> LearnDash </Head>
 
             <ToastContainer />
-            <div className={`grid grid-cols-12 md:grid-cols-12    md:h-screen bg-[url('/images/bg-image.png')] bg-cover bg-center bg-no-repeat`}>
+            <div className={`grid grid-cols-12 md:h-screen bg-[url('/images/bg-image.png')] bg-cover bg-center bg-no-repeat`}>
 
-                <div className='flex flex-col justify-between p-10 col-span-6'>
-                    <Image src='/images/logo.png' height='70' width='250' alt='logo' />
+                <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6'>
+                    <div className='flex justify-between items-center space-x-5 cursor-pointer '>
+                        <Image src='/images/logo.png' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]' />
+                        <div className='flex max-sm:visible invisible items-center justify-center space-x-2 '>
+                            <p className='font-semibold text-lg'>menu</p>
+                            <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
+                        </div>
+                    </div>
                     <div className='w-full pb-8'>
-                        <p className='text-7xl font-normal py-2'>massage ce.</p>
-                        <p className='text-7xl font-normal py-2'> simplified. </p>
+                        <p className='md:text-7xl text-4xl font-normal py-2'>massage ce.</p>
+                        <p className='md:text-7xl text-4xl font-normal py-2'> simplified. </p>
                     </div>
                 </div>
 
 
-                <div className='col-span-5 z-10 relative'>
+                <div className='col-span-12 md:col-span-5 z-10 relative'>
                     <div className={` grid grid-cols-12 ${!open ? showParent : hideParent}`}>
-                        <div className='col-span-6 md:h-screen md:col-span-6'>
+                        <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
-                                <div className='flex flex-col justify-center border-l border-l-bordergray  p-2 zoom-effect-container'>
+                                <div className='flex flex-col justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2 zoom-effect-container'>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <Image alt='start' src='/images/start.png' height='150' width='150' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/start.png' height='200' width='200' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 lineUp font-semibold md:text-center'>start</h3>
                                             <p className='mt-2 hide  md:text-center lineUp'>have a question? get in touch!</p>
@@ -118,7 +124,7 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className='flex flex-col justify-center p-2 zoom-effect-container border-l border-l-bordergray' onClick={() => { HandleClick(); }}>
+                                <div className='flex flex-col z-40 justify-center cursor-pointer  p-2 zoom-effect-container md:border-l md:border-l-bordergray' onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
@@ -135,9 +141,9 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className='col-span-12 md:h-screen md:col-span-6 border-l border-bordergray'>
+                        <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
                             <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
-                                <div className='flex flex-col justify-center p-2 zoom-effect-container'>
+                                <div className='flex flex-col justify-center p-2 zoom-effect-container cursor-pointer '>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Concierge.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
@@ -148,7 +154,7 @@ const Home = () => {
                                 </div>
 
                                 <div className='flex flex-col justify-center p-2 zoom-effect-container'>
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card'>
+                                    <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/NCBTMB-Approved.png' height='120' width='120' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 font-semibold md:text-center lineUp'>ncbtmb approved</h3>
@@ -158,7 +164,7 @@ const Home = () => {
                                 </div>
 
                                 <div className='flex flex-col justify-center p-2 zoom-effect-container'>
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card'>
+                                    <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='font-semibold lineUp md:text-center md:mt-4'>teacher’s lounge</h3>
@@ -171,7 +177,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className={` col-span-5 z-5 absolute  ${hideChild ? anmationEnd : ""} ${open ? showChild : hideChild}  `} >
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? anmationEnd : ""} ${open ? showChild : hideChild}  `} >
                         <div className=" relative mt-10 ">
                             <div className="w-full  m-auto bg-transparent relative  border border-bordergray p-[25px] lg:max-w-sm">
                                 <div className='flex justify-between '>
@@ -221,8 +227,8 @@ const Home = () => {
                 </div>
 
 
-                <div className='col-span-12 p-4 md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
-                    <div>
+                <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
+                    <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/4'>
                             <p className='font-semibold'>menu</p>
                             <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" />
@@ -234,8 +240,6 @@ const Home = () => {
                 </div>
 
             </div>
-
-
 
         </>
     )
