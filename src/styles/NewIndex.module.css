@@ -1,0 +1,160 @@
+.parentchildon {
+    animation-name: animateparenton;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+
+}
+
+
+
+@keyframes animateparenton {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        opacity: 0.5;
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+    }
+}
+
+
+
+
+.parentchildoff {
+    animation-name: animateparentoff;
+    animation-fill-mode: forwards;
+    animation-duration: 2.2s;
+    animation-timing-function: linear;
+
+}
+
+
+
+@keyframes animateparentoff {
+
+    0% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        opacity: 0.5;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+    }
+}
+
+
+.childparentoff {
+
+    animation-name: animatechildoff;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    position: absolute;
+
+}
+
+@keyframes animatechildoff {
+
+
+    0% {
+        left: 0px;
+        bottom: 320px;
+        opacity: 1;
+    }
+
+    25% {
+        left: 0px;
+        bottom: 200px;
+        opacity: 0.8;
+    }
+
+    60% {
+        left: 0px;
+        bottom: 100px;
+        opacity: 0.5;
+    }
+
+    100% {
+        left: 0px;
+        bottom: 60px;
+        opacity: 0;
+
+    }
+
+}
+
+
+.childparenton {
+
+    animation-name: animatechildon;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    position: absolute;
+    animation-timing-function: linear;
+
+
+}
+
+@keyframes animatechildon {
+
+
+
+
+    0% {
+        left: 0px;
+        bottom: 0px;
+        opacity: 0;
+    }
+
+    25% {
+        left: 0px;
+        bottom: 100px;
+        opacity: 0.5;
+    }
+
+    60% {
+        left: 0px;
+        bottom: 200px;
+        opacity: 0.8;
+    }
+
+    100% {
+        left: 0px;
+        bottom: 320px;
+        opacity: 1;
+
+    }
+
+}
+
+
+.animationEndHideChild {
+    bottom: 60;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+
+
+
+}
