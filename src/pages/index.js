@@ -110,7 +110,7 @@ const Home = () => {
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
                                 <div className='flex flex-col justify-center border-l border-l-bordergray  p-2 zoom-effect-container'>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <Image alt='start' src='/images/start.png' height='100' width='100' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/start.png' height='150' width='150' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 lineUp font-semibold md:text-center'>start</h3>
                                             <p className='mt-2 hide  md:text-center lineUp'>have a question? get in touch!</p>
@@ -123,7 +123,7 @@ const Home = () => {
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 lineUp font-semibold md:text-center'>i am back</h3>
+                                            <h3 className='mt-4 lineUp font-semibold md:text-center'>i'am back</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@ const Home = () => {
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='font-semibold lineUp md:text-center md:mt-4'>teachers lounge</h3>
+                                            <h3 className='font-semibold lineUp md:text-center md:mt-4'>teacher’s lounge</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
                                     </div>

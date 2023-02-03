@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { BsPlay } from 'react-icons/bs'
 
 const MusicCard = () => {
 
@@ -18,7 +19,9 @@ const MusicCard = () => {
 
             {!musicOn ? <div className='flex items-center justify-center space-x-2' onClick={() => setMusicOn(true)}>
                 <p className='font-semibold'>off</p>
-                <Image src="/images/sound.png" width={25} height={25} alt="sound" />
+                {/* <Image src="/images/sound.png" width={25} height={25} alt="sound" /> */}
+
+                <BsPlay size={30} />
             </div> : ""}
 
 
