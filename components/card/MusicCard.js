@@ -4,7 +4,7 @@ import { BsPlay } from 'react-icons/bs'
 
 const MusicCard = () => {
 
-    const [musicOn, setMusicOn] = useState(true);
+    const [musicOn, setMusicOn] = useState(false);
 
 
 

@@ -123,7 +123,7 @@ const Home = () => {
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 lineUp font-semibold md:text-center'>i'am back</h3>
+                                            <h3 className='mt-4 lineUp font-semibold md:text-center'>i’m back</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
                                     </div>
