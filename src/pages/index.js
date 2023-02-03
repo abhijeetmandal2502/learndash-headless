@@ -188,7 +188,7 @@ const Home = () => {
                                         />
                                     </div>
                                     <div className='py-2'>
-                                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="password" placeholder="Password"
+                                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="password" placeholder="*******"
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
