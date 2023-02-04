@@ -53,10 +53,26 @@ a {
 .image-card img {
   -webkit-transition: 1s ease;
   transition: 1s ease;
+  overflow: hidden;
 }
 
 .zoom-effect-container:hover {
   background: rgba(128, 128, 128, 0.164);
+  animation: bgsmooth 2s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes bgsmooth {
+
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
+
 }
 
 
@@ -77,17 +93,19 @@ a {
 .zoom-effect-container:hover .hide {
   display: block;
   animation: 1.5s anim-lineUp ease;
+  overflow: hidden;
 }
 
 .zoom-effect-container:hover .lineUp {
-
   animation: 1.5s anim-lineUp ease;
+  overflow: hidden;
 }
 
 @keyframes anim-lineUp {
   0% {
     opacity: 0;
     transform: translateY(80%);
+    overflow: hidden;
   }
 
 
@@ -95,6 +113,7 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0%);
+    overflow: hidden;
   }
 
 
@@ -105,87 +124,25 @@ a {
   color: purple;
 }
 
+/* .zoom {
+  transition: 2s ease;
+} */
 
-/* animation for model components */
-
-.animateUp {
-  animation-name: example;
-  animation-duration: 2s;
-  animation-fill-mode: both;
-
-}
-
-@keyframes example {
-  from {
-    left: -150px;
-    bottom: -300px;
-    opacity: 0.5;
-  }
-
-
-  to {
-    left: -150px;
-    bottom: -5px;
-    opacity: 1;
-
-  }
-}
-
-
-.animateDown {
-  animation-name: example2;
-  animation-duration: 2s;
-  animation-fill-mode: both;
-
-}
-
-@keyframes example2 {
-
-
-
-  from {
-    left: -150px;
-    bottom: -5px;
-    opacity: 1;
-
-  }
-
-  to {
-    left: -150px;
-    bottom: -350px;
-    opacity: 0;
-  }
-}
-
-
-
-
-.animateMain {
-  animation-name: example3;
-  animation-duration: 2s;
+.zoom:hover {
+  animation: zoom-in 2s;
   animation-fill-mode: forwards;
-
 }
 
-@keyframes example3 {
+.hiddenoverflow {
+  overflow: hidden;
+}
 
-
-
-  0% {
-
-    opacity: 0;
-    transition: opacity 0.5s linear;
+@keyframes zoom-in {
+  from {
+    transform: scale(1)
   }
 
-
-  50% {
-
-    opacity: 0.5;
-    transition: opacity 0.5s linear;
-  }
-
-  100% {
-    opacity: 1;
-    transition: opacity 0.5s linear;
+  to {
+    transform: scale(1.5)
   }
 }
