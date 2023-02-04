@@ -114,6 +114,8 @@
     animation-timing-function: linear;
 
 
+
+
 }
 
 @keyframes animatechildon {
@@ -148,6 +150,277 @@
 
 }
 
+/* media query  */
+
+
+
+@media only screen and (max-height: 700px) {
+    .childparentoff {
+
+        animation-name: animatechildoff;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        position: absolute;
+
+    }
+
+    @keyframes animatechildoff {
+
+
+        0% {
+            left: 0px;
+            bottom: 150px;
+            opacity: 1;
+        }
+
+        25% {
+            left: 0px;
+            bottom: 100px;
+            opacity: 0.8;
+        }
+
+        60% {
+            left: 0px;
+            bottom: 50px;
+            opacity: 0.5;
+        }
+
+        100% {
+            left: 0px;
+            bottom: 0px;
+            opacity: 0;
+
+        }
+
+    }
+
+
+    .childparenton {
+
+        animation-name: animatechildon;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        position: absolute;
+        animation-timing-function: linear;
+
+
+
+
+    }
+
+    @keyframes animatechildon {
+
+
+
+
+        0% {
+            left: 0px;
+            bottom: 0px;
+            opacity: 0;
+        }
+
+        25% {
+            left: 0px;
+            bottom: 50px;
+            opacity: 0.5;
+        }
+
+        60% {
+            left: 0px;
+            bottom: 100px;
+            opacity: 0.8;
+        }
+
+        100% {
+            left: 0px;
+            bottom: 150px;
+            opacity: 1;
+
+        }
+
+    }
+}
+
+
+
+
+
+@media only screen and (max-height: 600px) {
+    .childparentoff {
+
+        animation-name: animatechildoff;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        position: absolute;
+
+    }
+
+    @keyframes animatechildoff {
+
+
+        0% {
+            left: 0px;
+            bottom: 230px;
+            opacity: 1;
+        }
+
+        25% {
+            left: 0px;
+            bottom: 150px;
+            opacity: 0.8;
+        }
+
+        60% {
+            left: 0px;
+            bottom: 100px;
+            opacity: 0.5;
+        }
+
+        100% {
+            left: 0px;
+            bottom: 60px;
+            opacity: 0;
+
+        }
+
+    }
+
+
+    .childparenton {
+
+        animation-name: animatechildon;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        position: absolute;
+        animation-timing-function: linear;
+
+
+
+
+    }
+
+    @keyframes animatechildon {
+
+
+
+
+        0% {
+            left: 0px;
+            bottom: 0px;
+            opacity: 0;
+        }
+
+        25% {
+            left: 0px;
+            bottom: 100px;
+            opacity: 0.5;
+        }
+
+        60% {
+            left: 0px;
+            bottom: 150px;
+            opacity: 0.8;
+        }
+
+        100% {
+            left: 0px;
+            bottom: 230px;
+            opacity: 1;
+
+        }
+
+    }
+}
+
+
+@media only screen and (max-height: 500px),
+screen and (max-height: 700px) {
+    .childparentoff {
+
+        animation-name: animatechildoff;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        position: absolute;
+
+    }
+
+    @keyframes animatechildoff {
+
+
+        0% {
+            left: 0px;
+            bottom: 150px;
+            opacity: 1;
+        }
+
+        25% {
+            left: 0px;
+            bottom: 130px;
+            opacity: 0.8;
+        }
+
+        60% {
+            left: 0px;
+            bottom: 100px;
+            opacity: 0.5;
+        }
+
+        100% {
+            left: 0px;
+            bottom: 60px;
+            opacity: 0;
+
+        }
+
+    }
+
+
+    .childparenton {
+
+        animation-name: animatechildon;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        position: absolute;
+        animation-timing-function: linear;
+
+
+
+
+    }
+
+    @keyframes animatechildon {
+
+
+        0% {
+            left: 0px;
+            bottom: 0px;
+            opacity: 0;
+        }
+
+        25% {
+            left: 0px;
+            bottom: 100px;
+            opacity: 0.5;
+        }
+
+        60% {
+            left: 0px;
+            bottom: 130px;
+            opacity: 0.8;
+        }
+
+        100% {
+            left: 0px;
+            bottom: 150px;
+            opacity: 1;
+
+        }
+
+    }
+}
 
 .animationEndHideChild {
     bottom: 60px;

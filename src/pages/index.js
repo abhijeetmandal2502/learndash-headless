@@ -126,7 +126,7 @@ const Home = () => {
                     </div>
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? anmationEnd : ""} ${open ? showChild : hideChild}  `} >
-                        <div className=" relative mt-10  ">
+                        <div className=" relative ">
                             <div className={` bg-transparent relative  border border-bordergray ${open ? scaleUp : scaleDown} `}>
                                 <div className='flex justify-between '>
                                     <h2 className=' font-normal py-2 pb-4'>Welcome Back !</h2>
