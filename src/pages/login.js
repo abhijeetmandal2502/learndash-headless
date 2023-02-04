@@ -16,7 +16,7 @@ const Login = () => {
         const formData = new FormData();
         formData.append('username', username);
         formData.append('password', password);
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jwt-auth/v1/token`, {
+        const res = await fetch(`https://headlearn.thenwg.xyz/wp-json/jwt-auth/v1/token`, {
             method: "POST",
             body: formData
         })
@@ -25,7 +25,7 @@ const Login = () => {
             if (res2.token) {
                 cookie.set('token', res2.token)
                 cookie.set('user', res2.user)
-                router.push(`http://learndash-headless.irjck4mzt7-gok67wnk9452.p.temp-site.link/auth.php?token=${res2.token}`)
+                router.push(`https://headlearn.thenwg.xyz/auth.php?token=${res2.token}`)
                 toast.success('Success Notification !', {
                     position: toast.POSITION.TOP_RIGHT
                 });
