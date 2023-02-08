@@ -20,7 +20,6 @@ const Home = () => {
     const anmationEnd = styles.animationEndHideChild;
     const scaleUp = styles.modelScaleUpAnimation;
     const scaleDown = styles.modelScaleDownAnimation;
-
     const [showParent, setShowParent] = useState("");
     const [hideParent, setHideParent] = useState("");
     const [showChild, setShowChild] = useState("");

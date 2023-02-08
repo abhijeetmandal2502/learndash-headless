@@ -1,0 +1,42 @@
+.opacityAnimation {
+
+    animation-name: showdiv;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+
+}
+
+@keyframes showdiv {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        z-index: 100;
+    }
+}
+
+
+.opacityAnimation1 {
+
+    animation-name: hideDiv;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+
+}
+
+@keyframes hideDiv {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        z-index: 0;
+    }
+}
