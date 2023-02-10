@@ -40,3 +40,78 @@
         z-index: 0;
     }
 }
+
+
+
+/* menu toggele css */
+
+.toggleOn {
+    animation-name: MenuToggleOn;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    animation-duration: 1s;
+    position: absolute;
+    width: 100vw
+}
+
+@keyframes MenuToggleOn {
+
+
+    from {
+
+
+        top: 0;
+        left: 2000px;
+        opacity: 0;
+        overflow-x: hidden;
+    }
+
+    to {
+
+        top: 0;
+        left: 0px;
+        opacity: 1;
+        display: block;
+    }
+}
+
+
+.toggleOff {
+
+    animation-name: MenuToggleOff;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    animation-duration: 1.5s;
+    position: absolute;
+    width: 100vw;
+
+}
+
+@keyframes MenuToggleOff {
+
+
+    from {
+
+
+        top: 0;
+        left: 0px;
+        opacity: 1;
+    }
+
+    to {
+
+        top: 0;
+        left: 2000px;
+        opacity: 0;
+        z-index: 0;
+
+
+    }
+}
+
+
+.scrollHidden {
+    overflow-x: hidden;
+}

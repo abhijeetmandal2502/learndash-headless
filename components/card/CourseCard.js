@@ -49,7 +49,7 @@ const CourseCard = () => {
 
     return (
         <>
-            <div className='grid grid-cols-12 h-screen overflow-y-scroll overflow-x-hidden '>
+            <div className='grid grid-cols-12 h-screen overflow-y-scroll no-scrollbar overflow-x-hidden '>
                 {data?.map((item, index) => {
 
                     return (<div key={index} className=' bg-transparent md:col-span-6 col-span-12 border border-bordergray  p-10 flex flex-col justify-between '>

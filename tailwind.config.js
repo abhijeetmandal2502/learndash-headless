@@ -16,6 +16,7 @@ module.exports = {
         black: '#000000',
         white: '#FFFFFF',
         gray: '#949494',
+        dakgray: '#393939'
       }
 
     },

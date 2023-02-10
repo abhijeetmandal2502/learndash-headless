@@ -1,0 +1,51 @@
+.aboutMain {
+
+    animation-name: aboutShow;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+
+
+
+}
+
+
+@keyframes aboutShow {
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+
+.hide {
+    display: none !important;
+}
+
+/* css for Nav component */
+
+
+.navli:hover {
+
+    color: #9747FF;
+    font-size: 1.9rem;
+    -webkit-transition: color 1000ms linear;
+    -ms-transition: color 1000ms linear;
+    transition: color 1000ms linear;
+
+
+
+}
+
+.navli:hover span {
+
+    display: block;
+    color: white;
+    overflow: hidden;
+}

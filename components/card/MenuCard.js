@@ -1,27 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import { GrClose } from 'react-icons/gr'
 
-const MenuCard = () => {
+const MenuCard = ({ HideMenuMethod, ShowMenuMethod, On }) => {
+
+    // const [On, setOn] = useState(true);
     return (
         <>
+            {/* <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
+                <p className='font-semibold'>menu</p>
+                <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" />
+            </div> */}
 
-            <div className='relative border-b border-x'>
-                <div className=' hover:shadow-md '>
-                    <Image src="/images/door.png" width="400" height="100" className='h-[180px]' alt="door" />
-
-                    <h2 className='text-center font-bold  '>Start</h2>
-                    <p className='text-center font-bold py-2 opacity-0 hover:opacity-100'>Have any quistion get in touch </p>
-
-                </div>
-                <div className=' absolute top-0 right-0 shadow-md opacity-0 hover:opacity-100 hover:text-voilet'>
-                    <Image src="/images/door.png" width="400" height="100" className='h-[180px]' alt="door" />
-
-                    <h2 className='text-center font-bold  '>Start</h2>
-                    <p className='text-center text-gray py-2'>Have any quistion get in touch </p>
-
-                </div>
-
-            </div>
+            {/* {!On ? <div className={`flex items-center justify-center space-x-2 ${On ? text - white : ""}`} onClick={() => HideMenuMethod()}>
+                <p className='font-semibold'>Close</p>
+                <GrClose />
+            </div> : ""} */}
         </>
     )
 }

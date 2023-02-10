@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { AiOutlineClose } from 'react-icons/ai'
-import MusicCard from 'components/card/MusicCard'
 import styles from '../styles/NewIndex.module.css'
 import styles2 from '../styles/Conceierge.module.css'
 import LoginModel from 'components/LoginModel';
@@ -11,6 +10,10 @@ import Conceierge from 'components/Conceierge'
 import Ncbtmb from 'components/Ncbtmb'
 import CourseInfo from 'components/CourseInfo'
 import SimplyChoose from 'components/SimplyChoose'
+import SideMenu from 'components/SideMenu'
+import MenuComponent from 'components/Menu/MenuComponent'
+import MusicCard from 'components/card/MusicCard'
+import { GrClose } from 'react-icons/gr'
 
 
 const Home = () => {
@@ -25,6 +28,10 @@ const Home = () => {
     // for ncbtmb 
 
     const [showNcbtmb, setShowNcbtmb] = useState(false);
+
+    // for menu open close 
+
+    const [On, setOn] = useState(false);
 
 
     // for start 
@@ -95,8 +102,6 @@ const Home = () => {
     const startMethod = () => {
 
         setStart(true)
-
-
     }
 
     // start hide method
@@ -104,11 +109,20 @@ const Home = () => {
     const startMethodHide = () => {
 
         setStart(false)
-
-
     }
 
-    console.log('showConceierge', showConceierge);
+    // side menu show hide method 
+
+    const ShowMenuMethod = () => {
+        setOn(true)
+    }
+    const HideMenuMethod = () => {
+        setOn(false)
+    }
+
+    //  console.log('On', On)
+
+    console.log('open', open);
 
     return (
         <>
@@ -116,7 +130,7 @@ const Home = () => {
             <Head> LearnDash </Head>
 
 
-            <div className={`grid grid-cols-12 md:h-screen bg-[url('/images/bg-image.png')] bg-cover bg-center bg-no-repeat`}>
+            <div className={`grid grid-cols-12 md:h-screen bg-[url('/images/bg-image.png')] bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
                 <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
@@ -224,7 +238,7 @@ const Home = () => {
                 </div>
 
                 {
-                    start ? <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-11 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1} grid grid-cols-12`}>
+                    <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1} grid grid-cols-12`}>
                         <div className='col-span-6 p-10'>
                             <div className='flex justify-between items-center space-x-5 cursor-pointer '>
                                 <Image src='/images/logo.png' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]' />
@@ -240,15 +254,26 @@ const Home = () => {
                         <div className='col-span-5 '>
                             <CourseInfo />
                         </div>
-                    </div> : ""
+                        <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
+                            <SideMenu />
+                        </div>
+                    </div>
                 }
 
 
                 <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
+                    {/* <SideMenu ShowMenuMethod={ShowMenuMethod} HideMenuMethod={HideMenuMethod} state={On} /> */}
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/4'>
-                            <p className='font-semibold'>menu</p>
-                            <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" />
+                            <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
+                                <p className='font-semibold'>menu</p>
+                                <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" />
+                            </div>
+
+                            {/* <div className={`flex items-center justify-center space-x-2 `} onClick={() => HideMenuMethod()}>
+                                <p className='font-semibold'>Close</p>
+                                <GrClose />
+                            </div> */}
                         </div>
                         <div className=' absolute bottom-5 left-1/3'>
                             <MusicCard />
@@ -256,6 +281,10 @@ const Home = () => {
                     </div>
                 </div>
 
+            </div>
+
+            <div className={` ${On == true ? styles2.toggleOn : styles2.toggleOff}`}>
+                <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
 
         </>
