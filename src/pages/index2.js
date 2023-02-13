@@ -13,7 +13,8 @@ import SimplyChoose from 'components/SimplyChoose'
 import SideMenu from 'components/SideMenu'
 import MenuComponent from 'components/Menu/MenuComponent'
 import MusicCard from 'components/card/MusicCard'
-import { GrClose } from 'react-icons/gr'
+import LogoCard from 'components/card/LogoCard'
+
 
 
 const Home = () => {
@@ -48,7 +49,7 @@ const Home = () => {
     const [showParent, setShowParent] = useState("");
     const [hideParent, setHideParent] = useState("");
     const [showChild, setShowChild] = useState("");
-    const [hideChild, setHideChild] = useState("");
+    const [hideChild, setHideChild] = useState(true);
 
     const HandleClick = () => {
         setTimeout(() => { setOpen(true) }, 100)
@@ -120,9 +121,10 @@ const Home = () => {
         setOn(false)
     }
 
-    //  console.log('On', On)
+    const LogoImage = "/images/logo.png"
 
-    console.log('open', open);
+
+    console.log('hide', hideChild);
 
     return (
         <>
@@ -134,11 +136,7 @@ const Home = () => {
 
                 <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
-                        <Image src='/images/logo.png' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]' />
-                        <div className='flex max-sm:visible invisible items-center justify-center space-x-2 '>
-                            <p className='font-semibold text-lg'>menu</p>
-                            <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
-                        </div>
+                        <LogoCard LogoImage={LogoImage} />
                     </div>
                     <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                         <p className='md:text-7xl text-4xl font-normal py-2'>massage ce.</p>
@@ -160,24 +158,30 @@ const Home = () => {
                     <div className={` grid grid-cols-12 ${!open ? showParent : hideParent}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
-                                <div className='flex flex-col justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2 zoom-effect-container' onClick={() => startMethod()} >
+                                <div className='flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2 zoom-effect-container' onClick={() => startMethod()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/start.png' height='200' width='200' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 lineUp font-semibold md:text-center'>start</h3>
+                                            <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
                                             <p className='mt-2 hide  md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
                                     </div>
+                                    <div className='absolute bottom-0 right-0 hide ' >
+                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    </div>
                                 </div>
 
-                                <div className='flex flex-col z-40 justify-center cursor-pointer  p-2 zoom-effect-container md:border-l md:border-l-bordergray' onClick={() => { HandleClick(); }}>
+                                <div className='flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 zoom-effect-container md:border-l md:border-l-bordergray' onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 lineUp font-semibold md:text-center'>i’m back</h3>
+                                            <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>i’m back</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
+                                    </div>
+                                    <div className='absolute bottom-0 right-0 hide ' >
+                                        <Image src="/images/rectangle .png" height={20} width={20} />
                                     </div>
                                 </div>
                             </div>
@@ -185,33 +189,42 @@ const Home = () => {
 
                         <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
                             <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
-                                <div className='flex flex-col justify-center p-2 zoom-effect-container cursor-pointer' onClick={() => conceiergeMethod()}>
+                                <div className='flex relative overflow-hidden flex-col justify-center p-2 zoom-effect-container cursor-pointer' onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Concierge.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center lineUp'>concierge</h3>
+                                            <h3 className='mt-4 font-semibold md:text-center text-4xl lineUp'>concierge</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
                                     </div>
+                                    <div className='absolute bottom-0 right-0 hide ' >
+                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    </div>
                                 </div>
 
-                                <div className='flex flex-col justify-center p-2 zoom-effect-container' onClick={() => ncbtmbMethod()}>
+                                <div className='flex flex-col relative overflow-hidden justify-center p-2 zoom-effect-container' onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/NCBTMB-Approved.png' height='120' width='120' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center lineUp'>ncbtmb approved</h3>
+                                            <h3 className='mt-4 font-semibold md:text-center text-4xl lineUp'>ncbtmb approved</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>check if your state is approved</p>
                                         </div>
                                     </div>
+                                    <div className='absolute bottom-0 right-0 hide ' >
+                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    </div>
                                 </div>
 
-                                <div className='flex flex-col justify-center p-2 zoom-effect-container'>
+                                <div className='flex flex-col justify-center p-2 zoom-effect-container relative overflow-hidden'>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='font-semibold lineUp md:text-center md:mt-4'>teacher’s lounge</h3>
+                                            <h3 className='font-semibold lineUp md:text-center text-4xl md:mt-4'>teacher’s lounge</h3>
                                             <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
                                         </div>
+                                    </div>
+                                    <div className='absolute bottom-0 right-0 hide ' >
+                                        <Image src="/images/rectangle .png" height={20} width={20} />
                                     </div>
                                 </div>
 

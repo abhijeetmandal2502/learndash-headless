@@ -299,3 +299,10 @@ ol {
   left: -220px;
   opacity: 0;
 } */
+
+
+.anmationEnd {
+  position: absolute;
+  bottom: 0;
+  display: none !important;
+}

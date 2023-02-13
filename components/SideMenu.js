@@ -3,7 +3,10 @@ import Image from 'next/image'
 import MusicCard from './card/MusicCard'
 
 
-const SideMenu = ({ HideMenuMethod }, { ShowMenuMethod }, On) => {
+const SideMenu = ({ ShowMenuMethod }) => {
+
+    const textColor = 'text-black'
+
     return (
         <>
             <div className=' cursor-pointer'>
@@ -19,7 +22,7 @@ const SideMenu = ({ HideMenuMethod }, { ShowMenuMethod }, On) => {
                     </div> */}
                 </div>
                 <div className=' absolute bottom-5 left-1/3'>
-                    <MusicCard />
+                    <MusicCard textColor={textColor} />
                 </div>
             </div>
         </>

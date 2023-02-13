@@ -25,7 +25,12 @@
 
 
 .hide {
-    display: none !important;
+    opacity: 0;
+}
+
+.showLine {
+    opacity: 1;
+    color: #9747FF;
 }
 
 /* css for Nav component */
@@ -35,17 +40,54 @@
 
     color: #9747FF;
     font-size: 1.9rem;
-    -webkit-transition: color 1000ms linear;
-    -ms-transition: color 1000ms linear;
-    transition: color 1000ms linear;
+    -webkit-transition: color 700ms linear;
+    -ms-transition: color 700ms linear;
+    transition: color 700ms linear;
 
 
 
 }
 
-.navli:hover span {
+.navli:hover>.hide {
 
-    display: block;
-    color: white;
-    overflow: hidden;
+    opacity: 1;
+    font-size: 1.9rem;
+    -webkit-transition: color 700ms linear;
+    -ms-transition: color 700ms linear;
+    transition: color 700ms linear;
+
+}
+
+
+.defaultBackground {
+
+    background-image: url(/images/menu-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.aboutBackground {
+
+    background-image: url(/images/about-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.instructorBackground {
+
+    background-image: url(/images/instructor-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+
+.blogBackground {
+
+    background-image: url(/images/blog-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
