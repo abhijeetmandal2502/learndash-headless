@@ -86,7 +86,7 @@ const CourseCard = () => {
                             {item.discription}
                         </div>
                         <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : 'hide'} `} >
-                            <Image src="/images/rectangle .png" height={20} width={20} />
+                            <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                         </div>
 
                     </div>)

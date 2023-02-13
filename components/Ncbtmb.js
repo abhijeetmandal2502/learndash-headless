@@ -36,7 +36,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
             </div>
           </div>
 
-          <Image src="/images/NCBTMB-Approved.png" height={323} width={323} />
+          <Image src="/images/NCBTMB-Approved.png" height={323} width={323} alt="ncbtmb" />
 
 
         </div>
