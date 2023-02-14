@@ -3,7 +3,7 @@
     animation-name: showdiv;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease;
 
 }
 
@@ -25,7 +25,7 @@
     animation-name: hideDiv;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease;
 
 }
 
@@ -47,7 +47,7 @@
 
 .toggleOn {
     animation-name: MenuToggleOn;
-    animation-timing-function: linear;
+    animation-timing-function: ease;
     animation-fill-mode: forwards;
     overflow: hidden;
     animation-duration: 1s;

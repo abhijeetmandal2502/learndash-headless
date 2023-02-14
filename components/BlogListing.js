@@ -30,7 +30,7 @@ const BlogListing = () => {
 
     return (
         <>
-            <div className='bg-transparent '>
+            <div className='bg-transparent md:pb-40 '>
                 {
                     blogData && blogData?.map((item, index) => {
                         return (<div key={index} className="my-10 border-b border-bordergray">

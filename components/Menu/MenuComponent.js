@@ -6,9 +6,9 @@ import Contact from '../Menu/Contact'
 import { BiArrowBack } from 'react-icons/bi'
 import styles from '../../src/styles/MenuComponent.module.css'
 import LogoCard from 'components/card/LogoCard'
-import About from 'components/About'
+import About from '../About/About'
 import { AiOutlineMinus } from 'react-icons/ai'
-import Instructors from 'components/card/Instructors'
+import Instructors from '../Instructor/Instructors'
 import BlogListing from 'components/BlogListing'
 
 
@@ -41,12 +41,12 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
     const textColor = "text-white"
 
-    const LogoImage = "/images/black-bg-logo.png";
+    const LogoImage = "/images/WhiteLogo.svg";
     // console.log('router', router.asPath);    
 
     return (
         <>
-            <div className={`grid grid-cols-12 md:h-screen bg-[url('/images/menu-bg.png')] ${openTab === 1 ? styles.aboutBackground : ""} ${openTab === 2 ? styles.instructorBackground : ""} ${openTab === 3 ? styles.blogBackground : ""}  bg-cover bg-center bg-no-repeat overflow-x-hidden`}>
+            <div className={`grid grid-cols-12 md:h-screen  ${openTab === 1 ? styles.aboutBackground : styles.defaultBackground} ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground} ${openTab === 3 ? styles.blogBackground : styles.defaultBackground}  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden`}>
 
                 <div className='col-span-11 p-10 '>
 
@@ -62,19 +62,23 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
 
-                        <div className=" md:col-span-8 col-span-12  bg-transparent h-full overflow-y-auto no-scrollbar overflow-x-hidden  ">
+                        <div className=" md:col-span-8 col-span-12  bg-transparent  ">
                             <div className="px-4 ">
                                 <div className="tab-content tab-space ">
                                     <div className={`${openTab > 0 ? "hidden" : "block"} `}>
                                         <Contact />
                                     </div>
-                                    <div className={`${openTab === 1 ? "block" : "hidden"} overflow-y-scroll `} id="link1">
+                                    <div className={`${openTab === 1 ? "block" : "hidden"} ${openTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll `} id="link1">
+
+
                                         <About />
+
+
                                     </div>
-                                    <div className={`${openTab === 2 ? "block" : "hidden"}  `} id="link2">
+                                    <div className={`${openTab === 2 ? "block" : "hidden"} ${openTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll  `} id="link2">
                                         <Instructors />
                                     </div>
-                                    <div className={`${openTab === 3 ? "block" : "hidden"} overflow-y-scroll`} id="link3">
+                                    <div className={`${openTab === 3 ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar}  md:h-screen  overflow-y-scroll`} id="link3">
                                         <BlogListing />
                                     </div>
 

@@ -121,10 +121,10 @@ const Home = () => {
         setOn(false)
     }
 
-    const LogoImage = "/images/logo.png"
+    const LogoImage = "/images/Logo.svg"
 
 
-    console.log('hide', hideChild);
+    //  console.log('hide', hideChild);
 
     return (
         <>
@@ -137,6 +137,7 @@ const Home = () => {
                 <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
+
                     </div>
                     <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                         <p className='md:text-7xl text-4xl font-normal py-2'>massage ce.</p>
@@ -158,30 +159,45 @@ const Home = () => {
                     <div className={` grid grid-cols-12 ${!open ? showParent : hideParent}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
-                                <div className='flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2 zoom-effect-container' onClick={() => startMethod()} >
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <Image alt='start' src='/images/start.png' height='200' width='200' className='md:mx-auto ' />
+                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2 ${styles.cardAnimation}`} onClick={() => startMethod()} >
+                                    <div className='flex space-x-4 md:block md:space-x-0 image-card relative'>
+                                        <Image alt='start' src='/images/start.png' height='200' width='200' className={`md:mx-auto`} />
+
+
+                                        {/* <div className={`md:mx-auto relative ${styles.doorOPenAnimation}`}>
+                                            <div className={`absolute top-0 left-0`}>
+                                                <Image src="/images/gateFrame.svg" height='200' width='200' />
+                                            </div>
+                                            <div className={`absolute top-0 left-9`}>
+                                                <Image src="/images/GateDoor.svg" height='100' width='100' />
+                                            </div>
+                                            <div className={`absolute top-16 left-28`}>
+                                                <Image src="/images/gateHandle.svg" height='5' width='5' />
+                                            </div>
+
+
+                                        </div> */}
                                         <div className='w-full'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className='mt-2 hide  md:text-center lineUp'>have a question? get in touch!</p>
+                                            <p className={`mt-2 ${styles.hide}   md:text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
-                                    <div className='absolute bottom-0 right-0 hide ' >
-                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
 
-                                <div className='flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 zoom-effect-container md:border-l md:border-l-bordergray' onClick={() => { HandleClick(); }}>
+                                <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray`} onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>i’m back</h3>
-                                            <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
-                                    <div className='absolute bottom-0 right-0 hide ' >
-                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
                             </div>
@@ -189,42 +205,42 @@ const Home = () => {
 
                         <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
                             <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
-                                <div className='flex relative overflow-hidden flex-col justify-center p-2 zoom-effect-container cursor-pointer' onClick={() => conceiergeMethod()}>
+                                <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer`} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Concierge.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center text-4xl lineUp'>concierge</h3>
-                                            <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
+                                            <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>concierge</h3>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
-                                    <div className='absolute bottom-0 right-0 hide ' >
-                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
 
-                                <div className='flex flex-col relative overflow-hidden justify-center p-2 zoom-effect-container' onClick={() => ncbtmbMethod()}>
+                                <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/NCBTMB-Approved.png' height='120' width='120' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center text-4xl lineUp'>ncbtmb approved</h3>
-                                            <p className='mt-2 hide md:text-center lineUp'>check if your state is approved</p>
+                                            <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>ncbtmb approved</h3>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
-                                    <div className='absolute bottom-0 right-0 hide ' >
-                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
 
-                                <div className='flex flex-col justify-center p-2 zoom-effect-container relative overflow-hidden'>
+                                <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} relative overflow-hidden`}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='font-semibold lineUp md:text-center text-4xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className='mt-2 hide md:text-center lineUp'>have a question? get in touch!</p>
+                                            <h3 className='font-semibold lineUp md:text-center text-3xl md:mt-4'>teacher’s lounge</h3>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
-                                    <div className='absolute bottom-0 right-0 hide ' >
-                                        <Image src="/images/rectangle .png" height={20} width={20} />
+                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
 
@@ -280,7 +296,12 @@ const Home = () => {
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/4'>
                             <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
                                 <p className='font-semibold'>menu</p>
-                                <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" />
+                                {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
+                                <svg width="24" height="24" className={`${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
+                                    <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
+                                    <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
+                                </svg>
                             </div>
 
                             {/* <div className={`flex items-center justify-center space-x-2 `} onClick={() => HideMenuMethod()}>
