@@ -62,7 +62,82 @@ body {
   overflow: hidden;
 }
 
+.zoom-effect-container:hover {
+  background: rgba(128, 128, 128, 0.164);
+  animation: bgsmooth 2s;
+  animation-fill-mode: forwards;
 
+}
+
+@keyframes bgsmooth {
+
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+
+.zoom-effect-container:hover .image-card img {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari 3-8 */
+  transform: scale(1.1);
+
+}
+
+.hide {
+  display: none;
+}
+
+.zoom-effect-container:hover .hide {
+  display: block;
+  animation: 1.5s anim-lineUp ease;
+  overflow: hidden;
+}
+
+.zoom-effect-container:hover .lineUp {
+  animation: 1.5s anim-lineUp ease;
+  overflow: hidden;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+    overflow: hidden;
+  }
+
+
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    overflow: hidden;
+  }
+
+
+}
+
+
+.zoom-effect-container:hover h3 {
+  color: purple;
+}
+
+/* .zoom {
+  transition: 2s ease;
+} */
+
+.zoom:hover {
+  animation: zoom-in 2s;
+  animation-fill-mode: forwards;
+}
 
 .hiddenoverflow {
   overflow: hidden;
@@ -125,6 +200,59 @@ ol {
   }
 
 }
+
+
+
+.zoom-effect-container:hover .image-card img {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari 3-8 */
+  transform: scale(1.1);
+
+}
+
+.hide {
+  display: none;
+}
+
+.zoom-effect-container:hover .hide {
+  display: block;
+  animation: 1.5s anim-lineUp ease;
+  overflow: hidden;
+}
+
+.zoom-effect-container:hover .lineUp {
+  animation: 1.5s anim-lineUp ease;
+  overflow: hidden;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+    overflow: hidden;
+  }
+
+
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    overflow: hidden;
+  }
+
+
+}
+
+
+.zoom-effect-container:hover h3 {
+  color: purple;
+}
+
+/* .zoom {
+  transition: 2s ease;
+} */
 
 .zoom:hover {
   animation: zoom-in 2s;

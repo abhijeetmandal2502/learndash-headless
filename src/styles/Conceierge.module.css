@@ -115,3 +115,64 @@
 .scrollHidden {
     overflow-x: hidden;
 }
+
+
+/* doorAnimation */
+
+
+.mainAnimation .startDoorAnimateOpen {
+
+    opacity: 0;
+
+    transition: opacity 100ms ease-in-out;
+}
+
+
+.mainAnimation:hover.startDoorAnimateOpen {
+    opacity: 1;
+
+    transition: opacity 100ms ease-in-out;
+}
+
+.mainAnimation .startDoorAnimateClose {
+
+    opacity: 1;
+
+    transition: opacity 100ms ease-in-out;
+
+    animation: showDoor 2s ease-in-out;
+}
+
+@keyframes showDoor {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+.mainAnimation:hover.startDoorAnimateClose {
+
+    animation: hideDoor 2s ease-in-out forwards;
+
+    opacity: 0;
+
+    transition: opacity 100ms ease-in-out;
+}
+
+
+@keyframes hideDoor {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
