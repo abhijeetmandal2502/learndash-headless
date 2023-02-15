@@ -1,0 +1,111 @@
+.rotateChild:hover .child {
+
+
+
+    transform: rotateY(-45deg);
+    transform-origin: left;
+    transition: all 1s ease-in-out;
+}
+
+
+
+
+.rotateChild .child {
+
+
+
+    transform: rotateY(0deg);
+    transform-origin: left;
+    transition: all 1s ease-in-out;
+}
+
+
+.rotateChild:hover {
+
+
+    background: rgba(128, 128, 128, 0.164);
+    transition: background 2s ease;
+
+}
+
+
+.rotateChild:hover h3 {
+
+
+    color: purple;
+    transition: color 1s ease-in;
+    animation: textanimateUp 1s ease-in-out;
+}
+
+
+@keyframes textanimateUp {
+    from {
+
+        transform: translateY(10px);
+        color: black;
+    }
+
+
+    from {
+
+
+        color: purple;
+
+    }
+}
+
+
+.hide1 {
+
+    display: none;
+}
+
+
+.rotateChild:hover .hide1 {
+
+    color: purple;
+    transition: color 5s ease-in;
+    animation: animateText 1s linear both;
+    display: block;
+}
+
+@keyframes animateText {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+
+    to {
+        opacity: 1;
+        display: block;
+    }
+
+}
+
+
+
+.rotateChild .hide1 {
+
+    color: purple;
+    transition: color 5s ease-in;
+    animation: animateTextHide 1s linear both;
+    display: block;
+}
+
+@keyframes animateTextHide {
+    from {
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+
+
+
+}

@@ -2,7 +2,7 @@
     animation-name: animateparenton;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 
 }
 
@@ -36,7 +36,7 @@
     animation-name: animateparentoff;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 
 }
 
@@ -111,7 +111,7 @@
     animation-fill-mode: forwards;
     animation-duration: 1s;
     position: absolute;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 
 
 
@@ -160,7 +160,7 @@
         animation-name: animatechildoff;
         animation-fill-mode: forwards;
         animation-duration: 1s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         position: absolute;
 
     }
@@ -202,7 +202,7 @@
         animation-fill-mode: forwards;
         animation-duration: 2s;
         position: absolute;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
 
 
 
@@ -342,7 +342,7 @@ screen and (max-height: 700px) {
         animation-name: animatechildoff;
         animation-fill-mode: forwards;
         animation-duration: 1s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         position: absolute;
 
     }
@@ -384,7 +384,7 @@ screen and (max-height: 700px) {
         animation-fill-mode: forwards;
         animation-duration: 1s;
         position: absolute;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
 
 
 
@@ -437,7 +437,7 @@ screen and (max-height: 700px) {
     animation-name: modelScaleUp;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 }
 
 
@@ -471,7 +471,7 @@ screen and (max-height: 700px) {
     animation-name: modelScaleDown;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 }
 
 
@@ -525,7 +525,7 @@ screen and (max-height: 700px) {
 
 .cardAnimation:hover img {
 
-    animation: scaleUpImage 1s linear both;
+    animation: scaleUpImage 1s ease-out both;
 }
 
 @keyframes scaleUpImage {
@@ -547,7 +547,7 @@ screen and (max-height: 700px) {
 
 .cardAnimation img {
 
-    animation: scaleDownImage 1s linear both;
+    animation: scaleDownImage 1s ease-in-out both;
 }
 
 @keyframes scaleDownImage {
@@ -570,7 +570,7 @@ screen and (max-height: 700px) {
 
     color: purple;
     transition: color 1s ease-in;
-    animation: textanimateUp 1s linear;
+    animation: textanimateUp 1s ease-in-out;
 
 }
 
@@ -601,7 +601,7 @@ screen and (max-height: 700px) {
 
     color: purple;
     transition: color 5s ease-in;
-    animation: animateText 1s linear both;
+    animation: animateText 1s ease-in-out both;
     display: block;
 }
 
@@ -626,7 +626,7 @@ screen and (max-height: 700px) {
 
     color: purple;
     transition: color 5s ease-in;
-    animation: animateTextHide 1s linear both;
+    animation: animateTextHide 1s ease-in-out both;
     display: block;
 }
 
