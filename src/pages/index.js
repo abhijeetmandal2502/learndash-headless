@@ -156,10 +156,10 @@ const Home = () => {
                                         {/* <Image alt='start' src='/images/start.png' height='200' width='200' className={`md:mx-auto`} /> */}
 
                                         <div className={`py-20 `}>
-                                            <Image className={`absolute top-10 left-20`} src="/doorImage/door1.png" width={150} height={150} />
+                                            <Image className={`absolute top-10 left-20`} src="/doorImage/door1.png" width={150} height={150} alt="door" />
                                             <div className={`${Styles.child} absolute top-10 left-[108px]`}>
-                                                <Image className={``} src="/doorImage/door2.png" width={58} height={58} />
-                                                <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} />
+                                                <Image className={``} src="/doorImage/door2.png" width={58} height={58} alt="door" />
+                                                <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} alt="door" />
                                             </div>
 
                                             <div className='w-full absolute right-2 top-48'>

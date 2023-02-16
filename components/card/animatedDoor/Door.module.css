@@ -35,6 +35,8 @@
     color: #9747FF;
     transition: all 1s ease-in-out;
     animation: textanimateUp 1s ease-in-out forwards;
+    font-style: normal;
+    font-weight: 500;
 }
 
 
@@ -61,6 +63,8 @@
     color: black;
     transition: all 1s ease-in-out;
     animation: textanimateDown 1s ease-in-out forwards;
+    font-style: normal;
+    font-weight: 500;
 }
 
 
