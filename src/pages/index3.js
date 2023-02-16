@@ -14,6 +14,7 @@ import SideMenu from 'components/SideMenu'
 import MenuComponent from 'components/Menu/MenuComponent'
 import MusicCard from 'components/card/MusicCard'
 import LogoCard from 'components/card/LogoCard'
+
 import Styles from '../../components/card/animatedDoor/Door.module.css'
 
 
@@ -150,23 +151,21 @@ const Home = () => {
                     <div className={` grid grid-cols-12 ${!open ? showParent : hideParent}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
-                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2 py-20 ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
                                     <div className={` space-x-4 md:block md:space-x-0 image-card  `}>
                                         {/* <Image alt='start' src='/images/start.png' height='200' width='200' className={`md:mx-auto`} /> */}
 
-                                        <div className={`py-20  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4`}>
-                                            <Image className={``} src="/doorImage/door1.png" width={150} height={150} alt="door" />
-                                            <div className={`${Styles.child} absolute top-20 left-[28px]`}>
+                                        <div className={`py-20 `}>
+                                            <Image className={`absolute top-10 left-20`} src="/doorImage/door1.png" width={150} height={150} alt="door" />
+                                            <div className={`${Styles.child} absolute top-10 left-[108px]`}>
                                                 <Image className={``} src="/doorImage/door2.png" width={58} height={58} alt="door" />
                                                 <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} alt="door" />
                                             </div>
 
-
-                                        </div>
-
-                                        <div className='w-full absolute top-[270px] right-2'>
-                                            <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-2 ${Styles.hide1}   md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <div className='w-full absolute right-2 top-48'>
+                                                <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
+                                                <p className={`mt-2 ${Styles.hide1}   md:text-center lineUp`}>have a question? get in touch!</p>
+                                            </div>
                                         </div>
                                         <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
                                             <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />

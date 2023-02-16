@@ -1,0 +1,87 @@
+.openModel {
+
+    animation: ModelOpen 500ms ease forwards;
+    transition: all ease-in-out 1s;
+    display: block;
+    position: absolute;
+
+
+}
+
+
+
+@keyframes ModelOpen {
+
+
+    0% {
+
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+    }
+
+
+    100% {
+
+        bottom: 30%;
+        right: 50%;
+
+        opacity: 1;
+    }
+}
+
+
+.closeModel {
+
+    animation: ModelClose 500ms linear forwards;
+    transition: all ease-in-out 500ms;
+    position: absolute;
+
+
+}
+
+
+
+@keyframes ModelClose {
+
+
+    0% {
+
+        bottom: 30%;
+        right: 50%;
+
+        opacity: 1;
+
+
+    }
+
+
+
+    100% {
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+    }
+
+
+
+}
+
+
+.mainDivHide {
+
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.mainDivShow {
+
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
+
+.hide {
+
+    display: none;
+}

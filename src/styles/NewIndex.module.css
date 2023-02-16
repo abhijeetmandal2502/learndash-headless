@@ -511,7 +511,7 @@ screen and (max-height: 700px) {
 .cardAnimation:hover {
 
     background: rgba(128, 128, 128, 0.164);
-    transition: background 2s ease;
+    transition: background 500ms ease;
 
 
 }
@@ -520,12 +520,12 @@ screen and (max-height: 700px) {
 .cardAnimation {
 
     background: transparent;
-    transition: background 2s ease;
+    transition: background 500ms ease;
 }
 
 .cardAnimation:hover img {
 
-    animation: scaleUpImage 1s ease-out both;
+    animation: scaleUpImage 500ms ease-out both;
 }
 
 @keyframes scaleUpImage {
@@ -547,7 +547,7 @@ screen and (max-height: 700px) {
 
 .cardAnimation img {
 
-    animation: scaleDownImage 1s ease-in-out both;
+    animation: scaleDownImage 500ms ease-in-out both;
 }
 
 @keyframes scaleDownImage {

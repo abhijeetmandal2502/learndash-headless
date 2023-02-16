@@ -24,7 +24,60 @@
 
 
     background: rgba(128, 128, 128, 0.164);
-    transition: background 2s ease;
+    transition: background 500ms ease;
+
+}
+
+
+.rotateChild {
+
+
+    background: transparent;
+    transition: background 500ms ease;
+
+}
+
+
+.rotateChild:hover .imageDiv {
+
+    animation: scaleUpImage 500ms ease-out both;
+}
+
+@keyframes scaleUpImage {
+
+    from {
+        transform: scale(1.0);
+        transform: translateY(10px);
+
+    }
+
+    to {
+        transform: scale(1.2);
+
+    }
+}
+
+
+
+
+.rotateChild .imageDiv {
+
+    animation: scaleDownImage 500ms ease-in-out both;
+}
+
+@keyframes scaleDownImage {
+
+    from {
+        transform: scale(1.2);
+
+    }
+
+    to {
+        transform: scale(1.0);
+        transform: translateY(10px);
+
+    }
+
 
 }
 
@@ -33,8 +86,8 @@
 
 
     color: #9747FF;
-    transition: all 1s ease-in-out;
-    animation: textanimateUp 1s ease-in-out forwards;
+    transition: all 500ms ease-in-out;
+    animation: textanimateUp 500ms ease-in-out forwards;
     font-style: normal;
     font-weight: 500;
 }
