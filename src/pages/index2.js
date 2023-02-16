@@ -26,12 +26,6 @@ const Home = () => {
     const [down, setDown] = useState(false);
     // for conceierge
 
-    //  for start
-
-    //  const [openDoor, setOpenDoor] = useState(false)
-
-
-
     const [showConceierge, setShowConceierge] = useState(false);
 
     // for ncbtmb 
@@ -46,14 +40,6 @@ const Home = () => {
     // for start 
 
     const [start, setStart] = useState(false)
-
-    const parentDivShow = styles.parentchildon;
-    const parentDivHide = styles.parentchildoff;
-    const childrenDivShow = styles.childparenton;
-    const childrenDivHide = styles.childparentoff;
-    const anmationEnd = styles.animationEndHideChild;
-    const scaleUp = styles.modelScaleUpAnimation;
-    const scaleDown = styles.modelScaleDownAnimation;
     const [showParent, setShowParent] = useState("");
     const [hideParent, setHideParent] = useState("");
     const [showChild, setShowChild] = useState("");
@@ -61,13 +47,13 @@ const Home = () => {
 
     const HandleClick = () => {
         setTimeout(() => { setOpen(true) }, 100)
-        setHideParent(parentDivHide)
-        setShowChild(childrenDivShow)
+        setHideParent(styles.parentchildoff)
+        setShowChild(styles.childparenton)
     }
     const changeDuration = () => {
         setTimeout(() => setOpen(false));
-        setTimeout(() => setHideChild(childrenDivHide))
-        setTimeout(() => setShowParent(parentDivShow))
+        setTimeout(() => setHideChild(styles.childparentoff))
+        setTimeout(() => setShowParent(styles.parentchildon))
         setTimeout(() => setHideChild(true), 2000)
         setTimeout(() => setDown(false));
     }
@@ -132,8 +118,6 @@ const Home = () => {
     const LogoImage = "/images/Logo.svg"
 
 
-    //  console.log('hide', hideChild);
-
     return (
         <>
 
@@ -178,7 +162,7 @@ const Home = () => {
                                                 <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} />
                                             </div>
 
-                                            <div className='w-full absolute top-48'>
+                                            <div className='w-full absolute right-2 top-48'>
                                                 <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
                                                 <p className={`mt-2 ${Styles.hide1}   md:text-center lineUp`}>have a question? get in touch!</p>
                                             </div>
@@ -254,9 +238,9 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? anmationEnd : ""} ${open ? showChild : hideChild}  `} >
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild}  `} >
                         <div className=" relative ">
-                            <div className={` bg-transparent relative  border border-bordergray ${open ? scaleUp : scaleDown} `}>
+                            <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <div className='flex justify-between '>
                                     <h2 className=' font-normal py-2 pb-4'>Welcome Back !</h2>
 

@@ -1,5 +1,82 @@
 .cardBackground {
 
     background-color: rgba(128, 128, 128, 0.164);
-    color: purple;
+    color: #9747FF;
+}
+
+
+.cardBackgroundHover:hover {
+
+    background-color: rgba(128, 128, 128, 0.164);
+    color: #9747FF;
+    cursor: pointer;
+    z-index: 100;
+    transition: all ease-in-out 1s;
+}
+
+
+.cardBackgroundHover {
+
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    z-index: 100;
+    transition: all ease-in-out 1s;
+}
+
+
+.hide1 {
+
+    display: none;
+}
+
+
+.cardBackgroundHover:hover .hide1 {
+
+    color: #9747FF;
+    transition: color 5s ease-in;
+    animation: animateText 1s linear both;
+    display: block;
+}
+
+@keyframes animateText {
+
+    from {
+        opacity: 0;
+
+    }
+
+
+    to {
+        opacity: 1;
+        display: block;
+    }
+
+}
+
+
+
+.cardBackgroundHover .hide1 {
+
+    color: #9747FF;
+    transition: color 5s ease-in;
+    animation: animateTextHide 1s linear both;
+    display: block;
+
+}
+
+@keyframes animateTextHide {
+    from {
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        opacity: 0;
+
+    }
+
+
+
+
 }

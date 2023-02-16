@@ -2,7 +2,7 @@
     animation-name: animateparenton;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
 
 }
 
@@ -36,7 +36,7 @@
     animation-name: animateparentoff;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
 
 }
 
@@ -111,7 +111,7 @@
     animation-fill-mode: forwards;
     animation-duration: 1s;
     position: absolute;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
 
 
 
@@ -160,7 +160,7 @@
         animation-name: animatechildoff;
         animation-fill-mode: forwards;
         animation-duration: 1s;
-        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
         position: absolute;
 
     }
@@ -202,7 +202,7 @@
         animation-fill-mode: forwards;
         animation-duration: 2s;
         position: absolute;
-        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
 
 
 
@@ -342,7 +342,7 @@ screen and (max-height: 700px) {
         animation-name: animatechildoff;
         animation-fill-mode: forwards;
         animation-duration: 1s;
-        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
         position: absolute;
 
     }
@@ -384,7 +384,7 @@ screen and (max-height: 700px) {
         animation-fill-mode: forwards;
         animation-duration: 1s;
         position: absolute;
-        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
 
 
 
@@ -437,7 +437,7 @@ screen and (max-height: 700px) {
     animation-name: modelScaleUp;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
 }
 
 
@@ -471,7 +471,7 @@ screen and (max-height: 700px) {
     animation-name: modelScaleDown;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
 }
 
 
@@ -570,7 +570,7 @@ screen and (max-height: 700px) {
 
     color: purple;
     transition: color 1s ease-in;
-    animation: textanimateUp 1s ease-in-out;
+    animation: textanimateUp 1s ease-in-out forwards;
 
 }
 
@@ -582,10 +582,38 @@ screen and (max-height: 700px) {
     }
 
 
+    to {
+
+
+        color: #9747FF;
+
+    }
+}
+
+
+
+
+.cardAnimation h3 {
+
+    color: black;
+    transition: all 1s ease-in-out;
+    animation: textanimateDown 1s ease-in-out forwards;
+
+}
+
+@keyframes textanimateDown {
     from {
 
 
-        color: purple;
+        color: #9747FF;
+    }
+
+
+    to {
+
+
+        color: black;
+        transform: translateY(10px);
 
     }
 }
@@ -599,7 +627,7 @@ screen and (max-height: 700px) {
 
 .cardAnimation:hover .hide {
 
-    color: purple;
+    color: black;
     transition: color 5s ease-in;
     animation: animateText 1s ease-in-out both;
     display: block;
@@ -624,7 +652,7 @@ screen and (max-height: 700px) {
 
 .cardAnimation .hide {
 
-    color: purple;
+    color: black;
     transition: color 5s ease-in;
     animation: animateTextHide 1s ease-in-out both;
     display: block;

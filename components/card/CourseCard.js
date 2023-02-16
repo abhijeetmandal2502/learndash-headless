@@ -72,7 +72,7 @@ const CourseCard = () => {
             <div className='grid grid-cols-12 h-screen overflow-y-scroll no-scrollbar overflow-x-hidden '>
                 {data?.map((item, index) => {
 
-                    return (<div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 border border-bordergray  p-10 flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : ""} `} onClick={() => handleClick(index, item)}>
+                    return (<div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 border border-bordergray  p-10 flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover}`} onClick={() => handleClick(index, item)}>
                         <div className='flex justify-between'>
                             <div className='flex justify-center items-center space-x-1'>
                                 <MdOutlineWatchLater />
@@ -85,7 +85,7 @@ const CourseCard = () => {
                         <div className='pt-24 text-3xl'>
                             {item.discription}
                         </div>
-                        <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : 'hide'} `} >
+                        <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} `} >
                             <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                         </div>
 

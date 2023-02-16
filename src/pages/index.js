@@ -15,6 +15,8 @@ import MenuComponent from 'components/Menu/MenuComponent'
 import MusicCard from 'components/card/MusicCard'
 import LogoCard from 'components/card/LogoCard'
 
+import Styles from '../../components/card/animatedDoor/Door.module.css'
+
 
 
 const Home = () => {
@@ -23,12 +25,6 @@ const Home = () => {
     const [open, setOpen] = useState(false);
     const [down, setDown] = useState(false);
     // for conceierge
-
-    //  for start
-
-    //  const [openDoor, setOpenDoor] = useState(false)
-
-
 
     const [showConceierge, setShowConceierge] = useState(false);
 
@@ -44,14 +40,6 @@ const Home = () => {
     // for start 
 
     const [start, setStart] = useState(false)
-
-    const parentDivShow = styles.parentchildon;
-    const parentDivHide = styles.parentchildoff;
-    const childrenDivShow = styles.childparenton;
-    const childrenDivHide = styles.childparentoff;
-    const anmationEnd = styles.animationEndHideChild;
-    const scaleUp = styles.modelScaleUpAnimation;
-    const scaleDown = styles.modelScaleDownAnimation;
     const [showParent, setShowParent] = useState("");
     const [hideParent, setHideParent] = useState("");
     const [showChild, setShowChild] = useState("");
@@ -59,13 +47,13 @@ const Home = () => {
 
     const HandleClick = () => {
         setTimeout(() => { setOpen(true) }, 100)
-        setHideParent(parentDivHide)
-        setShowChild(childrenDivShow)
+        setHideParent(styles.parentchildoff)
+        setShowChild(styles.childparenton)
     }
     const changeDuration = () => {
         setTimeout(() => setOpen(false));
-        setTimeout(() => setHideChild(childrenDivHide))
-        setTimeout(() => setShowParent(parentDivShow))
+        setTimeout(() => setHideChild(styles.childparentoff))
+        setTimeout(() => setShowParent(styles.parentchildon))
         setTimeout(() => setHideChild(true), 2000)
         setTimeout(() => setDown(false));
     }
@@ -130,8 +118,6 @@ const Home = () => {
     const LogoImage = "/images/Logo.svg"
 
 
-    //  console.log('hide', hideChild);
-
     return (
         <>
 
@@ -165,29 +151,30 @@ const Home = () => {
                     <div className={` grid grid-cols-12 ${!open ? showParent : hideParent}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
-                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${styles.cardAnimation} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
-                                    <div className={`flex space-x-4 md:block md:space-x-0 image-card  `}>
-                                        <Image alt='start' src='/images/start.png' height='200' width='200' className={`md:mx-auto`} />
+                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                    <div className={` space-x-4 md:block md:space-x-0 image-card  `}>
+                                        {/* <Image alt='start' src='/images/start.png' height='200' width='200' className={`md:mx-auto`} /> */}
 
-                                        {/* <div className='relative'>
-
-                                            <div className={`${styles2.startDoorAnimateOpen}`} >
-                                                <Image alt='start' src='/images/DoorOpen.svg' height='200' width='200' className={`md:mx-auto`} />
+                                        <div className={`py-20 `}>
+                                            <Image className={`absolute top-10 left-20`} src="/doorImage/door1.png" width={150} height={150} />
+                                            <div className={`${Styles.child} absolute top-10 left-[108px]`}>
+                                                <Image className={``} src="/doorImage/door2.png" width={58} height={58} />
+                                                <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} />
                                             </div>
-                                            <div className={`${styles2.startDoorAnimateClose} absolute top-0 left-[60px] `}>
-                                                <Image alt='start' src='/images/DoorClose.svg' height='200' width='200' className={`md:mx-auto`} />
+
+                                            <div className='w-full absolute right-2 top-48'>
+                                                <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
+                                                <p className={`mt-2 ${Styles.hide1}   md:text-center lineUp`}>have a question? get in touch!</p>
                                             </div>
-                                        </div> */}
-
-
-                                        <div className='w-full'>
-                                            <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-2 ${styles.hide}   md:text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
+                                        <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
+                                            <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                                        </div>
+
                                     </div>
-                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
-                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
-                                    </div>
+
+
+
                                 </div>
 
                                 <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray`} onClick={() => { HandleClick(); }}>
@@ -251,9 +238,9 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? anmationEnd : ""} ${open ? showChild : hideChild}  `} >
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild}  `} >
                         <div className=" relative ">
-                            <div className={` bg-transparent relative  border border-bordergray ${open ? scaleUp : scaleDown} `}>
+                            <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <div className='flex justify-between '>
                                     <h2 className=' font-normal py-2 pb-4'>Welcome Back !</h2>
 
