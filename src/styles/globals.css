@@ -10,22 +10,26 @@ a {
   text-decoration: none;
 }
 
-body {
-  font-family: Barlow sans-serif;
-  font-style: normal;
-  font-weight: 400
-}
+
 
 
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 }
 
 
 @layer base {
+
+  html,
+  body {
+    @apply font-sans;
+
+
+  }
+
   h1 {
     @apply text-4xl;
     font-style: normal;
@@ -63,9 +67,12 @@ body {
   p {
 
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
+    font-size: 33px;
   }
 }
+
+
 
 
 .Boxshadow {

@@ -17,7 +17,11 @@ module.exports = {
         white: '#FFFFFF',
         gray: '#949494',
         dakgray: '#393939'
-      }
+      },
+
+      fontFamily: {
+        Barlow: ['Barlow', 'sans-serif'],
+      },
 
     },
 

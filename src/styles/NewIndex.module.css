@@ -1,7 +1,7 @@
 .parentchildon {
     animation-name: animateparenton;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 500ms;
     animation-timing-function: linear;
 
 }
@@ -35,7 +35,7 @@
 .parentchildoff {
     animation-name: animateparentoff;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 500ms;
     animation-timing-function: linear;
 
 }
@@ -109,19 +109,13 @@
 
     animation-name: animatechildon;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 500ms;
     position: absolute;
     animation-timing-function: linear;
-
-
-
 
 }
 
 @keyframes animatechildon {
-
-
-
 
     0% {
         left: 0px;
@@ -159,7 +153,7 @@
 
         animation-name: animatechildoff;
         animation-fill-mode: forwards;
-        animation-duration: 1s;
+        animation-duration: 500ms;
         animation-timing-function: linear;
         position: absolute;
 
@@ -200,7 +194,7 @@
 
         animation-name: animatechildon;
         animation-fill-mode: forwards;
-        animation-duration: 2s;
+        animation-duration: 500ms;
         position: absolute;
         animation-timing-function: linear;
 
@@ -341,7 +335,7 @@ screen and (max-height: 700px) {
 
         animation-name: animatechildoff;
         animation-fill-mode: forwards;
-        animation-duration: 1s;
+        animation-duration: 500ms;
         animation-timing-function: linear;
         position: absolute;
 
@@ -382,7 +376,7 @@ screen and (max-height: 700px) {
 
         animation-name: animatechildon;
         animation-fill-mode: forwards;
-        animation-duration: 1s;
+        animation-duration: 500ms;
         position: absolute;
         animation-timing-function: linear;
 
@@ -436,7 +430,7 @@ screen and (max-height: 700px) {
 
     animation-name: modelScaleUp;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 500ms;
     animation-timing-function: linear;
 }
 
@@ -470,7 +464,7 @@ screen and (max-height: 700px) {
 
     animation-name: modelScaleDown;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 500ms;
     animation-timing-function: linear;
 }
 

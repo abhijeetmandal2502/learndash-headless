@@ -16,6 +16,7 @@ import MusicCard from 'components/card/MusicCard'
 import LogoCard from 'components/card/LogoCard'
 import Styles from '../../components/card/animatedDoor/Door.module.css'
 import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
+import IwannaTech from 'components/TeacherLounge/IwannaTech'
 
 
 
@@ -40,22 +41,24 @@ const Home = () => {
     // teacher lounge 
 
     const [openTeacherLogin, setOpenTeacherLogin] = useState(false);
-    const [closeTeacherLogin, setCloseTeacherLogin] = useState(false)
 
 
-    const handleTeacherLOgin = () => {
 
+    const handleTeacherLOginOpen = () => {
 
-        setTimeout(() => {
-
-            setCloseTeacherLogin(TeacherCss.hide)
-        }, 1000)
-
-        setOpenTeacherLogin(false)
+        setOpenTeacherLogin(true)
+        // openTeacherLogin === false ? TeacherCss.closeModel 
 
     }
 
-    // console.log("closeTeacherLogin", closeTeacherLogin);
+
+    const handleTeacherLOginClose = () => {
+
+        setOpenTeacherLogin(false);
+
+        // openTeacherLogin === false ? TeacherCss.closeModel 
+
+    }
 
 
     // for start 
@@ -134,9 +137,20 @@ const Home = () => {
     }
     const HideMenuMethod = () => {
         setOn(false)
+
+        setTimeout(() => {
+            setOff(false)
+        }, 1000)
     }
 
     const LogoImage = "/images/Logo.svg"
+
+
+
+    console.log('On', On)
+    // console.log('start', start)
+
+
 
 
     return (
@@ -145,7 +159,7 @@ const Home = () => {
             <Head> LearnDash </Head>
 
 
-            <div className={`grid grid-cols-12 md:h-screen ${openTeacherLogin === true ? "bg-[url('/images/teacherLoungeBg.png')]" : "bg-[url('/images/bg-image.png')]"} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+            <div className={`grid grid-cols-12 md:h-screen overflow-hidden ${openTeacherLogin === true ? "bg-[url('/images/teacherLoungeBg.png')]" : "bg-[url('/images/bg-image.png')]"} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
                 <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
@@ -169,7 +183,7 @@ const Home = () => {
 
 
                 <div className={`col-span-12 md:col-span-5 z-10 relative  ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
-                    <div className={` grid grid-cols-12 ${!open ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow}`}>
+                    <div className={` grid grid-cols-12 ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
                                 <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
@@ -179,7 +193,7 @@ const Home = () => {
                                             <div className={`  ${Styles.imageDiv}`}>
                                                 <Image src="/doorImage/door1.png" width={150} height={150} className="h-[150px]" alt="door" />
                                                 <div className={`${Styles.child} absolute top-0 left-[28px]`}>
-                                                    <Image className={``} src="/doorImage/door2.png" width={58} height={58} alt="door" />
+                                                    <Image className={``} src="/doorImage/door2.png" width={61} height={61} alt="door" />
                                                     <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} alt="door" />
                                                 </div>
 
@@ -245,7 +259,7 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} relative overflow-hidden`} onClick={() => setOpenTeacherLogin(true)} >
+                                <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden`} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
@@ -260,7 +274,11 @@ const Home = () => {
 
                             </div>
                         </div>
+
+
+
                     </div>
+                    {openTeacherLogin ? <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40`}><IwannaTech /></div> : ""}
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild}  `} >
                         <div className=" relative ">
@@ -278,17 +296,19 @@ const Home = () => {
                     </div>
 
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : ""} ${openTeacherLogin === false ? TeacherCss.hide : ""}  ${openTeacherLogin === false ? TeacherCss.closeModel : ""}   `} >
-                        <div className=" relative  ">
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel}  `} >
+                        <div className=" relative ">
                             <div className={` bg-white relative  border border-bordergray p-10 `}>
                                 <div className='flex justify-between '>
-                                    <h2 className=' font-normal py-2 pb-4'>Teacher’s Lounge</h2>
+                                    <h2 className=' font-normal py-2 pb-4'>Teacher s Lounge</h2>
 
                                 </div>
-                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOgin()}><AiOutlineClose /></button>
+                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOginClose()}><AiOutlineClose /></button>
 
                                 <LoginModel />
                             </div>
+
+
 
                         </div>
                     </div>
@@ -347,7 +367,7 @@ const Home = () => {
 
             </div>
 
-            <div className={` ${On == true ? styles2.toggleOn : styles2.toggleOff}`}>
+            <div className={` ${On === true ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} `}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
 

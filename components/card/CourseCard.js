@@ -78,11 +78,11 @@ const CourseCard = () => {
                                 <MdOutlineWatchLater />
                                 <div>{item.duration}</div>
                             </div>
-                            <div className='text-2xl'>
+                            <div className='text-[33px]'>
                                 ${item.price}
                             </div>
                         </div>
-                        <div className='pt-24 text-3xl'>
+                        <div className='pt-24 text-[33px]'>
                             {item.discription}
                         </div>
                         <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} `} >

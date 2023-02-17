@@ -52,27 +52,42 @@
     overflow: hidden;
     animation-duration: 1s;
     position: absolute;
-    width: 100vw
+    width: 0vw;
+    -webkit-animation-name: MenuToggleOn 1000ms forwards linear;
 }
 
 @keyframes MenuToggleOn {
 
 
-    from {
+    0% {
 
 
         top: 0;
-        left: 2000px;
+        left: 0px;
         opacity: 0;
-        overflow-x: hidden;
+        z-index: 0;
+        transform: translateX(2000px);
+        visibility: hidden;
+        width: 0;
+        height: 0;
     }
 
-    to {
+    1% {
 
         top: 0;
         left: 0px;
         opacity: 1;
         display: block;
+    }
+
+    100% {
+
+        top: 0;
+        left: 0px;
+        opacity: 1;
+        display: block;
+        width: 100vw;
+        visibility: visible;
     }
 }
 
@@ -83,31 +98,51 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     overflow: hidden;
-    animation-duration: 1.5s;
+    animation-duration: 1000ms;
     position: absolute;
-    width: 100vw;
+    width: 0vw;
+    opacity: 0;
+    -webkit-animation-name: MenuToggleOff 1000ms forwards linear;
+    transition: all linear 1000ms;
 
 }
 
 @keyframes MenuToggleOff {
 
 
-    from {
+    0% {
 
 
         top: 0;
         left: 0px;
         opacity: 1;
+        visibility: visible;
+        transform: none;
+        width: 100vw;
     }
 
-    to {
+    99% {
 
         top: 0;
-        left: 2000px;
+        left: 0px;
         opacity: 0;
         z-index: 0;
+        transform: translateX(2000px);
+        visibility: hidden;
+
+    }
 
 
+    100% {
+
+        top: 0;
+        left: 0px;
+        opacity: 0;
+        z-index: 0;
+        transform: translateX(2000px);
+        visibility: hidden;
+        width: 0;
+        height: 0;
     }
 }
 
