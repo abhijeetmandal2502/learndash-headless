@@ -203,7 +203,7 @@ const Home = () => {
 
                                         <div className='w-full pt-2'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-2 ${Styles.hide1}   md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-1 ${Styles.hide1}   md:text-center lineUp`}>start a course today!</p>
                                         </div>
 
 
@@ -221,7 +221,7 @@ const Home = () => {
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>i’m back</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>existing user login</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -264,7 +264,7 @@ const Home = () => {
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='font-semibold lineUp md:text-center text-3xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >

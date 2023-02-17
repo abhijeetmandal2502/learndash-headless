@@ -11,7 +11,7 @@
     /* color: #9747FF; */
     cursor: pointer;
     z-index: 100;
-    transition: all ease-in-out 1s;
+    transition: all ease-in-out 500ms;
 }
 
 
@@ -21,7 +21,7 @@
     color: black;
     cursor: pointer;
     z-index: 100;
-    transition: all ease-in-out 1s;
+    transition: all ease-in-out 500ms;
 }
 
 
@@ -34,8 +34,8 @@
 .cardBackgroundHover:hover .hide1 {
 
     color: #9747FF;
-    transition: color 5s ease-in;
-    animation: animateText 1s linear both;
+    transition: color 500ms ease-in;
+    animation: animateText 500ms linear both;
     display: block;
 }
 
@@ -59,8 +59,8 @@
 .cardBackgroundHover .hide1 {
 
     color: #9747FF;
-    transition: color 5s ease-in;
-    animation: animateTextHide 1s linear both;
+    transition: color 500ms ease-in;
+    animation: animateTextHide 500ms linear both;
     display: block;
 
 }
