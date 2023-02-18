@@ -53,7 +53,7 @@
     animation-duration: 1s;
     position: absolute;
     width: 0vw;
-    -webkit-animation-name: MenuToggleOn 1000ms forwards linear;
+    /* -webkit-animation-name: MenuToggleOn 1000ms forwards linear; */
 }
 
 @keyframes MenuToggleOn {
@@ -102,7 +102,7 @@
     position: absolute;
     width: 0vw;
     opacity: 0;
-    -webkit-animation-name: MenuToggleOff 1000ms forwards linear;
+    /* -webkit-animation-name: MenuToggleOff 1000ms forwards linear; */
     transition: all linear 1000ms;
 
 }
@@ -210,4 +210,13 @@
     to {
         opacity: 0;
     }
+}
+
+
+
+.hideNcbtmbdiv {
+
+    visibility: hidden;
+    width: 0;
+    height: 0;
 }

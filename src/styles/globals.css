@@ -23,12 +23,7 @@ body {
 
 @layer base {
 
-  html,
-  body {
-    @apply font-sans;
 
-
-  }
 
   h1 {
     @apply text-4xl;
@@ -317,14 +312,6 @@ ol {
   border-radius: 10px;
 }
 
-
-/* .anmationEnd {
-
-  position: absolute;
-  bottom: 0px;
-  left: -220px;
-  opacity: 0;
-} */
 
 
 .anmationEnd {

@@ -28,19 +28,19 @@ const Home = () => {
     const [down, setDown] = useState(false);
     // for conceierge
 
-    const [showConceierge, setShowConceierge] = useState(false);
+    const [showConceierge, setShowConceierge] = useState();
 
     // for ncbtmb 
 
-    const [showNcbtmb, setShowNcbtmb] = useState(false);
+    const [showNcbtmb, setShowNcbtmb] = useState();
 
     // for menu open close 
 
-    const [On, setOn] = useState(false);
+    const [On, setOn] = useState("");
 
     // teacher lounge 
 
-    const [openTeacherLogin, setOpenTeacherLogin] = useState(false);
+    const [openTeacherLogin, setOpenTeacherLogin] = useState();
 
 
 
@@ -56,14 +56,14 @@ const Home = () => {
 
         setOpenTeacherLogin(false);
 
-        // openTeacherLogin === false ? TeacherCss.closeModel 
+
 
     }
 
 
     // for start 
 
-    const [start, setStart] = useState(false)
+    const [start, setStart] = useState()
     const [showParent, setShowParent] = useState("");
     const [hideParent, setHideParent] = useState("");
     const [showChild, setShowChild] = useState("");
@@ -137,17 +137,13 @@ const Home = () => {
     }
     const HideMenuMethod = () => {
         setOn(false)
-
-        setTimeout(() => {
-            setOff(false)
-        }, 1000)
     }
 
     const LogoImage = "/images/Logo.svg"
 
 
 
-    console.log('On', On)
+    console.log('showNcbtmb', showNcbtmb)
     // console.log('start', start)
 
 
@@ -172,11 +168,11 @@ const Home = () => {
                     </div>
 
                     {/* conceierge components */}
-                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} absolute top-36 left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
+                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-36 left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
 
-                    <div className={`absolute top-36 left-10 w-full ${showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
+                    <div className={`absolute top-36 left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
 
 
                 </div>
@@ -296,7 +292,7 @@ const Home = () => {
                     </div>
 
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel}  `} >
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-white relative  border border-bordergray p-10 `}>
                                 <div className='flex justify-between '>
@@ -317,9 +313,9 @@ const Home = () => {
                 </div>
 
                 {
-                    <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1} grid grid-cols-12`}>
+                    <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                         <div className='col-span-6 p-10'>
-                            <div className='flex justify-between items-center space-x-5 cursor-pointer '>
+                            {/* <div className='flex justify-between items-center space-x-5 cursor-pointer '>
                                 <Image src='/images/logo.png' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]' />
                                 <div className='flex max-sm:visible invisible items-center justify-center space-x-2 '>
                                     <p className='font-semibold text-lg'>menu</p>
@@ -327,7 +323,8 @@ const Home = () => {
                                 </div>
 
 
-                            </div>
+                            </div> */}
+                            <LogoCard LogoImage={LogoImage} />
                             <SimplyChoose startMethodHide={startMethodHide} />
                         </div>
                         <div className='col-span-5 '>
