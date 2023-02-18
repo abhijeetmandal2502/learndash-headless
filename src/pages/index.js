@@ -36,7 +36,7 @@ const Home = () => {
 
     // for menu open close 
 
-    const [On, setOn] = useState("");
+    const [On, setOn] = useState();
 
     // teacher lounge 
 
@@ -145,6 +145,7 @@ const Home = () => {
 
     console.log('showNcbtmb', showNcbtmb)
     // console.log('start', start)
+    console.log('start', start)
 
 
 
@@ -244,7 +245,7 @@ const Home = () => {
 
                                 <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/NCBTMB-Approved.png' height='120' width='120' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>ncbtmb approved</h3>
                                             <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>check if your state is approved</p>
@@ -276,7 +277,7 @@ const Home = () => {
                     </div>
                     {openTeacherLogin ? <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40`}><IwannaTech /></div> : ""}
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild}  `} >
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <div className='flex justify-between '>
@@ -312,29 +313,21 @@ const Home = () => {
 
                 </div>
 
-                {
-                    <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
-                        <div className='col-span-6 p-10'>
-                            {/* <div className='flex justify-between items-center space-x-5 cursor-pointer '>
-                                <Image src='/images/logo.png' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]' />
-                                <div className='flex max-sm:visible invisible items-center justify-center space-x-2 '>
-                                    <p className='font-semibold text-lg'>menu</p>
-                                    <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
-                                </div>
 
+                <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
+                    <div className={`col-span-6 ${start === true ? styles2.paddingLogo : ""} ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
 
-                            </div> */}
-                            <LogoCard LogoImage={LogoImage} />
-                            <SimplyChoose startMethodHide={startMethodHide} />
-                        </div>
-                        <div className='col-span-5 '>
-                            <CourseInfo />
-                        </div>
-                        <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
-                            <SideMenu />
-                        </div>
+                        <LogoCard LogoImage={LogoImage} />
+                        <SimplyChoose startMethodHide={startMethodHide} />
                     </div>
-                }
+                    <div className='col-span-5 '>
+                        <CourseInfo />
+                    </div>
+                    <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
+                        <SideMenu />
+                    </div>
+                </div>
+
 
 
                 <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
@@ -364,7 +357,7 @@ const Home = () => {
 
             </div>
 
-            <div className={` ${On === true ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} `}>
+            <div className={` ${On === true ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
 
