@@ -169,11 +169,11 @@ const Home = () => {
                     </div>
 
                     {/* conceierge components */}
-                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-36 left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
+                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-28 left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
 
-                    <div className={`absolute top-36 left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
+                    <div className={`absolute top-28 left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
 
 
                 </div>
@@ -188,19 +188,19 @@ const Home = () => {
 
                                         <div className='flex justify-center '>
                                             <div className={`  ${Styles.imageDiv}`}>
-                                                <Image src="/doorImage/door1.png" width={150} height={150} className="h-[150px]" alt="door" />
-                                                <div className={`${Styles.child} absolute top-0 left-[28px]`}>
-                                                    <Image className={``} src="/doorImage/door2.png" width={61} height={61} alt="door" />
-                                                    <Image className={`absolute top-10 left-8 `} src="/doorImage/door3.png" width={5} height={5} alt="door" />
+                                                <Image src="/images/doorframe.svg" width={200} height={200} className="h-[200px]" alt="door" />
+                                                <div className={`${Styles.child} absolute top-[7px] left-[37.5px]`}>
+                                                    <Image className={``} src="/images/doorgate.svg" width={98} height={98} alt="door" />
+                                                    <Image className={`absolute top-[78px] left-[80px] `} src="/images/doorHandle.svg" width={3} height={3} alt="door" />
                                                 </div>
 
 
                                             </div>
                                         </div>
 
-                                        <div className='w-full pt-2'>
+                                        <div className='w-full pt-3'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-1 ${Styles.hide1}   md:text-center lineUp`}>start a course today!</p>
+                                            <p className={`mt-1 ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
                                         </div>
 
 
@@ -215,10 +215,10 @@ const Home = () => {
                                 <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray`} onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
-                                        <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/IamBack.svg' height='88' width='88' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>i’m back</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>existing user login</p>
+                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>existing user login</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -232,10 +232,10 @@ const Home = () => {
                             <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
                                 <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer`} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <Image alt='start' src='/images/Concierge.png' height='65' width='65' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/Concierge.svg' height='88' width='88' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>concierge</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -245,10 +245,10 @@ const Home = () => {
 
                                 <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/ncbtmb.svg' height='140' width='140' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>ncbtmb approved</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>check if your state is approved</p>
+                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -258,10 +258,10 @@ const Home = () => {
 
                                 <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden`} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/teacherLounge.svg' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='font-semibold lineUp md:text-center text-3xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>existing instructor please login here!</p>
+                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -315,16 +315,15 @@ const Home = () => {
 
 
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
-                    <div className={`col-span-6 ${start === true ? styles2.paddingLogo : ""} ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                    <div className={`col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
 
 
-                        <LogoCard LogoImage={LogoImage} />
                         <SimplyChoose startMethodHide={startMethodHide} />
 
                     </div>
-                    <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                    {/* <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <CourseInfo />
-                    </div>
+                    </div> */}
                     <div className={`col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu />
                     </div>

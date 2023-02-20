@@ -28,10 +28,13 @@
     opacity: 0;
 }
 
-.showLine {
+.navli:hover.showLine {
     opacity: 1;
     color: #9747FF;
+    transition: all ease-in-out 500ms;
+
 }
+
 
 /* css for Nav component */
 
@@ -40,9 +43,24 @@
 
     color: #9747FF;
     font-size: 1.9rem;
-    -webkit-transition: color 700ms linear;
-    -ms-transition: color 700ms linear;
-    transition: color 700ms linear;
+    -webkit-transition: all 700ms ease-in-out;
+    -ms-transition: all 700ms ease-in-out;
+    transition: color 700ms ease-in-out;
+    font-weight: bold;
+
+
+
+}
+
+
+.navli {
+
+    color: white;
+    font-size: 1.9rem;
+    -webkit-transition: all 700ms ease-in-out;
+    -ms-transition: all 700ms ease-in-out;
+    transition: color 700ms ease-in-out;
+    font-weight: bold;
 
 
 
@@ -52,12 +70,23 @@
 
     opacity: 1;
     font-size: 1.9rem;
-    -webkit-transition: color 700ms linear;
-    -ms-transition: color 700ms linear;
-    transition: color 700ms linear;
+    -webkit-transition: all 700ms ease-in-out;
+    -ms-transition: all 700ms ease-in-out;
+    transition: all 700ms ease-in-out;
 
 }
 
+
+.navli>.hide {
+
+    opacity: 0;
+    color: #9747FF;
+    font-size: 1.9rem;
+    -webkit-transition: all 700ms ease-in-out;
+    -ms-transition: all 700ms ease-in-out;
+    transition: all 700ms ease-in-out;
+
+}
 
 .defaultBackground {
 

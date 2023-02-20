@@ -9,9 +9,9 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
       <div className=' bg-transparent '>
 
         <button className='flex items-center space-x-1 bg-black text-white px-3 py-1.5 rounded-3xl my-5' onClick={() => ncbtmbMethodHide()}>
-          <BiArrowBack size={20} className="text-white bg-black" /><span className='text-sm'>lobby</span></button>
+          <BiArrowBack size={20} className="text-white bg-black" /><span className='text-sm font-semibold'>lobby</span></button>
 
-        <div className='flex space-x-16 items-center'>
+        <div className='flex space-x-16 items-center mt-20'>
           <div>
 
             <h2 className='text-6xl  leading-tight'>all courses<br></br>ncbtmb<br></br>approved.</h2>
@@ -23,12 +23,12 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
                   <div className='py-2'>
                     accepted in your state?
                   </div>
-                  <select name="cars" id="cars" className='bg-white border border-bordergray px-24 py-1 outline-none my-1 '>
-                    <option className='bg-white border-bordergray px-10 py-1 my-2' value="volvo">Select...</option>
-                    <option value="volvo">Alabama</option>
-                    <option value="saab">Alaska</option>
-                    <option value="mercedes">Arizona</option>
-                    <option value="audi">Arkansas</option>
+                  <select name="cars" id="cars" className='bg-white border border-bordergray w-72 py-2 outline-none my-1 text-left text-gray '>
+                    <option className='bg-white border-bordergray px-10 text-gray py-2 text-left' value="volvo">Select...</option>
+                    <option className='bg-white border-bordergray px-10 text-gray py-2 text-left' value="">Alabama</option>
+                    <option className='bg-white border-bordergray px-10 text-gray py-2 text-left' value="">Alaska</option>
+                    <option className='bg-white border-bordergray px-10 text-gray py-2 text-left' value="">Arizona</option>
+                    <option className='bg-white border-bordergray px-10 text-gray py-2 text-left' value="">Arkansas</option>
                   </select>
                 </div>
 

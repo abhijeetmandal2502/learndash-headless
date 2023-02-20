@@ -55,15 +55,15 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     </div>
 
 
-                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-1.5 rounded-3xl my-5 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
-                        <BiArrowBack size={20} className="text-white" /><span className='text-sm'>lobby</span></button> : ""}
+                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-1.5 rounded-3xl  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
+                        <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
 
-                    {On ? <div className={`grid grid-cols-12 mt-0  ${!show ? styles.hide : styles.aboutMain}  `}>
+                    {On ? <div className={`grid grid-cols-12 mt-0  ${!show ? styles.hide : styles.aboutMain} mt-20`}>
 
 
 
-                        <div className=" md:col-span-8 col-span-12  bg-transparent  ">
-                            <div className="px-4 ">
+                        <div className=" md:col-span-8 col-span-12  bg-transparent ">
+                            <div className=" ">
                                 <div className="tab-content tab-space ">
                                     <div className={`${openTab > 0 ? "hidden" : "block"} `}>
                                         <Contact />

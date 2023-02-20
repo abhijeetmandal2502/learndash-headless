@@ -28,6 +28,9 @@
 .hide1 {
 
     display: none;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+
 }
 
 
@@ -77,6 +80,74 @@
     }
 
 
+
+
+}
+
+
+
+.show1 {
+
+    display: block;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+    animation: showAnimate 1s ease-in-out forwards;
+}
+
+@keyframes showAnimate {
+
+
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+
+}
+
+
+.fadeAnimation {
+    animation: fadeAnimate 1s ease;
+}
+
+@keyframes fadeAnimate {
+
+
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+
+}
+
+.fadeAnimationhide {
+    animation: fadeAnimatehide 1s ease;
+}
+
+@keyframes fadeAnimatehide {
+
+
+    from {
+        opacity: 1;
+
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
 
 
 }

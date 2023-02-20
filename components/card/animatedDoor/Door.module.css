@@ -47,7 +47,7 @@
 
     from {
         transform: scale(1.0);
-        transform: translateY(10px);
+        transform: translateY(15px);
 
     }
 
@@ -74,7 +74,7 @@
 
     to {
         transform: scale(1.0);
-        transform: translateY(10px);
+        transform: translateY(15px);
 
     }
 

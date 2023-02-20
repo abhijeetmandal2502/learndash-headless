@@ -16,6 +16,7 @@ import MusicCard from 'components/card/MusicCard'
 import LogoCard from 'components/card/LogoCard'
 import Styles from '../../components/card/animatedDoor/Door.module.css'
 import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
+import IwannaTech from 'components/TeacherLounge/IwannaTech'
 
 
 
@@ -27,40 +28,42 @@ const Home = () => {
     const [down, setDown] = useState(false);
     // for conceierge
 
-    const [showConceierge, setShowConceierge] = useState(false);
+    const [showConceierge, setShowConceierge] = useState();
 
     // for ncbtmb 
 
-    const [showNcbtmb, setShowNcbtmb] = useState(false);
+    const [showNcbtmb, setShowNcbtmb] = useState();
 
     // for menu open close 
 
-    const [On, setOn] = useState(false);
+    const [On, setOn] = useState();
 
     // teacher lounge 
 
-    const [openTeacherLogin, setOpenTeacherLogin] = useState(false);
-    const [closeTeacherLogin, setCloseTeacherLogin] = useState(false)
+    const [openTeacherLogin, setOpenTeacherLogin] = useState();
 
 
-    const handleTeacherLOgin = () => {
 
+    const handleTeacherLOginOpen = () => {
 
-        setTimeout(() => {
-
-            setCloseTeacherLogin(TeacherCss.hide)
-        }, 1000)
-
-        setOpenTeacherLogin(false)
+        setOpenTeacherLogin(true)
+        // openTeacherLogin === false ? TeacherCss.closeModel 
 
     }
 
-    // console.log("closeTeacherLogin", closeTeacherLogin);
+
+    const handleTeacherLOginClose = () => {
+
+        setOpenTeacherLogin(false);
+
+
+
+    }
 
 
     // for start 
 
-    const [start, setStart] = useState(false)
+    const [start, setStart] = useState()
     const [showParent, setShowParent] = useState("");
     const [hideParent, setHideParent] = useState("");
     const [showChild, setShowChild] = useState("");
@@ -139,13 +142,21 @@ const Home = () => {
     const LogoImage = "/images/Logo.svg"
 
 
+
+    console.log('showNcbtmb', showNcbtmb)
+    // console.log('start', start)
+    console.log('start', start)
+
+
+
+
     return (
         <>
 
             <Head> LearnDash </Head>
 
 
-            <div className={`grid grid-cols-12 md:h-screen ${openTeacherLogin === true ? "bg-[url('/images/teacherLoungeBg.png')]" : "bg-[url('/images/bg-image.png')]"} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+            <div className={`grid grid-cols-12 md:h-screen h-screen overflow-hidden ${openTeacherLogin === true ? "bg-[url('/images/teacherLoungeBg.png')]" : "bg-[url('/images/bg-image.png')]"} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
                 <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
@@ -158,18 +169,18 @@ const Home = () => {
                     </div>
 
                     {/* conceierge components */}
-                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} absolute top-36 left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
+                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-36 left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
 
-                    <div className={`absolute top-36 left-10 w-full ${showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
+                    <div className={`absolute top-36 left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
 
 
                 </div>
 
 
                 <div className={`col-span-12 md:col-span-5 z-10 relative  ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
-                    <div className={` grid grid-cols-12 ${!open ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow}`}>
+                    <div className={` grid grid-cols-12 ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
                                 <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
@@ -189,7 +200,7 @@ const Home = () => {
 
                                         <div className='w-full pt-2'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-2 ${Styles.hide1}   md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-1 ${Styles.hide1}   md:text-center lineUp`}>start a course today!</p>
                                         </div>
 
 
@@ -207,7 +218,7 @@ const Home = () => {
                                         <Image alt='start' src='/images/Im-Back.png' height='65' width='65' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>i’m back</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>existing user login</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -234,7 +245,7 @@ const Home = () => {
 
                                 <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/NCBTMB-Approved.png' height='120' width='120' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/ncbtmb.svg' height='140' width='140' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>ncbtmb approved</h3>
                                             <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>check if your state is approved</p>
@@ -245,12 +256,12 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} relative overflow-hidden`} onClick={() => setOpenTeacherLogin(true)} >
+                                <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden`} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/Teacher-Lounge.png' height='70' width='51' className='md:mx-auto ' />
                                         <div className='w-full'>
                                             <h3 className='font-semibold lineUp md:text-center text-3xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>have a question? get in touch!</p>
+                                            <p className={`mt-2 ${styles.hide} md:text-center lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -260,9 +271,13 @@ const Home = () => {
 
                             </div>
                         </div>
-                    </div>
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild}  `} >
+
+
+                    </div>
+                    {openTeacherLogin ? <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40`}><IwannaTech /></div> : ""}
+
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <div className='flex justify-between '>
@@ -278,17 +293,19 @@ const Home = () => {
                     </div>
 
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : ""} ${openTeacherLogin === false ? TeacherCss.hide : ""}  ${openTeacherLogin === false ? TeacherCss.closeModel : ""}   `} >
-                        <div className=" relative  ">
+                    <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
+                        <div className=" relative ">
                             <div className={` bg-white relative  border border-bordergray p-10 `}>
                                 <div className='flex justify-between '>
-                                    <h2 className=' font-normal py-2 pb-4'>Teacher’s Lounge</h2>
+                                    <h2 className=' font-normal py-2 pb-4'>Teacher s Lounge</h2>
 
                                 </div>
-                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOgin()}><AiOutlineClose /></button>
+                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOginClose()}><AiOutlineClose /></button>
 
                                 <LoginModel />
                             </div>
+
+
 
                         </div>
                     </div>
@@ -296,28 +313,23 @@ const Home = () => {
 
                 </div>
 
-                {
-                    <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1} grid grid-cols-12`}>
-                        <div className='col-span-6 p-10'>
-                            <div className='flex justify-between items-center space-x-5 cursor-pointer '>
-                                <Image src='/images/logo.png' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]' />
-                                <div className='flex max-sm:visible invisible items-center justify-center space-x-2 '>
-                                    <p className='font-semibold text-lg'>menu</p>
-                                    <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
-                                </div>
+
+                <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
+                    <div className={`col-span-6 ${start === true ? styles2.paddingLogo : ""} ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
 
 
-                            </div>
-                            <SimplyChoose startMethodHide={startMethodHide} />
-                        </div>
-                        <div className='col-span-5 '>
-                            <CourseInfo />
-                        </div>
-                        <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
-                            <SideMenu />
-                        </div>
+                        <LogoCard LogoImage={LogoImage} />
+                        <SimplyChoose startMethodHide={startMethodHide} />
+
                     </div>
-                }
+                    <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                        <CourseInfo />
+                    </div>
+                    <div className={`col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                        <SideMenu />
+                    </div>
+                </div>
+
 
 
                 <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
@@ -347,7 +359,7 @@ const Home = () => {
 
             </div>
 
-            <div className={` ${On == true ? styles2.toggleOn : styles2.toggleOff}`}>
+            <div className={` ${On === true ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
 
