@@ -1,0 +1,60 @@
+.element {
+
+    color: black;
+    font-weight: 600;
+    transition: all 500ms ease-in-out;
+
+
+}
+
+
+.element:hover {
+    color: #9747FF;
+    font-weight: bold;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+
+
+.submitbtnbg {
+
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.submitbtnbg:hover {
+
+    color: white;
+    background-color: #9747FF;
+    font-weight: bold;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+
+
+
+/* updown animation for scroll btn */
+
+
+
+.UpDownAnimation {
+
+    animation: upDownAnimate linear 500ms infinite alternate;
+}
+
+
+@keyframes upDownAnimate {
+
+    0% {
+        transform: translateY(0);
+        font-weight: 600;
+    }
+
+    100% {
+        transform: translateY(-10px);
+        font-weight: 800;
+    }
+}

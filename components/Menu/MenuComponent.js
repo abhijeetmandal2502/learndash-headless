@@ -42,7 +42,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    // console.log('router', router.asPath);    
+    console.log('openTab', openTab)
 
     return (
         <>
@@ -101,7 +101,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                             className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12"
                             role="tablist"
                         >
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex justify-end items-center ${openTab === 1 ? 'text-voilet' : ""}`
+                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
@@ -115,9 +115,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 about
 
-                                <div className={`pl-2 text-4xl ${styles.hide} ${openTab === 1 ? styles.showLine : ""} `}><AiOutlineMinus /></div>
+                                <div className={`pl-2 text-4xl ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex justify-end items-center ${openTab === 2 ? 'text-voilet' : ""}`}
+                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(2);
@@ -129,9 +129,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 our instructors
 
-                                <div className={`pl-2 text-4xl ${styles.hide} ${openTab === 2 ? styles.showLine : ""} `}><AiOutlineMinus /></div>
+                                <div className={`pl-2 text-4xl  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex justify-end items-center ${openTab === 3 ? 'text-voilet' : ""}`}
+                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openTab === 3 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(3);
@@ -143,9 +143,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 blog central
 
-                                <div className={`pl-2 text-4xl ${styles.hide} ${openTab === 3 ? styles.showLine : ""}`}><AiOutlineMinus /></div>
+                                <div className={`pl-2 text-4xl  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex justify-end items-center ${openTab === 4 ? 'text-voilet' : ""}`}
+                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(4);
@@ -157,7 +157,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 i wanna teach!
 
-                                <div className={`pl-2 text-4xl ${styles.hide} ${openTab === 4 ? styles.showLine : ""}`}><AiOutlineMinus /></div>
+                                <div className={`pl-2 text-4xl ${openTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
                         </ul>
 

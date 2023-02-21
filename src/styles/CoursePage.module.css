@@ -85,6 +85,27 @@
 }
 
 
+.cardBackgroundHover:hover>.discriptionAnimation {
+
+    transition: all ease 1000ms;
+    transform: translateY(-10px);
+    animation: FadeUpText 1000ms ease forwards;
+
+}
+
+
+
+
+
+.cardBackgroundHover>.discriptionAnimation {
+
+    transition: all ease 1000ms;
+    transform: translateY(0px);
+
+}
+
+
+
 
 .show1 {
 
@@ -99,7 +120,7 @@
 
     from {
         opacity: 0;
-        transform: translateY(100px);
+        /* transform: translateY(100px); */
     }
 
     to {
@@ -111,7 +132,7 @@
 
 
 .fadeAnimation {
-    animation: fadeAnimate 1s ease;
+    animation: fadeAnimate 1s ease-in-out;
 }
 
 @keyframes fadeAnimate {
@@ -119,7 +140,7 @@
 
     from {
         opacity: 0;
-        transform: translateY(100px);
+        /* transform: translateY(100px); */
     }
 
     to {
@@ -143,11 +164,30 @@
 
     to {
         opacity: 0;
-        transform: translateY(100px);
+        /* transform: translateY(100px); */
         width: 0;
         height: 0;
         visibility: hidden;
     }
 
 
+}
+
+
+.submitbtnbg {
+
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.submitbtnbg:hover {
+
+    color: white;
+    background-color: #9747FF;
+    font-weight: bold;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
 }

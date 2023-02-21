@@ -28,6 +28,7 @@
     opacity: 0;
 }
 
+
 .navli:hover.showLine {
     opacity: 1;
     color: #9747FF;
@@ -52,6 +53,30 @@
 
 }
 
+
+.navli.active {
+
+    color: #9747FF;
+    font-size: 1.9rem;
+    -webkit-transition: all 700ms ease-in-out;
+    -ms-transition: all 700ms ease-in-out;
+    transition: color 700ms ease-in-out;
+    font-weight: bold;
+    opacity: 1;
+
+
+
+}
+
+.navli.activeShowLine {
+
+    opacity: 1;
+    color: #9747FF;
+    transition: all ease-in-out 500ms;
+
+
+
+}
 
 .navli {
 
