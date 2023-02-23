@@ -319,3 +319,16 @@ ol {
   bottom: 0;
   display: none !important;
 }
+
+
+
+
+/* select option {
+  background-color: #777;
+}
+
+select:focus {
+  border-color: #999;
+  box-shadow: 0 0 1px 2px #6db4ff;
+  outline: none;
+} */

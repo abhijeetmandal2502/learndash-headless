@@ -227,3 +227,10 @@
     padding: 40px;
     transition: 1s ease-in-out;
 }
+
+
+.lobby:hover {
+
+    background-color: #9747FF;
+    transition: all ease-in-out 500ms;
+}

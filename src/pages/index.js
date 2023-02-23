@@ -121,6 +121,8 @@ const Home = () => {
     const startMethod = () => {
 
         setStart(true)
+        setShowNcbtmb(false)
+        setShowConceierge(false)
     }
 
     // start hide method
@@ -158,7 +160,7 @@ const Home = () => {
 
             <div className={`grid grid-cols-12 md:h-screen h-screen overflow-hidden ${openTeacherLogin === true ? "bg-[url('/images/teacherLoungeBg.png')]" : "bg-[url('/images/bg-image.png')]"} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
-                <div className='flex flex-col justify-between p-10 col-span-12 md:col-span-6 relative '>
+                <div className='flex flex-col justify-between px-10 py-6 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
 
@@ -183,7 +185,7 @@ const Home = () => {
                     <div className={` grid grid-cols-12 ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
-                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation}  `} onClick={() => startMethod()} >
                                     <div className={` md:space-x-0  relative `}>
 
                                         <div className='flex justify-center '>
@@ -230,7 +232,7 @@ const Home = () => {
 
                         <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
                             <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
-                                <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer`} onClick={() => conceiergeMethod()}>
+                                <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}`} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Concierge.svg' height='88' width='88' className='md:mx-auto ' />
                                         <div className='w-full'>
@@ -243,7 +245,7 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation}`} onClick={() => ncbtmbMethod()}>
+                                <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150' className='md:mx-auto ' />
                                         <div className='w-full'>
@@ -325,7 +327,7 @@ const Home = () => {
                         <CourseInfo />
                     </div> */}
                     <div className={`col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-                        <SideMenu />
+                        <SideMenu ShowMenuMethod={ShowMenuMethod} />
                     </div>
                 </div>
 

@@ -93,14 +93,14 @@ const SimplyChoose = ({ startMethodHide }) => {
     return (
         <>
             <div className='grid grid-cols-12'>
-                <div className='col-span-6 pl-10'>
-                    <div className='pt-5'>
+                <div className={`col-span-6 pl-10 h-screen overflow-scroll ${styles.hidescrollBar}`}>
+                    <div className='pt-6'>
                         <LogoCard LogoImage={LogoImage} />
                     </div>
 
                     <div className=''>
 
-                        <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 rounded-3xl`} onClick={() => startMethodHide()}>
+                        <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => startMethodHide()}>
                             <BiArrowBack size={20} className="text-white " /><span className='text-sm '>lobby</span></button>
                     </div>
                     <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>

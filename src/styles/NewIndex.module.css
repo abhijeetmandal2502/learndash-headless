@@ -727,3 +727,14 @@ screen and (max-height: 700px) {
         transform: -rotateX(-60deg);
     }
 }
+
+
+
+.onclickCardAanimation {
+
+    background-color: rgba(128, 128, 128, 0.164);
+    color: #9747FF;
+    transition: all ease-in-out;
+}
+
+.onclickCardAanimation h3 {}

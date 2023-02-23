@@ -55,7 +55,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     </div>
 
 
-                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-1.5 rounded-3xl  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
+                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-1.5 rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
 
                     {On ? <div className={`grid grid-cols-12 mt-0  ${!show ? styles.hide : styles.aboutMain} mt-20`}>
