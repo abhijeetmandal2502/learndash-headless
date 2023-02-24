@@ -17,6 +17,7 @@ import LogoCard from 'components/card/LogoCard'
 import Styles from '../../components/card/animatedDoor/Door.module.css'
 import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
 import IwannaTech from 'components/TeacherLounge/IwannaTech'
+import ForgetPasswordModel from '../../components/ForgetPassword/ForgetPasswordModel'
 
 
 
@@ -141,13 +142,18 @@ const Home = () => {
         setOn(false)
     }
 
+
+    // forget password  for welcome back
+
+
+    const [forgetPassword, setForgetPassword] = useState();
+
+
     const LogoImage = "/images/Logo.svg"
 
 
 
-    console.log('showNcbtmb', showNcbtmb)
-    // console.log('start', start)
-    console.log('start', start)
+
 
 
 
@@ -273,13 +279,25 @@ const Home = () => {
 
                             </div>
                         </div>
-
-
-
                     </div>
                     {openTeacherLogin ? <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40`}><IwannaTech /></div> : ""}
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
+                        <div className=" relative ">
+                            <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
+                                {/* <div className='flex justify-between '>
+                                    <h2 className=' font-normal py-2 pb-4'>Welcome Back !</h2>
+
+                                </div>
+                                <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose /></button> */}
+
+                                <LoginModel changeDuration={changeDuration} title="welcome back !" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {/* <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <div className='flex justify-between '>
@@ -288,27 +306,25 @@ const Home = () => {
                                 </div>
                                 <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose /></button>
 
-                                <LoginModel />
+                                <ForgetPasswordModel />
                             </div>
 
                         </div>
-                    </div>
+                    </div> */}
+
 
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-white relative  border border-bordergray p-10 `}>
-                                <div className='flex justify-between '>
+                                {/* <div className='flex justify-between '>
                                     <h2 className=' font-normal py-2 pb-4'>Teacher s Lounge</h2>
 
                                 </div>
-                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOginClose()}><AiOutlineClose /></button>
+                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOginClose()}><AiOutlineClose /></button> */}
 
-                                <LoginModel />
+                                <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                             </div>
-
-
-
                         </div>
                     </div>
 
@@ -318,10 +334,7 @@ const Home = () => {
 
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-
-
                         <SimplyChoose startMethodHide={startMethodHide} />
-
                     </div>
                     {/* <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <CourseInfo />

@@ -4,14 +4,33 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link'
+import ForgetPasswordModel from '../components/ForgetPassword/ForgetPasswordModel';
 
-const LoginModel = () => {
+import styles from '../components/ForgetPassword/ForgetPassword.module.css'
+import { AiOutlineClose } from 'react-icons/ai';
+
+const LoginModel = ({ changeDuration, title }) => {
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
+
+    const [forgetPassword, setForgetPassword] = useState();
     const router = useRouter()
 
     //user login
+
+    // show hide forget model
+
+
+    const HideForgetPasswordModel = () => {
+        setForgetPassword(false)
+
+    }
+
+    const ShowForgetPasswordModel = () => {
+
+        setForgetPassword(true)
+    }
 
     const userLogin = async (e) => {
         e.preventDefault()
@@ -54,48 +73,66 @@ const LoginModel = () => {
 
     }
 
+
+    // const Common = async () => {
+    //     await changeDuration();
+    //     await handleTeacherLOginClose();
+    // }
+
+
     return (
         <>
+            <div className={`${forgetPassword ? styles.modelHide : styles.modelOpen}`}>
+                <div className='flex justify-between '>
+                    <h2 className=' font-normal py-2 pb-4'>{title}</h2>
 
-            <form onSubmit={(e) => userLogin(e)}>
-                <div className='py-2'>
-
-                    <label className='font-bold'>
-                        username
-                    </label>
-                    <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="text" placeholder="username"
-                        value={username}
-                        onChange={(e) => setUserName(e.target.value)}
-                    />
                 </div>
-                <div className='py-2'>
-                    <label className='font-bold'>
-                        password
-                    </label>
-                    <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="password" placeholder="*******"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className='flex justify-between py-3 '>
-                    <div className='flex space-x-[0.5px] items-center'>
+                <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose /></button>
+                <form onSubmit={(e) => userLogin(e)}>
+                    <div className='py-2'>
 
-                        <div className="form-check">
-                            <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+                        <label className='font-bold'>
+                            username
+                        </label>
+                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="text" placeholder="username"
+                            value={username}
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
+                    </div>
+                    <div className='py-2'>
+                        <label className='font-bold'>
+                            password
+                        </label>
+                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="password" placeholder="*******"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className='flex justify-between py-3 '>
+                        <div className='flex space-x-[0.5px] items-center'>
 
+                            <div className="form-check">
+                                <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+
+                            </div>
+
+                            <p>remember me</p>
                         </div>
 
-                        <p>remember me</p>
+                        <button className='font-[600] hover:text-voilet ' type="button" onClick={() => ShowForgetPasswordModel()} >forget Password</button>
+
+
                     </div>
-                    <Link href="#">
-                        <p className='font-[600] hover:text-voilet '>forget Password</p>
-                    </Link>
+                    <button className="w-full px-4 mt-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit">login
 
-                </div>
-                <button className="w-full px-4 mt-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit">login
+                    </button>
+                </form>
+            </div>
 
-                </button>
-            </form>
+
+            <div className={`${forgetPassword ? styles.modelOpen : styles.modelHide} ${forgetPassword === undefined ? styles.modelHide : ""} `}>
+                <ForgetPasswordModel HideForgetPasswordModel={HideForgetPasswordModel} changeDuration={changeDuration} />
+            </div>
 
         </>
     )

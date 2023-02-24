@@ -3,3 +3,18 @@
     background-color: #9747FF;
     transition: all ease-in-out 500ms;
 }
+
+
+
+.showCourseDetail {
+    transition: all ease-in-out 1s;
+
+    opacity: 1;
+}
+
+
+.hideCourseDetail {
+    transition: all ease-in-out 1s;
+
+    opacity: 0;
+}
