@@ -728,7 +728,7 @@ screen and (max-height: 700px) {
     }
 }
 
-
+/* this css apply when click any menu */
 
 .onclickCardAanimation {
 
@@ -737,4 +737,71 @@ screen and (max-height: 700px) {
     transition: all ease-in-out;
 }
 
-.onclickCardAanimation h3 {}
+.onclickCardAanimation h3 {
+
+    color: purple;
+    transition: color 1s ease-in;
+    animation: textanimateUp 1s ease-in-out forwards;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+@keyframes textanimateUp {
+    from {
+
+        transform: translateY(10px);
+        color: black;
+    }
+
+
+    to {
+
+
+        color: #9747FF;
+
+    }
+}
+
+.onclickCardAanimation .hide {
+
+    color: black;
+    transition: color 5s ease-in;
+    animation: animateText 1s ease-in-out both;
+    display: block;
+}
+
+@keyframes animateText {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+
+    to {
+        opacity: 1;
+        display: block;
+    }
+
+}
+
+
+.onclickCardAanimation img {
+
+    animation: scaleUpImage 500ms ease-out both;
+}
+
+@keyframes scaleUpImage {
+
+    from {
+        transform: scale(1.0);
+        transform: translateY(10px);
+
+    }
+
+    to {
+        transform: scale(1.2);
+
+    }
+}

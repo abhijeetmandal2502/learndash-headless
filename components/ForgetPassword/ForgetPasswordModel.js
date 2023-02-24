@@ -20,21 +20,21 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration }) => {
 
                 <button className='absolute top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
 
-                <div className='flex  items-center space-x-10'>
-                    <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step1</div>
+                <div className='flex  items-center space-x-2'>
+                    <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>
                     <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step2</div>
                     <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step3</div>
                 </div>
                 <h2 className='py-6'>Simple Password Reset</h2>
-                <form onSubmit={(e) => userLogin(e)}>
+                <form >
                     <div className='py-2'>
 
                         <label className='font-bold'>
                             enter new password
                         </label>
                         <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="password"
-                            value="password"
-                            onChange={(e) => setUserName(e.target.value)}
+
+
                         />
                     </div>
 

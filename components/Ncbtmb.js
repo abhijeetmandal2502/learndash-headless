@@ -83,18 +83,18 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   return (
     <>
-      <div className=' bg-transparent '>
+      <div className=' bg-transparent h-screen'>
 
         <button className={`flex items-center space-x-1 bg-black text-white px-4 font-bold py-2 rounded-3xl ${styles.lobby}`} onClick={() => ncbtmbMethodHide()}>
           <BiArrowBack size={20} className="text-white" /><span className='text-sm '>lobby</span></button>
 
-        <div className='flex space-x-16 items-center '>
+        <div className={`flex space-x-20 items-center  ${styles.ncbtapproved}`}>
           <div>
 
-            <h2 className='text-6xl tracking-wide font-normal text-[55px] leading-tight '>all courses<br></br>ncbtmb<br></br>approved.</h2>
+            <h2 className=' tracking-wide font-normal md:text-6xl   md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
 
-          <Image src="/images/ncbtmb.svg" height={323} width={323} alt="ncbtmb" />
+          <Image src="/images/ncbtmb.svg" height="323" width="323" alt="ncbtmb" />
         </div>
         <form >
           <div >
@@ -126,7 +126,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
         </form>
 
 
-        <div className={`pt-6 ${selectedOption ? styles.showCourseDetail : styles.hideCourseDetail}`}>
+        <div className={`pt-6 ${styles.ncbtapproved} ${selectedOption ? styles.showCourseDetail : styles.hideCourseDetail}`}>
 
           <div className='flex  items-center space-x-2'>
             <div className='p-2 rounded-full bg-[#2AC368]'>
@@ -147,9 +147,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
             })}
 
 
-            <button className=' border-b border-black leading-5 font-semibold text-[19px] pt-8'>
-              read our refund policy
-            </button>
+
           </div>
 
         </div>

@@ -285,43 +285,15 @@ const Home = () => {
                     <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
-                                {/* <div className='flex justify-between '>
-                                    <h2 className=' font-normal py-2 pb-4'>Welcome Back !</h2>
-
-                                </div>
-                                <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose /></button> */}
-
                                 <LoginModel changeDuration={changeDuration} title="welcome back !" />
                             </div>
 
                         </div>
                     </div>
 
-                    {/* <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
-                        <div className=" relative ">
-                            <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
-                                <div className='flex justify-between '>
-                                    <h2 className=' font-normal py-2 pb-4'>Welcome Back !</h2>
-
-                                </div>
-                                <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose /></button>
-
-                                <ForgetPasswordModel />
-                            </div>
-
-                        </div>
-                    </div> */}
-
-
-
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-white relative  border border-bordergray p-10 `}>
-                                {/* <div className='flex justify-between '>
-                                    <h2 className=' font-normal py-2 pb-4'>Teacher s Lounge</h2>
-
-                                </div>
-                                <button className='absolute top-4 right-4' onClick={() => handleTeacherLOginClose()}><AiOutlineClose /></button> */}
 
                                 <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                             </div>
@@ -359,11 +331,6 @@ const Home = () => {
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
                                 </svg>
                             </div>
-
-                            {/* <div className={`flex items-center justify-center space-x-2 `} onClick={() => HideMenuMethod()}>
-                                <p className='font-semibold'>Close</p>
-                                <GrClose />
-                            </div> */}
                         </div>
                         <div className=' absolute bottom-5 left-1/3'>
                             <MusicCard />
