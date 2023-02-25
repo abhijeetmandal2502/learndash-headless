@@ -3,7 +3,6 @@ import cookie from 'js-cookie'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Link from 'next/link'
 import ForgetPasswordModel from '../components/ForgetPassword/ForgetPasswordModel';
 
 import styles from '../components/ForgetPassword/ForgetPassword.module.css'
@@ -17,11 +16,8 @@ const LoginModel = ({ changeDuration, title }) => {
     const [forgetPassword, setForgetPassword] = useState();
     const router = useRouter()
 
-    //user login
 
     // show hide forget model
-
-
     const HideForgetPasswordModel = () => {
         setForgetPassword(false)
 
@@ -73,8 +69,7 @@ const LoginModel = ({ changeDuration, title }) => {
 
     }
 
-
-    console.log('forgetPassword', forgetPassword)
+    //   console.log('forgetPassword', forgetPassword)
     return (
         <>
             <div className='relative'>
@@ -83,7 +78,7 @@ const LoginModel = ({ changeDuration, title }) => {
                         <h2 className=' font-normal py-2 pb-4'>{title}</h2>
 
                     </div>
-                    <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose /></button>
+                    <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} /></button>
                     <form onSubmit={(e) => userLogin(e)}>
                         <div className='py-2'>
 
@@ -129,10 +124,6 @@ const LoginModel = ({ changeDuration, title }) => {
                     <ForgetPasswordModel HideForgetPasswordModel={HideForgetPasswordModel} changeDuration={changeDuration} />
                 </div>
             </div>
-
-
-
-
         </>
     )
 

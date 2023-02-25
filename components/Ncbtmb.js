@@ -83,7 +83,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   return (
     <>
-      <div className=' bg-transparent h-screen'>
+      <div className=' bg-transparent h-screen overflow-scroll '>
 
         <button className={`flex items-center space-x-1 bg-black text-white px-4 font-bold py-2 rounded-3xl ${styles.lobby}`} onClick={() => ncbtmbMethodHide()}>
           <BiArrowBack size={20} className="text-white" /><span className='text-sm '>lobby</span></button>
@@ -97,13 +97,13 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
           <Image src="/images/ncbtmb.svg" height="323" width="323" alt="ncbtmb" />
         </div>
         <form >
-          <div >
+          <div className={`${styles.selectBox}`}>
 
             <div className='py-2'>
               accepted in your state?
             </div>
             <Select
-              className={`w-96`}
+              className={`2xl:w-96 w-72  z-[100] ${styles.selectBox} `}
               defaultValue={selectedOption}
               onChange={setSelectedOption}
               options={options}
@@ -124,30 +124,25 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
           </div>
 
         </form>
-
-
-        <div className={`pt-6 ${styles.ncbtapproved} ${selectedOption ? styles.showCourseDetail : styles.hideCourseDetail}`}>
+        <div className={`pt-3 ${styles.ncbtapproved} ${selectedOption ? styles.showCourseDetail : styles.hideCourseDetail}`}>
 
           <div className='flex  items-center space-x-2'>
             <div className='p-2 rounded-full bg-[#2AC368]'>
               <BiCheck size={25} className='text-white' />
             </div>
-            <h2>Texas? yep! you’re fine.</h2>
+            <h3 className='text-[20px]'>Texas? yep! you’re fine.</h3>
             <button className=' border-b border-voilet text-voilet leading-6 text-3xl'> click here.</button>
           </div>
 
           <div className='py-3'>
             {courseData && courseData.map((item, index) => {
               return (
-                <div key={index} className='flex items-center space-x-4 py-1'>
-                  <AiOutlineCheck size={25} className='text-[#9747FF]' />
-                  <p className='text-[16px]'>{item}</p>
+                <div key={index} className='flex items-center space-x-4 py-0.3'>
+                  <AiOutlineCheck size={20} className='text-[#9747FF]' />
+                  <p className='text-[15px]'>{item}</p>
                 </div>
               )
             })}
-
-
-
           </div>
 
         </div>

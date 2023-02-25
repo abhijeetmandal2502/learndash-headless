@@ -10,7 +10,7 @@ import { AiOutlineClose, AiOutlineCloseCircle } from 'react-icons/ai'
 import ScrollBtn from './Start/ScrollBtn'
 
 
-const SimplyChoose = ({ startMethodHide }) => {
+const SimplyChoose = ({ startMethodHide, start }) => {
 
 
     const [selected, setSelected] = useState(false);
@@ -26,7 +26,7 @@ const SimplyChoose = ({ startMethodHide }) => {
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "2hours",
             discription: "spa masterclass"
         },
         {
@@ -36,7 +36,7 @@ const SimplyChoose = ({ startMethodHide }) => {
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "2hours",
             discription: "using research to market your practice"
         },
         {
@@ -46,12 +46,12 @@ const SimplyChoose = ({ startMethodHide }) => {
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "2hours",
             discription: "using research to market your practice"
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "2hours",
             discription: "spa masterclass"
         },
         {
@@ -92,7 +92,7 @@ const SimplyChoose = ({ startMethodHide }) => {
     const LogoImage = "/images/Logo.svg"
     return (
         <>
-            <div className='grid grid-cols-12'>
+            <div className='grid grid-cols-12 relative'>
                 <div className={`col-span-6 pl-10 h-screen overflow-scroll ${styles.hidescrollBar}`}>
                     <div className='pt-6'>
                         <LogoCard LogoImage={LogoImage} />
@@ -134,8 +134,8 @@ const SimplyChoose = ({ startMethodHide }) => {
                     </div>
                 </div>
 
-                <div className='col-span-6 '>
-                    <div className='grid grid-cols-12 h-screen overflow-y-scroll no-scrollbar overflow-x-hidden relative'>
+                <div className={`col-span-6 `}>
+                    <div className={`grid grid-cols-12 h-screen overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
                         {data?.map((item, index) => {
 
                             return (<div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 border border-bordergray  p-10    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>

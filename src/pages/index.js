@@ -2,13 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { AiOutlineClose } from 'react-icons/ai'
 import styles from '../styles/NewIndex.module.css'
 import styles2 from '../styles/Conceierge.module.css'
 import LoginModel from 'components/LoginModel';
 import Conceierge from 'components/Conceierge'
 import Ncbtmb from 'components/Ncbtmb'
-import CourseInfo from 'components/CourseInfo'
 import SimplyChoose from 'components/SimplyChoose'
 import SideMenu from 'components/SideMenu'
 import MenuComponent from 'components/Menu/MenuComponent'
@@ -17,7 +15,7 @@ import LogoCard from 'components/card/LogoCard'
 import Styles from '../../components/card/animatedDoor/Door.module.css'
 import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
 import IwannaTech from 'components/TeacherLounge/IwannaTech'
-import ForgetPasswordModel from '../../components/ForgetPassword/ForgetPasswordModel'
+
 
 
 
@@ -42,13 +40,11 @@ const Home = () => {
     // teacher lounge 
 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
-
-
-
     const handleTeacherLOginOpen = () => {
 
         setOpenTeacherLogin(true)
-        // openTeacherLogin === false ? TeacherCss.closeModel 
+        setShowConceierge(false)
+        setShowNcbtmb(false)
 
     }
 
@@ -56,9 +52,6 @@ const Home = () => {
     const handleTeacherLOginClose = () => {
 
         setOpenTeacherLogin(false);
-
-
-
     }
 
 
@@ -74,6 +67,8 @@ const Home = () => {
         setTimeout(() => { setOpen(true) }, 100)
         setHideParent(styles.parentchildoff)
         setShowChild(styles.childparenton)
+        setShowConceierge(false)
+        setShowNcbtmb(false)
     }
     const changeDuration = () => {
         setTimeout(() => setOpen(false));
@@ -124,6 +119,7 @@ const Home = () => {
         setStart(true)
         setShowNcbtmb(false)
         setShowConceierge(false)
+
     }
 
     // start hide method
@@ -137,26 +133,30 @@ const Home = () => {
 
     const ShowMenuMethod = () => {
         setOn(true)
+        setShowNcbtmb(false)
+        setOpenTeacherLogin(false)
+        setShowConceierge(false)
+        setStart(false)
+        setOpen(false)
+
     }
     const HideMenuMethod = () => {
         setOn(false)
     }
 
 
-    // forget password  for welcome back
+    // hwen page loaded css 
 
 
-    const [forgetPassword, setForgetPassword] = useState();
+    const [isLoaded, setIsloaded] = useState(false)
+
+    useEffect(() => {
+        setIsloaded(true)
+    }, [])
+
 
 
     const LogoImage = "/images/Logo.svg"
-
-
-
-
-
-
-
 
     return (
         <>
@@ -164,7 +164,9 @@ const Home = () => {
             <Head> LearnDash </Head>
 
 
-            <div className={`grid grid-cols-12 md:h-screen h-screen overflow-hidden ${openTeacherLogin === true ? "bg-[url('/images/teacherLoungeBg.png')]" : "bg-[url('/images/bg-image.png')]"} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+            <div className={` grid grid-cols-12 md:h-screen h-screen overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+
+                {/* logo and hero components */}
 
                 <div className='flex flex-col justify-between px-10 py-6 col-span-12 md:col-span-6 relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
@@ -187,10 +189,13 @@ const Home = () => {
                 </div>
 
 
-                <div className={`col-span-12 md:col-span-5 z-10 relative  ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
-                    <div className={` grid grid-cols-12 ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow}`}>
+                <div className={`col-span-12 md:col-span-5 z-10 relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
+                    <div className={` grid grid-cols-12   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""}`}>
                         <div className='col-span-12 md:h-screen md:col-span-6'>
                             <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
+
+                                {/* start components */}
+
                                 <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation}  `} onClick={() => startMethod()} >
                                     <div className={` md:space-x-0  relative `}>
 
@@ -220,6 +225,8 @@ const Home = () => {
 
                                 </div>
 
+                                {/* i ma back component */}
+
                                 <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray`} onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
@@ -236,8 +243,13 @@ const Home = () => {
                             </div>
                         </div>
 
+
+
                         <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
                             <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
+
+                                {/* concierge components */}
+
                                 <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}`} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Concierge.svg' height='88' width='88' className='md:mx-auto ' />
@@ -251,6 +263,8 @@ const Home = () => {
                                     </div>
                                 </div>
 
+                                {/* ncbtmb approved component */}
+
                                 <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150' className='md:mx-auto ' />
@@ -263,6 +277,8 @@ const Home = () => {
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
+
+                                {/* teacher lounge components */}
 
                                 <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden`} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
@@ -280,7 +296,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    {openTeacherLogin ? <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40`}><IwannaTech /></div> : ""}
+                    <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}><IwannaTech /></div>
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
@@ -304,9 +320,11 @@ const Home = () => {
                 </div>
 
 
+                {/* simply choose component */}
+
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
-                    <div className={`col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-                        <SimplyChoose startMethodHide={startMethodHide} />
+                    <div className={`col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
+                        <SimplyChoose startMethodHide={startMethodHide} start={start} />
                     </div>
                     {/* <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <CourseInfo />
@@ -317,6 +335,8 @@ const Home = () => {
                 </div>
 
 
+
+                {/* sidebar component */}
 
                 <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
                     {/* <SideMenu ShowMenuMethod={ShowMenuMethod} HideMenuMethod={HideMenuMethod} state={On} /> */}
@@ -339,6 +359,8 @@ const Home = () => {
                 </div>
 
             </div>
+
+            {/* drowable component */}
 
             <div className={` ${On === true ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />

@@ -1,3 +1,29 @@
+.gridMain {
+
+    transition: all ease-in-out 2s;
+    animation: transformUp 1s ease-in-out forwards;
+    position: relative;
+
+
+}
+
+
+@keyframes transformUp {
+
+    from {
+        top: 100px;
+        opacity: 0;
+
+    }
+
+    to {
+
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
 .cardBackground {
 
     background-color: rgba(128, 128, 128, 0.164);
