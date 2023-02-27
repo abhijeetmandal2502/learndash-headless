@@ -45,6 +45,7 @@ const Home = () => {
         setOpenTeacherLogin(true)
         setShowConceierge(false)
         setShowNcbtmb(false)
+        setIsloaded(false)
 
     }
 
@@ -92,6 +93,7 @@ const Home = () => {
         setShowNcbtmb(true)
         setTimeout(() => {
             setShowConceierge(false)
+            setIsloaded(false)
         }, 200)
 
     }
@@ -108,6 +110,7 @@ const Home = () => {
         setShowConceierge(true)
         setTimeout(() => {
             setShowNcbtmb(false)
+            setIsloaded(false)
         }, 200)
 
     }
@@ -119,6 +122,7 @@ const Home = () => {
         setStart(true)
         setShowNcbtmb(false)
         setShowConceierge(false)
+        setIsloaded(false)
 
     }
 
@@ -138,6 +142,7 @@ const Home = () => {
         setShowConceierge(false)
         setStart(false)
         setOpen(false)
+        setIsloaded(false)
 
     }
     const HideMenuMethod = () => {
@@ -164,11 +169,11 @@ const Home = () => {
             <Head> LearnDash </Head>
 
 
-            <div className={` grid grid-cols-12 md:h-screen h-screen overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+            <div className={` grid grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
                 {/* logo and hero components */}
 
-                <div className='flex flex-col justify-between px-10 py-6 col-span-12 md:col-span-6 relative '>
+                <div className='flex flex-col justify-between px-10 py-6 col-span-12 md:col-span-6   relative '>
                     <div className='flex justify-between items-center space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
 
@@ -308,12 +313,12 @@ const Home = () => {
                     </div>
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
-                        <div className=" relative ">
-                            <div className={` bg-white relative  border border-bordergray p-10 `}>
 
-                                <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
-                            </div>
+                        <div className={` bg-white relative  border border-bordergray p-5 `}>
+
+                            <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>
+
                     </div>
 
 
@@ -338,10 +343,10 @@ const Home = () => {
 
                 {/* sidebar component */}
 
-                <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
+                <div className='col-span-1 md:p-4 p-0 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
                     {/* <SideMenu ShowMenuMethod={ShowMenuMethod} HideMenuMethod={HideMenuMethod} state={On} /> */}
                     <div className=' cursor-pointer'>
-                        <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/4'>
+                        <div className='flex items-center justify-center space-x-2  absolute top-5 xl:left-1/4  left-2'>
                             <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
                                 <p className='font-semibold'>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
@@ -352,7 +357,7 @@ const Home = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className=' absolute bottom-5 left-1/3'>
+                        <div className=' absolute bottom-5 xl:left-1/3 left-3 '>
                             <MusicCard />
                         </div>
                     </div>

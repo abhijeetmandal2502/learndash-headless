@@ -18,7 +18,7 @@ const Conceierge = ({ conceiergeHide }) => {
 
 
 
-                <h2 className='text-5xl my-10 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
+                <h2 className='md:text-5xl my-10 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
                 <form >
                     <div className='py-4'>
 

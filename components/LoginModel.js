@@ -12,6 +12,7 @@ const LoginModel = ({ changeDuration, title }) => {
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
+    const [loginTitle, setLoginTitle] = useState(false)
 
     const [forgetPassword, setForgetPassword] = useState();
     const router = useRouter()
@@ -69,13 +70,20 @@ const LoginModel = ({ changeDuration, title }) => {
 
     }
 
-    //   console.log('forgetPassword', forgetPassword)
+    const HandleFormTitle = () => {
+
+        setLoginTitle(true);
+    }
+
+    const titlefogetpass = 'All done! Try it out!';
+
+
     return (
         <>
             <div className='relative'>
                 <div className={`  ${forgetPassword ? styles.modelClose : styles.modelOpen}`}>
                     <div className='flex justify-between '>
-                        <h2 className=' font-normal py-2 pb-4'>{title}</h2>
+                        <h2 className=' font-normal py-2 pb-4'>{loginTitle ? titlefogetpass : title}</h2>
 
                     </div>
                     <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} /></button>
@@ -120,8 +128,8 @@ const LoginModel = ({ changeDuration, title }) => {
                     </form>
 
                 </div>
-                <div className={` absolute top-0 left-0  ${forgetPassword ? styles.modelOpen : styles.modelClose} ${forgetPassword === undefined ? styles.modelHide : ""} `}>
-                    <ForgetPasswordModel HideForgetPasswordModel={HideForgetPasswordModel} changeDuration={changeDuration} />
+                <div className={` absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 w-full p-5  ${forgetPassword ? styles.modelOpen : styles.modelClose} ${forgetPassword === undefined ? styles.modelHide : ""} `}>
+                    <ForgetPasswordModel HideForgetPasswordModel={HideForgetPasswordModel} changeDuration={changeDuration} HandleFormTitle={HandleFormTitle} />
                 </div>
             </div>
         </>

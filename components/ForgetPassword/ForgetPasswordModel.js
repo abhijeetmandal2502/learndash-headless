@@ -1,19 +1,117 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiLeftArrowAlt } from 'react-icons/bi';
-
 import styles from '../ForgetPassword/ForgetPassword.module.css'
 
-const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration }) => {
+const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFormTitle }) => {
+
+    // code for multi step form 
+
+    const [step1, setStep1] = useState(true);
+    const [step2, setStep2] = useState(false);
+    const [step3, setStep3] = useState(false);
+    const [allStepDone, setAllStepDone] = useState(false)
+
+    const HandleStep1 = () => {
+
+        setStep2(true)
+        setStep1(false)
+        setTimeout(() => {
+
+        }, 100);
+    }
+
+
+    const HandleStep2 = () => {
+
+        setStep3(true)
+        setStep1(false)
+        setStep2(false)
+
+    }
+
+
+    const HandleBackStep2 = () => {
+
+        setStep3(false)
+        setStep1(true)
+        setStep2(false)
+        setTimeout(() => {
+
+        }, 100);
+    }
+
+
+    const HandleBackStep3 = () => {
+
+        setStep3(false)
+        setStep1(false)
+        setStep2(true)
+        setTimeout(() => {
+
+        }, 100);
+    }
+
+    const HandleAllStepDone = () => {
+
+        setStep3(false)
+        setStep1(true)
+        setStep2(false)
+        // setAllStepDone(true)
+        HideForgetPasswordModel()
+
+    }
+
+
+
     return (
         <>
-            <div className=" relative ">
-                {/* <div className={` bg-transparent relative  border border-bordergray `}> */}
+            {step1 ?
+                <div>
+                    <div className='flex justify-between pb-5 '>
+                        <button className=' font-normal py-2 pb-4' onClick={() => HideForgetPasswordModel()}>
+                            <div className='flex justify-center items-center space-x-2'>
+                                <BiLeftArrowAlt size={25} />
+                                <span className='font-semibold'>Back to login</span>
+                            </div>
+                        </button>
+
+                    </div>
+
+                    <button className='absolute top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
+
+                    <div className='flex  items-center space-x-2'>
+                        <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>
+                        <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step2</div>
+                        <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step3</div>
+                    </div>
+                    <h2 className='py-6 text-2xl'>Simple Password Reset</h2>
+                    <form >
+                        <div className='py-2'>
+
+                            <label className='font-bold'>
+                                enter new password
+                            </label>
+                            <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none "
+                                required
+                                type="password"
+
+
+                            />
+                        </div>
+
+                        <button className="w-full px-4 mt-4 py-2 mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit" onClick={() => { HandleStep1() }}>next
+
+                        </button>
+                    </form>
+                </div> : ""}
+
+            {step2 ? <div className=" relative ">
                 <div className='flex justify-between pb-5 '>
-                    <button className=' font-normal py-2 pb-4' onClick={() => HideForgetPasswordModel()}>
+                    <button className=' font-normal py-2 pb-4' onClick={() => HandleBackStep2()}>
                         <div className='flex justify-center items-center space-x-2'>
                             <BiLeftArrowAlt size={25} />
-                            <span className='font-semibold'>Back to login</span>
+                            <span className='font-semibold'>go back</span>
                         </div></button>
 
                 </div>
@@ -22,7 +120,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration }) => {
 
                 <div className='flex  items-center space-x-2'>
                     <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>
-                    <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step2</div>
+                    <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step2</div>
                     <div className=' border-b-4 text-left w-[33%] text-lg border-bodergray text-gray'>step3</div>
                 </div>
                 <h2 className='py-6'>Simple Password Reset</h2>
@@ -30,21 +128,58 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration }) => {
                     <div className='py-2'>
 
                         <label className='font-bold'>
-                            enter new password
+                            enter your account email address
                         </label>
-                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none " type="password"
+                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none "
+                            required
+                            type="email"
 
 
                         />
                     </div>
 
-                    <button className="w-full px-4 mt-4 py-2 mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit">next
+                    <button className="w-full px-4 mt-4 py-2 mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="btn" onClick={() => { HandleStep2() }}>send code
 
                     </button>
                 </form>
-            </div>
+            </div> : ""}
 
-            {/* </div> */}
+            {step3 ? <div className=" relative ">
+                <div className='flex justify-between pb-5 '>
+                    <button className=' font-normal py-2 pb-4' onClick={() => HandleBackStep3()}>
+                        <div className='flex justify-center items-center space-x-2'>
+                            <BiLeftArrowAlt size={25} />
+                            <span className='font-semibold'>go back</span>
+                        </div></button>
+
+                </div>
+
+                <button className='absolute top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
+
+                <div className='flex  items-center space-x-2'>
+                    <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>
+                    <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step2</div>
+                    <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step3</div>
+                </div>
+                <h2 className='py-6'>Simple Password Reset</h2>
+                <form >
+                    <div className='py-2'>
+
+                        <label className='font-bold'>
+                            check your email, enter 4-digit code
+                        </label>
+                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray focus:outline-none "
+                            required
+                            type="password"
+                        />
+                    </div>
+
+                    <button className="w-full px-4 mt-4 py-2 mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="btn" onClick={() => { HandleAllStepDone(), HandleFormTitle(); }}>next
+
+                    </button>
+                </form>
+            </div> : ""}
+
         </>
     )
 }
