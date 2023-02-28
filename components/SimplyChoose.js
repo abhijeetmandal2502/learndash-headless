@@ -93,7 +93,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
     return (
         <>
             <div className='grid grid-cols-12 relative'>
-                <div className={`col-span-6 pl-10 h-screen overflow-scroll ${styles.hidescrollBar}`}>
+                <div className={`md:col-span-6 col-span-12 pl-10 h-screen overflow-scroll ${styles.hidescrollBar}`}>
                     <div className='pt-6'>
                         <LogoCard LogoImage={LogoImage} />
                     </div>
@@ -134,7 +134,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                     </div>
                 </div>
 
-                <div className={`col-span-6 `}>
+                <div className={`md:col-span-6 col-span-12 `}>
                     <div className={`grid grid-cols-12 h-screen overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
                         {data?.map((item, index) => {
 
@@ -158,7 +158,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                             </div>)
 
                         })}
-                        <div className={` sticky bottom-0 left-[47%]   z-[100]`}>
+                        <div className={` sticky bottom-0 left-[51%] -translate-x-[51%]  z-[100]`}>
                             <ScrollBtn />
                         </div>
 

@@ -11,7 +11,7 @@ const SideMenu = ({ ShowMenuMethod }) => {
     return (
         <>
             <div className=' cursor-pointer'>
-                <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/4'>
+                <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/2 -translate-x-1/2'>
                     <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
                         <p className='font-semibold'>menu</p>
                         <svg width="24" height="24" className={`${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ const SideMenu = ({ ShowMenuMethod }) => {
                         <GrClose />
                     </div> */}
                 </div>
-                <div className=' absolute bottom-5 left-1/3'>
+                <div className='absolute bottom-5 left-1/2 -translate-x-1/2'>
                     <MusicCard textColor={textColor} />
                 </div>
             </div>

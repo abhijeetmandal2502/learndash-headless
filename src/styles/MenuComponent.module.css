@@ -119,10 +119,10 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    -webkit-transition: background-image 1s;
-    -moz-transition: background-image 1s;
-    -o-transition: background-image 1s;
-    transition: background-image 1s;
+    -webkit-transition: background-image 1s ease-in-out;
+    -moz-transition: background-image 1s ease-in-out;
+    -o-transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out;
 
 }
 
@@ -133,10 +133,10 @@
     background-image: url(/images/about-bg.png);
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-transition: background-image 1s;
-    -moz-transition: background-image 1s;
-    -o-transition: background-image 1s;
-    transition: background-image 1s;
+    -webkit-transition: background-image 1s ease-in-out;
+    -moz-transition: background-image 1s ease-in-out;
+    -o-transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out;
 
 
 
@@ -168,10 +168,10 @@
     background-image: url(/images/instructor-bg.png);
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-transition: background-image 1s;
-    -moz-transition: background-image 1s;
-    -o-transition: background-image 1s;
-    transition: background-image 1s;
+    -webkit-transition: background-image 1s ease-in-out;
+    -moz-transition: background-image 1s ease-in-out;
+    -o-transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out;
 
 }
 
@@ -181,14 +181,27 @@
     background-image: url(/images/blog-bg.png);
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-transition: background-image 1s;
-    -moz-transition: background-image 1s;
-    -o-transition: background-image 1s;
-    transition: background-image 1s;
+    -webkit-transition: background-image 1s ease-in-out;
+    -moz-transition: background-image 1s ease-in-out;
+    -o-transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out;
 
 }
 
 
 .hidescrollBar::-webkit-scrollbar {
     display: none;
+}
+
+
+/* i wannt a tech css  */
+
+
+.iwannaTechStart {
+
+    background: #6194F7;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }

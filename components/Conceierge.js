@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import styles from '../src/styles/Conceierge.module.css'
 import { BiArrowBack } from 'react-icons/bi'
+import { useForm } from 'react-hook-form';
 
 
 
 const Conceierge = ({ conceiergeHide }) => {
 
-
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
     return (
         <>
@@ -18,25 +23,31 @@ const Conceierge = ({ conceiergeHide }) => {
 
 
 
-                <h2 className='md:text-5xl my-10 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
-                <form >
-                    <div className='py-4'>
+                <h2 className='md:text-5xl 2xl:my-10 my-5 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
+                <form onSubmit={handleSubmit((data) => console.log('data', data))} >
+                    <div className='2xl:py-4 py-2'>
 
                         <label className='' >
                             your email
                         </label>
-                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray outline-red-500 " type="email"
-                            required
+                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray outline-red-500 "
+                            {...register('email', {
+                                required: 'oops! email is blank!', pattern: {
+                                    value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                    message: 'incorrect email format',
+                                },
+                            },)}
                         />
-                        {/* {errors.email.length > 0 &&
-                            <span className='error'>{errors.email}</span>} */}
+
+                        {errors.email ? <div className=' text-[#D30820] mt-1'> <span className='text-[#D30820] border border-[#D30820] rounded-full py-0.4 px-1.5 text-xs' >!</span> {errors.email.message}</div> : null}
                     </div>
-                    <div className='py-4 flex flex-col space-y-2'>
+                    <div className='py-2 2xl:py-4 flex flex-col space-y-2'>
                         <label>
                             ask away
 
                         </label>
-                        <textarea name="postContent" rows={4} className="w-full border border-bordergray outline-red-500" required />
+                        <textarea name="postContent" rows={4} className="w-full border border-bordergray outline-[#D30820]" {...register('message', { required: true })} />
+                        {errors.message && <p className=' text-[#D30820]'> <span className='text-[#D30820] border border-[#D30820] rounded-full py-0.4 px-1.5 text-xs' >!</span> oops! message is blank!</p>}
 
 
                     </div>

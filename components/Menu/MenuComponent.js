@@ -10,6 +10,11 @@ import About from '../About/About'
 import { AiOutlineMinus } from 'react-icons/ai'
 import Instructors from '../Instructor/Instructors'
 import BlogListing from 'components/BlogListing'
+import ScrollBtn from 'components/Start/ScrollBtn'
+import { FiArrowDown } from 'react-icons/fi'
+import stylesScrollBtn from '../Start/Start.module.css'
+import StartComponent from 'components/IwannaTech/StartComponent'
+
 
 
 const MenuComponent = ({ HideMenuMethod, On }) => {
@@ -27,7 +32,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
         setTimeout(() => {
             setShowLogo(true)
-        }, 1000)
+        }, 50)
 
     }
 
@@ -39,26 +44,29 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     }
 
 
+
+
+
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    console.log('openTab', openTab)
+    //console.log('openTab', openTab)
 
     return (
         <>
-            <div className={`grid grid-cols-12 md:h-screen  ${openTab === 1 ? styles.aboutBackground : styles.defaultBackground} ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground} ${openTab === 3 ? styles.blogBackground : styles.defaultBackground}  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden`}>
+            <div className={`grid grid-cols-12 md:h-screen  ${openTab === 1 ? styles.aboutBackground : styles.defaultBackground} ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground} ${openTab === 3 ? styles.blogBackground : styles.defaultBackground} ${openTab === 4 ? styles.iwannaTechStart : styles.defaultBackground}  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden`}>
 
-                <div className='col-span-11 p-10 '>
+                <div className=' md:col-span-11 col-span-12 p-10 2xl:pl-16 '>
 
                     <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                         <LogoCard LogoImage={LogoImage} />
                     </div>
 
 
-                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-1.5 rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
+                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
 
-                    {On ? <div className={`grid grid-cols-12 mt-0  ${!show ? styles.hide : styles.aboutMain} mt-20`}>
+                    {On ? <div className={`grid grid-cols-12 mt-0 gap-20 ${!show ? styles.hide : styles.aboutMain} mt-20`}>
 
 
 
@@ -69,14 +77,14 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                         <Contact />
                                     </div>
                                     <div className={`${openTab === 1 ? "block" : "hidden"} ${openTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll `} id="link1">
-
-
                                         <About />
-
-
                                     </div>
                                     <div className={`${openTab === 2 ? "block" : "hidden"} ${openTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll  `} id="link2">
                                         <Instructors />
+                                        <div className={` absolute bottom-10 left-5 z-[100]  flex justify-center items-center`}>
+                                            <FiArrowDown size={30} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
+
+                                        </div>
                                     </div>
                                     <div className={`${openTab === 3 ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar}  md:h-screen  overflow-y-scroll`} id="link3">
                                         <BlogListing />
@@ -84,21 +92,14 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
                                     <div className={`${openTab === 4 ? "block" : "hidden"}`} id="link4">
-                                        <p className="text-white">
-                                            Efficiently unleash cross-media information without
-                                            cross-media value. Quickly maximize timely deliverables for
-                                            real-time schemas.
-                                            <br />
-                                            <br /> Dramatically maintain clicks-and-mortar solutions
-                                            without functional solutions.
-                                        </p>
+                                        <StartComponent />
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <ul
-                            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12"
+                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 ? 'hidden' : ""} `}
                             role="tablist"
                         >
                             <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
@@ -168,17 +169,17 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                 </div>
 
-                <div className='col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
+                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
                     <div className=' cursor-pointer'>
-                        <div className='flex items-center justify-center   absolute top-5 left-1/4' onClick={() => HideMenuMethod()}>
-                            <div className={`flex space-x-3 bg-transparent items-center `} >
+                        <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  ' onClick={() => HideMenuMethod()}>
+                            <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white'>Close </p>
-                                <div className=''>
-                                    <AiOutlineClose size={20} className="text-white" />
-                                </div>
+
+                                <AiOutlineClose size={20} className="text-white" />
+
                             </div>
                         </div>
-                        <div className=' absolute bottom-5 left-1/3'>
+                        <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
                             <MusicCard textColor={textColor} />
                         </div>
                     </div>
@@ -192,21 +193,3 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 export default MenuComponent
 
 
-// const Nav = [
-//     {
-//         name: "about",
-//         link: "#About"
-//     },
-//     {
-//         name: "our instructors",
-//         link: "#"
-//     },
-//     {
-//         name: "blog central",
-//         link: "#"
-//     },
-//     {
-//         name: "i wanna teach!",
-//         link: "#"
-//     },
-// ]

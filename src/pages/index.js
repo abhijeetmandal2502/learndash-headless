@@ -43,8 +43,8 @@ const Home = () => {
     const handleTeacherLOginOpen = () => {
 
         setOpenTeacherLogin(true)
-        setShowConceierge(false)
-        setShowNcbtmb(false)
+        setShowConceierge()
+        setShowNcbtmb()
         setIsloaded(false)
 
     }
@@ -68,8 +68,8 @@ const Home = () => {
         setTimeout(() => { setOpen(true) }, 100)
         setHideParent(styles.parentchildoff)
         setShowChild(styles.childparenton)
-        setShowConceierge(false)
-        setShowNcbtmb(false)
+        setShowConceierge()
+        setShowNcbtmb()
     }
     const changeDuration = () => {
         setTimeout(() => setOpen(false));
@@ -92,7 +92,7 @@ const Home = () => {
     const ncbtmbMethod = () => {
         setShowNcbtmb(true)
         setTimeout(() => {
-            setShowConceierge(false)
+            setShowConceierge()
             setIsloaded(false)
         }, 200)
 
@@ -109,7 +109,7 @@ const Home = () => {
 
         setShowConceierge(true)
         setTimeout(() => {
-            setShowNcbtmb(false)
+            setShowNcbtmb()
             setIsloaded(false)
         }, 200)
 
@@ -120,9 +120,9 @@ const Home = () => {
     const startMethod = () => {
 
         setStart(true)
-        setShowNcbtmb(false)
-        setShowConceierge(false)
-        setIsloaded(false)
+        setShowNcbtmb()
+        setShowConceierge()
+        setIsloaded()
 
     }
 
@@ -137,11 +137,11 @@ const Home = () => {
 
     const ShowMenuMethod = () => {
         setOn(true)
-        setShowNcbtmb(false)
-        setOpenTeacherLogin(false)
-        setShowConceierge(false)
-        setStart(false)
-        setOpen(false)
+        setShowNcbtmb()
+        setOpenTeacherLogin()
+        setShowConceierge()
+        setStart()
+        setOpen()
         setIsloaded(false)
 
     }
@@ -217,10 +217,9 @@ const Home = () => {
                                         </div>
 
                                         <div className='w-full pt-3'>
-                                            <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>start</h3>
+                                            <h3 className='mt-4 2xl:text-4xl text-2xl lineUp font-semibold md:text-center'>start</h3>
                                             <p className={`mt-1 ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
                                         </div>
-
 
                                     </div>
 
@@ -237,7 +236,7 @@ const Home = () => {
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <Image alt='start' src='/images/IamBack.svg' height='88' width='88' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 text-4xl lineUp font-semibold md:text-center'>i’m back</h3>
+                                            <h3 className='mt-4 2xl:text-4xl text-2xl lineUp font-semibold md:text-center'>i’m back</h3>
                                             <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>existing user login</p>
                                         </div>
                                     </div>
@@ -259,7 +258,7 @@ const Home = () => {
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <Image alt='start' src='/images/Concierge.svg' height='88' width='88' className='md:mx-auto ' />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>concierge</h3>
+                                            <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl text-2xl  lineUp'>concierge</h3>
                                             <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
@@ -272,9 +271,11 @@ const Home = () => {
 
                                 <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}`} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150'
+                                            className='md:mx-auto 2xl:w-[150px] w-[100px] 2xl:h-[150px] h-[100px] '
+                                        />
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center text-3xl lineUp'>ncbtmb approved</h3>
+                                            <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl text-2xl  lineUp'>ncbtmb approved</h3>
                                             <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
@@ -287,9 +288,9 @@ const Home = () => {
 
                                 <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden`} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/teacherLounge.svg' height='70' width='51' className='md:mx-auto ' />
+                                        <Image alt='start' src='/images/teacherLounge.svg' height='70' width='51' className='md:mx-auto 2xl:w-[50px] w-[35px] 2xl:h-[70px] h-[50px] ' />
                                         <div className='w-full'>
-                                            <h3 className='font-semibold lineUp md:text-center text-3xl md:mt-4'>teacher’s lounge</h3>
+                                            <h3 className='font-semibold lineUp md:text-center 2xl:text-3xl text-xl md:mt-4'>teacher’s lounge</h3>
                                             <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
@@ -314,7 +315,7 @@ const Home = () => {
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
-                        <div className={` bg-white relative  border border-bordergray p-5 `}>
+                        <div className={` bg-white relative  border border-bordergray p-10 `}>
 
                             <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>
@@ -328,13 +329,13 @@ const Home = () => {
                 {/* simply choose component */}
 
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
-                    <div className={`col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
+                    <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <SimplyChoose startMethodHide={startMethodHide} start={start} />
                     </div>
                     {/* <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <CourseInfo />
                     </div> */}
-                    <div className={`col-span-1 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                    <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} />
                     </div>
                 </div>
@@ -346,7 +347,7 @@ const Home = () => {
                 <div className='col-span-1 md:p-4 p-0 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray '>
                     {/* <SideMenu ShowMenuMethod={ShowMenuMethod} HideMenuMethod={HideMenuMethod} state={On} /> */}
                     <div className=' cursor-pointer'>
-                        <div className='flex items-center justify-center space-x-2  absolute top-5 xl:left-1/4  left-2'>
+                        <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/2 -translate-x-1/2 '>
                             <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
                                 <p className='font-semibold'>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
@@ -357,7 +358,7 @@ const Home = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className=' absolute bottom-5 xl:left-1/3 left-3 '>
+                        <div className=' absolute bottom-5 left-1/2 -translate-x-1/2  '>
                             <MusicCard />
                         </div>
                     </div>
