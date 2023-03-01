@@ -1,0 +1,37 @@
+.dotsBorder {
+
+    padding: 8px;
+    border-radius: 50% !important;
+    border-color: white;
+    border-width: 3px;
+
+
+}
+
+.shadow {
+
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
+}
+
+.shadowHover:hover {
+
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
+    transform: scale(1.2);
+    transition: all ease-in-out 500ms;
+}
+
+
+/* start banner animation  */
+
+
+.bannerAnimation img {
+
+    animation: updownAnimate linear 500ms infinite;
+    transition: all ease-in-out 500ms;
+}
+
+@keyframes updownAnimate {
+    from {}
+
+    to {}
+}

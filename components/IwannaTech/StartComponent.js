@@ -1,57 +1,39 @@
+import Image from 'next/image';
 import React from 'react'
+import { useState } from "react";
+
+import styles from '../../components/IwannaTech/IwanntTech.module.css';
 
 const StartComponent = () => {
 
-    const list = [
-        'start',
-        'why teach',
-        'why us',
-        'why now',
-        'needed',
-        'ncbtmb',
-        'why you',
-        'now what',
-        'create',
-        'never alone',
-        'commission',
-        'get started'
 
 
-    ]
+
     return (
         <>
-            <div className=' bg-transparent'>
-                <div className='grid grid-cols-12 '>
-                    <div className='md:col-span-2 col-span-12 flex space-x-3'>
-                        <div className='w-0.5 h-[400px] mt-3 bg-white'></div>
-                        <ul className='flex flex-col space-y-3'>
-                            {
-                                list && list?.map((item, key) => {
-                                    return (
-                                        <>
-
-                                            <li key={key} className='text-white'>
-                                                {item}
-                                            </li>
-                                        </>
-                                    )
-                                })
-                            }
-                        </ul>
-
+            <div className=' bg-transparent grid grid-cols-12 '>
+                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                    <div>
+                        <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>so you <br></br> wanna teach?</h2>
+                        <p className=' font-thin text-[40px] text-white'>cool! glad you’re here!</p>
+                        <div className='mt-10 text-[37px]'>look around!</div>
                     </div>
-                    <div className='md:col-span-6 col-span-12'>
+                </div>
 
-                    </div>
-                    <div className='md:col-span-5 col-span-12'>
-
-                    </div>
-
+                <div className={`${styles.shadow} ${styles.bannerAnimation} col-span-12 md:col-span-6 flex justify-center items-start`}>
+                    <Image src='/images/iwannatech.png' width={700} height={700} alt="wanna tech png" />
                 </div>
 
             </div>
+
         </>
     )
 }
 
 export default StartComponent
+
+
+
+
+
+
