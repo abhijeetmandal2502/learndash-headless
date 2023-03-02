@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MusicCard from 'components/card/MusicCard'
 import Image from 'next/image'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -136,19 +136,29 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
         },
     ];
 
-    // const getLastActive = () => {
+    // useEffect(() => {
 
-    //     if ((activeTabIndex >= 0) || (lastActive > activeTabIndex)) {
+    //     getLastActive();
+    // }, [activeTabIndex])
 
-    //         return setLastActive(true);
-    //     }
+    const getLastActive = () => {
 
-    // }
+        if ((activeTabIndex > 0) && (lastActive > activeTabIndex)) {
+
+            return setLastActive(true);
+        }
+        else {
+
+            return setLastActive(false);
+        }
+
+    }
 
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    //  console.log('getLastActive', getLastActive)
+    // console.log('activeTabIndex', activeTabIndex)
+    // console.log('lastActive', lastActive)
 
     return (
         <>
@@ -177,7 +187,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
 
-                        <div className={` col-span-12  bg-transparent ${openTab === 4 ? "col-span-12" : "md:col-span-8"}`}>
+                        <div className={` col-span-12  bg-transparent ${openTab === 4 || openTab === 3 ? "col-span-12" : "md:col-span-8"}`}>
                             <div className=" ">
                                 <div className="tab-content tab-space ">
                                     <div className={`${openTab > 0 ? "hidden" : "block"} `}>
@@ -255,7 +265,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         </div>
 
                         <ul
-                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 ? 'hidden' : ""} `}
+                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : ""} `}
                             role="tablist"
                         >
                             <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
