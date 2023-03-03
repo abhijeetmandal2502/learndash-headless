@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
 import { BsArrowRightShort } from 'react-icons/bs'
-import { default as ReactSelect } from "react-select";
-import { components } from "react-select";
 import { colourOptions } from "../components/Data.js";
 import styles from '../src/styles/MenuComponent.module.css';
 import Blog from '../components/Blog/Blog'
 import { MdExpandLess } from 'react-icons/md';
+import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 const BlogListing = () => {
 
+    const router = useRouter();
+
     const [toggleOn, setToggleOn] = useState(false)
 
-    const [currentData, setCurrentData] = useState(true);
-
-
-
+    const [currentData, setCurrentData] = useState(false);
 
     const blogData = [
 
@@ -145,8 +144,6 @@ const BlogListing = () => {
 
 
     }
-
-
     const handleChange = (e) => {
 
         const { name, checked } = e.target;
@@ -159,28 +156,35 @@ const BlogListing = () => {
         <>
             {!currentData ? <div className='grid grid-cols-12 gap-4 '>
                 <div className={`bg-transparent md:pb-40  md:col-span-9 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
+
+
                     {
                         blogData && blogData?.map((item, index) => {
-                            return (<div key={index} className="mb-10 border-b border-bordergray md:max-w-[90%] ">
-                                <h2 className='text-white font-normal  text-[49px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
-                                <div className='flex  flex-wrap'>
-                                    <div className='text-white pr-1 text-[22px] leading-[207%]'>{item.name}</div>
-                                    <div className='text-gray text-[22px] leading-[207%]'>| {item.date}</div>
+                            return (
+                                // <Link key={index} href={`/blog/${index + 1}`}>
+                                <div key={index} className="mb-10 border-b border-bordergray md:max-w-[90%] ">
+                                    <h2 className='text-white font-normal  text-[49px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
+                                    <div className='flex  flex-wrap'>
+                                        <div className='text-white pr-1 text-[22px] leading-[207%]'>{item.name}</div>
+                                        <div className='text-gray text-[22px] leading-[207%]'>| {item.date}</div>
+                                    </div>
+                                    <p className='text-gray py-8 text-[18px] '>{item.discription}</p>
+
+
+                                    <button className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
+                                        onClick={() => { handleClick(item, index), router.push(`/?blog/${index}`) }}
+                                    >
+                                        <span className='md:text-[20px]'>read more</span>
+                                        <BsArrowRightShort className='text-white' size={25} />
+                                    </button>
+
+
                                 </div>
-                                <p className='text-gray py-8 text-[18px] '>{item.discription}</p>
-
-
-                                <button className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
-                                    onClick={() => { handleClick(item, index) }}
-                                >
-                                    <span className='md:text-[20px]'>read more</span>
-                                    <BsArrowRightShort className='text-white' size={25} />
-                                </button>
-
-
-                            </div>)
+                                //     </Link>
+                            )
                         })
                     }
+
 
                 </div>
                 <div className=' bg-transparent md:col-span-3 col-span-12 '>

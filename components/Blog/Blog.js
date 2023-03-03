@@ -3,8 +3,12 @@ import React from 'react'
 import styles from '../../src/styles/MenuComponent.module.css';
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import { TfiMenuAlt } from 'react-icons/tfi'
+import { useRouter } from 'next/router';
 
 const Blog = ({ currentData, click }) => {
+
+    const router = useRouter()
+
     return (
         <>
             {currentData && currentData ? <div className='grid grid-cols-12 gap-4  '>
@@ -28,7 +32,7 @@ const Blog = ({ currentData, click }) => {
                 </div>
                 <div className=' bg-transparent md:col-span-3 col-span-12'>
 
-                    <button className='text-white bg-[#3A3A3A] py-1 px-3 rounded-3xl flex space-x-5 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { click() }} > <TfiMenuAlt size={25} /> <div className='text-[24px] font-bold'>view all posts</div></button>
+                    <button className='text-white bg-[#3A3A3A] py-1 px-3 rounded-3xl flex space-x-5 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { click(), router.push('/?blog') }} > <TfiMenuAlt size={25} /> <div className='text-[24px] font-bold'>view all posts</div></button>
                     <div className='flex pt-7  space-x-12'>
                         <button className='text-white flex space-x-2 items-center py-1 px-2 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} /> <div className='text-[20px]'> back</div></button>
                         <button className='text-white flex space-x-2 items-center py-1 px-2 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[20px]' >next</div> <HiOutlineArrowSmRight size={20} /> </button>

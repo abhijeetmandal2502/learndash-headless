@@ -15,6 +15,7 @@ import { FiArrowDown } from 'react-icons/fi'
 import stylesScrollBtn from '../Start/Start.module.css'
 import StartComponent from 'components/IwannaTech/StartComponent'
 import IwannaTech from 'components/TeacherLounge/IwannaTech'
+import { useRouter } from 'next/router'
 
 
 
@@ -25,6 +26,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const [showLogo, setShowLogo] = useState(false)
     const [openTab, setOpenTab] = React.useState(0);
 
+    //  query params 
+
+    const router = useRouter();
 
 
     if (On === true) {
@@ -158,6 +162,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
+    console.log('router', router);
+
+
 
 
     return (
@@ -180,7 +187,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     </div>
 
 
-                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod() }} >
+                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod(), router.push('/') }} >
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
 
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-20 ${!show ? styles.hide : styles.aboutMain} mt-20`}>
@@ -203,7 +210,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                         </div>
                                     </div>
-                                    <div className={`${openTab === 3 ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar}  md:h-screen  overflow-y-scroll`} id="link3">
+                                    <div className={` ${router.pathname === '/?blog' ? active : ""}    ${openTab === 3 ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar}  md:h-screen  overflow-y-scroll`} id="link3">
                                         <BlogListing />
                                     </div>
 
@@ -265,7 +272,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         </div>
 
                         <ul
-                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : ""} `}
+                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} `}
                             role="tablist"
                         >
                             <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
@@ -302,6 +309,8 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(3);
+
+                                    router.push("/?blog");
                                 }}
                                 data-toggle="tab"
                                 href="#link3"
@@ -337,7 +346,8 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                 <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
                     <div className=' cursor-pointer'>
-                        <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  ' onClick={() => HideMenuMethod()}>
+                        <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
+                            onClick={() => { setOpenTab(false), router.push('/') }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white'>Close </p>
 
