@@ -50,7 +50,7 @@
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     overflow: hidden;
-    animation-duration: 1s;
+    animation-duration: 1500ms;
     position: absolute;
     width: 0vw;
     /* -webkit-animation-name: MenuToggleOn 1000ms forwards linear; */

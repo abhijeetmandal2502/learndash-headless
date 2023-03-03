@@ -42,6 +42,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
         setTimeout(() => {
             setShow(false)
             setShowLogo(false)
+            setOpenTab(false)
         }, 50)
     }
 
@@ -157,8 +158,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    // console.log('activeTabIndex', activeTabIndex)
-    // console.log('lastActive', lastActive)
+
 
     return (
         <>

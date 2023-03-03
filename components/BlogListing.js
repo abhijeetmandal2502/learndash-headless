@@ -5,18 +5,16 @@ import { components } from "react-select";
 import { colourOptions } from "../components/Data.js";
 import styles from '../src/styles/MenuComponent.module.css';
 import Blog from '../components/Blog/Blog'
+import { MdExpandLess } from 'react-icons/md';
 
 const BlogListing = () => {
 
-    const [optionSelected, setOptionSelected] = useState(null);
+    const [toggleOn, setToggleOn] = useState(false)
 
-    const [currentData, setCurrentData] = useState(null);
+    const [currentData, setCurrentData] = useState(true);
 
 
-    const handleChange = (selected) => {
-        setOptionSelected(selected);
 
-    }
 
     const blogData = [
 
@@ -55,75 +53,75 @@ const BlogListing = () => {
         },
     ]
 
-    const Option = (props) => {
-        return (
-            <div>
-                <components.Option {...props} >
-                    <input
 
-                        type="checkbox"
-                        checked={props.isSelected}
-                        onChange={() => null}
-                    />{" "}
-                    <label>{props.label}</label>
+    //     return (
+    //         <div>
+    //             <components.Option {...props} >
+    //                 <input
 
-
-
-                </components.Option>
-            </div>
-        );
-    };
-
-    const customStyles = {
-        control: (base, state) => ({
-            ...base,
-
-            background: "#0000",
-            // match with the menu
-            borderRadius: state.isFocused ? "3px 3px 0 0" : 0,
-            // Overwrittes the different states of border
-            borderColor: state.isFocused ? "white" : "white",
-            // Removes weird border around container
-            boxShadow: state.isFocused ? null : null,
-            "&:hover": {
-                // Overwrittes the different states of border
-                borderColor: state.isFocused ? "white" : "white"
-            }
-
-
-        }),
-        menu: base => ({
-            ...base,
-            // override border radius to match the box
-            borderRadius: 0,
-            // kill the gap
-            marginTop: 0,
-            background: "#00000"
-        }),
-        menuList: base => ({
-            ...base,
-            // kill the white space on first and last option
-            padding: 0,
-            background: "#00000"
-
-        }),
-        // options: base => ({
-        //     ...base,
-        //     background: "#00000"
-
-        // }),
-
-
-        dropdownIndicator: (provided, state) => ({
-            ...provided,
-            transform: state.selectProps.menuIsOpen && "rotate(180deg)",
-            transition: state.selectProps.menuIsOpen && "all ease-in-out 1s",
-            transition: state.selectProps.onMenuClose && "all ease-in-out 1s"
-        }),
+    //                     type="checkbox"
+    //                     checked={props.isSelected}
+    //                     onChange={() => null}
+    //                 />{" "}
+    //                 <label>{props.label}</label>
 
 
 
-    };
+    //             </components.Option>
+    //         </div>
+    //     );
+    // };
+
+    // const customStyles = {
+    //     control: (base, state) => ({
+    //         ...base,
+
+    //         background: "#0000",
+    //         // match with the menu
+    //         borderRadius: state.isFocused ? "3px 3px 0 0" : 0,
+    //         // Overwrittes the different states of border
+    //         borderColor: state.isFocused ? "white" : "white",
+    //         // Removes weird border around container
+    //         boxShadow: state.isFocused ? null : null,
+    //         "&:hover": {
+    //             // Overwrittes the different states of border
+    //             borderColor: state.isFocused ? "white" : "white"
+    //         }
+
+
+    //     }),
+    //     menu: base => ({
+    //         ...base,
+    //         // override border radius to match the box
+    //         borderRadius: 0,
+    //         // kill the gap
+    //         marginTop: 0,
+    //         background: "#00000"
+    //     }),
+    //     menuList: base => ({
+    //         ...base,
+    //         // kill the white space on first and last option
+    //         padding: 0,
+    //         background: "#00000"
+
+    //     }),
+    //     // options: base => ({
+    //     //     ...base,
+    //     //     background: "#00000"
+
+    //     // }),
+
+
+    //     dropdownIndicator: (provided, state) => ({
+    //         ...provided,
+    //         transform: state.selectProps.menuIsOpen && "rotate(180deg)",
+    //         transition: state.selectProps.menuIsOpen && "all ease-in-out 1s",
+    //         transition: state.selectProps.onMenuClose && "all ease-in-out 1s"
+    //     }),
+
+
+
+    // };
 
     //handle click blog listing
 
@@ -139,8 +137,23 @@ const BlogListing = () => {
 
     }
 
-    //console.log('currentData', currentData)
+    ///check box toggle 
 
+    const handleClickTogle = () => {
+
+        setToggleOn(!toggleOn)
+
+
+    }
+
+
+    const handleChange = (e) => {
+
+        const { name, checked } = e.target;
+
+        console.log('name', checked);
+
+    }
 
     return (
         <>
@@ -170,33 +183,23 @@ const BlogListing = () => {
                     }
 
                 </div>
-                <div className=' bg-transparent md:col-span-3 col-span-12'>
-                    <span
-                        className="d-inline-block "
-                        data-toggle="popover"
-                        data-trigger="focus"
-                        data-content="Please selecet account(s)"
+                <div className=' bg-transparent md:col-span-3 col-span-12 '>
 
-                    >
-                        <ReactSelect
-                            className=' bg-transparent'
-                            options={colourOptions}
-                            isMulti
-                            closeMenuOnSelect={false}
-                            hideSelectedOptions={false}
+                    <div className='border border-white md:max-w-[70%] '>
+                        <button className='text-white text-[20px] px-5 py-3 flex items-center space-x-5' type="btn" onClick={() => { handleClickTogle() }} ><div>blog categories</div> <div><MdExpandLess size={20} /></div> </button>
+                        {colourOptions && colourOptions.map((item, index) => {
 
-                            defaultInputValue="blog categories"
-                            components={{
-                                Option,
-                                IndicatorSeparator: () => null,
-                            }}
-                            onChange={() => { handleChange() }}
-                            allowSelectAll={true}
-                            value={optionSelected}
-                            styles={customStyles}
+                            return (
+                                <>
+                                    {toggleOn && <div className=' px-5 py-2' key={index}>
+                                        <input type="checkbox" name={item.label} onChange={handleChange} />
+                                        <label className="text-white text-[18px] ml-2">{item.label}</label>
+                                    </div>}
+                                </>
+                            )
+                        })}
+                    </div>
 
-                        />
-                    </span>
                 </div>
             </div> : <Blog currentData={currentData} click={handleBackClick} />}
 

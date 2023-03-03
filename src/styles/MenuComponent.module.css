@@ -310,3 +310,18 @@
     transform: scale(1.2);
     transition: all ease-in-out 500ms;
 }
+
+
+/* toggle animation  */
+
+.toggleAnimation {
+
+    animation: toggleDown 500ms ease-in-out forwards;
+}
+
+@keyframes toggleDown {
+
+    form {}
+
+    to {}
+}
