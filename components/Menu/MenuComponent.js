@@ -162,7 +162,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    console.log('router', router);
+    // console.log('router', router);
 
 
 
