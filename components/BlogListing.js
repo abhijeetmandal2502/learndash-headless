@@ -12,8 +12,14 @@ const BlogListing = () => {
     const router = useRouter();
 
     const [toggleOn, setToggleOn] = useState(false)
-
     const [currentData, setCurrentData] = useState(false);
+
+    // manage state for next and previous
+
+    const [next, setNext] = useState(currentData)
+
+    const [back, setBack] = useState(currentData)
+
 
     const blogData = [
 
@@ -53,80 +59,13 @@ const BlogListing = () => {
     ]
 
 
-    //     return (
-    //         <div>
-    //             <components.Option {...props} >
-    //                 <input
-
-    //                     type="checkbox"
-    //                     checked={props.isSelected}
-    //                     onChange={() => null}
-    //                 />{" "}
-    //                 <label>{props.label}</label>
-
-
-
-    //             </components.Option>
-    //         </div>
-    //     );
-    // };
-
-    // const customStyles = {
-    //     control: (base, state) => ({
-    //         ...base,
-
-    //         background: "#0000",
-    //         // match with the menu
-    //         borderRadius: state.isFocused ? "3px 3px 0 0" : 0,
-    //         // Overwrittes the different states of border
-    //         borderColor: state.isFocused ? "white" : "white",
-    //         // Removes weird border around container
-    //         boxShadow: state.isFocused ? null : null,
-    //         "&:hover": {
-    //             // Overwrittes the different states of border
-    //             borderColor: state.isFocused ? "white" : "white"
-    //         }
-
-
-    //     }),
-    //     menu: base => ({
-    //         ...base,
-    //         // override border radius to match the box
-    //         borderRadius: 0,
-    //         // kill the gap
-    //         marginTop: 0,
-    //         background: "#00000"
-    //     }),
-    //     menuList: base => ({
-    //         ...base,
-    //         // kill the white space on first and last option
-    //         padding: 0,
-    //         background: "#00000"
-
-    //     }),
-    //     // options: base => ({
-    //     //     ...base,
-    //     //     background: "#00000"
-
-    //     // }),
-
-
-    //     dropdownIndicator: (provided, state) => ({
-    //         ...provided,
-    //         transform: state.selectProps.menuIsOpen && "rotate(180deg)",
-    //         transition: state.selectProps.menuIsOpen && "all ease-in-out 1s",
-    //         transition: state.selectProps.onMenuClose && "all ease-in-out 1s"
-    //     }),
-
-
-
-    // };
 
     //handle click blog listing
 
     const handleClick = (item, index) => {
 
-        setCurrentData(item)
+        setCurrentData(item, index)
+        router.push('/blog/slug')
 
     }
 
@@ -144,6 +83,7 @@ const BlogListing = () => {
 
 
     }
+
     const handleChange = (e) => {
 
         const { name, checked } = e.target;
@@ -151,6 +91,23 @@ const BlogListing = () => {
         console.log('name', checked);
 
     }
+
+    // handle privious and next 
+
+    const handdleNext = (item, index) => {
+
+        setNext(index + 1);
+
+    }
+
+
+    const handdlePrevious = (item, index) => {
+
+        setBack(index - 1);
+    }
+
+
+    console.log('nextPrivius', next, back);
 
     return (
         <>
@@ -172,7 +129,8 @@ const BlogListing = () => {
 
 
                                     <button className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
-                                        onClick={() => { handleClick(item, index), router.push(`/?blog/${index}`) }}
+                                        onClick={() => { handleClick(item, index) }}
+
                                     >
                                         <span className='md:text-[20px]'>read more</span>
                                         <BsArrowRightShort className='text-white' size={25} />
@@ -205,7 +163,7 @@ const BlogListing = () => {
                     </div>
 
                 </div>
-            </div> : <Blog currentData={currentData} click={handleBackClick} />}
+            </div> : ""}
 
 
         </>

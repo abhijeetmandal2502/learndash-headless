@@ -15,12 +15,12 @@ import LogoCard from 'components/card/LogoCard'
 import Styles from '../../components/card/animatedDoor/Door.module.css'
 import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
 import IwannaTech from 'components/TeacherLounge/IwannaTech'
-
-
-
-
+import { useRouter } from 'next/router'
 
 const Home = () => {
+
+    const router = useRouter();
+    const currentPath = router?.query?.active;
 
     //for login
     const [open, setOpen] = useState(false);
@@ -35,7 +35,7 @@ const Home = () => {
 
     // for menu open close 
 
-    const [On, setOn] = useState();
+    const [On, setOn] = useState(currentPath === "blog" && true);
 
     // teacher lounge 
 
@@ -348,7 +348,7 @@ const Home = () => {
                     {/* <SideMenu ShowMenuMethod={ShowMenuMethod} HideMenuMethod={HideMenuMethod} state={On} /> */}
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/2 -translate-x-1/2 '>
-                            <div className='flex items-center justify-center space-x-2' onClick={() => ShowMenuMethod()}>
+                            <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
                                 <p className='font-semibold'>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
                                 <svg width="24" height="24" className={`${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -368,7 +368,7 @@ const Home = () => {
 
             {/* drowable component */}
 
-            <div className={` ${On === true ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""} `}>
+            <div className={` ${(On === true || currentPath == 'blog') ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
 
