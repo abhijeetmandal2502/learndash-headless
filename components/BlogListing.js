@@ -86,17 +86,11 @@ const BlogListing = () => {
     const handleClickTogle = () => {
 
         setToggleOn(!toggleOn)
-
-
-
     }
 
     const handleChange = (e) => {
 
         const { name, checked } = e.target;
-
-
-
     }
 
     // handle privious and next 
@@ -104,7 +98,6 @@ const BlogListing = () => {
     const handdleNext = (item, index) => {
 
         setNext(index + 1);
-
     }
 
 
@@ -113,12 +106,7 @@ const BlogListing = () => {
         setBack(index - 1);
     }
 
-
-
-
-
-
-    console.log('nextPrivius', next, back);
+    //console.log('nextPrivius', next, back);
 
     return (
         <>
