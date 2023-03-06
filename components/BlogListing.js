@@ -95,7 +95,7 @@ const BlogListing = () => {
 
         const { name, checked } = e.target;
 
-        console.log('name', checked);
+
 
     }
 
@@ -136,14 +136,14 @@ const BlogListing = () => {
                                         <div className='text-white pr-1 text-[22px] leading-[207%]'>{item.name}</div>
                                         <div className='text-gray text-[22px] leading-[207%]'>| {item.date}</div>
                                     </div>
-                                    <p className='text-gray py-8 text-[18px] '>{item.discription}</p>
+                                    <p className='text-gray py-8  text-[20px] tracking-wider '>{item.discription}</p>
 
 
                                     <button className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
                                         onClick={() => { handleClick(item, index) }}
 
                                     >
-                                        <span className='md:text-[20px]'>read more</span>
+                                        <span className='md:text-[20px] ml-1'>read more</span>
                                         <BsArrowRightShort className='text-white' size={25} />
                                     </button>
 
@@ -158,8 +158,8 @@ const BlogListing = () => {
                 </div>
                 <div className=' bg-transparent md:col-span-3 col-span-12 '>
 
-                    <div className='border border-white md:max-w-[75%] pb-2  ' >
-                        <button className={`text-white text-[20px] px-5 py-3 flex items-center space-x-12 `} type="btn" onClick={() => { handleClickTogle() }} ><div className='text-xl'>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} /></div> </button>
+                    <div className='border border-white 2xl:max-w-[75%]   pb-2  ' >
+                        <button className={`text-white text-[20px] px-5 py-3 flex items-center 2xl:space-x-10 space-x-20 `} type="btn" onClick={() => { handleClickTogle() }} ><div className='2xl:text-xl xl:text-[20px] sm:text-[12px] '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} /></div> </button>
                         {colourOptions?.map((item, index) => {
 
                             return (
@@ -167,7 +167,7 @@ const BlogListing = () => {
                                     {toggleOn && <div className={`px-5 py-0.5 ${toggleOn ? styles.selectOptionOpen : styles.selectOptionClose}`} key={index}>
                                         {/* <input type="checkbox" name={item.label} onChange={handleChange} /> */}
                                         <input className="form-check-input appearance-none h-4 w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
-                                        <label className="text-gray text-[18px] ml-0.2">{item.label}</label>
+                                        <label className="text-gray text-[16px] ml-0.2">{item.label}</label>
                                     </div>}
                                 </>
                             )

@@ -49,10 +49,10 @@ const Home = () => {
 
     }
 
-    if (router.asPath == 'home') {
+    // if (router.asPath == 'home') {
 
-        setOn(false)
-    }
+    //     setOn(false)
+    // }
 
 
     const handleTeacherLOginClose = () => {
@@ -148,10 +148,15 @@ const Home = () => {
         setStart()
         setOpen()
         setIsloaded(false)
+        router.push({
+            pathname: '/',
+            query: { active: 'home' }
+        })
 
     }
     const HideMenuMethod = () => {
         setOn(false)
+
     }
 
 

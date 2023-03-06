@@ -197,8 +197,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    console.log('On', On);
-    console.log('openTab', openTab)
+
 
 
 
@@ -215,7 +214,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
              `}>
 
-                <div className=' md:col-span-11 col-span-12 p-10 2xl:pl-16 '>
+                <div className=' md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
 
                     <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                         <LogoCard LogoImage={LogoImage} />
