@@ -205,6 +205,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
         <>
             <div
                 className={`
+                ${styles.defaultBackground}
             grid grid-cols-12 md:h-screen  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden
             ${openTab === 1 ? styles.aboutBackground : styles.defaultBackground} 
             ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground} 
@@ -236,7 +237,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                     </div>
                                     <div className={`${openTab === 2 ? "block" : "hidden"} ${openTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll  `} id="link2">
                                         <Instructors />
-                                        <div className={` absolute bottom-10 left-5 z-[100]  flex justify-center items-center`}>
+                                        <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
                                             <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
 
                                         </div>
