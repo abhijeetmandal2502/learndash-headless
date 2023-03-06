@@ -113,7 +113,7 @@ const Blog = ({ currentData, click, }) => {
                                 <button className='text-white bg-[#3A3A3A] py-1 px-3 rounded-3xl flex space-x-5 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { HandlebackClick() }} > <TfiMenuAlt size={25} /> <div className='text-[24px] font-bold'>view all posts</div></button>
                                 <div className='flex pt-7  space-x-12'>
                                     <button onClick={() => { }} className='text-white flex space-x-2 items-center py-1 px-2 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} /> <div className='text-[20px]'> back</div></button>
-                                    <button className='text-white flex space-x-2 items-center py-1 px-2 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[20px]' >next</div> <HiOutlineArrowSmRight size={20} /> </button>
+                                    <button onClick={() => { }} className='text-white flex space-x-2 items-center py-1 px-2 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[20px]' >next</div> <HiOutlineArrowSmRight size={20} /> </button>
                                 </div>
 
                             </div>

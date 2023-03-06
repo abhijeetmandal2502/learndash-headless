@@ -49,6 +49,11 @@ const Home = () => {
 
     }
 
+    if (router.asPath == 'home') {
+
+        setOn(false)
+    }
+
 
     const handleTeacherLOginClose = () => {
 

@@ -317,11 +317,64 @@
 .toggleAnimation {
 
     animation: toggleDown 500ms ease-in-out forwards;
+    transition: all ease-in-out 500ms;
 }
 
 @keyframes toggleDown {
 
-    form {}
+    form {
+        transform: rotate(0deg);
+    }
 
-    to {}
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+
+.toggleAnimationOff {
+
+    transform: rotate(0deg);
+    transition: all ease-in-out 500ms;
+}
+
+.selectOptionClose {
+
+    animation: toggleClose 1000ms ease;
+    transition: all ease 1000ms;
+}
+
+@keyframes toggleClose {
+
+    from {
+        opacity: 1;
+
+    }
+
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+
+
+.selectOptionOpen {
+
+    animation: toggleOpen 1000ms ease;
+    transition: all ease 1000ms;
+}
+
+@keyframes toggleOpen {
+
+    from {
+        opacity: 0;
+    }
+
+
+    to {
+        opacity: 1;
+    }
+
 }

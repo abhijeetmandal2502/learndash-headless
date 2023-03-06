@@ -23,6 +23,8 @@ import { useRouter } from 'next/router'
 const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
+
+
     const [show, setShow] = useState(false);
     const [showLogo, setShowLogo] = useState(false)
     const [openTab, setOpenTab] = React.useState(0);
@@ -43,7 +45,13 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
         })
 
-        // HideMenuMethod();
+        if (router.asPath == '/?active=home') {
+            HideMenuMethod();
+
+        }
+
+        setOpenTab(0)
+
     }
 
     if (On === true) {
@@ -174,11 +182,23 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
     }
 
+
+    const handleClickLobby = () => {
+
+        router.push({
+            pathname: '/',
+            query: { active: 'home' }
+
+        })
+        HideMenuMethod()
+
+    }
+
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
-    console.log('openTab', openTab);
-
+    console.log('On', On);
+    console.log('openTab', openTab)
 
 
 
@@ -201,17 +221,17 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         <LogoCard LogoImage={LogoImage} />
                     </div>
 
-                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HideMenuMethod(), router.push('/') }} >
+                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
 
-                    {On ? <div className={`grid grid-cols-12 mt-0 gap-20 ${!show ? styles.hide : styles.aboutMain} mt-20`}>
+                    {On ? <div className={`grid grid-cols-12 mt-0 gap-20  ${!show ? styles.hide : styles.aboutMain} mt-20 `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
                             <div className=" ">
                                 <div className="tab-content tab-space ">
-                                    <div className={`${(openTab > 0 || currentPath == 'blog') ? "hidden" : "block"} `}>
+                                    <d iv className={`${(openTab > 0 || currentPath == 'blog') ? "hidden" : "block"} ${router.asPath === '/?active=home' ? 'block' : 'hidden'} `}>
                                         <Contact />
-                                    </div>
+                                    </d>
                                     <div className={`${openTab === 1 ? "block" : "hidden"} ${openTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll `} id="link1">
                                         <About />
                                     </div>
@@ -222,9 +242,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                         </div>
                                     </div>
-                                    <div className={` ${(openTab === 3 || currentPath == 'blog') ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar}  md:h-screen  overflow-y-scroll`} id="link3">
+                                    <div className={` ${(openTab === 3 || currentPath == 'blog') ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} ${currentPath == "home" ? 'hidden' : 'block'}  md:h-screen  overflow-y-scroll`} id="link3">
                                         <BlogListing />
-                                        <div className={` absolute bottom-10 left-5 z-[100]  flex justify-center items-center`}>
+                                        <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
                                             <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
 
                                         </div>
@@ -288,7 +308,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         </div>
 
                         <ul
-                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} `}
+                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
                             <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`

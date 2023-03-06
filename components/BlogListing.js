@@ -3,9 +3,11 @@ import { BsArrowRightShort } from 'react-icons/bs'
 import { colourOptions } from "../components/Data.js";
 import styles from '../src/styles/MenuComponent.module.css';
 import Blog from '../components/Blog/Blog'
-import { MdExpandLess } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
+import { AiOutlineClose } from 'react-icons/ai';
+import MusicCard from './card/MusicCard.js';
 
 const BlogListing = () => {
 
@@ -75,11 +77,16 @@ const BlogListing = () => {
 
     }
 
+    const textColor = "text-white"
+
+    const LogoImage = "/images/WhiteLogo.svg";
+
     ///check box toggle 
 
     const handleClickTogle = () => {
 
         setToggleOn(!toggleOn)
+
 
 
     }
@@ -105,6 +112,10 @@ const BlogListing = () => {
 
         setBack(index - 1);
     }
+
+
+
+
 
 
     console.log('nextPrivius', next, back);
@@ -147,15 +158,16 @@ const BlogListing = () => {
                 </div>
                 <div className=' bg-transparent md:col-span-3 col-span-12 '>
 
-                    <div className='border border-white md:max-w-[70%] '>
-                        <button className='text-white text-[20px] px-5 py-3 flex items-center space-x-5' type="btn" onClick={() => { handleClickTogle() }} ><div>blog categories</div> <div><MdExpandLess size={20} /></div> </button>
-                        {colourOptions && colourOptions.map((item, index) => {
+                    <div className='border border-white md:max-w-[75%] pb-2  ' >
+                        <button className={`text-white text-[20px] px-5 py-3 flex items-center space-x-12 `} type="btn" onClick={() => { handleClickTogle() }} ><div className='text-xl'>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} /></div> </button>
+                        {colourOptions?.map((item, index) => {
 
                             return (
                                 <>
-                                    {toggleOn && <div className=' px-5 py-2' key={index}>
-                                        <input type="checkbox" name={item.label} onChange={handleChange} />
-                                        <label className="text-white text-[18px] ml-2">{item.label}</label>
+                                    {toggleOn && <div className={`px-5 py-0.5 ${toggleOn ? styles.selectOptionOpen : styles.selectOptionClose}`} key={index}>
+                                        {/* <input type="checkbox" name={item.label} onChange={handleChange} /> */}
+                                        <input className="form-check-input appearance-none h-4 w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
+                                        <label className="text-gray text-[18px] ml-0.2">{item.label}</label>
                                     </div>}
                                 </>
                             )
@@ -163,6 +175,8 @@ const BlogListing = () => {
                     </div>
 
                 </div>
+
+
             </div> : ""}
 
 
