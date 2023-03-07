@@ -153,10 +153,10 @@ const BlogListing = () => {
 
 
                             </div>
-                            <div className=' bg-transparent md:col-span-3 col-span-12 '>
+                            <div className=' bg-transparent md:col-span-3 col-span-12 mr-10'>
 
-                                <div className='border border-white 2xl:max-w-[75%]   pb-2  ' >
-                                    <button className={`text-white text-[20px] px-5 py-3 flex items-center 2xl:space-x-10 space-x-20 `} type="btn" onClick={() => { handleClickTogle() }} ><div className='2xl:text-xl xl:text-[20px] sm:text-[12px] '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} /></div> </button>
+                                <div className='border border-white w-[250px] 2xl:max-w-[270px] sm:max-w-[200px] pb-2 ' >
+                                    <button className={`text-white text-[18px] 2xl:text-[20px] px-5 py-3 flex items-center space-x-3 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className='2xl:text-[24px] '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} /></div> </button>
                                     {colourOptions?.map((item, index) => {
 
                                         return (
@@ -164,7 +164,7 @@ const BlogListing = () => {
                                                 {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
                                                     <input className="form-check-input appearance-none h-4 w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
-                                                    <label className="text-gray text-[16px] ml-0.2">{item.label}</label>
+                                                    <label className="text-gray text-[14px] 2xl:text-[18px]  ml-0.2">{item.label}</label>
                                                 </div>}
                                             </>
                                         )
