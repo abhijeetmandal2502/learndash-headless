@@ -195,15 +195,49 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
         <>
             <div
                 className={`
-                ${styles.defaultBackground}
+                relative
+                
             grid grid-cols-12 md:h-screen  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden
-            ${openTab === 1 ? styles.aboutBackground : styles.defaultBackground} 
-            ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground}  
-            ${openTab === 3 ? styles.blogBackground : styles.defaultBackground}  
-            ${openTab === 4 ? styles.iwannaTechStart : styles.defaultBackground} 
-            ${activeTabIndex ? tabsData[activeTabIndex].background : styles.defaultBackground}
-
+              
+            ${openTab === 4 ? styles.iwannaTechStart : ""} 
+            
+           
              `}>
+
+                <div className="absolute top-0 transition-all ease-in duration-1000 left-0 w-screen h-screen -z-10">
+                    <Image
+                        className={`${styles.aboutMain}`}
+                        src="/images/menu-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    />
+                    {openTab === 1 ? <Image
+                        className={`${styles.aboutMain}`}
+                        src="/images/about-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    /> : ""}
+                    {openTab === 2 ? <Image
+                        className={`${styles.aboutMain}`}
+                        src="/images/instructor-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    /> : ""}
+                    {openTab === 3 ? <Image
+                        className={`${styles.aboutMain}`}
+                        src="/images/blog-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    /> : ""}
+                </div>
 
                 <div className=' md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
 

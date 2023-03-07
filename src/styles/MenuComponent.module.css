@@ -144,7 +144,7 @@
 
 
 .fadeAnimation {
-    animation: fadeAnimate 1s ease;
+    animation: fadeAnimate 2s ease;
 }
 
 @keyframes fadeAnimate {
