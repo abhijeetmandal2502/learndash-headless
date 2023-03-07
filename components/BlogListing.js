@@ -2,12 +2,9 @@ import React, { useState } from 'react'
 import { BsArrowRightShort } from 'react-icons/bs'
 import { colourOptions } from "../components/Data.js";
 import styles from '../src/styles/MenuComponent.module.css';
-import Blog from '../components/Blog/Blog'
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import Link from 'next/link';
 import { useRouter } from 'next/router'
-import { AiOutlineClose } from 'react-icons/ai';
-import MusicCard from './card/MusicCard.js';
+
 
 const BlogListing = () => {
 
@@ -19,7 +16,6 @@ const BlogListing = () => {
     // manage state for next and previous
 
     const [next, setNext] = useState(currentData)
-
     const [back, setBack] = useState(currentData)
 
 
@@ -71,14 +67,9 @@ const BlogListing = () => {
 
     }
 
-    const handleBackClick = () => {
 
-        setCurrentData(null)
-
-    }
 
     const textColor = "text-white"
-
     const LogoImage = "/images/WhiteLogo.svg";
 
     ///check box toggle 
@@ -93,20 +84,8 @@ const BlogListing = () => {
         const { name, checked } = e.target;
     }
 
-    // handle privious and next 
-
-    const handdleNext = (item, index) => {
-
-        setNext(index + 1);
-    }
 
 
-    const handdlePrevious = (item, index) => {
-
-        setBack(index - 1);
-    }
-
-    //console.log('nextPrivius', next, back);
 
     return (
         <>
@@ -152,8 +131,8 @@ const BlogListing = () => {
 
                             return (
                                 <>
-                                    {toggleOn && <div className={`px-5 py-0.5 ${toggleOn ? styles.selectOptionOpen : styles.selectOptionClose}`} key={index}>
-                                        {/* <input type="checkbox" name={item.label} onChange={handleChange} /> */}
+                                    {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
+
                                         <input className="form-check-input appearance-none h-4 w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
                                         <label className="text-gray text-[16px] ml-0.2">{item.label}</label>
                                     </div>}

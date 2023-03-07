@@ -45,12 +45,17 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
         })
 
+
         if (router.asPath == '/?active=home') {
             HideMenuMethod();
+
+            router.push('/');
 
         }
 
         setOpenTab(0)
+
+        setTimeout(() => { setActiveTabIndex(0) }, 500)
 
     }
 
@@ -77,7 +82,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-    const [lastActive, setLastActive] = useState(false);
+
 
     const tabsData = [
         {
@@ -164,25 +169,6 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
         },
     ];
 
-    // useEffect(() => {
-
-    //     getLastActive();
-    // }, [activeTabIndex])
-
-    const getLastActive = () => {
-
-        if ((activeTabIndex > 0) && (lastActive > activeTabIndex)) {
-
-            return setLastActive(true);
-        }
-        else {
-
-            return setLastActive(false);
-        }
-
-    }
-
-
     const handleClickLobby = () => {
 
         router.push({
@@ -192,11 +178,15 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
         })
         HideMenuMethod()
 
+
     }
 
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
+
+
+    console.log('activeTabIndex', activeTabIndex);
 
 
 
@@ -208,8 +198,8 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                 ${styles.defaultBackground}
             grid grid-cols-12 md:h-screen  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden
             ${openTab === 1 ? styles.aboutBackground : styles.defaultBackground} 
-            ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground} 
-            ${openTab === 3 ? styles.blogBackground : styles.defaultBackground} 
+            ${openTab === 2 ? styles.instructorBackground : styles.defaultBackground}  
+            ${openTab === 3 ? styles.blogBackground : styles.defaultBackground}  
             ${openTab === 4 ? styles.iwannaTechStart : styles.defaultBackground} 
             ${activeTabIndex ? tabsData[activeTabIndex].background : styles.defaultBackground}
 
@@ -346,7 +336,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                     e.preventDefault();
                                     setOpenTab(3);
 
-                                    router.push({ pathname: '/', query: { active: 'blog' } });
+                                    router.push('/blog');
                                 }}
                                 data-toggle="tab"
                                 href="#link3"

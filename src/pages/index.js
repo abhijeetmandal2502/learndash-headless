@@ -35,7 +35,7 @@ const Home = () => {
 
     // for menu open close 
 
-    const [On, setOn] = useState(currentPath === "blog" && true);
+    const [On, setOn] = useState();
 
     // teacher lounge 
 
@@ -49,10 +49,12 @@ const Home = () => {
 
     }
 
-    // if (router.asPath == 'home') {
+    useEffect(() => {
+        if (router.asPath === "/?active=home") {
+            setOn(true)
+        }
 
-    //     setOn(false)
-    // }
+    }, [])
 
 
     const handleTeacherLOginClose = () => {
