@@ -186,7 +186,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
     const LogoImage = "/images/WhiteLogo.svg";
 
 
-    console.log('activeTabIndex', activeTabIndex);
+    //   console.log('activeTabIndex', activeTabIndex);
 
 
 
@@ -277,55 +277,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                     <div className={`${openTab === 4 ? "block" : "hidden"}`} id="link4">
 
-                                        <div className='grid grid-cols-12 '>
-                                            <div className="col-span-3 md:col-span-3 flex -space-x-1 ">
-                                                {/* Loop through tab data and render button for each. */}
-                                                <div className='w-[0.4px] h-[440px] mt-4 bg-white'></div>
 
-                                                <div className=' flex flex-col  justify-start items-start'>
-                                                    {tabsData.map((tab, idx) => {
-                                                        return (
-                                                            <div key={idx} className='flex space-x-1 justify-start items-center'>
-                                                                <div className={` relative w-10 h-10 ${idx === activeTabIndex
-                                                                    ? styles.dotsBorder
-                                                                    : ""
-                                                                    }}`}>
-                                                                    <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
-                                                                        <Image src="/images/iwannaTechdot.svg" width={10} height={10} alt="i wanna tech dot" />
-                                                                    </div>
-
-                                                                    <div
-                                                                        className={`  
-                                                                    ${idx === activeTabIndex ? 'opacity-1 transition-all ease-in-out duration-[2s] delay-100' : 'opacity-0 transition-all ease-in-out duration-[2s] delay-100'}
-                                                                     absolute top-[-30px] left-[-45px] w-full 
-                                                                     ${styles.shadow}`}>
-
-                                                                        <svg height="100" width="100">
-                                                                            <circle cx="50" cy="50" r="10" stroke="white" stroke-width="2" fill="none" />
-                                                                        </svg>
-                                                                    </div>
-
-                                                                </div>
-                                                                <button
-
-                                                                    className={`text-white opacity-[0.6] text-[18px] py-[5.5px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${idx === activeTabIndex
-                                                                        ? `font-bold opacity-[1] hover:[20px] ${styles.shadow}`
-                                                                        : ""
-                                                                        }`}
-                                                                    // Change the active tab on click.
-                                                                    onClick={() => setActiveTabIndex(idx)}>
-                                                                    {tab.label}
-                                                                </button>
-                                                            </div>
-                                                        );
-                                                    })}
-                                                </div>
-                                            </div>
-                                            {/* Show active tab content. */}
-                                            <div className="py-4 col-span-9 md:col-span-9">
-                                                <div>{tabsData[activeTabIndex].content}</div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -385,6 +337,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(4);
+                                    router.push('/start');
                                 }}
                                 data-toggle="tab"
                                 href="#link4"

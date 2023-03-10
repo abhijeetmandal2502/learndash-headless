@@ -371,7 +371,7 @@
 @keyframes toggleOpen {
 
     from {
-        opacity: 0;
+        opacity: 0.5;
     }
 
 
@@ -380,3 +380,5 @@
     }
 
 }
+
+/* updown animation start page  */

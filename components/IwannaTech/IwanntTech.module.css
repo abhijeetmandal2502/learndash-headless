@@ -24,14 +24,69 @@
 /* start banner animation  */
 
 
-.bannerAnimation img {
 
-    animation: updownAnimate linear 500ms infinite;
-    transition: all ease-in-out 500ms;
+
+
+
+.vertmove {
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 2s infinite alternate;
 }
 
-@keyframes updownAnimate {
-    from {}
+.vertmove {
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 2s infinite alternate;
+}
 
-    to {}
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+
+/* i wannaTech  */
+
+.imgRotate {
+    -webkit-animation: animateRotate 3s infinite alternate;
+    animation: animateRotate 3s infinite alternate;
+}
+
+.imgRotate {
+    -webkit-animation: animateRotate 3s infinite alternate;
+    animation: animateRotate 3s infinite alternate;
+}
+
+@-webkit-keyframes animateRotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
 }
