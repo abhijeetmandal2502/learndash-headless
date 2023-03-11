@@ -21,12 +21,8 @@
 }
 
 
-/* start banner animation  */
 
-
-
-
-
+/* start */
 
 .vertmove {
     -webkit-animation: mover 2s infinite alternate;
@@ -59,16 +55,17 @@
 }
 
 
-/* i wannaTech  */
+/* i whytechTech  */
 
 .imgRotate {
-    -webkit-animation: animateRotate 3s infinite alternate;
-    animation: animateRotate 3s infinite alternate;
+    -webkit-animation: animateRotate 2s infinite alternate;
+    animation: animateRotate 2s infinite alternate;
 }
 
 .imgRotate {
-    -webkit-animation: animateRotate 3s infinite alternate;
-    animation: animateRotate 3s infinite alternate;
+    -webkit-animation: animateRotate 2s infinite alternate;
+    animation: animateRotate 2s infinite alternate;
+    overflow: hidden;
 }
 
 @-webkit-keyframes animateRotate {
@@ -89,4 +86,100 @@
     100% {
         transform: rotate(-20deg);
     }
+}
+
+/* scale animation */
+
+
+.scaleAnimation {
+
+
+    animation: scaleAnimate ease-in-out 2s infinite alternate;
+    transition: all ease-in-out 2s;
+}
+
+@keyframes scaleAnimate {
+
+    from {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0, 1.0);
+        -ms-transform: scale(1.0, 1.0);
+        /* IE 9 */
+        -webkit-transform: scale(1.0, 1.0);
+        /* Safari and Chrome */
+    }
+
+    to {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2, 1.2);
+        -ms-transform: scale(1.2, 1.2);
+        /* IE 9 */
+        -webkit-transform: scale(1.2, 1.2);
+        /* Safari and Chrome */
+
+    }
+}
+
+
+
+.arrowUpDown:nth-child(1) {
+
+    animation: fadeInOut ease-in-out infinite alternate 200ms;
+    transition: all ease-in-out 200ms;
+
+}
+
+@keyframes fadeInOut {
+
+    from {
+
+        opacity: 0.5;
+    }
+
+    to {
+
+        opacity: 1.0;
+    }
+}
+
+
+.fadeAnimation {
+    animation: fadeAnimate 2s ease;
+}
+
+@keyframes fadeAnimate {
+
+
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+
+}
+
+
+.fadeAnimationInfinite {
+    animation: fadeAnimate 2s ease infinite alternate;
+    overflow: hidden;
+}
+
+@keyframes fadeAnimate {
+
+
+    from {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        overflow: hidden;
+    }
+
+
 }

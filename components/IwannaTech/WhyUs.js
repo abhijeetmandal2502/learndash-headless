@@ -5,45 +5,30 @@ import { FaCheck } from 'react-icons/fa'
 
 const WhyUs = () => {
 
-    const data = [
-        {
-            title: "so you wanna teach? ",
-            content: "There’s no denying it! That’s why you’re here!"
-        },
-        {
-            title: "passive income",
-            content: "create the course once,get paid forever!"
-        },
-        {
-            title: "zero investment",
-            content: "Not one penny! Your only investment is time to craft your course!"
-        },
-        {
-            title: "self-service",
-            content: "Create & edit your course with our simple e-learning platform!"
-        },
-        {
-            title: "customer service, every step of the way!",
-            content: "We’re with you! Contact us anytime for assistance with anything! Simple!"
-        },
-    ]
+
 
     return (
         <>
-            <div className=' bg-transparent grid grid-cols-12 '>
+            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>Why Us?</h2>
-                        <h4>because we’re</h4>
-                        <Image src="/images/WhiteLogo.svg" width="200" height="200" alt="tech logo" />
-                        <p>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                        <h4 className='text-[35px] py-4'>because we’re</h4>
+                        <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" />
+                        <p className='text-white font-bold text-[18px] pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                            <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>
 
                     </div>
                 </div>
+                <div className=' relative col-span-12 md:col-span-6 flex justify-center items-start h-[37   0px]'>
+                    <div className={`${styles.shadow} `}>
+                        <Image src='/images/RectangleWhyUs.png' width={400} height={400} alt="wanna tech png" className={``} />
+                    </div>
 
-                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start`}>
-                    <Image src='/images/WhyUs.svg' width={700} height={700} alt="wanna tech png" className={``} />
+                    <div className={` absolute bottom-[40px]  left-0 ${styles.shadow} ${styles.imgRotate}    col-span-12 md:col-span-6 flex justify-center items-start`}>
+                        <Image src='/images/man.png' width={480} height={480} alt="wanna tech png" className={` opacity-1`} />
+                    </div>
                 </div>
 
             </div>

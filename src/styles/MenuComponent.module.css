@@ -382,3 +382,66 @@
 }
 
 /* updown animation start page  */
+
+
+.arrowUpDown>.one {
+
+    animation: fadeInOut ease-in-out infinite alternate 1000ms;
+    transition: all ease-in-out 1000ms;
+
+}
+
+@keyframes fadeInOut {
+
+    from {
+
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+.arrowUpDown>.two {
+
+    animation: fadeInOutOne ease-in-out infinite alternate 1000ms;
+    transition: all ease-in-out 1000ms;
+    animation-delay: 500ms;
+
+}
+
+@keyframes fadeInOutOne {
+
+    from {
+
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+.arrowUpDown>.three {
+
+    animation: fadeInOutthree ease-in-out infinite alternate 1000ms;
+    transition: all ease-in-out 1000ms;
+    animation-delay: 500ms;
+
+}
+
+@keyframes fadeInOutthree {
+
+    from {
+
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}

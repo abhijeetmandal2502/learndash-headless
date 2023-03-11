@@ -30,14 +30,14 @@ const WhyTech = () => {
 
     return (
         <>
-            <div className=' bg-transparent grid grid-cols-12 '>
+            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
                         {
                             data?.map((item, id) => {
                                 return (<>
-                                    <div className='py-2'>
+                                    <div key={id} className='py-2'>
                                         <div className='flex space-x-2 items-center'>
                                             <div className='p-1.5 rounded-full bg-white'>
                                                 <FaCheck className='font-bold' size={15} />

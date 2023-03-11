@@ -9,12 +9,20 @@ import MusicCard from 'components/card/MusicCard';
 import { useRouter } from 'next/router'
 import WhyTech from 'components/IwannaTech/WhyTech';
 import WhyUs from 'components/IwannaTech/WhyUs';
+import WhyNow from 'components/IwannaTech/WhyNow';
+import Needed from 'components/IwannaTech/Needed';
+import Ncbtmb from 'components/IwannaTech/Ncbtmb';
+import WhyYou from 'components/IwannaTech/WhyYou';
+import NowWhat from 'components/IwannaTech/NowWhat';
+import Create from 'components/IwannaTech/Create';
+import NeverAlone from 'components/IwannaTech/NeverAlone';
+import Commission from 'components/IwannaTech/Commission';
+import GetStarted from 'components/IwannaTech/GetStarted';
+import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
 const Start = () => {
 
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-
-
     const tabsData = [
         {
             id: 1,
@@ -40,69 +48,69 @@ const Start = () => {
             id: 4,
             label: "why now",
             content:
-                "4 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <WhyNow />,
             background: styles.whyNowbg
         },
         {
             id: 5,
             label: "needed",
             content:
-                " 5 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <Needed />,
             background: styles.neededbg
         },
         {
             id: 6,
             label: "ncbtmb",
             content:
-                "6 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <Ncbtmb />,
             background: styles.ncbtmbbg
         },
         {
             id: 7,
             label: "why you",
             content:
-                "7 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <WhyYou />,
             background: styles.whyyoubg
         },
         {
             id: 8,
             label: "now what",
             content:
-                " 8 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <NowWhat />,
             background: styles.nowwhatbg
         },
         {
             id: 9,
             label: "create",
             content:
-                " 9 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <Create />,
             background: styles.createbg
         },
         {
             id: 10,
             label: "never alone",
             content:
-                "10 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <NeverAlone />,
             background: styles.neverAlonebg
         },
         {
             id: 11,
             label: "commission",
             content:
-                "11 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <Commission />,
             background: styles.commissionbg
         },
         {
             id: 12,
             label: "get started",
             content:
-                "12 Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
+                <GetStarted />,
             background: styles.getstartedbg
         },
     ];
     return (
         <>
-            <div className={`grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} `}>
+            <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} `}>
 
                 <div className='md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20'>
                     <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
@@ -113,7 +121,7 @@ const Start = () => {
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button>
 
                     <div className='grid grid-cols-12 pt-10 '>
-                        <div className="col-span-3 md:col-span-3 flex -space-x-1 ">
+                        <div className="col-span-2 md:col-span-2 flex -space-x-1 ">
                             {/* Loop through tab data and render button for each. */}
                             <div className='w-[0.4px] h-[440px] mt-4 bg-white'></div>
 
@@ -157,7 +165,7 @@ const Start = () => {
                             </div>
                         </div >
                         {/* Show active tab content. */}
-                        <div div className="py-4 col-span-9 md:col-span-9" >
+                        <div div className={`py-4 col-span-10 md:col-span-10 ${styles.fadeAnimation}`} >
                             <div>{tabsData[activeTabIndex].content}</div>
                         </div >
                     </div >
@@ -178,6 +186,17 @@ const Start = () => {
                         </div>
                     </div>
                 </div>
+
+                {activeTabIndex < 11 ? <div className={`${styles.arrowUpDown} z-[1000] absolute bottom-5 left-1/2`}>
+                    <SlArrowDown size={20} className={`${styles.one} text-white`} />
+                    <SlArrowDown size={20} className={`${styles.two} text-white`} />
+                    <SlArrowDown size={20} className={`${styles.three} text-white`} />
+                </div> : ""}
+                {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-5 left-1/2`}>
+                    <SlArrowUp size={20} className={`${styles.one} text-white`} />
+                    <SlArrowUp size={20} className={`${styles.two} text-white`} />
+                    <SlArrowUp size={20} className={`${styles.three} text-white`} />
+                </div> : ""}
             </div >
 
         </>
