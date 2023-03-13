@@ -21,14 +21,15 @@ const WhyUs = () => {
 
                     </div>
                 </div>
-                <div className=' relative col-span-12 md:col-span-6 flex justify-center items-start h-[37   0px]'>
-                    <div className={`${styles.shadow} `}>
+                <div className='  col-span-12 md:col-span-6 flex justify-center items-start max-h-[350px] overflow-hidden'>
+                    <div className={`${styles.shadow} relative overflow-hidden max-h-[350px] `}>
                         <Image src='/images/RectangleWhyUs.png' width={400} height={400} alt="wanna tech png" className={``} />
+                        <div className={` absolute bottom-[20px]  left-[20%] ${styles.shadow} ${styles.imgRotate}    col-span-12 md:col-span-6 flex justify-center items-start `}>
+                            <Image src='/images/man.png' width={350} height={350} alt="wanna tech png" className={` opacity-1`} />
+                        </div>
                     </div>
 
-                    <div className={` absolute bottom-[40px]  left-0 ${styles.shadow} ${styles.imgRotate}    col-span-12 md:col-span-6 flex justify-center items-start`}>
-                        <Image src='/images/man.png' width={480} height={480} alt="wanna tech png" className={` opacity-1`} />
-                    </div>
+
                 </div>
 
             </div>

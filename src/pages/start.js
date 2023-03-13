@@ -1,5 +1,5 @@
 import StartComponent from 'components/IwannaTech/StartComponent';
-import React, { useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
 import styles from '../styles/MenuComponent.module.css'
 import Image from 'next/image';
 import LogoCard from 'components/card/LogoCard';
@@ -19,7 +19,13 @@ import NeverAlone from 'components/IwannaTech/NeverAlone';
 import Commission from 'components/IwannaTech/Commission';
 import GetStarted from 'components/IwannaTech/GetStarted';
 import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
+
+import { useRef } from 'react';
 const Start = () => {
+
+    // const [containerWidth, setContainerWidth] = useState();
+
+
 
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -108,6 +114,17 @@ const Start = () => {
             background: styles.getstartedbg
         },
     ];
+    const containerRef = useRef();
+    const [height, setHeight] = useState('0px');
+
+    useEffect(() => {
+        setHeight(activeTabIndex * 36.6)
+
+    }, [activeTabIndex])
+    // const translate = setHeight(activeTabIndex)
+
+    console.log('activeTabIndex', height)
+
     return (
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} `}>
@@ -136,16 +153,17 @@ const Start = () => {
                                                 <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
                                                     <Image src="/images/iwannaTechdot.svg" width={10} height={10} alt="i wanna tech dot" />
                                                 </div>
-
                                                 <div
                                                     className={`  
-                                                                    ${idx === activeTabIndex ? 'opacity-1 transition-all ease-in-out duration-[2s] delay-100' : 'opacity-0 transition-all ease-in-out duration-[2s] delay-100'}
+                                                                    ${idx === activeTabIndex ? styles.scaleEnterActive : styles.scaleLeaveActive}
                                                                      absolute top-[-30px] left-[-45px] w-full 
-                                                                     ${styles.shadow}`}>
+                                                                     ${styles.shadow}`}
+                                                >
 
                                                     <svg height="100" width="100">
                                                         <circle cx="50" cy="50" r="10" stroke="white" stroke-width="2" fill="none" />
                                                     </svg>
+
                                                 </div>
 
                                             </div>
@@ -204,3 +222,4 @@ const Start = () => {
 }
 
 export default Start
+

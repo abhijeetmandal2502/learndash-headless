@@ -163,6 +163,26 @@
 }
 
 
+.fadeAnimationDown {
+    animation: fadeAnimateDown 2s ease;
+}
+
+@keyframes fadeAnimateDown {
+
+
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+
+}
+
+
 .fadeAnimationInfinite {
     animation: fadeAnimate 2s ease infinite alternate;
     overflow: hidden;
