@@ -18,7 +18,7 @@ const NeverAlone = () => {
                     </div>
                 </div>
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.scaleAnimation}  col-span-12 md:col-span-6 flex justify-center items-start`}>
-                    <Image src='/images/neverAlone.png' width={700} height={700} alt="wanna tech png" className={``} />
+                    <Image src='/images/neverAlone.png' width={400} height={400} alt="wanna tech png" className={``} />
                 </div>
 
             </div>

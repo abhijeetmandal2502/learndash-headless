@@ -12,7 +12,7 @@ const Commission = () => {
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>commission</h2>
                         {/* <h4 className='text-[35px] py-4'>tell us about <br></br> <br></br> your pedigree</h4> */}
-                        <div className={`${styles.vertmove} mt-5`}>
+                        <div className={`${styles.vertmove} mt-5 flex justify-center items-center`}>
                             <Image src="/images/money.png" width="250" height="200" alt="tech logo" />
                         </div>
 
@@ -23,8 +23,6 @@ const Commission = () => {
                 <div className='col-span-12 md:col-span-6 '>
                     <div className={`${styles.shadow} ${styles.imgRotate}   flex justify-center items-start`}>
                         <Image src='/images/commissionBanner.png' width={400} height={400} alt="wanna tech png" className={``} />
-
-
                     </div>
                     <p className='mt-5 px-16 text-white text-[19px]'>…And you can check on your course’s progress and edit your course anytime on our realtime dashboard!</p>
                 </div>

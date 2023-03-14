@@ -118,10 +118,11 @@ const Start = () => {
     const [height, setHeight] = useState('0px');
 
     useEffect(() => {
-        setHeight(activeTabIndex * 36.6)
+        setHeight(activeTabIndex * 36.66)
 
     }, [activeTabIndex])
-    // const translate = setHeight(activeTabIndex)
+
+
 
     console.log('activeTabIndex', height)
 
@@ -158,6 +159,8 @@ const Start = () => {
                                                                     ${idx === activeTabIndex ? styles.scaleEnterActive : styles.scaleLeaveActive}
                                                                      absolute top-[-30px] left-[-45px] w-full 
                                                                      ${styles.shadow}`}
+
+
                                                 >
 
                                                     <svg height="100" width="100">

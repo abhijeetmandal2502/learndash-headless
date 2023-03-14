@@ -21,14 +21,20 @@ const WhyUs = () => {
 
                     </div>
                 </div>
-                <div className='  col-span-12 md:col-span-6 flex justify-center items-start max-h-[350px] overflow-hidden'>
-                    <div className={`${styles.shadow} relative overflow-hidden max-h-[350px] `}>
-                        <Image src='/images/RectangleWhyUs.png' width={400} height={400} alt="wanna tech png" className={``} />
-                        <div className={` absolute bottom-[20px]  left-[20%] ${styles.shadow} ${styles.imgRotate}    col-span-12 md:col-span-6 flex justify-center items-start `}>
-                            <Image src='/images/man.png' width={350} height={350} alt="wanna tech png" className={` opacity-1`} />
+                <div className=' relative col-span-12 md:col-span-6 flex justify-center items-start max-h-[400px]'>
+                    <div className={` relative overflow-hidden  `}>
+                        <Image src='/images/RectangleWhyUs.png' width={350} height={400} alt="wanna tech png" className={``} />
+                        <div className={` absolute -bottom-[20px]  left-[0%]  ${styles.imgRotate}    col-span-12 md:col-span-6 flex justify-center items-start `}>
+                            <Image src='/images/man.png' width={500} height={500} alt="wanna tech png" className={`h-[350px] w-[500px] opacity-1`} />
                         </div>
-                    </div>
 
+
+                    </div>
+                    <div className={`${styles.rotatebgImg} ${styles.aboutMain} absolute  top-[220px] right-[0px]`}>
+                        <svg width="400" height="100">
+                            <rect width="400" height="100" fill='#E6A84B' />
+                            Sorry, your browser does not support inline SVG.
+                        </svg></div>
 
                 </div>
 
