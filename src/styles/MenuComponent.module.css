@@ -446,27 +446,18 @@
     }
 }
 
+/* .transformTopBottomIndicater {
 
-/* .scaleEnter {
-    transform: translateY(-100%);
-    opacity: .01;
-} */
-
-.scaleEnterActive {
-    transform: translateY(0%);
-    opacity: 1;
-    transition: all 1000ms ease-in-out;
-
-}
-
-/* .scalLeave {
-    transform: translateY(0);
-    opacity: 1;
+    margin-top: 397px;
 
 } */
 
-.scaleLeaveActive {
-    /* transform: translateY(100%); */
-    opacity: 0;
-    transition: all 1000ms ease-in-out;
+
+@media only screen and (max-height: 500px),
+screen and (max-height: 700px) {
+    .transformTopBottomIndicater {
+
+        margin-top: 393px;
+
+    }
 }

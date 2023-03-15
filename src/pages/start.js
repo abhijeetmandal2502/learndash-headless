@@ -19,16 +19,16 @@ import NeverAlone from 'components/IwannaTech/NeverAlone';
 import Commission from 'components/IwannaTech/Commission';
 import GetStarted from 'components/IwannaTech/GetStarted';
 import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
+import classNames from "classnames"
 
 import { useRef } from 'react';
 const Start = () => {
 
-    // const [containerWidth, setContainerWidth] = useState();
-
-
-
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState(0);
+
+    // const [startInitial, setStartInitial] = useState("mt-[394px]")
+
     const tabsData = [
         {
             id: 1,
@@ -114,17 +114,38 @@ const Start = () => {
             background: styles.getstartedbg
         },
     ];
-    const containerRef = useRef();
-    const [height, setHeight] = useState('0px');
+
+    //animate tab integator
+
+    const [buttonRefs, setButtonRefs] = useState([])
 
     useEffect(() => {
-        setHeight(activeTabIndex * 36.66)
+        setButtonRefs(prev => prev.slice(0, tabsData.length))
+    }, [tabsData.length])
 
-    }, [activeTabIndex])
+    const navRef = useRef(null)
+    const isInitialRender = useRef(true)
+    const navRect = navRef.current?.getBoundingClientRect()
+
+    const selectedRect = buttonRefs[activeTabIndex]?.getBoundingClientRect()
+
+    let selectStyles = { opacity: 0 }
+    if (navRect && selectedRect) {
+        selectStyles.height = selectedRect.height
+        selectStyles.transform = `translateY(calc(${(selectedRect.top) -
+            navRect.top}px ))`
+        selectStyles.opacity = 1
+        selectStyles.transition = isInitialRender.current
+            ? `opacity 150ms 150ms`
+            : `transform 1000ms 0ms, opacity 150ms 150ms, height 150ms`
+
+        isInitialRender.current = false
+    }
 
 
 
-    console.log('activeTabIndex', height)
+    //  console.log('selectedRect', selectedRect.top, navRect.top);
+
 
     return (
         <>
@@ -141,43 +162,56 @@ const Start = () => {
                     <div className='grid grid-cols-12 pt-10 '>
                         <div className="col-span-2 md:col-span-2 flex -space-x-1 ">
                             {/* Loop through tab data and render button for each. */}
-                            <div className='w-[0.4px] h-[440px] mt-4 bg-white'></div>
+                            <div className=' relative w-[0.4px] h-[440px] mt-4 bg-white'>
+
+                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[394px]' : 'mt-[397px]'}  ${styles.transformTopBottomIndicater}  left-[-49px]`} style={selectStyles}>
+                                    <svg>
+                                        <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
+
+                                        </circle>
+                                    </svg>
+                                </div>
+                            </div>
+
+
 
                             <div className=' flex flex-col  justify-start items-start'>
-                                {tabsData.map((tab, idx) => {
+                                {tabsData.map((tab, i) => {
                                     return (
-                                        <div key={idx} className='flex space-x-1 justify-start items-center'>
-                                            <div className={` relative w-10 h-10 ${idx === activeTabIndex
+                                        <div key={i} className='flex space-x-1 justify-start items-center'>
+                                            <div className={` relative w-10 h-10 ${i === activeTabIndex
                                                 ? styles.dotsBorder
                                                 : ""
-                                                }}`}>
+                                                }}`}
+                                                ref={navRef}
+                                            >
                                                 <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
                                                     <Image src="/images/iwannaTechdot.svg" width={10} height={10} alt="i wanna tech dot" />
                                                 </div>
                                                 <div
                                                     className={`  
-                                                                    ${idx === activeTabIndex ? styles.scaleEnterActive : styles.scaleLeaveActive}
+                                                                    ${i === activeTabIndex ? 'opacity-1 transition-all ease-out duration-1000 translate-y-[transformAnimate]' : 'opacity-0'}
                                                                      absolute top-[-30px] left-[-45px] w-full 
                                                                      ${styles.shadow}`}
 
 
                                                 >
 
-                                                    <svg height="100" width="100">
-                                                        <circle cx="50" cy="50" r="10" stroke="white" stroke-width="2" fill="none" />
-                                                    </svg>
+
 
                                                 </div>
 
                                             </div>
                                             <button
 
-                                                className={`text-white opacity-[0.6] text-[18px] py-[5.5px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${idx === activeTabIndex
+                                                className={`text-white opacity-[0.6] text-[18px] py-[5.5px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
                                                     ? `font-bold opacity-[1] hover:[20px] ${styles.shadow}`
                                                     : ""
                                                     }`}
                                                 // Change the active tab on click.
-                                                onClick={() => setActiveTabIndex(idx)}>
+                                                onClick={() => setActiveTabIndex(i)}
+                                                ref={el => (buttonRefs[i] = el)}
+                                            >
                                                 {tab.label}
                                             </button>
                                         </div>
