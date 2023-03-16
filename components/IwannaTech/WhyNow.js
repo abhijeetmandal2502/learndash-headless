@@ -8,7 +8,7 @@ const WhyNow = () => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>why now?</h2>
                         <h4 className='text-[40px] font-bold py-4'>we have been <br></br><br></br> here 15 years !</h4>
@@ -19,9 +19,9 @@ const WhyNow = () => {
 
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-start'>
-                    <div className={`${styles.shadow} ${styles.scaleAnimation} `}>
-                        <Image src='/images/whyNow.png' width={400} height={400} alt="wanna tech png" className={``} />
+                <div className='col-span-12 md:col-span-7 flex justify-center items-start'>
+                    <div className={`${styles.shadow} ${styles.scaleAnimation} -mt-10 `}>
+                        <Image src='/images/whyNow.png' width={500} height={500} alt="wanna tech png" className={``} />
                     </div>
                 </div>
 

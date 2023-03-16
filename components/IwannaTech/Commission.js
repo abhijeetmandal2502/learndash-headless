@@ -7,16 +7,16 @@ const Commission = () => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent grid grid-cols-12 gap-20 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
-                    <div>
+                    <div className='ml-20'>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>commission</h2>
                         {/* <h4 className='text-[35px] py-4'>tell us about <br></br> <br></br> your pedigree</h4> */}
-                        <div className={`${styles.vertmove} mt-5 flex justify-center items-center`}>
+                        <div className={`${styles.vertmove} mt-16 flex justify-center items-center`}>
                             <Image src="/images/money.png" width="250" height="200" alt="tech logo" />
                         </div>
 
-                        <p className='text-white font-bold text-[18px] pt-5'>We are right here every step of the way to help you create the course you want on our e-learning platform! Just contact your concierge and they’ll walk you through any part of the course process you need!</p>
+                        <p className='text-white font-bold text-[18px] pt-5'>earning are split 50/50 and you are paid once a month, forever!</p>
 
                     </div>
                 </div>

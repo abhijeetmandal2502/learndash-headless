@@ -14,10 +14,10 @@ const NowWhat = () => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>Now what?</h2>
-                        <h4 className='text-[35px] py-4'>now we enter<br></br> <br></br>contact:</h4>
+                        <h2 className={`text-white font-semibold text-[65px] ${styles.shadow} leading-[80px] tracking-wide`}>Now what?</h2>
+                        <h4 className='text-[45px] font-bold py-4'>now we enter<br></br> <br></br>contact:</h4>
                         {/* <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" /> */}
                         {
                             data?.map((item, id) => {
@@ -38,9 +38,9 @@ const NowWhat = () => {
 
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-start'>
+                <div className='col-span-12 md:col-span-7 flex justify-center items-start -mt-32'>
                     <div className={`${styles.shadow} ${styles.imgRotate} `}>
-                        <Image src='/images/nowWhat.png' width={400} height={400} alt="wanna tech png" className={``} />
+                        <Image src='/images/nowWhat.png' width={550} height={550} alt="wanna tech png" className={``} />
                     </div>
                 </div>
 

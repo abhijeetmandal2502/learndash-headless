@@ -149,7 +149,7 @@ const Start = () => {
 
     return (
         <>
-            <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} `}>
+            <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
                 <div className='md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 z-10'>
                     <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>

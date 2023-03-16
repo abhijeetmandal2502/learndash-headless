@@ -8,7 +8,7 @@ const Needed = () => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                <div className='col-span-12 md:col-span-4 flex justify-center items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>what’s needed?</h2>
 
@@ -19,9 +19,9 @@ const Needed = () => {
 
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-start'>
-                    <div className={`${styles.shadow} ${styles.imgRotate} `}>
-                        <Image src='/images/needed.png' width={400} height={400} alt="wanna tech png" className={``} />
+                <div className='col-span-12 md:col-span-8 flex justify-center items-start -mt-16'>
+                    <div className={`${styles.shadow} ${styles.imgRotate}  `}>
+                        <Image src='/images/needed.png' width={550} height={550} alt="wanna tech png" className={``} />
                     </div>
                 </div>
 

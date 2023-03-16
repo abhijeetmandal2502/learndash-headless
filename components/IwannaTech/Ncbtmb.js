@@ -8,9 +8,9 @@ const Ncbtmb = () => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[60px] text-[45px] ${styles.shadow} leading-[80px] tracking-wide`}>Are both you AND your course NCBTMB Approved?</h2>
+                        <h2 className={`text-white font-normal 2xl:text-[62px] text-[45px] ${styles.shadow} leading-[70px] tracking-wide`}>are both you <span className='border-b-4'>and</span> your course ncbtmb approved?</h2>
                         <button className=' mt-5 rounded-3xl border border-white px-7 py-3 text-white font-normal text-2xl hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
                             if not, click here!
                         </button>
@@ -19,9 +19,9 @@ const Ncbtmb = () => {
 
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-start'>
+                <div className='col-span-12 md:col-span-7 flex justify-center items-start -mt-16'>
                     <div className={`${styles.shadow} ${styles.imgRotate} `}>
-                        <Image src='/images/ncbtmbOrange.png' width={500} height={500} alt="wanna tech png" className={``} />
+                        <Image src='/images/ncbtmbOrange.png' width={550} height={550} alt="wanna tech png" className={``} />
                     </div>
                 </div>
 
