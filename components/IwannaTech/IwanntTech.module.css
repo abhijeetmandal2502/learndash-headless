@@ -240,3 +240,42 @@
         opacity: 1;
     }
 }
+
+/* background image css  */
+/* @media only screen and (max-width: 1560px) {
+    .svgstyle {
+        width: 62%;
+        right: 10%;
+        bottom: 20%;
+    }
+}
+
+@media only screen and (min-width: 1561px) {
+    .svgstyle {
+        width: 50%;
+        right: 18.2%;
+        bottom: 22%;
+    }
+} */
+
+
+
+.tranatationNone {
+
+    transition: all ease 5s;
+    animation: displaynoneImg 5s ease forwards;
+
+}
+
+@keyframes displaynoneImg {
+
+    from {
+        visibility: hidden !important;
+        display: none;
+    }
+
+    to {
+        visibility: visible;
+        display: block;
+    }
+}

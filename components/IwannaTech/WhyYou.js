@@ -3,12 +3,12 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const WhyYou = () => {
+const WhyYou = (state) => {
 
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
-                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                <div className='col-span-12 md:col-span-4 flex justify-center items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
                         <h4 className='text-[50px] font-bold py-4'>tell us about <br></br> <br></br> your pedigree</h4>
@@ -19,21 +19,25 @@ const WhyYou = () => {
 
                     </div>
                 </div>
-                <div className=' relative col-span-12 md:col-span-6 flex justify-center items-start'>
-                    <div className={` `}>
-                        <Image src='/images/WhyYouRectangle.png' width={400} height={400} alt="wanna tech png" className={``} />
-                        {/* <p className='text-white'>(hername's bubbles)</p> */}
+
+
+                <div className=' relative col-span-12 md:col-span-8 h-[100vh]    '>
+                    <div className={` relative  w-[100%] h-[100%] `}>
+                        <div className={`absolute top-[6%]  right-[20%]  w-[50%] `}>
+                            <Image src='/images/WhyYouRectangle.png' width={1200} height={600} alt="wanna tech png" className={`w-[100%]`} />
+                        </div>
+
+                        <div className={` absolute -top-[4%]  right-[20%]   ${styles.fadeAnimationInfinite}   w-[55%]`}>
+                            <Image src='/images/dog.png' width={1000} height={700} alt="wanna tech png" className={` `} />
+                        </div>
+
+                        <div className={`-rotate-[30deg] ${styles.aboutMain} ${styles.svgstyle} ${state === 6 ? styles.tranatationNone : ""}    top-[25%]  right-[12.5%] absolute  w-[54%] h-[20%]`}>
+                            <svg viewBox="0 0 450 378" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.659668L0 378L450 378V1.20398C442.38 63.947 388.934 112.555 324.135 112.555L125.93 112.555C60.9436 112.555 7.37568 63.6656 0 0.659668Z" fill="#A53A3A" />
+                            </svg>
+                        </div>
                     </div>
 
-                    <div className={` absolute -top-[100px]  left-[7%]  ${styles.fadeAnimationInfinite}    col-span-12 md:col-span-6 flex justify-center items-start`}>
-                        <Image src='/images/dog.png' width={450} height={450} alt="wanna tech png" className={` h-[440px] opacity-1`} />
-                    </div>
-                    <div className={` -rotate-[22deg] ${styles.aboutMain} absolute  top-[259px] right-[5px]`}>
-                        <svg width="400" height="100">
-                            <rect width="400" height="100" fill='#A53A3A' />
-                            Sorry, your browser does not support inline SVG.
-                        </svg>
-                    </div>
 
                 </div>
 

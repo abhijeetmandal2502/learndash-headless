@@ -47,7 +47,7 @@ const Start = () => {
             id: 3,
             label: "why us",
             content:
-                <WhyUs />,
+                <WhyUs state={activeTabIndex} />,
             background: styles.whyUsbg
         },
         {
@@ -75,7 +75,7 @@ const Start = () => {
             id: 7,
             label: "why you",
             content:
-                <WhyYou />,
+                <WhyYou state={activeTabIndex} />,
             background: styles.whyyoubg
         },
         {
@@ -110,7 +110,7 @@ const Start = () => {
             id: 12,
             label: "get started",
             content:
-                <GetStarted />,
+                <GetStarted state={activeTabIndex} />,
             background: styles.getstartedbg
         },
     ];
@@ -151,7 +151,7 @@ const Start = () => {
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} `}>
 
-                <div className='md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20'>
+                <div className='md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 z-10'>
                     <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
                         <LogoCard LogoImage="/images/WhiteLogo.svg" />
                     </div>
@@ -160,11 +160,11 @@ const Start = () => {
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button>
 
                     <div className='grid grid-cols-12 pt-10 '>
-                        <div className="col-span-2 md:col-span-2 flex -space-x-1 ">
+                        <div className="col-span-2 md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
-                            <div className=' relative w-[0.4px] h-[440px] mt-4 bg-white'>
+                            <div className=' relative w-[0.4px] h-[400px] mt-4 bg-white'>
 
-                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[394px]' : 'mt-[397px]'}  ${styles.transformTopBottomIndicater}  left-[-49px]`} style={selectStyles}>
+                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px]' : 'mt-[340px]'}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 `} style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
 
@@ -175,45 +175,40 @@ const Start = () => {
 
 
 
-                            <div className=' flex flex-col  justify-start items-start'>
+                            <div className=' flex flex-col  justify-start items-start '>
                                 {tabsData.map((tab, i) => {
                                     return (
-                                        <div key={i} className='flex space-x-1 justify-start items-center'>
-                                            <div className={` relative w-10 h-10 ${i === activeTabIndex
+                                        <div key={i} className='flex space-x-1 justify-start items-center '>
+                                            <div className={` relative w-8 h-9 ${i === activeTabIndex
                                                 ? styles.dotsBorder
                                                 : ""
                                                 }}`}
                                                 ref={navRef}
                                             >
                                                 <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
-                                                    <Image src="/images/iwannaTechdot.svg" width={10} height={10} alt="i wanna tech dot" />
+                                                    <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
                                                 </div>
                                                 <div
                                                     className={`  
                                                                     ${i === activeTabIndex ? 'opacity-1 transition-all ease-out duration-1000 translate-y-[transformAnimate]' : 'opacity-0'}
                                                                      absolute top-[-30px] left-[-45px] w-full 
                                                                      ${styles.shadow}`}
-
-
                                                 >
-
-
-
                                                 </div>
 
                                             </div>
-                                            <button
+                                            <p
 
-                                                className={`text-white opacity-[0.6] text-[18px] py-[5.5px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
+                                                className={`text-white opacity-[0.6] text-[18px] py-[3px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
                                                     ? `font-bold opacity-[1] hover:[20px] ${styles.shadow}`
                                                     : ""
-                                                    }`}
+                                                    } `}
                                                 // Change the active tab on click.
                                                 onClick={() => setActiveTabIndex(i)}
                                                 ref={el => (buttonRefs[i] = el)}
                                             >
                                                 {tab.label}
-                                            </button>
+                                            </p>
                                         </div>
                                     );
                                 })}
