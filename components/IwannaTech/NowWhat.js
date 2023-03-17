@@ -39,7 +39,7 @@ const NowWhat = () => {
                     </div>
                 </div>
                 <div className='col-span-12 md:col-span-7 flex justify-center items-start -mt-32'>
-                    <div className={`${styles.shadow} ${styles.imgRotate} `}>
+                    <div className={`${styles.shadow} ${styles.imgRotateNowWhat} `}>
                         <Image src='/images/nowWhat.png' width={550} height={550} alt="wanna tech png" className={``} />
                     </div>
                 </div>

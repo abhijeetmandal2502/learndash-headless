@@ -11,7 +11,7 @@ const WhyNow = () => {
                 <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold text-[70px] ${styles.shadow} leading-[80px] tracking-wide`}>why now?</h2>
-                        <h4 className='text-[40px] font-bold py-4'>we have been <br></br><br></br> here 15 years !</h4>
+                        <h4 className='text-[40px] font-bold pt-10 pb-4'>we ve been <br></br><br></br> here 15 years !</h4>
                         {/* <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" /> */}
                         <p className='text-white font-bold text-[18px] pt-5'>But it seems just over the last few years, Online Continuing Education has exploded thanks to improved tech, and increased concerns for social distancing!
                             <br></br><br></br>

@@ -2,7 +2,6 @@ import StartComponent from 'components/IwannaTech/StartComponent';
 import React, { Children, useEffect, useState } from 'react'
 import styles from '../styles/MenuComponent.module.css'
 import Image from 'next/image';
-import LogoCard from 'components/card/LogoCard';
 import { BiArrowBack } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import MusicCard from 'components/card/MusicCard';
@@ -19,7 +18,7 @@ import NeverAlone from 'components/IwannaTech/NeverAlone';
 import Commission from 'components/IwannaTech/Commission';
 import GetStarted from 'components/IwannaTech/GetStarted';
 import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
-import classNames from "classnames"
+import Link from 'next/link';
 
 import { useRef } from 'react';
 const Start = () => {
@@ -27,7 +26,8 @@ const Start = () => {
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState(0);
 
-    // const [startInitial, setStartInitial] = useState("mt-[394px]")
+
+
 
     const tabsData = [
         {
@@ -47,7 +47,7 @@ const Start = () => {
             id: 3,
             label: "why us",
             content:
-                <WhyUs state={activeTabIndex} />,
+                <WhyUs activeTabIndex={activeTabIndex} />,
             background: styles.whyUsbg
         },
         {
@@ -75,7 +75,7 @@ const Start = () => {
             id: 7,
             label: "why you",
             content:
-                <WhyYou state={activeTabIndex} />,
+                <WhyYou activeTabIndex={activeTabIndex} />,
             background: styles.whyyoubg
         },
         {
@@ -110,7 +110,7 @@ const Start = () => {
             id: 12,
             label: "get started",
             content:
-                <GetStarted state={activeTabIndex} />,
+                <GetStarted activeTabIndex={activeTabIndex} />,
             background: styles.getstartedbg
         },
     ];
@@ -144,22 +144,30 @@ const Start = () => {
 
 
 
-    //  console.log('selectedRect', selectedRect.top, navRect.top);
+    console.log('selectedRect', selectedRect, navRect);
 
 
     return (
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
-                <div className='md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 z-10'>
-                    <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
-                        <LogoCard LogoImage="/images/WhiteLogo.svg" />
+                <div className='md:col-span-11 col-span-12 p-10 z-10'>
+                    <div className='2xl:pl-14 md:pl-14 mt-2 '>
+                        <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
+                            <Link href="/">
+                                <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[120px] w-[310px]' />
+                                {/* <div className='flex max-sm:visible invisible md:hidden items-center justify-center space-x-2 '>
+                    <p className='font-semibold text-lg'>menu</p>
+                    <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
+                </div> */}
+                            </Link>
+                        </div>
+
+                        <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { handleClickLobby() }} >
+                            <BiArrowBack size={20} className="text-white" /><span className='text-md font-semibold'>lobby</span></button>
                     </div>
 
-                    <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`} onClick={() => { handleClickLobby() }} >
-                        <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button>
-
-                    <div className='grid grid-cols-12 pt-10 '>
+                    <div className='grid grid-cols-12 pt-16 pl-2 '>
                         <div className="col-span-2 md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
                             <div className=' relative w-[0.4px] h-[400px] mt-4 bg-white'>
@@ -178,8 +186,8 @@ const Start = () => {
                             <div className=' flex flex-col  justify-start items-start '>
                                 {tabsData.map((tab, i) => {
                                     return (
-                                        <div key={i} className='flex space-x-1 justify-start items-center '>
-                                            <div className={` relative w-8 h-9 ${i === activeTabIndex
+                                        <div key={i} className='flex  justify-start items-center '>
+                                            <div className={` relative w-6 h-9 ${i === activeTabIndex
                                                 ? styles.dotsBorder
                                                 : ""
                                                 }}`}
@@ -204,7 +212,7 @@ const Start = () => {
                                                     : ""
                                                     } `}
                                                 // Change the active tab on click.
-                                                onClick={() => setActiveTabIndex(i)}
+                                                onClick={() => { setActiveTabIndex(i) }}
                                                 ref={el => (buttonRefs[i] = el)}
                                             >
                                                 {tab.label}
@@ -215,12 +223,12 @@ const Start = () => {
                             </div>
                         </div >
                         {/* Show active tab content. */}
-                        <div div className={`py-4 col-span-10 md:col-span-10 ${styles.fadeAnimation}`} >
+                        <div div className={`pb-4 -mt-4 col-span-10 md:col-span-10 ${styles.fadeAnimation}`} >
                             <div>{tabsData[activeTabIndex].content}</div>
                         </div >
                     </div >
                 </div >
-                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
+                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white z-50 '>
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
                             onClick={() => { router.push('/') }}>

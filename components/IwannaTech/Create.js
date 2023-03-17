@@ -19,7 +19,7 @@ const Create = () => {
 
                     </div>
                 </div>
-                <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove}  col-span-12 md:col-span-7 flex justify-center items-start -mt-20 `} >
+                <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove}  col-span-12 md:col-span-7 flex justify-center items-start -mt-5 `} >
                     <Image src='/images/create.png' width={550} height={550} alt="wanna tech png" className={``} />
                 </div>
 

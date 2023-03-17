@@ -16,7 +16,7 @@
 .shadowHover:hover {
 
     filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
-    transform: scale(1.2);
+    transform: scale(1.5);
     transition: all ease-in-out 500ms;
 }
 
@@ -25,12 +25,12 @@
 /* start */
 
 .vertmove {
-    -webkit-animation: mover 2s infinite alternate;
+    /* -webkit-animation: mover 2s infinite alternate; */
     animation: mover 2s infinite alternate;
 }
 
 .vertmove {
-    -webkit-animation: mover 2s infinite alternate;
+    /* -webkit-animation: mover 2s infinite alternate; */
     animation: mover 2s infinite alternate;
 }
 
@@ -57,36 +57,101 @@
 
 /* i whytechTech  */
 
-.imgRotate {
-    -webkit-animation: animateRotate 2s infinite alternate;
-    animation: animateRotate 2s infinite alternate;
-}
+
 
 .imgRotate {
-    -webkit-animation: animateRotate 2s infinite alternate;
+    /* -webkit-animation: animateRotate 2s infinite alternate; */
     animation: animateRotate 2s infinite alternate;
     overflow: hidden;
 }
 
-@-webkit-keyframes animateRotate {
+/* @-webkit-keyframes animateRotate {
     0% {
-        transform: rotate(0);
+        transform: rotate(7.12deg);
     }
 
     100% {
-        transform: rotate(-6.28deg);
+        transform: rotate(-4.28deg);
     }
-}
+} */
 
 @keyframes animateRotate {
     0% {
-        transform: rotate(0);
+        transform: rotate(7.12deg);
     }
 
     100% {
-        transform: rotate(-6.28deg);
+        transform: rotate(-4.28deg);
     }
 }
+
+
+
+/* .imgRotateNowWhat {
+
+    animation: nowwhatMain alternate 2s ease-in-out infinite alternate;
+    transition: all ease-in-out 2s;
+}
+
+
+@keyframes nowwhatMain {
+    from {
+
+
+        transform: rotate(-6.28deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+
+    }
+
+} */
+
+
+/* .imgRotateNowWhat {
+    animation: nowwhat 2s infinite alternate;
+    overflow: hidden;
+} */
+
+
+
+@keyframes nowwhat {
+    0% {
+        transform: rotate(5.12deg);
+    }
+
+    100% {
+        transform: rotate(-12.12deg);
+    }
+}
+
+
+/* getStarted man image animation */
+
+
+.animateGetStartedMan {
+
+    animation: ManAimate ease-in-out 2s infinite alternate;
+    transition: all ease-in-out 1s;
+
+}
+
+
+@keyframes ManAimate {
+
+    0% {
+
+        transform: rotate(-6.28deg);
+    }
+
+    100% {
+
+        transform: translateY(-5%);
+    }
+}
+
+
 
 /* scale animation */
 
@@ -101,20 +166,20 @@
 @keyframes scaleAnimate {
 
     from {
-        -webkit-transform: scale(1.0);
+        /* -webkit-transform: scale(1.0); */
         transform: scale(1.0, 1.0);
-        -ms-transform: scale(1.0, 1.0);
+        /* -ms-transform: scale(1.0, 1.0); */
         /* IE 9 */
-        -webkit-transform: scale(1.0, 1.0);
+        /* -webkit-transform: scale(1.0, 1.0); */
         /* Safari and Chrome */
     }
 
     to {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2, 1.2);
-        -ms-transform: scale(1.2, 1.2);
+        /* -webkit-transform: scale(1.1); */
+        transform: scale(1.1, 1.1);
+        /* -ms-transform: scale(1.1, 1.1); */
         /* IE 9 */
-        -webkit-transform: scale(1.2, 1.2);
+        /* -webkit-transform: scale(1.1, 1.1); */
         /* Safari and Chrome */
 
     }
@@ -241,41 +306,71 @@
     }
 }
 
-/* background image css  */
-/* @media only screen and (max-width: 1560px) {
-    .svgstyle {
-        width: 62%;
-        right: 10%;
-        bottom: 20%;
-    }
-}
-
-@media only screen and (min-width: 1561px) {
-    .svgstyle {
-        width: 50%;
-        right: 18.2%;
-        bottom: 22%;
-    }
-} */
-
-
 
 .tranatationNone {
 
-    transition: all ease 5s;
-    animation: displaynoneImg 5s ease forwards;
-
+    transition: all ease 1s;
+    animation: displaynoneImg 1s ease forwards;
 }
 
 @keyframes displaynoneImg {
 
     from {
-        visibility: hidden !important;
-        display: none;
+        opacity: 0;
     }
 
     to {
-        visibility: visible;
-        display: block;
+        opacity: 1;
+    }
+}
+
+
+/* responsive for desktop   */
+
+
+@media only screen and (max-width: 1310px) {
+
+    .bgcoverbottom {
+        position: absolute;
+        transform: rotate(-23.2deg);
+        top: 26.2%;
+
+    }
+
+    .bgcoverbottomWhyUs {
+        position: absolute;
+        transform: rotate(-27.2deg);
+        top: 28.9%;
+
+    }
+
+    .bgcoverbottomGetStarted {
+        position: absolute;
+        transform: rotate(-29.2deg);
+        top: 28.2%;
+    }
+
+    .bgMainGetStarted {
+
+        position: absolute;
+        top: 2%;
+    }
+
+    .bgcoverbottomWhyYou {
+
+        position: absolute;
+        transform: rotate(-29.2deg);
+        top: 28.2%;
+    }
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+    .bgcoverbottom {
+        position: absolute;
+        transform: rotate(-23.2deg);
+        top: 21.2%;
+
     }
 }
