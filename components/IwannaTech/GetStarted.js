@@ -45,12 +45,22 @@ const GetStarted = ({ activeTabIndex }) => {
                             <Image src='/images/getStartedMan.png' width={1000} height={800} alt="wanna tech png" className={` `} />
                         </div>
 
-                        <div className={`-rotate-[31deg] 2xl:top-[31.5%] top-[29.8%]  right-[10.5%] absolute  w-[74%] h-[20%] ${styles.bgcoverbottomGetStarted}`} >
+                        <div className={`-rotate-[31deg] 2xl:-rotate-[33deg] 2xl:top-[30.5%] top-[29.8%]  right-[10.5%] absolute  w-[74%] h-[16%] 2xl:h-[20%] ${styles.bgcoverbottomGetStarted}`} >
                             <svg viewBox="0 0 450 378" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.659668L0 378L450 378V1.20398C442.38 63.947 388.934 112.555 324.135 112.555L125.93 112.555C60.9436 112.555 7.37568 63.6656 0 0.659668Z" fill="#96245A" />
                             </svg>
                         </div>
                     </div>
+
+                    {/* <div className={`${styles.container}`}>
+                        <div className={`${styles.box}`}>
+
+                            <img src='/images/getStartedRectangle.png' />
+                            <img src='/images/getStartedMan.png' />
+
+                        </div>
+
+                    </div> */}
 
 
                 </div>

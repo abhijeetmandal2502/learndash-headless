@@ -4,8 +4,8 @@ import React from 'react'
 const AnimateImg = () => {
     return (
         <>
-            {/* <div className='flex justify-center items-center'>
-                <div className={` relative  max-h-600px[] w-[600px]`}>
+            <div className='flex justify-center items-center'>
+                <div className={` relative  max-h-600px[] w-[600px] `}>
                     <div className={`absolute top-20 left-10`}>
                         <Image src="/images/RectangleWhyUs.png" width="400" height="400" />
                     </div>
@@ -18,7 +18,7 @@ const AnimateImg = () => {
                         </svg>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
         </>
     )

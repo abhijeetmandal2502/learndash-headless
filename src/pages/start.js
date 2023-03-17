@@ -152,10 +152,10 @@ const Start = () => {
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
                 <div className='md:col-span-11 col-span-12 p-10 z-10'>
-                    <div className='2xl:pl-14 md:pl-14 mt-2 '>
+                    <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
                             <Link href="/">
-                                <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[120px] w-[310px]' />
+                                <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px] h-[100px] w-[250px]' />
                                 {/* <div className='flex max-sm:visible invisible md:hidden items-center justify-center space-x-2 '>
                     <p className='font-semibold text-lg'>menu</p>
                     <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
@@ -167,7 +167,7 @@ const Start = () => {
                             <BiArrowBack size={20} className="text-white" /><span className='text-md font-semibold'>lobby</span></button>
                     </div>
 
-                    <div className='grid grid-cols-12 pt-16 pl-2 '>
+                    <div className='grid grid-cols-12 2xl:pt-16 pt-12 pl-2 '>
                         <div className="col-span-2 md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
                             <div className=' relative w-[0.4px] h-[400px] mt-4 bg-white'>
