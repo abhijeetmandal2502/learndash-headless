@@ -35,7 +35,7 @@ const GetStarted = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
-                <div className={`relative col-span-12 md:col-span-7 h-[100vh]  ${loading ? styles.tranatationNone : 'opacity-0'}`}>
+                {/* <div className={`relative col-span-12 md:col-span-7 h-[100vh]  ${loading ? styles.tranatationNone : 'opacity-0'}`}>
                     <div className={` relative  w-[100%] h-[100%]  `}>
                         <div className={`absolute top-[6%]  right-[20%]  w-[70%] `}>
                             <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={`w-[100%]`} />
@@ -44,26 +44,34 @@ const GetStarted = ({ activeTabIndex }) => {
                         <div className={` absolute top-[2.2%]  right-[18%]   ${styles.animateGetStartedMan} w-[75%] h-[100%] ${styles.bgMainGetStarted}`}>
                             <Image src='/images/getStartedMan.png' width={1000} height={800} alt="wanna tech png" className={` `} />
                         </div>
+                </div> */}
 
-                        <div className={`-rotate-[31deg] 2xl:-rotate-[33deg] 2xl:top-[30.5%] top-[29.8%]  right-[10.5%] absolute  w-[74%] h-[16%] 2xl:h-[20%] ${styles.bgcoverbottomGetStarted}`} >
-                            <svg viewBox="0 0 450 378" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.659668L0 378L450 378V1.20398C442.38 63.947 388.934 112.555 324.135 112.555L125.93 112.555C60.9436 112.555 7.37568 63.6656 0 0.659668Z" fill="#96245A" />
-                            </svg>
+
+
+                <div className={`relative col-span-12 md:col-span-7 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
+                    {/* <div className={` absolute  left-1/8 top-1/8 -translate-x-1/8 -translate-y-1/8  `}> */}
+
+                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                        <div className='relative overflow-hidden w-full h-[500px]  '>
+                            {/* <div className={` w-[500px] absolute bottom-[0px] left-[92.5px`}> */}
+                            <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
+
+                                <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[500px]`} />
+                            </div>
+                            <div className={`-rotate-[30deg] absolute -bottom-[170px] -right-[80.5px]  z-10  `}>
+                                {/* <div className={`-rotate-[30deg] absolute -bottom-[425px] -left-[65px]  w-[00px]  z-10  `}> */}
+                                <Image src='/images/SubtractHotpink.png' width={1000} height={600} alt="wanna tech png" className={` w-[530px]`} />
+
+                            </div>
+                        </div>
+                        <div className={` absolute bottom-[27px]  right-[60px] ${styles.imgRotate}    w-[560px]`}>
+                            <Image src='/images/getStartedMan.png' width={1000} height={700} alt="wanna tech png" className={` `} />
                         </div>
                     </div>
-
-                    {/* <div className={`${styles.container}`}>
-                        <div className={`${styles.box}`}>
-
-                            <img src='/images/getStartedRectangle.png' />
-                            <img src='/images/getStartedMan.png' />
-
-                        </div>
-
-                    </div> */}
-
-
+                    {/* </div> */}
                 </div>
+
+
 
             </div>
         </>

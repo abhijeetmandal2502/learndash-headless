@@ -32,7 +32,7 @@ const WhyYou = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} -mt-5 `}>
+                {/* <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} -mt-5 `}>
                     <div className={` relative  w-[100%] h-[100%] `}>
                         <div className={`absolute top-[6%]  right-[20%]  w-[60%] `}>
                             <Image src='/images/WhyYouRectangle.png' width={1000} height={600} alt="wanna tech png" className={`w-[100%]`} />
@@ -52,6 +52,29 @@ const WhyYou = ({ activeTabIndex }) => {
                         <p className='text-white'>(her name is bubbless!)</p>
                     </div>
 
+                </div> */}
+
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} `}>
+                    {/* <div className={` absolute  left-1/8 top-1/8 -translate-x-1/8 -translate-y-1/8  `}> */}
+
+                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                        <div className='relative overflow-hidden w-full h-[500px]  '>
+                            {/* <div className={` w-[500px] absolute bottom-[0px] left-[92.5px`}> */}
+                            <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
+
+                                <Image src='/images/WhyYouRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[500px]`} />
+                            </div>
+                            <div className={`-rotate-[30deg] absolute -bottom-[170px] -right-[80.5px]  z-10  `}>
+                                {/* <div className={`-rotate-[30deg] absolute -bottom-[425px] -left-[65px]  w-[00px]  z-10  `}> */}
+                                <Image src='/images/SubtractBrown.png' width={1000} height={600} alt="wanna tech png" className={` w-[530px]`} />
+
+                            </div>
+                        </div>
+                        <div className={` absolute bottom-[30px]  right-[60px] ${styles.fadeAnimationInfinite}    w-[560px]`}>
+                            <Image src='/images/dog.png' width={1000} height={700} alt="wanna tech png" className={` `} />
+                        </div>
+                    </div>
+                    {/* </div> */}
                 </div>
 
 
