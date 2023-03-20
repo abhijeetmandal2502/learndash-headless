@@ -16,6 +16,7 @@ import Styles from '../../components/card/animatedDoor/Door.module.css'
 import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
 import IwannaTech from 'components/TeacherLounge/IwannaTech'
 import { useRouter } from 'next/router'
+import Door from 'components/Start/Door'
 
 const Home = () => {
 
@@ -215,19 +216,7 @@ const Home = () => {
 
                                 <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation}  `} onClick={() => startMethod()} >
                                     <div className={` md:space-x-0  relative `}>
-
-                                        <div className='flex justify-center '>
-                                            <div className={`  ${Styles.imageDiv}`}>
-                                                <Image src="/images/doorframe.svg" width={200} height={200} className="h-[200px]" alt="door" />
-                                                <div className={`${Styles.child} absolute top-[7px] left-[37.5px]`}>
-                                                    <Image className={``} src="/images/doorgate.svg" width={98} height={98} alt="door" />
-                                                    <Image className={`absolute top-[78px] left-[80px] `} src="/images/doorHandle.svg" width={3} height={3} alt="door" />
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-
+                                        <Door />
                                         <div className='w-full pt-3'>
                                             <h3 className='mt-4 2xl:text-4xl text-2xl lineUp font-semibold md:text-center'>start</h3>
                                             <p className={`mt-1 ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
@@ -309,6 +298,7 @@ const Home = () => {
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
+
                                 </div>
 
                             </div>
@@ -331,10 +321,7 @@ const Home = () => {
 
                             <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>
-
                     </div>
-
-
                 </div>
 
 
@@ -344,9 +331,6 @@ const Home = () => {
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <SimplyChoose startMethodHide={startMethodHide} start={start} />
                     </div>
-                    {/* <div className={`col-span-5 ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-                        <CourseInfo />
-                    </div> */}
                     <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} />
                     </div>
@@ -360,8 +344,8 @@ const Home = () => {
                     {/* <SideMenu ShowMenuMethod={ShowMenuMethod} HideMenuMethod={HideMenuMethod} state={On} /> */}
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/2 -translate-x-1/2 '>
-                            <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
-                                <p className='font-semibold'>menu</p>
+                            <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod() }}>
+                                <p className='font-semibold max-[768px]:text-[12px]'>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
                                 <svg width="24" height="24" className={`${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
@@ -388,21 +372,6 @@ const Home = () => {
     )
 }
 
-
-// export async function getStaticProps() {
-//     // Call an external API endpoint to get posts.
-//     // You can use any data fetching library
-//     const res = await fetch()
-//     const posts = await res.json()
-
-//     // By returning { props: { posts } }, the Blog component
-//     // will receive `posts` as a prop at build time
-//     return {
-//         props: {
-//             posts,
-//         },
-//     }
-// }
 
 export default Home
 

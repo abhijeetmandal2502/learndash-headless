@@ -14,7 +14,7 @@ const Ncbtmb = () => {
                         <button className=' mt-5 rounded-3xl border border-white px-7 py-3 text-white font-normal text-2xl hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
                             if not, click here!
                         </button>
-                        <h4 className='text-[35px] py-4'>That’s kind of a big deal</h4>
+                        <h4 className='text-[35px] font-bold py-4'>That’s kind of a big deal</h4>
                         <p className='text-white font-bold text-[18px] pt-5'> Compliance requires both Provider and Course to be pre-approved.</p>
 
                     </div>

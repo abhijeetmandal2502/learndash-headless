@@ -5,12 +5,12 @@ const AnimateImg = () => {
     return (
         <>
             <div className='flex justify-center items-center'>
-                <div className={` relative  max-h-600px[] w-[600px] `}>
+                <div className={` relative  max-h-600px[] w-[600px]`}>
                     <div className={`absolute top-20 left-10`}>
-                        <Image src="/images/RectangleWhyUs.png" width="400" height="400" />
+                        <Image src="/images/RectangleWhyUs.png" width="400" height="400" alt="animate img" />
                     </div>
                     <div className={`absolute -bottom-[410px] right-[140px]`}>
-                        <Image src="/images/man.png" width="500" height="600" />
+                        <Image src="/images/man.png" width="500" height="600" alt="animate img" />
                     </div>
                     <div className='h-[500px] w-[450px] z-20 absolute top-[220px] left-[130px] -rotate-[28.2deg] '  >
                         <svg viewBox="0 0 450 378" fill="none" xmlns="http://www.w3.org/2000/svg">

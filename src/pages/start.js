@@ -142,9 +142,7 @@ const Start = () => {
         isInitialRender.current = false
     }
 
-
-
-    console.log('selectedRect', selectedRect, navRect);
+    // console.log('selectedRect', selectedRect, navRect);
 
 
     return (
@@ -223,7 +221,7 @@ const Start = () => {
                             </div>
                         </div >
                         {/* Show active tab content. */}
-                        <div div className={`pb-4 -mt-4 col-span-10 md:col-span-10 ${styles.fadeAnimation}`} >
+                        <div className={`pb-4 -mt-4 col-span-10 md:col-span-10 ${styles.fadeAnimation}`} >
                             <div>{tabsData[activeTabIndex].content}</div>
                         </div >
                     </div >

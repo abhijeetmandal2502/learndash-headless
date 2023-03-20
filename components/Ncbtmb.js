@@ -7,11 +7,6 @@ import Select from 'react-select';
 import { AiOutlineCheck } from 'react-icons/ai'
 
 
-
-
-
-
-
 const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   const options = [
@@ -88,10 +83,9 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
         <button className={`flex items-center space-x-1 bg-black text-white px-4 font-bold py-2 rounded-3xl ${styles.lobby}`} onClick={() => ncbtmbMethodHide()}>
           <BiArrowBack size={20} className="text-white" /><span className='text-sm '>lobby</span></button>
 
-        <div className={`flex space-x-20 items-center  ${styles.ncbtapproved}`}>
+        <div className={`flex  2xl:space-x-20 max-lg:space-x-20 items-center  ${styles.ncbtapproved}`}>
           <div>
-
-            <h2 className=' tracking-wide font-normal md:text-6xl   md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
+            <h2 className=' tracking-wide font-normal text-2xl   max-[768px]:text-lg  md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
 
           <Image src="/images/ncbtmb.svg" height="323" width="323" alt="ncbtmb" />
@@ -139,7 +133,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
               return (
                 <div key={index} className='flex items-center space-x-4 py-0.3'>
                   <AiOutlineCheck size={20} className='text-[#9747FF]' />
-                  <p className='text-[15px]'>{item}</p>
+                  <p className=' text-[12px] max-lg:text-[15px]'>{item}</p>
                 </div>
               )
             })}

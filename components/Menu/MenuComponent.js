@@ -248,14 +248,14 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
                         <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
 
-                    {On ? <div className={`grid grid-cols-12 mt-0 gap-20  ${!show ? styles.hide : styles.aboutMain} mt-20 `} >
+                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} mt-20 `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
                             <div className=" ">
                                 <div className="tab-content tab-space ">
-                                    <d iv className={`${(openTab > 0 || currentPath == 'blog') ? "hidden" : "block"} ${router.asPath === '/?active=home' ? 'block' : 'hidden'} `}>
+                                    <div className={`${(openTab > 0 || currentPath == 'blog') ? "hidden" : "block"} ${router.asPath === '/?active=home' ? 'block' : 'hidden'} `}>
                                         <Contact />
-                                    </d>
+                                    </div>
                                     <div className={`${openTab === 1 ? "block" : "hidden"} ${openTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll `} id="link1">
                                         <About />
                                     </div>
@@ -287,7 +287,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                             className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
+                            <li className={`${styles.navli} text-white  lg:my-1  2xl:my-4  py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
@@ -303,7 +303,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 <div className={`pl-2 text-4xl ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(2);
@@ -317,7 +317,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 <div className={`pl-2 text-4xl  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(3);
@@ -333,7 +333,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
                                 <div className={`pl-2 text-4xl  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white my-4 py-2 text-3xl cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 text-3xl cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(4);

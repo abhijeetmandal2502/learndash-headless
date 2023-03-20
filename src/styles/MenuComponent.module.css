@@ -79,17 +79,48 @@
 }
 
 .navli {
-
     color: white;
     font-size: 1.9rem;
     -webkit-transition: all 700ms ease-in-out;
     -ms-transition: all 700ms ease-in-out;
     transition: color 700ms ease-in-out;
     font-weight: bold;
+}
 
+@media only screen and (min-width:640px) and (max-width:768px) {
+    .navli {
+        color: white;
+        font-size: 1rem;
+        -webkit-transition: all 700ms ease-in-out;
+        -ms-transition: all 700ms ease-in-out;
+        transition: color 700ms ease-in-out;
+        font-weight: bold;
+    }
 
+    .navli.active {
+
+        font-size: 1rem;
+    }
 
 }
+
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .navli {
+        color: white;
+        font-size: 1.4rem;
+        -webkit-transition: all 700ms ease-in-out;
+        -ms-transition: all 700ms ease-in-out;
+        transition: color 700ms ease-in-out;
+        font-weight: bold;
+    }
+
+    .navli.active {
+
+        font-size: 1.4rem;
+    }
+
+}
+
 
 .navli:hover>.hide {
 

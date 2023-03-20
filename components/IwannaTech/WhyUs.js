@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
-import { FaCheck } from 'react-icons/fa'
-import AnimateImg from 'components/card/AnimateImg'
+
 
 const WhyUs = ({ activeTabIndex }) => {
 
@@ -33,7 +32,7 @@ const WhyUs = ({ activeTabIndex }) => {
 
                     </div>
                 </div>
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     {/* <div className={` absolute  left-1/8 top-1/8 -translate-x-1/8 -translate-y-1/8  `}> */}
 
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>

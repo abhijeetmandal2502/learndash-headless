@@ -15,7 +15,7 @@ const Conceierge = ({ conceiergeHide }) => {
 
     return (
         <>
-            <div className=' bg-transparent max-w-lg '>
+            <div className=' bg-transparent  max-[768px]:max-w-xs min-[992px]:max-w-md max-w-lg 2xl:max-w-lg'>
 
 
                 <button className={`flex items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 py-2 rounded-3xl `} type='button' onClick={() => conceiergeHide()}  >
@@ -23,7 +23,7 @@ const Conceierge = ({ conceiergeHide }) => {
 
 
 
-                <h2 className='md:text-5xl 2xl:my-10 my-5 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
+                <h2 className=' 2xl:text-5xl max-[768px]:text-[xl] 2xl:my-10 my-5 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
                 <form onSubmit={handleSubmit((data) => console.log('data', data))} >
                     <div className='2xl:py-4 py-2'>
 
@@ -56,7 +56,7 @@ const Conceierge = ({ conceiergeHide }) => {
                         <button className={`${styles.lobby} px-10 mt-5 py-2 tracking-wide text-white bg-black rounded-3xl focus:outline-none`} type="submit">send
 
                         </button>
-                        <p className='pt-3 text-[24px]'>response in 24 hours or less</p>
+                        <p className='pt-3 max-[768px]:text-[14px] text-[24px]'>response in 24 hours or less</p>
                     </div>
 
                 </form>

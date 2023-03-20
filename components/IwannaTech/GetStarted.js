@@ -35,19 +35,6 @@ const GetStarted = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
-                {/* <div className={`relative col-span-12 md:col-span-7 h-[100vh]  ${loading ? styles.tranatationNone : 'opacity-0'}`}>
-                    <div className={` relative  w-[100%] h-[100%]  `}>
-                        <div className={`absolute top-[6%]  right-[20%]  w-[70%] `}>
-                            <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={`w-[100%]`} />
-                        </div>
-
-                        <div className={` absolute top-[2.2%]  right-[18%]   ${styles.animateGetStartedMan} w-[75%] h-[100%] ${styles.bgMainGetStarted}`}>
-                            <Image src='/images/getStartedMan.png' width={1000} height={800} alt="wanna tech png" className={` `} />
-                        </div>
-                </div> */}
-
-
-
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     {/* <div className={` absolute  left-1/8 top-1/8 -translate-x-1/8 -translate-y-1/8  `}> */}
 

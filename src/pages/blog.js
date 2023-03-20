@@ -58,9 +58,6 @@ const BlogListing = () => {
             image: "/images/blogBanner.png",
         },
     ]
-
-
-
     //handle click blog listing
 
     const handleClick = (item, index) => {
@@ -75,8 +72,6 @@ const BlogListing = () => {
         router.push('/')
 
     }
-
-
 
     const textColor = "text-white"
     const LogoImage = "/images/WhiteLogo.svg";
@@ -95,8 +90,6 @@ const BlogListing = () => {
 
     return (
         <>
-
-
             <div className={` max-h-screen overflow-hidden `}>
                 <div className="absolute top-0 left-0 w-screen h-screen -z-10">
                     <Image
@@ -121,7 +114,6 @@ const BlogListing = () => {
 
                         {!currentData ? <div className='grid grid-cols-12 gap-4 '>
                             <div className={`bg-transparent md:pb-40  md:col-span-9 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
-
 
                                 {
                                     blogData && blogData?.map((item, index) => {
