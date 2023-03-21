@@ -132,9 +132,9 @@ const Blog = () => {
                                 <div className=' md:mr-5'>
 
                                     <Link href="/blog">
-                                        <button className='text-white bg-[#3A3A3A] py-3 px-6 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='text-[18px] font-[600]'>view all posts</div></button>
+                                        <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='2xl:text-[18px] lg:text-[14px] font-[600]'>view all posts</div></button>
                                     </Link>
-                                    <div className='flex pt-7  space-x-7'>
+                                    <div className='flex pt-7  lg:space-x-4 2xl:space-x-10'>
                                         <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} /> <div className='text-[18px] pr-1'> back</div></button>
                                         <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[18px] pl-1' >next</div> <HiOutlineArrowSmRight size={20} /> </button>
                                     </div>

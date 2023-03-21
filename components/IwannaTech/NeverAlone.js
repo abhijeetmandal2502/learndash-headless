@@ -10,10 +10,9 @@ const NeverAlone = () => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-5 flex justify-center items-center'>
                     <div>
-                        <h2 className={`text-white font-semibold text-[65px] ${styles.shadow} leading-[80px] tracking-wide`}>never alone!</h2>
-                        {/* <h4 className='text-[35px] py-4'>tell us about <br></br> <br></br> your pedigree</h4> */}
-                        {/* <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" /> */}
-                        <p className='text-white font-bold text-[18px] pt-5'>We are right here every step of the way to help you create the course you want on our e-learning platform! Just contact your concierge and they’ll walk you through any part of the course process you need!</p>
+                        <h2 className={`text-white font-semibold xl:text-[65px] lg:text-[40px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] lg:leading-[40px] xl:leading-[80px] tracking-wide`}>never alone!</h2>
+
+                        <p className='text-white font-bold xl:text-[18px] lg:text-[16px] text-[18px] pt-5'>We are right here every step of the way to help you create the course you want on our e-learning platform! Just contact your concierge and they’ll walk you through any part of the course process you need!</p>
 
                     </div>
                 </div>

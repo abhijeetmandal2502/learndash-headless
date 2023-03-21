@@ -254,8 +254,6 @@
     to {
         opacity: 1;
     }
-
-
 }
 
 
@@ -276,8 +274,6 @@
         opacity: 1;
         overflow: hidden;
     }
-
-
 }
 
 /* rottate animation overflow */
@@ -285,8 +281,6 @@
 .rotatebgImg {
 
     transform: rotate(-30.28deg);
-
-
 }
 
 
@@ -298,9 +292,6 @@
     animation-timing-function: linear;
     animation-duration: 3s;
     transition: all ease-in-out 3s;
-
-
-
 }
 
 
@@ -316,7 +307,6 @@
         opacity: 1;
     }
 }
-
 
 .tranatationNone {
 
@@ -337,3 +327,27 @@
 
 
 /* responsive for desktop   */
+/* .animateImageSmallDevice {
+
+    display: none;
+}
+
+
+.animateImageLargeDevice {
+
+    display: block;
+}
+
+@media (min-widht:768px) {
+
+    .animateImageSmallDevice {
+
+        display: block;
+    }
+
+    .animateImageLargeDevice {
+
+        display: none;
+    }
+
+} */

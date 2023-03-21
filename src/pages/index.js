@@ -161,18 +161,12 @@ const Home = () => {
         setOn(false)
 
     }
-
-
     // hwen page loaded css 
-
-
     const [isLoaded, setIsloaded] = useState(false)
 
     useEffect(() => {
         setIsloaded(true)
     }, [])
-
-
 
     const LogoImage = "/images/Logo.svg"
 

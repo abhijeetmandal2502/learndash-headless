@@ -22,41 +22,18 @@ const WhyYou = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-4 flex justify-start items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] text-[60px] ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
-                        <h4 className='2xl:text-[50px] text-[45px] font-bold py-4 mt-6'>tell us about <br></br> <br></br> your pedigree</h4>
-                        {/* <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" /> */}
-                        <p className='text-white font-bold text-[18px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <h2 className={`text-white font-semibold xl:text-[70px] lg:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
+                        <h4 className='2xl:text-[50px] xl:text-[45px] lg:text-[30px] font-bold xl:py-4 lg:py-0 py-4 xl:mt-6 lg:leading-[40px] leading-[40px]'>tell us about <br></br> your pedigree</h4>
+                        <p className='text-white font-bold xl:text-[18px] lg:text-[14px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
 
                     </div>
                 </div>
 
-                {/* <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} -mt-5 `}>
-                    <div className={` relative  w-[100%] h-[100%] `}>
-                        <div className={`absolute top-[6%]  right-[20%]  w-[60%] `}>
-                            <Image src='/images/WhyYouRectangle.png' width={1000} height={600} alt="wanna tech png" className={`w-[100%]`} />
-                        </div>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] xl:block lg:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
 
-                        <div className={` absolute -top-[9%]  right-[16%]   ${styles.fadeAnimationInfinite}   w-[70%]`}>
-                            <Image src='/images/dog.png' width={1000} height={700} alt="wanna tech png" className={` `} />
-                        </div>
-
-                        <div className={`-rotate-[31deg] top-[29.6%]   2xl:top-[31.2%]  right-[12%] absolute  w-[63%] h-[20%] ${styles.bgcoverbottomWhyYou} `}>
-                            <svg viewBox="0 0 450 378" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.659668L0 378L450 378V1.20398C442.38 63.947 388.934 112.555 324.135 112.555L125.93 112.555C60.9436 112.555 7.37568 63.6656 0 0.659668Z" fill="#A53A3A" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='z-50 absolute bottom-[37%] left-[45%]'>
-                        <p className='text-white'>(her name is bubbless!)</p>
-                    </div>
-
-                </div> */}
-
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
-
-                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                    <div className={` relative  flex xl:mr-20`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
 
@@ -78,9 +55,9 @@ const WhyYou = ({ activeTabIndex }) => {
 
 
 
-                {/* <div className={`relative col-span-12 md:col-span-8 h-[100vh] ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] xl:hidden lg:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
 
-                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                    <div className={` relative  flex 2xl:mr-20 lg:-mr-16  mr-10`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
                             <div className={`w-[400px] absolute bottom-[46px] right-[50.5px]`}>
 
@@ -98,7 +75,7 @@ const WhyYou = ({ activeTabIndex }) => {
                             <p className='text-white'>(her name is bubbless!)</p>
                         </div>
                     </div>
-                </div> */}
+                </div>
 
 
             </div>

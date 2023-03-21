@@ -33,7 +33,7 @@ const Instructors = () => {
             <div className='mb-96 2xl:pr-28'>
                 {InstructorData && InstructorData?.map((item, index) => {
                     return (
-                        <div key={index} className='bg-transparent grid grid-cols-12 border-b instructorBorder mb-10 pt-2 pb-4  '>
+                        <div key={index} className='bg-transparent grid grid-cols-12 border-b instructorBorder mb-10 pt-2 pb-4 lg:gap-5 gap-3 2xl:gap-0  '>
 
                             <div className='md:col-span-4 col-span-12 '>
                                 <Image src={item.image} width={200} height={200} alt="instructor image" />
