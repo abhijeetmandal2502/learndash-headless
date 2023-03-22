@@ -80,10 +80,10 @@ const LoginModel = ({ changeDuration, title }) => {
 
     return (
         <>
-            <div className='relative'>
+            <div className='relative '>
                 <div className={`${forgetPassword ? styles.modelClose : styles.modelOpen}`}>
                     <div className='flex justify-between '>
-                        <h2 className=' font-normal py-2 pb-4'>{loginTitle ? titlefogetpass : title}</h2>
+                        <h2 className=' font-normal py-2 pb-4 lg:text-[24px]'>{loginTitle ? titlefogetpass : title}</h2>
                     </div>
                     <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} /></button>
                     <form onSubmit={(e) => userLogin(e)}>

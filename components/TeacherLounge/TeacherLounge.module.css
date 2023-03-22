@@ -78,6 +78,46 @@ screen and (max-height: 700px) {
 }
 
 
+@media screen and (max-width: 1024px) {
+
+
+    .openModel {
+
+        animation: ModelOpen 500ms ease forwards;
+        transition: all ease-in-out 1s;
+        display: block;
+        position: absolute;
+
+
+    }
+
+
+
+    @keyframes ModelOpen {
+
+
+        0% {
+
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            width: 350px;
+        }
+
+
+        100% {
+
+            bottom: 15%;
+            right: 38%;
+
+            opacity: 1;
+            width: 320px;
+        }
+    }
+
+
+}
+
 .closeModel {
 
     animation: ModelClose 500ms linear forwards;

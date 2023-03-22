@@ -47,7 +47,6 @@ const Home = () => {
         setShowConceierge()
         setShowNcbtmb()
         setIsloaded(false)
-
     }
 
     useEffect(() => {
@@ -57,12 +56,10 @@ const Home = () => {
 
     }, [])
 
-
     const handleTeacherLOginClose = () => {
 
         setOpenTeacherLogin(false);
     }
-
 
     // for start 
 
@@ -298,9 +295,9 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`fixed top-[45%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}><IwannaTech /></div>
+                    <div className={`fixed top-[45%] xl:left-[75%] lg:left-[80%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}><IwannaTech /></div>
 
-                    <div className={` col-span-12 md:col-span-5 z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
+                    <div className={` col-span-12 md:col-span-5  z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className=" relative ">
                             <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <LoginModel changeDuration={changeDuration} title="welcome back !" />
@@ -311,7 +308,7 @@ const Home = () => {
 
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
-                        <div className={` bg-white relative  border border-bordergray p-10 `}>
+                        <div className={` bg-white relative  border border-bordergray xl:p-10 p-10 lg:p-5`}>
 
                             <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>

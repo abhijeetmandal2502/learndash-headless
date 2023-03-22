@@ -87,7 +87,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
 
                     </div>
 
-                    <button className='absolute top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
+                    <button className='absolute lg:top-7 xl:top-3 top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
 
                     <div className='flex  items-center space-x-2'>
                         <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>
@@ -117,8 +117,8 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                 </div> : ""}
 
             {step2 ? <div >
-                <div className='flex justify-between pb-5 '>
-                    <button className=' font-normal py-2 pb-4' onClick={() => HandleBackStep2()}>
+                <div className='flex justify-between pb-5 xl:pb-5 lg:pb-3 '>
+                    <button className=' font-normal py-2 lg:pb-0 xl:pb-4 pb-4' onClick={() => HandleBackStep2()}>
                         <div className='flex justify-center items-center space-x-2'>
                             <BiLeftArrowAlt size={25} />
                             <span className='font-semibold'>go back</span>
@@ -126,7 +126,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
 
                 </div>
 
-                <button className='absolute top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
+                <button className='absolute lg:top-7 xl:top-3 top-3  right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
 
                 <div className='flex  items-center space-x-2'>
                     <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>
@@ -165,8 +165,8 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
             </div> : ""}
 
             {step3 ? <div >
-                <div className='flex justify-between pb-5 '>
-                    <button className=' font-normal py-2 pb-4' onClick={() => HandleBackStep3()}>
+                <div className='flex justify-between pb-5 xl:pb-5 lg:pb-3 '>
+                    <button className=' font-normal py-2 lg:pb-0 xl:pb-4 pb-4' onClick={() => HandleBackStep3()}>
                         <div className='flex justify-center items-center space-x-2'>
                             <BiLeftArrowAlt size={25} />
                             <span className='font-semibold'>go back</span>
@@ -174,7 +174,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
 
                 </div>
 
-                <button className='absolute top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
+                <button className='absolute lg:top-7 xl:top-3 top-3 right-3' onClick={() => { changeDuration(); }}><AiOutlineClose size={20} /></button>
 
                 <div className='flex  items-center space-x-2'>
                     <div className=' border-b-4 text-left w-[33%] text-lg border-voilet text-voilet'>step1</div>

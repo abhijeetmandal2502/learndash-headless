@@ -8,8 +8,6 @@ import styles from '../src/styles/CoursePage.module.css'
 import LogoCard from './card/LogoCard'
 import { AiOutlineClose, AiOutlineCloseCircle } from 'react-icons/ai'
 import ScrollBtn from './Start/ScrollBtn'
-
-
 const SimplyChoose = ({ startMethodHide, start }) => {
 
 
@@ -77,17 +75,12 @@ const SimplyChoose = ({ startMethodHide, start }) => {
         setHideForm(true)
 
         setSelected(false);
-
     }
-
-
     const stringData = selectedArray.map((item) => {
         return item;
     })
 
-    console.log('stringData', stringData);
-
-
+    // console.log('stringData', stringData);
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -144,11 +137,11 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                         <MdOutlineWatchLater />
                                         <div>{item.duration}</div>
                                     </div>
-                                    <div className='text-[33px]'>
+                                    <div className='text-[33px] lg:text-[20px] xl:text-[33px]'>
                                         ${item.price}
                                     </div>
                                 </div>
-                                <div className={`pt-24 leading-10 font-[400] text-[33px] ${styles.discriptionAnimation}`}>
+                                <div className={`pt-24 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  text-[33px] ${styles.discriptionAnimation}`}>
                                     {item.discription}
                                 </div>
                                 <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
