@@ -33,7 +33,7 @@ const WhyTech = () => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold xl:text-[70px] text-[45px] ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] text-[45px] ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
                         {
                             data?.map((item, id) => {
                                 return (<>
@@ -42,9 +42,9 @@ const WhyTech = () => {
                                             <div className='p-1.5 rounded-full bg-white'>
                                                 <FaCheck className='font-bold' size={15} />
                                             </div>
-                                            <h6 className='font-bold xl:text-[22px] lg:text-[18px] md:text-[16px] text-[16px]'>{item.title}</h6>
+                                            <h6 className='font-bold 2xl:text-[22px] lg:text-[18px] md:text-[16px] text-[16px]'>{item.title}</h6>
                                         </div>
-                                        <p className=' font-thin xl:text-[19px] lg:text-[14px] md:text-[13px] text-[14px] text-white'>{item.content}</p>
+                                        <p className=' font-thin 2xl:text-[19px] lg:text-[14px] md:text-[13px] text-[14px] text-white'>{item.content}</p>
                                     </div>
                                 </>)
                             })

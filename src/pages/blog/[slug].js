@@ -104,18 +104,18 @@ const Blog = () => {
                             <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button>
 
                         {blogData ? <div className='grid grid-cols-12 gap-4 max-h-screen pt-10'>
-                            <div className={`bg-transparent md:pb-40  md:col-span-9 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
+                            <div className={`bg-transparent md:pb-40  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 {blogData?.map((item, key) => {
 
                                     return (
                                         <div key={key} className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                            <h2 className='text-white font-normal  text-[49px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
+                                            <h2 className='text-white font-normal  text-[49px] 2xl:text-[49px] md:text-[35px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
                                             <div className='flex  flex-wrap'>
                                                 <div className='text-white pr-1 text-[22px] leading-[207%]'>{item.name}</div>
                                                 <div className='text-gray text-[22px] leading-[207%]'>| {item.date}</div>
                                             </div>
-                                            <p className='text-gray py-8 text-[20px] tracking-wider '>{item.discription}</p>
+                                            <p className='text-gray py-8 text-[20px] lg:text-[20px] md:text-[18px] tracking-wider '>{item.discription}</p>
 
                                             <Image src="/images/blogBanner1.png" width="800" height="450" className="w-[850px] h-[350px]" alt="Banner Image" />
 
@@ -128,13 +128,13 @@ const Blog = () => {
 
                                 })}
                             </div>
-                            <div className='flex bg-transparent md:col-span-3 col-span-12 justify-center'>
+                            <div className='flex bg-transparent md:col-span-4 col-span-12 justify-center'>
                                 <div className=' md:mr-5'>
 
                                     <Link href="/blog">
                                         <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='2xl:text-[18px] lg:text-[14px] font-[600]'>view all posts</div></button>
                                     </Link>
-                                    <div className='flex pt-7  lg:space-x-4 2xl:space-x-10'>
+                                    <div className='flex pt-7  md:space-x-4 2xl:space-x-10'>
                                         <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} /> <div className='text-[18px] pr-1'> back</div></button>
                                         <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[18px] pl-1' >next</div> <HiOutlineArrowSmRight size={20} /> </button>
                                     </div>

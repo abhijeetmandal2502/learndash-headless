@@ -58,6 +58,29 @@
 }
 
 
+@media only screen and (max-width: 1024px) {
+
+    .rotateChild:hover .imageDiv {
+
+        animation: scaleUpImage 500ms ease-out both;
+    }
+
+    @keyframes scaleUpImage {
+
+        from {
+            transform: scale(1.0);
+            transform: translateY(15px);
+
+        }
+
+        to {
+            transform: scale(1.1);
+        }
+    }
+
+}
+
+
 
 
 .rotateChild .imageDiv {

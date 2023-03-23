@@ -30,7 +30,7 @@ const Conceierge = ({ conceiergeHide }) => {
                         <label className='' >
                             your email
                         </label>
-                        <input className="block w-full px-4 py-2 mt-2  bg-white border border-bordergray outline-red-500 "
+                        <input className="block w-full xl:w-full lg:w-[80%] md:w-[75%] px-4 py-2 mt-2  bg-white border border-bordergray outline-red-500 "
                             {...register('email', {
                                 required: 'oops! email is blank!', pattern: {
                                     value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -46,7 +46,7 @@ const Conceierge = ({ conceiergeHide }) => {
                             ask away
 
                         </label>
-                        <textarea name="postContent" rows={4} className="w-full border border-bordergray outline-[#D30820]" {...register('message', { required: true })} />
+                        <textarea name="postContent" rows={4} className="w-full xl:w-full lg:w-[80%] md:w-[75%] border border-bordergray outline-[#D30820]" {...register('message', { required: true })} />
                         {errors.message && <p className=' text-[#D30820]'> <span className='text-[#D30820] border border-[#D30820] rounded-full py-0.4 px-1.5 text-xs' >!</span> oops! message is blank!</p>}
 
 

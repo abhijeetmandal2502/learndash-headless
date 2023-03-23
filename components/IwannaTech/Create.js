@@ -10,8 +10,8 @@ const Create = () => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold xl:text-[65px] lg:text-[42px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] xl:leading-[80px] lg:leading-[40px] tracking-wide`}>start creating</h2>
-                        <p className='text-white font-bold text-[18px] xl:text-[18px] lg:text-[16px] lg:leading-[25px] xl:leading-[40px] pt-5'>Follow our easy step-by-step template to get your course organized for proper online structuring. Then jump in and create your masterpiece! <br></br>
+                        <h2 className={`text-white font-semibold 2xl:text-[65px] xl:text-[50px]  md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] xl:leading-[80px] lg:leading-[40px] tracking-wide`}>start creating</h2>
+                        <p className='text-white font-bold text-[18px] 2xl:text-[18px] md:text-[16px] lg:leading-[25px] xl:leading-[40px] pt-5'>Follow our easy step-by-step template to get your course organized for proper online structuring. Then jump in and create your masterpiece! <br></br>
                             Once we’ve reviewed and approved your course it’s time to go live and make money! <br></br>
                             Then create your next masterpiece! Simple!</p>
 

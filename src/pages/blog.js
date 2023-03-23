@@ -113,19 +113,19 @@ const BlogListing = () => {
                         </Link>
 
                         {!currentData ? <div className='grid grid-cols-12 gap-4 '>
-                            <div className={`bg-transparent md:pb-40  md:col-span-9 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
+                            <div className={`bg-transparent md:pb-40  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
 
                                 {
                                     blogData && blogData?.map((item, index) => {
                                         return (
                                             // <Link key={index} href={`/blog/${index + 1}`}>
                                             <div key={index} className="mb-10 border-b border-bordergray md:max-w-[90%] lg:max-w-[100%] ">
-                                                <h2 className='text-white font-normal  text-[49px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
+                                                <h2 className='text-white font-normal lg:text-[49px] md:text-[35px]  text-[49px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
                                                 <div className='flex  flex-wrap'>
                                                     <div className='text-white pr-1 text-[22px] leading-[207%]'>{item.name}</div>
                                                     <div className='text-gray text-[22px] leading-[207%]'>| {item.date}</div>
                                                 </div>
-                                                <p className='text-gray py-8  text-[20px] tracking-wider '>{item.discription}</p>
+                                                <p className='text-gray py-8  text-[20px] lg:text-[20px] md:text-[18px] tracking-wider '>{item.discription}</p>
 
 
                                                 <button className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
@@ -143,7 +143,7 @@ const BlogListing = () => {
 
 
                             </div>
-                            <div className=' bg-transparent md:col-span-3 lg:col-span-4 col-span-12 mr-10'>
+                            <div className=' bg-transparent md:col-span-4 lg:col-span-4  col-span-12 mr-10'>
 
                                 <div className='border border-white w-[250px] 2xl:max-w-[270px] sm:max-w-[200px] pb-2 ' >
                                     <button className={`text-white text-[18px] 2xl:text-[20px] px-5 py-3 flex items-center space-x-3 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className='2xl:text-[24px] '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} /></div> </button>

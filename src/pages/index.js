@@ -183,8 +183,8 @@ const Home = () => {
 
                     </div>
                     <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='md:text-7xl text-4xl font-normal py-2'>massage ce.</p>
-                        <p className='md:text-7xl text-4xl font-normal py-2'> simplified. </p>
+                        <p className='xl:text-7xl lg:text-5xl text-5xl  font-normal py-2'>massage ce.</p>
+                        <p className='xl:text-7xl lg:text-5xl text-5xl  font-normal py-2'> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
@@ -198,15 +198,15 @@ const Home = () => {
                 </div>
 
 
-                <div className={`col-span-12 md:col-span-5 z-10 relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
-                    <div className={` grid grid-cols-12   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""}`}>
-                        <div className='col-span-12 md:h-screen md:col-span-6'>
-                            <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray'>
+                <div className={`col-span-12 md:col-span-5  relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
+                    <div className={` grid grid-cols-12   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
+                        <div className='col-span-12 md:h-screen md:col-span-6 '>
+                            <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray small:h-[550px]'>
 
                                 {/* start components */}
 
-                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation}  `} onClick={() => startMethod()} >
-                                    <div className={` md:space-x-0  relative `}>
+                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation}`} onClick={() => startMethod()} >
+                                    <div className={` md:space-x-0  relative  `}>
                                         <Door />
                                         <div className='w-full pt-3'>
                                             <h3 className='mt-4 2xl:text-4xl text-2xl lineUp font-semibold md:text-center'>start</h3>
@@ -242,7 +242,7 @@ const Home = () => {
 
 
                         <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
-                            <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray'>
+                            <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray small:h-[500px]'>
 
                                 {/* concierge components */}
 
@@ -261,7 +261,7 @@ const Home = () => {
 
                                 {/* ncbtmb approved component */}
 
-                                <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}`} onClick={() => ncbtmbMethod()}>
+                                <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} `} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                         <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150'
                                             className='md:mx-auto 2xl:w-[150px] w-[100px] 2xl:h-[150px] h-[100px] '

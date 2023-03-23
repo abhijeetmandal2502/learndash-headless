@@ -22,16 +22,16 @@ const WhyYou = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-4 flex justify-start items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold xl:text-[70px] lg:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
-                        <h4 className='2xl:text-[50px] xl:text-[45px] lg:text-[30px] font-bold xl:py-4 lg:py-0 py-4 xl:mt-6 lg:leading-[40px] leading-[40px]'>tell us about <br></br> your pedigree</h4>
-                        <p className='text-white font-bold xl:text-[18px] lg:text-[14px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
+                        <h4 className='2xl:text-[50px]  md:text-[30px] font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] leading-[40px]'>tell us about <br></br> your pedigree</h4>
+                        <p className='text-white font-bold 2xl:text-[18px] md:text-[16px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
 
                     </div>
                 </div>
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] xl:block lg:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block md:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
 
                     <div className={` relative  flex xl:mr-20`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
@@ -55,9 +55,9 @@ const WhyYou = ({ activeTabIndex }) => {
 
 
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] xl:hidden lg:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
 
-                    <div className={` relative  flex 2xl:mr-20 lg:-mr-16  mr-10`}>
+                    <div className={` relative  flex 2xl:mr-20 md:-mr-16 lg:mr-5   mr-10`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
                             <div className={`w-[400px] absolute bottom-[46px] right-[50.5px]`}>
 

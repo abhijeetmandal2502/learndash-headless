@@ -916,3 +916,40 @@ screen and (max-height: 700px) {
 
 
 }
+
+
+/* hidden background compnents  */
+
+
+.hidebgComp {
+
+    animation: hidebgelement forwards ease-in-out 1s;
+
+    transition: animation ease-in-out 1s;
+
+}
+
+
+@keyframes hidebgelement {
+
+    0% {
+
+        opacity: 1;
+
+    }
+
+    99% {
+
+        opacity: 0.2;
+
+    }
+
+    100% {
+
+        opacity: 0;
+        display: none !important;
+        visibility: hidden;
+
+    }
+
+}

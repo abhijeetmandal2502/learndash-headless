@@ -239,16 +239,18 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     /> : ""}
                 </div>
 
-                <div className=' md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
+                <div className=' flex flex-col justify-between  md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
 
-                    <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
-                        <LogoCard LogoImage={LogoImage} />
+                    <div>
+                        <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
+                            <LogoCard LogoImage={LogoImage} />
+                        </div>
+
+                        {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
+                            <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
                     </div>
 
-                    {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                        <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
-
-                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} mt-20 `} >
+                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
                             <div className=" ">
@@ -276,8 +278,6 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
                                     <div className={`${openTab === 4 ? "block" : "hidden"}`} id="link4">
-
-
                                     </div>
                                 </div>
                             </div>

@@ -29,7 +29,7 @@ module.exports = {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      'md': '992px',
       // => @media (min-width: 768px) { ... }
 
       'lg': '1024px',
@@ -40,6 +40,8 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+
+      'small': { 'raw': '(max-height: 550px)' }
     }
   },
   plugins: [],

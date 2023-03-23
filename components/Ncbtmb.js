@@ -85,10 +85,10 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
         <div className={`flex  2xl:space-x-20 max-lg:space-x-20 items-center  ${styles.ncbtapproved}`}>
           <div>
-            <h2 className=' tracking-wide font-normal text-2xl   max-[768px]:text-lg  md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
+            <h2 className=' tracking-wide font-normal   lg:text-[30px] xl:text-[40px]  2xl:text-[48px] md:text-[20px] md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
 
-          <Image src="/images/ncbtmb.svg" height="323" width="323" alt="ncbtmb" />
+          <Image src="/images/ncbtmb.svg" height="323" width="323" alt="ncbtmb" className={``} />
         </div>
         <form >
           <div className={`${styles.selectBox}`}>

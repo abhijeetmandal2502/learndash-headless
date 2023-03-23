@@ -23,16 +23,16 @@ const WhyUs = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} max-h-screen  `}>
                 <div className='col-span-12 md:col-span-4 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold xl:text-[70px] lg:text-[50px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>Why Us?</h2>
-                        <h4 className='text-[20px] xl:text-[35px]  lg:text-[30px] font-semibold py-4'>because we’re</h4>
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] lg:text-[50px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>Why Us?</h2>
+                        <h4 className='text-[20px] 2xl:text-[35px]  lg:text-[30px] font-semibold py-4'>because we’re</h4>
                         <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" />
-                        <p className='text-white font-bold xl:text-[18px] md:text-[14px]  text-[16px] pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                        <p className='text-white font-bold 2xl:text-[18px] md:text-[15px]  text-[16px] pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
                             <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>
 
                     </div>
                 </div>
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] xl:block lg:hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
@@ -50,7 +50,7 @@ const WhyUs = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] xl:hidden lg:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
 
                     <div className={` relative  flex xl:mr-20 md:-mr-10 mr-0`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
