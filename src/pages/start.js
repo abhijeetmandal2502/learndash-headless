@@ -149,12 +149,12 @@ const Start = () => {
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
-                <div className=' flex flex-col justify-between  md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 p-10 z-10'>
+                <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-72 p-10 z-10'>
                     <div>
                         <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
                                 <Link href="/">
-                                    <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px] h-[100px] w-[250px]' />
+                                    <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px]  h-[100px] w-[250px]' />
                                     {/* <div className='flex max-sm:visible invisible md:hidden items-center justify-center space-x-2 '>
                     <p className='font-semibold text-lg'>menu</p>
                     <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />

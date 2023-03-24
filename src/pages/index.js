@@ -183,8 +183,8 @@ const Home = () => {
 
                     </div>
                     <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='xl:text-7xl lg:text-5xl text-5xl  font-normal py-2'>massage ce.</p>
-                        <p className='xl:text-7xl lg:text-5xl text-5xl  font-normal py-2'> simplified. </p>
+                        <p className='xl:text-7xl 3xl:text-[150px] lg:text-5xl text-5xl  font-normal py-2'>massage ce.</p>
+                        <p className='xl:text-7xl 3xl:text-[150px] lg:text-5xl text-5xl  font-normal py-2'> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
@@ -209,8 +209,8 @@ const Home = () => {
                                     <div className={` md:space-x-0  relative  `}>
                                         <Door />
                                         <div className='w-full pt-3'>
-                                            <h3 className='mt-4 2xl:text-4xl text-2xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-1 ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
+                                            <h3 className='mt-4 2xl:text-4xl 3xl:text-6xl text-2xl lineUp font-semibold md:text-center'>start</h3>
+                                            <p className={`mt-1 ${Styles.hide1} tracking-[.05em] 3xl:text-4xl  md:text-center lineUp`}>start a course today!</p>
                                         </div>
 
                                     </div>
@@ -226,10 +226,12 @@ const Home = () => {
                                 <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray`} onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
-                                        <Image alt='start' src='/images/IamBack.svg' height='88' width='88' className='md:mx-auto ' />
+                                        <div className='md:mx-auto  w-[88px] h-[88px] 3xl:w-[200px] 3xl:h-[200px]'>
+                                            <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
+                                        </div>
                                         <div className='w-full'>
-                                            <h3 className='mt-4 2xl:text-4xl text-2xl lineUp font-semibold md:text-center'>i’m back</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>existing user login</p>
+                                            <h3 className='mt-4 2xl:text-4xl 3xl:text-6xl text-2xl lineUp font-semibold md:text-center'>i’m back</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center 3xl:text-4xl tracking-[.05em] lineUp`}>existing user login</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -248,10 +250,13 @@ const Home = () => {
 
                                 <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}`} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <Image alt='start' src='/images/Concierge.svg' height='88' width='88' className='md:mx-auto ' />
+                                        <div className='md:mx-auto  w-[88px] h-[88px] 3xl:w-[200px] 3xl:h-[200px]'>
+                                            <Image alt='start' src='/images/Concierge.svg' height='300' width='300' className='' />
+                                        </div>
+
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl text-2xl  lineUp'>concierge</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>have a question? get in touch!</p>
+                                            <h3 className='mt-4 font-semibold md:text-center 3xl:text-6xl 2xl:text-3xl text-2xl  lineUp'>concierge</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center 3xl:text-4xl tracking-[.05em] lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -263,12 +268,13 @@ const Home = () => {
 
                                 <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} `} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/ncbtmb.svg' height='150' width='150'
-                                            className='md:mx-auto 2xl:w-[150px] w-[100px] 2xl:h-[150px] h-[100px] '
-                                        />
+                                        <div className='md:mx-auto 2xl:w-[150px] 3xl:w-[300px] w-[100px] 2xl:h-[150px] 3xl:h-[300px] h-[100px] '>
+                                            <Image alt='start' src='/images/ncbtmb.svg' height='400' width='400' />
+                                        </div>
+
                                         <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl text-2xl  lineUp'>ncbtmb approved</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>check if your state is approved</p>
+                                            <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl 3xl:text-6xl text-2xl  lineUp'>ncbtmb approved</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center 3xl:text-2xl tracking-[.05em] lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -280,10 +286,12 @@ const Home = () => {
 
                                 <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden`} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <Image alt='start' src='/images/teacherLounge.svg' height='70' width='51' className='md:mx-auto 2xl:w-[50px] w-[35px] 2xl:h-[70px] h-[50px] ' />
-                                        <div className='w-full'>
-                                            <h3 className='font-semibold lineUp md:text-center 2xl:text-3xl text-xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>existing instructor please login here!</p>
+                                        <div className='md:mx-auto 2xl:w-[50px] 3xl:w-[100px] w-[35px] 2xl:h-[70px] 3xl:h-[100px] h-[50px]'>
+                                            <Image alt='start' src='/images/teacherLounge.svg' height='200' width='150' />
+                                        </div>
+                                        <div className='w-full 3xl:mt-20'>
+                                            <h3 className='font-semibold lineUp 3xl:mt-2 md:text-center 2xl:text-3xl 3xl:text-6xl text-xl md:mt-4'>teacher’s lounge</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] 3xl:text-2xl lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -336,9 +344,9 @@ const Home = () => {
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/2 -translate-x-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod() }}>
-                                <p className='font-semibold max-[768px]:text-[12px]'>menu</p>
+                                <p className='font-semibold max-[768px]:text-[12px] 3xl:text-[40px]'>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
-                                <svg width="24" height="24" className={`${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="24" height="24" className={` 3xl:w-[50px] 3xl:h-[50px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />

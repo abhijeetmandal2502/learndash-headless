@@ -239,7 +239,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     /> : ""}
                 </div>
 
-                <div className=' flex flex-col justify-between  md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
+                <div className=' flex flex-col  2xl:space-y-40 xl:space-y-30 lg:space-y-20 md:space-y-10 3xl:space-y-72 md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
 
                     <div>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
@@ -249,7 +249,6 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
                             <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
                     </div>
-
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
@@ -354,18 +353,14 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         {/* <Nav color="red" /> */}
 
                     </div> : ""}
-
                 </div>
-
                 <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
                             onClick={() => { HandleCloseBtn() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white'>Close </p>
-
                                 <AiOutlineClose size={20} className="text-white" />
-
                             </div>
                         </div>
                         <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
