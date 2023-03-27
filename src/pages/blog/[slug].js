@@ -100,8 +100,10 @@ const Blog = () => {
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 `} onClick={() => { handlelobby() }} >
-                            <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button>
+
+
+                        <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `} onClick={() => { handlelobby() }} >
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm font-semibold 3xl:text-2xl'>lobby</span></button>
 
                         {blogData ? <div className='grid grid-cols-12 gap-4 max-h-screen pt-10'>
                             <div className={`bg-transparent md:pb-40  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
@@ -110,18 +112,18 @@ const Blog = () => {
 
                                     return (
                                         <div key={key} className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                            <h2 className='text-white font-normal  text-[49px] 2xl:text-[49px] md:text-[35px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
+                                            <h2 className='text-white font-normal  text-[49px] 2xl:text-[49px] 3xl:text-[60px] 4xl:text-[70px]  md:text-[35px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
                                             <div className='flex  flex-wrap'>
-                                                <div className='text-white pr-1 text-[22px] leading-[207%]'>{item.name}</div>
-                                                <div className='text-gray text-[22px] leading-[207%]'>| {item.date}</div>
+                                                <div className='text-white pr-1 text-[22px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>{item.name}</div>
+                                                <div className='text-gray text-[22px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>| {item.date}</div>
                                             </div>
-                                            <p className='text-gray py-8 text-[20px] lg:text-[20px] md:text-[18px] tracking-wider '>{item.discription}</p>
+                                            <p className='text-gray py-8 text-[20px] lg:text-[20px] md:text-[18px] 3xl:text-[30px] 4xl:text-[40px] tracking-wider '>{item.discription}</p>
 
                                             <Image src="/images/blogBanner1.png" width="800" height="450" className="w-[850px] h-[350px]" alt="Banner Image" />
 
-                                            <h4 className='text-white font-normal py-3 pt-10 text-[22px] tracking-wide'>{item.subHeaderTitle}</h4>
+                                            <h4 className='text-white font-normal py-3 pt-10 text-[22px] 3xl:text-[32px] 4xl:text-[42px tracking-wide'>{item.subHeaderTitle}</h4>
 
-                                            <p className='text-gray py-8 text-[20px] tracking-wider '>{item.subDiscription}</p>
+                                            <p className='text-gray py-8 text-[20px] 3xl:text-[30px] 4xl:text-[40px] tracking-wider '>{item.subDiscription}</p>
 
                                         </div>
                                     )
@@ -132,11 +134,11 @@ const Blog = () => {
                                 <div className=' md:mr-5'>
 
                                     <Link href="/blog">
-                                        <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='2xl:text-[18px] lg:text-[14px] font-[600]'>view all posts</div></button>
+                                        <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='2xl:text-[18px] lg:text-[14px] 3xl:text-[30px] font-[600]'>view all posts</div></button>
                                     </Link>
                                     <div className='flex pt-7  md:space-x-4 2xl:space-x-10'>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} /> <div className='text-[18px] pr-1'> back</div></button>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[18px] pl-1' >next</div> <HiOutlineArrowSmRight size={20} /> </button>
+                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 3xl:px-3 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='3xl:w-8 3xl:h-8' /> <div className='text-[18px] pr-1 3xl:text-[30px]'> back</div></button>
+                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 3xl:px-3 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[18px] 3xl:text-[30px] pl-1' >next</div> <HiOutlineArrowSmRight size={20} className='3xl:w-8 3xl:h-8' /> </button>
                                     </div>
 
                                 </div>
@@ -150,9 +152,9 @@ const Blog = () => {
                                     <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
                                         onClick={() => { }}>
                                         <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                            <p className='font-semibold text-white'>Close </p>
+                                            <p className='font-semibold text-white 3xl:text-[25px]'>Close </p>
 
-                                            <AiOutlineClose size={20} className="text-white" />
+                                            <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
 
                                         </div>
                                     </div>
@@ -165,7 +167,7 @@ const Blog = () => {
                     </div>
                 </div>
                 <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
-                    <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
+                    <FiArrowDown size={25} className={`text-white 3xl:w-12 3xl:h-12 ${stylesScrollBtn.UpDownAnimation} `} />
 
                 </div>
             </div>

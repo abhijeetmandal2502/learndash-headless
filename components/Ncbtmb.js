@@ -80,8 +80,8 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
     <>
       <div className=' bg-transparent h-screen overflow-scroll '>
 
-        <button className={`flex items-center space-x-1 bg-black text-white px-4 font-bold py-2 rounded-3xl ${styles.lobby}`} onClick={() => ncbtmbMethodHide()}>
-          <BiArrowBack size={20} className="text-white" /><span className='text-sm '>lobby</span></button>
+        <button className={`flex items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
+          <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl '>lobby</span></button>
 
         <div className={`flex  2xl:space-x-20 max-lg:space-x-20 items-center  ${styles.ncbtapproved}`}>
           <div>
@@ -93,7 +93,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
         <form >
           <div className={`${styles.selectBox}`}>
 
-            <div className='py-2'>
+            <div className='py-2 3xl:text-4xl'>
               accepted in your state?
             </div>
             <Select

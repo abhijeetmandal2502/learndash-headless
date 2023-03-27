@@ -149,12 +149,12 @@ const Start = () => {
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
-                <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-72 p-10 z-10'>
+                <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 p-10 z-10'>
                     <div>
                         <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
                                 <Link href="/">
-                                    <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px]  h-[100px] w-[250px]' />
+                                    <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px] 3xl:h-[180px] 3xl:w-[500px]  h-[100px] w-[250px]' />
                                     {/* <div className='flex max-sm:visible invisible md:hidden items-center justify-center space-x-2 '>
                     <p className='font-semibold text-lg'>menu</p>
                     <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
@@ -162,17 +162,17 @@ const Start = () => {
                                 </Link>
                             </div>
 
-                            <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { router.push('/') }} >
-                                <BiArrowBack size={20} className="text-white" /><span className='text-md font-semibold'>lobby</span></button>
+                            <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 3xl:px-3 3xl:py-2.5 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { router.push('/') }} >
+                                <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-md 3xl:text-2xl font-semibold'>lobby</span></button>
                         </div>
                     </div>
 
                     <div className='grid grid-cols-12  pl-2 '>
                         <div className="col-span-2 md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
-                            <div className=' relative w-[0.4px] h-[400px] mt-4 bg-white'>
+                            <div className=' relative w-[0.4px] h-[400px] 3xl:h-[532px] mt-4 3xl:mt-[25px] bg-white'>
 
-                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px]' : 'mt-[340px]'}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 `} style={selectStyles}>
+                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[480.5px]'}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 `} style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
 
@@ -204,8 +204,8 @@ const Start = () => {
                                             </div>
                                             <p
 
-                                                className={`text-white opacity-[0.6] text-[18px] py-[3px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
-                                                    ? `font-bold opacity-[1] hover:[20px] ${styles.shadow}`
+                                                className={`text-white opacity-[0.6] text-[18px] 3xl:text-[28px] py-[3px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
+                                                    ? `font-bold opacity-[1] hover:[20px] 3xl:hover:[30px] ${styles.shadow}`
                                                     : ""
                                                     } `}
                                                 // Change the active tab on click.

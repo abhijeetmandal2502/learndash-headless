@@ -522,7 +522,7 @@ screen and (max-height: 700px) {
 
 }
 
-@media only screen and (min-width:1921px) {
+@media only screen and (min-width:2560px) {
 
     .modelScaleUpAnimation {
 
@@ -587,6 +587,76 @@ screen and (max-height: 700px) {
         100% {
             padding: 25px 25px 25px 25px;
             width: 600px
+        }
+
+    }
+}
+
+@media only screen and (min-width:1921px) {
+
+    .modelScaleUpAnimation {
+
+        animation-name: modelScaleUp;
+        animation-fill-mode: forwards;
+        animation-duration: 500ms;
+        animation-timing-function: linear;
+    }
+
+
+    @keyframes modelScaleUp {
+
+        0% {
+            padding: 25px 25px 25px 25px;
+            width: 450px
+        }
+
+        25% {
+            padding: 25px 26px 25px 26px;
+            width: 500px
+        }
+
+        60% {
+            padding: 25px 28px 25px 28px;
+            width: 600px
+        }
+
+        100% {
+            padding: 25px 30px 25px 30px;
+            width: 600px
+        }
+
+    }
+
+
+    .modelScaleDownAnimation {
+
+        animation-name: modelScaleDown;
+        animation-fill-mode: forwards;
+        animation-duration: 500ms;
+        animation-timing-function: linear;
+    }
+
+
+    @keyframes modelScaleDown {
+
+        0% {
+            padding: 25px 30px 25px 30px;
+            width: 600px
+        }
+
+        25% {
+            padding: 25px 28px 25px 28px;
+            width: 550px
+        }
+
+        60% {
+            padding: 25px 26px 25px 26px;
+            width: 500px
+        }
+
+        100% {
+            padding: 25px 25px 25px 25px;
+            width: 450px
         }
 
     }

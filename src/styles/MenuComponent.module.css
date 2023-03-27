@@ -122,6 +122,61 @@
 }
 
 
+/* media query for extra large device  */
+
+
+@media only screen and (min-width:1921px) {
+
+    .navli {
+        color: white;
+        font-size: 2.5rem;
+        -webkit-transition: all 700ms ease-in-out;
+        -ms-transition: all 700ms ease-in-out;
+        transition: color 700ms ease-in-out;
+        font-weight: bold;
+    }
+
+    .navli.active {
+
+        color: #9747FF;
+        font-size: 2.5rem;
+        -webkit-transition: all 700ms ease-in-out;
+        -ms-transition: all 700ms ease-in-out;
+        transition: color 700ms ease-in-out;
+        font-weight: bold;
+        opacity: 1;
+
+
+
+    }
+}
+
+@media only screen and (min-width:2561px) {
+
+    .navli {
+        color: white;
+        font-size: 3rem;
+        -webkit-transition: all 700ms ease-in-out;
+        -ms-transition: all 700ms ease-in-out;
+        transition: color 700ms ease-in-out;
+        font-weight: bold;
+    }
+
+    .navli.active {
+
+        color: #9747FF;
+        font-size: 3rem;
+        -webkit-transition: all 700ms ease-in-out;
+        -ms-transition: all 700ms ease-in-out;
+        transition: color 700ms ease-in-out;
+        font-weight: bold;
+        opacity: 1;
+
+
+
+    }
+}
+
 .navli:hover>.hide {
 
     opacity: 1;
@@ -344,6 +399,17 @@
     transition: all ease-in-out 500ms;
 }
 
+/* media query for extra large screen */
+
+@media only screen and (min-width:1921px) {
+
+    .shadowHover:hover {
+
+        filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
+        font-size: 30px;
+        transition: all ease-in-out 500ms;
+    }
+}
 
 /* toggle animation  */
 

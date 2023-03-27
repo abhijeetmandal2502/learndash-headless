@@ -239,15 +239,15 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                     /> : ""}
                 </div>
 
-                <div className=' flex flex-col  2xl:space-y-40 xl:space-y-30 lg:space-y-20 md:space-y-10 3xl:space-y-72 md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
+                <div className=' flex flex-col  2xl:space-y-40 xl:space-y-30 lg:space-y-20 md:space-y-10 3xl:space-y-24 md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
 
                     <div>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                            <BiArrowBack size={20} className="text-white" /><span className='text-sm font-semibold'>lobby</span></button> : ""}
+                        {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl font-semibold'>lobby</span></button> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
@@ -263,7 +263,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                     <div className={`${openTab === 2 ? "block" : "hidden"} ${openTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll  `} id="link2">
                                         <Instructors />
                                         <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
-                                            <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
+                                            <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} 3xl:w-14 3xl:h-14`} />
 
                                         </div>
                                     </div>
@@ -286,7 +286,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                             className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
-                            <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 text-3xl text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
+                            <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 text-3xl  text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
@@ -359,8 +359,8 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
                             onClick={() => { HandleCloseBtn() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                <p className='font-semibold text-white'>Close </p>
-                                <AiOutlineClose size={20} className="text-white" />
+                                <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
                         <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
