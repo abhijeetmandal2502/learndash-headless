@@ -170,9 +170,9 @@ const Start = () => {
                     <div className='grid grid-cols-12  pl-2 '>
                         <div className="col-span-2 md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
-                            <div className=' relative w-[0.4px] h-[400px] 3xl:h-[532px] mt-4 3xl:mt-[25px] bg-white'>
+                            <div className=' relative w-[0.4px] h-[400px] 3xl:h-[528px] mt-4 3xl:mt-[25px] bg-white'>
 
-                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[480.5px]'}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 `} style={selectStyles}>
+                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 3xl:top-[11.2px]`} style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
 
@@ -230,9 +230,9 @@ const Start = () => {
                         <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
                             onClick={() => { router.push('/') }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                <p className='font-semibold text-white'>Close </p>
+                                <p className='font-semibold text-white 3xl:text-[30px] '>Close </p>
 
-                                <AiOutlineClose size={20} className="text-white" />
+                                <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
 
                             </div>
                         </div>

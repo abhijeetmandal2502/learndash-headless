@@ -22,16 +22,16 @@ const WhyYou = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-4 flex justify-start items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
-                        <h4 className='2xl:text-[50px]  md:text-[30px] font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] leading-[40px]'>tell us about <br></br> your pedigree</h4>
-                        <p className='text-white font-bold 2xl:text-[18px] md:text-[16px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[95px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
+                        <h4 className='2xl:text-[50px] 3xl:text-[60px] md:text-[30px] font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] 3xl:leading-[60px]  leading-[40px]'>tell us about <br></br> your pedigree</h4>
+                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[25px] md:text-[16px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
 
                     </div>
                 </div>
-
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block md:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
+                {/* for desktop */}
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block 3xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
 
                     <div className={` relative  flex xl:mr-20`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
@@ -53,7 +53,30 @@ const WhyYou = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
+                {/* for extra large device */}
 
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 3xl:block 2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
+                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                        <div className='relative overflow-hidden w-full h-[600px]  '>
+                            <div className={`w-[600px] absolute bottom-[46px] right-[50.5px]`}>
+
+                                <Image src='/images/WhyYouRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[600px]`} />
+                            </div>
+                            <div className={`-rotate-[27deg] absolute -bottom-[233px] -right-[100.5px]  z-10  `}>
+                                <Image src='/images/SubtractBrown.png' width={1000} height={600} alt="wanna tech png" className={` w-[650px]`} />
+
+                            </div>
+                        </div>
+                        <div className={` absolute bottom-[27px]  right-[60px] ${styles.fadeAnimationInfinite}    w-[670px]`}>
+                            <Image src='/images/dog.png' width={1000} height={700} alt="wanna tech png" className={` `} />
+                        </div>
+                        <div className='z-50 absolute bottom-[0%] left-[45%]'>
+                            <p className='text-white 3xl:text-[24px]'>(her name is bubbless!)</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* for samll device */}
 
                 <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
 

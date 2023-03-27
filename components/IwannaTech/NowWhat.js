@@ -16,8 +16,8 @@ const NowWhat = () => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
                 <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div className='mt-5'>
-                        <h2 className={`text-white font-semibold 2xl:text-[65px] lg:text-[50px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] md:leading-[40px] 2xl:leading-[80px] tracking-wide`}>Now what?</h2>
-                        <h4 className='2xl:text-[45px] md:text-[30px] text-[30px]  font-bold py-4 leading-[40px]'>now we enter<br></br>contact:</h4>
+                        <h2 className={`text-white font-semibold 2xl:text-[65px] 3xl:text-[95px] 4xl:text-[110px] lg:text-[50px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] md:leading-[40px] 2xl:leading-[80px] tracking-wide`}>Now what?</h2>
+                        <h4 className='2xl:text-[45px] 3xl:text-[60px] 4xl:text-[70px] md:text-[30px] text-[30px]  font-bold py-4 3xl:leading-[60px] leading-[40px]'>now we enter<br></br>contact:</h4>
                         {/* <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" /> */}
                         {
                             data?.map((item, id) => {
@@ -25,9 +25,9 @@ const NowWhat = () => {
                                     <div key={id} className='py-2'>
                                         <div className='flex space-x-2 items-center'>
                                             <div className='p-1.5 rounded-full bg-white'>
-                                                <FaCheck className='font-bold text-green-500 ' size={15} />
+                                                <FaCheck className='font-bold text-green-500 3xl:w-7 3xl:h-7' size={15} />
                                             </div>
-                                            <p className=' font-thin text-[18px] md:text-[16px] xl:text-[18px] text-white'>{item}</p>
+                                            <p className=' font-thin text-[18px] md:text-[16px] xl:text-[18px] 2xl:text-[28px] text-white'>{item}</p>
                                         </div>
 
                                     </div>
@@ -40,7 +40,8 @@ const NowWhat = () => {
                 </div>
                 <div className='col-span-12 md:col-span-7 flex justify-center items-start 2xl:-mt-32 md:-mt-24'>
                     <div className={`${styles.shadow} ${styles.imgRotateNowWhat} `}>
-                        <Image src='/images/nowWhat.png' width={550} height={550} alt="wanna tech png" className={``} />
+                        <Image src='/images/nowWhat.png' width={550} height={550} alt="wanna tech png" className={`3xl:w-[700px] 3xl:h-[700px]
+                        4xl:w-[900px] 4xl:h-[900px]`} />
                     </div>
                 </div>
 

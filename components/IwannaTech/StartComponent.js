@@ -11,9 +11,9 @@ const StartComponent = () => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} xl:mt-8 lg:mt-8`}>
                 <div className='col-span-12 md:col-span-6 flex justify-start items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] lg:text-[50px] md:text-[40px] text-[40px] ${styles.shadow} leading-[40px] lg:leading-[70px] md:leading-[60px] tracking-wide`}>so you <br></br> wanna teach?</h2>
-                        <p className=' font-thin text-[40px] text-white'>cool! glad you’re here!</p>
-                        <div className='mt-10 text-[37px]'>look around!</div>
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] 4xl:text-[120px] lg:text-[50px] md:text-[40px] text-[40px] ${styles.shadow} leading-[40px] lg:leading-[70px] md:leading-[60px] 3xl:leading-[110px] 4xl:leading-[120px]tracking-wide`}>so you <br></br> wanna teach?</h2>
+                        <p className=' font-thin text-[40px] 3xl:text-[60px] text-white'>cool! glad you’re here!</p>
+                        <div className='mt-10 text-[37px] 3xl:text-[50px]'>look around!</div>
                     </div>
                 </div>
 
