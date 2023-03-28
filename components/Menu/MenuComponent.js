@@ -246,8 +246,8 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl font-semibold'>lobby</span></button> : ""}
+                        {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl 4xl:text-3xl font-semibold'>lobby</span></button> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 

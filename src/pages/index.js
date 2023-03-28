@@ -188,11 +188,11 @@ const Home = () => {
                     </div>
 
                     {/* conceierge components */}
-                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-28 left-10 3xl:top-72 3xl:left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
+                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-28 left-10 3xl:top-72 3xl:left-10 4xl:top-96 4xl:left-10 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
 
-                    <div className={`absolute top-28 left-10  3xl:top-72 3xl:left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
+                    <div className={`absolute top-28 left-10  3xl:top-72 3xl:left-10 4xl:top-96 4xl:left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
 
 
                 </div>

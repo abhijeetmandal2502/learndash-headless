@@ -172,7 +172,7 @@ const Start = () => {
                             {/* Loop through tab data and render button for each. */}
                             <div className=' relative w-[0.4px] h-[400px] 3xl:h-[528px] mt-4 3xl:mt-[25px] bg-white'>
 
-                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 3xl:top-[11.2px]`} style={selectStyles}>
+                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 3xl:top-[9.5px]`} style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
 
