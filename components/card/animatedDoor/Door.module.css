@@ -11,9 +11,6 @@
 
 
 .rotateChild .child {
-
-
-
     transform: rotateY(0deg);
     transform-origin: left;
     transition: all 1s ease-in-out;
@@ -21,11 +18,8 @@
 
 
 .rotateChild:hover {
-
-
     background: rgba(128, 128, 128, 0.164);
     transition: background 500ms ease;
-
 }
 
 
@@ -79,9 +73,6 @@
     }
 
 }
-
-
-
 
 .rotateChild .imageDiv {
 

@@ -6,7 +6,7 @@ const LogoCard = ({ LogoImage }) => {
     return (
         <div>
             <Link href="/">
-                <Image src={`${LogoImage}`} height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] h-[70px] w-[250px]
+                <Image src={`${LogoImage}`} height='30' width='120' alt='logo' className=' md:h-[70px] md:w-[250px] h-[70px] w-[200px]
                  4xl:h-[400px] 4xl:w-[700px] 3xl:h-[300px] 3xl:w-[500px] ' />
                 {/* <div className='flex max-sm:visible invisible md:hidden items-center justify-center space-x-2 '>
                     <p className='font-semibold text-lg'>menu</p>
