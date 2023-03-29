@@ -18,7 +18,7 @@ const Conceierge = ({ conceiergeHide }) => {
             <div className=' bg-transparent  max-[768px]:max-w-xs min-[992px]:max-w-md max-w-lg 2xl:max-w-lg 3xl:max-w-3xl'>
 
 
-                <button className={`flex items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => conceiergeHide()}  >
+                <button className={`md:flex hidden items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => conceiergeHide()}  >
                     <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl '>lobby</span></button>
 
 

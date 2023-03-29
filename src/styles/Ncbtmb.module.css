@@ -45,6 +45,16 @@
 }
 
 
+@media screen and (max-width:768px) {
+
+    .ncbtapproved img {
+
+        width: 140px;
+        height: 140px
+    }
+}
+
+
 @media screen and (min-height:768px) {
 
 

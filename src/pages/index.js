@@ -17,6 +17,7 @@ import TeacherCss from '../../components/TeacherLounge/TeacherLounge.module.css'
 import IwannaTech from 'components/TeacherLounge/IwannaTech'
 import { useRouter } from 'next/router'
 import Door from 'components/Start/Door'
+import HomeComponentMobile from 'components/HomeComponentMobile'
 
 const Home = () => {
 
@@ -173,7 +174,7 @@ const Home = () => {
             <Head> LearnDash </Head>
 
 
-            <div className={` grid grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+            <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
                 {/* logo and hero components */}
 
@@ -373,13 +374,34 @@ const Home = () => {
 
             {/* drowable component */}
 
-            <div className={` ${(On === true || currentPath == 'blog') ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""} `}>
+            <div className={` ${(On === true || currentPath == 'blog') ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
 
-            {/* <div className='md:hidden'>
+            <div className={`md:hidden bg-transparent w-full ${On === true ? "hidden" : "block"}`}>
 
-            </div> */}
+                <div className='flex justify-between  items-center space-x-5 cursor-pointer px-3'>
+                    <LogoCard LogoImage={LogoImage} />
+                    {/* menu icon for small device */}
+                    <div className='lg:hidden'>
+                        <div className='flex items-center justify-center  space-x-2' onClick={() => { ShowMenuMethod() }}>
+                            <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
+                            {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
+                            <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
+                                <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
+                                <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className='mt-4'>
+                    <HomeComponentMobile />
+                </div>
+
+            </div>
 
         </>
     )

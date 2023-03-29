@@ -85,7 +85,7 @@ const LoginModel = ({ changeDuration, title }) => {
                     <div className='flex justify-between '>
                         <h2 className=' font-normal py-2 pb-4 lg:text-[24px] 3xl:text-[50px]'>{loginTitle ? titlefogetpass : title}</h2>
                     </div>
-                    <button className='absolute top-4 right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} className='3xl:w-10 3xl:h-10' /></button>
+                    <button className='absolute top-4 md:block hidden right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} className='3xl:w-10 3xl:h-10' /></button>
                     <form onSubmit={(e) => userLogin(e)}>
                         <div className='py-2'>
 

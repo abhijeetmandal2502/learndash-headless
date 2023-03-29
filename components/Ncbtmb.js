@@ -80,12 +80,12 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
     <>
       <div className=' bg-transparent h-screen overflow-scroll '>
 
-        <button className={`flex items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
+        <button className={`md:flex hidden items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl '>lobby</span></button>
 
-        <div className={`flex  2xl:space-x-20 max-lg:space-x-20 items-center  ${styles.ncbtapproved}`}>
+        <div className={`flex  2xl:space-x-20 max-lg:space-x-20 md:space-x-20 space-x-8 items-center  ${styles.ncbtapproved}`}>
           <div>
-            <h2 className=' tracking-wide font-normal   lg:text-[30px] xl:text-[40px]  2xl:text-[48px] md:text-[20px] md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
+            <h2 className=' tracking-wide font-normal   lg:text-[30px] xl:text-[40px] text-[23px]  2xl:text-[48px] md:text-[20px] md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
 
           <Image src="/images/ncbtmb.svg" height="323" width="323" alt="ncbtmb" className={``} />
@@ -121,11 +121,11 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
         <div className={`pt-3 ${styles.ncbtapproved} ${selectedOption ? styles.showCourseDetail : styles.hideCourseDetail}`}>
 
           <div className='flex  items-center space-x-2'>
-            <div className='p-2 rounded-full bg-[#2AC368]'>
-              <BiCheck size={25} className='text-white' />
+            <div className='md:p-2 p-0.5 rounded-full bg-[#2AC368]'>
+              <BiCheck size={25} className='text-white md:text-[25px] text-[16px]' />
             </div>
-            <h3 className='text-[20px]'>Texas? yep! you’re fine.</h3>
-            <button className=' border-b border-voilet text-voilet leading-6 text-3xl'> click here.</button>
+            <h3 className='md:text-[20px] text-[14px]'>Texas? yep! you’re fine.</h3>
+            <button className=' border-b border-voilet text-voilet leading-6 md:text-3xl text-md'> click here.</button>
           </div>
 
           <div className='py-3'>
