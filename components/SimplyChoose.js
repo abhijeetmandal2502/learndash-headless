@@ -19,6 +19,11 @@ const SimplyChoose = ({ startMethodHide, start }) => {
     const data = [
         {
             price: 40,
+            duration: "give ce as a gift",
+            discription: "gift shoppe"
+        },
+        {
+            price: 40,
             duration: "4hours",
             discription: "using research to market your practice"
         },
@@ -121,26 +126,54 @@ const SimplyChoose = ({ startMethodHide, start }) => {
 
                 <div className={`md:col-span-6 col-span-12 `}>
                     <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
+
                         {data?.map((item, index) => {
 
-                            return (<div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>
-                                <div className='flex justify-between'>
-                                    <div className='flex justify-center items-center space-x-1'>
-                                        <MdOutlineWatchLater />
-                                        <div>{item.duration}</div>
-                                    </div>
-                                    <div className='md:text-[33px] text-[20px] lg:text-[20px] xl:text-[33px]'>
-                                        ${item.price}
-                                    </div>
-                                </div>
-                                <div className={`md:pt-24 pt-5 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
-                                    {item.discription}
-                                </div>
-                                <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
-                                    <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
-                                </div>
+                            return (
 
-                            </div>)
+                                <>
+
+
+                                    {/* <div className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>
+                                        <div className='flex justify-between'>
+                                            <div className='flex justify-center items-center space-x-1'>
+                                                <MdOutlineWatchLater />
+                                                <div>{item.duration}</div>
+                                            </div>
+                                            <div className='md:text-[33px] text-[20px] lg:text-[20px] xl:text-[33px]'>
+                                                ${item.price}
+                                            </div>
+                                        </div>
+                                        <div className={`md:pt-24 pt-5 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
+                                            {item.discription}
+                                        </div>
+                                        <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                            <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+                                        </div>
+
+                                    </div> */}
+
+
+                                    <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>
+                                        <div className='flex justify-between'>
+                                            <div className='flex justify-center items-center space-x-1'>
+                                                <MdOutlineWatchLater />
+                                                <div>{item.duration}</div>
+                                            </div>
+                                            <div className='md:text-[33px] text-[20px] lg:text-[20px] xl:text-[33px]'>
+                                                ${item.price}
+                                            </div>
+                                        </div>
+                                        <div className={`md:pt-24 pt-5 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
+                                            {item.discription}
+                                        </div>
+                                        <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                            <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+                                        </div>
+
+                                    </div>
+                                </>
+                            )
 
                         })}
                         <div className={` sticky bottom-0 left-[51%] -translate-x-[51%]  z-[100]`}>

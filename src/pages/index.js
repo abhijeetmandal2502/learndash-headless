@@ -30,15 +30,10 @@ const Home = () => {
     // for conceierge
 
     const [showConceierge, setShowConceierge] = useState();
-
     // for ncbtmb 
-
     const [showNcbtmb, setShowNcbtmb] = useState();
-
     // for menu open close 
-
     const [On, setOn] = useState();
-
     // teacher lounge 
 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
@@ -170,9 +165,7 @@ const Home = () => {
 
     return (
         <>
-
             <Head> LearnDash </Head>
-
 
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
 
@@ -211,110 +204,118 @@ const Home = () => {
                 </div>
 
 
-                <div className={`col-span-12 md:col-span-5  relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
-                    <div className={` grid grid-cols-12   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
-                        <div className='col-span-12 md:h-screen md:col-span-6 '>
-                            <div className='grid md:h-full grid-cols-1 divide-y-[1px] divide-bordergray md:border-0 border-y-[1px] border-bordergray small:h-[550px]'>
+                <div className={`col-span-12 md:col-span-5   relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
+                    <div className={`   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
 
-                                {/* start components */}
+                        <div className='grid md:h-full grid-rows-8 grid-flow-col divide-bordergray md:border-0 border-y-[1px] border-bordergray min-h-screen small:h-[550px]'>
 
-                                <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation}`} onClick={() => startMethod()} >
-                                    <div className={` md:space-x-0 flex md:flex-col relative  `}>
-                                        <Door />
-                                        <div className='w-full pt-3'>
-                                            <h3 className='mt-4 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl text-3xl lineUp font-semibold md:text-center'>start</h3>
-                                            <p className={`mt-1 ${Styles.hide1} tracking-[.05em] 4xl:text-4xl 3xl:text-2xl  md:text-center lineUp`}>start a course today!</p>
-                                        </div>
 
-                                    </div>
+                            {/* start components */}
 
-                                    <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
-                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                            <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} row-span-4 row-start-1 `} onClick={() => startMethod()} >
+                                <div className={` md:space-x-0 flex md:flex-col relative md:pt-7  `}>
+                                    <Door />
+                                    <div className='w-full pt-3'>
+                                        <h3 className='mt-4 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl text-3xl lineUp font-semibold md:text-center'>start</h3>
+                                        <p className={`mt-1 ${Styles.hide1} tracking-[.05em] 4xl:text-4xl 3xl:text-2xl  md:text-center lineUp`}>start a course today!</p>
                                     </div>
 
                                 </div>
 
-                                {/* i ma back component */}
-
-                                <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray`} onClick={() => { HandleClick(); }}>
-
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card '>
-                                        <div className='md:mx-auto  w-[88px] h-[88px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
-                                            <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
-                                        </div>
-                                        <div className='w-full'>
-                                            <h3 className='mt-4 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl text-3xl lineUp font-semibold md:text-center'>i’m back</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>existing user login</p>
-                                        </div>
-                                    </div>
-                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
-                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div className='col-span-12 md:h-screen md:col-span-6 md:border-l md:border-l-bordergray'>
-                            <div className='grid h-full grid-cols-1 divide-y-[1px] divide-bordergray small:h-[500px] '>
-
-                                {/* concierge components */}
-
-                                <div className={`flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""} md:pl-0 pl-8`} onClick={() => conceiergeMethod()}>
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <div className='md:mx-auto  w-[88px] h-[88px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px]'>
-                                            <Image alt='start' src='/images/Concierge.svg' height='300' width='300' className='' />
-                                        </div>
-
-                                        <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center 4xl:text-6xl 3xl:text-5xl 2xl:text-3xl md:text-2xl text-3xl  lineUp'>concierge</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>have a question? get in touch!</p>
-                                        </div>
-                                    </div>
-                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
-                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
-                                    </div>
-                                </div>
-
-                                {/* ncbtmb approved component */}
-
-                                <div className={`flex flex-col relative overflow-hidden justify-center p-2  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} md:pl-0 pl-8 `} onClick={() => ncbtmbMethod()}>
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <div className='md:mx-auto 2xl:w-[150px] 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[180px] 3xl:h-[180px] w-[100px] 2xl:h-[150px]  h-[100px] '>
-                                            <Image alt='start' src='/images/ncbtmb.svg' height='400' width='400' />
-                                        </div>
-
-                                        <div className='w-full'>
-                                            <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl 4xl:text-6xl 3xl:text-4xl text-2xl  lineUp'>ncbtmb approved</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-2xl 3xl:text-2xl tracking-[.05em] lineUp`}>check if your state is approved</p>
-                                        </div>
-                                    </div>
-                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
-                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
-                                    </div>
-                                </div>
-
-                                {/* teacher lounge components */}
-
-                                <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden md:pl-0 pl-12`} onClick={() => handleTeacherLOginOpen()} >
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                        <div className='md:mx-auto 2xl:w-[50px] 4xl:w-[100px] 4xl:h-[100px] 3xl:w-[60px] 3xl:h-[60px] w-[35px] 2xl:h-[70px]  h-[50px]'>
-                                            <Image alt='start' src='/images/teacherLounge.svg' height='200' width='150' />
-                                        </div>
-                                        <div className='w-full 4xl:mt-20 3xl:mt-16'>
-                                            <h3 className='font-semibold lineUp 3xl:mt-2 md:text-center 2xl:text-3xl 4xl:text-6xl 3xl:text-4xl md:text-xl text-2xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className={` ${styles.hide} md:text-center tracking-[.05em] 4xl:text-2xl 3xl:text-xl lineUp`}>existing instructor please login here!</p>
-                                        </div>
-                                    </div>
-                                    <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
-                                        <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
-                                    </div>
-
+                                <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
+                                    <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                 </div>
 
                             </div>
+
+                            {/* concierge components */}
+
+                            <div className={` md:h-[200px] flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""} md:pl-0 pl-8 md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-5 `} onClick={() => conceiergeMethod()}>
+                                <div className='flex space-x-4 md:block md:space-x-0 image-card'>
+                                    <div className='md:mx-auto  w-[88px] h-[88px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px]'>
+                                        <Image alt='start' src='/images/Concierge.svg' height='300' width='300' className='' />
+                                    </div>
+
+                                    <div className='w-full'>
+                                        <h3 className='mt-4 font-semibold md:text-center 4xl:text-6xl 3xl:text-5xl 2xl:text-3xl md:text-2xl text-3xl  lineUp'>concierge</h3>
+                                        <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>have a question? get in touch!</p>
+                                    </div>
+                                </div>
+                                <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                    <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                                </div>
+                            </div>
+
+                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-7  `} onClick={() => { HandleClick(); }}>
+
+                                <div className='flex space-x-4 md:block md:space-x-0 image-card '>
+                                    <div className='md:mx-auto xl:pt-1 xl:w-[70px] xl:h-[70px] md:w-[50px] md:h-[50px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
+                                        <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
+                                    </div>
+                                    <div className='w-full'>
+                                        <h3 className='xl:mt-4 md:mt-1 2xl:text-3xl 4xl:text-6xl 3xl:text-5xl md:text-xl text-3xl lineUp font-semibold md:text-center'>gift shoppe</h3>
+                                        <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>gift ce to a friends</p>
+                                    </div>
+                                </div>
+                                <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                    <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                                </div>
+                            </div>
+
+
+                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation} row-span-4 border-l border-gray 2xl:h-[400px] xl:h-[440px] lg:h-[400px] md:h-[350px]  `} onClick={() => { HandleClick(); }}>
+
+                                <div className='flex space-x-4 md:block md:space-x-0 image-card  '>
+                                    <div className='md:mx-auto  w-[100px] h-[100px] my-[40px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
+                                        <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
+                                    </div>
+                                    <div className='w-full'>
+                                        <h3 className='mt-4 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl text-3xl lineUp font-semibold md:text-center'>i’m back</h3>
+                                        <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>existing user login</p>
+                                    </div>
+                                </div>
+                                <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                    <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                                </div>
+                            </div>
+
+                            {/* ncbtmb approved component */}
+
+                            <div className={`flex flex-col relative overflow-hidden justify-center p-2 md:h-[200px] border-l border-gray  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} md:pl-0 pl-8   border-t border-gray row-span-2  `} onClick={() => ncbtmbMethod()}>
+                                <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
+                                    <div className='md:mx-auto 2xl:w-[100px] 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[180px] 3xl:h-[180px] w-[60px] 2xl:h-[100px]  h-[60px] '>
+                                        <Image alt='start' src='/images/ncbtmb.svg' height='400' width='400' />
+                                    </div>
+
+                                    <div className='w-full'>
+                                        <h3 className='mt-4 font-semibold md:text-center 2xl:text-3xl 4xl:text-6xl 3xl:text-4xl text-2xl  lineUp'>ncbtmb approved</h3>
+                                        <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-2xl 3xl:text-2xl tracking-[.05em] lineUp`}>check if your state is approved</p>
+                                    </div>
+                                </div>
+                                <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                    <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                                </div>
+                            </div>
+
+                            {/* teacher lounge components */}
+
+                            <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden md:pl-0 pl-12 border-l  border-t border-gray row-span-2 `} onClick={() => handleTeacherLOginOpen()} >
+                                <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
+                                    <div className='md:mx-auto 2xl:w-[50px] 4xl:w-[100px] 4xl:h-[100px] 3xl:w-[60px] 3xl:h-[60px] w-[35px] 2xl:h-[70px] md:pt-1 h-[50px]'>
+                                        <Image alt='start' src='/images/teacherLounge.svg' height='200' width='150' />
+                                    </div>
+                                    <div className='w-full 4xl:mt-20 3xl:mt-16'>
+                                        <h3 className='font-semibold lineUp 3xl:mt-2 md:text-center 2xl:text-3xl 4xl:text-6xl 3xl:text-4xl md:text-xl text-2xl md:mt-4'>teacher’s lounge</h3>
+                                        <p className={` ${styles.hide} md:text-center tracking-[.05em] 4xl:text-2xl 3xl:text-xl lineUp`}>existing instructor please login here!</p>
+                                    </div>
+                                </div>
+                                <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
+                                    <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
+                                </div>
+
+                            </div>
                         </div>
+
                     </div>
                     <div className={`fixed top-[45%] xl:left-[75%] lg:left-[80%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}><IwannaTech /></div>
 
@@ -352,7 +353,7 @@ const Home = () => {
 
                 {/* sidebar component */}
 
-                <div className='col-span-1 md:p-4 p-0 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray md:block hidden'>
+                <div className='col-span-1 md:p-4 p-0 max-sm:invisible md:col-span-1 md:flex justify-center items-center relative h-screen w-full border-l border-bodergray  hidden'>
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center space-x-2  absolute top-5 left-1/2 -translate-x-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod() }}>

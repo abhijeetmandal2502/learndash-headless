@@ -13,7 +13,6 @@
     from {
         top: 100px;
         opacity: 0;
-
     }
 
     to {
@@ -22,9 +21,6 @@
         opacity: 1;
     }
 }
-
-
-
 
 
 .parentchildon {
@@ -42,31 +38,24 @@
     0% {
 
         opacity: 0;
-
     }
 
     50% {
 
         opacity: 0.5;
-
     }
 
     100% {
 
         opacity: 1;
-
     }
 }
-
-
-
 
 .parentchildoff {
     animation-name: animateparentoff;
     animation-fill-mode: forwards;
     animation-duration: 500ms;
     animation-timing-function: linear;
-
 }
 
 
@@ -74,39 +63,29 @@
 @keyframes animateparentoff {
 
     0% {
-
         opacity: 1;
-
     }
 
     50% {
-
         opacity: 0.5;
-
     }
 
     100% {
-
         opacity: 0;
-
     }
 }
 
 
 .childparentoff {
-
     animation-name: animatechildoff;
     animation-fill-mode: forwards;
     animation-duration: 2s;
     animation-timing-function: linear;
     position: absolute;
-
 }
 
 @keyframes animatechildoff {
-
-
-    0% {
+    /* 0% {
         left: 0px;
         bottom: 320px;
         opacity: 1;
@@ -128,6 +107,30 @@
         left: 0px;
         bottom: 60px;
         opacity: 0;
+    } */
+
+    0% {
+        right: 250px;
+        top: 80px;
+        opacity: 1;
+    }
+
+    25% {
+        right: 180px;
+        top: 40px;
+        opacity: 0.8;
+    }
+
+    60% {
+        right: 120px;
+        top: 20px;
+        opacity: 0.5;
+    }
+
+    100% {
+        right: 0px;
+        top: -20px;
+        opacity: 0;
 
     }
 
@@ -146,7 +149,7 @@
 
 @keyframes animatechildon {
 
-    0% {
+    /* 0% {
         left: 0px;
         bottom: 0px;
         opacity: 0;
@@ -169,15 +172,125 @@
         bottom: 320px;
         opacity: 1;
 
+    } */
+
+
+    0% {
+        right: 0px;
+        top: -20px;
+        opacity: 0;
     }
+
+    25% {
+        right: 160px;
+        top: 20px;
+        opacity: 0.5;
+    }
+
+    60% {
+        right: 210px;
+        top: 40px;
+        opacity: 0.8;
+    }
+
+    100% {
+        right: 275px;
+        top: 80px;
+        opacity: 1;
+
+    }
+
 
 }
 
 /* media query  */
 
 
+@media screen and (max-width:1024px) {
 
-@media only screen and (max-height: 700px) {
+
+    .childparentoff {
+        animation-name: animatechildoff;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        position: absolute;
+    }
+
+    @keyframes animatechildoff {
+
+        0% {
+            right: 180px;
+            top: 80px;
+            opacity: 1;
+        }
+
+        25% {
+            right: 150px;
+            top: 40px;
+            opacity: 0.8;
+        }
+
+        60% {
+            right: 120px;
+            top: 20px;
+            opacity: 0.5;
+        }
+
+        100% {
+            right: 0px;
+            top: -20px;
+            opacity: 0;
+        }
+
+    }
+
+
+    .childparenton {
+
+        animation-name: animatechildon;
+        animation-fill-mode: forwards;
+        animation-duration: 500ms;
+        position: absolute;
+        animation-timing-function: linear;
+
+    }
+
+    @keyframes animatechildon {
+
+        0% {
+            right: 0px;
+            top: -20px;
+            opacity: 0;
+        }
+
+        25% {
+            right: 100px;
+            top: 20px;
+            opacity: 0.5;
+        }
+
+        60% {
+            right: 120px;
+            top: 40px;
+            opacity: 0.8;
+        }
+
+        100% {
+            right: 150px;
+            top: 80px;
+            opacity: 1;
+
+        }
+
+
+    }
+
+}
+
+
+
+/* @media only screen and (max-height: 700px) {
     .childparentoff {
 
         animation-name: animatechildoff;
@@ -264,10 +377,6 @@
 
     }
 }
-
-
-
-
 
 @media only screen and (max-height: 600px) {
     .childparentoff {
@@ -326,9 +435,6 @@
 
     @keyframes animatechildon {
 
-
-
-
         0% {
             left: 0px;
             bottom: 0px;
@@ -356,7 +462,6 @@
 
     }
 }
-
 
 @media only screen and (max-height: 500px),
 screen and (max-height: 700px) {
@@ -443,11 +548,11 @@ screen and (max-height: 700px) {
         }
 
     }
-}
+} */
 
 .animationEndHideChild {
-    bottom: 60px;
-    left: -350px;
+    top: 60px;
+    right: -350px;
     opacity: 0;
     position: absolute;
     z-index: 10;
@@ -607,7 +712,8 @@ screen and (max-height: 700px) {
 
         0% {
             padding: 25px 25px 25px 25px;
-            width: 450px
+            width: 450px;
+
         }
 
         25% {
@@ -622,7 +728,7 @@ screen and (max-height: 700px) {
 
         100% {
             padding: 25px 30px 25px 30px;
-            width: 600px
+            width: 600px;
         }
 
     }

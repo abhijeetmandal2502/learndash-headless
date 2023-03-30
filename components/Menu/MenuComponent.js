@@ -14,10 +14,6 @@ import { FiArrowDown } from 'react-icons/fi'
 import stylesScrollBtn from '../Start/Start.module.css'
 import { useRouter } from 'next/router'
 
-
-
-
-
 const MenuComponent = ({ HideMenuMethod, On }) => {
 
     const [show, setShow] = useState(false);
@@ -93,7 +89,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
     const [openMobTab, setOpenMobTab] = useState('')
 
-    console.log('openMobTab', openMobTab);
+    //  console.log('openMobTab', openMobTab);
 
 
     return (
@@ -343,9 +339,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                 href="#link1"
                                 role="tablist"
                             >
-
                                 about
-
                                 <div className={`pl-2 text-4xl ${openMobTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
                             <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openMobTab === 2 ? styles.active : ""}`}
@@ -357,9 +351,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                                 href="#link2"
                                 role="tablist"
                             >
-
                                 our instructors
-
                                 <div className={`pl-2 text-4xl  ${openMobTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
                             <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${(openMobTab === 3) ? styles.active : ""}`}
@@ -400,7 +392,9 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         </div>
                     </div>
 
-                    <div className=" absolute top-0 left-0 w-full bg-black ">
+                    {openMobTab > 0 ? <div className=" absolute top-0 left-0 w-full bg-black ">
+                        <button className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
+                            <BiArrowBack size={20} className="text-white " /><span className='text-md 3xl:text-2xl font-semibold'>Menu</span></button>
                         <div className="tab-content tab-space px-5">
 
                             <div className={`${openMobTab === 1 ? "block" : "hidden"} ${openMobTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll `} id="link1">
@@ -408,24 +402,14 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                             </div>
                             <div className={`${openMobTab === 2 ? "block" : "hidden"} ${openMobTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  overflow-y-scroll  `} id="link2">
                                 <Instructors />
-                                <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
-                                    <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} 3xl:w-14 3xl:h-14`} />
-
-                                </div>
                             </div>
                             <div className={` ${(openMobTab === 3 || currentPath == 'blog') ? "block" : "hidden"} ${openMobTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} ${currentPath == "home" ? 'hidden' : 'block'}  md:h-screen  overflow-y-scroll`} id="link3">
-                                <BlogListing />
-                                <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
-                                    <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
-
-                                </div>
                             </div>
-
 
                             <div className={`${openMobTab === 4 ? "block" : "hidden"}`} id="link4">
                             </div>
                         </div>
-                    </div>
+                    </div> : ""}
                 </div>
 
             </div>
