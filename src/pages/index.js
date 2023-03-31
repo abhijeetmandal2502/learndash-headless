@@ -246,11 +246,11 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-7  `} onClick={() => { HandleClick(); }}>
+                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-7  `} onClick={() => startMethod()}>
 
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                     <div className='md:mx-auto xl:pt-1 xl:w-[70px] xl:h-[70px] md:w-[50px] md:h-[50px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
-                                        <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
+                                        <Image alt='start' src='/images/home1.svg' height='300' width='300' />
                                     </div>
                                     <div className='w-full'>
                                         <h3 className='xl:mt-4 md:mt-1 2xl:text-3xl 4xl:text-6xl 3xl:text-5xl md:text-xl text-3xl lineUp font-semibold md:text-center'>gift shoppe</h3>
