@@ -212,7 +212,7 @@ const Home = () => {
 
                             {/* start components */}
 
-                            <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer  p-2  ${Styles.rotateChild} ${styles2.mainAnimation} row-span-4 row-start-1 `} onClick={() => startMethod()} >
+                            <div className={`flex flex-col overflow-hidden relative justify-center md:border-l md:border-l-bordergray cursor-pointer medium:h-[300px] p-2  ${Styles.rotateChild} ${styles2.mainAnimation} row-span-4 row-start-1 `} onClick={() => startMethod()} >
                                 <div className={` md:space-x-0 flex md:flex-col relative md:pt-7  `}>
                                     <Door />
                                     <div className='w-full pt-3'>
@@ -263,10 +263,10 @@ const Home = () => {
                             </div>
 
 
-                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation} row-span-4 border-l border-gray 2xl:h-[400px] xl:h-[440px] lg:h-[400px] md:h-[350px]  `} onClick={() => { HandleClick(); }}>
+                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation} row-span-4 border-l border-gray 2xl:h-[400px] xl:h-[440px] lg:h-[400px] md:h-[350px] medium:h-[300px] `} onClick={() => { HandleClick(); }}>
 
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card  '>
-                                    <div className='md:mx-auto  w-[100px] h-[100px] my-[40px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
+                                    <div className='md:mx-auto  w-[100px] h-[100px] my-[40px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] medium:h-[150px]'>
                                         <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
                                     </div>
                                     <div className='w-full'>
@@ -281,7 +281,7 @@ const Home = () => {
 
                             {/* ncbtmb approved component */}
 
-                            <div className={`flex flex-col relative overflow-hidden justify-center p-2 md:h-[200px] border-l border-gray  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} md:pl-0 pl-8   border-t border-gray row-span-2  `} onClick={() => ncbtmbMethod()}>
+                            <div className={`flex flex-col relative overflow-hidden justify-center p-2 md:h-[200px]  border-l border-gray  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} md:pl-0 pl-8   border-t border-gray row-span-2  `} onClick={() => ncbtmbMethod()}>
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                     <div className='md:mx-auto 2xl:w-[100px] 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[180px] 3xl:h-[180px] w-[60px] 2xl:h-[100px]  h-[60px] '>
                                         <Image alt='start' src='/images/ncbtmb.svg' height='400' width='400' />
@@ -381,25 +381,10 @@ const Home = () => {
 
             <div className={`md:hidden bg-transparent w-full ${On === true ? "hidden" : "block"}`}>
 
-                <div className='flex justify-between  items-center space-x-5 cursor-pointer px-3'>
-                    <LogoCard LogoImage={LogoImage} />
-                    {/* menu icon for small device */}
-                    <div className='lg:hidden'>
-                        <div className='flex items-center justify-center  space-x-2' onClick={() => { ShowMenuMethod() }}>
-                            <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
-                            {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
-                            <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
-                                <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
-                                <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
-                            </svg>
-                        </div>
-                    </div>
 
-                </div>
 
-                <div className='mt-4'>
-                    <HomeComponentMobile />
+                <div className={``}>
+                    <HomeComponentMobile ShowMenuMethod={ShowMenuMethod} />
                 </div>
 
             </div>

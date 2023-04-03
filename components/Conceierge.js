@@ -16,13 +16,8 @@ const Conceierge = ({ conceiergeHide }) => {
     return (
         <>
             <div className=' bg-transparent  max-[768px]:max-w-xs min-[992px]:max-w-md max-w-lg 2xl:max-w-lg 3xl:max-w-3xl'>
-
-
                 <button className={`md:flex hidden items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => conceiergeHide()}  >
                     <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl '>lobby</span></button>
-
-
-
                 <h2 className=' 2xl:text-5xl 3xl:text-6xl max-[768px]:text-[xl] 2xl:my-10 my-5 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
                 <form onSubmit={handleSubmit((data) => console.log('data', data))} >
                     <div className='2xl:py-4 py-2'>

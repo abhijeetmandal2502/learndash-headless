@@ -1178,23 +1178,88 @@ screen and (max-height: 700px) {
 @keyframes hidebgelement {
 
     0% {
-
         opacity: 1;
-
     }
 
     99% {
-
         opacity: 0.2;
-
     }
 
     100% {
-
         opacity: 0;
         display: none !important;
         visibility: hidden;
+    }
+}
 
+/* left right animation for mobile  */
+
+.righttoleftAnimation {
+    animation: righttoleftMobile ease-in-out 2s forwards;
+    transition: animation ease-in-out 2s;
+    position: absolute;
+}
+
+@keyframes righttoleftMobile {
+
+    from {
+        right: 100%;
     }
 
+    to {
+        right: 0%;
+    }
+}
+
+
+.lefttorightAnimation {
+    animation: lefttorightMobile ease-in-out 2s forwards;
+    transition: animation ease-in-out 2s;
+    position: absolute;
+}
+
+@keyframes lefttorightMobile {
+
+    from {
+        right: 0%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.MenuShowAnimation {
+    animation: menuShow ease-in-out 2s forwards;
+    transition: animation ease-in-out 2s;
+    position: absolute;
+}
+
+@keyframes menuShow {
+
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+
+.MenuHideAnimation {
+    animation: menuHide ease-in-out 2s forwards;
+    transition: animation ease-in-out 2s;
+    position: absolute;
+}
+
+@keyframes menuHide {
+
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
 }

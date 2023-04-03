@@ -46,7 +46,10 @@ module.exports = {
       '4xl': '2560px',
       // => @media (min-width: 1536px) { ... }
 
-      'small': { 'raw': '(max-height: 550px)' }
+      'small': { 'raw': '(max-height: 550px)' },
+
+      'medium': { 'raw': '(max-height: 700px)' }
+
     }
   },
   plugins: [],

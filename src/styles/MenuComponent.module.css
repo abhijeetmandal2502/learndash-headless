@@ -14,7 +14,6 @@
     from {
 
         opacity: 0;
-
     }
 
     to {
@@ -33,7 +32,6 @@
     opacity: 1;
     color: #9747FF;
     transition: all ease-in-out 500ms;
-
 }
 
 
@@ -258,12 +256,10 @@
     -o-transition: background-image 1s ease-in-out;
     transition: background-image 1s ease-in-out;
     transition-delay: 10ms;
-
 }
 
 
 .blogBackground {
-
     background-image: url(/images/blog-bg.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -432,13 +428,11 @@
 
 
 .toggleAnimationOff {
-
     transform: rotate(0deg);
     transition: all ease-in-out 500ms;
 }
 
 .selectOptionClose {
-
     animation: toggleClose 1000ms ease;
     transition: all ease 1000ms;
 }
@@ -447,14 +441,11 @@
 
     from {
         opacity: 1;
-
     }
-
 
     to {
         opacity: 0;
     }
-
 }
 
 
