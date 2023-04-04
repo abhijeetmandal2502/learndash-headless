@@ -27,13 +27,18 @@ const WhyTech = () => {
             content: "We’re with you! Contact us anytime for assistance with anything! Simple!"
         },
     ]
-
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+
+                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start 2xl:-mt-20 md:hidden`}>
+                    <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
+                </div>
+
+
                 <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] text-[45px] ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] md:text-[45px] text-[30px] ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
                         {
                             data?.map((item, id) => {
                                 return (<>
@@ -53,7 +58,7 @@ const WhyTech = () => {
                     </div>
                 </div>
 
-                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start 2xl:-mt-20`}>
+                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 md:flex justify-center items-start 2xl:-mt-20   hidden `}>
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 

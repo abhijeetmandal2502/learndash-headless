@@ -20,6 +20,7 @@ import GetStarted from 'components/IwannaTech/GetStarted';
 import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
 import Link from 'next/link';
 import { useRef } from 'react';
+import LogoCard from 'components/card/LogoCard';
 
 
 const Start = () => {
@@ -149,8 +150,27 @@ const Start = () => {
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
-                <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 p-10 z-10'>
-                    <div>
+                <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 md:p-10 z-10'>
+
+
+                    <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
+                        <LogoCard LogoImage="/images/WhiteLogo.svg" />
+                        <Link href="/">
+                            <div className='flex md:hidden items-center justify-center mt-5    '
+                            >
+                                <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
+                                    <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+
+                                    <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+
+
+                    <div className='md:block hidden'>
                         <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
                                 <Link href="/">
@@ -167,12 +187,12 @@ const Start = () => {
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-12  pl-2 '>
-                        <div className="col-span-2 md:col-span-2 flex -space-x-[3px] ">
+                    <div className='grid grid-cols-12  md:pl-2 md:px-0 pl-5 '>
+                        <div className=" md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
                             <div className=' relative w-[0.4px] h-[400px] 3xl:h-[528px] mt-4 3xl:mt-[25px] bg-white'>
 
-                                <div className={`absolute ${activeTabIndex === 0 ? 'mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-2 3xl:top-[9.5px]`} style={selectStyles}>
+                                <div className={`absolute ${activeTabIndex === 0 ? 'md:mt-[339.2px] mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-[99px] md:top-2 3xl:top-[9.5px]`} style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
 
@@ -204,7 +224,7 @@ const Start = () => {
                                             </div>
                                             <p
 
-                                                className={`text-white opacity-[0.6] text-[18px] 3xl:text-[28px] py-[3px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
+                                                className={` md:block hidden text-white opacity-[0.6] text-[18px] 3xl:text-[28px] py-[3px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
                                                     ? `font-bold opacity-[1] hover:[20px] 3xl:hover:[30px] ${styles.shadow}`
                                                     : ""
                                                     } `}
@@ -225,7 +245,7 @@ const Start = () => {
                         </div >
                     </div >
                 </div >
-                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white z-50 '>
+                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 hidden md:flex justify-center items-center relative h-screen w-full border-l border-white z-50 '>
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
                             onClick={() => { router.push('/') }}>
@@ -242,12 +262,12 @@ const Start = () => {
                     </div>
                 </div>
 
-                {activeTabIndex < 11 ? <div className={`${styles.arrowUpDown} z-[1000] absolute bottom-5 left-1/2`}>
+                {activeTabIndex < 11 ? <div className={`${styles.arrowUpDown} z-[1000] absolute bottom-5 left-1/2 md:block hidden `}>
                     <SlArrowDown size={20} className={`${styles.one} text-white`} />
                     <SlArrowDown size={20} className={`${styles.two} text-white`} />
                     <SlArrowDown size={20} className={`${styles.three} text-white`} />
                 </div> : ""}
-                {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-5 left-1/2`}>
+                {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-5 left-1/2 md:block hidden  `}>
                     <SlArrowUp size={20} className={`${styles.one} text-white`} />
                     <SlArrowUp size={20} className={`${styles.two} text-white`} />
                     <SlArrowUp size={20} className={`${styles.three} text-white`} />

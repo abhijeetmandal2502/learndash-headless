@@ -15,7 +15,11 @@ const Door = () => {
                  4xl:h-[420px] 
                  4xl:w-[420px] 
                  3xl:h-[250px] 
-                 3xl:w-[250px]"
+                 3xl:w-[250px]
+                 medium:h-[150px] 
+                 medium:w-[150px]
+                 "
+
                     alt="door"
                 />
                 <div
@@ -26,7 +30,9 @@ const Door = () => {
                  md:left-[37.5px] 
                  sm:left-[40px]
                  top-[1px] 
-                 left-[38px] 
+                 left-[38px]
+                 medium:top-[5px]
+                 medium:left-[28px]  
                  2xl:top-[7px] 
                  4xl:top-[16px] 
                  3xl:top-[10px] 
@@ -49,7 +55,10 @@ const Door = () => {
                     3xl:w-[122px] 
                     3xl:h-[105px] 
                     lg:w-[97px] 
-                    lg:h-[97px]'>
+                    lg:h-[97px]
+                    medium:h-[74px] 
+                    medium:w-[74px]
+                    '>
                         <Image
                             className={``}
                             src="/images/doorgate.svg"
@@ -67,7 +76,10 @@ const Door = () => {
                     md:w-[3px]
                     md:h-[3px]
                     md:top-[78px] 
-                    md:left-[80px]  
+                    md:left-[80px] 
+                    
+                    medium:top-[60px] 
+                    medium:left-[60px] 
                     3xl:w-[5px] 
                     3xl:h-[5px] 
                     4xl:top-[175px] 

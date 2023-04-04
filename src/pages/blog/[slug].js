@@ -96,34 +96,59 @@ const Blog = () => {
 
                 <div className='grid grid-cols-12'>
                     <div className={`col-span-12 md:col-span-11 2xl:ml-20 md:ml-16 max-h-screen ${styles.fadeAnimation}`}>
-                        <div className={`flex justify-between items-center space-x-5 pt-10 cursor-pointer  `}>
+                        <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
+                            <Link href="/blog">
+                                <div className='flex md:hidden items-center justify-center mt-5    '
+                                >
+                                    <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
+                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+
+                                        <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+
+
+                        {/* view all post button for mobile  */}
+                        <div className=' md:mr-5 flex items-center justify-between px-3 pt-5'>
+
+                            <Link href="/blog">
+                                <button className='text-white bg-[#3A3A3A] py-3 px-6  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 text-[10px] ' onClick={() => { }} > <TfiMenuAlt size={14} /> <div className=' font-[600]'>view all posts</div></button>
+                            </Link>
+                            <div className='flex space-x-2'>
+                                <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={15} className='' /> <div className='text-[14px] pr-1 '> back</div></button>
+                                <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='text-[14px]  pl-1' >next</div> <HiOutlineArrowSmRight size={15} className='' /> </button>
+                            </div>
+
                         </div>
 
 
 
-                        <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `} onClick={() => { handlelobby() }} >
+                        <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `} onClick={() => { handlelobby() }} >
                             <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm font-semibold 3xl:text-2xl 4xl:text-3xl'>lobby</span></button>
 
-                        {blogData ? <div className='grid grid-cols-12 gap-4 max-h-screen pt-10'>
+                        {blogData ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3'>
                             <div className={`bg-transparent md:pb-40  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 {blogData?.map((item, key) => {
 
                                     return (
                                         <div key={key} className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                            <h2 className='text-white font-normal  text-[49px] 2xl:text-[49px] 3xl:text-[60px] 4xl:text-[70px]  md:text-[35px] leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
+                                            <h2 className='text-white font-normal  text-[30px] 2xl:text-[49px] 3xl:text-[60px] 4xl:text-[70px]  md:text-[35px] md:leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
                                             <div className='flex  flex-wrap'>
-                                                <div className='text-white pr-1 text-[22px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>{item.name}</div>
-                                                <div className='text-gray text-[22px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>| {item.date}</div>
+                                                <div className='text-white pr-1 md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>{item.name}</div>
+                                                <div className='text-gray md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>| {item.date}</div>
                                             </div>
-                                            <p className='text-gray py-8 text-[20px] lg:text-[20px] md:text-[18px] 3xl:text-[30px] 4xl:text-[40px] tracking-wider '>{item.discription}</p>
+                                            <p className='text-gray md:py-8 py-4 text-[14px] lg:text-[20px] md:text-[18px] 3xl:text-[30px] 4xl:text-[40px] tracking-wider '>{item.discription}</p>
 
-                                            <Image src="/images/blogBanner1.png" width="800" height="450" className="w-[850px] h-[350px]" alt="Banner Image" />
+                                            <Image src="/images/blogBanner1.png" width="800" height="450" className="md:w-[850px] md:h-[350px] w-[500px] h-[250px]" alt="Banner Image" />
 
-                                            <h4 className='text-white font-normal py-3 pt-10 text-[22px] 3xl:text-[32px] 4xl:text-[42px tracking-wide'>{item.subHeaderTitle}</h4>
+                                            <h4 className='text-white font-normal py-3 pt-10 md:text-[22px] text-[19px] 3xl:text-[32px] 4xl:text-[42px tracking-wide'>{item.subHeaderTitle}</h4>
 
-                                            <p className='text-gray py-8 text-[20px] 3xl:text-[30px] 4xl:text-[40px] tracking-wider '>{item.subDiscription}</p>
+                                            <p className='text-gray md:py-8  md:text-[22px] text-[14px] 3xl:text-[30px] 4xl:text-[40px] tracking-wider '>{item.subDiscription}</p>
 
                                         </div>
                                     )
@@ -145,7 +170,7 @@ const Blog = () => {
                             </div>
                         </div> : <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-screen w-full ${styles.blogBackground}`}> loading...</div>}
                     </div>
-                    <div className='col-span-12 md:col-span-1 relative border-l border-white max-h-screen '>
+                    <div className='col-span-12 md:col-span-1 relative border-l border-white max-h-screen md:block hidden '>
                         <div className=''>
                             <div className=' cursor-pointer'>
                                 <Link href="/blog">
@@ -166,7 +191,7 @@ const Blog = () => {
                         </div>
                     </div>
                 </div>
-                <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
+                <div className={` absolute bottom-5 left-5 z-[100]  md:flex hidden justify-center items-center`}>
                     <FiArrowDown size={25} className={`text-white 3xl:w-12 3xl:h-12 ${stylesScrollBtn.UpDownAnimation} `} />
 
                 </div>

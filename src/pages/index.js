@@ -207,7 +207,7 @@ const Home = () => {
                 <div className={`col-span-12 md:col-span-5   relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
                     <div className={`   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
 
-                        <div className='grid md:h-full grid-rows-8 grid-flow-col divide-bordergray md:border-0 border-y-[1px] border-bordergray min-h-screen small:h-[550px]'>
+                        <div className='grid md:h-full grid-rows-8 grid-flow-col divide-bordergray md:border-0  border-y-[1px] border-bordergray min-h-screen small:h-[550px]'>
 
 
                             {/* start components */}
@@ -230,7 +230,7 @@ const Home = () => {
 
                             {/* concierge components */}
 
-                            <div className={` md:h-[200px] flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""} md:pl-0 pl-8 md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-5 `} onClick={() => conceiergeMethod()}>
+                            <div className={`  flex relative overflow-hidden flex-col justify-center p-2 ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""} md:pl-0 pl-8 md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-5 `} onClick={() => conceiergeMethod()}>
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                     <div className='md:mx-auto  w-[88px] h-[88px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px]'>
                                         <Image alt='start' src='/images/Concierge.svg' height='300' width='300' className='' />
@@ -249,7 +249,7 @@ const Home = () => {
                             <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation}  md:border-l md:border-l-bordergray  border-t border-gray row-span-2 row-start-7  `} onClick={() => startMethod()}>
 
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card '>
-                                    <div className='md:mx-auto xl:pt-1 xl:w-[70px] xl:h-[70px] md:w-[50px] md:h-[50px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
+                                    <div className='md:mx-auto xl:pt-1 xl:w-[70px] xl:h-[70px] md:w-[60px] md:h-[50px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
                                         <Image alt='start' src='/images/home1.svg' height='300' width='300' />
                                     </div>
                                     <div className='w-full'>
@@ -263,10 +263,10 @@ const Home = () => {
                             </div>
 
 
-                            <div className={`flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation} row-span-4 border-l border-gray 2xl:h-[400px] xl:h-[440px] lg:h-[400px] md:h-[350px] medium:h-[300px] `} onClick={() => { HandleClick(); }}>
+                            <div className={`flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer md:pl-0 pl-8  p-2 ${styles.cardAnimation} row-span-4 row-start-1  border-l border-gray   `} onClick={() => { HandleClick(); }}>
 
-                                <div className='flex space-x-4 md:block md:space-x-0 image-card  '>
-                                    <div className='md:mx-auto  w-[100px] h-[100px] my-[40px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] medium:h-[150px]'>
+                                <div className='flex space-x-4 md:block md:space-x-0 image-card'>
+                                    <div className='md:mx-auto  w-[130px] h-[130px] my-[40px]  4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
                                         <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
                                     </div>
                                     <div className='w-full'>
@@ -281,9 +281,9 @@ const Home = () => {
 
                             {/* ncbtmb approved component */}
 
-                            <div className={`flex flex-col relative overflow-hidden justify-center p-2 md:h-[200px]  border-l border-gray  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} md:pl-0 pl-8   border-t border-gray row-span-2  `} onClick={() => ncbtmbMethod()}>
+                            <div className={`flex flex-col relative overflow-hidden justify-center p-2   border-l border-gray  ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""} md:pl-0 pl-8   border-t border-gray row-span-2 row-start-5 `} onClick={() => ncbtmbMethod()}>
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
-                                    <div className='md:mx-auto 2xl:w-[100px] 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[180px] 3xl:h-[180px] w-[60px] 2xl:h-[100px]  h-[60px] '>
+                                    <div className='md:mx-auto 2xl:w-[120px] 4xl:w-[300px] 4xl:h-[300px] 3xl:w-[180px] 3xl:h-[180px]  2xl:h-[120px] w-[100px]  h-[100px] '>
                                         <Image alt='start' src='/images/ncbtmb.svg' height='400' width='400' />
                                     </div>
 
@@ -299,7 +299,7 @@ const Home = () => {
 
                             {/* teacher lounge components */}
 
-                            <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden md:pl-0 pl-12 border-l  border-t border-gray row-span-2 `} onClick={() => handleTeacherLOginOpen()} >
+                            <div className={`flex flex-col justify-center p-2 ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden md:pl-0 pl-12 border-l  border-t border-gray row-span-2 row-start-7`} onClick={() => handleTeacherLOginOpen()} >
                                 <div className='flex space-x-4 md:block md:space-x-0 image-card cursor-pointer '>
                                     <div className='md:mx-auto 2xl:w-[50px] 4xl:w-[100px] 4xl:h-[100px] 3xl:w-[60px] 3xl:h-[60px] w-[35px] 2xl:h-[70px] md:pt-1 h-[50px]'>
                                         <Image alt='start' src='/images/teacherLounge.svg' height='200' width='150' />

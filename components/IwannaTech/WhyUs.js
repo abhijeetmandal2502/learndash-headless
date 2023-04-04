@@ -21,18 +21,44 @@ const WhyUs = ({ activeTabIndex }) => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} max-h-screen  `}>
+
+                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+
+                    <div className={` relative  flex  mr-0`}>
+                        <div className='relative overflow-hidden w-full h-[260px]  '>
+                            <div className={`w-[175px] absolute bottom-[46px] right-[0px]`}>
+
+                                <Image src='/images/RectangleWhyUs.png' width={400} height={400} alt="wanna tech png" className={` w-[500px]`} />
+                            </div>
+                            <div className={`-rotate-[28deg] absolute top-[130px] -right-[50.5px]  z-10 `}>
+                                <Image src='/images/SubtractYellow.png' width={400} height={300} alt="wanna tech png" className={` w-[200px]`} />
+
+                            </div>
+                        </div>
+                        <div className={` absolute bottom-[40px]  -right-[10px] ${styles.imgRotate} w-[210px]`}>
+                            <Image src='/images/man.png' width={500} height={350} alt="wanna tech png" className={` `} />
+                        </div>
+                        {/* logo for mobile */}
+                        <div className=' absolute top-20 left-3'>
+                            <Image src="/images/WhiteLogo.svg" width="100" height="200" alt="tech logo" />
+                        </div>
+
+                    </div>
+                </div>
+
+
                 <div className='col-span-12 md:col-span-4 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] xl:text-[120px] lg:text-[50px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>Why Us?</h2>
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] xl:text-[50px] lg:text-[50px] md:text-[40px] text-[30px] ${styles.shadow} md:leading-[80px] tracking-wide`}>Why Us?</h2>
                         <h4 className='text-[20px] 2xl:text-[35px]  lg:text-[30px] 3xl:text-[40px] font-semibold 3xl:py-8 py-4'>because we’re</h4>
                         <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" />
-                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[28px] md:text-[15px]  text-[16px] pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[28px] md:text-[15px]  text-[14px] pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
                             <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>
 
                     </div>
                 </div>
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block 3xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
@@ -52,7 +78,7 @@ const WhyUs = ({ activeTabIndex }) => {
 
                 {/* for extra large device */}
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 3xl:block 2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
                         <div className='relative overflow-hidden w-full h-[600px]  '>
                             <div className={`w-[600px] absolute bottom-[46px] right-[50.5px]`}>
@@ -70,9 +96,9 @@ const WhyUs = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
-                {/* for mobile */}
+                {/* for tablet*/}
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
 
                     <div className={` relative  flex xl:mr-20 md:-mr-10 mr-0`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
