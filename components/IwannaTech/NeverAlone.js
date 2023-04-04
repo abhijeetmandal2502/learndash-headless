@@ -8,6 +8,12 @@ const NeverAlone = () => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+
+                <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.scaleAnimation}  col-span-12 md:col-span-7 flex justify-center items-start`}>
+                    <Image src='/images/neverAlone.png' width={450} height={450} alt="wanna tech png" className={`3xl:w-[600px] 3xl:h-[600px]
+                        4xl:w-[900px] 4xl:h-[900px]`} />
+                </div>
+
                 <div className='col-span-12 md:col-span-5 flex justify-center items-center'>
                     <div>
                         <h2 className={`text-white font-semibold 2xl:text-[65px] 3xl:text-[85px] xl:text-[50px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] lg:leading-[40px] xl:leading-[80px] tracking-wide`}>never alone!</h2>
