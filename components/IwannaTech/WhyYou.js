@@ -20,11 +20,37 @@ const WhyYou = ({ activeTabIndex }) => {
     return (
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+
+                {/* for mobile */}
+
+                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+
+                    <div className={` relative  flex  mr-10`}>
+                        <div className='relative overflow-hidden w-full h-[260px]  '>
+                            <div className={`w-[175px] absolute bottom-[46px] right-[0px]`}>
+
+                                <Image src='/images/WhyYouRectangle.png' width={400} height={400} alt="wanna tech png" className={` w-[500px]`} />
+                            </div>
+                            <div className={`-rotate-[28deg] absolute top-[130px] -right-[50.5px]  z-10 `}>
+                                <Image src='/images/SubtractBrown.png' width={400} height={300} alt="wanna tech png" className={` w-[200px]`} />
+
+                            </div>
+                        </div>
+                        <div className={` absolute bottom-[40px]  -right-[10px] ${styles.fadeAnimationInfinite} w-[210px]`}>
+                            <Image src='/images/dog.png' width={500} height={350} alt="wanna tech png" className={` `} />
+                        </div>
+                        {/* bottom text */}
+                        <div className=' absolute bottom-0 z-50 left-3'>
+                            <p className='text-white 3xl:text-[24px]'>(her name is bubbless!)</p>
+                        </div>
+
+                    </div>
+                </div>
                 <div className='col-span-12 md:col-span-4 flex justify-start items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[95px] md:text-[40px] text-[40px]  ${styles.shadow} leading-[80px] tracking-wide`}>why you?</h2>
-                        <h4 className='2xl:text-[50px] 3xl:text-[60px] md:text-[30px] font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] 3xl:leading-[60px]  leading-[40px]'>tell us about <br></br> your pedigree</h4>
-                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[25px] md:text-[16px] pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[95px] md:text-[40px] text-[30px]  ${styles.shadow} leading-[50px] md:leading-[80px] tracking-wide`}>why you?</h2>
+                        <h4 className='2xl:text-[50px] 3xl:text-[60px] md:text-[30px] text-[20px] font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] 3xl:leading-[60px]  leading-[30px]'>tell us about <br></br> your pedigree</h4>
+                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[25px] md:text-[16px] text-[14px] md:pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
 
@@ -55,7 +81,7 @@ const WhyYou = ({ activeTabIndex }) => {
 
                 {/* for extra large device */}
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 3xl:block 2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
                         <div className='relative overflow-hidden w-full h-[600px]  '>
                             <div className={`w-[600px] absolute bottom-[46px] right-[50.5px]`}>
@@ -78,7 +104,7 @@ const WhyYou = ({ activeTabIndex }) => {
 
                 {/* for samll device */}
 
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
 
                     <div className={` relative  flex 2xl:mr-20 md:-mr-16 lg:mr-5   mr-10`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>

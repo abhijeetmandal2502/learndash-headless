@@ -232,7 +232,7 @@
 
 .mainDiv:hover>.gift {
 
-    background-image: url(/images/home3.png);
+    background-image: url(/images/home.png);
     background-repeat: no-repeat;
     background-position: center;
     transition: all ease-in-out 500ms;
