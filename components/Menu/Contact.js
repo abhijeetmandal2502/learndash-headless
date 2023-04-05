@@ -30,7 +30,7 @@ const Contact = () => {
 
                 </div>
 
-                <div className=' flex  space-x-5 bg-transparent py-5 mt-16 items-center  '>
+                <div className=' flex  space-x-5 bg-transparent py-5 md:mt-16 items-center  '>
                     <FaFacebookF size={35} className=' rounded-full p-1.5 3xl:p-2.5 text-white bg-dakgray 3xl:w-16 3xl:h-16' />
                     <FaTwitter size={35} className='rounded-full p-1.5 3xl:p-2.5 text-white  bg-dakgray 3xl:w-16 3xl:h-16' />
                     <FaLinkedinIn size={35} className='rounded-full text-white p-1.5 3xl:p-2.5 bg-dakgray 3xl:w-16 3xl:h-16' />

@@ -83,7 +83,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
         <button className={`md:flex hidden items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl '>lobby</span></button>
 
-        <div className={`flex  2xl:space-x-20 max-lg:space-x-20 md:space-x-20 space-x-8 items-center  ${styles.ncbtapproved}`}>
+        <div className={`flex  2xl:space-x-20 max-lg:space-x-20 md:space-x-20  justify-between items-center  ${styles.ncbtapproved}`}>
           <div>
             <h2 className=' tracking-wide font-normal   lg:text-[30px] xl:text-[40px] text-[23px]  2xl:text-[48px] md:text-[20px] md:leading-tight leading-normal '>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
@@ -97,7 +97,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
               accepted in your state?
             </div>
             <Select
-              className={`2xl:w-96 w-72  z-[100] ${styles.selectBox} `}
+              className={`2xl:w-96 w-full  z-[100] ${styles.selectBox} `}
               defaultValue={selectedOption}
               onChange={setSelectedOption}
               options={options}

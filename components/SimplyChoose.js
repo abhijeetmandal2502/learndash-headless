@@ -136,7 +136,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                     <div className='font-bold text-xl'>{data[0].duration}</div>
                                 </div>
                             </div>
-                            <div className={` ${styles.gift} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[150px] `}>
+                            <div className={` ${styles.gift} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] `}>
 
                             </div>
                             <div className={`md:pt-0 pt-5 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>

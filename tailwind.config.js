@@ -50,7 +50,9 @@ module.exports = {
 
       'medium': { 'raw': '(max-height: 700px)' }
 
-    }
+    },
+
+
   },
   plugins: [],
 }

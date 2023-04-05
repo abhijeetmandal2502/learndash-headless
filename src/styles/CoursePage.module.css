@@ -222,20 +222,20 @@
 
 .mainDiv>.gift {
 
-    background-image: url(/images/home1.png);
+    background-image: url(/images/homeBlack.svg);
     background-repeat: no-repeat;
     background-position: center;
+    object-fit: cover;
     transition: all ease-in-out 500ms;
-    width: 170px;
-    height: 150px;
+    background-size: 175px;
 }
 
 .mainDiv:hover>.gift {
 
-    background-image: url(/images/home.png);
+    background-image: url(/images/homeColor.svg);
     background-repeat: no-repeat;
     background-position: center;
+    object-fit: cover;
     transition: all ease-in-out 500ms;
-    width: 170px;
-    height: 150px;
+    background-size: 175px;
 }
