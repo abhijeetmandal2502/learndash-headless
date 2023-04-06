@@ -28,55 +28,53 @@ const CheckoutForm = () => {
 
     return (
         <>
-            <div className="flex justify-center items-center mt-10 px-5 ">
-                <div className=" px-4 md:px-6 2xl:px-0 flex ">
+            <div className="flex justify-center items-center ">
+                <div className="   flex ">
                     <div className="flex flex-col justify-start items-start ">
 
                         <div className="flex flex-col xl:flex-row justify-center xl:justify-between space-y-6 xl:space-y-0 xl:space-x-6 w-full">
-
-
-                            <div className="p-4 bg-white flex flex-col lg:w-full ">
-
-                                <div className="flex justify-between items-center border-b-2 py-2 mb-4 border-bordergray">
-                                    <h2 className="font-semibold text-[16px]">light-speed checkout</h2>
-                                    <div className="font-semibild md:text-[20px]">$40</div>
-                                </div>
-
-                                <div className="">
-                                    <label className={`font-bold text-xs`}>email</label>
-                                    <input className="border border-bordergray md:p-2  w-full  leading-3" type="email" />
-                                </div>
-
-
+                            <div className=" bg-white flex flex-col lg:w-full ">
                                 <div className="mt-2 flex-col">
-                                    <div>
-                                        <label className="mt-5 mb-1.5  font-bold  leading-4 text-xs  ">enter card number</label>
-                                        <input className="border   border-bordergray md:p-2 w-full  leading-3" type="email" placeholder="**** **** **** *****" />
-                                    </div>
-                                    <div className="flex-row flex mt-3 space-x-2">
-                                        <div>
-                                            <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">exp. date</label>
-                                            <input className="border  border-bordergray md:p-2 w-full text-sm   leading-3  " type="email" placeholder="MM/YY" />
+
+                                    <div className={`${styles.formbg} p-4`}>
+                                        <label className="mt-5 mb-1.5  font-bold  leading-4 text-[16px]">credit card info</label>
+                                        <div className="flex justify-between mb-3 ">
+                                            <div className="max-w-[48%]">
+                                                <input className="border border-bordergray md:p-2  w-full  leading-3" type="text" placeholder="first name" />
+                                            </div>
+                                            <div className="max-w-[48%]">
+                                                <input className="border border-bordergray md:p-2  w-full  leading-3" type="text" placeholder="last name" />
+                                            </div>
                                         </div>
                                         <div>
-                                            <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">security code</label>
-                                            <input className="border  border-bordergray md:p-2 w-full  leading-3 text-gray-600 text-sm " type="email" placeholder="CVC" />
+                                            {/* <label className="mt-5 mb-1.5  font-bold  leading-4 text-xs  ">enter card number</label> */}
+                                            <input className="border   border-bordergray md:p-2 w-full  leading-3" type="number" placeholder="**** **** **** *****" />
                                         </div>
-                                        <div>
-                                            <label className="mt-5 mb-1.5 text-xs  leading-4 font-bold ">zip</label>
-                                            <input className="border  border-bordergray md:p-2 w-full  leading-3 text-sm  " type="text" />
+                                        <div className="flex-row flex mt-3 space-x-2">
+                                            <div>
+                                                {/* <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">exp. date</label> */}
+                                                <input className="border  border-bordergray md:p-2 w-full text-sm   leading-3  " type="email" placeholder="MM/YY" />
+                                            </div>
+                                            <div>
+                                                {/* <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">security code</label> */}
+                                                <input className="border  border-bordergray md:p-2 w-full  leading-3 text-gray-600 text-sm " type="email" placeholder="CVC" />
+                                            </div>
+                                            <div>
+                                                {/* <label className="mt-5 mb-1.5 text-xs  leading-4 font-bold ">zip</label> */}
+                                                <input className="border  border-bordergray md:p-2 w-full  leading-3 text-sm  " type="text" placeholder="zip" />
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div className={`flex items-center space-x-1 py-3`}>
                                         <Image src="/images/savePassword.svg" width={19} height={19} alt="password icon" />
-                                        <p className={`text-gray md:text-xs`}>save payment for future purchases?</p>
+                                        <p className={`text-gray md:text-[16px]`}>save payment for future purchases?</p>
                                     </div>
 
                                     <div className={`relative`}>
-                                        <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label>
-                                        <input className="border  border-bordergray md:p-2 w-full  leading-4" type="password" placeholder="**** **** **** *****" />
-                                        <div className="absolute cursor-pointer top-10 right-2">
+                                        {/* <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label> */}
+                                        <input className="border  border-bordergray md:p-2 w-full  leading-4" type="password" placeholder="create password" />
+                                        <div className="absolute cursor-pointer top-2 right-2">
                                             <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
                                         </div>
                                     </div>
@@ -84,7 +82,7 @@ const CheckoutForm = () => {
                                 </div>
 
                                 <button type="button"
-                                    onClick={openModal} className={`w-full px-4 mt-4 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
+                                    onClick={openModal} className={`w-full px-4 mt-4 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl text-[18px] font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
 
                                 </button>
                             </div>

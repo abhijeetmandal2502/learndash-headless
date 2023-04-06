@@ -10,6 +10,9 @@ import { AiOutlineCheck, AiOutlineClose, AiOutlineCloseCircle } from 'react-icon
 import ScrollBtn from './Start/ScrollBtn'
 import { SlPieChart } from 'react-icons/sl'
 import { CiGift } from 'react-icons/ci'
+import EmptyBasket from './Start/EmptyBasket'
+import AddToCart from './Start/AddToCart'
+import PaypalPayment from './Start/PaypalPayment'
 const SimplyChoose = ({ startMethodHide, start }) => {
 
 
@@ -118,9 +121,15 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                             </div>
                         </div>
                         <div className=' md:col-span-7 col-span-12'>
-                            <div className={``}>
+                            {/* <div className={``}>
                                 <CheckoutForm />
-                            </div>
+                            </div> */}
+
+                            {/* <EmptyBasket /> */}
+                            <AddToCart />
+
+
+
                         </div>
                     </div>
                 </div>
@@ -160,27 +169,30 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                                 <div>{item.duration}</div>
                                             </div>
                                             <div className={` relative `}>
-                                                <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                    {selectedArray[index] !== index ? <div className='md:text-[33px] text-[20px] lg:text-[20px] xl:text-[24px]  text-white'>
+                                                <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                                    <div className='md:text-[24px] text-[20px] lg:text-[20px] xl:text-[24px] font-semibold text-white'>
                                                         ${item.price}
-                                                    </div> : ""}
-                                                    {selectedArray[index] !== index ? <div className='text-white text-[14px]'>
-                                                        +add
-                                                    </div> : ""}
-                                                    {selectedArray[index] == index ? <div>
-                                                        <div className='flex justify-center items-center'><AiOutlineCheck className='text-white' size={30} /></div>
-                                                        <div className='text-white text-[16px]'>
-                                                            added
-                                                        </div>
-                                                    </div> : ""}
+                                                    </div>
                                                 </div>
+
+                                                {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                    +add
+                                                </div> : <div className=' flex absolute top-[80%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                    <div className='flex justify-center items-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
+                                                    <div className={`text-[#AC6CFF] text-[23px] font-semibold`}>
+                                                        added
+                                                    </div>
+                                                </div>}
+
+
+
                                                 <div className=' '>
-                                                    {selectedArray[index] == index ? <Image src="/images/iwanna1.svg" width={100} height={100} alt="prceBg" /> :
-                                                        <Image src="/images/coursePriceBG.svg" width={100} height={100} alt="prceBg" />}
+                                                    {selectedArray[index] == index ? <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" /> :
+                                                        <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" />}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className={`md:pt-24 pt-5 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
+                                        <div className={`md:pt-10 pt-5 leading-10 font-[400] font-Barlow xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
                                             {item.discription}
                                         </div>
                                         <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
