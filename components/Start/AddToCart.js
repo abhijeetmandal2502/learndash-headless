@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../src/styles/CoursePage.module.css'
 import Image from 'next/image'
 
@@ -10,24 +10,31 @@ import SplitPayment from './SplitPayment'
 
 const AddToCart = () => {
 
+    const [activeIndex, setActiveIndex] = useState(0)
+
     const paymentCart = [
 
         {
             icon: "/start/credit.png",
-            content: ""
+            content: <CheckoutForm />
         },
         {
             icon: "/start/paypal.png",
-            content: ""
+            content: <PaypalPayment />
         },
         {
             icon: "/start/giftCard.png",
-            content: ""
+            content: <PaymentGiftCard />
         },
         {
             icon: "/start/split.png",
-            content: ""
+            content: <SplitPayment />
         },
+    ]
+
+    const selectCourse = [
+
+
     ]
 
 
@@ -36,19 +43,20 @@ const AddToCart = () => {
 
             {/* selected items componets  */}
 
-            <div className={` bg-white mt-5 mx-5`}>
+            <div className={` relative bg-white mt-5 mx-5`}>
 
                 <div className={`flex justify-between items-center px-6 py-3 shadow-2xl`}>
-                    <div className={`flex space-x-2 items-center `}>
+                    <div className={`flex space-x-5 items-center `}>
                         <Image src="/start/cart.svg" width={30} height={26} alt="empty basket" />
                         <p className={`text-black text-[18px] leading-[130%]`}>useing research to market your practice</p>
                     </div>
-                    <div className={`flex flex-col justify-center items-center`}>
-                        <RiDeleteBin6Line size={20} />
+                    <div className={`flex space-x-3 items-center`}>
                         <div className='text-black text-[26px]' >$40</div>
+                        <RiDeleteBin6Line size={20} />
                     </div>
 
                 </div>
+                <div className=' absolute top-3 left-11   w-5 h-5 rounded-full text-white bg-voilet'><p className='flex justify-center items-center'>2</p></div>
 
             </div>
 
@@ -82,8 +90,8 @@ const AddToCart = () => {
                         {paymentCart?.map((item, id) => {
                             return (
                                 <>
-                                    <div className=' ' key={id}>
-                                        <Image className='rounded-xl' src={item.icon} width={80} height={60} />
+                                    <div className={` cursor-pointer shadow-2xl`} key={id} onClick={() => { setActiveIndex(id) }}>
+                                        <Image className={`rounded-xl ${paymentCart[activeIndex] == id ? 'shadow-2xl' : ""}  `} src={item.icon} width={80} height={60} />
                                     </div>
                                 </>
                             )
@@ -92,10 +100,7 @@ const AddToCart = () => {
 
                     {/* credit card info  */}
 
-                    {/* <CheckoutForm /> */}
-                    {/* <PaypalPayment /> */}
-                    {/* <PaymentGiftCard /> */}
-                    <SplitPayment />
+                    <div className=' transation-all ease  duration-1000 h-auto'>{paymentCart[activeIndex].content}</div>
 
                 </div>
 

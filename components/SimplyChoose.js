@@ -69,8 +69,8 @@ const SimplyChoose = ({ startMethodHide, start }) => {
 
     ]
 
-    const handleClick = (index) => {
-        setSelected(index);
+    const handleClick = (index, item) => {
+        setSelected(index, item);
 
         const tempArray = [...selectedArray]
         if (tempArray[index] == index) { tempArray[index] = undefined }
@@ -89,7 +89,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
         return item;
     })
 
-    console.log('selectedArray', selectedArray);
+    console.log('selected', selected);
 
     const LogoImage = "/images/Logo.svg"
     return (

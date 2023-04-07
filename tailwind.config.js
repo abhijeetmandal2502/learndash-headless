@@ -16,7 +16,10 @@ module.exports = {
         black: '#000000',
         white: '#FFFFFF',
         gray: '#949494',
-        dakgray: '#393939'
+        dakgray: '#393939',
+        lightgray: '#EDEDED',
+        green: '#38CD97',
+
       },
 
       fontFamily: {
@@ -56,3 +59,5 @@ module.exports = {
   },
   plugins: [require("daisyui")],
 }
+
+

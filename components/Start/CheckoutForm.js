@@ -92,9 +92,6 @@ const CheckoutForm = () => {
             </div>
 
             {/* model popup */}
-
-
-
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
