@@ -227,7 +227,7 @@
     background-position: center;
     object-fit: cover;
     transition: all ease-in-out 500ms;
-    background-size: 175px;
+    background-size: 180px;
 }
 
 .mainDiv:hover>.gift {
@@ -237,5 +237,25 @@
     background-position: center;
     object-fit: cover;
     transition: all ease-in-out 500ms;
-    background-size: 175px;
+    background-size: 180px;
+}
+
+
+.coursePriceSelectedBg {
+
+    background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
+}
+
+
+.emptyBasketTotalAmt {
+
+    background: linear-gradient(180deg, #B6B6B6 0%, #6C6C6C 100%);
+}
+
+
+
+.readyToCheckoutBg {
+
+    background: linear-gradient(180deg, #AC6BFF 0%, #7721E8 100%);
 }
