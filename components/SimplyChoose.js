@@ -94,55 +94,52 @@ const SimplyChoose = ({ startMethodHide, start }) => {
     const LogoImage = "/images/Logo.svg"
     return (
         <>
-            <div className='grid grid-cols-12 relative'>
+            <div className='relative grid grid-cols-12'>
                 <div className={`md:col-span-6 col-span-12 md:pl-10 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
-                    <div className='pt-6 md:block hidden'>
+                    <div className='hidden pt-6 md:block'>
                         <LogoCard LogoImage={LogoImage} />
                     </div>
 
-                    <div className='md:block hidden'>
+                    <div className='hidden md:block'>
 
                         <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => startMethodHide()}>
                             <BiArrowBack size={20} className="text-white " /><span className='text-sm '>lobby</span></button>
                     </div>
                     <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
-                        <div className='md:pt-32 pt-10 md:px-0 px-3 '>
-                            <h2 className='md:text-6xl text-4xl'>simply choose.</h2>
-                            <p className='md:text-2xl text-2xl py-5'>smile, you can’t make a bad choice.</p>
+                        <div className='px-3 pt-10 md:pt-32 md:px-0 '>
+                            <h2 className='text-4xl md:text-6xl'>simply choose.</h2>
+                            <p className='py-5 text-2xl md:text-2xl'>smile, you can’t make a bad choice.</p>
                         </div>
                     </div>
+
+                    {/* Selected Courses details of simply choose section on click */}
                     <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1}`}>
-
-
                         <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
-                        <div className=' md:col-span-5 col-span-12'>
+                        {/* courses details */}
+                        <div className='col-span-12 md:col-span-5'>
                             <div className={``}>
                                 <ResearchComponent />
                             </div>
                         </div>
-                        <div className=' md:col-span-7 col-span-12'>
+                        {/* course checkout */}
+                        <div className='col-span-12 md:col-span-7'>
                             {/* <div className={``}>
                                 <CheckoutForm />
                             </div> */}
 
                             {/* <EmptyBasket /> */}
                             <AddToCart />
-
-
-
                         </div>
                     </div>
                 </div>
 
                 <div className={`md:col-span-6 col-span-12 `}>
                     <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
-
-
                         <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between  ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(0,)} >
                             <div className='flex justify-between'>
-                                <div className='flex justify-center items-center space-x-1'>
+                                <div className='flex items-center justify-center space-x-1'>
                                     <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
-                                    <div className='font-bold text-xl'>{data[0].duration}</div>
+                                    <div className='text-xl font-bold'>{data[0].duration}</div>
                                 </div>
                             </div>
                             <div className={` ${styles.gift} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] `}>
@@ -164,7 +161,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                 <>
                                     <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>
                                         <div className='flex justify-between'>
-                                            <div className='flex justify-center items-center space-x-1'>
+                                            <div className='flex items-center justify-center space-x-1'>
                                                 <MdOutlineWatchLater />
                                                 <div>{item.duration}</div>
                                             </div>
@@ -178,7 +175,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                                 {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-bold  text-[23px] text-[#FF5C00] '>
                                                     +add
                                                 </div> : <div className=' flex absolute top-[80%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
-                                                    <div className='flex justify-center items-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
+                                                    <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
                                                     <div className={`text-[#AC6CFF] text-[23px] font-semibold`}>
                                                         added
                                                     </div>
@@ -186,7 +183,7 @@ const SimplyChoose = ({ startMethodHide, start }) => {
 
 
 
-                                                <div className=' '>
+                                                <div className=''>
                                                     {selectedArray[index] == index ? <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" /> :
                                                         <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" />}
                                                 </div>
