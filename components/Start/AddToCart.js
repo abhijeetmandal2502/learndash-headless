@@ -7,10 +7,13 @@ import CheckoutForm from './CheckoutForm'
 import PaypalPayment from './PaypalPayment'
 import PaymentGiftCard from './PaymentGiftCard'
 import SplitPayment from './SplitPayment'
+import { MdKeyboardArrowDown } from 'react-icons/md'
+import { BsToggleOff } from 'react-icons/bs'
 
 const AddToCart = () => {
 
     const [activeIndex, setActiveIndex] = useState(0)
+    const [ShowPaymentOption, setShowPaymentOption] = useState(false)
 
     const paymentCart = [
 
@@ -32,10 +35,12 @@ const AddToCart = () => {
         },
     ]
 
-    const selectCourse = [
+    const HandlePaymentOption = () => {
 
+        if (!ShowPaymentOption) setShowPaymentOption(true);
+        else setShowPaymentOption(false);
 
-    ]
+    }
 
 
     return (
@@ -61,7 +66,7 @@ const AddToCart = () => {
             </div>
 
             {/* checkout componets  */}
-            <div className={`${styles.readyToCheckoutBg} mt-3 mx-5`}>
+            <div className={`${styles.readyToCheckoutBg} mt-3 mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
                 <div className={`flex justify-between items-center px-6 py-3`}>
                     <div className={`flex space-x-1 items-center `}>
@@ -75,12 +80,16 @@ const AddToCart = () => {
 
                 </div>
 
+                <div className={`rounded-full bg-black w-5 h-5 absolute -bottom-2  left-1/2 -translate-x-1/2 ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}>
+                    <MdKeyboardArrowDown className='text-white' size={20} />
+                </div>
+
             </div>
 
             {/* payment option componet  */}
 
 
-            <div className={`mx-5 bg-white shadow-2xl pb-4`}>
+            <div className={`mx-5 bg-white shadow-2xl pb-4 ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
 
@@ -91,7 +100,7 @@ const AddToCart = () => {
                             return (
                                 <>
                                     <div className={` cursor-pointer shadow-2xl`} key={id} onClick={() => { setActiveIndex(id) }}>
-                                        <Image className={`rounded-xl ${paymentCart[activeIndex] == id ? 'shadow-2xl' : ""}  `} src={item.icon} width={80} height={60} />
+                                        <Image className={`rounded-xl ${paymentCart[activeIndex] == id ? 'shadow-2xl' : ""}  `} src={item.icon} width={80} height={60} alt="empty basket" />
                                     </div>
                                 </>
                             )

@@ -37,7 +37,7 @@ const RadeemCardDetail = ({ giftCardDetail }) => {
                 {/* gift card */}
                 <div className=''>
                     <div className='flex  space-x-5 items-center'>
-                        <Image src={giftCardDetail.image} width={349} height={221} />
+                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" />
 
                         <div >
                             <h2 className='text-[50px] tracking-wide leading-[107%]'>{giftCardDetail.title}</h2>

@@ -24,7 +24,7 @@ const SplitPayment = () => {
                 <div>
                     <div className='py-8 flex justify-center items-center'>
 
-                        <Image src="/start/splitPayment.png" width={199} height={126} />
+                        <Image src="/start/splitPayment.png" width={199} height={126} alt="split payment" />
 
                         <p className='text-[36px] pt-3 leading-[107%]'>due: $40</p>
                     </div>

@@ -24,7 +24,7 @@ const PaypalPayment = () => {
                 <div>
                     <div className='py-8 flex flex-col justify-center items-center'>
 
-                        <Image src="/start/PayPalLogo.png" width={152} height={40} />
+                        <Image src="/start/PayPalLogo.png" width={152} height={40} alt="paypal" />
 
                         <p className='text-[27px] pt-3 leading-[107%]'>$40 payment successful!</p>
                     </div>

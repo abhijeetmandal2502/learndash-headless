@@ -4,17 +4,34 @@ import styles from '../../Start/Start.module.css'
 import styles2 from '../../Start/PaymentMothod.module.css'
 
 import RadeemCardDetail from './RadeemCardDetail'
+import PaymentByCreditCard from './PaymentByCreditCard'
+import PaymentByPaypal from './PaymentByPaypal'
 
 
 
 
 const SplitPayMethod = () => {
     const [showSplitPayment, setShowSplitPayment] = useState(false);
+    const [CreditCardPayment, setCreditCardPayment] = useState(false);
+    const [PaypalPayment, setPaypalPayment] = useState(false);
 
 
     const ShowPaymentOptionWithGiftCard = () => {
         setShowSplitPayment(true)
     }
+
+
+    const PaymentWithCreditCard = () => {
+
+        setCreditCardPayment(true)
+    }
+
+
+    const PaymentWithPaypal = () => {
+
+        setPaypalPayment(true);
+    }
+
 
     const giftCardDetail = {
         image: "/start/GiftCard3D.png",
@@ -27,11 +44,11 @@ const SplitPayMethod = () => {
 
 
             <div>
-                <div className={`relative  ${showSplitPayment ? styles2.hidebgComp : ""} `}>
+                <div className={`relative  ${showSplitPayment || CreditCardPayment || PaypalPayment ? styles2.hidebgComp : ""} `}>
 
                     <div className='px-16'>
                         <div className='flex justify-between items-center space-x-3'>
-                            <Image src="/start/splitPayment.png" width={250} height={165} />
+                            <Image src="/start/splitPayment.png" width={250} height={165} alt="split card" />
 
                             <div>
                                 <h2 className='text-[50px] tracking-wide leading-[107%]'>split payment methods</h2>
@@ -48,7 +65,7 @@ const SplitPayMethod = () => {
                         <div className=' col-span-5 flex items-center justify-between px-7'>
                             <div className=' cursor-pointer' onClick={() => { ShowPaymentOptionWithGiftCard() }}>
                                 <p className='text-[21px] tracking-wide py-3 text-center leading-[107%]'>+ add gift card(s)</p>
-                                <Image src="/start/AddGiftCard.png" width={218} height={150} />
+                                <Image src="/start/AddGiftCard.png" width={218} height={150} alt="gift card" />
                                 <p className='text-[31px] text-gray mt-5 text-center leading-[121%] tracking-wider'>$0 applied</p>
                             </div>
 
@@ -59,20 +76,20 @@ const SplitPayMethod = () => {
 
                         <div className=' col-span-7  '>
                             <div className='grid grid-cols-12  '>
-                                <div className=' col-span-5'>
+                                <div className=' col-span-5' onClick={() => { PaymentWithCreditCard() }}>
                                     <p className='text-[21px] py-3 text-center leading-[107%]'>+ add credit card(s)</p>
                                     <div className='flex justify-center items-center'>
-                                        <Image src="/start/AddCreditCard.png" width={146} height={150} />
+                                        <Image src="/start/AddCreditCard.png" width={146} height={150} alt="credit card" />
                                     </div>
 
                                 </div>
                                 <div className='flex justify-center items-center'>
                                     <p className=' text-black font-bold text-[21px] mt-10'>or</p>
                                 </div>
-                                <div className=' col-span-5'>
+                                <div className=' col-span-5' onClick={() => { PaymentWithPaypal() }}   >
                                     <p className='text-[21px] tracking-wide text-center py-3 leading-[107%]'>+ add paypal</p>
                                     <div className='flex justify-center items-center'>
-                                        <Image src="/start/AddPaypal.png" width={146} height={150} />
+                                        <Image src="/start/AddPaypal.png" width={146} height={150} alt="paypal logo" />
                                     </div>
 
                                 </div>
@@ -103,10 +120,22 @@ const SplitPayMethod = () => {
                     </div>
 
                 </div>
-
+                {/* add gift card payment  */}
                 <div className={`${showSplitPayment ? 'block transition-all ease-in duration-1000' : 'hidden'} w-full absolute top-20 left-0`}>
                     <RadeemCardDetail giftCardDetail={giftCardDetail} />
                 </div>
+
+                {/* add credit card payment */}
+
+                <div className={`${CreditCardPayment ? 'block transition-all ease-in duration-1000' : 'hidden'} w-full absolute top-20 left-0`}>
+                    <PaymentByCreditCard giftCardDetail={giftCardDetail} />
+                </div>
+
+
+                <div className={`${PaypalPayment ? 'block transition-all ease-in duration-1000' : 'hidden'} w-full absolute top-20 left-0`}>
+                    <PaymentByPaypal giftCardDetail={giftCardDetail} />
+                </div>
+
             </div>
 
         </>
