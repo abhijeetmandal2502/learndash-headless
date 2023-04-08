@@ -243,7 +243,7 @@
 
 .coursePriceSelectedBg {
 
-    background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+    /* background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%); */
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
 }
 
@@ -297,4 +297,50 @@
         transform: rotate(0deg);
     }
 
+}
+
+
+.image_wrapper {
+    height: auto;
+    width: auto;
+    border-radius: 6px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+
+.shine:hover::before,
+.shine:focus::before {
+    animation: shine 0.85s;
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
 }

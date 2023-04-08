@@ -24,10 +24,10 @@ const PaymentGiftCard = () => {
     }
     return (
         <>
-            <div className='flex justify-center items-center'>
+            <div className='flex items-center justify-center space-between'>
 
                 <div>
-                    <div className='py-8 flex justify-center items-center'>
+                    <div className='flex items-center justify-center py-8'>
 
                         <Image src="/start/GiftCard3D.png" width={199} height={126} alt="gift card" />
 
@@ -35,16 +35,16 @@ const PaymentGiftCard = () => {
                     </div>
                     {/* <div className={`relative`}>
         
-        <input className="border  border-bordergray md:p-2 w-full  leading-4" type="password" placeholder="create password" />
+        <input className="w-full leading-4 border border-bordergray md:p-2" type="password" placeholder="create password" />
         <div className="absolute cursor-pointer top-2 right-2">
             <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
         </div>
     </div> */}
 
-                    <div className={`max-w-[75%] mx-auto`}>
+                    <div className={`max-w-[75%] mx-auto mb-6`}>
                         <button type="button"
                             onClick={() => { openModal() }}
-                            className={`w-full px-4 mt-4 py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl text-[18px] font-semibold traking-[0.02em] focus:outline-none`}  >redeem gift card
+                            className={`w-full px-4 mt-4 py-3 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >redeem gift card
 
                         </button>
                     </div>
@@ -67,7 +67,7 @@ const PaymentGiftCard = () => {
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto">
-                        <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <div className="flex items-center justify-center min-h-full p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
@@ -77,8 +77,8 @@ const PaymentGiftCard = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden  bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                    <div className=" flex justify-end items-center">
+                                <Dialog.Panel className="w-full max-w-4xl p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl">
+                                    <div className="flex items-center justify-end ">
                                         <button
                                             type="button"
                                             className="text-3xl"
@@ -87,7 +87,7 @@ const PaymentGiftCard = () => {
                                             x
                                         </button>
                                     </div>
-                                    <div className='mt-2 flex items-center justify-center pb-10'>
+                                    <div className='flex items-center justify-center pb-10 mt-2'>
                                         {/* <YourInstructor /> */}
 
                                         <RadeemCardDetail giftCardDetail={giftCardDetail} />

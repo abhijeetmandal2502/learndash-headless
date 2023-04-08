@@ -19,10 +19,10 @@ const PaypalPayment = () => {
     }
     return (
         <>
-            <div className='flex justify-center items-center'>
+            <div className='flex items-center justify-center'>
 
                 <div>
-                    <div className='py-8 flex flex-col justify-center items-center'>
+                    <div className='flex flex-col items-center justify-center py-8'>
 
                         <Image src="/start/PayPalLogo.png" width={152} height={40} alt="paypal" />
 
@@ -30,7 +30,7 @@ const PaypalPayment = () => {
                     </div>
                     <div className={`relative`}>
                         {/* <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label> */}
-                        <input className="border  border-bordergray md:p-2 w-full  leading-4" type="password" placeholder="create password" />
+                        <input className="w-full leading-4 border border-bordergray md:p-2" type="password" placeholder="create password" />
                         <div className="absolute cursor-pointer top-2 right-2">
                             <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
                         </div>
@@ -38,7 +38,7 @@ const PaypalPayment = () => {
 
                     <button type="button"
                         onClick={openModal}
-                        className={`w-full px-4 mt-4 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl text-[18px] font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
+                        className={`w-full px-4 mt-4 mb-6 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >start course!
 
                     </button>
                 </div>
@@ -61,7 +61,7 @@ const PaypalPayment = () => {
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto">
-                        <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <div className="flex items-center justify-center min-h-full p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
@@ -71,8 +71,8 @@ const PaypalPayment = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden  bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                    <div className=" flex justify-end items-center">
+                                <Dialog.Panel className="w-full max-w-4xl p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl">
+                                    <div className="flex items-center justify-end ">
                                         <button
                                             type="button"
                                             className="text-3xl"
@@ -81,7 +81,7 @@ const PaypalPayment = () => {
                                             x
                                         </button>
                                     </div>
-                                    <div className='mt-2 flex items-center justify-center pb-10'>
+                                    <div className='flex items-center justify-center pb-10 mt-2'>
                                         {/* <YourInstructor /> */}
                                         <Congratulation />
                                     </div>
