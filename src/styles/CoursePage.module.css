@@ -218,7 +218,7 @@
     display: none;
 }
 
-
+/* gift shoppi css  */
 
 .mainDiv>.gift {
 
@@ -239,6 +239,36 @@
     transition: all ease-in-out 500ms;
     background-size: 180px;
 }
+
+
+
+/* giftShoppy Active */
+
+.activeGiftShoppy {
+
+    background-image: url(/images/homeColor.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 180px;
+}
+
+/* giftShoppy Inactive */
+
+.inActiveGiftShoppy {
+
+    background-image: url(/images/homeBlack.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 180px;
+
+}
+
+
+
 
 
 .coursePriceSelectedBg {

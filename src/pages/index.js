@@ -34,7 +34,16 @@ const Home = () => {
     const [showNcbtmb, setShowNcbtmb] = useState();
     // for menu open close 
     const [On, setOn] = useState();
+
+    // state for gift shoppy
+    const [ShowGiftShoppi, setShowGiftShoppi] = useState(false);
+
+    const handleGiftComponent = () => {
+        setShowGiftShoppi(true);
+    }
+
     // teacher lounge 
+
 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
@@ -124,6 +133,7 @@ const Home = () => {
         setShowNcbtmb()
         setShowConceierge()
         setIsloaded()
+        setShowGiftShoppi(false)
 
     }
 
@@ -246,7 +256,7 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className={` w-full h-1/4  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t border-gray  ${styles.cardAnimation}  `} onClick={() => startMethod()}>
+                                <div className={` w-full h-1/4  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <div className='md:mx-auto xl:pt-1 xl:w-[70px] xl:h-[70px] md:w-[60px] md:h-[50px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
@@ -345,14 +355,12 @@ const Home = () => {
 
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
-                        <SimplyChoose startMethodHide={startMethodHide} start={start} />
+                        <SimplyChoose startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} />
                     </div>
                     <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} />
                     </div>
                 </div>
-
-
 
                 {/*index page main menu sidebar component */}
 

@@ -1,0 +1,14 @@
+.eGiftbg {
+
+    background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
+    border-radius: 104px;
+}
+
+
+.eGiftbg:hover {
+
+    background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
+    border-radius: 104px;
+}

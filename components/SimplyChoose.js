@@ -13,12 +13,13 @@ import { CiGift } from 'react-icons/ci'
 import EmptyBasket from './Start/EmptyBasket'
 import AddToCart from './Start/AddToCart'
 import PaypalPayment from './Start/PaypalPayment'
-const SimplyChoose = ({ startMethodHide, start }) => {
+import SimpleGiftCard from './Start/SimpleGiftCard'
+const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi }) => {
 
 
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
-    const [hideForm, setHideForm] = useState(false)
+    const [hideForm, setHideForm] = useState(false);
 
     const data = [
         {
@@ -89,8 +90,6 @@ const SimplyChoose = ({ startMethodHide, start }) => {
         return item;
     })
 
-    console.log('selected', selected);
-
     const LogoImage = "/images/Logo.svg"
     return (
         <>
@@ -101,7 +100,6 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                     </div>
 
                     <div className='hidden md:block'>
-
                         <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => startMethodHide()}>
                             <BiArrowBack size={20} className="text-white " /><span className='text-sm '>lobby</span></button>
                     </div>
@@ -117,49 +115,46 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                         <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                         {/* courses details */}
                         <div className='col-span-12 md:col-span-5'>
-                            <div className={``}>
-                                <ResearchComponent />
-                            </div>
+                            {/* <ResearchComponent /> */}
+                            <SimpleGiftCard />
                         </div>
                         {/* course checkout */}
                         <div className='col-span-12 md:col-span-7'>
-                            {/* <div className={``}>
-                                <CheckoutForm />
-                            </div> */}
-
-                            {/* <EmptyBasket /> */}
                             <AddToCart />
                         </div>
                     </div>
+
+                    {/* giftcard  details of simply choose section on click */}
+
+
+
+
                 </div>
 
                 <div className={`md:col-span-6 col-span-12 `}>
                     <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
-                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between  ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(0,)} >
+                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { handleGiftComponent() }} >
                             <div className='flex justify-between'>
                                 <div className='flex items-center justify-center space-x-1'>
                                     <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
                                     <div className='text-xl font-bold'>{data[0].duration}</div>
                                 </div>
                             </div>
-                            <div className={` ${styles.gift} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] `}>
-
+                            <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] `}>
                             </div>
                             <div className={`md:pt-0 pt-5 leading-10 font-[400] xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
                                 {data[0].discription}
                             </div>
-                            <div className={`absolute bottom-0 right-0  ${selectedArray[0] == 0 ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                            <div className={`absolute bottom-0 right-0  ${ShowGiftShoppi ? 'block' : styles.hide1}  `} >
                                 <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                             </div>
 
                         </div>
 
                         {data?.slice(1).map((item, index) => {
-
                             return (
-
                                 <>
-                                    <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>
+                                    <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => handleClick(index, item)}>
                                         <div className='flex justify-between'>
                                             <div className='flex items-center justify-center space-x-1'>
                                                 <MdOutlineWatchLater />
@@ -180,9 +175,6 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                                         added
                                                     </div>
                                                 </div>}
-
-
-
                                                 <div className=''>
                                                     {selectedArray[index] == index ? <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" /> :
                                                         <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" />}
@@ -197,6 +189,34 @@ const SimplyChoose = ({ startMethodHide, start }) => {
                                         </div>
 
                                     </div>
+
+
+                                    {/* gift shoppi course card */}
+                                    {ShowGiftShoppi ? <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between`} >
+                                        <div className='flex justify-between'>
+                                            <div className='flex items-center justify-center space-x-1'>
+                                                <MdOutlineWatchLater />
+                                                <div>{item.duration}</div>
+                                            </div>
+                                            <div className={` relative `}>
+                                                <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                                    <div className='md:text-[24px] text-[20px] lg:text-[20px] xl:text-[24px] font-semibold text-black'>
+                                                        ${item.price}
+                                                    </div>
+                                                </div>
+                                                <div className=''>
+                                                    <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className={`md:pt-10 pt-5 leading-10 font-[400] font-Barlow xl:text-[33px] lg:text-[20px]  md:text-[33px] text-[20px] ${styles.discriptionAnimation}`}>
+                                            {item.discription}
+                                        </div>
+                                        <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                            <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+                                        </div>
+
+                                    </div> : ""}
                                 </>
                             )
 
