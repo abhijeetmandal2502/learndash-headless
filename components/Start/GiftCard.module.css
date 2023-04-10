@@ -3,12 +3,16 @@
     background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
     border-radius: 104px;
+    transition: all ease-in-out 5s;
+
 }
 
 
 .eGiftbg:hover {
 
-    background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+    background: linear-gradient(180deg, #6400E6 0%, #AC6CFF 100%);
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
     border-radius: 104px;
+    transition: all ease-in-out 5s;
+
 }

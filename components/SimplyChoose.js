@@ -14,6 +14,7 @@ import EmptyBasket from './Start/EmptyBasket'
 import AddToCart from './Start/AddToCart'
 import PaypalPayment from './Start/PaypalPayment'
 import SimpleGiftCard from './Start/SimpleGiftCard'
+import GiftCardBtn from './Start/GiftCardBtn'
 const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi }) => {
 
 
@@ -115,12 +116,22 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                         <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                         {/* courses details */}
                         <div className='col-span-12 md:col-span-5'>
-                            {/* <ResearchComponent /> */}
-                            <SimpleGiftCard />
+
+                            {ShowGiftShoppi ? <SimpleGiftCard /> : <ResearchComponent />}
                         </div>
                         {/* course checkout */}
                         <div className='col-span-12 md:col-span-7'>
-                            <AddToCart />
+
+
+                            {ShowGiftShoppi ? <div className='flex flex-col space-y-8'>
+                                <div>
+                                    <GiftCardBtn title="e-gift card" icon="/start/eGift.svg" />
+                                </div>
+                                <div>
+                                    <GiftCardBtn title="physical gift card" icon="/start/PhysicalGift.svg" />
+                                </div>
+                            </div> : <AddToCart />}
+
                         </div>
                     </div>
 
