@@ -74,7 +74,7 @@ const AddToCart = () => {
                             <RiDeleteBin6Line size={24} />
                         </div>
                     </div>
-                    {/* <div className='w-full my-2 border-b-[2px] border-lightgray'></div>
+                    <div className='w-full my-2 border-b-[2px] border-lightgray'></div>
                     <div className={`flex justify-between items-center`}>
                         <div className={`flex space-x-5 items-center `}>
                             <p className={`text-black text-[16px] font-bold leading-[130%]`}>useing research to market your practice</p>
@@ -83,7 +83,7 @@ const AddToCart = () => {
                             <p className='text-black  font-thin text-[26px]'>$40</p>
                             <RiDeleteBin6Line size={24} />
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute -bottom-2 flex px-2  left-1/2 -translate-x-1/2 `}>
                     {/* ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}> */}
