@@ -336,3 +336,30 @@ select:focus {
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+/* suraj css start */
+
+/* tooltips section css */
+.tooltip {
+  position: relative;
+  /* display: inline-block;
+  border-bottom: 1px dotted black; */
+}
+
+.tooltip>.tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 4px 10px;
+  top: -30px;
+  right: -20%;
+  position: absolute;
+  /* z-index: 99; */
+}
+
+.tooltip:hover>.tooltiptext {
+  visibility: visible !important;
+}

@@ -7,7 +7,7 @@ import CheckoutForm from './CheckoutForm'
 import PaypalPayment from './PaypalPayment'
 import PaymentGiftCard from './PaymentGiftCard'
 import SplitPayment from './SplitPayment'
-import { MdKeyboardArrowDown } from 'react-icons/md'
+import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 import { BsToggleOff } from 'react-icons/bs'
 
 const AddToCart = () => {
@@ -18,25 +18,27 @@ const AddToCart = () => {
 
 
     const paymentCart = [
-
         {
             icon: "/start/credit.png",
-            content: <CheckoutForm />
+            content: <CheckoutForm />,
+            cardTooltips: "pay with credit card"
         },
         {
             icon: "/start/paypal.png",
-            content: <PaypalPayment />
+            content: <PaypalPayment />,
+            cardTooltips: "pay with paypal"
         },
         {
             icon: "/start/giftCard.png",
-            content: <PaymentGiftCard />
+            content: <PaymentGiftCard />,
+            cardTooltips: "use gift card"
         },
         {
             icon: "/start/split.png",
-            content: <SplitPayment />
+            content: <SplitPayment />,
+            cardTooltips: "split payment method"
         },
     ]
-
     const HandlePaymentOption = () => {
 
         if (!ShowPaymentOption) setShowPaymentOption(true);
@@ -130,8 +132,16 @@ const AddToCart = () => {
                             return (
 
                                 <>
-                                    <div className={` cursor-pointer p-[2.5px] rounded-md ${!activeIndex && styles.image_wrapper, styles.shine}  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} key={id} onClick={() => { setActiveIndex(id) }}>
-                                        <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                    <div className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} key={id} onClick={() => { setActiveIndex(id) }}>
+                                        <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
+                                            <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                        </div>
+                                        <div class="tooltiptext text-[12px] z-10">
+                                            <div className='relative'>
+                                                <span>{item.cardTooltips}</span>
+                                                <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />
+                                            </div>
+                                        </div>
                                     </div>
                                 </>
                             )
