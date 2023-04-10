@@ -42,7 +42,6 @@ const PaypalPayment = () => {
 
                     </button>
                 </div>
-
             </div>
 
             {/* model popup */}

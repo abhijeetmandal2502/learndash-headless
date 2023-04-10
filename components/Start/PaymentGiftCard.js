@@ -26,12 +26,12 @@ const PaymentGiftCard = () => {
         <>
             <div className='flex items-center justify-center space-between'>
 
-                <div>
-                    <div className='flex items-center justify-center py-8'>
+                <div >
+                    <div className='flex items-center justify-center pt-8'>
 
-                        <Image src="/start/GiftCard3D.png" width={199} height={126} alt="gift card" />
+                        <Image className='md:-ml-8 ' src="/start/GiftCard3D.png" width={190} height={126} alt="gift card" />
 
-                        <p className='text-[36px] pt-3 leading-[107%]'>due: $40</p>
+                        <p className='text-[34px] pt-3 leading-[107%]'>due: $40</p>
                     </div>
                     {/* <div className={`relative`}>
         
@@ -50,9 +50,9 @@ const PaymentGiftCard = () => {
                     </div>
                 </div>
 
-            </div>
+            </div >
             {/* model popup */}
-            <Transition appear show={isOpen} as={Fragment}>
+            < Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
@@ -99,7 +99,7 @@ const PaymentGiftCard = () => {
                         </div>
                     </div>
                 </Dialog>
-            </Transition>
+            </Transition >
         </>
     )
 }

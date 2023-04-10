@@ -14,6 +14,8 @@ const AddToCart = () => {
 
     const [activeIndex, setActiveIndex] = useState(0)
     const [ShowPaymentOption, setShowPaymentOption] = useState(false)
+    const [lessMoreBtn, setLessMoreBtn] = useState("view more")
+
 
     const paymentCart = [
 
@@ -42,26 +44,53 @@ const AddToCart = () => {
 
     }
 
+    const HandleMoreLessBTn = () => {
+        if (lessMoreBtn == 'view more') {
+            setLessMoreBtn('view less')
+        } else {
+            setLessMoreBtn('view more')
+        }
+    }
 
     return (
         <>
 
             {/* selected items componets  */}
 
-            <div className={` relative bg-white mt-5 mx-5`}>
-
-                <div className={`flex justify-between items-center px-6 py-3 shadow-2xl`}>
-                    <div className={`flex space-x-5 items-center `}>
-                        <Image src="/start/cart.svg" width={30} height={26} alt="empty basket" />
-                        <p className={`text-black text-[16px] font-bold leading-[130%]`}>useing research to market your practice</p>
+            <div className={` relative grid grid-cols-9 bg-white my-5 mx-5 shadow-2xl  p-3 md:p-4`}>
+                <div className={`col-span-1 relative flex items-start justify-start`}>
+                    <Image src="/start/cart.svg" width={40} height={40} alt="empty basket" />
+                    <div className='absolute w-5 h-5 text-white rounded-full left-6 md:left-6 2xl:left-7 -top-[6px] bg-voilet'><p className='flex items-center justify-center'>2</p></div>
+                </div>
+                <div className='col-span-8 pl-4'>
+                    <div className={`flex justify-between items-center`}>
+                        <div className={`flex space-x-5 items-center `}>
+                            <p className={`text-black text-[16px] font-bold leading-[130%]`}>useing research to market your practice</p>
+                        </div>
+                        <div className={`flex space-x-3 items-center`}>
+                            <div className='text-black text-[26px]' >$40</div>
+                            <RiDeleteBin6Line size={24} />
+                        </div>
                     </div>
-                    <div className={`flex space-x-3 items-center`}>
-                        <div className='text-black text-[26px]' >$40</div>
-                        <RiDeleteBin6Line size={24} />
+                    {/* <div className='w-full my-2 border-b-[2px] border-lightgray'></div>
+                    <div className={`flex justify-between items-center`}>
+                        <div className={`flex space-x-5 items-center `}>
+                            <p className={`text-black text-[16px] font-bold leading-[130%]`}>useing research to market your practice</p>
+                        </div>
+                        <div className={`flex space-x-3 items-center`}>
+                            <p className='text-black  font-thin text-[26px]'>$40</p>
+                            <RiDeleteBin6Line size={24} />
+                        </div>
+                    </div> */}
+                </div>
+                <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute -bottom-2 flex px-2  left-1/2 -translate-x-1/2 `}>
+                    {/* ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}> */}
+                    <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
+                        <MdKeyboardArrowDown className='text-white' size={20} />
                     </div>
+                    <p className={`text-white md:text-[13px]   pr-1 font-thin`}>{lessMoreBtn}</p>
 
                 </div>
-                <div className='absolute w-5 h-5 text-white rounded-full top-3 left-11 bg-voilet'><p className='flex items-center justify-center'>2</p></div>
 
             </div>
 
@@ -102,7 +131,7 @@ const AddToCart = () => {
 
                                 <>
                                     <div className={` cursor-pointer p-[2.5px] rounded-md ${!activeIndex && styles.image_wrapper, styles.shine}  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} key={id} onClick={() => { setActiveIndex(id) }}>
-                                        <Image className={`rounded-md     `} src={item.icon} width={80} height={60} alt="empty basket" />
+                                        <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
                                     </div>
                                 </>
                             )

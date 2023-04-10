@@ -22,11 +22,11 @@ const SplitPayment = () => {
             <div className='flex items-center justify-center'>
 
                 <div>
-                    <div className='flex items-center justify-center py-8'>
+                    <div className='flex items-center justify-center pt-8'>
 
                         <Image src="/start/splitPayment.png" width={100} height={100} alt="split payment" />
 
-                        <p className='text-[36px] pt-3 leading-[107%]'>due: $40</p>
+                        <p className='text-[34px] pt-3 leading-[107%]'>due: $40</p>
                     </div>
                     {/* <div className={`relative`}>
         
