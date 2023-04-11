@@ -15,12 +15,34 @@ import AddToCart from './Start/AddToCart'
 import PaypalPayment from './Start/PaypalPayment'
 import SimpleGiftCard from './Start/SimpleGiftCard'
 import GiftCardBtn from './Start/GiftCardBtn'
+import GiftCardModel from './Start/DialogCard/GiftCardModel'
 const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi }) => {
 
 
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
+
+    // handle e gift and physical card
+
+    const [activeEgift, setActiveEgift] = useState(false);
+
+    const [activePhysicalGift, setActivePhysicalGift] = useState(false);
+
+    // console.log('activePhysicalGift', activePhysicalGift, activeEgift)
+
+    // model for gift dialog form
+
+
+    let [isOpen, setIsOpen] = useState(false)
+
+    function closeModal() {
+        setIsOpen(false)
+    }
+
+    function openModal() {
+        setIsOpen(true)
+    }
 
     const data = [
         {
@@ -70,7 +92,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         },
 
     ]
-
     const handleClick = (index, item) => {
         setSelected(index, item);
 
@@ -86,10 +107,14 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         setHideForm(true)
 
         setSelected(false);
+
+
     }
     const stringData = selectedArray.map((item) => {
         return item;
     })
+
+    // console.log('ShowGiftShoppi', ShowGiftShoppi, selected, hideForm)
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -112,39 +137,49 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                     </div>
 
                     {/* Selected Courses details of simply choose section on click */}
-                    <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1}`}>
+                    <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
                         <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                         {/* courses details */}
                         <div className='col-span-12 md:col-span-5'>
 
-                            {ShowGiftShoppi ? <SimpleGiftCard /> : <ResearchComponent />}
+                            <ResearchComponent />
                         </div>
                         {/* course checkout */}
                         <div className='col-span-12 md:col-span-7'>
-
-
-                            {ShowGiftShoppi ? <div className='flex flex-col space-y-8'>
-                                <div>
-                                    <GiftCardBtn title="e-gift card" icon="/start/eGift.svg" />
-                                </div>
-                                <div>
-                                    <GiftCardBtn title="physical gift card" icon="/start/PhysicalGift.svg" />
-                                </div>
-                            </div> : <AddToCart />}
-
+                            <AddToCart />
                         </div>
                     </div>
 
                     {/* giftcard  details of simply choose section on click */}
 
+                    <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${!ShowGiftShoppi || hideForm === true ? styles.hide1 : styles.fadeAnimation}  `}>
+                        <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
+                        {/* courses details */}
+                        <div className='col-span-12 md:col-span-5'>
+                            <SimpleGiftCard />
+                        </div>
+                        {/* course checkout */}
+                        <div className='col-span-12 md:col-span-7'>
 
+                            <div className='flex flex-col space-y-8'>
+                                <div onClick={() => { openModal(), setActiveEgift(true), setActivePhysicalGift(false) }} >
+                                    <GiftCardBtn title="e-gift card" icon="/start/eGift.svg" />
+                                    <GiftCardModel isOpen={isOpen} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} />
+                                </div>
+                                <div onClick={() => { openModal(), setActivePhysicalGift(true), setActiveEgift(false) }} >
+                                    <GiftCardBtn title="physical gift card" icon="/start/PhysicalGift.svg" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
 
                 </div>
 
                 <div className={`md:col-span-6 col-span-12 relative `}>
                     <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
-                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { handleGiftComponent() }} >
+                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
                             <div className='flex justify-between'>
                                 <div className='flex items-center justify-center space-x-1'>
                                     <Image src="/images/gift.svg" width={25} height={25} alt='gift' />

@@ -1,0 +1,18 @@
+.giftCardBg {
+
+    background: #D4D4D4;
+}
+
+
+.giftCardActive {
+    background: #FFFFFF;
+    /* Purple */
+    border-top: 5px solid #9747FF;
+    box-shadow: 24px 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.formbtnbg {
+
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 48px;
+}
