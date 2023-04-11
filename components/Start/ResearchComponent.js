@@ -41,7 +41,9 @@ const ResearchComponent = () => {
                         using research
                         to market your practice
                     </h2>
-
+                    <div className='mt-2 cursor-pointer'>
+                        <Image src="/start/horizontaladdbutton.svg" width={100} height={50} />
+                    </div>
                     <div className='flex space-x-5 items-center py-3 '>
 
                         <div className='flex  cursor-pointer  items-center space-x-1'>

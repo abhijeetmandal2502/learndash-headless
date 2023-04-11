@@ -181,7 +181,7 @@ const Home = () => {
 
                 {/* logo and hero components */}
 
-                <div className='relative flex flex-col justify-between col-span-12 px-5 py-6 md:px-10 md:col-span-6 '>
+                <div className='relative flex flex-col justify-between col-span-12 px-5 py-6 md:px-16 md:col-span-6 '>
                     <div className='flex items-center justify-between space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
                         {/* menu icon for small device */}
