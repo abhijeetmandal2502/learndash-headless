@@ -49,14 +49,14 @@ const HomeComponentMobile = ({ ShowMenuMethod }) => {
 
     return (
         <>
-            <div className='  relative bg-transparent'>
+            <div className='relative bg-transparent '>
                 <div className={`z-5 ${activeTabIndex == "" ? styles2.MenuShowAnimation : styles2.MenuHideAnimation}`}>
 
-                    <div className='flex justify-between  items-center space-x-5 cursor-pointer px-3'>
+                    <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                         <LogoCard LogoImage={LogoImage} />
                         {/* menu icon for small device */}
                         <div className=''>
-                            <div className='flex items-center justify-center  space-x-2' onClick={() => { ShowMenuMethod() }}>
+                            <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
                                 <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,16 +69,16 @@ const HomeComponentMobile = ({ ShowMenuMethod }) => {
 
                     </div>
                     <div className='mb-5'>
-                        <p className=' md:text-5xl text-4xl font-normal py-2 px-3'>massage ce.</p>
-                        <p className=' md:text-5xl text-4xl  font-normal py-2 px-3'> simplified. </p>
+                        <p className='px-3 py-2 text-4xl font-normal  md:text-5xl'>massage ce.</p>
+                        <p className='px-3 py-2 text-4xl font-normal  md:text-5xl'> simplified. </p>
                     </div>
 
                     {
                         menuList?.map((item, id) => {
                             return (
                                 <>
-                                    <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id) }}>
-                                        <div key={id} className='flex space-x-5 items-center px-3  py-5'>
+                                    <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen) }}>
+                                        <div key={id} className='flex items-center px-3 py-5 space-x-5'>
                                             <Image alt='start' src={item.image} height='80' width='80' />
                                             <h3 className='mt-4 '>{item.title}</h3>
                                         </div>
@@ -99,10 +99,10 @@ const HomeComponentMobile = ({ ShowMenuMethod }) => {
 
 
                 <div className={`${activeTabIndex !== "" ? styles2.toggleOn : styles2.toggleOff} w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}  `}>
-                    <div className='flex justify-between  items-center space-x-5 cursor-pointer px-3'>
+                    <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                         <LogoCard LogoImage={LogoImage} />
                         <div className='lg:hidden'>
-                            <div className='flex items-center justify-center  space-x-2' onClick={() => { ShowMenuMethod() }}>
+                            <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
                                 <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
@@ -114,7 +114,7 @@ const HomeComponentMobile = ({ ShowMenuMethod }) => {
 
                     </div>
                     <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setActiveTabIndex('') }} >
-                        <BiArrowBack size={20} className="text-white " /><span className='text-md 3xl:text-2xl font-semibold'>lobby</span></button>
+                        <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>lobby</span></button>
 
                     <div className={`text-black ${activeTabIndex === 0 ? 'px-0' : 'px-3'}`}>{menuList[activeTabIndex]?.content}</div>
 
