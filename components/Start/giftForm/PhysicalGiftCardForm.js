@@ -6,7 +6,7 @@ import styles from '../../Start/DialogCard/GiftCardModel.module.css'
 const PhysicalGiftCardForm = () => {
     return (
         <>
-            <div className='relative'>
+            <div className='relative p-6'>
                 <div className={`grid grid-cols-12 `}>
                     <div className={`md:col-span-4 col-span-12`}>
                         <Image src="/start/GiftCard3D.svg" width={392} height={251} alt="gift" />
@@ -17,7 +17,7 @@ const PhysicalGiftCardForm = () => {
 
                             <div className='md:col-span-2 col-span-12 text-[38px]'>from:</div>
 
-                            <div className='md:col-span-10 col-span-12'>
+                            <div className='col-span-12 md:col-span-10'>
                                 <div className='grid grid-cols-12 gap-3'>
                                     <div className='col-span-6'>
                                         <input placeholder='your first name' type='text' className='border text-[20px] py-3 px-4 mb-3 border-gray outline-none min-w-[100%]' />
@@ -75,7 +75,7 @@ const PhysicalGiftCardForm = () => {
                             </div>
 
                             <div className='col-span-3 mx-2 '>
-                                <div className='flex justify-between items-center space-x-2'>
+                                <div className='flex items-center justify-between space-x-2'>
                                     <div className='col-span-2 '>
                                         <input placeholder='city' type='text' className='border border-gray outline-none w-[100%] text-[20px] py-3 px-4 mb-3 ' />
                                     </div>
@@ -101,7 +101,7 @@ const PhysicalGiftCardForm = () => {
                     </div>
                 </div>
 
-                <div className=' absolute -bottom-10 right-0'>
+                <div className='absolute right-0  -bottom-10'>
                     <button className={`text-[20px] py-3 px-40 ${styles.formbtnbg} flex items-center space-x-4`}><div className=''>+ add to basket:</div> <div className='text-[37px] leading-[130%] '>$0</div></button>
                 </div>
             </div>

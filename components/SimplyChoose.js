@@ -152,7 +152,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                     {/* giftcard  details of simply choose section on click */}
 
-                    <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${!ShowGiftShoppi || hideForm === true ? styles.hide1 : styles.fadeAnimation}  `}>
+                    <div className={`md:mt-8 2xl:mt-16 hidden md:grid grid-cols-12 ${!ShowGiftShoppi || hideForm === true ? styles.hide1 : styles.fadeAnimation}  `}>
                         <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                         {/* courses details */}
                         <div className='col-span-12 md:col-span-5'>
@@ -160,14 +160,15 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                         </div>
                         {/* course checkout */}
                         <div className='col-span-12 md:col-span-7'>
-
                             <div className='flex flex-col space-y-8'>
                                 <div onClick={() => { openModal(), setActiveEgift(true), setActivePhysicalGift(false) }} >
-                                    <GiftCardBtn title="e-gift card" icon="/start/eGift.svg" />
+                                    <GiftCardBtn animationCss={"ecardRotate"} title="e-gift card" icon="/start/eGift.svg" />
+
+                                    {/* giftcard button model */}
                                     <GiftCardModel isOpen={isOpen} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} />
                                 </div>
                                 <div onClick={() => { openModal(), setActivePhysicalGift(true), setActiveEgift(false) }} >
-                                    <GiftCardBtn title="physical gift card" icon="/start/PhysicalGift.svg" />
+                                    <GiftCardBtn animationCss={"ecardImgAni"} title="physical gift card" icon="/start/PhysicalGift.svg" />
                                 </div>
                             </div>
 

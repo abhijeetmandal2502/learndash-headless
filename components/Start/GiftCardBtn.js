@@ -2,15 +2,15 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../../components/Start/GiftCard.module.css'
 
-const GiftCardBtn = ({ title, icon }) => {
+const GiftCardBtn = ({ title, icon, animationCss }) => {
     return (
         <>
-            <button className={` py-3 px-5 min-w-[85%] mx-10 flex items-center space-x-5 ${styles.eGiftbg}`}>
-                <div>
-                    <Image src={icon} width={70} height={70} />
+            <button className={` py-3 relative ecardBtn duration-1000 transition px-5 min-w-[85%] mx-10 flex items-center space-x-5 ${styles.eGiftbg}`}>
+                <div className={`${animationCss} ${animationCss} ecardImgBox`}>
+                    <Image className={``} src={icon} width={70} height={70} />
                 </div>
 
-                <p className='text-[27px] text-white '>{title}</p>
+                <p className='text-[24px] 2xl:text-[27px] text-white '>{title}</p>
 
             </button>
         </>

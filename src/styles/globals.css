@@ -363,3 +363,41 @@ select:focus {
 .tooltip:hover>.tooltiptext {
   visibility: visible !important;
 }
+
+.ecardBtn:hover .ecardRotate {
+  transform: rotate(15deg);
+  transition: 500ms;
+}
+
+.ecardBtn .ecardRotate {
+  /* transform: rotate(45deg); */
+  transition: 500ms;
+}
+
+.ecardBtn .ecardImgAni {
+
+  transition: 500ms;
+}
+
+.ecardBtn:hover .ecardImgAni {
+  /* position: absolute;
+  right: -20px; */
+  /* padding-left: 20px; */
+  transform: translateX(12px);
+  transition: 500ms;
+}
+
+.giftCardBg {
+  background: linear-gradient(90deg, rgba(233, 233, 233, 1) 75%, rgba(157, 157, 157, 1) 100%);
+  /* box-shadow: 24px 12px 28px rgba(0, 0, 0, 0.3); */
+  border-top: 5px solid #9747FF;
+  background: #FFFFFF;
+
+}
+
+
+.giftCardActive {
+
+  background: #D4D4D4;
+  /* box-shadow: 24px 12px 28px rgba(0, 0, 0, 0.3); */
+}
