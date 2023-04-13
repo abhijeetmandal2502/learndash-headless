@@ -99,12 +99,12 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
                                                         'w-full pt-1.5 text-sm  leading-5 text-black font-bold',
                                                         selected
                                                             ? ' text-black giftCardBg'
-                                                            : 'text-black  giftCardActive'
+                                                            : 'text-black  giftCardActive mt-[8px] imgGray'
                                                     )
                                                 }
                                             >
-                                                <div className={` flex justify-between px-9 items-center space-x-3`}>
-                                                    <div>
+                                                <div className={` flex ecardBtn justify-between px-9 items-center space-x-3`}>
+                                                    <div className='ecardRotate ecardImgBox'>
                                                         <Image src="/start/eGift.svg" width={71} height={60} alt="gift" />
                                                     </div>
                                                     <p className=' font-semibold text-[20px]  '>
@@ -120,13 +120,13 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
                                                     classNames(
                                                         'w-full pt-1.5 text-sm  leading-5 text-black font-bold',
                                                         selected
-                                                            ? ' text-black giftCardBg'
-                                                            : 'text-black  giftCardActive'
+                                                            ? ' text-black giftCardBg '
+                                                            : 'text-black  giftCardActive boxShadow mt-[8px] imgGray'
                                                     )
                                                 }
                                             >
-                                                <div className={` flex justify-between px-9 w-100 items-center space-x-3`}>
-                                                    <div>
+                                                <div className={` flex ecardBtn justify-between px-9 w-100 items-center space-x-3`}>
+                                                    <div className='ecardImgAni ecardImgBox'>
                                                         <Image src="/start/PhysicalGift.svg" width={71} height={60} alt="gift" />
                                                     </div>
                                                     <p className=' font-semibold text-[20px] '>

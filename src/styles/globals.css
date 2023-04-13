@@ -389,15 +389,28 @@ select:focus {
 
 .giftCardBg {
   background: linear-gradient(90deg, rgba(233, 233, 233, 1) 75%, rgba(157, 157, 157, 1) 100%);
-  /* box-shadow: 24px 12px 28px rgba(0, 0, 0, 0.3); */
+  /* box-shadow: rgb(0 0 0 / 20%) 39px 15px 9px -22px; */
+  box-shadow: rgb(0 0 0 / 20%) 44px 1px 14px -12px;
   border-top: 5px solid #9747FF;
   background: #FFFFFF;
+  z-index: 10;
 
 }
 
 
 .giftCardActive {
-
   background: #D4D4D4;
-  /* box-shadow: 24px 12px 28px rgba(0, 0, 0, 0.3); */
+  box-shadow: rgb(0 0 0 / 21%) -107px -69px 15px -85px inset;
+  ;
+}
+
+.boxShadow {
+  box-shadow: rgb(0 0 0 / 21%) 45px 3px 16px -19px inset;
+  z-index: 20;
+}
+
+.imgGray .ecardImgBox {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
 }
