@@ -42,7 +42,7 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="relative w-full md:w-[72%] p-6 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
+                                <Dialog.Panel className="relative w-full -mt-[40px]  md:w-[72%] p-6 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
                                     <div className="absolute z-40 top-28 right-10">
                                         <button
                                             type="button"
