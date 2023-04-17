@@ -33,6 +33,8 @@ const Test = () => {
         }
     }, [router])
 
+    console.log('basePath', pathArr)
+
     return (
         <div>
             <div className="relative px-4 m-auto bg-transparent lg:px-8 default-page-width-header">

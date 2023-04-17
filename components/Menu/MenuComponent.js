@@ -15,36 +15,24 @@ import stylesScrollBtn from '../Start/Start.module.css'
 import { useRouter } from 'next/router'
 
 const MenuComponent = ({ HideMenuMethod, On }) => {
-
     const [show, setShow] = useState(false);
     const [showLogo, setShowLogo] = useState(false)
     const [openTab, setOpenTab] = React.useState(0);
-
     //  query params 
-
     const router = useRouter();
     const currentPath = router?.query?.active;
-
-
     //handle close
-
     const HandleCloseBtn = () => {
-
         router.push({
             pathname: '/',
             query: { active: 'home' }
         })
         if (router.asPath == '/?active=home') {
             HideMenuMethod();
-
             router.push('/');
-
         }
-
         setOpenTab(0)
-
         // setTimeout(() => { setActiveTabIndex(0) }, 500)
-
     }
 
     if (On === true) {
@@ -69,29 +57,19 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
 
 
     const handleClickLobby = () => {
-
         router.push({
             pathname: '/',
             query: { active: 'home' }
-
         })
         HideMenuMethod()
-
-
     }
 
     const textColor = "text-white"
-
     const LogoImage = "/images/WhiteLogo.svg";
-
-
     //  menu for mobile
 
     const [openMobTab, setOpenMobTab] = useState('')
-
     //  console.log('openMobTab', openMobTab);
-
-
     return (
         <>
             <div
@@ -102,8 +80,6 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
             md:grid grid-cols-12 md:h-screen  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden
               
             ${openTab === 4 ? styles.iwannaTechStart : ""} 
-            
-           
              `}>
 
                 <div className="absolute top-0 transition-all ease-in duration-1000 left-0 w-screen h-screen -z-10">

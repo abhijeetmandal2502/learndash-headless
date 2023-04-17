@@ -58,11 +58,9 @@ const Home = () => {
         if (router.asPath === "/?active=home") {
             setOn(true)
         }
-
     }, [])
 
     const handleTeacherLOginClose = () => {
-
         setOpenTeacherLogin(false);
     }
 
@@ -98,7 +96,6 @@ const Home = () => {
     }
 
     // ncbtmb approved 
-
     const ncbtmbMethod = () => {
         setShowNcbtmb(true)
         setTimeout(() => {
@@ -107,7 +104,6 @@ const Home = () => {
         }, 200)
 
     }
-
 
     const ncbtmbMethodHide = () => {
         setShowNcbtmb(false)
@@ -140,7 +136,6 @@ const Home = () => {
     // start hide method
 
     const startMethodHide = () => {
-
         setStart(false)
     }
 
@@ -158,11 +153,9 @@ const Home = () => {
             pathname: '/',
             query: { active: 'home' }
         })
-
     }
     const HideMenuMethod = () => {
         setOn(false)
-
     }
     // hwen page loaded css 
     const [isLoaded, setIsloaded] = useState(false)
@@ -178,9 +171,7 @@ const Home = () => {
             <Head> LearnDash </Head>
 
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-
                 {/* logo and hero components */}
-
                 <div className='relative flex flex-col justify-between col-span-12 px-5 py-6 md:px-16 md:col-span-6 '>
                     <div className='flex items-center justify-between space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
@@ -209,11 +200,7 @@ const Home = () => {
                     {/* ncbtmb components */}
 
                     <div className={`absolute top-28 left-10  3xl:top-72 3xl:left-10 4xl:top-96 4xl:left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
-
-
                 </div>
-
-
                 <div className={`col-span-12 md:col-span-5   relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
                     {/*index  grid 6 main div  */}
                     <div className={`   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
@@ -349,10 +336,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
-
                 {/* simply choose component for Start button */}
-
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <SimplyChoose startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} />
@@ -361,9 +345,7 @@ const Home = () => {
                         <SideMenu ShowMenuMethod={ShowMenuMethod} />
                     </div>
                 </div>
-
                 {/*index page main menu sidebar component */}
-
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
                     <div className='cursor-pointer '>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-5 left-1/2 '>
@@ -381,7 +363,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
 
             {/* drowable component */}

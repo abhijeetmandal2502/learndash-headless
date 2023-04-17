@@ -113,7 +113,7 @@ const Blog = () => {
 
 
                         {/* view all post button for mobile  */}
-                        <div className=' md:mr-5 flex items-center justify-between px-3 pt-5'>
+                        <div className=' md:mr-5 flex md:hidden items-center justify-between px-3 pt-5'>
 
                             <Link href="/blog">
                                 <button className='text-white bg-[#3A3A3A] py-3 px-6  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 text-[10px] ' onClick={() => { }} > <TfiMenuAlt size={14} /> <div className=' font-[600]'>view all posts</div></button>

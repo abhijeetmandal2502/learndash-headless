@@ -14,22 +14,13 @@ export default function MobileDrawerRighrt({ children, isOpen, setIsOpen, basePa
         >
             <section
                 className={
-                    " w-full right-0 absolute rounded-tr-lg bg-green h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+                    " w-full right-0 absolute rounded-tr-lg  h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
                     (isOpen ? " translate-x-0 " : " translate-x-full ")
                 }
             >
                 <article className={`relative flex mobilemenu flex-col h-full w-full `}>
                     <div className="relative flex justify-center ">
-                        {/* <Image
-                            width={120} height={30}
-                            src={`${process.env.ImageUrl}/logo.png`}
-                            alt="menuimg"
-                        /> */}
-                        {/* <div className="absolute text-xl text-white left-2" onClick={() => {
-                            setIsOpen(false);
-                        }}>
-                            <MdClose />
-                        </div> */}
+
                     </div>
                     {children}
                 </article>
