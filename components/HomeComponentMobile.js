@@ -12,7 +12,7 @@ import { Disclosure } from '@headlessui/react'
 import MobileDrawerRighrt from './Menu/MobileDrawerRight';
 import MobileDrawerLeft from './Menu/MobileDrawerLeft';
 
-const HomeComponentMobile = ({ ShowMenuMethod }) => {
+const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState('');
     const menuList = [
@@ -67,7 +67,7 @@ const HomeComponentMobile = ({ ShowMenuMethod }) => {
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
                                                             <div className='lg:hidden'>
-                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
+                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                                                                     <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
                                                                     <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                         <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
@@ -103,7 +103,7 @@ const HomeComponentMobile = ({ ShowMenuMethod }) => {
                                                             <LogoCard LogoImage={LogoImage} />
                                                             {/* menu icon for small device */}
                                                             <div className=''>
-                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
+                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                                                                     <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
                                                                     <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                         <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />

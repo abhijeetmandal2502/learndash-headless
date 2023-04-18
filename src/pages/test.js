@@ -33,7 +33,7 @@ const Test = () => {
         }
     }, [router])
 
-    console.log('basePath', pathArr)
+    //console.log('basePath', pathArr)
 
     return (
         <div>

@@ -14,7 +14,7 @@ import { FiArrowDown } from 'react-icons/fi'
 import stylesScrollBtn from '../Start/Start.module.css'
 import { useRouter } from 'next/router'
 
-const MenuComponent = ({ HideMenuMethod, On }) => {
+const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
     const [show, setShow] = useState(false);
     const [showLogo, setShowLogo] = useState(false)
     const [openTab, setOpenTab] = React.useState(0);
@@ -286,7 +286,7 @@ const MenuComponent = ({ HideMenuMethod, On }) => {
                         <LogoCard LogoImage={LogoImage} />
 
                         <div className='flex items-center '
-                            onClick={() => { HandleCloseBtn() }}>
+                            onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />

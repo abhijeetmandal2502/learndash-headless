@@ -18,11 +18,29 @@ import IwannaTech from 'components/TeacherLounge/IwannaTech'
 import { useRouter } from 'next/router'
 import Door from 'components/Start/Door'
 import HomeComponentMobile from 'components/HomeComponentMobile'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
 
 const Home = () => {
 
     const router = useRouter();
+
+    // drower for mobile
     const currentPath = router?.query?.active;
+    const [isOpen, setIsOpen] = useState(false);
+    const pathArr = router?.asPath?.split('/');
+    const basePath = pathArr[1];
+
+    const drowerOpen = () => {
+
+        setIsOpen(!isOpen)
+    }
+
+    const drowerClose = () => {
+
+        setIsOpen(!isOpen)
+    }
+
 
     //for login
     const [open, setOpen] = useState(false);
@@ -367,12 +385,39 @@ const Home = () => {
 
             {/* drowable component */}
 
-            <div className={` ${(On === true || currentPath == 'blog') ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+            <div className={` md:block hidden ${(On === true || currentPath == 'blog') ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                 <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
             </div>
+            {/* drowable component for mobile */}
+
+
+
+
+            <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
+                <div className=" overflow-y-scroll">
+                    <div className="flex flex-col">
+
+                        <Disclosure as="div" className=' list-none rounded-full text-gray'>
+                            {({ open }) => (
+                                <>
+                                    <Disclosure.Button className="flex justify-center w-full px-4 ">
+                                        {/* <button className='text-black' onClick={() => {
+                                                setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft)
+                                            }} >Click left slider</button> */}
+
+                                        <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
+                                    </Disclosure.Button>
+                                    <Disclosure.Panel className="w-full py-1 text-white ">
+                                    </Disclosure.Panel>
+                                </>
+                            )}
+                        </Disclosure>
+                    </div>
+                </div>
+            </MobileDrawerRighrt>
             {/* Index page for mobile  */}
             <div className={`md:hidden bg-transparent w-full ${On === true ? "hidden" : "block"}`}>
-                <HomeComponentMobile ShowMenuMethod={ShowMenuMethod} />
+                <HomeComponentMobile ShowMenuMethod={ShowMenuMethod} isOpen={isOpen} drowerOpen={drowerOpen} />
             </div>
 
         </>
