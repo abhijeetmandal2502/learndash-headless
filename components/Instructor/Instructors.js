@@ -36,7 +36,7 @@ const Instructors = () => {
                         <div key={index} className='bg-transparent grid grid-cols-12 border-b instructorBorder mb-10 pt-2 pb-4 lg:gap-5 gap-3 2xl:gap-0  '>
 
                             <div className='md:col-span-4 col-span-12 '>
-                                <Image src={item.image} width={500} height={500} alt="instructor image" className=' w-[200px] h-[200px] 3xl:w-[300px] 3xl:h-[300px] 4xl:w-[400px] 4xl:h-[400px]' />
+                                <Image src={item.image} width={500} height={500} alt="instructor image" className=' md:w-[200px] md:h-[200px] w-[150px] h-[150px]  3xl:w-[300px] 3xl:h-[300px] 4xl:w-[400px] 4xl:h-[400px]' />
                             </div>
                             <div className='md:col-span-8 col-span-12 '>
                                 <h3 className='font-normal text-[35px] 3xl:text-[50px] 4xl:text-[60px] text-white py-3'>{item.name}</h3>

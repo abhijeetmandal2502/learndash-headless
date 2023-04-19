@@ -246,6 +246,52 @@
 
 }
 
+
+/* for mobile */
+
+.zoomAnimation {
+    animation: zoomAnimate 2s ease;
+    transition: all ease-in-out 2s;
+}
+
+@media screen and (max-width:767px) {
+
+    .leftRightAnimation {
+
+        animation: leftRightAnimate ease-in-out 2s forwards;
+        transition: all ease-in-out 2s;
+    }
+
+
+    @keyframes leftRightAnimate {
+
+        from {
+
+            transform: translateX(100%);
+        }
+
+        to {
+
+            transform: translateX(0);
+        }
+    }
+}
+
+@keyframes zoomAnimate {
+
+
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+
+
+}
+
 .instructorBackground {
 
     background-image: url(/images/instructor-bg.png);

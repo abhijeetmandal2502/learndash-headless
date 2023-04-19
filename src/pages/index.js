@@ -400,11 +400,7 @@ const Home = () => {
                         <Disclosure as="div" className=' list-none rounded-full text-gray'>
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="flex justify-center w-full px-4 ">
-                                        {/* <button className='text-black' onClick={() => {
-                                                setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft)
-                                            }} >Click left slider</button> */}
-
+                                    <Disclosure.Button className=" w-full">
                                         <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                     </Disclosure.Button>
                                     <Disclosure.Panel className="w-full py-1 text-white ">

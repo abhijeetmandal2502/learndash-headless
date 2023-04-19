@@ -4,7 +4,7 @@ import { MdClose } from 'react-icons/md'
 
 export default function MobileDrawerLeft({ children, isOpen, setIsOpen, basePath }) {
 
-    console.log('children', children);
+    //console.log('children', children);
 
     return (
         <main

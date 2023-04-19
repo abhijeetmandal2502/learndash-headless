@@ -282,25 +282,28 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 </div>
 
                 <div className=' absolute top-0 w-full'>
-                    <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
-                        <LogoCard LogoImage={LogoImage} />
 
-                        <div className='flex items-center '
-                            onClick={() => { HandleCloseBtn(), drowerClose() }}>
-                            <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
-                                <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
-                            </div>
-                        </div>
-
-                    </div>
 
 
 
 
                     <div className='relative'>
 
-                        <div className={``}>
+
+
+                        <div className={`${openMobTab > 0 ? ' -translate-x-full transition-all ease-in-out duration-1000' : 'translate-x-0 transition-all ease-in-out duration-1000'}`}>
+                            <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
+                                <LogoCard LogoImage={LogoImage} />
+
+                                <div className='flex items-center '
+                                    onClick={() => { HandleCloseBtn(), drowerClose() }}>
+                                    <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
+                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                        <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+                                    </div>
+                                </div>
+
+                            </div>
                             <ul
                                 className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12     `}
                                 role="tablist"
@@ -371,15 +374,28 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             </div>
                         </div>
 
-                        {openMobTab > 0 ? <div className=" absolute top-0 left-0 w-full bg-black h-screen overflow-y-scroll ">
+                        {openMobTab > 0 ? <div className=" absolute top-0 left-0 w-full h-screen overflow-y-scroll ">
+
+                            <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
+                                <LogoCard LogoImage={LogoImage} />
+
+                                <div className='flex items-center '
+                                    onClick={() => { HandleCloseBtn(), drowerClose() }}>
+                                    <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
+                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                        <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+                                    </div>
+                                </div>
+
+                            </div>
                             <button className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
                                 <BiArrowBack size={20} className="text-white " /><span className='text-md 3xl:text-2xl font-semibold'>Menu</span></button>
                             <div className="tab-content tab-space px-5">
 
-                                <div className={`${openMobTab === 1 ? "block" : "hidden"} ${openMobTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">
+                                <div className={`${openMobTab === 1 ? "block" : "hidden"} ${openMobTab == 1 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">
                                     <About />
                                 </div>
-                                <div className={`${openMobTab === 2 ? "block" : "hidden"} ${openMobTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll  `} id="link2">
+                                <div className={`${openMobTab === 2 ? "block" : "hidden"} ${openMobTab == 2 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll  `} id="link2">
                                     <Instructors />
                                 </div>
                                 <div className={` ${(openMobTab === 3 || currentPath == 'blog') ? "block" : "hidden"} ${openMobTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} ${currentPath == "home" ? 'hidden' : 'block'}  md:h-screen  overflow-y-scroll`} id="link3">

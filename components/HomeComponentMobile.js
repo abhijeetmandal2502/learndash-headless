@@ -97,7 +97,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                     <Disclosure as="div">
                                         {({ open }) => (
                                             <>
-                                                <Disclosure.Button className="flex justify-center w-full ">
+                                                <Disclosure.Button className="w-full">
                                                     <div>
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
