@@ -67,20 +67,20 @@ const AddToCart = () => {
                 <div className='col-span-8 pl-4'>
                     <div className={`flex justify-between items-center`}>
                         <div className={`flex space-x-5 items-center `}>
-                            <p className={`text-black text-[16px] font-bold leading-[130%]`}>useing research to market your practice</p>
+                            <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>
                         </div>
                         <div className={`flex space-x-3 items-center`}>
-                            <div className='text-black text-[26px]' >$40</div>
+                            <div className='text-black extlargef' >$40</div>
                             <RiDeleteBin6Line size={24} />
                         </div>
                     </div>
                     <div className='w-full my-2 border-b-[2px] border-lightgray'></div>
                     <div className={`flex justify-between items-center`}>
                         <div className={`flex space-x-5 items-center `}>
-                            <p className={`text-black text-[16px] font-bold leading-[130%]`}>useing research to market your practice</p>
+                            <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>
                         </div>
                         <div className={`flex space-x-3 items-center`}>
-                            <p className='text-black  font-thin text-[26px]'>$40</p>
+                            <p className='font-thin text-black extlargef'>$40</p>
                             <RiDeleteBin6Line size={24} />
                         </div>
                     </div>
@@ -90,7 +90,7 @@ const AddToCart = () => {
                     <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
                         <MdKeyboardArrowDown className='text-white' size={20} />
                     </div>
-                    <p className={`text-white md:text-[13px]   pr-1 font-thin`}>{lessMoreBtn}</p>
+                    <p className={`text-white extsmallf  pr-1 font-thin`}>{lessMoreBtn}</p>
 
                 </div>
 
@@ -102,11 +102,11 @@ const AddToCart = () => {
                 <div className={`flex justify-between items-center px-6 py-2`}>
                     <div className={`flex space-x-1 items-center `}>
                         <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" />
-                        <p className={`text-white text-[16px] font-semibold  leading-[130%]`}>simple checkout</p>
+                        <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
                     </div>
                     <div className={`flex flex-col justify-end items-end`}>
                         <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p>
-                        <div className='text-white font-thin  text-[26px]' >$40</div>
+                        <div className='font-thin text-white extlargef' >$40</div>
                     </div>
 
                 </div>
@@ -124,11 +124,10 @@ const AddToCart = () => {
 
                 <div className='px-3'>
 
-                    <input type="email" placeholder='your email' className='w-full px-5 py-[6px] mt-4 mb-2 border border-gray' />
+                    <input type="email" placeholder='your email' className='w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
 
                     <div className='flex items-center justify-between'>
                         {paymentCart?.map((item, id) => {
-                            console.log("active", activeIndex)
                             return (
 
                                 <>

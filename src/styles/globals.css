@@ -414,3 +414,51 @@ select:focus {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
 }
+
+
+/* cutom font size for max screen size 1920 or default size of all types fonts */
+.extsmallf {
+  font-size: 13px;
+}
+
+.minismallf {
+  font-size: 15px;
+}
+
+.smallf {
+  font-size: 16px;
+}
+
+.mediumf {
+  font-size: 20px;
+}
+
+.largef {
+  font-size: 24px;
+}
+
+.extlargef {
+  font-size: 25px;
+}
+
+.dubblelargef {
+  font-size: 30px;
+}
+
+.triplelargef {
+  font-size: 35px;
+}
+
+.fourxllargef {
+  font-size: 50px;
+}
+
+.superlargef {
+  font-size: 75px;
+  letter-spacing: 0.025em;
+}
+
+/* responsive font size screen wise media query */
+
+
+/* @media only screen and(min ) */

@@ -31,7 +31,7 @@ const PaymentGiftCard = () => {
 
                         <Image className='md:-ml-8 ' src="/start/GiftCard3D.png" width={190} height={126} alt="gift card" />
 
-                        <p className='text-[34px] pt-3 leading-[107%]'>due: $40</p>
+                        <p className='triplelargef pt-3 leading-[107%]'>due: $40</p>
                     </div>
                     {/* <div className={`relative`}>
         
@@ -44,7 +44,7 @@ const PaymentGiftCard = () => {
                     <div className={`max-w-[75%] mx-auto mb-6`}>
                         <button type="button"
                             onClick={() => { openModal() }}
-                            className={`w-full px-4 mt-4 py-3 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >redeem gift card
+                            className={`w-full px-4 mt-4 py-3 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >redeem gift card
 
                         </button>
                     </div>

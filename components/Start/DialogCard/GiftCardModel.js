@@ -52,46 +52,9 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
                                             x
                                         </button>
                                     </div>
-                                    {/* <div className='flex items-center justify-center pb-10 mt-2'>
-                                        <div className={`flex items-center absolute top-0 left-0 z-[1000]`}>
-                                            <div className={`${activeEgift ? styles.giftCardActive : styles.giftCardBg} flex justify-between px-9 items-center space-x-3`}>
-                                                <div>
-                                                    <Image src="/start/eGift.svg" width={71} height={60} alt="gift" />
-                                                </div>
-                                                <p className=' font-semibold text-[28px]'>
-                                                    e-gift cards
-                                                </p>
-                                                <div className={`bg-black rounded-full w-6 h-6 text-white text-[17px] text-center`}>
-                                                    0
-                                                </div>
-
-                                            </div>
-
-                                            <div className={`${activePhysicalGift ? styles.giftCardActive : styles.giftCardBg} flex justify-between px-9 items-center space-x-3`}>
-                                                <div>
-                                                    <Image src="/start/PhysicalGift.svg" width={71} height={60} alt="gift" />
-                                                </div>
-                                                <p className=' font-semibold text-[28px]'>
-                                                    physical gift cards
-                                                </p>
-                                                <div className={`bg-black rounded-full w-6 h-6 text-white text-center text-[17px] `}>
-                                                    0
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div className='mt-10'>
-                                            {activeEgift ? <EGiftForm /> : ""}
-                                            {activePhysicalGift ? <PhysicalGiftCardForm /> : ""}
-                                        </div>
-
-                                    </div> */}
-                                    {/* tab panel code start */}
-
-
                                     <Tab.Group>
 
-                                        <Tab.List className="flex w-full max-w-[47rem]  px-2   sm:px-0">
+                                        <Tab.List className="flex w-full max-w-[50rem]  px-2   sm:px-0">
 
                                             <Tab
                                                 className={({ selected }) =>
@@ -103,15 +66,17 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
                                                     )
                                                 }
                                             >
-                                                <div className={` flex ecardBtn justify-between px-9 items-center space-x-3`}>
+                                                <div className={` flex ecardBtn  px-9 items-center space-x-3`}>
                                                     <div className='ecardRotate ecardImgBox'>
                                                         <Image src="/start/eGift.svg" width={71} height={60} alt="gift" />
                                                     </div>
-                                                    <p className=' font-semibold text-[20px]  '>
-                                                        e-gift cards
-                                                    </p>
-                                                    <div className={`bg-black rounded-full w-6 h-6 text-white text-[17px] text-center`}>
-                                                        0
+                                                    <div className='flex'>
+                                                        <p className='font-semibold largef'>
+                                                            e-gift cards
+                                                        </p>
+                                                        <div className={`bg-black ml-2 flex items-center justify-center rounded-full w-6 h-6 text-white smallf text-center`}>
+                                                            0
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </Tab>
@@ -129,13 +94,17 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
                                                     <div className='ecardImgAni ecardImgBox'>
                                                         <Image src="/start/PhysicalGift.svg" width={71} height={60} alt="gift" />
                                                     </div>
-                                                    <p className=' font-semibold text-[20px] '>
-                                                        physical gift cards
-                                                    </p>
-                                                    <div className={`bg-black rounded-full w-6 h-6 text-white text-center text-[17px] `}>
-                                                        0
+                                                    <div className='relative '>
+                                                        <div className='flex'>
+                                                            <p className='font-semibold largef'>
+                                                                physical gift cards
+                                                            </p>
+                                                            <div className={`bg-black ml-2 rounded-full w-6 h-6 text-white text-center smallf flex items-center justify-center  `}>
+                                                                99
+                                                            </div>
+                                                        </div>
+                                                        <p className='absolute minismallf font-bold text-[#9747FF]'>$1 shipping anywhere in the us!</p>
                                                     </div>
-
                                                 </div>
                                             </Tab>
                                         </Tab.List>

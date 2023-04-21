@@ -37,13 +37,13 @@ const CheckoutForm = () => {
                                 <div className="flex-col mt-2">
 
                                     <div className={`${styles.formbg} p-4`}>
-                                        <label className="mt-5 mb-1.5  font-bold  leading-4 text-[16px]">credit card info</label>
+                                        <label className="mt-5 mb-1.5  font-bold  leading-4 smallf">credit card info</label>
                                         <div className="flex justify-between mb-2 ">
                                             <div className="max-w-[48%]">
-                                                <input className="w-full text-[16px] leading-3 border border-bordergray md:p-2" type="text" placeholder="first name" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2" type="text" placeholder="first name" />
                                             </div>
                                             <div className="max-w-[48%]">
-                                                <input className="w-full text-[16px] leading-3 border border-bordergray md:p-2" type="text" placeholder="last name" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2" type="text" placeholder="last name" />
                                             </div>
                                         </div>
                                         <div>
@@ -53,22 +53,28 @@ const CheckoutForm = () => {
                                         <div className="flex flex-row mt-2 space-x-2">
                                             <div>
                                                 {/* <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">exp. date</label> */}
-                                                <input className="w-full text-sm leading-3 border border-bordergray md:p-2 " type="email" placeholder="mm/yy" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 " type="email" placeholder="mm/yy" />
                                             </div>
                                             <div>
                                                 {/* <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">security code</label> */}
-                                                <input className="w-full text-sm leading-3 text-gray-600 border border-bordergray md:p-2 " type="email" placeholder="cvc" />
+                                                <input className="w-full leading-3 text-gray-600 border smallf border-bordergray md:p-2 " type="email" placeholder="cvc" />
                                             </div>
                                             <div>
                                                 {/* <label className="mt-5 mb-1.5 text-xs  leading-4 font-bold ">zip</label> */}
-                                                <input className="w-full text-sm leading-3 border border-bordergray md:p-2 " type="text" placeholder="zip" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 " type="text" placeholder="zip" />
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className={`flex items-center space-x-1 py-2`}>
+                                    {/* <div className={`flex items-center space-x-1 py-2`}>
                                         <Image src="/images/savePassword.svg" width={19} height={19} alt="password icon" />
-                                        <p className={`text-gray md:text-[16px]`}>save payment for future purchases?</p>
+                                        <p className={`text-black extsmallf`}>save payment for future purchases?</p>
+                                    </div> */}
+                                    <div class="flex items-center py-2 ">
+                                        {/* <div className="p-[2px] flex item-center  border-black border-[1px] h-6 w-6"> */}
+                                        <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
+                                        {/* </div> */}
+                                        <label for="link-checkbox" className={`text-black text-sm ml-2 cursor-pointer`}>save payment for future purchases?</label>
                                     </div>
 
                                     <div className={`relative`}>
@@ -82,17 +88,17 @@ const CheckoutForm = () => {
                                 </div>
 
                                 <button type="button"
-                                    onClick={openModal} className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
+                                    onClick={openModal} className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
 
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* model popup */}
-            <Transition appear show={isOpen} as={Fragment}>
+            < Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
@@ -138,7 +144,7 @@ const CheckoutForm = () => {
                         </div>
                     </div>
                 </Dialog>
-            </Transition>
+            </Transition >
         </>
     );
 };

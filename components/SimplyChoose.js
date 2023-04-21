@@ -29,7 +29,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
 
-
+    // console.log('activePhysicalGift', activePhysicalGift, activeEgift)
 
     // model for gift dialog form
 
@@ -114,6 +114,8 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         return item;
     })
 
+    // console.log('ShowGiftShoppi', ShowGiftShoppi, selected, hideForm)
+
     const LogoImage = "/images/Logo.svg"
     return (
         <>
@@ -125,21 +127,19 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                     <div className='hidden md:block'>
                         <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => startMethodHide()}>
-                            <BiArrowBack size={20} className="text-white " /><span className='text-sm '>lobby</span></button>
+                            <BiArrowBack size={20} className="text-white " /><span className='minismallf'>lobby</span></button>
                     </div>
                     <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
                         <div className='px-3 pt-10 md:pt-32 md:px-0 '>
-                            <h2 className='text-4xl md:text-7xl'>simply choose.</h2>
-                            <p className='py-5 text-2xl md:text-3xl'>smile, you can’t make a bad choice.</p>
+                            <h2 className='superlargef'>simply choose.</h2>
+                            <p className='py-5 dubblelargef'>smile, you can’t make a bad choice.</p>
                         </div>
                     </div>
-
                     {/* Selected Courses details of simply choose section on click */}
                     <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
                         <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                         {/* courses details */}
                         <div className='col-span-12 md:col-span-5'>
-
                             <ResearchComponent />
                         </div>
                         {/* course checkout */}
@@ -161,7 +161,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             <div className='flex flex-col space-y-8'>
                                 <div onClick={() => { openModal(), setActiveEgift(true), setActivePhysicalGift(false) }} >
                                     <GiftCardBtn animationCss={"ecardRotate"} title="e-gift card" icon="/start/eGift.svg" />
-
                                     {/* giftcard button model */}
                                     <GiftCardModel isOpen={isOpen} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} />
                                 </div>
@@ -169,16 +168,13 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                     <GiftCardBtn animationCss={"ecardImgAni"} title="physical gift card" icon="/start/PhysicalGift.svg" />
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
-
                 </div>
 
                 <div className={`md:col-span-6 col-span-12 relative `}>
                     <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
-                        <div className={`md:block hidden ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
+                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
                             <div className='flex justify-between'>
                                 <div className='flex items-center justify-center space-x-1'>
                                     <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
@@ -187,13 +183,12 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             </div>
                             <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] `}>
                             </div>
-                            <div className={`md:pt-0 pt-5 leading-10 ffont-normal xl:text-[25px] lg:text-[20px]  md:text-[28px] text-[20px] ${styles.discriptionAnimation}`}>
+                            <div className={`md:pt-0 pt-5 leading-10 ffont-normal xl:textmediumf  md:text-[28px] mediumf ${styles.discriptionAnimation}`}>
                                 {data[0].discription}
                             </div>
                             <div className={`absolute bottom-0 right-0  ${ShowGiftShoppi ? 'block' : styles.hide1}  `} >
                                 <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                             </div>
-
                         </div>
 
                         {data?.slice(1).map((item, index) => {
@@ -207,7 +202,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                             </div>
                                             <div className={` relative `}>
                                                 <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                    <div className='md:text-[24px] text-[20px] lg:text-[20px] xl:text-[24px] font-semibold text-white'>
+                                                    <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
                                                         ${item.price}
                                                     </div>
                                                 </div>
@@ -226,7 +221,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className={`md:pt-10 pt-5 leading-10  font-Barlow xl:text-[25px] lg:text-[20px]  md:text-[28px] font-normal text-[20px] ${styles.discriptionAnimation}`}>
+                                        <div className={`md:pt-10 pt-5 leading-10  font-Barlow xl:textmediumf  md:text-[28px] font-normal mediumf ${styles.discriptionAnimation}`}>
                                             {item.discription}
                                         </div>
                                         <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
@@ -245,7 +240,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                             </div>
                                             <div className={` relative `}>
                                                 <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                    <div className='md:text-[24px] text-[20px] lg:text-[20px] xl:text-[24px] font-semibold text-black'>
+                                                    <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-black'>
                                                         ${item.price}
                                                     </div>
                                                 </div>
@@ -254,7 +249,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className={`md:pt-10 pt-5 leading-10  font-Barlow xl:text-[25px] lg:text-[20px]  md:text-[28px]   text-[20px] ${styles.discriptionAnimation}`}>
+                                        <div className={`md:pt-10 pt-5 leading-10  font-Barlow xl:textmediumf  md:text-[28px]   mediumf ${styles.discriptionAnimation}`}>
                                             {item.discription}
                                         </div>
                                         <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
