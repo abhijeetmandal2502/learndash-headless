@@ -231,7 +231,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
                     <div className=' cursor-pointer'>
                         <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
-                            onClick={() => { HandleCloseBtn() }}>
+                            onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />

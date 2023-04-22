@@ -365,7 +365,7 @@ const Home = () => {
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
                     <div className='cursor-pointer '>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-5 left-1/2 '>
-                            <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod() }}>
+                            <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                                 <p className='font-semibold max-[768px]:text-[12px] 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
@@ -383,8 +383,25 @@ const Home = () => {
 
             {/* drowable component */}
 
-            <div className={` md:block hidden ${(On === true || currentPath == 'blog') ? styles2.toggleOn : ""} ${On === false ? styles2.toggleOff : ""} ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-                <MenuComponent HideMenuMethod={HideMenuMethod} On={On} />
+            <div className={` md:block hidden  ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
+                    <div className=" overflow-y-scroll">
+                        <div className="flex flex-col">
+
+                            <Disclosure as="div" className=' list-none rounded-full text-gray'>
+                                {({ open }) => (
+                                    <>
+                                        <Disclosure.Button className=" w-full">
+                                            <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
+                                        </Disclosure.Button>
+                                        <Disclosure.Panel className="w-full py-1 text-white ">
+                                        </Disclosure.Panel>
+                                    </>
+                                )}
+                            </Disclosure>
+                        </div>
+                    </div>
+                </MobileDrawerRighrt>
             </div>
             {/* drowable component for mobile */}
 

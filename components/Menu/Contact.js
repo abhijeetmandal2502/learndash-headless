@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <>
             <div className='bg-transparent'>
-                <div className='text-white lg:text-[30px] 3xl:text-[40px] 4xl:text-[50px] text-[20px] font-normal font-Barlow py-2 '>
+                <div className='text-white text-left lg:text-[30px] 3xl:text-[40px] 4xl:text-[50px] text-[20px] font-normal font-Barlow py-2 '>
                     1234 address here<br></br>
                     city, state placeholder text
                 </div>
