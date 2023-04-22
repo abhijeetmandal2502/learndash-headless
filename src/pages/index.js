@@ -234,9 +234,7 @@ const Home = () => {
                                             <h3 className='mt-4 text-3xl font-semibold 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl lineUp md:text-center'>start</h3>
                                             <p className={`mt-1 ${Styles.hide1} tracking-[.05em] 4xl:text-4xl 3xl:text-2xl  md:text-center lineUp`}>start a course today!</p>
                                         </div>
-
                                     </div>
-
                                     <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
@@ -394,13 +392,13 @@ const Home = () => {
 
 
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                <div className=" overflow-y-scroll">
+                <div className="overflow-y-scroll ">
                     <div className="flex flex-col">
 
-                        <Disclosure as="div" className=' list-none rounded-full text-gray'>
+                        <Disclosure as="div" className='list-none rounded-full text-gray'>
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className=" w-full">
+                                    <Disclosure.Button className="w-full ">
                                         <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                     </Disclosure.Button>
                                     <Disclosure.Panel className="w-full py-1 text-white ">
