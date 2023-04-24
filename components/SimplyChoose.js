@@ -119,12 +119,11 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const LogoImage = "/images/Logo.svg"
     return (
         <>
-            <div className='relative grid grid-cols-12'>
+            <div className='relative grid grid-cols-12 bg-white'>
                 <div className={`md:col-span-6 col-span-12 md:pl-16 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                     <div className='hidden pt-6 md:block'>
                         <LogoCard LogoImage={LogoImage} />
                     </div>
-
                     <div className='hidden md:block'>
                         <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => startMethodHide()}>
                             <BiArrowBack size={20} className="text-white " /><span className='minismallf'>lobby</span></button>
@@ -174,7 +173,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                 <div className={`md:col-span-6 col-span-12 relative `}>
                     <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
-                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
+                        <div className={` ${styles.mainDiv} bg-transparent md:col-span-6 min-h-[250px] relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
                             <div className='flex justify-between'>
                                 <div className='flex items-center justify-center space-x-1'>
                                     <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
@@ -183,9 +182,9 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             </div>
                             <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%]  `}>
                             </div>
-                            <div className={`md:pt-0 pt-5 leading-10 ffont-normal xl:textmediumf  md:text-[28px] mediumf ${styles.discriptionAnimation}`}>
+                            <p className={`md:pt-0 pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
                                 {data[0].discription}
-                            </div>
+                            </p>
                             <div className={`absolute bottom-0 p-4 right-0  ${ShowGiftShoppi ? 'block' : styles.hide1}  `} >
                                 <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                             </div>

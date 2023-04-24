@@ -82,7 +82,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
             ${openTab === 4 ? styles.iwannaTechStart : ""} 
              `}>
 
-                <div className="absolute top-0 transition-all ease-in duration-1000 left-0 w-screen h-screen -z-10">
+                <div className="absolute top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in -z-10">
                     <Image
                         className={`${styles.aboutMain}`}
                         src="/images/menu-bg.png"
@@ -117,7 +117,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                     /> : ""}
                 </div>
 
-                <div className=' flex flex-col  2xl:space-y-40 xl:space-y-30 lg:space-y-20 md:space-y-10 3xl:space-y-24 md:col-span-11 col-span-12 p-10 2xl:pl-20 md:pl-20 '>
+                <div className='flex flex-col col-span-12 p-10 2xl:space-y-40 xl:space-y-30 lg:space-y-20 md:space-y-10 3xl:space-y-24 md:col-span-11 2xl:pl-20 md:pl-20'>
 
                     <div>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
@@ -125,12 +125,12 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         </div>
 
                         {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl 4xl:text-3xl font-semibold'>lobby</span></button> : ""}
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm font-semibold 3xl:text-2xl 4xl:text-3xl'>lobby</span></button> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
-                            <div className=" ">
+                            <div className="">
                                 <div className="tab-content tab-space ">
                                     <div className={`${(openTab > 0 || currentPath == 'blog') ? "hidden" : "block"} ${router.asPath === '/?active=home' ? 'block' : 'hidden'} `}>
                                         <Contact />
@@ -228,17 +228,17 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         </ul>
                     </div> : ""}
                 </div>
-                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-white '>
-                    <div className=' cursor-pointer'>
-                        <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
+                <div className='relative flex items-center justify-center w-full h-screen col-span-12 p-4 border-l border-white max-sm:invisible md:col-span-1 '>
+                    <div className='cursor-pointer '>
+                        <div className='absolute flex items-center justify-center -translate-x-1/2 top-5 left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
-                        <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
-                            <MusicCard textColor={textColor} />
+                        <div className='absolute -translate-x-1/2 bottom-5 left-1/2'>
+                            {/* <MusicCard textColor={textColor} /> */}
                         </div>
                     </div>
                 </div>
@@ -281,16 +281,13 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                     /> : ""}
                 </div>
 
-                <div className=' absolute top-0 w-full'>
+                <div className='absolute top-0 w-full '>
 
 
 
 
 
                     <div className='relative'>
-
-
-
                         <div className={`${openMobTab > 0 ? ' -translate-x-full transition-all ease-in-out duration-1000' : 'translate-x-0 transition-all ease-in-out duration-1000'}`}>
                             <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                                 <LogoCard LogoImage={LogoImage} />
@@ -367,14 +364,14 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 </li>
                             </ul>
 
-                            <div className='pl-5 border-t border-gray mt-16'>
+                            <div className='pl-5 mt-16 border-t border-gray'>
                                 <div className='mt-5'>
                                     <Contact />
                                 </div>
                             </div>
                         </div>
 
-                        {openMobTab > 0 ? <div className=" absolute top-0 left-0 w-full h-screen overflow-y-scroll ">
+                        {openMobTab > 0 ? <div className="absolute top-0 left-0 w-full h-screen overflow-y-scroll ">
 
                             <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                                 <LogoCard LogoImage={LogoImage} />
@@ -389,8 +386,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                             </div>
                             <button className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
-                                <BiArrowBack size={20} className="text-white " /><span className='text-md 3xl:text-2xl font-semibold'>Menu</span></button>
-                            <div className="tab-content tab-space px-5">
+                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>Menu</span></button>
+                            <div className="px-5 tab-content tab-space">
 
                                 <div className={`${openMobTab === 1 ? "block" : "hidden"} ${openMobTab == 1 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">
                                     <About />

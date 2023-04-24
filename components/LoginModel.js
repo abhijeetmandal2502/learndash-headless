@@ -80,12 +80,12 @@ const LoginModel = ({ changeDuration, title }) => {
 
     return (
         <>
-            <div className='relative '>
+            <div className='relative'>
                 <div className={`${forgetPassword ? styles.modelClose : styles.modelOpen}`}>
                     <div className='flex justify-between '>
                         <h2 className=' font-normal py-2 pb-4 lg:text-[24px] 3xl:text-[50px]'>{loginTitle ? titlefogetpass : title}</h2>
                     </div>
-                    <button className='absolute top-4 md:block hidden right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} className='3xl:w-10 3xl:h-10' /></button>
+                    <button className='absolute hidden top-4 md:block right-4' onClick={() => { changeDuration(); }}><AiOutlineClose size={25} className='3xl:w-10 3xl:h-10' /></button>
                     <form onSubmit={(e) => userLogin(e)}>
                         <div className='py-2'>
 
@@ -110,7 +110,7 @@ const LoginModel = ({ changeDuration, title }) => {
                             <div className='flex space-x-[0.5px] items-center'>
 
                                 <div className="form-check">
-                                    <input className="form-check-input appearance-none h-4 w-4 3xl:w-8 3xl:h-8 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+                                    <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border border-gray-300 rounded-sm appearance-none cursor-pointer form-check-input 3xl:w-8 3xl:h-8 checked:bg-blue-600 checked:border-blue-600 focus:outline-none" type="checkbox" value="" id="flexCheckDefault" />
 
                                 </div>
 

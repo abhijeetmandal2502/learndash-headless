@@ -20,7 +20,7 @@ const Conceierge = ({ conceiergeHide }) => {
                     <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm 3xl:text-2xl '>lobby</span></button>
                 <h2 className=' 2xl:text-5xl 3xl:text-6xl max-[768px]:text-[xl] 2xl:my-10 my-5 font-normal tracking-wide leading-tight'>ok, deep breath.<br></br>how can we help?</h2>
                 <form onSubmit={handleSubmit((data) => console.log('data', data))} >
-                    <div className='2xl:py-4 py-2'>
+                    <div className='py-2 2xl:py-4'>
 
                         <label className='3xl:text-2xl 4xl:text-4xl' >
                             your email
@@ -36,7 +36,7 @@ const Conceierge = ({ conceiergeHide }) => {
 
                         {errors.email ? <div className=' text-[#D30820] mt-1'> <span className='text-[#D30820] border border-[#D30820] rounded-full py-0.4 px-1.5 text-xs' >!</span> {errors.email.message}</div> : null}
                     </div>
-                    <div className='py-2 2xl:py-4 flex flex-col space-y-2'>
+                    <div className='flex flex-col py-2 space-y-2 2xl:py-4'>
                         <label className='3xl:text-2xl 4xl:text-4xl'>
                             ask away
 
@@ -47,7 +47,7 @@ const Conceierge = ({ conceiergeHide }) => {
 
                     </div>
 
-                    <div className='flex space-x-4 items-center'>
+                    <div className='flex items-center space-x-4'>
                         <button className={`${styles.lobby} px-10 3xl:text-3xl mt-5 3xl:px-16 3xl:py-3 py-2 tracking-wide text-white bg-black rounded-3xl focus:outline-none`} type="submit">send
 
                         </button>

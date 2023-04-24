@@ -39,7 +39,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/teacherLounge.svg",
             title: "teacher’s lounge",
-            content: <LoginModel title="Teacher s Lounge" />
+            content: <LoginModel title="Teacher's Lounge" />
         },
     ]
     const [isOpen, setIsOpen] = useState(false);
@@ -50,19 +50,19 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
 
     return (
         <>
-            <div className="relative  m-auto bg-transparent lg:px-8 default-page-width-header">
+            <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
 
-                <div className="relative  m-auto bg-transparent lg:px-8 default-page-width-header">
+                <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
                     {/* Mobile Menu icon */}
                     <div className="lg:hidden">
                         <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                            <div className=" overflow-y-scroll">
+                            <div className="overflow-y-scroll ">
                                 <div className="flex flex-col">
 
                                     <Disclosure as="div" className=''>
                                         {({ open }) => (
                                             <>
-                                                <Disclosure.Button className="flex justify-center w-full  ">
+                                                <Disclosure.Button className="flex justify-center w-full ">
                                                     <div className={` w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}`}>
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
@@ -92,19 +92,19 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                             </div>
                         </MobileDrawerRighrt>
                         <MobileDrawerLeft isOpen={isOpenLeft} setIsOpen={setIsOpenLeft} basePath={basePath}>
-                            <div className=" overflow-y-scroll">
+                            <div className="overflow-y-scroll ">
                                 <div className="flex flex-col">
                                     <Disclosure as="div">
                                         {({ open }) => (
                                             <>
                                                 <Disclosure.Button className="w-full">
-                                                    <div>
+                                                    <div className='bg-white'>
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
                                                             {/* menu icon for small device */}
                                                             <div className=''>
                                                                 <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                                                    <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
+                                                                    <p className='font-semibold text-black text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
                                                                     <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                         <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                                                         <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
@@ -114,19 +114,19 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                             </div>
 
                                                         </div>
-                                                        <div className='mb-5'>
-                                                            <p className='px-3 py-2 text-4xl font-normal  md:text-5xl'>massage ce.</p>
-                                                            <p className='px-3 py-2 text-4xl font-normal  md:text-5xl'> simplified. </p>
+                                                        <div className='px-6 py-2 mb-5 font-normal text-left text-black '>
+                                                            <p className='triplelargef'>massage ce.</p>
+                                                            <p className='triplelargef'> simplified. </p>
                                                         </div>
 
                                                         {
                                                             menuList?.map((item, id) => {
                                                                 return (
                                                                     <>
-                                                                        <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
+                                                                        <div className='bg-white border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
                                                                             <div key={id} className='flex items-center px-3 py-5 space-x-5'>
                                                                                 <Image alt='start' src={item.image} height='80' width='80' />
-                                                                                <h3 className='mt-4 '>{item.title}</h3>
+                                                                                <h3 className='mt-4 text-black dubblelargef '>{item.title}</h3>
                                                                             </div>
                                                                         </div>
                                                                     </>

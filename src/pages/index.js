@@ -337,7 +337,7 @@ const Home = () => {
                     {/* Login Model For im back */}
                     <div className={` col-span-12 md:col-span-5  z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className="relative ">
-                            <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
+                            <div className={` bg-white relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <LoginModel changeDuration={changeDuration} title="welcome back !" />
                             </div>
 
@@ -385,13 +385,13 @@ const Home = () => {
 
             <div className={` md:block hidden  ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                 <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                    <div className=" overflow-y-scroll">
+                    <div className="overflow-y-scroll ">
                         <div className="flex flex-col">
 
-                            <Disclosure as="div" className=' list-none rounded-full text-gray'>
+                            <Disclosure as="div" className='list-none rounded-full text-gray'>
                                 {({ open }) => (
                                     <>
-                                        <Disclosure.Button className=" w-full">
+                                        <Disclosure.Button className="w-full ">
                                             <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                         </Disclosure.Button>
                                         <Disclosure.Panel className="w-full py-1 text-white ">
@@ -427,7 +427,7 @@ const Home = () => {
                 </div>
             </MobileDrawerRighrt>
             {/* Index page for mobile  */}
-            <div className={`md:hidden bg-transparent w-full ${On === true ? "hidden" : "block"}`}>
+            <div className={`md:hidden bg-white w-full ${On === true ? "hidden" : "block"}`}>
                 <HomeComponentMobile ShowMenuMethod={ShowMenuMethod} isOpen={isOpen} drowerOpen={drowerOpen} />
             </div>
 
