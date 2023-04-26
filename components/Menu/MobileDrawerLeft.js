@@ -11,13 +11,13 @@ export default function MobileDrawerLeft({ children, isOpen, setIsOpen, basePath
             className={
                 " fixed overflow-hidden z-40  bg-opacity-25 inset-0 top-0 transform ease-in-out " +
                 (isOpen
-                    ? " transition-opacity opacity-100 duration-500 -translate-x-0"
+                    ? " transition-opacity opacity-100 duration-700 -translate-x-0"
                     : " -transition-all delay-500 opacity-0 -translate-x-full")
             }
         >
             <section
                 className={
-                    " w-full left-0 absolute rounded-tr-lg bg-red h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+                    " w-full left-0 absolute rounded-tr-lg bg-red h-full shadow-xl delay-400 duration-700 ease-in-out transition-all transform  " +
                     (isOpen ? " -translate-x-0 " : " -translate-x-full ")
                 }
             >

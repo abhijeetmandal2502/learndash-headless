@@ -131,11 +131,11 @@ const AddToCart = () => {
                             return (
 
                                 <>
-                                    <div className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} key={id} onClick={() => { setActiveIndex(id) }}>
+                                    <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
                                             <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
-                                        <div class="tooltiptext text-[12px] z-10">
+                                        <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>
                                                 <span>{item.cardTooltips}</span>
                                                 <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />

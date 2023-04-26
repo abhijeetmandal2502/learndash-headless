@@ -70,11 +70,11 @@ const CheckoutForm = () => {
                                         <Image src="/images/savePassword.svg" width={19} height={19} alt="password icon" />
                                         <p className={`text-black extsmallf`}>save payment for future purchases?</p>
                                     </div> */}
-                                    <div class="flex items-center py-2 ">
+                                    <div className="flex items-center py-2 ">
                                         {/* <div className="p-[2px] flex item-center  border-black border-[1px] h-6 w-6"> */}
-                                        <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
+                                        <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
                                         {/* </div> */}
-                                        <label for="link-checkbox" className={`text-black text-sm ml-2 cursor-pointer`}>save payment for future purchases?</label>
+                                        <label Htmlfor="link-checkbox" className={`text-black text-sm ml-2 cursor-pointer`}>save payment for future purchases?</label>
                                     </div>
 
                                     <div className={`relative`}>
@@ -89,7 +89,6 @@ const CheckoutForm = () => {
 
                                 <button type="button"
                                     onClick={openModal} className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
-
                                 </button>
                             </div>
                         </div>
@@ -98,7 +97,7 @@ const CheckoutForm = () => {
             </div >
 
             {/* model popup */}
-            < Transition appear show={isOpen} as={Fragment}>
+            <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
@@ -137,8 +136,6 @@ const CheckoutForm = () => {
                                         {/* <YourInstructor /> */}
                                         <Congratulation />
                                     </div>
-
-
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
