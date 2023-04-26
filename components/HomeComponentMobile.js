@@ -62,7 +62,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                     <Disclosure as="div" className=''>
                                         {({ open }) => (
                                             <>
-                                                <Disclosure.Button className="flex justify-center w-full ">
+                                                <div className="flex justify-center w-full ">
                                                     <div className={` w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}`}>
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
@@ -82,7 +82,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
 
                                                         <div className={`text-black ${activeTabIndex === 0 ? 'px-0' : 'px-3'}`}>{menuList[activeTabIndex]?.content}</div>
                                                     </div>
-                                                </Disclosure.Button>
+                                                </div>
                                                 <Disclosure.Panel className="w-full py-1 text-white ">
                                                 </Disclosure.Panel>
                                             </>
@@ -97,7 +97,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                     <Disclosure as="div">
                                         {({ open }) => (
                                             <>
-                                                <Disclosure.Button className="w-full">
+                                                <div className="w-full">
                                                     <div className='bg-white'>
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
@@ -134,7 +134,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                             })
                                                         }
                                                     </div>
-                                                </Disclosure.Button>
+                                                </div>
                                                 <Disclosure.Panel className="w-full py-1 text-white ">
                                                 </Disclosure.Panel>
                                             </>
