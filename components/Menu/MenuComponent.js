@@ -23,15 +23,17 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
     const currentPath = router?.query?.active;
     //handle close
     const HandleCloseBtn = () => {
-        router.push({
-            pathname: '/',
-            query: { active: 'home' }
-        })
-        if (router.asPath == '/?active=home') {
-            HideMenuMethod();
-            router.push('/');
-        }
-        setOpenTab(0)
+        setTimeout(() => {
+            router.push({
+                pathname: '/',
+                query: { active: 'home' }
+            })
+            if (router.asPath == '/?active=home') {
+                HideMenuMethod();
+                router.push('/');
+            }
+            // setOpenTab(0)
+        }, 500)
         // setTimeout(() => { setActiveTabIndex(0) }, 500)
     }
 
