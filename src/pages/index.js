@@ -81,7 +81,6 @@ const Home = () => {
     const handleTeacherLOginClose = () => {
         setOpenTeacherLogin(false);
     }
-
     // for start 
 
     const [start, setStart] = useState()

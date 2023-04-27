@@ -8,7 +8,7 @@ import { Tab } from '@headlessui/react'
 import EGiftForm from '../giftForm/EGiftForm'
 import PhysicalGiftCardForm from '../giftForm/PhysicalGiftCardForm'
 
-const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) => {
+const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift }) => {
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
@@ -17,7 +17,7 @@ const GiftCardModel = ({ isOpen, closeModal, activePhysicalGift, activeEgift }) 
     return (
         <>
             {/* model popup */}
-            <Transition appear show={isOpen} as={Fragment}>
+            <Transition appear show={isOpenD} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}

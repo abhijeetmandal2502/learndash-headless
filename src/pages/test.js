@@ -8,8 +8,6 @@ import HomeComponentMobile from 'components/HomeComponentMobile'
 import MobileDrawerLeft from 'components/Menu/MobileDrawerLeft'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
 
-
-
 const Test = () => {
     const router = useRouter();
     const [desktopMenue, setDesktopMenue] = useState(true);
