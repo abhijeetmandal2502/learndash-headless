@@ -36,6 +36,12 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             title: "ncbtmb approved",
             content: <Ncbtmb />
         },
+
+        {
+            image: "/images/home1.svg",
+            title: "gift shoppe",
+            content: <Ncbtmb />
+        },
         {
             image: "/images/teacherLounge.svg",
             title: "teacher’s lounge",
@@ -91,7 +97,6 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                 </div>
                             </div>
                         </MobileDrawerRighrt>
-
                         <MobileDrawerLeft isOpen={isOpenLeft} setIsOpen={setIsOpenLeft} basePath={basePath}>
                             <div className="overflow-y-scroll ">
                                 <div className="flex flex-col">
