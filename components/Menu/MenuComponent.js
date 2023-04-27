@@ -245,7 +245,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                     </div>
                 </div>
             </div>
-
+            {/* menu for mobile devices */}
             <div className={`md:hidden  relative z-20`}>
 
                 <div className=" transition-all ease-in duration-1000 w-screen h-[100vh] -z-10">

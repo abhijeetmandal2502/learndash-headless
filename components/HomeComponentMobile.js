@@ -91,6 +91,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                 </div>
                             </div>
                         </MobileDrawerRighrt>
+
                         <MobileDrawerLeft isOpen={isOpenLeft} setIsOpen={setIsOpenLeft} basePath={basePath}>
                             <div className="overflow-y-scroll ">
                                 <div className="flex flex-col">
