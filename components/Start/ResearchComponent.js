@@ -4,24 +4,49 @@ import { AiOutlineCheck } from 'react-icons/ai'
 import { MdOutlineWatchLater } from 'react-icons/md'
 
 import styles from '../Start/Start.module.css'
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, Disclosure, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import YourInstructor from './DialogCard/YourInstructor'
 import AboutCourse from './DialogCard/AboutCourse'
+import { useRouter } from 'next/router'
+import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
+import AddToCart from './AddToCart'
+
 
 const ResearchComponent = () => {
 
-    let [isOpen, setIsOpen] = useState(false)
+    const router = useRouter();
+    let [Open, setOpen] = useState(false)
+
+    const [panel, setPanel] = useState(true);
+
+    // drower for mobile
+    const currentPath = router?.query?.active;
+    const [isOpen, setIsOpen] = useState(false);
+    const pathArr = router?.asPath?.split('/');
+    const basePath = pathArr[1];
+
+    const drowerOpen = () => {
+
+        setIsOpen(!isOpen)
+    }
+
+    const drowerClose = () => {
+
+        setIsOpen(!isOpen)
+    }
+
+    //  console.log('panel', panel)
 
     const [aboutCourse, setAboutCourse] = useState(false);
     const [instructor, setInstructor] = useState(false);
 
     function closeModal() {
-        setIsOpen(false)
+        setOpen(false)
     }
 
     function openModal() {
-        setIsOpen(true)
+        setOpen(true)
     }
 
     const courseData = [
@@ -35,12 +60,48 @@ const ResearchComponent = () => {
     return (
         <>
 
-            <div className='bg-transparent'>
+            <div className='bg-transparent md:px-0 px-5'>
                 <div className='py-4 border-b-2 border-bordergray'>
-                    <h2 className='triplelargef tracking-wide md:leading-[40px]'>
-                        using research
-                        to market your practice
-                    </h2>
+
+                    <div className='flex space-x-2 justify-center items-center'>
+
+                        <h2 className='triplelargef tracking-wide md:leading-[40px]'>
+                            using research
+                            to market your practice
+                        </h2>
+
+                        {/* price component for mobile */}
+
+                        <div className={` relative `} onClick={() => { drowerOpen() }}>
+                            <div className='absolute top-[33%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
+                                    $40
+                                </div>
+                            </div>
+
+                            <div className={` flex flex-col justify-center  ${panel ? 'block' : 'hidden'}`} onClick={() => {
+                                setPanel(false)
+                            }}>
+                                <Image src="/images/newPriceOrange.svg" width={200} height={200} alt="prceBg" />
+                                <div className=' text-center font-bold  text-[16px] text-[#FF5C00] '>
+                                    +add
+                                </div>
+                            </div>
+
+                            <div className={`${!panel ? 'block' : 'hidden'}`} onClick={() => {
+                                setPanel(true)
+                            }}>
+                                <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" />
+                                <div className=' flex  font-bold  text-[23px] text-[#FF5C00] '>
+                                    <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
+                                    <div className={`text-[#AC6CFF] text-[16px] font-semibold`}>
+                                        added
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                     <div className='mt-2 cursor-pointer'>
                         <Image src="/start/horizontaladdbutton.svg" width={120} height={50} />
                     </div>
@@ -86,12 +147,26 @@ const ResearchComponent = () => {
             </div>
 
 
+            {/* checkout componets  */}
+            <div className={`${styles.readyToCheckoutBg} ${!panel ? 'block' : 'hidden'} mt-3 mx-5 cursor-pointer relative `} onClick={() => { drowerOpen() }} >
+
+                <div className={`flex justify-between items-center px-6 py-2`}>
+                    <div className={`flex space-x-1 items-center `}>
+                        <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" />
+                        <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
+                    </div>
+                    <div className={`flex  justify-center items-center space-x-1`}>
+                        <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p>
+                        <div className='font-thin text-white extlargef' >$40</div>
+                    </div>
+
+                </div>
+            </div>
+
+
             {/* model popup */}
-
-
-
-            <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+            <Transition appear show={Open} as={Fragment}>
+                <Dialog as="div" className="relative z-50" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -125,7 +200,7 @@ const ResearchComponent = () => {
                                             x
                                         </button>
                                     </div>
-                                    <div className='flex items-center justify-center pb-20 mt-2'>
+                                    <div className='flex items-center justify-center md:pb-20 mt-2'>
                                         {instructor ? <YourInstructor /> : ""}
                                         {aboutCourse ? <AboutCourse /> : ""}
                                     </div>
@@ -137,6 +212,39 @@ const ResearchComponent = () => {
                     </div>
                 </Dialog>
             </Transition>
+
+
+            {/* checkout form for mobile */}
+
+            <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
+                <div className="overflow-y-scroll ">
+                    <div className="flex flex-col">
+
+                        <Disclosure as="div" className='list-none rounded-full text-gray'>
+                            {({ open }) => (
+                                <>
+                                    <div className="w-full ">
+                                        <div className=' bg-lightgray relative pt-10'>
+
+                                            <h4 className='text-black text-left text-[32px] px-5'>simple checkout</h4>
+                                            <button className=' text-[25px] text-black absolute top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
+                                                x
+                                            </button>
+
+                                            <AddToCart />
+
+
+                                        </div>
+                                    </div>
+                                    <Disclosure.Panel className="w-full py-1 text-white ">
+                                    </Disclosure.Panel>
+                                </>
+                            )}
+                        </Disclosure>
+                    </div>
+                </div>
+            </MobileDrawerRighrt>
+
         </>
     )
 }

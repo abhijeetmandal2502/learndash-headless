@@ -83,3 +83,8 @@
 
     background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
 }
+
+.readyToCheckoutBg {
+
+    background: linear-gradient(180deg, #AC6BFF 0%, #7721E8 100%);
+}

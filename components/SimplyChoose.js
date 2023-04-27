@@ -1,31 +1,26 @@
 import React, { useState } from 'react'
 import { BiArrowBack } from 'react-icons/bi'
 import { MdOutlineWatchLater } from 'react-icons/md'
-import CheckoutForm from './Start/CheckoutForm'
 import ResearchComponent from './Start/ResearchComponent'
 import Image from 'next/image'
 import styles from '../src/styles/CoursePage.module.css'
 import LogoCard from './card/LogoCard'
 import { AiOutlineCheck, AiOutlineClose, AiOutlineCloseCircle } from 'react-icons/ai'
 import ScrollBtn from './Start/ScrollBtn'
-import { SlPieChart } from 'react-icons/sl'
-import { CiGift } from 'react-icons/ci'
-import EmptyBasket from './Start/EmptyBasket'
 import AddToCart from './Start/AddToCart'
-import PaypalPayment from './Start/PaypalPayment'
 import SimpleGiftCard from './Start/SimpleGiftCard'
 import GiftCardBtn from './Start/GiftCardBtn'
 import GiftCardModel from './Start/DialogCard/GiftCardModel'
-import MobileDrawerRighrt from '../components/Menu/MobileDrawerRight'
 import { useRouter } from 'next/router'
-import { Disclosure } from '@headlessui/react'
-import MobileDrawerLeft from '../components/Menu/MobileDrawerLeft'
 const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi }) => {
 
 
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
+
+    //for mobile selected course open model 
+    const [selectedCourse, setSelectedCourse] = useState(false)
 
     // handle e gift and physical card
 
@@ -143,12 +138,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const LogoImage = "/images/Logo.svg"
     return (
         <>
-
-
-            <div className="w-full">
-                <div className='bg-white'>
+            <div className="w-full relative">
+                <div className={`bg-white  ${!selectedCourse ? styles.fadeAnimation : styles.hide1}`}>
                     <div className='relative grid grid-cols-12 bg-white'>
-                        <div className={`md:col-span-6 col-span-12 md:pl-16 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
+                        <div className={`  md:col-span-6 col-span-12 md:pl-16 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                             <div className='hidden pt-6 md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
@@ -210,7 +203,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                     </div>
                                     <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%]  `}>
                                     </div>
-                                    <p className={`md:pt-0 pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
+                                    <p className={`md:pt-[170px] pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
                                         {data[0].discription}
                                     </p>
                                     <div className={`absolute bottom-0 p-4 right-0  ${ShowGiftShoppi ? 'block' : styles.hide1}  `} >
@@ -218,10 +211,30 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                     </div>
                                 </div>
 
+                                {/* gift shoppe card for mobile */}
+
+                                <div className={` md:hidden block ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
+                                    <div className='flex justify-between'>
+                                        <div className='flex items-center justify-center space-x-1'>
+                                            <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
+                                            <div className='font-bold mediumf'>{data[0].duration}</div>
+                                        </div>
+                                    </div>
+
+                                    <div className='flex justify-between items-center'>
+                                        <Image src="/images/homeColor.svg" width={100} height={100} />
+                                        <p className={`md:pt-0 pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
+                                            {data[0].discription}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* all course list */}
+
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), drowerOpen() }}>
+                                            <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), setSelectedCourse(true) }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-start justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater />
@@ -242,8 +255,8 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                             </div>
                                                         </div>}
                                                         <div className=''>
-                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" /> :
-                                                                <Image src="/images/newPriceBg.svg" width={100} height={100} alt="prceBg" />}
+                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" /> :
+                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" />}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -296,28 +309,17 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                     </div>
                 </div>
+
+
+                {/* course selected component for mobile when click show  */}
+
+                <div className={` z-20 absolute top-0 md:hidden ${selectedCourse ? styles.fadeAnimation : styles.hide1} `}>
+                    <ResearchComponent />
+                </div>
             </div>
 
 
 
-            {/* <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                <div className="overflow-y-scroll ">
-                    <div className="flex flex-col">
-
-                        <Disclosure as="div" className='list-none rounded-full text-gray'>
-                            {({ open }) => (
-                                <>
-                                    <Disclosure.Button className="w-full ">
-                                        ewgreaghrjh
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className="w-full py-1 text-white ">
-                                    </Disclosure.Panel>
-                                </>
-                            )}
-                        </Disclosure>
-                    </div>
-                </div>
-            </MobileDrawerRighrt> */}
 
         </>
     )
