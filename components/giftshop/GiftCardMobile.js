@@ -20,7 +20,7 @@ const GiftCardMobile = () => {
 
     return (
         <>
-            <div className=' -z-50'>
+            <div className='-z-[100]'>
                 <div className='flex items-center px-3 py-5 space-x-5'>
                     <Image alt='start' src="/images/homeColor.svg" height='80' width='80' />
                     <h3 className='mt-4 text-black dubblelargef '>gift shoppe</h3>
@@ -43,7 +43,9 @@ const GiftCardMobile = () => {
                                 <GiftCardBtn animationCss={"ecardRotate"} title="e-gift card" icon="/start/eGift.svg" />
                                 {/* giftcard button model */}
 
+
                                 <GiftCardModel isOpenD={isOpenD} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} />
+
 
 
                             </div>

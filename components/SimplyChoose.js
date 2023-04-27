@@ -12,7 +12,7 @@ import SimpleGiftCard from './Start/SimpleGiftCard'
 import GiftCardBtn from './Start/GiftCardBtn'
 import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
-const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi }) => {
+const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, setSelectedCourse }) => {
 
 
     const [selected, setSelected] = useState(false);
@@ -20,7 +20,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const [hideForm, setHideForm] = useState(false);
 
     //for mobile selected course open model 
-    const [selectedCourse, setSelectedCourse] = useState(false)
+    // const [selectedCourse, setSelectedCourse] = useState(false)
 
     // handle e gift and physical card
 
@@ -135,11 +135,13 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         setIsOpen(!isOpen)
     }
 
+    console.log()
+
     const LogoImage = "/images/Logo.svg"
     return (
         <>
             <div className="w-full relative">
-                <div className={`bg-white  ${!selectedCourse ? styles.fadeAnimation : styles.hide1}`}>
+                <div className={`bg-white  ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
                     <div className='relative grid grid-cols-12 bg-white'>
                         <div className={`  md:col-span-6 col-span-12 md:pl-16 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                             <div className='hidden pt-6 md:block'>
