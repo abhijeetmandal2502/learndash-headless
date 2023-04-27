@@ -42,8 +42,8 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="relative w-full -mt-[40px]  md:w-[72%] p-6 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
-                                    <div className="absolute z-40 top-28 right-10">
+                                <Dialog.Panel className="relative  md:-mt-[40px] pt-[40px] w-[100%]  md:w-[72%] md:p-6 p-2 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
+                                    <div className="absolute z-40 text-white md:text-black right-2 -top-0 md:top-28 md:right-10">
                                         <button
                                             type="button"
                                             className="text-3xl"
@@ -54,7 +54,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                     </div>
                                     <Tab.Group>
 
-                                        <Tab.List className="flex w-full max-w-[50rem]  px-2   sm:px-0">
+                                        <Tab.List className="flex w-full max-w-[50rem] sm:px-0">
 
                                             <Tab
                                                 className={({ selected }) =>
@@ -66,15 +66,15 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                                     )
                                                 }
                                             >
-                                                <div className={` flex ecardBtn  px-9 items-center space-x-3`}>
+                                                <div className={` flex ecardBtn md:px-9 items-center space-x-3`}>
                                                     <div className='ecardRotate ecardImgBox'>
                                                         <Image src="/start/eGift.svg" width={71} height={60} alt="gift" />
                                                     </div>
-                                                    <div className='flex'>
+                                                    <div className='flex items-center md:items-start'>
                                                         <p className='font-semibold largef'>
                                                             e-gift cards
                                                         </p>
-                                                        <div className={`bg-black ml-2 flex items-center justify-center rounded-full w-6 h-6 text-white smallf text-center`}>
+                                                        <div className={`bg-black mx-2  flex items-center justify-center rounded-full w-6 h-6 text-white smallf text-center`}>
                                                             0
                                                         </div>
                                                     </div>
@@ -90,20 +90,20 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                                     )
                                                 }
                                             >
-                                                <div className={` flex ecardBtn justify-between px-9 w-100 items-center space-x-3`}>
+                                                <div className={` flex ecardBtn justify-between md:px-9 w-100 items-center space-x-3`}>
                                                     <div className='ecardImgAni ecardImgBox'>
                                                         <Image src="/start/PhysicalGift.svg" width={71} height={60} alt="gift" />
                                                     </div>
                                                     <div className='relative '>
-                                                        <div className='flex'>
+                                                        <div className='flex items-center md:items-start'>
                                                             <p className='font-semibold largef'>
                                                                 physical gift cards
                                                             </p>
-                                                            <div className={`bg-black ml-2 rounded-full w-6 h-6 text-white text-center smallf flex items-center justify-center  `}>
+                                                            <div className={`bg-black ml-2 mr-2 rounded-full w-6 h-6 text-white text-center smallf flex items-center justify-center  `}>
                                                                 99
                                                             </div>
                                                         </div>
-                                                        <p className='absolute minismallf font-bold text-[#9747FF]'>$1 shipping anywhere in the us!</p>
+                                                        <p className='hidden md:block absolute minismallf font-bold text-[#9747FF]'>$1 shipping anywhere in the us!</p>
                                                     </div>
                                                 </div>
                                             </Tab>
@@ -111,7 +111,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                         <Tab.Panels className="">
                                             <Tab.Panel
                                                 className={classNames(
-                                                    ' bg-white px-3',
+                                                    ' bg-white md:px-3',
                                                     'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
                                                 )}
                                             >
@@ -119,7 +119,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                             </Tab.Panel>
                                             <Tab.Panel
                                                 className={classNames(
-                                                    ' bg-white px-3',
+                                                    ' bg-white md:px-3',
                                                     'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
                                                 )}
                                             >
