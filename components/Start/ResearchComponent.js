@@ -19,7 +19,6 @@ const ResearchComponent = () => {
     let [Open, setOpen] = useState(false)
 
     const [panel, setPanel] = useState(true);
-
     // drower for mobile
     const currentPath = router?.query?.active;
     const [isOpen, setIsOpen] = useState(false);

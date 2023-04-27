@@ -11,6 +11,7 @@ import styles from '../src/styles/NewIndex.module.css'
 import { Disclosure } from '@headlessui/react'
 import MobileDrawerRighrt from './Menu/MobileDrawerRight';
 import MobileDrawerLeft from './Menu/MobileDrawerLeft';
+import GiftCardMobile from './giftshop/GiftCardMobile';
 
 const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const router = useRouter();
@@ -40,7 +41,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/home1.svg",
             title: "gift shoppe",
-            content: <Ncbtmb />
+            content: <GiftCardMobile />
         },
         {
             image: "/images/teacherLounge.svg",
