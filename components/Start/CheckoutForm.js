@@ -40,36 +40,32 @@ const CheckoutForm = () => {
                                         <label className="mt-5 mb-1.5  font-bold  leading-4 smallf">credit card info</label>
                                         <div className="flex justify-between mb-2 ">
                                             <div className="max-w-[48%]">
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2" type="text" placeholder="first name" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
                                             </div>
                                             <div className="max-w-[48%]">
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2" type="text" placeholder="last name" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
                                             </div>
                                         </div>
                                         <div>
                                             {/* <label className="mt-5 mb-1.5  font-bold  leading-4 text-xs  ">enter card number</label> */}
-                                            <input className="w-full leading-3 border border-bordergray md:p-2" type="number" placeholder="**** **** **** *****" />
+                                            <input className="w-full leading-3 border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
                                         </div>
                                         <div className="flex flex-row mt-2 space-x-2">
                                             <div>
                                                 {/* <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">exp. date</label> */}
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 " type="email" placeholder="mm/yy" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
                                             </div>
                                             <div>
                                                 {/* <label className="mt-5 mb-1.5  leading-4 text-xs font-bold">security code</label> */}
-                                                <input className="w-full leading-3 text-gray-600 border smallf border-bordergray md:p-2 " type="email" placeholder="cvc" />
+                                                <input className="w-full leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
                                             </div>
                                             <div>
                                                 {/* <label className="mt-5 mb-1.5 text-xs  leading-4 font-bold ">zip</label> */}
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 " type="text" placeholder="zip" />
+                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* <div className={`flex items-center space-x-1 py-2`}>
-                                        <Image src="/images/savePassword.svg" width={19} height={19} alt="password icon" />
-                                        <p className={`text-black extsmallf`}>save payment for future purchases?</p>
-                                    </div> */}
                                     <div className="flex items-center py-2 ">
                                         {/* <div className="p-[2px] flex item-center  border-black border-[1px] h-6 w-6"> */}
                                         <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
@@ -79,7 +75,7 @@ const CheckoutForm = () => {
 
                                     <div className={`relative`}>
                                         {/* <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label> */}
-                                        <input className="w-full leading-4 border border-bordergray md:p-2" type="password" placeholder="create password" />
+                                        <input className="w-full leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                                         <div className="absolute cursor-pointer top-2 right-2">
                                             <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
                                         </div>
@@ -98,7 +94,7 @@ const CheckoutForm = () => {
 
             {/* model popup */}
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                <Dialog as="div" className="relative z-50 " onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -133,7 +129,6 @@ const CheckoutForm = () => {
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center pb-10 mt-2'>
-                                        {/* <YourInstructor /> */}
                                         <Congratulation />
                                     </div>
                                 </Dialog.Panel>

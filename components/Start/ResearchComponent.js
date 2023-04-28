@@ -147,7 +147,7 @@ const ResearchComponent = () => {
 
 
             {/* checkout componets  */}
-            <div className={`${styles.readyToCheckoutBg} ${!panel ? 'block' : 'hidden'} mt-3 mx-5 cursor-pointer relative `} onClick={() => { drowerOpen() }} >
+            <div className={`${styles.readyToCheckoutBg} ${!panel ? 'block' : 'hidden'} md:mt-3 md:mx-5 cursor-pointer relative `} onClick={() => { drowerOpen() }} >
 
                 <div className={`flex justify-between items-center px-6 py-2`}>
                     <div className={`flex space-x-1 items-center `}>
@@ -225,7 +225,7 @@ const ResearchComponent = () => {
                                     <div className="w-full ">
                                         <div className=' bg-lightgray relative pt-10'>
 
-                                            <h4 className='text-black text-left text-[32px] px-5'>simple checkout</h4>
+                                            <h4 className='text-black text-left text-[28px] px-5'>simple checkout</h4>
                                             <button className=' text-[25px] text-black absolute top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>

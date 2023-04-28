@@ -13,20 +13,22 @@ const Congratulation = () => {
     ]
     return (
         <>
-            <div className='mx-10'>
+            <div className='md:mx-10'>
 
-                <h3 className='text-center  tracking-wider text-[61px] leading-tight pb-12'>congratulations! <br></br> your course has begun!</h3>
+                <h3 className='text-center hidden md:block tracking-wider md:text-[61px] text-[24px] leading-tight pb-12'>congratulations! <br></br> your course has begun!</h3>
+                {/* title for mobile */}
+                <h3 className='text-center md:hidden  tracking-wider text-[30px] leading-tight pb-12'>congratulations! your course has begun!</h3>
 
-                <div className="flex space-x-5 justify-between">
+                <div className="md:flex md:space-x-5 justify-between">
 
                     {congrateData && congrateData.map((item, index) => {
                         return (<>
-                            <div key={index} className=" px-10  " >
-                                <div className='flex justify-center items-center'>
+                            <div key={index} className=" md:px-10 md:block flex justify-start items-start" >
+                                <div className='md:flex justify-center items-center'>
                                     <AiOutlineCheck size={25} className='text-[#9747FF]' />
                                 </div>
-                                <div className='flex justify-center items-center' >
-                                    <p className='text-center'>{item}</p>
+                                <div className='md:flex justify-center items-center' >
+                                    <p className='md:text-center text-[18px]'>{item}</p>
                                 </div>
                             </div>
                         </>)

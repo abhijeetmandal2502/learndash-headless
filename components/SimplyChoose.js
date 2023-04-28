@@ -12,7 +12,7 @@ import SimpleGiftCard from './Start/SimpleGiftCard'
 import GiftCardBtn from './Start/GiftCardBtn'
 import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
-const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, setSelectedCourse }) => {
+const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod }) => {
 
 
     const [selected, setSelected] = useState(false);
@@ -236,7 +236,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), setSelectedCourse(true) }}>
+                                            <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-start justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater />

@@ -5,6 +5,7 @@ import styles from '../Start/Start.module.css'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import SplitPayMethod from './DialogCard/SplitPayMethod'
+import { FiArrowLeft } from 'react-icons/fi'
 
 const SplitPayment = () => {
 
@@ -28,13 +29,6 @@ const SplitPayment = () => {
 
                         <p className='triplelargef pt-3 leading-[107%]'>due: $40</p>
                     </div>
-                    {/* <div className={`relative`}>
-        
-        <input className="w-full leading-4 border border-bordergray md:p-2" type="password" placeholder="create password" />
-        <div className="absolute cursor-pointer top-2 right-2">
-            <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
-        </div>
-    </div> */}
 
                     <div className={`max-w-[100%] mx-auto mb-6`}>
                         <button type="button"
@@ -50,7 +44,7 @@ const SplitPayment = () => {
 
             {/* model popup */}
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                <Dialog as="div" className="relative md:z-10 z-50 " onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -60,11 +54,11 @@ const SplitPayment = () => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-black bg-opacity-25" />
+                        <div className="fixed md:inset-0  bg-black bg-opacity-25" />
                     </Transition.Child>
 
-                    <div className="fixed inset-0 overflow-y-auto">
-                        <div className="flex items-center justify-center min-h-full p-4 text-center">
+                    <div className="fixed md:inset-0 top-0 md:h-auto h-screen overflow-y-auto">
+                        <div className="flex items-center justify-center min-h-full md:p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
@@ -74,23 +68,23 @@ const SplitPayment = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-[1077px] transform overflow-hidden  bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                    <div className="flex items-center justify-end ">
+                                <Dialog.Panel className="w-full max-w-[1077px] transform overflow-hidden  bg-white md:p-6 text-left align-middle shadow-xl transition-all h-screen md:h-auto overflow-y-scroll">
+                                    <div className="flex items-center md:justify-end justify-between ">
+                                        <div className='md:hidden flex space-x-2 justify-center items-center pl-5'>
+                                            <FiArrowLeft size={25} />
+                                            <h4>simple checkout</h4>
+                                        </div>
                                         <button
                                             type="button"
-                                            className="text-3xl"
+                                            className="text-3xl md:pr-0 pr-5"
                                             onClick={closeModal}
                                         >
                                             x
                                         </button>
                                     </div>
-                                    <div className='flex items-center justify-center pb-10 mt-2'>
-                                        {/* <YourInstructor /> */}
-
+                                    <div className='flex items-center justify-center md:pb-10 mt-2'>
                                         <SplitPayMethod />
                                     </div>
-
-
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>

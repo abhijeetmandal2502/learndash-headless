@@ -7,26 +7,37 @@ const PaymentByPaypal = ({ giftCardDetail }) => {
         <div>
             <div className='mx-5'>
                 {/* gift card */}
+
                 <div className=''>
                     <div className='flex  space-x-5 items-center'>
-                        <Image src={giftCardDetail.image} width={349} height={221} alt="gift card" />
+                        <div className='hidden md:block'>
+                            <Image src={giftCardDetail.image} width={349} height={221} alt="gift card" />
+                        </div>
+                        <div className='md:hidden'>
+                            <Image src={giftCardDetail.image} width={100} height={100} alt="gift card" />
+                        </div>
+
 
                         <div >
-                            <h2 className='text-[45px] tracking-wide leading-[107%]'>{giftCardDetail.title}</h2>
-                            <p className='text-[32px] leading-[107%]'>{giftCardDetail.DueBalance}</p>
+                            <h2 className='md:text-[45px] text-[19px] tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
+                            <p className='md:text-[32px] text-[16px] md:leading-[107%] leading-tight hidden md:block'>{giftCardDetail.DueBalance}</p>
 
                         </div>
+                    </div>
+                    {/* title for mobile */}
+                    <div className='md:hidden mb-10'>
+                        <p className={`text-[25px] text-voilet text-center md:leading-[107%] leading-tight `}>{giftCardDetail.DueBalance}</p>
                     </div>
                 </div>
                 {/* credit card detail  */}
 
-                <div className='px-48'>
+                <div className='md:px-48'>
                     <div className='mt-14 flex flex-col justify-center space-y-5'>
 
-                        <div className='px-24 py-16 bg-lightgray flex flex-col justify-center items-center'>
+                        <div className='md:px-24 px-12 py-16 bg-lightgray flex flex-col justify-center items-center'>
 
-                            <Image src="/start/PayPalLogo.png" width={260} height={70} alt="paypal logo" />
-                            <p className='text-[35px] tracking-wide '>$20 payment successful!</p>
+                            <Image src="/start/PayPalsuccessfull.svg" width={260} height={70} alt="paypal logo" />
+                            <p className='md:text-[35px] text-[24px] md:mt-0 mt-5 md:text-left text-center tracking-wide '>$20 payment successful!</p>
 
                         </div>
 

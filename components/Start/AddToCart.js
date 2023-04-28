@@ -43,7 +43,6 @@ const AddToCart = () => {
 
         if (!ShowPaymentOption) setShowPaymentOption(true);
         else setShowPaymentOption(false);
-
     }
 
     const HandleMoreLessBTn = () => {
@@ -111,16 +110,51 @@ const AddToCart = () => {
 
                 </div>
 
-                <div className={`rounded-full bg-black w-5 h-5 absolute -bottom-2  left-1/2 -translate-x-1/2 ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}>
+                <div className={`hidden md:block rounded-full bg-black w-5 h-5 absolute -bottom-2  left-1/2 -translate-x-1/2 ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}>
                     <MdKeyboardArrowDown className='text-white' size={20} />
                 </div>
 
             </div>
 
-            {/* payment option componet  */}
+            {/* payment option componet desktop  */}
 
 
-            <div className={`mx-5 bg-white shadow-2xl pb-4 ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
+            <div className={` hidden md:block mx-5 bg-white shadow-2xl pb-4 ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
+
+                <div className='px-3'>
+
+                    <input type="email" placeholder='your email' className='w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
+
+                    <div className='flex items-center justify-between'>
+                        {paymentCart?.map((item, id) => {
+                            return (
+
+                                <>
+                                    <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
+                                        <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
+                                            <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                        </div>
+                                        <div className="tooltiptext text-[12px] z-10">
+                                            <div className='relative'>
+                                                <span>{item.cardTooltips}</span>
+                                                <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            )
+                        })}
+                    </div>
+
+                    {/* credit card info  */}
+
+                    <div className='h-auto duration-1000 transation-all ease'>{paymentCart[activeIndex].content}</div>
+
+                </div>
+
+            </div>
+            {/* payment option componet mobile  */}
+            <div className={`mx-5 bg-white shadow-2xl pb-4 md:hidden`}>
 
                 <div className='px-3'>
 

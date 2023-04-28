@@ -18,11 +18,16 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const [activeTabIndex, setActiveTabIndex] = useState('');
 
     const [selectedCourse, setSelectedCourse] = useState(false)
+
+    const selectedCourseMethod = () => {
+
+        setSelectedCourse(true);
+    }
     const menuList = [
         {
             image: "/images/start.png",
             title: "start",
-            content: <SimplyChoose setSelectedCourse={setSelectedCourse} selectedCourse={selectedCourse} />
+            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} />
         },
         {
             image: "/images/IamBack.svg",

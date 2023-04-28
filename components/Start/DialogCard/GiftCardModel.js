@@ -126,9 +126,6 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                             </Tab.Panel>
                                         </Tab.Panels>
                                     </Tab.Group>
-
-
-
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
