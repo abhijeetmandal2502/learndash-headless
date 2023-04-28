@@ -27,10 +27,6 @@ const Start = () => {
 
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-
-
-
-
     const tabsData = [
         {
             id: 1,
@@ -151,8 +147,6 @@ const Start = () => {
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
 
                 <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 md:p-10 z-10'>
-
-
                     <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                         <LogoCard LogoImage="/images/WhiteLogo.svg" />
                         <Link href="/">
@@ -234,13 +228,23 @@ const Start = () => {
                                             >
                                                 {tab.label}
                                             </p>
+
+
+                                            {activeTabIndex < 11 ? <div className={`${styles.vertmove} z-[1000] absolute bottom-5 left-1/2 -translate-x-1/2 block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex + 1) }}
+                                                ref={el => (buttonRefs[activeTabIndex + 1] = el)}
+                                            >
+                                                <Image src="/start/SlideUpIcon.svg" width={50} height={50} />
+                                            </div> : ""}
+                                            {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-24 left-1/2 -translate-x-1/2 block md:hidden rotate-180`} onClick={() => { setActiveTabIndex(activeTabIndex - 1) }} ref={el => (buttonRefs[activeTabIndex - 1] = el)}>
+                                                <Image src="/start/SlideUpIcon.svg" width={50} height={50} />
+                                            </div> : ""}
                                         </div>
                                     );
                                 })}
                             </div>
                         </div >
                         {/* Show active tab content. */}
-                        <div className={`pb-4 -mt-4 col-span-10 md:col-span-10 ${styles.fadeAnimation}`} >
+                        <div className={`pb-4 -mt-4 col-span-10 md:col-span-10 z-0 ${styles.fadeAnimation}`} >
                             <div>{tabsData[activeTabIndex].content}</div>
                         </div >
                     </div >
@@ -262,6 +266,9 @@ const Start = () => {
                     </div>
                 </div>
 
+
+
+
                 {activeTabIndex < 11 ? <div className={`${styles.arrowUpDown} z-[1000] absolute bottom-5 left-1/2 md:block hidden `}>
                     <SlArrowDown size={20} className={`${styles.one} text-white`} />
                     <SlArrowDown size={20} className={`${styles.two} text-white`} />
@@ -272,6 +279,12 @@ const Start = () => {
                     <SlArrowUp size={20} className={`${styles.two} text-white`} />
                     <SlArrowUp size={20} className={`${styles.three} text-white`} />
                 </div> : ""}
+
+                {/* SHOW MORE SHOW LESSS BUTTON FOR MOBILE */}
+
+
+
+
             </div >
 
         </>

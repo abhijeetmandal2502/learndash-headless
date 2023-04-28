@@ -19,17 +19,11 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
 
-    //for mobile selected course open model 
-    // const [selectedCourse, setSelectedCourse] = useState(false)
-
     // handle e gift and physical card
 
     const [activeEgift, setActiveEgift] = useState(false);
 
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
-
-    // console.log('activePhysicalGift', activePhysicalGift, activeEgift)
-
     // model for gift dialog form
 
 
@@ -106,8 +100,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         setHideForm(true)
 
         setSelected(false);
-
-
     }
     const stringData = selectedArray.map((item) => {
         return item;
@@ -135,7 +127,9 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         setIsOpen(!isOpen)
     }
 
-    console.log()
+    const [panel, setPanel] = useState(true);
+
+    console.log('panel', panel, selectedCourse, isOpen)
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -148,7 +142,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
                             <div className='hidden md:block'>
-                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => startMethodHide()}>
+                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => { startMethodHide(), setPanel(false) }}>
                                     <BiArrowBack size={20} className="text-white " /><span className='minismallf'>lobby</span></button>
                             </div>
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
@@ -242,7 +236,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                         <MdOutlineWatchLater />
                                                         <div className=''>{item.duration}</div>
                                                     </div>
-                                                    <div className={` relative `}>
+
+                                                    {/* course price components */}
+
+                                                    <div className={` relative `} onClick={() => { setPanel(true), selectedCourseMethod(), drowerOpen() }}>
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
                                                                 ${item.price}
@@ -316,7 +313,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                 {/* course selected component for mobile when click show  */}
 
                 <div className={` z-20 absolute top-0 md:hidden ${selectedCourse ? styles.fadeAnimation : styles.hide1} `}>
-                    <ResearchComponent />
+                    <ResearchComponent drowerOpen={drowerOpen} drowerClose={drowerClose} isOpen={isOpen} setIsOpen={setIsOpen} panel={panel} setPanel={setPanel} />
                 </div>
             </div>
 

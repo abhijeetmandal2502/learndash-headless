@@ -13,29 +13,15 @@ import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
 import AddToCart from './AddToCart'
 
 
-const ResearchComponent = () => {
+const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, setPanel }) => {
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
 
-    const [panel, setPanel] = useState(true);
-    // drower for mobile
-    const currentPath = router?.query?.active;
-    const [isOpen, setIsOpen] = useState(false);
+    // const [panel, setPanel] = useState(true);
+
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
-
-    const drowerOpen = () => {
-
-        setIsOpen(!isOpen)
-    }
-
-    const drowerClose = () => {
-
-        setIsOpen(!isOpen)
-    }
-
-    //  console.log('panel', panel)
 
     const [aboutCourse, setAboutCourse] = useState(false);
     const [instructor, setInstructor] = useState(false);
@@ -59,7 +45,7 @@ const ResearchComponent = () => {
     return (
         <>
 
-            <div className='bg-transparent md:px-0 px-5'>
+            <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-screen'>
                 <div className='py-4 border-b-2 border-bordergray'>
 
                     <div className='flex space-x-2 justify-center items-center'>
@@ -78,8 +64,8 @@ const ResearchComponent = () => {
                                 </div>
                             </div>
 
-                            <div className={` flex flex-col justify-center  ${panel ? 'block' : 'hidden'}`} onClick={() => {
-                                setPanel(false)
+                            <div className={` flex flex-col justify-center  ${!panel ? 'block' : 'hidden'}`} onClick={() => {
+                                setPanel(true)
                             }}>
                                 <Image src="/images/newPriceOrange.svg" width={200} height={200} alt="prceBg" />
                                 <div className=' text-center font-bold  text-[16px] text-[#FF5C00] '>
@@ -87,9 +73,7 @@ const ResearchComponent = () => {
                                 </div>
                             </div>
 
-                            <div className={`${!panel ? 'block' : 'hidden'}`} onClick={() => {
-                                setPanel(true)
-                            }}>
+                            <div className={`${panel ? 'block' : 'hidden'}`} >
                                 <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" />
                                 <div className=' flex  font-bold  text-[23px] text-[#FF5C00] '>
                                     <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
@@ -101,7 +85,7 @@ const ResearchComponent = () => {
 
                         </div>
                     </div>
-                    <div className='mt-2 cursor-pointer'>
+                    <div className='mt-2 cursor-pointer hidden md:block '>
                         <Image src="/start/horizontaladdbutton.svg" width={120} height={50} />
                     </div>
                     <div className='flex items-center py-2 space-x-5 '>
@@ -144,24 +128,6 @@ const ResearchComponent = () => {
                     </button>
                 </div>
             </div>
-
-
-            {/* checkout componets  */}
-            <div className={`${styles.readyToCheckoutBg} ${!panel ? 'block' : 'hidden'} md:mt-3 md:mx-5 cursor-pointer relative `} onClick={() => { drowerOpen() }} >
-
-                <div className={`flex justify-between items-center px-6 py-2`}>
-                    <div className={`flex space-x-1 items-center `}>
-                        <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" />
-                        <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
-                    </div>
-                    <div className={`flex  justify-center items-center space-x-1`}>
-                        <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p>
-                        <div className='font-thin text-white extlargef' >$40</div>
-                    </div>
-
-                </div>
-            </div>
-
 
             {/* model popup */}
             <Transition appear show={Open} as={Fragment}>
@@ -243,6 +209,22 @@ const ResearchComponent = () => {
                     </div>
                 </div>
             </MobileDrawerRighrt>
+
+            {/* checkout componets  */}
+            <div className={`${styles.readyToCheckoutBg} ${!panel ? 'block' : 'hidden'} md:mt-3 md:mx-5 cursor-pointer  fixed bottom-0 w-full`} onClick={() => { drowerOpen() }} >
+
+                <div className={`flex justify-between items-center px-6 py-2`}>
+                    <div className={`flex space-x-1 items-center `}>
+                        <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" />
+                        <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
+                    </div>
+                    <div className={`flex  justify-center items-center space-x-1`}>
+                        <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p>
+                        <div className='font-thin text-white extlargef' >$40</div>
+                    </div>
+
+                </div>
+            </div>
 
         </>
     )
