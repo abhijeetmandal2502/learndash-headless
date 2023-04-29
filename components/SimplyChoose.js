@@ -12,7 +12,7 @@ import SimpleGiftCard from './Start/SimpleGiftCard'
 import GiftCardBtn from './Start/GiftCardBtn'
 import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
-const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod }) => {
+const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel }) => {
 
 
     const [selected, setSelected] = useState(false);
@@ -25,7 +25,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
     // model for gift dialog form
-
 
     let [isOpenD, setIsOpenD] = useState(false)
 
@@ -126,8 +125,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
         setIsOpen(!isOpen)
     }
-
-    const [panel, setPanel] = useState(true);
 
     console.log('panel', panel, selectedCourse, isOpen)
 

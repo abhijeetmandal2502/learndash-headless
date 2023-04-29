@@ -19,6 +19,8 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
 
     const [selectedCourse, setSelectedCourse] = useState(false)
 
+    const [panel, setPanel] = useState(true);
+
     const selectedCourseMethod = () => {
 
         setSelectedCourse(true);
@@ -27,7 +29,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/start.png",
             title: "start",
-            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} />
+            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} />
         },
         {
             image: "/images/IamBack.svg",
@@ -56,16 +58,30 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             content: <LoginModel title="Teacher's Lounge" />
         },
     ]
+
+    //code for mobile drower
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenLeft, setIsOpenLeft] = useState(true);
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
     const LogoImage = "/images/Logo.svg"
 
+    const backtoHome = () => {
+        setActiveTabIndex(''),
+            setIsOpen(!isOpen),
+            setIsOpenLeft(!isOpenLeft),
+            setSelectedCourse(false),
+            setPanel(false)
+
+        if (selectedCourse === true) {
+            setActiveTabIndex(0)
+        }
+
+    }
+
     return (
         <>
             <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
-
                 <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
                     {/* Mobile Menu icon */}
                     <div className="lg:hidden">
@@ -91,7 +107,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setActiveTabIndex(''), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft), setSelectedCourse(false) }} >
+                                                        <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoHome() }} >
                                                             <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {selectedCourse ? 'courses' : "lobby"}  </span></button>
 
                                                         <div className={`text-black ${activeTabIndex === 0 ? 'px-0' : 'px-3'}`}>{menuList[activeTabIndex]?.content}</div>

@@ -230,13 +230,19 @@ const Start = () => {
                                             </p>
 
 
-                                            {activeTabIndex < 11 ? <div className={`${styles.vertmove} z-[1000] absolute bottom-5 left-1/2 -translate-x-1/2 block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex + 1) }}
+                                            {activeTabIndex < 11 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex + 1) }}
                                                 ref={el => (buttonRefs[activeTabIndex + 1] = el)}
                                             >
-                                                <Image src="/start/SlideUpIcon.svg" width={50} height={50} />
+                                                <div className={`${styles.vertmoveDown}`}>
+
+                                                    <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
+                                                </div>
                                             </div> : ""}
-                                            {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-24 left-1/2 -translate-x-1/2 block md:hidden rotate-180`} onClick={() => { setActiveTabIndex(activeTabIndex - 1) }} ref={el => (buttonRefs[activeTabIndex - 1] = el)}>
-                                                <Image src="/start/SlideUpIcon.svg" width={50} height={50} />
+                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex - 1) }} ref={el => (buttonRefs[activeTabIndex - 1] = el)}>
+                                                <div className={`${styles.vertmoveDown}`}>
+
+                                                    <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
+                                                </div>
                                             </div> : ""}
                                         </div>
                                     );

@@ -211,7 +211,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
             </MobileDrawerRighrt>
 
             {/* checkout componets  */}
-            <div className={`${styles.readyToCheckoutBg} ${!panel ? 'block' : 'hidden'} md:mt-3 md:mx-5 cursor-pointer  fixed bottom-0 w-full`} onClick={() => { drowerOpen() }} >
+            <div className={`${styles.readyToCheckoutBg} ${panel ? 'block' : 'hidden'} md:mt-3 md:mx-5 cursor-pointer  fixed bottom-0 w-full`} onClick={() => { drowerOpen() }} >
 
                 <div className={`flex justify-between items-center px-6 py-2`}>
                     <div className={`flex space-x-1 items-center `}>
