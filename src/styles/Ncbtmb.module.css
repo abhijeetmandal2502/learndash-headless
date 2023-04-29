@@ -32,7 +32,7 @@
 
     } */
 
-    .ncbtapproved img {
+    .ncbtapproved .ncbt-desk-img {
 
         width: 300px;
         height: 250px
@@ -47,7 +47,7 @@
 
 @media screen and (max-width:768px) {
 
-    .ncbtapproved img {
+    .ncbtapproved .ncbt-desk-img {
 
         width: 140px;
         height: 140px
@@ -65,7 +65,7 @@
 
     }
 
-    .ncbtapproved img {
+    .ncbtapproved .ncbt-desk-img {
 
         width: 323px;
         height: 323px
@@ -83,14 +83,14 @@
 
     }
 
-    .ncbtapproved img {
+    .ncbtapproved .ncbt-desk-img {
 
         width: 323px;
         height: 323px
     }
 
 
-    .ncbtapproved img {
+    .ncbtapproved .ncbt-desk-img {
 
         width: 400px;
         height: 400px

@@ -417,45 +417,90 @@ select:focus {
 
 
 /* cutom font size for max screen size 1920 or default size of all types fonts */
-.extsmallf {
-  font-size: 13px;
+@media only screen and (min-width:426px) {
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 30px;
+  }
+
+  .triplelargef {
+    font-size: 35px;
+  }
+
+  .fourxllargef {
+    font-size: 50px;
+  }
+
+  .superlargef {
+    font-size: 75px;
+    letter-spacing: 0.025em;
+  }
 }
 
-.minismallf {
-  font-size: 15px;
-}
+@media only screen and (max-width:425px) {
+  .extsmallf {
+    font-size: 11px !important;
+  }
 
-.smallf {
-  font-size: 16px;
-}
+  .minismallf {
+    font-size: 14px !important;
+  }
 
-.mediumf {
-  font-size: 20px;
-}
+  .smallf {
+    font-size: 16px !important;
+  }
 
-.largef {
-  font-size: 24px;
-}
+  .mediumf {
+    font-size: 18px !important;
+  }
 
-.extlargef {
-  font-size: 25px;
-}
+  .largef {
+    font-size: 20px !important;
+  }
 
-.dubblelargef {
-  font-size: 30px;
-}
+  .extlargef {
+    font-size: 22px !important;
+  }
 
-.triplelargef {
-  font-size: 35px;
-}
+  .dubblelargef {
+    font-size: 30px !important;
+  }
 
-.fourxllargef {
-  font-size: 50px;
-}
+  .triplelargef {
+    font-size: 40px !important;
+  }
 
-.superlargef {
-  font-size: 75px;
-  letter-spacing: 0.025em;
+  .fourxllargef {
+    font-size: 36px !important;
+  }
+
+  .superlargef {
+    font-size: 46px !important;
+    /* letter-spacing: 0.025em; */
+  }
 }
 
 /* responsive font size screen wise media query */
