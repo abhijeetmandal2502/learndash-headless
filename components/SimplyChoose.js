@@ -44,42 +44,42 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "4  Hours",
             discription: "using research to market your practice"
         },
         {
             price: 40,
-            duration: "2hours",
+            duration: "2 Hours",
             discription: "spa masterclass"
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "4  Hours",
             discription: "spa masterclass"
         },
         {
             price: 40,
-            duration: "2hours",
+            duration: "2 Hours",
             discription: "using research to market your practice"
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "4  Hours",
             discription: "spa masterclass"
         },
         {
             price: 40,
-            duration: "2hours",
+            duration: "2 Hours",
             discription: "using research to market your practice"
         },
         {
             price: 40,
-            duration: "2hours",
+            duration: "2 Hours",
             discription: "spa masterclass"
         },
         {
             price: 40,
-            duration: "4hours",
+            duration: "4  Hours",
             discription: "using research to market your practice"
         },
 
@@ -229,9 +229,9 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                         <>
                                             <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
                                                 <div className='flex justify-between'>
-                                                    <div className='flex items-start justify-center space-x-1 font-bold mediumf'>
-                                                        <MdOutlineWatchLater />
-                                                        <div className=''>{item.duration}</div>
+                                                    <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
+                                                        <MdOutlineWatchLater size={25} />
+                                                        <div><p className='mediumf font-bold'>{item.duration}</p></div>
                                                     </div>
 
                                                     {/* course price components */}
@@ -259,9 +259,13 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                 <div className={`md:pt-10 pt-5 leading-10  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
                                                     {item.discription}
                                                 </div>
-                                                <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
-                                                    <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+
+                                                <div className='hidden md:block'>
+                                                    <div className={` absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                                        <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+                                                    </div>
                                                 </div>
+
                                             </div>
 
                                             {/* gift shoppi course card */}
@@ -297,7 +301,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
 
                             </div>
-                            <div className={` absolute -bottom-0 left-1/2 -translate-x-1/2  z-[100]`}>
+                            <div className={`hidden md:block absolute -bottom-0 left-1/2 -translate-x-1/2  z-[100]`}>
                                 <ScrollBtn />
                             </div>
 

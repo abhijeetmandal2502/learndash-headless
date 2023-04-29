@@ -23,32 +23,36 @@
     }
 }
 
+@media screen and (min-width:426px) {
 
-.cardBackground {
+    .cardBackground {
 
-    background-color: rgba(128, 128, 128, 0.164);
-    /* color: #9747FF; */
+        background-color: rgba(128, 128, 128, 0.164);
+        /* color: #9747FF; */
+    }
+
+
+    .cardBackgroundHover:hover {
+
+        background-color: rgba(128, 128, 128, 0.164);
+        /* color: #9747FF; */
+        cursor: pointer;
+        z-index: 100;
+        transition: all ease-in-out 500ms;
+    }
+
+
+    .cardBackgroundHover {
+
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+        z-index: 100;
+        transition: all ease-in-out 500ms;
+    }
 }
 
 
-.cardBackgroundHover:hover {
-
-    background-color: rgba(128, 128, 128, 0.164);
-    /* color: #9747FF; */
-    cursor: pointer;
-    z-index: 100;
-    transition: all ease-in-out 500ms;
-}
-
-
-.cardBackgroundHover {
-
-    background-color: transparent;
-    color: black;
-    cursor: pointer;
-    z-index: 100;
-    transition: all ease-in-out 500ms;
-}
 
 
 .hide1 {
@@ -168,8 +172,6 @@
     to {
         opacity: 1;
     }
-
-
 }
 
 .fadeAnimationhide {
@@ -181,7 +183,6 @@
 
     from {
         opacity: 1;
-
     }
 
     to {
