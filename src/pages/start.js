@@ -113,10 +113,8 @@ const Start = () => {
         },
     ];
 
-    //animate tab integator
-
+    //animate tab integator pointer move
     const [buttonRefs, setButtonRefs] = useState([])
-
     useEffect(() => {
         setButtonRefs(prev => prev.slice(0, tabsData.length))
     }, [tabsData.length])
@@ -139,12 +137,16 @@ const Start = () => {
 
         isInitialRender.current = false
     }
+    // ((activeTabIndex * 30) + 'px')
+    const activeTab = ((activeTabIndex * 30) + 'px')
 
+
+    console.log('activeafsdfTab', activeTab)
 
 
     return (
         <>
-            <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen overflow-hidden  `}>
+            <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
 
                 <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 md:p-10 z-10'>
                     <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
@@ -154,9 +156,7 @@ const Start = () => {
                             >
                                 <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                     <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
-
                                     <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
-
                                 </div>
                             </div>
                         </Link>
@@ -169,13 +169,8 @@ const Start = () => {
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
                                 <Link href="/">
                                     <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px] 3xl:h-[180px] 3xl:w-[500px]  h-[100px] w-[250px]' />
-                                    {/* <div className='flex max-sm:visible invisible md:hidden items-center justify-center space-x-2 '>
-                    <p className='font-semibold text-lg'>menu</p>
-                    <Image src="/images/menuIcon.png" width={30} height={30} alt="menu" className='max-sm:h-5 max-sm:w-5' />
-                </div> */}
                                 </Link>
                             </div>
-
                             <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 3xl:px-3 3xl:py-2.5 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { router.push('/') }} >
                                 <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-md 3xl:text-2xl font-semibold'>lobby</span></button>
                         </div>
@@ -184,12 +179,21 @@ const Start = () => {
                     <div className='grid grid-cols-12  md:pl-2 md:px-0 pl-5 '>
                         <div className=" md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
-                            <div className=' relative w-[0.4px] h-[400px] 3xl:h-[528px] mt-4 3xl:mt-[25px] bg-white'>
 
+                            {/* pointer circle for desktop  */}
+                            <div className=' hidden md:block relative w-[0.4px] h-[400px] 3xl:h-[528px] mt-4 3xl:mt-[25px] bg-white'>
                                 <div className={`absolute ${activeTabIndex === 0 ? 'md:mt-[339.2px] mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-[99px] md:top-2 3xl:top-[9.5px]`} style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
-
+                                        </circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            {/* pointer circle for mobile  */}
+                            <div className=' md:hidden block relative w-[0.4px] h-[400px]  mt-4  bg-white'>
+                                <div className={`absolute  -mt-[48px]   left-[-49px] top-[${activeTab}]`} >
+                                    <svg>
+                                        <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
                                         </circle>
                                     </svg>
                                 </div>
@@ -198,11 +202,14 @@ const Start = () => {
                                 {tabsData.map((tab, i) => {
                                     return (
                                         <div key={i} className='flex  justify-start items-center '>
-                                            <div className={` relative w-6 h-9 ${i === activeTabIndex
+
+                                            {/* for desktop */}
+                                            <div className={` hidden md:block relative w-6 h-9 ${i === activeTabIndex
                                                 ? styles.dotsBorder
                                                 : ""
                                                 }}`}
                                                 ref={navRef}
+                                                onClick={() => { setActiveTabIndex(i) }}
                                             >
                                                 <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
                                                     <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
@@ -214,7 +221,27 @@ const Start = () => {
                                                                      ${styles.shadow}`}
                                                 >
                                                 </div>
+                                            </div>
 
+                                            {/* for mobile */}
+
+                                            <div className={` md:hidden block relative w-6 h-9 ${i === activeTabIndex
+                                                ? styles.dotsBorder
+                                                : ""
+                                                }}`}
+
+                                                onClick={() => { setActiveTabIndex(i) }}
+                                            >
+                                                <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
+                                                    <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
+                                                </div>
+                                                <div
+                                                    className={`  
+                                                                    ${i === activeTabIndex ? 'opacity-1 transition-all ease-out duration-1000 translate-y-[transformAnimate]' : 'opacity-0'}
+                                                                     absolute top-[-30px] left-[-45px] w-full 
+                                                                     ${styles.shadow}`}
+                                                >
+                                                </div>
                                             </div>
                                             <p
 
@@ -231,16 +258,14 @@ const Start = () => {
 
 
                                             {activeTabIndex < 11 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex + 1) }}
-                                                ref={el => (buttonRefs[activeTabIndex + 1] = el)}
                                             >
                                                 <div className={`${styles.vertmoveDown}`}>
-
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
                                                 </div>
                                             </div> : ""}
-                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex - 1) }} ref={el => (buttonRefs[activeTabIndex - 1] = el)}>
-                                                <div className={`${styles.vertmoveDown}`}>
-
+                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex - 1) }} >
+                                                <div className={`${styles.vertmoveDown}`}
+                                                >
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
                                                 </div>
                                             </div> : ""}
@@ -261,9 +286,7 @@ const Start = () => {
                             onClick={() => { router.push('/') }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white 3xl:text-[30px] '>Close </p>
-
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
-
                             </div>
                         </div>
                         <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>

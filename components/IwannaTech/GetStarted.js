@@ -24,29 +24,22 @@ const GetStarted = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}   `}>
 
                 {/* for mobile */}
-
-
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
 
                     <div className={` relative  flex  `}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
-                            <div className={`w-[175px] absolute bottom-[46px] right-[0px]`}>
+                            <div className={`w-[175px] absolute bottom-[40px] right-[20px]`}>
 
                                 <Image src='/images/getStartedRectangle.png' width={400} height={400} alt="wanna tech png" className={` w-[500px]`} />
                             </div>
-                            <div className={`-rotate-[18deg] absolute top-[145px] -right-[33.5px]  z-10 `}>
+                            <div className={`-rotate-[26deg] absolute top-[140px] -right-[24.5px]  z-10 `}>
                                 <Image src='/images/SubtractHotpink.png' width={400} height={300} alt="wanna tech png" className={` w-[200px]`} />
 
                             </div>
                         </div>
-                        <div className={` absolute bottom-[35px]  -right-[5px] ${styles.imgRotate} w-[210px]`}>
+                        <div className={` absolute bottom-[30px]  right-[19px] ${styles.imgRotate} w-[210px]`}>
                             <Image src='/images/getStartedMan.png' width={500} height={350} alt="wanna tech png" className={` `} />
                         </div>
-                        {/* logo for mobile */}
-                        {/* <div className=' absolute top-20 left-3'>
-                            <Image src="/images/WhiteLogo.svg" width="100" height="200" alt="tech logo" />
-                        </div> */}
-
                     </div>
                 </div>
 

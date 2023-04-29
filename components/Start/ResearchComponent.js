@@ -17,9 +17,6 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
-
-    // const [panel, setPanel] = useState(true);
-
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
 
@@ -57,7 +54,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                         {/* price component for mobile */}
 
-                        <div className={` relative `} onClick={() => { drowerOpen() }}>
+                        <div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
                             <div className='absolute top-[33%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                 <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
                                     $40

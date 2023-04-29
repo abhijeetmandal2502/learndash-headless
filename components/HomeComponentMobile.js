@@ -29,7 +29,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/start.png",
             title: "start",
-            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} />
+            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
         },
         {
             image: "/images/IamBack.svg",
@@ -65,19 +65,40 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
     const LogoImage = "/images/Logo.svg"
-
+    let data = ""
     const backtoHome = () => {
-        setActiveTabIndex(''),
-            setIsOpen(!isOpen),
-            setIsOpenLeft(!isOpenLeft),
-            setSelectedCourse(false),
-            setPanel(false)
 
         if (selectedCourse === true) {
             setActiveTabIndex(0)
+            setSelectedCourse(false)
+        }
+        else {
+            setActiveTabIndex('')
+            setIsOpen(!isOpen)
+            setIsOpenLeft(!isOpenLeft),
+                setSelectedCourse(false),
+                setPanel(false)
         }
 
+
+        // if (selectedCourse == true) {
+        //     return data = "courses"
+
+        // }
+        // else if (activeTabIndex == 4) {
+
+        //     return data = "start"
+        // }
+
+        // else {
+
+        //     return data = "lobby"
+        // }
+
     }
+
+
+
 
     return (
         <>
@@ -108,7 +129,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                             </div>
                                                         </div>
                                                         <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoHome() }} >
-                                                            <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {selectedCourse ? 'courses' : "lobby"}  </span></button>
+                                                            <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {(activeTabIndex == 4 ? 'start' : 'lobby') && (selectedCourse == true ? 'courses' : 'lobby')}  </span></button>
 
                                                         <div className={`text-black ${activeTabIndex === 0 ? 'px-0' : 'px-3'}`}>{menuList[activeTabIndex]?.content}</div>
                                                     </div>
