@@ -29,10 +29,10 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/start.png",
             title: "start",
-            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
+            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} />
         },
         {
-            image: "/images/IamBack.svg",
+            image: "/images/new-imback.png",
             title: "i’m back",
             content: <LoginModel title="welcome back" />
         },
@@ -53,7 +53,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             content: <GiftCardMobile />
         },
         {
-            image: "/images/teacherLounge.svg",
+            image: "/images/new-teacherlounge.png",
             title: "teacher’s lounge",
             content: <LoginModel title="Teacher's Lounge" />
         },
