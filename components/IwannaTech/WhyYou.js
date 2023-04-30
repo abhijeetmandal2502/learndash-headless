@@ -57,7 +57,7 @@ const WhyYou = ({ activeTabIndex }) => {
                     </div>
                 </div>
                 {/* for desktop */}
-                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block 3xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
+                <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
 
                     <div className={` relative  flex xl:mr-20`}>
                         <div className='relative overflow-hidden w-full h-[500px]  '>
