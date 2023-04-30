@@ -649,3 +649,57 @@ screen and (max-height: 700px) {
         transform: translateY(-10px);
     }
 }
+
+
+/* set background for mobile */
+
+@media screen and (max-width:626px) {
+
+    .bgMenuMob {
+
+        background-image: url(/images/menu-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .bgMenuMobblog {
+
+        background-image: url(/images/blog-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+
+}
+
+
+.aboutHideAnimat {
+
+    animation: hideAbout 100ms forwards ease;
+    animation-delay: 500ms;
+
+}
+
+@keyframes hideAbout {
+
+
+    from {
+
+        display: block;
+    }
+
+    to {
+
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.zindexMobileHeader {
+
+    z-index: 0 !important;
+}

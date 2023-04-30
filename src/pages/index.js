@@ -59,10 +59,7 @@ const Home = () => {
     const handleGiftComponent = () => {
         setShowGiftShoppi(true);
     }
-
     // teacher lounge 
-
-
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
 
@@ -404,9 +401,6 @@ const Home = () => {
             </div>
             {/* drowable component for mobile */}
 
-
-
-
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                 <div className="overflow-y-scroll ">
                     <div className="flex flex-col">
@@ -414,7 +408,7 @@ const Home = () => {
                         <Disclosure as="div" className='list-none rounded-full text-gray'>
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="w-full ">
+                                    <Disclosure.Button className="w-full z-50">
                                         <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                     </Disclosure.Button>
                                     <Disclosure.Panel className="w-full py-1 text-white ">

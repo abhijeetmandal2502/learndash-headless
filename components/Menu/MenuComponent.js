@@ -126,8 +126,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        {On ? <button className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm font-semibold 3xl:text-2xl 4xl:text-3xl'>lobby</span></button> : ""}
+                        {On ? <div className={`flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm font-semibold 3xl:text-2xl 4xl:text-3xl'>lobby</span></div> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
@@ -284,13 +284,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 </div>
 
                 <div className='absolute top-0 w-full '>
-
-
-
-
-
                     <div className='relative'>
-                        <div className={`${openMobTab > 0 ? ' -translate-x-full transition-all ease-in-out duration-1000' : 'translate-x-0 transition-all ease-in-out duration-1000'}`}>
+                        <div className={`${openMobTab > 0 ? ' -translate-x-full transition-all ease-in-out duration-1000' : 'translate-x-0 transition-all ease-in-out duration-1000'} md:bg-transparent ${styles.bgMenuMob}`}>
                             <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                                 <LogoCard LogoImage={LogoImage} />
 
@@ -373,7 +368,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             </div>
                         </div>
 
-                        {openMobTab > 0 ? <div className="absolute top-0 left-0 w-full h-screen overflow-y-scroll ">
+                        <div className={`absolute top-0 left-0 w-full h-screen overflow-y-scroll ${openMobTab == "" ? ' translate-x-full transition-all ease-in-out duration-1000' : ''}  `}>
 
                             <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                                 <LogoCard LogoImage={LogoImage} />
@@ -387,23 +382,19 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 </div>
 
                             </div>
-                            <button className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
-                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>Menu</span></button>
+                            <div className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
+                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>Menu</span></div>
                             <div className="px-5 tab-content tab-space">
 
                                 <div className={`${openMobTab === 1 ? "block" : "hidden"} ${openMobTab == 1 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">
                                     <About />
                                 </div>
-                                <div className={`${openMobTab === 2 ? "block" : "hidden"} ${openMobTab == 2 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll  `} id="link2">
+                                <div className={`${openMobTab === 2 ? "block" : 'hidden'} ${openMobTab == 2 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll  `} id="link2">
                                     <Instructors />
                                 </div>
-                                <div className={` ${(openMobTab === 3 || currentPath == 'blog') ? "block" : "hidden"} ${openMobTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} ${currentPath == "home" ? 'hidden' : 'block'}  md:h-screen  overflow-y-scroll`} id="link3">
-                                </div>
 
-                                <div className={`${openMobTab === 4 ? "block" : "hidden"}`} id="link4">
-                                </div>
                             </div>
-                        </div> : ""}
+                        </div>
                     </div>
                 </div>
             </div>

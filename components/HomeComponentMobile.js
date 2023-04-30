@@ -79,22 +79,6 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                 setSelectedCourse(false),
                 setPanel(false)
         }
-
-
-        // if (selectedCourse == true) {
-        //     return data = "courses"
-
-        // }
-        // else if (activeTabIndex == 4) {
-
-        //     return data = "start"
-        // }
-
-        // else {
-
-        //     return data = "lobby"
-        // }
-
     }
 
 
