@@ -53,7 +53,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             content: <GiftCardMobile />
         },
         {
-            image: "/images/new-teacherlounge.png",
+            image: "/images/new-teacherlouge.png",
             title: "teacher’s lounge",
             content: <LoginModel title="Teacher's Lounge" />
         },
