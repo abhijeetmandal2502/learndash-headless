@@ -142,6 +142,10 @@ const Start = () => {
         setActiveTabIndex(activeTabIndex + 1)
     }
 
+    const movePointerBottom = () => {
+        setActiveTabIndex(activeTabIndex - 1)
+    }
+
     useEffect(() => {
 
         positionFun()
@@ -183,7 +187,11 @@ const Start = () => {
         }
         else if (activeTabIndex == 10) {
             setPositionTop('eleventhPosition')
-        } else {
+        }
+        else if (activeTabIndex == 11) {
+            setPositionTop('lastPosition')
+        }
+        else {
 
         }
     })
@@ -309,7 +317,7 @@ const Start = () => {
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
                                                 </div>
                                             </div> : ""}
-                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { }} >
+                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { movePointerBottom() }} >
                                                 <div className={`${styles.vertmoveDown}`}
                                                 >
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} />

@@ -509,9 +509,65 @@ select:focus {
 /* @media only screen and(min ) */
 
 .firstPosition {
-  top: 0px !important;
+  /* top: 0px !important; */
+  transform: translateY(0px);
+  transition: ease 500ms;
 }
 
 .secondPosition {
-  top: 40px !important;
+  /* top: 36.2px !important; */
+  transform: translateY(36.2px);
+  transition: ease 500ms;
+}
+
+.thirddPosition {
+  /* top: 40px !important; */
+  transform: translateY(72.4px);
+  transition: ease 500ms;
+}
+
+.fourthPosition {
+  transform: translateY(108.6px);
+  transition: ease 500ms;
+}
+
+.fifthPosition {
+
+  transform: translateY(144.8px);
+  transition: ease 500ms;
+}
+
+.sixthPosition {
+  transform: translateY(180.0px);
+  transition: ease 500ms;
+}
+
+.seventhPosition {
+  transform: translateY(216.0px);
+  transition: ease 500ms;
+}
+
+.eighthPosition {
+  transform: translateY(252.0px);
+  transition: ease 500ms;
+}
+
+.ninthPosition {
+  transform: translateY(288.0px);
+  transition: ease 500ms;
+}
+
+.tenthPosition {
+  transform: translateY(324.0px);
+  transition: ease 500ms;
+}
+
+.eleventhPosition {
+  transform: translateY(360.0px);
+  transition: ease 500ms;
+}
+
+.lastPosition {
+  transform: translateY(396.0px);
+  transition: ease 500ms;
 }
