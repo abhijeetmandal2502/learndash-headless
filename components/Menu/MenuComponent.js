@@ -383,7 +383,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                             </div>
                             <div className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
-                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>Menu</span></div>
+                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>Menu</span>
+                            </div>
                             <div className="px-5 tab-content tab-space">
 
                                 <div className={`${openMobTab === 1 ? "block" : "hidden"} ${openMobTab == 1 ? styles.zoomAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">

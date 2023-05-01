@@ -1,5 +1,5 @@
 import StartComponent from 'components/IwannaTech/StartComponent';
-import React, { Children, useEffect, useState } from 'react'
+import React, { Children, useCallback, useEffect, useState } from 'react'
 import styles from '../styles/MenuComponent.module.css'
 import Image from 'next/image';
 import { BiArrowBack } from 'react-icons/bi';
@@ -122,7 +122,6 @@ const Start = () => {
     const navRef = useRef(null)
     const isInitialRender = useRef(true)
     const navRect = navRef.current?.getBoundingClientRect()
-
     const selectedRect = buttonRefs[activeTabIndex]?.getBoundingClientRect()
 
     let selectStyles = { opacity: 0 }
@@ -139,9 +138,56 @@ const Start = () => {
     }
     // ((activeTabIndex * 30) + 'px')
     const activeTab = ((activeTabIndex * 30) + 'px')
+    const movePointerTop = () => {
+        setActiveTabIndex(activeTabIndex + 1)
+    }
+
+    useEffect(() => {
+
+        positionFun()
+
+    }, [activeTabIndex])
 
 
-    console.log('activeafsdfTab', activeTab)
+    //console.log('activeTabIndex', activeTabIndex)
+
+    const [positionTop, setPositionTop] = useState('')
+    const positionFun = (() => {
+        if (activeTabIndex == 0) {
+            setPositionTop('firstPosition')
+        }
+        else if (activeTabIndex == 1) {
+            setPositionTop('secondPosition')
+        } else if (activeTabIndex == 2) {
+            setPositionTop('thirddPosition')
+        }
+        else if (activeTabIndex == 3) {
+            setPositionTop('fourthPosition')
+        }
+        else if (activeTabIndex == 4) {
+            setPositionTop('fifthPosition')
+        }
+        else if (activeTabIndex == 5) {
+            setPositionTop('sixthPosition')
+        }
+        else if (activeTabIndex == 6) {
+            setPositionTop('seventhPosition')
+        }
+        else if (activeTabIndex == 7) {
+            setPositionTop('eighthPosition')
+        }
+        else if (activeTabIndex == 8) {
+            setPositionTop(' ninthPosition')
+        } else if (activeTabIndex == 9) {
+            setPositionTop(' tenthPosition')
+        }
+        else if (activeTabIndex == 10) {
+            setPositionTop('eleventhPosition')
+        } else {
+
+        }
+    })
+
 
 
     return (
@@ -191,7 +237,7 @@ const Start = () => {
                             </div>
                             {/* pointer circle for mobile  */}
                             <div className=' md:hidden block relative w-[0.4px] h-[400px]  mt-4  bg-white'>
-                                <div className={`absolute  -mt-[48px]   left-[-49px] top-[${activeTab}]`} >
+                                <div className={`absolute  -mt-[48px]   left-[-49px] ${positionTop}`} >
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
                                         </circle>
@@ -257,13 +303,13 @@ const Start = () => {
                                             </p>
 
 
-                                            {activeTabIndex < 11 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex + 1) }}
+                                            {activeTabIndex < 11 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { movePointerTop() }}
                                             >
                                                 <div className={`${styles.vertmoveDown}`}>
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
                                                 </div>
                                             </div> : ""}
-                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { setActiveTabIndex(activeTabIndex - 1) }} >
+                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { }} >
                                                 <div className={`${styles.vertmoveDown}`}
                                                 >
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} />

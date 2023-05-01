@@ -8,7 +8,7 @@ import { Tab } from '@headlessui/react'
 import EGiftForm from '../giftForm/EGiftForm'
 import PhysicalGiftCardForm from '../giftForm/PhysicalGiftCardForm'
 
-const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift }) => {
+const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, showPaymentOpt }) => {
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
@@ -114,7 +114,8 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                                     'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
                                                 )}
                                             >
-                                                <EGiftForm />
+                                                <EGiftForm showPaymentOpt={showPaymentOpt} />
+
                                             </Tab.Panel>
                                             <Tab.Panel
                                                 className={classNames(
@@ -122,7 +123,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift })
                                                     'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
                                                 )}
                                             >
-                                                <PhysicalGiftCardForm />
+                                                <PhysicalGiftCardForm showPaymentOpt={showPaymentOpt} />
                                             </Tab.Panel>
                                         </Tab.Panels>
                                     </Tab.Group>

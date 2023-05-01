@@ -3,7 +3,7 @@ import React from 'react'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import styles from '../../Start/DialogCard/GiftCardModel.module.css'
 
-const EGiftForm = () => {
+const EGiftForm = ({ showPaymentOpt }) => {
     const giftcardQty = ["1", "2"]
     return (
         <>
@@ -90,10 +90,36 @@ const EGiftForm = () => {
                     </div>
                 </div>
 
-                <div className='absolute hidden mx-3 md:flex md:right-5 bottom-5 '>
+                <div className='absolute hidden mx-3 md:flex md:right-5 bottom-5 ' onClick={() => { showPaymentOpt() }}>
                     <div className='items-center hidden md:flex triplelargef'>2<p className='w-12 ml-1 font-bold leading-4 extsmallf'>gift card</p></div>
                     <button className={`smallf py-1 px-20 text-black  ${styles.formbtnbg} flex items-center space-x-4`}><div className='font-bold'>+ add to basket:</div> <div className='triplelargef leading-[130%] '>$0</div></button>
                 </div>
+                {/* total gift and total amount */}
+                <div className={`absolute bottom-0 left-0 w-full bg-white flex justify-center py-5 px-2 space-x-2 `} onClick={() => { showPaymentOpt() }}>
+                    <div className={`flex justify-center items-center space-x-2`}>
+                        <div className='extlargef'>
+                            0
+                        </div>
+
+                        <div >
+                            gift cards
+                        </div>
+
+                    </div>
+
+                    <div className={`flex justify-center items-center rounded-3xl px-5 bg-lightgray py-2 space-x-2`}>
+                        <div className='extsmallf'>
+                            + add to basket:
+                        </div>
+
+                        <div className='extlargef'>
+                            $0
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </>
     )

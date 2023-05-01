@@ -507,3 +507,11 @@ select:focus {
 
 
 /* @media only screen and(min ) */
+
+.firstPosition {
+  top: 0px !important;
+}
+
+.secondPosition {
+  top: 40px !important;
+}

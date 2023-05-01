@@ -2,11 +2,18 @@ import GiftCardModel from 'components/Start/DialogCard/GiftCardModel'
 import GiftCardBtn from 'components/Start/GiftCardBtn'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import GiftCardPaymentOption from './GiftCardpPaymentOption'
 
 const GiftCardMobile = () => {
     const [activeEgift, setActiveEgift] = useState(false);
-
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
+
+    const [activePaymentCard, setActivePaymentCard] = useState(false)
+    console.log("activePaymentCard", activePaymentCard)
+    const showPaymentOpt = () => {
+        setActivePaymentCard(true);
+    }
+
 
     let [isOpenD, setIsOpenD] = useState(false)
 
@@ -37,14 +44,14 @@ const GiftCardMobile = () => {
 
                     </div>
                     {/* course checkout */}
-                    <div className='col-span-12 md:col-span-7'>
+                    {!activePaymentCard ? <div className='col-span-12 md:col-span-7'>
                         <div className='flex flex-col space-y-8'>
                             <div className='w-full' onClick={() => { openModal(), setActiveEgift(true), setActivePhysicalGift(false) }} >
                                 <GiftCardBtn animationCss={"ecardRotate"} title="e-gift card" icon="/start/eGift.svg" />
                                 {/* giftcard button model */}
 
 
-                                <GiftCardModel isOpenD={isOpenD} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} />
+                                <GiftCardModel isOpenD={isOpenD} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} showPaymentOpt={showPaymentOpt} />
 
 
 
@@ -53,7 +60,14 @@ const GiftCardMobile = () => {
                                 <GiftCardBtn animationCss={"ecardImgAni"} title="physical gift card" icon="/start/PhysicalGift.svg" />
                             </div>
                         </div>
-                    </div>
+                    </div> : ""}
+
+                    {/* gift card payment detail */}
+
+                    {activePaymentCard ? <div className=''>
+                        <GiftCardPaymentOption />
+                    </div> : ""}
+
                     {/* giftcard faq section  */}
                     <div className='my-10'>
                         <div className='flex justify-center md-4 '>
