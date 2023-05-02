@@ -6,7 +6,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri'
 
 import styles from '../../Start/Start.module.css'
 
-const RadeemCardDetail = ({ giftCardDetail }) => {
+const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
     // manage state for gift card detail for mobile device
 
@@ -108,9 +108,6 @@ const RadeemCardDetail = ({ giftCardDetail }) => {
                                     <BsCheck2 className='text-green' size={19} />
                                 </div>
                             </div>
-
-
-
                             <div className=' md:block hidden col-span-1 pl-5'>
                                 <RiDeleteBin6Line size={24} />
                             </div>
@@ -155,13 +152,12 @@ const RadeemCardDetail = ({ giftCardDetail }) => {
                         {/* continue button */}
 
                         <div className=' absolute md:-bottom-10 -bottom-24 left-1/2 -translate-x-1/2 w-full '>
-
                             <div className='md:flex  flex-col md:space-y-0 space-y-5 justify-between items-center'>
                                 {showGiftCardDetail ? <div className='text-[20px] '>redeem <span className='text-voilet border-b'>1 gift card</span> for <span className='text-voilet border-b'>$20</span></div> : ""}
 
                                 <div className={` mx-auto`}>
                                     <button type="button"
-                                        // onClick={() => { openModal() }}
+                                        onClick={() => { addGiftCard(), closeModal() }}
                                         className={`w-full px-16  py-2 tracking-[0.02em] text-white   ${showGiftCardDetail ? styles.paymentbyGiftCardBtn : 'bg-gray opacity-[0.5]'}  rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >continue
 
                                     </button>

@@ -23,6 +23,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
     const [aboutCourse, setAboutCourse] = useState(false);
     const [instructor, setInstructor] = useState(false);
 
+
     function closeModal() {
         setOpen(false)
     }
@@ -42,7 +43,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
     return (
         <>
 
-            <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-full pb-16'>
+            <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-full pb-16 z-1'>
                 <div className='py-4 border-b-2 border-bordergray '>
 
                     <div className='flex space-x-2 justify-center items-center'>
@@ -128,7 +129,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
             {/* model popup */}
             <Transition appear show={Open} as={Fragment}>
-                <Dialog as="div" className="relative z-50" onClose={closeModal}>
+                <Dialog as="div" className="relative z-[100]" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -179,23 +180,20 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
             {/* checkout form for mobile */}
 
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                <div className="overflow-y-scroll ">
+                <div className="overflow-y-scroll z-50 ">
                     <div className="flex flex-col">
 
-                        <Disclosure as="div" className='list-none rounded-full text-gray'>
+                        <Disclosure as="div" className='list-none rounded-full text-gray '>
                             {({ open }) => (
                                 <>
-                                    <div className="w-full ">
-                                        <div className=' bg-lightgray relative pt-10'>
+                                    <div className={`w-full `}>
+                                        <div className={`bg-lightgray relative pt-10 z-50`}>
 
                                             <h4 className='text-black text-left text-[28px] px-5'>simple checkout</h4>
                                             <button className=' text-[25px] text-black absolute top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
-
                                             <AddToCart />
-
-
                                         </div>
                                     </div>
                                     <Disclosure.Panel className="w-full py-1 text-white ">

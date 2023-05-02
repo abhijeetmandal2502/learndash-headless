@@ -89,11 +89,20 @@ const BlogListing = () => {
     return (
         <>
             <div className={` max-h-screen overflow-hidden `}>
-
+                <div className="fixed -z-10 top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in">
+                    <Image
+                        className={``}
+                        src="/images/blog-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    />
+                </div>
 
                 <div className='grid grid-cols-12 '>
                     <div className={`col-span-12 md:col-span-11 2xl:ml-20 md:ml-16 max-h-screen ${styles.fadeAnimation} ${styles.leftRightAnimation} ${styles.bgMenuMobblog}`}>
-                        <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
+                        <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <div className='flex md:hidden items-center justify-center mt-5'
                                 onClick={() => { HandleCloseBtn() }}>
@@ -118,7 +127,7 @@ const BlogListing = () => {
                                         <>
                                             {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                <input className="form-check-input appearance-none h-4 3xl:h-6 3xl:w-6 w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 3xl:mt-2.5 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
+                                                <input className="form-check-input appearance-none h-4 3xl:h-6 3xl:w-6 w-4  border-2   rounded-sm checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 3xl:mt-2.5 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
                                                 <label className="text-gray text-[14px] 2xl:text-[18px] 3xl:2xl:text-[30px]  ml-0.2">{item.label}</label>
                                             </div>}
                                         </>

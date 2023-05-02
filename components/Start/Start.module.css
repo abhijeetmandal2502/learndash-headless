@@ -88,3 +88,7 @@
 
     background: linear-gradient(180deg, #AC6BFF 0%, #7721E8 100%);
 }
+
+.modelzindex {
+    z-index: 100;
+}

@@ -23,10 +23,19 @@ const PaymentGiftCard = () => {
     function openModal() {
         setIsOpen(true)
     }
+
+
+    const [addGift, setAddGift] = useState(false)
+
+    const addGiftCard = () => {
+        setAddGift(true);
+    }
+
+    console.log('addGift', addGift);
     return (
         <>
-            <div className='flex items-center justify-center space-between'>
-
+            {/* widthout selected */}
+            {!addGift ? <div className='flex items-center justify-center space-between'>
                 <div >
                     <div className='flex items-center justify-center md:pt-8'>
 
@@ -43,8 +52,35 @@ const PaymentGiftCard = () => {
                         </button>
                     </div>
                 </div>
+            </div > : ""}
 
-            </div >
+            {/* with selected gift */}
+
+            {addGift ? <div className='flex items-center justify-center space-between'>
+                <div >
+                    <div className=' md:pt-8'>
+
+                        <Image className='md:-ml-8  ' src="/start/GiftCard3D.png" width={150} height={100} alt="gift card" />
+
+                        <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
+                    </div>
+                    <div className=' bg-lightgray'>
+
+                        <p className=''>
+                            1 gift cards applied: $20
+                        </p>
+
+                        <p className=''>
+                            1 gift cards applied: $20
+                        </p>
+
+                        <Image src='/start/edit.svg' />
+
+                    </div>
+
+                </div>
+            </div > : ""}
+
             {/* model popup */}
             < Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative md:z-10 z-50" onClose={closeModal}>
@@ -86,7 +122,7 @@ const PaymentGiftCard = () => {
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center pb-10 mt-2'>
-                                        <RadeemCardDetail giftCardDetail={giftCardDetail} />
+                                        <RadeemCardDetail giftCardDetail={giftCardDetail} addGiftCard={addGiftCard} closeModal={closeModal} />
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

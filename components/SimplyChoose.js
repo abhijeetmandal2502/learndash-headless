@@ -105,8 +105,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     })
 
     //   drower for mobile 
-
-
     const router = useRouter();
 
     // drower for mobile
@@ -125,25 +123,38 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
         setIsOpen(!isOpen)
     }
-
     console.log('panel', panel, selectedCourse, isOpen)
 
     const LogoImage = "/images/Logo.svg"
     return (
         <>
             <div className="w-full relative">
-                <div className={`bg-white  ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
-                    <div className='relative grid grid-cols-12 bg-white'>
+
+                <div className="fixed md:hidden top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in -z-10">
+                    <Image
+                        className={`${styles.aboutMain}`}
+                        src="/images/start-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    />
+                </div>
+
+                <div className={` ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
+                    <div className='relative grid grid-cols-12   overflow-y-scroll'>
                         <div className={`  md:col-span-6 col-span-12 md:pl-16 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                             <div className='hidden pt-6 md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
                             <div className='hidden md:block'>
-                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => { startMethodHide(), setPanel(false) }}>
+                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => { startMethodHide() }}>
                                     <BiArrowBack size={20} className="text-white " /><span className='minismallf'>lobby</span></button>
                             </div>
+
+
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
-                                <div className='px-3 pt-10 md:pt-32 md:px-0 '>
+                                <div className='px-3 mt-10 md:pt-32 md:px-0 '>
                                     <h2 className='superlargef'>simply choose.</h2>
                                     <p className='py-5 dubblelargef'>smile, you can’t make a bad choice.</p>
                                 </div>
@@ -229,7 +240,49 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
+                                            <div key={index} className={` ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5 hidden  md:flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item) }}>
+                                                <div className='flex justify-between'>
+                                                    <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
+                                                        <MdOutlineWatchLater size={25} />
+                                                        <div><p className='mediumf font-bold'>{item.duration}</p></div>
+                                                    </div>
+
+                                                    {/* course price components */}
+
+                                                    <div className={` relative `} >
+                                                        <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                                            <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
+                                                                ${item.price}
+                                                            </div>
+                                                        </div>
+                                                        {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                            +add
+                                                        </div> : <div className=' flex absolute top-[80%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
+                                                            <div className={`text-[#AC6CFF] text-[23px] font-semibold`}>
+                                                                added
+                                                            </div>
+                                                        </div>}
+                                                        <div className=''>
+                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" /> :
+                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" />}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={`md:pt-10 pt-5 leading-10  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
+                                                    {item.discription}
+                                                </div>
+
+                                                <div className='hidden md:block'>
+                                                    <div className={` absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                                        <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            {/* for mobile */}
+
+                                            <div key={index} className={`md:hidden ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
@@ -315,7 +368,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                 {/* course selected component for mobile when click show  */}
 
-                <div className={` z-20 absolute top-0 md:hidden ${selectedCourse ? styles.fadeAnimation : styles.hide1} `}>
+                <div className={` z-9 absolute top-0 md:hidden ${selectedCourse ? styles.fadeAnimation : styles.hide1} `}>
                     <ResearchComponent drowerOpen={drowerOpen} drowerClose={drowerClose} isOpen={isOpen} setIsOpen={setIsOpen} panel={panel} setPanel={setPanel} />
                 </div>
             </div>

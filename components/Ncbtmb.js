@@ -81,7 +81,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
     <>
       <div className='relative h-screen mx-4 overflow-hidden bg-transparent '>
         {/* this loby button for desktop */}
-        <button className={`md:flex hidden items-center space-x-1 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
+        <button className={`md:flex hidden items-center space-x-1 md:mt-5 bg-black text-white font-bold  ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf '>lobby</span>
         </button>
         {/* loby button code end */}
@@ -101,7 +101,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
               <p className=' md:hidden mediumf'>Select a State</p>
             </div>
             <Select
-              className={`2xl:w-96 w-full smallf z-[100] ${styles.selectBox} `}
+              className={`w-96  smallf z-[100] ${styles.selectBox} `}
               defaultValue={selectedOption}
               onChange={setSelectedOption}
               options={options}

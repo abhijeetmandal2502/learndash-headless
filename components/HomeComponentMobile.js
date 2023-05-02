@@ -87,6 +87,17 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     return (
         <>
             <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
+
+                <div className="fixed md:hidden top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in ">
+                    <Image
+                        className={`${styles.aboutMain}`}
+                        src="/images/bg-image.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bgblog"
+                    />
+                </div>
                 <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
                     {/* Mobile Menu icon */}
                     <div className="lg:hidden">
@@ -97,25 +108,27 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                     <Disclosure as="div" className=''>
                                         {({ open }) => (
                                             <>
-                                                <div className="flex justify-center w-full ">
+                                                <div className="flex justify-center w-full  ">
                                                     <div className={` w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}`}>
-                                                        <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
-                                                            <LogoCard LogoImage={LogoImage} />
-                                                            <div className='lg:hidden'>
-                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                                                    <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
-                                                                    <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
-                                                                        <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
-                                                                        <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
-                                                                    </svg>
+                                                        <div className={` fixed top-0 z-10  w-full bg-white`}>
+                                                            <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
+                                                                <LogoCard LogoImage={LogoImage} />
+                                                                <div className='lg:hidden'>
+                                                                    <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
+                                                                        <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
+                                                                        <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
+                                                                            <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
+                                                                            <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
+                                                                        </svg>
+                                                                    </div>
                                                                 </div>
                                                             </div>
+                                                            <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoHome() }} >
+                                                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {(activeTabIndex == 4 ? 'start' : 'lobby') && (selectedCourse == true ? 'courses' : 'lobby')}  </span></button>
                                                         </div>
-                                                        <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoHome() }} >
-                                                            <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {(activeTabIndex == 4 ? 'start' : 'lobby') && (selectedCourse == true ? 'courses' : 'lobby')}  </span></button>
 
-                                                        <div className={`text-black ${activeTabIndex === 0 ? 'px-0' : 'px-3'}`}>{menuList[activeTabIndex]?.content}</div>
+                                                        <div className={`text-black mt-[120px] ${activeTabIndex === 0 ? 'px-0' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
                                                     </div>
                                                 </div>
                                                 <Disclosure.Panel className="w-full py-1 text-white ">
@@ -133,7 +146,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                         {({ open }) => (
                                             <>
                                                 <div className="w-full">
-                                                    <div className='bg-white'>
+                                                    <div className=''>
                                                         <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
                                                             <LogoCard LogoImage={LogoImage} />
                                                             {/* menu icon for small device */}
@@ -158,7 +171,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                             menuList?.map((item, id) => {
                                                                 return (
                                                                     <>
-                                                                        <div className='bg-white border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
+                                                                        <div className=' border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
                                                                             <div key={id} className='flex items-center px-3 py-5 space-x-5'>
                                                                                 <Image alt='start' src={item.image} height='80' width='80' />
                                                                                 <h3 className='mt-4 text-black dubblelargef '>{item.title}</h3>

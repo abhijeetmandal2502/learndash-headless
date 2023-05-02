@@ -16,7 +16,6 @@ const AddToCart = () => {
     const [ShowPaymentOption, setShowPaymentOption] = useState(false)
     const [lessMoreBtn, setLessMoreBtn] = useState("view more")
 
-
     const paymentCart = [
         {
             icon: "/start/credit.png",
@@ -79,7 +78,7 @@ const AddToCart = () => {
                             <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>
                         </div>
                         <div className={`flex space-x-3 items-center`}>
-                            <p className='font-thin text-black extlargef'>$40</p>
+                            <p className=' text-black extlargef'>$40</p>
                             <RiDeleteBin6Line size={24} />
                         </div>
                     </div>
@@ -117,8 +116,6 @@ const AddToCart = () => {
             </div>
 
             {/* payment option componet desktop  */}
-
-
             <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
@@ -180,9 +177,7 @@ const AddToCart = () => {
                             )
                         })}
                     </div>
-
                     {/* credit card info  */}
-
                     <div className='h-auto duration-1000 transation-all ease'>{paymentCart[activeIndex].content}</div>
 
                 </div>

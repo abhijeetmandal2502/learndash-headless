@@ -460,6 +460,54 @@ select:focus {
   }
 }
 
+
+
+/* cutom font size for max screen size 1400 or default size of all types fonts */
+@media only screen and (min-width:1400px) {
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 24px;
+  }
+
+  .triplelargef {
+    font-size: 30px;
+  }
+
+  .fourxllargef {
+    font-size: 40px;
+  }
+
+  .superlargef {
+    font-size: 75px;
+    letter-spacing: 0.025em;
+  }
+}
+
+/* custom font size for small device */
+
 @media only screen and (max-width:425px) {
   .extsmallf {
     font-size: 11px !important;
