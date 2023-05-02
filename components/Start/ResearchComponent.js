@@ -42,8 +42,8 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
     return (
         <>
 
-            <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-screen'>
-                <div className='py-4 border-b-2 border-bordergray'>
+            <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-full pb-16'>
+                <div className='py-4 border-b-2 border-bordergray '>
 
                     <div className='flex space-x-2 justify-center items-center'>
 

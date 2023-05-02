@@ -206,7 +206,9 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                                 {/* gift shoppe card for mobile */}
 
-                                <div className={` md:hidden block ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { setActiveTabIndex(4) } }} >
+                                <div className={` md:hidden block ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `}
+                                    onClick={() => { { setActiveTabIndex(4) } }}
+                                >
                                     <div className='flex justify-between'>
                                         <div className='flex items-center justify-center space-x-1'>
                                             <Image src="/images/gift.svg" width={25} height={25} alt='gift' />

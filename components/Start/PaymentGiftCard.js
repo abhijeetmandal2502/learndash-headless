@@ -30,9 +30,9 @@ const PaymentGiftCard = () => {
                 <div >
                     <div className='flex items-center justify-center md:pt-8'>
 
-                        <Image className='md:-ml-8 ' src="/start/GiftCard3D.png" width={190} height={126} alt="gift card" />
+                        <Image className='md:-ml-8  ' src="/start/GiftCard3D.png" width={150} height={100} alt="gift card" />
 
-                        <p className='triplelargef pt-3 leading-[107%]'>due: $40</p>
+                        <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
                     </div>
 
                     <div className={`max-w-[75%] mx-auto mb-6`}>

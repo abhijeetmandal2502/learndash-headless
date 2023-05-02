@@ -119,7 +119,7 @@ const AddToCart = () => {
             {/* payment option componet desktop  */}
 
 
-            <div className={` hidden md:block mx-5 bg-white shadow-2xl pb-4 ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
+            <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
 
