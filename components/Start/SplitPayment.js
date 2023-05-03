@@ -8,13 +8,10 @@ import SplitPayMethod from './DialogCard/SplitPayMethod'
 import { FiArrowLeft } from 'react-icons/fi'
 
 const SplitPayment = () => {
-
     let [isOpen, setIsOpen] = useState(false)
-
     function closeModal() {
         setIsOpen(false)
     }
-
     function openModal() {
         setIsOpen(true)
     }
@@ -39,6 +36,43 @@ const SplitPayment = () => {
                         </button>
                     </div>
                 </div>
+
+
+                {/* <div className=' hidden  flex items-center justify-center space-between'>
+                    <div >
+                        <div className=' md:pt-8 flex flex-col justify-center items-center'>
+
+                            <Image className='md:-ml-8  ' src="/start/splitPayment.png" width={150} height={100} alt="gift card" />
+
+                            <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
+                        </div>
+                        <div className=' bg-lightgray flex justify-center items-center space-x-2 px-3 py-1'>
+                            <p className=''>
+                                1 gift cards applied:
+                            </p>
+                            <p className=''>
+                                $20
+                            </p>
+                            <Image src='/start/edit.svg' width={25} height={25} alt="image" />
+                        </div>
+
+                        <div className={`relative mt-6`}>
+                            <input className="w-full leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
+                            <div className="absolute cursor-pointer top-2 right-2">
+                                <Image src="/images/eyeIcon.svg" width={20} height={13} alt="show hide password icon" />
+                            </div>
+                        </div>
+                        <button type="button"
+                            onClick={() => { openModal(), setCongrateModel(true) }}
+                            className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
+                        </button>
+
+                        <button type="button"
+                            className={`w-full px-4 mt-3 py-2 tracking-wide text-voilet rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >keep shopping!
+                        </button>
+
+                    </div>
+                </div > */}
 
             </div>
 

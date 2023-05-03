@@ -257,7 +257,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                         </div>
                                                         {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-bold  text-[23px] text-[#FF5C00] '>
                                                             +add
-                                                        </div> : <div className=' flex absolute top-[80%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                        </div> : <div className=' flex absolute top-[85%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
                                                             <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
                                                             <div className={`text-[#AC6CFF] text-[23px] font-semibold`}>
                                                                 added
@@ -299,7 +299,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                         </div>
                                                         {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-bold  text-[23px] text-[#FF5C00] '>
                                                             +add
-                                                        </div> : <div className=' flex absolute top-[80%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                        </div> : <div className=' flex absolute top-[85%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
                                                             <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
                                                             <div className={`text-[#AC6CFF] text-[23px] font-semibold`}>
                                                                 added
