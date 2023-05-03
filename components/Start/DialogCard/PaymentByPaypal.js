@@ -2,21 +2,20 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../../Start/Start.module.css'
 
-const PaymentByPaypal = ({ giftCardDetail }) => {
+const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal }) => {
     return (
         <div>
             <div className='mx-5'>
                 {/* gift card */}
 
                 <div className=''>
-                    <div className='flex  space-x-5 items-center'>
+                    <div className='flex  space-x-5 items-center justify-center'>
                         <div className='hidden md:block'>
-                            <Image src={giftCardDetail.image} width={349} height={221} alt="gift card" />
+                            <Image src={giftCardDetail.image} width={149} height={221} alt="gift card" />
                         </div>
                         <div className='md:hidden'>
                             <Image src={giftCardDetail.image} width={100} height={100} alt="gift card" />
                         </div>
-
 
                         <div >
                             <h2 className='md:text-[45px] text-[19px] tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
@@ -43,7 +42,7 @@ const PaymentByPaypal = ({ giftCardDetail }) => {
 
                         <div className={` mx-auto mt-16`}>
                             <button type="button"
-                                // onClick={() => { openModal() }}
+                                onClick={() => { setPaypalPayment() }}
                                 className={`px-16  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >continue
 
                             </button>

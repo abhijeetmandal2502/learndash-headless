@@ -117,7 +117,7 @@ const SplitPayment = () => {
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center md:pb-10 mt-2'>
-                                        <SplitPayMethod />
+                                        <SplitPayMethod openModal={openModal} />
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

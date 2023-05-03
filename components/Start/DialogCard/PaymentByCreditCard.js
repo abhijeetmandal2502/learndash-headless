@@ -3,7 +3,7 @@ import React from 'react'
 import styles from '../../Start/Start.module.css'
 
 
-const PaymentByCreditCard = ({ giftCardDetail }) => {
+const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, openModal }) => {
     return (
         <>
 
@@ -73,7 +73,7 @@ const PaymentByCreditCard = ({ giftCardDetail }) => {
 
                         <div className={` mx-auto`}>
                             <button type="button"
-                                // onClick={() => { openModal() }}
+                                onClick={() => { setCreditCardPayment() }}
                                 className={`px-16  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >continue
 
                             </button>
