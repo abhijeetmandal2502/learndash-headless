@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../../Start/Start.module.css'
 
-const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal }) => {
+const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCreditCardPayment }) => {
     return (
         <div>
             <div className='mx-5'>
@@ -18,14 +18,14 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal }) => {
                         </div>
 
                         <div >
-                            <h2 className='md:text-[45px] text-[19px] tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
-                            <p className='md:text-[32px] text-[16px] md:leading-[107%] leading-tight hidden md:block'>{giftCardDetail.DueBalance}</p>
+                            <h2 className='md:text-[45px] mediumf tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
+                            <p className='md:text-[32px] smallf md:leading-[107%] leading-tight hidden md:block'>{giftCardDetail.DueBalance}</p>
 
                         </div>
                     </div>
                     {/* title for mobile */}
                     <div className='md:hidden mb-10'>
-                        <p className={`text-[25px] text-voilet text-center md:leading-[107%] leading-tight `}>{giftCardDetail.DueBalance}</p>
+                        <p className={`extlargef text-voilet text-center md:leading-[107%] leading-tight `}>{giftCardDetail.DueBalance}</p>
                     </div>
                 </div>
                 {/* credit card detail  */}
@@ -36,14 +36,14 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal }) => {
                         <div className='md:px-24 px-12 py-16 bg-lightgray flex flex-col justify-center items-center'>
 
                             <Image src="/start/PayPalsuccessfull.svg" width={260} height={70} alt="paypal logo" />
-                            <p className='md:text-[35px] text-[24px] md:mt-0 mt-5 md:text-left text-center tracking-wide '>$20 payment successful!</p>
+                            <p className='md:text-[35px] extlargef md:mt-0 mt-5 md:text-left text-center tracking-wide '>$20 payment successful!</p>
 
                         </div>
 
                         <div className={` mx-auto mt-16`}>
                             <button type="button"
                                 onClick={() => { setPaypalPayment() }}
-                                className={`px-16  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl text-[16px] font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                                className={`px-16  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
 
                             </button>
                         </div>

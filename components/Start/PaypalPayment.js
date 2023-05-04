@@ -7,13 +7,11 @@ import styles from '../Start/Start.module.css'
 
 const PaypalPayment = () => {
 
-
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
         setIsOpen(false)
     }
-
     function openModal() {
         setIsOpen(true)
     }
@@ -28,7 +26,7 @@ const PaypalPayment = () => {
 
                         <p className='extlargef pt-3 text-center leading-[107%]'>$40 payment successful!</p>
                     </div>
-                    <div className={`relative`}>
+                    <div className={`relative`} >
                         {/* <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label> */}
                         <input className="w-full leading-4 border smallf border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                         <div className="absolute cursor-pointer top-2 right-2">
@@ -37,9 +35,8 @@ const PaypalPayment = () => {
                     </div>
 
                     <button type="button"
-                        onClick={openModal}
+                        onClick={() => { openModal() }}
                         className={`w-full px-4 mt-4 mb-6 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course!<span className='ml-1 border-b'>$40</span>
-
                     </button>
                 </div>
             </div>
@@ -59,7 +56,7 @@ const PaypalPayment = () => {
                         <div className="fixed inset-0 bg-black bg-opacity-25" />
                     </Transition.Child>
 
-                    <div className="fixed inset-0 overflow-y-auto">
+                    <div className="fixed inset-0 z-50 overflow-y-auto">
                         <div className="flex items-center justify-center min-h-full p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
@@ -81,11 +78,8 @@ const PaypalPayment = () => {
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center pb-10 mt-2'>
-                                        {/* <YourInstructor /> */}
                                         <Congratulation />
                                     </div>
-
-
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>

@@ -29,7 +29,6 @@ const Instructors = () => {
 
     return (
         <>
-
             <div className='mb-96 2xl:pr-28'>
                 {InstructorData && InstructorData?.map((item, index) => {
                     return (
@@ -39,11 +38,9 @@ const Instructors = () => {
                                 <Image src={item.image} width={500} height={500} alt="instructor image" className=' md:w-[200px] md:h-[200px] w-[120px] h-[120px]  3xl:w-[300px] 3xl:h-[300px] 4xl:w-[400px] 4xl:h-[400px]' />
                             </div>
                             <div className='md:col-span-8 col-span-12 '>
-                                <h3 className=' md:text-center text-left font-normal text-[35px] 3xl:text-[50px] 4xl:text-[60px] text-white py-3'>{item.name}</h3>
-                                <p className='pb-5 md:text-center text-left text-gray 3xl:text-[24px] 4xl:text-[35px] '>{item.discription}</p>
+                                <h3 className='  text-left font-normal triplelargef  text-white py-3'>{item.name}</h3>
+                                <p className='pb-5  text-left text-gray'>{item.discription}</p>
                             </div>
-
-
                         </div>
                     )
                 })

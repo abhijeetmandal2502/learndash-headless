@@ -57,7 +57,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                         <div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
                             <div className='absolute top-[33%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
+                                <div className='largef font-semibold text-white'>
                                     $40
                                 </div>
                             </div>
@@ -66,16 +66,16 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                 setPanel(true)
                             }}>
                                 <Image src="/images/newPriceOrange.svg" width={200} height={200} alt="prceBg" />
-                                <div className=' text-center font-bold  text-[16px] text-[#FF5C00] '>
+                                <div className=' text-center font-bold  smallf text-[#FF5C00] '>
                                     +add
                                 </div>
                             </div>
 
                             <div className={`${panel ? 'block' : 'hidden'}`} >
                                 <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" />
-                                <div className=' flex  font-bold  text-[23px] text-[#FF5C00] '>
+                                <div className=' flex  font-bold  largef text-[#FF5C00] '>
                                     <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
-                                    <div className={`text-[#AC6CFF] text-[16px] font-semibold`}>
+                                    <div className={`text-[#AC6CFF] smallf font-semibold`}>
                                         added
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         <div className='flex items-center space-x-1 cursor-pointer'>
                             <Image src="/images/GaelWood.png" width={55} height={60} alt="author" />
 
-                            {/* <h3 className={`${styles.element} border-b border-bordergray leading-4 text-[16px]`} >Geal Wood</h3> */}
+                            {/* <h3 className={`${styles.element} border-b border-bordergray leading-4 smallf`} >Geal Wood</h3> */}
                             <button
                                 type="button"
                                 onClick={() => { openModal(), setInstructor(true), setAboutCourse(false) }}
@@ -189,8 +189,8 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                     <div className={`w-full `}>
                                         <div className={`bg-lightgray relative pt-10 z-50`}>
 
-                                            <h4 className='text-black text-left text-[28px] px-5'>simple checkout</h4>
-                                            <button className=' text-[25px] text-black absolute top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
+                                            <h4 className='text-black text-left dubblelargef px-5'>simple checkout</h4>
+                                            <button className=' extlargef text-black absolute top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
                                             <AddToCart />
@@ -214,7 +214,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
                     </div>
                     <div className={`flex  justify-center items-center space-x-1`}>
-                        <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p>
+                        <p className='text-white -mb-[5px] font-bold extsmallf'>total</p>
                         <div className='font-thin text-white extlargef' >$40</div>
                     </div>
 

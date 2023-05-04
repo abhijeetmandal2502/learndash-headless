@@ -103,7 +103,7 @@ const AddToCart = () => {
                         <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
                     </div>
                     <div className={`flex flex-col justify-end items-end`}>
-                        <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p>
+                        <p className='text-white -mb-[5px] font-bold extsmallf'>total</p>
                         <div className='font-thin text-white extlargef' >$40</div>
                     </div>
 
@@ -131,7 +131,7 @@ const AddToCart = () => {
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
                                             <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
-                                        <div className="tooltiptext text-[12px] z-10">
+                                        <div className="tooltiptext extsmallf z-10">
                                             <div className='relative'>
                                                 <span>{item.cardTooltips}</span>
                                                 <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />
@@ -144,7 +144,6 @@ const AddToCart = () => {
                     </div>
 
                     {/* credit card info  */}
-
                     <div className='h-auto duration-1000 transation-all ease'>{paymentCart[activeIndex].content}</div>
 
                 </div>
@@ -160,13 +159,12 @@ const AddToCart = () => {
                     <div className='flex items-center justify-between'>
                         {paymentCart?.map((item, id) => {
                             return (
-
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
                                             <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
-                                        <div className="tooltiptext text-[12px] z-10">
+                                        <div className="tooltiptext extsmallf z-10">
                                             <div className='relative'>
                                                 <span>{item.cardTooltips}</span>
                                                 <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />

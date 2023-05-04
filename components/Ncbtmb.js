@@ -85,7 +85,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
           <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf '>lobby</span>
         </button>
         {/* loby button code end */}
-        <div className={`flex   mt-10 mb-6  md:my-0  2xl:space-x-20 max-lg:space-x-20 md:space-x-20  justify-between items-center  ${styles.ncbtapproved}`}>
+        <div className={`flex mt-10 mb-6  md:my-0  2xl:space-x-20 max-lg:space-x-20 md:space-x-20  justify-between items-center  ${styles.ncbtapproved}`}>
           <div>
             <h2 className='font-normal leading-tight tracking-wide fourxllargef'>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
@@ -126,10 +126,10 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
           <div className='flex items-start my-4 space-x-2 md:my-0 md:items-center'>
             <div className='md:p-2 p-0.5 rounded-full bg-[#2AC368]'>
-              <BiCheck size={25} className='text-white md:text-[25px] text-[16px]' />
+              <BiCheck size={25} className='text-white md:text-[25px] smallf' />
             </div>
             <h3 className='leading-none triplelargef'>Texas? yep! you’re fine.<br /><Link href="/"></Link><div className='border-b w-max md:hidden border-voilet text-voilet' >click here.</div></h3>
-            <button className='hidden leading-6 border-b md:block border-voilet text-voilet md:text-3xl text-md'> click here.</button>
+            <button className='hidden leading-6 border-b md:block border-voilet text-voilet md:text-3xl extlargef'> click here.</button>
           </div>
 
           <div className='py-3'>

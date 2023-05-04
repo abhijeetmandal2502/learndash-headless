@@ -6,25 +6,21 @@ const Contact = () => {
     return (
         <>
             <div className='bg-transparent'>
-                <div className='text-white text-left lg:text-[30px] 3xl:text-[40px] 4xl:text-[50px] text-[20px] font-normal font-Barlow py-2 '>
+                <div className='text-white text-left  largef font-normal font-Barlow py-2 '>
                     1234 address here<br></br>
                     city, state placeholder text
                 </div>
 
                 <div className='flex bg-transparent py-1 mt-10 items-center space-x-2'>
                     <FaMobileAlt size={30} className='text-white 3xl:w-10 3xl:h-10' />
-
-                    <div className='text-white lg:text-[30px] 3xl:text-[40px] 4xl:text-[50px] text-[20px]'>
+                    <div className='text-white largef'>
                         123-456-7890
                     </div>
 
                 </div>
                 <div className='flex bg-transparent py-1 items-center space-x-2'>
-
                     <AiOutlineMail size={30} className=' text-black 3xl:w-10 3xl:h-10' fill='white ' />
-
-
-                    <div className='text-white lg:text-[30px] text-[20px] 3xl:text-[40px] 4xl:text-[50px]'>
+                    <div className='text-white  largef '>
                         email@cesimple.com
                     </div>
 

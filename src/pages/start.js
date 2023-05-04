@@ -201,7 +201,6 @@ const Start = () => {
     return (
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
-
                 <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 md:p-10 z-10'>
                     <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                         <LogoCard LogoImage="/images/WhiteLogo.svg" />
@@ -216,8 +215,6 @@ const Start = () => {
                         </Link>
                     </div>
 
-
-
                     <div className='md:block hidden'>
                         <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
@@ -226,7 +223,7 @@ const Start = () => {
                                 </Link>
                             </div>
                             <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 3xl:px-3 3xl:py-2.5 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { router.push('/') }} >
-                                <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-md 3xl:text-2xl font-semibold'>lobby</span></button>
+                                <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='mediumf  font-semibold'>lobby</span></button>
                         </div>
                     </div>
 

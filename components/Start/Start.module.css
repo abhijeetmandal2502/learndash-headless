@@ -82,6 +82,8 @@
 .btnDesabledBg {
 
     background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+
+    opacity: 0.2;
 }
 
 .readyToCheckoutBg {

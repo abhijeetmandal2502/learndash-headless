@@ -6,8 +6,16 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import SplitPayMethod from './DialogCard/SplitPayMethod'
 import { FiArrowLeft } from 'react-icons/fi'
+import Congratulation from './DialogCard/Congratulation'
 
 const SplitPayment = () => {
+
+    const [addPayment, setAddpayment] = useState(false)
+
+    const addSplitPayment = () => {
+        setAddpayment(true)
+    }
+
     let [isOpen, setIsOpen] = useState(false)
     function closeModal() {
         setIsOpen(false)
@@ -15,11 +23,14 @@ const SplitPayment = () => {
     function openModal() {
         setIsOpen(true)
     }
+
+    const [successModel, setSuccessModel] = useState(false);
+
+
     return (
         <>
             <div className='flex items-center justify-center'>
-
-                <div>
+                {!addPayment ? <div>
                     <div className='flex items-center justify-center pt-8'>
 
                         <Image src="/start/splitPayment.png" width={100} height={100} alt="split payment" />
@@ -35,14 +46,14 @@ const SplitPayment = () => {
 
                         </button>
                     </div>
-                </div>
+                </div> : ""}
 
 
-                {/* <div className=' hidden  flex items-center justify-center space-between'>
+                {addPayment ? <div className='  flex items-center justify-center space-between'>
                     <div >
-                        <div className=' md:pt-8 flex flex-col justify-center items-center'>
+                        <div className=' md:pt-8 flex  justify-center items-center'>
 
-                            <Image className='md:-ml-8  ' src="/start/splitPayment.png" width={150} height={100} alt="gift card" />
+                            <Image className='md:-ml-8  ' src="/start/splitPayment.png" width={100} height={100} alt="gift card" />
 
                             <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
                         </div>
@@ -63,7 +74,7 @@ const SplitPayment = () => {
                             </div>
                         </div>
                         <button type="button"
-                            onClick={() => { openModal(), setCongrateModel(true) }}
+                            onClick={() => { openModal(), setSuccessModel(true) }}
                             className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
                         </button>
 
@@ -72,7 +83,7 @@ const SplitPayment = () => {
                         </button>
 
                     </div>
-                </div > */}
+                </div > : ''}
 
             </div>
 
@@ -117,7 +128,9 @@ const SplitPayment = () => {
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center md:pb-10 mt-2'>
-                                        <SplitPayMethod openModal={openModal} />
+                                        {!successModel ? <SplitPayMethod openModal={openModal} addSplitPayment={addSplitPayment} closeModal={closeModal} /> : ""}
+
+                                        {successModel ? <Congratulation /> : ""}
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

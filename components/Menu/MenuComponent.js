@@ -127,7 +127,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         </div>
 
                         {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='text-sm font-semibold 3xl:text-2xl 4xl:text-3xl'>lobby</span></div> : ""}
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='minismallf font-semibold '>lobby</span></div> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
@@ -166,7 +166,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
-                            <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 text-3xl  text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
+                            <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
@@ -180,9 +180,9 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                                 about
 
-                                <div className={`pl-2 text-4xl ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
+                                <div className={`pl-2 triplelargef ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(2);
@@ -194,9 +194,9 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                                 our instructors
 
-                                <div className={`pl-2 text-4xl  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
+                                <div className={`pl-2 triplelargef  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(3);
@@ -210,9 +210,9 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                                 blog central
 
-                                <div className={`pl-2 text-4xl  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
+                                <div className={`pl-2 triplelargef  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 text-3xl cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(4);
@@ -225,7 +225,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                                 i wanna teach!
 
-                                <div className={`pl-2 text-4xl ${openTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
+                                <div className={`pl-2 triplelargef ${openTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
                         </ul>
                     </div> : ""}
@@ -235,7 +235,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         <div className='absolute flex items-center justify-center -translate-x-1/2 top-5 left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                <p className='font-semibold mediumf text-white'>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
@@ -292,7 +292,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 <div className='flex items-center '
                                     onClick={() => { HandleCloseBtn(), drowerClose() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                        <p className='font-semibold  text-white'>Close </p>
                                         <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                                     </div>
                                 </div>
@@ -302,7 +302,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12     `}
                                 role="tablist"
                             >
-                                <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 text-3xl  text-right flex cursor-pointer justify-end items-center ${openMobTab === 1 ? styles.active : ""}`
+                                <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openMobTab === 1 ? styles.active : ""}`
 
                                 }
                                     onClick={e => {
@@ -314,9 +314,9 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     role="tablist"
                                 >
                                     about
-                                    <div className={`pl-2 text-4xl ${openMobTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
+                                    <div className={`pl-2 triplelargef ${openMobTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                                 </li>
-                                <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${openMobTab === 2 ? styles.active : ""}`}
+                                <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openMobTab === 2 ? styles.active : ""}`}
                                     onClick={e => {
                                         e.preventDefault();
                                         setOpenMobTab(2);;
@@ -326,9 +326,9 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     role="tablist"
                                 >
                                     our instructors
-                                    <div className={`pl-2 text-4xl  ${openMobTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
+                                    <div className={`pl-2 triplelargef  ${openMobTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                                 </li>
-                                <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 text-3xl text-right flex cursor-pointer  justify-end items-center ${(openMobTab === 3) ? styles.active : ""}`}
+                                <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openMobTab === 3) ? styles.active : ""}`}
                                     onClick={e => {
                                         e.preventDefault();
                                         setOpenMobTab(3);;
@@ -339,12 +339,10 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     href="#link3"
                                     role="tablist"
                                 >
-
                                     blog central
-
-                                    <div className={`pl-2 text-4xl  ${openMobTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
+                                    <div className={`pl-2 triplelargef  ${openMobTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                                 </li>
-                                <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 text-3xl cursor-pointer text-right flex justify-end items-center ${openMobTab === 4 ? styles.active : ""}`}
+                                <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openMobTab === 4 ? styles.active : ""}`}
                                     onClick={e => {
                                         e.preventDefault();
                                         setOpenMobTab(4);
@@ -354,10 +352,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     href="#link4"
                                     role="tablist"
                                 >
-
                                     i wanna teach!
-
-                                    <div className={`pl-2 text-4xl ${openMobTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
+                                    <div className={`pl-2 triplelargef ${openMobTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                                 </li>
                             </ul>
 
@@ -376,14 +372,14 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 <div className='flex items-center '
                                     onClick={() => { HandleCloseBtn(), drowerClose() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                        <p className='font-semibold  text-white'>Close </p>
                                         <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                                     </div>
                                 </div>
 
                             </div>
                             <div className={`flex items-center space-x-1 bg-gray text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { setOpenMobTab('') }} >
-                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'>Menu</span>
+                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md '>Menu</span>
                             </div>
                             <div className="px-5 tab-content tab-space">
 

@@ -10,7 +10,7 @@ const GiftCardBtn = ({ title, icon, animationCss }) => {
                     <Image className={``} src={icon} width={70} height={70} />
                 </div>
 
-                <p className='text-[24px] 2xl:text-[27px] text-white '>{title}</p>
+                <p className='largef text-white '>{title}</p>
 
             </button>
         </>

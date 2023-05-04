@@ -192,9 +192,9 @@ const Home = () => {
                         {/* menu icon for small device */}
                         <div className='lg:hidden'>
                             <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
-                                <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
+                                <p className='font-semibold '>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
-                                <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
@@ -204,8 +204,8 @@ const Home = () => {
 
                     </div>
                     <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='xl:text-7xl 4xl:text-[150px] 3xl:text-[100px] lg:text-5xl md:text-5xl text-4xl font-normal py-2'>massage ce.</p>
-                        <p className='xl:text-7xl 4xl:text-[150px] 3xl:text-[100px] lg:text-5xl md:text-5xl text-4xl  font-normal py-2'> simplified. </p>
+                        <p className='fourxllargef font-normal py-2'>massage ce.</p>
+                        <p className='fourxllargef  font-normal py-2'> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
@@ -227,8 +227,8 @@ const Home = () => {
                                     <div className={` md:space-x-0 flex md:flex-col relative md:pt-7  `}>
                                         <Door />
                                         <div className='w-full pt-3'>
-                                            <h3 className='mt-4 text-3xl font-semibold 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl lineUp md:text-center'>start</h3>
-                                            <p className={`mt-1 ${Styles.hide1} tracking-[.05em] 4xl:text-4xl 3xl:text-2xl  md:text-center lineUp`}>start a course today!</p>
+                                            <h3 className='mt-4 triplelargef lineUp md:text-center'>start</h3>
+                                            <p className={`mt-1 ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
@@ -246,8 +246,8 @@ const Home = () => {
                                         </div>
 
                                         <div className='w-full'>
-                                            <h3 className='mt-4 text-3xl font-semibold md:text-center 4xl:text-6xl 3xl:text-5xl 2xl:text-3xl md:text-2xl lineUp'>concierge</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>have a question? get in touch!</p>
+                                            <h3 className='mt-4  font-semibold md:text-center triplelargef lineUp'>concierge</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center tracking-[.05em] lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -262,8 +262,8 @@ const Home = () => {
                                             <Image alt='start' src='/images/home1.svg' height='300' width='300' />
                                         </div>
                                         <div className='w-full'>
-                                            <h3 className='text-3xl font-semibold xl:mt-0 md:mt-0 2xl:text-3xl 4xl:text-6xl 3xl:text-5xl md:text-xl lineUp md:text-center'>gift shoppe</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>gift ce to a friends</p>
+                                            <h3 className=' font-semibold xl:mt-0 md:mt-0  triplelargef lineUp md:text-center'>gift shoppe</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>gift ce to a friends</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -281,8 +281,8 @@ const Home = () => {
                                             <Image alt='start' src='/images/IamBack.svg' height='300' width='300' />
                                         </div>
                                         <div className='w-full'>
-                                            <h3 className='mt-4 text-3xl font-semibold 2xl:text-4xl 4xl:text-6xl 3xl:text-5xl md:text-2xl lineUp md:text-center'>i’m back</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-4xl 3xl:text-2xl tracking-[.05em] lineUp`}>existing user login</p>
+                                            <h3 className='mt-4  font-semibold triplelargef lineUp md:text-center'>i’m back</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>existing user login</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -299,8 +299,8 @@ const Home = () => {
                                         </div>
 
                                         <div className='w-full'>
-                                            <h3 className='mt-4 text-2xl font-semibold md:text-center 2xl:text-3xl 4xl:text-6xl 3xl:text-4xl lineUp'>ncbtmb approved</h3>
-                                            <p className={`mt-1 ${styles.hide} md:text-center 4xl:text-2xl 3xl:text-2xl tracking-[.05em] lineUp`}>check if your state is approved</p>
+                                            <h3 className='mt-4  font-semibold md:text-center triplelargef lineUp'>ncbtmb approved</h3>
+                                            <p className={`mt-1 ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -316,8 +316,8 @@ const Home = () => {
                                             <Image alt='start' src='/images/teacherLounge.svg' height='200' width='150' />
                                         </div>
                                         <div className='w-full 4xl:mt-20 3xl:mt-16'>
-                                            <h3 className='text-2xl font-semibold lineUp 3xl:mt-2 md:text-center 2xl:text-3xl 4xl:text-6xl 3xl:text-4xl md:text-xl md:mt-4'>teacher’s lounge</h3>
-                                            <p className={` ${styles.hide} md:text-center tracking-[.05em] 4xl:text-2xl 3xl:text-xl lineUp`}>existing instructor please login here!</p>
+                                            <h3 className=' font-semibold lineUp 3xl:mt-2 md:text-center triplelargef md:mt-4'>teacher’s lounge</h3>
+                                            <p className={` ${styles.hide} md:text-center tracking-[.05em]  lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -362,7 +362,7 @@ const Home = () => {
                     <div className='cursor-pointer '>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-5 left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                <p className='font-semibold max-[768px]:text-[12px] 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
+                                <p className='font-semibold '>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
