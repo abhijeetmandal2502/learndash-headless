@@ -78,7 +78,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                     {/* payment options */}
 
                     <div className=' grid grid-cols-12 md:mx-20 md:mt-[71px] relative md:mb-20 mb-5 md:px-0 px-5'>
-                        {/* add fift payment card */}
+                        {/* add gift payment card */}
                         <div className=' md:col-span-5 col-span-12 md:flex items-center justify-between px-7'>
                             <div className=' cursor-pointer' onClick={() => { ShowPaymentOptionWithGiftCard() }}>
                                 <p className='extsmallf  tracking-wide py-3 text-center leading-[107%]'>+ add gift card(s)</p>
@@ -92,7 +92,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                         </div>
                                     </div> : ""}
                                 </div>
-                                <p className='dubblelargef text-gray mt-5 text-center leading-[121%] tracking-wider'>$0 applied</p>
+                                <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${showSplitPayment == undefined ? 'text-voilet mt-0 font-semibold' : 'text-gray mt-5'}`}> {showSplitPayment == undefined ? '$20 applied' : '$0 applied'} </p>
                             </div>
                             <div className='flex justify-center py-2'>
                                 <p className='bg-black text-white px-3 max-w-[38px] md:w-full  extlargef rounded-full'>+</p>
@@ -103,7 +103,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                             <div className='grid grid-cols-12  '>
 
                                 {/* add credit card payment */}
-                                <div className={`col-span-5 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
+                                <div className={`col-span-5 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
                                     <p className='extsmallf py-3 text-center leading-[107%]'>+ add credit card(s)</p>
                                     <div className='flex justify-center items-center relative'>
                                         < Image src={`/start/AddCreditCard.svg`} width={146} height={150} alt="credit card" className={`md:w-auto md:h-auto w-[80px] h-[70px] ${CreditCardPayment == undefined ? 'hidden' : ''}`} />
@@ -124,7 +124,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                 </div>
 
                                 {/* add paypal payment */}
-                                <div className={`col-span-5 ${CreditCardPayment == undefined ? 'opacity-[0.5]  disabled' : ''}`} onClick={() => { PaymentWithPaypal() }}>
+                                <div className={`col-span-5 ${CreditCardPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithPaypal() }}>
                                     <p className='extsmallf tracking-wide text-center py-3 leading-[107%]'>+ add paypal</p>
                                     <div className='flex justify-center items-center relative'>
                                         <Image src={`/start/AddPaypal.svg`} width={146} height={150} alt="credit card" className={`md:w-auto md:h-auto w-[80px] h-[70px] ${PaypalPayment == undefined ? 'hidden' : ''}`} />
@@ -141,14 +141,14 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                 </div>
                             </div>
 
-                            <p className='dubblelargef text-gray mt-5 text-center leading-[121%] tracking-wider'>$0 applied</p>
+                            <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${(PaypalPayment == undefined) || (CreditCardPayment == undefined) ? 'text-voilet mt-0 font-semibold' : 'text-gray mt-5'}`}> {(PaypalPayment == undefined) || (CreditCardPayment == undefined) ? '$20 applied' : '$0 applied'} </p>
                         </div>
 
                     </div>
 
                     <div className=' md:px-0 px-5 absolute md:-bottom-28 -bottom-12 right-0'>
                         <div className='flex justify-between items-center space-x-5'>
-                            <div className=' minismallf text-[14px] text-voilet font-normal'>total due: $40</div>
+                            <p className=' minismallf text-[14px] text-voilet font-normal'>total due: $40</p>
 
                             <div className={` mx-auto`}>
                                 <button type="button"

@@ -22,8 +22,7 @@ const WhyYou = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
 
                 {/* for mobile */}
-
-                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2 ${styles.imgcenter} `}>
 
                     <div className={` relative  flex  mr-10`}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
@@ -48,12 +47,12 @@ const WhyYou = ({ activeTabIndex }) => {
                 </div>
                 <div className='col-span-12 md:col-span-4 flex justify-start items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[95px] md:text-[40px] text-[30px]  ${styles.shadow} leading-[50px] md:leading-[80px] tracking-wide`}>why you?</h2>
-                        <h4 className='2xl:text-[50px] 3xl:text-[60px] md:text-[30px] text-[20px] font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] 3xl:leading-[60px]  leading-[30px]'>tell us about <br></br> your pedigree</h4>
-                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[25px] md:text-[16px] text-[14px] md:pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <h2 className={`text-white font-semibold  md:text-[40px] dubblelargef ${styles.shadow} leading-[50px] md:leading-[80px] tracking-wide`}>why you?</h2>
+                        <h4 className=' text-black  md:text-[30px] mediumf font-bold xl:py-4 lg:py-0 py-4 2xl:mt-6 lg:leading-[40px] 3xl:leading-[60px]  leading-[30px]'>tell us about <br></br> your pedigree
+                        </h4>
+                        <p className='text-white font-bold smallf md:pt-5'>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
-
                     </div>
                 </div>
                 {/* for desktop */}

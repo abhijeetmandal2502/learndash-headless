@@ -24,7 +24,7 @@ const GetStarted = ({ activeTabIndex }) => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}   `}>
 
                 {/* for mobile */}
-                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  ${styles.imgcenter}`}>
 
                     <div className={` relative  flex  `}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
@@ -45,11 +45,12 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[65px] 3xl:text-[85px] 4xl:text-[95px]   md:text-[30px] text-[40px]  ${styles.shadow} leading-[50px] md:leading-[60px] 2xl:leading-[80px] 3xl:leading-[100px] 4xl:leading-[110px] tracking-wide`}>ready to get started? </h2>
-                        <button className=' mt-5 rounded-3xl border border-white px-7 py-2.5 text-white font-normal text-2xl 3xl:text-4xl  hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
+                        <h2 className={`text-white font-semibold md:text-[40px] triplelargef  ${styles.shadow} leading-[50px] md:leading-[60px] 2xl:leading-[80px] 3xl:leading-[100px] 4xl:leading-[110px] tracking-wide`}>ready to get started?
+                        </h2>
+                        <button className=' mt-5 rounded-3xl border border-white px-7 py-2.5 text-white font-normal largef  hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
                             click here!
                         </button>
-                        <p className='text-white font-bold text-[14px] md:text-[16px] 2xl:text-[19px] 3xl:text-[26px] 4xl:text-[26px]  tracking-wide pt-5'> Your time has come! Make it happen!</p>
+                        <p className='text-white font-bold smallf  tracking-wide pt-5'> Your time has come! Make it happen!</p>
 
                     </div>
                 </div>

@@ -150,21 +150,20 @@ const GiftCardPaymentOption = () => {
 
             {/* payment option componet desktop  */}
 
-
             <div className={` hidden md:block mx-5 bg-white shadow-2xl pb-4 ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
 
                     <input type="email" placeholder='your email' className='w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
 
-                    <div className='flex items-center justify-between'>
+                    <div className='flex items-center justify-center space-x-2'>
                         {paymentCart?.map((item, id) => {
                             return (
 
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md     `} src={item.icon} width={60} height={60} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>
@@ -199,7 +198,7 @@ const GiftCardPaymentOption = () => {
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md mt-2  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md `} src={item.icon} width={50} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md  `} src={item.icon} width={60} height={60} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>

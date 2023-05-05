@@ -354,29 +354,13 @@
     }
 }
 
+/* margin for animate image */
 
-/* responsive for desktop   */
-/* .animateImageSmallDevice {
+@media screen and (min-width:375px) {
 
-    display: none;
-}
+    .imgcenter {
 
-
-.animateImageLargeDevice {
-
-    display: block;
-}
-
-@media (min-widht:768px) {
-
-    .animateImageSmallDevice {
-
-        display: block;
+        margin-right: 40px;
     }
 
-    .animateImageLargeDevice {
-
-        display: none;
-    }
-
-} */
+}

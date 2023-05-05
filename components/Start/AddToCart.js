@@ -52,6 +52,9 @@ const AddToCart = () => {
         }
     }
 
+    console.log('ShowPaymentOption', ShowPaymentOption)
+
+
     return (
         <>
 
@@ -88,7 +91,8 @@ const AddToCart = () => {
                     <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
                         <MdKeyboardArrowDown className='text-white' size={20} />
                     </div>
-                    <p className={`text-white extsmallf  pr-1 font-thin`}>{lessMoreBtn}</p>
+                    <p className={`text-white extsmallf  pr-1 font-thin`}>{lessMoreBtn}
+                    </p>
 
                 </div>
 
@@ -112,7 +116,6 @@ const AddToCart = () => {
                 <div className={`hidden md:block rounded-full bg-black w-5 h-5 absolute -bottom-2  left-1/2 -translate-x-1/2 ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}>
                     <MdKeyboardArrowDown className='text-white' size={20} />
                 </div>
-
             </div>
 
             {/* payment option componet desktop  */}

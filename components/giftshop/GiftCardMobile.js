@@ -52,9 +52,6 @@ const GiftCardMobile = () => {
 
 
                                 <GiftCardModel isOpenD={isOpenD} closeModal={closeModal} activeEgift={activeEgift} activePhysicalGift={activePhysicalGift} showPaymentOpt={showPaymentOpt} />
-
-
-
                             </div>
                             <div className='w-full' onClick={() => { openModal(), setActivePhysicalGift(true), setActiveEgift(false) }} >
                                 <GiftCardBtn animationCss={"ecardImgAni"} title="physical gift card" icon="/start/PhysicalGift.svg" />

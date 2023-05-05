@@ -22,7 +22,8 @@ const WhyUs = ({ activeTabIndex }) => {
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} max-h-screen  `}>
 
-                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
+                {/* image for mobile */}
+                <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2 ${styles.imgcenter} `}>
 
                     <div className={` relative  flex  mr-0`}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
@@ -49,10 +50,10 @@ const WhyUs = ({ activeTabIndex }) => {
 
                 <div className='col-span-12 md:col-span-4 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] xl:text-[50px] lg:text-[50px] md:text-[40px] text-[30px] ${styles.shadow} md:leading-[80px] tracking-wide`}>Why Us?</h2>
-                        <h4 className='text-[20px] 2xl:text-[35px]  lg:text-[30px] 3xl:text-[40px] font-semibold 3xl:py-8 py-4'>because we’re</h4>
+                        <h2 className={`text-white font-semibold md:text-[40px] triplelargef ${styles.shadow} md:leading-[80px] tracking-wide`}>Why Us?</h2>
+                        <h4 className='mediumf md:text-[35px] font-semibold 3xl:py-8 py-4'>because we’re</h4>
                         <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" />
-                        <p className='text-white font-bold 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[28px] md:text-[15px]  text-[14px] pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                        <p className='text-white font-bold smallf pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
                             <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>
 

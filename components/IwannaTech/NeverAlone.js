@@ -10,15 +10,15 @@ const NeverAlone = () => {
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
 
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.scaleAnimation}  col-span-12 md:col-span-7 flex justify-center items-start md:hidden`}>
-                    <Image src='/images/neverAlone.png' width={300} height={300} alt="wanna tech png" className={``} />
+                    <Image src='/images/neverAlone.png' width={300} height={300} alt="wanna tech png" />
                 </div>
 
                 <div className='col-span-12 md:col-span-5 flex justify-center items-center'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[65px] 3xl:text-[85px] xl:text-[50px] md:text-[40px] text-[30px]  ${styles.shadow} md:leading-[80px] leading-[30px] lg:leading-[40px] xl:leading-[80px] tracking-wide`}>never alone!</h2>
+                        <h2 className={`text-white font-semibold  md:text-[40px] dubblelargef  ${styles.shadow} md:leading-[80px] leading-[30px] lg:leading-[40px] xl:leading-[80px] tracking-wide`}>never alone!
+                        </h2>
 
-                        <p className='text-white font-bold xl:text-[18px] 3xl:xl:text-[26px] lg:text-[16px] md:text-[18px] text-[14px] pt-5'>We are right here every step of the way to help you create the course you want on our e-learning platform! Just contact your concierge and they’ll walk you through any part of the course process you need!</p>
-
+                        <p className='text-white font-bold smallf pt-5'>We are right here every step of the way to help you create the course you want on our e-learning platform! Just contact your concierge and they’ll walk you through any part of the course process you need!</p>
                     </div>
                 </div>
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.scaleAnimation}  col-span-12 md:col-span-7 md:flex hidden justify-center items-start`}>

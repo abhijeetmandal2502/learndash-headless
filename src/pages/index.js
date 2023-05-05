@@ -192,7 +192,7 @@ const Home = () => {
                         {/* menu icon for small device */}
                         <div className='lg:hidden'>
                             <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
-                                <p className='font-semibold '>menu</p>
+                                <p className='font-semibold dubblelargf '>menu</p>
                                 {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
                                 <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
@@ -204,8 +204,8 @@ const Home = () => {
 
                     </div>
                     <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='fourxllargef font-normal py-2'>massage ce.</p>
-                        <p className='fourxllargef  font-normal py-2'> simplified. </p>
+                        <p className='superlargef font-normal py-1'>massage ce.</p>
+                        <p className='superlargef  font-normal py-1'> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
@@ -349,7 +349,7 @@ const Home = () => {
                     </div>
                 </div>
                 {/* simply choose component for Start button */}
-                <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
+                <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <SimplyChoose startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} />
                     </div>
@@ -362,7 +362,7 @@ const Home = () => {
                     <div className='cursor-pointer '>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-5 left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                <p className='font-semibold '>menu</p>
+                                <p className='font-semibold dubblelargef '>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />

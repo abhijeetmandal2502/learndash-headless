@@ -12,7 +12,11 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
-    // console.log('activeEgift', activeEgift, activePhysicalGift)
+
+    const alertModel = () => {
+        alert('i am open')
+    }
+
     return (
         <>
             {/* model popup */}
@@ -42,11 +46,11 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel className="relative md:-mt-[40px] pt-[40px] w-[100%]  md:w-[72%] md:p-6 p-2 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
-                                    <div className="absolute  text-white md:text-black right-2 -top-0 md:top-28 md:right-10">
+                                    <div className="absolute z-50 text-white md:text-black right-2 -top-0 md:top-28 md:right-10">
                                         <button
                                             type="button"
-                                            className="text-3xl"
-                                            onClick={closeModal}
+                                            className="text-3xl z-50"
+                                            onClick={() => { closeModal() }}
                                         >
                                             x
                                         </button>

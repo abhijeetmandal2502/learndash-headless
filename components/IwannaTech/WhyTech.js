@@ -35,10 +35,9 @@ const WhyTech = () => {
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 
-
                 <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[70px] 3xl:text-[100px] md:text-[45px] text-[30px] ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
+                        <h2 className={`text-white font-semibold  md:text-[45px] dubblelargef ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
                         {
                             data?.map((item, id) => {
                                 return (<>
@@ -47,9 +46,9 @@ const WhyTech = () => {
                                             <div className='p-1.5 rounded-full bg-white'>
                                                 <FaCheck className='font-bold 3xl:w-7 3xl:h-7' size={15} />
                                             </div>
-                                            <h6 className='font-bold 2xl:text-[22px] lg:text-[18px] md:text-[16px] 3xl:text-[30px] 4xl:text-[35px] text-[16px]'>{item.title}</h6>
+                                            <h6 className='font-bold md:text-[18px] smallf'>{item.title}</h6>
                                         </div>
-                                        <p className=' font-thin 2xl:text-[19px] lg:text-[14px] md:text-[13px] 3xl:text-[24px] 4xl:text-[30px] text-[14px] text-white'>{item.content}</p>
+                                        <p className=' font-thin smallf text-white'>{item.content}</p>
                                     </div>
                                 </>)
                             })

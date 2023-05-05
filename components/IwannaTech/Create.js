@@ -14,8 +14,9 @@ const Create = () => {
                 </div>
                 <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold 2xl:text-[65px] 3xl:text-[95px] 4xl:text-[120px] xl:text-[50px]  md:text-[40px] text-[30px]  ${styles.shadow} md:leading-[80px] leading-[40px] xl:leading-[80px] 3xl:leading-[110px] 4xl:leading-[120px] lg:leading-[40px] tracking-wide`}>start creating</h2>
-                        <p className='text-white font-bold text-[14px] 2xl:text-[18px] 3xl:text-[24px] md:text-[16px] lg:leading-[25px]
+                        <h2 className={`text-white font-semibold  md:text-[40px] dubblelargef   ${styles.shadow} md:leading-[80px] leading-[40px] xl:leading-[80px] 3xl:leading-[110px] 4xl:leading-[120px] lg:leading-[40px] tracking-wide`}>start creating
+                        </h2>
+                        <p className='text-white font-bold smallf lg:leading-[25px]
                         3xl:leading-[40px] xl:leading-[40px] pt-5'>Follow our easy step-by-step template to get your course organized for proper online structuring. Then jump in and create your masterpiece! <br></br>
                             Once we’ve reviewed and approved your course it’s time to go live and make money! <br></br>
                             Then create your next masterpiece! Simple!</p>
