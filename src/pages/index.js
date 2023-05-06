@@ -258,7 +258,7 @@ const Home = () => {
                                 <div className={` w-full h-1/4  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
-                                        <div className='md:mx-auto xl:pt-1 xl:w-[70px] xl:h-[70px] md:w-[60px] md:h-[50px] 4xl:w-[200px] 4xl:h-[200px] 3xl:w-[150px] 3xl:h-[150px] '>
+                                        <div className='md:mx-auto xl:pt-1 w-[88px] h-[88px]'>
                                             <Image alt='start' src='/images/home1.svg' height='300' width='300' />
                                         </div>
                                         <div className='w-full'>
@@ -299,7 +299,7 @@ const Home = () => {
                                         </div>
 
                                         <div className='w-full'>
-                                            <h3 className='mt-4  font-semibold md:text-center triplelargef lineUp'>ncbtmb approved</h3>
+                                            <h3 className='  font-semibold md:text-center triplelargef lineUp'>ncbtmb approved</h3>
                                             <p className={`mt-1 extxlsmallf ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
