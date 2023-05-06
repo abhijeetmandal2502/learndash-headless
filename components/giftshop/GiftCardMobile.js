@@ -34,7 +34,7 @@ const GiftCardMobile = () => {
                 </div>
                 <div className='bg-transparent'>
                     <div className=''>
-                        <Image className='w-full' src="/start/GiftCard3D.svg" width={500} height={314} />
+                        <Image className='w-full' src="/start/GiftCard3D.svg" width={500} height={314} alt='gift' />
                     </div>
                     <div>
                         <h3 className='pb-3 text-black dubblelargef'>ce as a gift? yep!</h3>

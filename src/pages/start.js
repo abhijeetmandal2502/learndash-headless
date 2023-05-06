@@ -311,13 +311,13 @@ const Start = () => {
                                             {activeTabIndex < 11 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { movePointerTop() }}
                                             >
                                                 <div className={`${styles.vertmoveDown}`}>
-                                                    <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
+                                                    <Image src="/start/SlideUpIcon.svg" width={25} height={25} alt="slideUp" />
                                                 </div>
                                             </div> : ""}
                                             {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { movePointerBottom() }} >
                                                 <div className={`${styles.vertmoveDown}`}
                                                 >
-                                                    <Image src="/start/SlideUpIcon.svg" width={25} height={25} />
+                                                    <Image src="/start/SlideUpIcon.svg" width={25} height={25} alt="slide up" />
                                                 </div>
                                             </div> : ""}
                                         </div>

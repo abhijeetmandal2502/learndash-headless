@@ -84,7 +84,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         </div>
                     </div>
                     <div className='mt-2 cursor-pointer hidden md:block '>
-                        <Image src="/start/horizontaladdbutton.svg" width={120} height={50} />
+                        <Image src="/start/horizontaladdbutton.svg" width={120} height={50} alt="btn" />
                     </div>
                     <div className='flex items-center py-2 space-x-5 '>
                         <div className='flex items-center space-x-1 cursor-pointer'>

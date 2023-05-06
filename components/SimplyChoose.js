@@ -156,7 +156,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             </div>
                             <div className='hidden md:block'>
                                 <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => { startMethodHide() }}>
-                                    <BiArrowBack size={20} className="text-white " /><span className='minismallf'>lobby</span></button>
+                                    <BiArrowBack size={20} className="text-white 3xl:w-[30px] 3xl:h-[30px] " /><span className='minismallf'>lobby</span></button>
                             </div>
 
 
@@ -210,12 +210,12 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             </div>
                         </div>
 
-                        <div className={`md:col-span-6 col-span-12 relative `}>
+                        <div className={`md:col-span-6 col-span-12 relative 3xl:border-l border-gray `}>
                             <div className={`grid grid-cols-12 md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
                                 <div className={` hidden md:block ${styles.mainDiv} bg-transparent md:col-span-6 min-h-[250px] relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between   ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} onClick={() => { { handleGiftComponent(), handleClick() } }} >
                                     <div className='flex justify-between'>
                                         <div className='flex items-center justify-center space-x-1'>
-                                            <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
+                                            <Image src="/images/gift.svg" width={25} height={25} alt='gift' className='3xl:w-[40px] 3xl:h-[40px]' />
                                             <div className='font-bold mediumf'>{data[0].duration}</div>
                                         </div>
                                     </div>
@@ -240,7 +240,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                         </div>
                                     </div>
                                     <div className='flex justify-between items-center'>
-                                        <Image src="/images/homeColor.svg" width={100} height={100} />
+                                        <Image src="/images/homeColor.svg" width={100} height={100} alt='home' />
                                         <p className={`md:pt-0 pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
                                             {data[0].discription}
                                         </p>
@@ -252,10 +252,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} className={` ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item) }}>
+                                            <div key={index} className={` ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray p-5  3xl:p-10 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item) }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
-                                                        <MdOutlineWatchLater size={25} />
+                                                        <MdOutlineWatchLater size={25} className='3xl:w-[40px] 3xl:h-[40px]' />
                                                         <p className='mediumf font-bold'>{item.duration}</p>
                                                     </div>
 
@@ -267,17 +267,17 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                                 ${item.price}
                                                             </p>
                                                         </div>
-                                                        {selectedArray[index] !== index ? <p className=' absolute top-[80%] left-[20%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                        {selectedArray[index] !== index ? <p className=' absolute top-[80%] left-[20%] font-bold  largef text-[#FF5C00] '>
                                                             +add
-                                                        </p> : <div className=' flex absolute top-[85%] left-[0%] font-bold  text-[23px] text-[#FF5C00] '>
+                                                        </p> : <div className=' flex absolute top-[85%] left-[0%] font-bold  largef text-[#FF5C00] '>
                                                             <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
-                                                            <p className={`text-[#AC6CFF] text-[23px] font-semibold`}>
+                                                            <p className={`text-[#AC6CFF] largef font-semibold`}>
                                                                 added
                                                             </p>
                                                         </div>}
                                                         <div className=''>
-                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" /> :
-                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" />}
+                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className='3xl:w-[150px] 3xl:h-[150px]' /> :
+                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className='3xl:w-[150px] 3xl:h-[150px]' />}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,7 +348,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                             </div>
                                                         </div>
                                                         <div className=''>
-                                                            <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} />
+                                                            <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} alt='price' />
                                                         </div>
                                                     </div>
                                                 </div>

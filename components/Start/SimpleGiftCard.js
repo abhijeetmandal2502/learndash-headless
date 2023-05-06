@@ -6,7 +6,7 @@ const SimpleGiftCard = () => {
         <>
             <div className='bg-transparent'>
                 <div className=''>
-                    <Image className='max-w-[335px] -ml-[16%]' src="/start/GiftCard3D.svg" width={500} height={314} />
+                    <Image className='max-w-[335px] -ml-[16%]' src="/start/GiftCard3D.svg" width={500} height={314} alt="gift" />
                 </div>
                 <div className='pl-5'>
                     <h3 className='pb-3 text-black dubblelargef'>ce as a gift? yep!</h3>
