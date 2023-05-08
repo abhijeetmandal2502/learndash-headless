@@ -220,13 +220,15 @@ const Home = () => {
                     <div className={`   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
 
                         <div className='grid grid-cols-12'>
+                            {/* first grid */}
                             <div className=' md:col-span-6 w-full h-[100vh] border-l border-gray'>
                                 {/* start components */}
-                                <div className={` w-full h-1/2   flex flex-col overflow-hidden relative justify-center   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                <div className={` w-full h-1/2 min-h-[270px]  flex flex-col overflow-hidden relative justify-center   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
                                     <div className={` md:space-x-0 flex md:flex-col relative md:pt-7  `}>
                                         <Door />
                                         <div className='w-full pt-3'>
-                                            <h3 className='mt-4 triplelargef lineUp md:text-center'>start</h3>
+                                            <h3 className='mt-4 triplelargef
+                                              lineUp md:text-center'>start</h3>
                                             <p className={`mt-1 extxlsmallf ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
                                         </div>
                                     </div>
@@ -238,7 +240,7 @@ const Home = () => {
 
                                 {/* concierge components */}
 
-                                <div className={`w-full h-1/4 flex relative overflow-hidden flex-col justify-center border-t border-gray  ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}  `} onClick={() => conceiergeMethod()}>
+                                <div className={`w-full h-1/4 min-h-[150px] flex relative overflow-hidden flex-col justify-center border-t border-gray  ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}  `} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <div className='md:mx-auto  w-[88px] h-[88px] '>
                                             <Image alt='start' src='/images/ConciergeNew.svg' height='300' width='300' className='' />
@@ -255,7 +257,7 @@ const Home = () => {
                                 </div>
                                 {/* gift shoppe */}
 
-                                <div className={` w-full h-1/4  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
+                                <div className={` w-full h-1/4 min-h-[150px] flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card '>
                                         <div className='md:mx-auto xl:pt-1 w-[88px] h-[88px]'>
@@ -274,7 +276,7 @@ const Home = () => {
 
                             {/* i am back */}
                             <div className=' md:col-span-6 h-[100vh] border-l 3xl:border-l-2 border-gray w-full '>
-                                <div className={`w-full h-1/2  flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer  ${styles.cardAnimation}   `} onClick={() => { HandleClick(); }}>
+                                <div className={`w-full h-1/2 min-h-[270px] flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer  ${styles.cardAnimation}   `} onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <div className='md:mx-auto h-[130px]  w-[130px] '>
@@ -292,14 +294,14 @@ const Home = () => {
 
                                 {/* ncbtmb approved component */}
 
-                                <div className={` w-full h-1/4 flex flex-col relative overflow-hidden justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}  `} onClick={() => ncbtmbMethod()}>
+                                <div className={` w-full h-1/4 min-h-[150px] flex flex-col relative overflow-hidden justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}  `} onClick={() => ncbtmbMethod()}>
                                     <div className='flex space-x-4 cursor-pointer md:block md:space-x-0 image-card '>
-                                        <div className='md:mx-auto 2xl:w-[120px]  3xl:w-[220px] 3xl:h-[220px]  2xl:h-[100px] w-[100px]  h-[100px] '>
-                                            <Image alt='start' src='/images/ncbtmbNew.svg' height='400' width='400' />
+                                        <div className='md:mx-auto 2xl:w-[120px]  3xl:w-[220px] 3xl:h-[220px]  2xl:h-[120px] w-[100px]  h-[80px] '>
+                                            <Image alt='start' src='/images/ncbtmblatest.svg' height='400' width='400' />
                                         </div>
 
-                                        <div className='w-full'>
-                                            <h3 className='  font-semibold md:text-center triplelargef lineUp'>ncbtmb approved</h3>
+                                        <div className=' w-full ncbtmbtop'>
+                                            <h3 className='font-semibold md:text-center triplelargef lineUp'>ncbtmb approved</h3>
                                             <p className={`mt-1 extxlsmallf ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
@@ -310,7 +312,7 @@ const Home = () => {
 
                                 {/* teacher lounge components */}
 
-                                <div className={` w-full h-1/4 flex flex-col justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden `} onClick={() => handleTeacherLOginOpen()} >
+                                <div className={` w-full h-1/4 min-h-[150px] flex flex-col justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden `} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 cursor-pointer md:block md:space-x-0 image-card '>
                                         <div className='md:mx-auto 2xl:w-[50px]  3xl:w-[80px] 3xl:h-[80px] w-[35px] 2xl:h-[70px] md:pt-1 h-[50px]'>
                                             <Image alt='start' src='/images/teacherLoungeNew.svg' height='200' width='150' />

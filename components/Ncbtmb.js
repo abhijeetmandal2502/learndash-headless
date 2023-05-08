@@ -90,7 +90,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
             <h2 className='font-normal leading-tight tracking-wide fourxllargef'>all courses<br></br>ncbtmb<br></br>approved.</h2>
           </div>
 
-          <Image src="/images/ncbtmb.svg" height={323} width={323} alt="ncbtmb" className={`hidden md:block ncbt-desk-img`} />
+          <Image src="/images/ncbtmblatest.svg" height={323} width={323} alt="ncbtmblatest" className={`hidden md:block ncbt-desk-img`} />
           <Image src="/images/ncbtmb.svg" height={200} width={200} alt="ncbtmb" className={`md:hidden absolute top-6 -right-4`} />
         </div>
         <form >

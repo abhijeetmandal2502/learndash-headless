@@ -10,10 +10,14 @@ import LogoCard from 'components/card/LogoCard';
 import { BiArrowBack } from 'react-icons/bi';
 import { FiArrowDown } from 'react-icons/fi';
 import stylesScrollBtn from '../../../components/Start/Start.module.css'
+import { getSinglePostBySlug } from '../../../apis/AllPostApi'
+import moment from 'moment/moment';
 
 import Link from 'next/link'
 
-const Blog = () => {
+const Blog = (props) => {
+
+    console.log('SinglePostData', props.SinglePostData)
 
     const router = useRouter()
 
@@ -60,6 +64,8 @@ const Blog = () => {
 
         router.replace('/')
     }
+
+    const singlePost = props.SinglePostData
 
 
     return (
@@ -112,30 +118,25 @@ const Blog = () => {
                         <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `} onClick={() => { handlelobby() }} >
                             <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf font-semibold '>lobby</span></button>
 
-                        {blogData ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3'>
+                        {singlePost ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3'>
                             <div className={`bg-transparent md:pb-40  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
-                                {blogData?.map((item, key) => {
+                                <div className="mb-10 border-b border-bordergray md:max-w-[85%] ">
+                                    <h2 className='text-white font-normal triplelargef md:leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{singlePost?.title.rendered}</h2>
+                                    <div className='flex  flex-wrap'>
+                                        <div className='text-white pr-1 md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>{singlePost?.name}</div>
+                                        <div className='text-gray md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>| {moment(singlePost?.date).format("MMMM  DD YYYY")}</div>
+                                    </div>
+                                    <div className='text-gray md:py-8 py-4 minismallf lg:text-[20px] md:mediumf  tracking-wider' dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}></div>
 
-                                    return (
-                                        <div key={key} className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                            <h2 className='text-white font-normal triplelargef md:leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item.title}</h2>
-                                            <div className='flex  flex-wrap'>
-                                                <div className='text-white pr-1 md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>{item.name}</div>
-                                                <div className='text-gray md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>| {item.date}</div>
-                                            </div>
-                                            <p className='text-gray md:py-8 py-4 minismallf lg:text-[20px] md:mediumf  tracking-wider '>{item.discription}</p>
+                                    <Image src="/images/blogBanner1.png" width="800" height="450" className="md:w-[850px] md:h-[350px] w-[500px] h-[250px]" alt="Banner Image" />
 
-                                            <Image src="/images/blogBanner1.png" width="800" height="450" className="md:w-[850px] md:h-[350px] w-[500px] h-[250px]" alt="Banner Image" />
+                                    {/* <h4 className='text-white font-normal py-3 pt-10 mediumf  tracking-wide'>{item.subHeaderTitle}</h4>
 
-                                            <h4 className='text-white font-normal py-3 pt-10 mediumf  tracking-wide'>{item.subHeaderTitle}</h4>
+                                    <p className='text-gray md:py-8  md:text-[22px] minismallf  tracking-wider '>{item.subDiscription}</p> */}
 
-                                            <p className='text-gray md:py-8  md:text-[22px] minismallf  tracking-wider '>{item.subDiscription}</p>
+                                </div>
 
-                                        </div>
-                                    )
-
-                                })}
                             </div>
                             <div className='flex bg-transparent md:col-span-4 col-span-12 justify-center'>
                                 <div className=' md:mr-5'>
@@ -183,3 +184,22 @@ const Blog = () => {
 }
 
 export default Blog
+
+export const getStaticPaths = async ({ context }) => {
+
+    return {
+        paths: [],
+        fallback: "blocking"
+    };
+}
+
+
+export async function getStaticProps(context) {
+    const slug = context.params.slug;
+    const SinglePostData = await getSinglePostBySlug(slug);
+    return {
+        props: {
+            SinglePostData,
+        }, revalidate: 60,
+    }
+}
