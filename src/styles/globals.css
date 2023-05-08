@@ -10,13 +10,24 @@ a {
   text-decoration: none;
 }
 
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;1,300&display=swap');
 
-body {
+/* From Public Directory */
+@font-face {
+  font-family: 'barlow';
+  src: url('/fonts/Barlow.ttf');
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* body {
   padding: 0;
   margin: 0;
   font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   ;
-}
+} */
 
 /* font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 
