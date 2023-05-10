@@ -10,29 +10,19 @@ a {
   text-decoration: none;
 }
 
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;1,300&display=swap');
 
-/* From Public Directory */
-@font-face {
-  font-family: 'barlow';
-  src: url('/fonts/Barlow.ttf');
-  font-style: medium;
-  font-weight: normal;
-  font-display: swap;
-}
 
-/* body {
+body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  ;
-} */
+  font-family: 'Barlow', sans-serif;
+  font-weight: normal
+}
 
 /* font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 
 
-@layer base {
+/* @layer base {
 
   h1 {
     @apply text-4xl;
@@ -74,7 +64,7 @@ a {
     font-weight: normal;
     font-size: 33px;
   }
-}
+} */
 
 
 
@@ -126,12 +116,12 @@ a {
 
 .zoom-effect-container:hover .hide {
   display: block;
-  animation: 1.5s anim-lineUp ease;
+  animation: 500ms anim-lineUp ease;
   overflow: hidden;
 }
 
 .zoom-effect-container:hover .lineUp {
-  animation: 1.5s anim-lineUp ease;
+  animation: 500ms anim-lineUp ease;
   overflow: hidden;
 }
 
@@ -205,16 +195,20 @@ ol {
   box-shadow: 0px 4px 52px 4px rgba(10, 6, 22, 0.08);
 }
 
+.ncbtmbShadow {
+
+  filter: drop-shadow(0px 12px 28px rgba(0, 0, 0, 0.3));
+}
 
 .image-card img {
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
   overflow: hidden;
 }
 
 .zoom-effect-container:hover {
   background: rgba(128, 128, 128, 0.164);
-  animation: bgsmooth 2s;
+  animation: bgsmooth 500ms;
   animation-fill-mode: forwards;
 
 }
@@ -239,6 +233,7 @@ ol {
   -webkit-transform: scale(1.1);
   /* Safari 3-8 */
   transform: scale(1.1);
+  transition: all ease-in-out 500ms;
 
 }
 
@@ -248,12 +243,12 @@ ol {
 
 .zoom-effect-container:hover .hide {
   display: block;
-  animation: 1.5s anim-lineUp ease;
+  animation: 500ms anim-lineUp ease;
   overflow: hidden;
 }
 
 .zoom-effect-container:hover .lineUp {
-  animation: 1.5s anim-lineUp ease;
+  animation: 500ms anim-lineUp ease;
   overflow: hidden;
 }
 
@@ -285,7 +280,7 @@ ol {
 } */
 
 .zoom:hover {
-  animation: zoom-in 2s;
+  animation: zoom-in 500ms;
   animation-fill-mode: forwards;
 }
 
@@ -321,27 +316,11 @@ ol {
   border-radius: 10px;
 }
 
-
-
 .anmationEnd {
   position: absolute;
   bottom: 0;
   display: none !important;
 }
-
-
-
-
-/* select option {
-  background-color: #777;
-}
-
-select:focus {
-  border-color: #999;
-  box-shadow: 0 0 1px 2px #6db4ff;
-  outline: none;
-} */
-
 
 .instructorBorder {
 
@@ -426,157 +405,537 @@ select:focus {
   -moz-filter: grayscale(100%);
 }
 
+@media screen and (max-height:499px) {
 
-/* cutom font size for max screen size 1920 or default size of all types fonts */
-@media only screen and (min-width:426px) {
-  .extsmallf {
-    font-size: 13px;
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 300px;
   }
 
-  .minismallf {
-    font-size: 15px;
+  .menuBoxsizesmallMenu {
+    min-height: 200px;
   }
 
-  .smallf {
-    font-size: 16px;
+}
+
+@media screen and (min-height:500px) {
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 400px;
   }
 
-  .mediumf {
-    font-size: 20px;
+  .menuBoxsizesmallMenu {
+    min-height: 240px;
   }
 
-  .largef {
-    font-size: 24px;
+}
+
+@media screen and (min-height:768px) {
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 200px;
   }
 
-  .extlargef {
-    font-size: 25px;
+  .menuBoxsizesmallMenu {
+    min-height: 240px;
   }
 
-  .dubblelargef {
-    font-size: 25px;
+}
+
+@media screen and (min-height:1024px) {
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 320px;
   }
 
-  .triplelargef {
-    font-size: 25px;
-    letter-spacing: 1px;
-    font-weight: 800;
-    line-height: 44px;
+  .menuBoxsizesmallMenu {
+    min-height: 200px;
   }
 
-  .fourxllargef {
-    font-size: 50px;
-  }
-
-  .superlargef {
-    font-size: 75px;
-    letter-spacing: 0.025em;
-  }
 }
 
 
+/* custom image size for small desktop device */
+@media only screen and (min-width:425px) {
 
-/* cutom font size for max screen size 1601 or default size of all types fonts */
-@media only screen and (min-width:1601px) {
-  .extsmallf {
-    font-size: 13px;
+  .logoImg {
+
+    width: 200px;
+    height: 250px;
+
   }
 
-  .minismallf {
-    font-size: 15px;
+  .ncbtmbImg {
+
+    height: 90px;
+    width: 90px;
+    margin-top: 12px;
+    margin-bottom: 0px;
+
   }
 
-  .smallf {
-    font-size: 16px;
+  .conciergeImg {
+
+    height: 50px;
+    width: 50px;
+
   }
 
-  .mediumf {
-    font-size: 20px;
+  .giftShoppeImg {
+
+    height: 60px;
+    width: 60px;
+
   }
 
-  .largef {
-    font-size: 24px;
+  .teacherLounge {
+    height: 60px;
+    width: 40px;
+
   }
 
-  .extlargef {
-    font-size: 25px;
+  .iamBackImg {
+    height: 70px;
+    width: 70px;
+
   }
 
-  .dubblelargef {
-    font-size: 24px;
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 94px;
+    height: 150px;
+
   }
 
-  .triplelargef {
-    font-size: 35px;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    line-height: 44px;
+  .doorGate {
+    width: 45px;
+    height: 150px;
+
   }
 
-  .fourxllargef {
-    font-size: 40px;
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 0px;
+    left: 18px;
   }
 
-  .superlargef {
-    font-size: 75px;
-    letter-spacing: 0.025em;
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 70px;
+    left: 30px;
   }
+
+
 }
 
+/* custom image size for 1280 desktop device */
+@media only screen and (min-width:1280px) {
 
+  .logoImg {
 
-/* cutom font size for max screen size 2560 or default size of all types fonts */
-@media only screen and (min-width:1921px) {
-
-  .extxlsmallf {
-    font-size: 30px;
-  }
-
-  .extsmallf {
-    font-size: 13px;
-  }
-
-  .minismallf {
-    font-size: 25px;
-  }
-
-  .smallf {
-    font-size: 16px;
-  }
-
-  .mediumf {
-    font-size: 30px;
-  }
-
-  .largef {
-    font-size: 35px;
-  }
-
-  .extlargef {
-    font-size: 25px;
-  }
-
-  .dubblelargef {
-    font-size: 35px;
-  }
-
-  .triplelargef {
-    font-size: 50px;
+    width: 240px;
+    height: 260px;
 
   }
 
-  .fourxllargef {
-    font-size: 40px;
+  .ncbtmbImg {
+
+    height: 90px;
+    width: 90px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+
   }
 
-  .superlargef {
-    font-size: 100px;
-    letter-spacing: 0.025em;
+  .conciergeImg {
+
+    height: 55px;
+    width: 55px;
+
   }
+
+  .giftShoppeImg {
+
+    height: 70px;
+    width: 70px;
+
+  }
+
+  .teacherLounge {
+    height: 60px;
+    width: 40px;
+
+  }
+
+  .iamBackImg {
+    height: 75px;
+    width: 75px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 94px;
+    height: 180px;
+
+  }
+
+  .doorGate {
+    width: 45px;
+    height: 180px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 0px;
+    left: 18px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 80px;
+    left: 30px;
+  }
+
+
+}
+
+/* custom image size for 1366 desktop device */
+@media only screen and (min-width:1366px) {
+
+  .logoImg {
+
+    width: 260px;
+    height: 260px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 90px;
+    width: 90px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+
+  }
+
+  .conciergeImg {
+
+    height: 55px;
+    width: 55px;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 70px;
+    width: 70px;
+
+  }
+
+  .teacherLounge {
+    height: 60px;
+    width: 40px;
+
+  }
+
+  .iamBackImg {
+    height: 75px;
+    width: 75px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 120px;
+    height: 200px;
+
+  }
+
+  .doorGate {
+    width: 60px;
+    height: 200px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 0px;
+    left: 23px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 90px;
+    left: 40px;
+  }
+
+
+}
+
+/* custom image size for 1440 desktop device */
+@media only screen and (min-width:1440px) {
+
+  .logoImg {
+
+    width: 300px;
+    height: 250px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 100px;
+    width: 100px;
+    margin-top: 12px;
+    margin-bottom: 0px;
+
+  }
+
+  .conciergeImg {
+
+    height: 60px;
+    width: 60px;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 80px;
+    width: 80px;
+
+  }
+
+  .teacherLounge {
+    height: 55px;
+    width: 45px;
+    margin-bottom: 6px;
+
+  }
+
+  .iamBackImg {
+    height: 85px;
+    width: 85px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 180px;
+    height: 154px;
+
+
+  }
+
+  .doorGate {
+    width: 80px;
+    height: 155px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 0px;
+    left: 39.5px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+  }
+
+
+}
+
+/* custom image size for 1600 desktop device */
+@media only screen and (min-width:1600px) {
+
+  .logoImg {
+
+    width: 320px;
+    height: 210px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 100px;
+    width: 150px;
+
+    margin-top: 12px;
+    margin-bottom: 55px;
+
+  }
+
+  .conciergeImg {
+
+    height: 85px;
+    width: 85px;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 110px;
+    width: 110px;
+
+  }
+
+  .teacherLounge {
+    height: 90px;
+    width: 60px;
+
+  }
+
+  .iamBackImg {
+    height: 100px;
+    width: 100px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 150px;
+    height: 200px;
+
+  }
+
+  .doorGate {
+    width: 80px;
+    height: 140px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 30px;
+    left: 25px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 60px;
+    left: 55px;
+  }
+
+
+}
+
+/* custom image size for 1920 desktop device */
+@media only screen and (min-width:1920px) {
+
+  .logoImg {
+
+    width: 320px;
+    height: 210px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 100px;
+    width: 140px;
+    margin-top: 12px;
+    margin-bottom: 55px;
+
+  }
+
+  .conciergeImg {
+
+    height: 85px;
+    width: 85px;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 110px;
+    width: 110px;
+
+  }
+
+  .teacherLounge {
+    height: 90px;
+    width: 60px;
+
+  }
+
+  .iamBackImg {
+    height: 90px;
+    width: 90px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 170px;
+    height: 220px;
+
+  }
+
+  .doorGate {
+    width: 90px;
+    height: 160px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 70px;
+    left: 65px;
+  }
+
+
 }
 
 /* custom font size for small device */
-
 @media only screen and (max-width:425px) {
   .extsmallf {
     font-size: 11px !important;
@@ -620,7 +979,479 @@ select:focus {
   }
 }
 
-/* responsive font size screen wise media query */
+/* cutom font size for max screen size 1920 or default size of all types fonts */
+@media only screen and (min-width:426px) {
+
+  .extxlsmallf {
+    font-size: 12px;
+  }
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 16px;
+  }
+
+  .triplelargef {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+  }
+
+  .fourxllargef {
+    font-size: 50px;
+  }
+
+  .superlargef {
+    font-size: 55px;
+    letter-spacing: 0.001em;
+    line-height: 65px;
+  }
+
+  .startFont {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 44px;
+
+  }
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  }
+
+
+}
+
+/* cutom font size for max screen size 1024 or default size of all types fonts */
+@media only screen and (min-width:1024px) {
+  .extxlsmallf {
+    font-size: 13px;
+  }
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .triplelargef {
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .fourxllargef {
+    font-size: 50px;
+  }
+
+  .superlargef {
+    font-size: 60px;
+    letter-spacing: 0.001em;
+    line-height: 65px;
+  }
+
+  .startFont {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 44px;
+
+  }
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  }
+
+
+}
+
+/* cutom font size for max screen size 1280 or default size of all types fonts */
+@media only screen and (min-width:1280px) {
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 20px;
+  }
+
+  .triplelargef {
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+  }
+
+  .fourxllargef {
+    font-size: 50px;
+  }
+
+  .superlargef {
+    font-size: 60px;
+    letter-spacing: 0.001em;
+    line-height: 60px;
+  }
+
+  .startFont {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: -10px;
+
+  }
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  }
+
+
+}
+
+/* cutom font size for max screen size 1366 or default size of all types fonts */
+@media only screen and (min-width:1366px) {
+
+  .extxlsmallf {
+    font-size: 13px;
+  }
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 19px;
+  }
+
+  .triplelargef {
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .fourxllargef {
+    font-size: 50px;
+  }
+
+  .superlargef {
+    font-size: 70px;
+    letter-spacing: 0.001em;
+    line-height: 70px;
+  }
+
+  .startFont {
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: -10px;
+
+  }
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  }
+}
+
+/* cutom font size for max screen size 1440 or default size of all types fonts */
+@media only screen and (min-width:1440px) {
+
+  .extxlsmallf {
+    font-size: 14px;
+  }
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 20px;
+  }
+
+  .triplelargef {
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 44px;
+  }
+
+  .fourxllargef {
+    font-size: 50px;
+  }
+
+  .superlargef {
+    font-size: 80px;
+    letter-spacing: 0.001em;
+    line-height: 90px;
+  }
+
+  .startFont {
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: 20px;
+
+  }
+
+  /* menu boxsize */
+  .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  }
+
+
+}
+
+/* cutom font size for max screen size 1600 or default size of all types fonts */
+@media only screen and (min-width:1600px) {
+
+  .extxlsmallf {
+    font-size: 16px;
+  }
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 24px;
+  }
+
+  .triplelargef {
+    font-size: 34px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 44px;
+  }
+
+  .fourxllargef {
+    font-size: 40px;
+  }
+
+  .superlargef {
+    font-size: 85px;
+    letter-spacing: 0.025em;
+  }
+
+  .startFont {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: 40px;
+
+  }
+
+}
+
+/* cutom font size for max screen size 1920 or default size of all types fonts */
+@media only screen and (min-width:1920px) {
+
+  .extxlsmallf {
+    font-size: 16px;
+  }
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 16px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 24px;
+  }
+
+  .triplelargef {
+    font-size: 37px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px;
+  }
+
+  .superlargef {
+    font-size: 85px;
+    letter-spacing: 0.025em;
+  }
+
+  /* custom font for start */
+
+  .startFont {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 44px;
+
+  }
+
+
+
+}
 
 
 /* @media only screen and(min ) */

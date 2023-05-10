@@ -8,36 +8,21 @@ const Door = () => {
             <div className={` hidden md:block ${Styles.imageDiv}`}>
                 <Image
                     src="/images/doorframe.svg"
-                    width={154} height={145}
-                    className="w-full h-full"
+                    width={300} height={200}
+                    className=" doorFrame"
                     alt="door"
                 />
-                <div
-                    className={`
-                 ${Styles.child} 
-                 absolute 
-                 top-[0px] 
-                 left-[29px] 
-                 `}>
+                <div className={`${Styles.child} doorGateMainDiv `}>
+                    <Image
+                        className=" doorGate"
+                        src="/images/doorgate.svg"
+                        width={300}
+                        height={200}
+                        alt="door" />
+
                     <div
-                        className='
-                    '>
-                        <Image
-                            className="w-full h-full"
-                            src="/images/doorgate.svg"
-                            width={74.5}
-                            height={144}
-                            alt="door" />
-                    </div>
-                    <div
-                        className='
-                    absolute 
-                    w-[3px]
-                    h-[5px]
-                    top-[60px] 
-                    left-[50px] 
-                    '>
-                        <Image className={` `} src="/images/doorHandle.svg" width={10} height={10} alt="door" />
+                        className='gateHandleMainDiv'>
+                        <Image src="/images/doorHandle.svg" width={10} height={10} alt="door" />
                     </div>
 
                 </div>

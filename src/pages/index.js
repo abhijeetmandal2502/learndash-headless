@@ -121,8 +121,6 @@ const Home = () => {
 
     const ncbtmbMethodHide = () => {
         setShowNcbtmb(false)
-
-
     }
     // conceierge approved 
     const conceiergeMethod = () => {
@@ -182,18 +180,22 @@ const Home = () => {
 
     return (
         <>
-            <Head> LearnDash </Head>
+            <Head>
 
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+            </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
-                <div className='relative flex flex-col justify-between col-span-12 px-5 py-6 md:px-16 md:col-span-6 '>
-                    <div className='flex items-center justify-between space-x-5 cursor-pointer '>
+                <div className='relative flex flex-col justify-between col-span-12 px-5 -mt-10 md:pl-20 md:col-span-6 '>
+                    <div className=' space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
                         {/* menu icon for small device */}
-                        <div className='lg:hidden'>
+                        <div className='md:hidden'>
                             <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
                                 <p className='font-semibold dubblelargf '>menu</p>
-                                {/* <Image src="/images/menuIcon.png" width={25} height={25} alt="menu" /> */}
                                 <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
@@ -203,9 +205,9 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className={`w-full pb-8 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='superlargef font-normal py-1'>massage ce.</p>
-                        <p className='superlargef  font-normal py-1'> simplified. </p>
+                    <div className={`w-full pb-28 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+                        <p className='superlargef  text-black '>massage ce.</p>
+                        <p className='superlargef text-black '> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
@@ -223,13 +225,13 @@ const Home = () => {
                             {/* first grid */}
                             <div className=' md:col-span-6 w-full h-[100vh] border-l border-gray'>
                                 {/* start components */}
-                                <div className={` w-full h-1/2 min-h-[270px]  flex flex-col overflow-hidden relative justify-center   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
-                                    <div className={` md:space-x-0 flex md:flex-col relative md:pt-7  `}>
+                                <div className={` w-full h-1/2 menuBoxsizebigMenu  flex flex-col overflow-hidden relative justify-center   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                    <div className={` md:space-x-0 flex md:flex-col relative `}>
                                         <Door />
-                                        <div className='w-full pt-3'>
-                                            <h3 className='mt-4 triplelargef
-                                              lineUp md:text-center'>start</h3>
-                                            <p className={`mt-1 extxlsmallf ${Styles.hide1} tracking-[.05em]   md:text-center lineUp`}>start a course today!</p>
+                                        <div className='w-full'>
+                                            <h3 className=' startFont
+                                              lineUp text-center'>start</h3>
+                                            <p className={` extxlsmallf pt-1 ${Styles.hide1} text-center lineUp`}>start a course today!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
@@ -239,33 +241,32 @@ const Home = () => {
                                 </div>
 
                                 {/* concierge components */}
-
-                                <div className={`w-full h-1/4 min-h-[150px] flex relative overflow-hidden flex-col justify-center border-t border-gray  ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}  `} onClick={() => conceiergeMethod()}>
+                                <div className={`w-full h-1/4 menuBoxsizesmallMenu  flex relative overflow-hidden flex-col justify-center border-t border-gray  ${styles.cardAnimation} cursor-pointer  ${showConceierge ? styles.onclickCardAanimation : ""}  `} onClick={() => conceiergeMethod()}>
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <div className='md:mx-auto  w-[88px] h-[88px] '>
+                                        <div className='mx-auto conciergeImg'>
                                             <Image alt='start' src='/images/ConciergeNew.svg' height='300' width='300' className='' />
                                         </div>
 
                                         <div className='w-full'>
-                                            <h3 className='mt-4  font-semibold md:text-center triplelargef lineUp'>concierge</h3>
-                                            <p className={`mt-1 extxlsmallf ${styles.hide} md:text-center tracking-[.05em] lineUp`}>have a question? get in touch!</p>
+                                            <h3 className='mt-1  font-semibold md:text-center triplelargef lineUp'>concierge</h3>
+                                            <p className={` extxlsmallf ${styles.hide} text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
                                 </div>
+
                                 {/* gift shoppe */}
+                                <div className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
+                                    <div className={` image-card ${styles.mainDiv}`}>
 
-                                <div className={` w-full h-1/4 min-h-[150px] flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
-
-                                    <div className='flex space-x-4 md:block md:space-x-0 image-card '>
-                                        <div className='md:mx-auto xl:pt-1 w-[88px] h-[88px]'>
-                                            <Image alt='start' src='/images/home1.svg' height='300' width='300' />
+                                        <div className={`${styles.gift} absolute -top-5 left-1/2 -translate-x-1/2 -translate-y-0 w-[100%] h-[100%]  `}>
                                         </div>
-                                        <div className='w-full'>
-                                            <h3 className=' font-semibold xl:mt-0 md:mt-0  triplelargef lineUp md:text-center'>gift shoppe</h3>
-                                            <p className={`mt-1 3xl:mt-2 extxlsmallf ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>gift ce to a friends</p>
+
+                                        <div className={`w-full ${styles.content}`}>
+                                            <h3 className=' triplelargef lineUp text-center'>gift shoppe</h3>
+                                            <p className={`extxlsmallf ${styles.hide} text-center lineUp`}>gift ce to a friends</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -274,17 +275,19 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            {/* i am back */}
+
                             <div className=' md:col-span-6 h-[100vh] border-l 3xl:border-l-2 border-gray w-full '>
-                                <div className={`w-full h-1/2 min-h-[270px] flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer  ${styles.cardAnimation}   `} onClick={() => { HandleClick(); }}>
+
+                                {/* i am back */}
+                                <div className={`w-full h-1/2 menuBoxsizebigMenu flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer  ${styles.cardAnimation}   `} onClick={() => { HandleClick(); }}>
 
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
-                                        <div className='md:mx-auto h-[130px]  w-[130px] '>
+                                        <div className='mx-auto iamBackImg '>
                                             <Image alt='start' src='/images/iambackkey.svg' height='300' width='300' />
                                         </div>
                                         <div className='w-full'>
-                                            <h3 className='mt-4  font-semibold triplelargef lineUp md:text-center'>i’m back</h3>
-                                            <p className={`mt-1 extxlsmallf ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>existing user login</p>
+                                            <h3 className=' triplelargef lineUp text-center'>i’m back</h3>
+                                            <p className={` extxlsmallf ${styles.hide} text-center  lineUp`}>existing user login</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -294,15 +297,15 @@ const Home = () => {
 
                                 {/* ncbtmb approved component */}
 
-                                <div className={` w-full h-1/4 min-h-[150px] flex flex-col relative overflow-hidden justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}  `} onClick={() => ncbtmbMethod()}>
-                                    <div className='flex space-x-4 cursor-pointer md:block md:space-x-0 image-card '>
-                                        <div className='md:mx-auto 2xl:w-[120px]  3xl:w-[220px] 3xl:h-[220px]  2xl:h-[120px] w-[100px]  h-[80px] '>
-                                            <Image alt='start' src='/images/ncbtmblatest.svg' height='400' width='400' />
+                                <div className={` w-full h-1/4 menuBoxsizesmallMenu   relative overflow-hidden border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}  `} onClick={() => ncbtmbMethod()}>
+                                    <div className=' cursor-pointer '>
+                                        <div className='md:mx-auto ncbtmbImg ncbtmbShadow '>
+                                            <Image alt='start' src='/images/NCBTMB.svg' height='400' width='400' />
                                         </div>
 
-                                        <div className=' w-full ncbtmbtop'>
-                                            <h3 className='font-semibold md:text-center triplelargef lineUp'>ncbtmb approved</h3>
-                                            <p className={`mt-1 extxlsmallf ${styles.hide} md:text-center  tracking-[.05em] lineUp`}>check if your state is approved</p>
+                                        <div className=' w-full'>
+                                            <h3 className=' text-center triplelargef lineUp'>ncbtmb approved</h3>
+                                            <p className={` extxlsmallf ${styles.hide} text-center lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -312,14 +315,14 @@ const Home = () => {
 
                                 {/* teacher lounge components */}
 
-                                <div className={` w-full h-1/4 min-h-[150px] flex flex-col justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden `} onClick={() => handleTeacherLOginOpen()} >
+                                <div className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden `} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 cursor-pointer md:block md:space-x-0 image-card '>
-                                        <div className='md:mx-auto 2xl:w-[50px]  3xl:w-[80px] 3xl:h-[80px] w-[35px] 2xl:h-[70px] md:pt-1 h-[50px]'>
+                                        <div className='mx-auto teacherLounge '>
                                             <Image alt='start' src='/images/teacherLoungeNew.svg' height='200' width='150' />
                                         </div>
-                                        <div className='w-full 4xl:mt-20 3xl:mt-16'>
-                                            <h3 className=' font-semibold lineUp 3xl:mt-2 md:text-center triplelargef md:mt-4'>teacher’s lounge</h3>
-                                            <p className={` extxlsmallf mt-1 ${styles.hide} md:text-center tracking-[.05em]  lineUp`}>existing instructor please login here!</p>
+                                        <div className='w-full '>
+                                            <h3 className=' lineUp text-center triplelargef '>teacher’s lounge</h3>
+                                            <p className={` extxlsmallf  ${styles.hide} text-center  lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
@@ -364,7 +367,7 @@ const Home = () => {
                     <div className='cursor-pointer '>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-5 left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                <p className='font-semibold dubblelargef '>menu</p>
+                                <p className='font-semibold dubblelargef text-black '>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />

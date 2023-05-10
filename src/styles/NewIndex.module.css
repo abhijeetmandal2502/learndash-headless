@@ -1,7 +1,7 @@
 .gridMain {
 
     transition: all ease-in-out 2s;
-    animation: transformUp 1s ease-in-out forwards;
+    animation: transformUp 500ms ease-in-out forwards;
     position: relative;
 
 
@@ -764,8 +764,8 @@ screen and (max-height: 700px) {
 /* card animation  */
 
 .imagecard img {
-    -webkit-transition: 1s ease;
-    transition: 1s ease;
+    -webkit-transition: 500ms ease;
+    transition: 500ms ease;
     overflow: hidden;
 }
 
@@ -830,10 +830,8 @@ screen and (max-height: 700px) {
 .cardAnimation:hover h3 {
 
     color: purple;
-    transition: color 1s ease-in;
-    animation: textanimateUp 1s ease-in-out forwards;
-    font-style: normal;
-    font-weight: 500;
+    transition: color 500ms ease-in;
+    animation: textanimateUp 500ms ease-in-out forwards;
 
 }
 
@@ -844,10 +842,7 @@ screen and (max-height: 700px) {
         color: black;
     }
 
-
     to {
-
-
         color: #9747FF;
 
     }
@@ -859,27 +854,18 @@ screen and (max-height: 700px) {
 .cardAnimation h3 {
 
     color: black;
-    transition: all 1s ease-in-out;
-    animation: textanimateDown 1s ease-in-out forwards;
-    font-style: normal;
-    font-weight: 500;
-
+    transition: all 500ms ease-in-out;
+    animation: textanimateDown 500ms ease-in-out forwards;
 }
 
 @keyframes textanimateDown {
     from {
-
-
         color: #9747FF;
     }
 
-
     to {
-
-
         color: black;
         transform: translateY(10px);
-
     }
 }
 
@@ -893,8 +879,8 @@ screen and (max-height: 700px) {
 .cardAnimation:hover .hide {
 
     color: black;
-    transition: color 5s ease-in;
-    animation: animateText 1s ease-in-out both;
+    transition: color 500ms ease-in;
+    animation: animateText 500ms ease-in-out both;
     display: block;
 }
 
@@ -919,7 +905,7 @@ screen and (max-height: 700px) {
 
     color: black;
     transition: color 5s ease-in;
-    animation: animateTextHide 1s ease-in-out both;
+    animation: animateTextHide 500ms ease-in-out both;
     display: block;
 }
 
@@ -933,19 +919,15 @@ screen and (max-height: 700px) {
         opacity: 0;
         transform: translateY(10px);
     }
-
-
-
-
 }
 
 .animatMenuLine>path:first-child {
 
-    animation: animateLine 1s infinite;
+    animation: animateLine 500ms infinite;
 
     opacity: 1;
 
-    transition: opacity 1s ease;
+    transition: opacity 500ms ease;
 
 
 }
@@ -957,13 +939,13 @@ screen and (max-height: 700px) {
     0% {
         transform: scale(0.9);
         -webkit-transform: scale(0.9);
-        transition: scale 1s ease;
+        transition: scale 500ms ease;
     }
 
     100% {
         transform: scale(1);
         -webkit-transform: scale(1);
-        transition: scale 1s ease;
+        transition: scale 500ms ease;
     }
 }
 
@@ -976,7 +958,7 @@ screen and (max-height: 700px) {
 
     transform: rotateY(15deg);
 
-    /* animation: rotateImage 1s linear; */
+    /* animation: rotateImage 500ms linear; */
 }
 
 
@@ -1007,10 +989,8 @@ screen and (max-height: 700px) {
 .onclickCardAanimation h3 {
 
     color: purple;
-    transition: color 1s ease-in;
-    animation: textanimateUp 1s ease-in-out forwards;
-    font-style: normal;
-    font-weight: 500;
+    transition: color 500ms ease-in;
+    animation: textanimateUp 500ms ease-in-out forwards;
 
 }
 
@@ -1023,10 +1003,7 @@ screen and (max-height: 700px) {
 
 
     to {
-
-
         color: #9747FF;
-
     }
 }
 
@@ -1034,7 +1011,7 @@ screen and (max-height: 700px) {
 
     color: black;
     transition: color 5s ease-in;
-    animation: animateText 1s ease-in-out both;
+    animation: animateText 500ms ease-in-out both;
     display: block;
 }
 
@@ -1064,12 +1041,10 @@ screen and (max-height: 700px) {
     from {
         transform: scale(1.0);
         transform: translateY(10px);
-
     }
 
     to {
         transform: scale(1.2);
-
     }
 }
 
@@ -1078,38 +1053,27 @@ screen and (max-height: 700px) {
 .modelOpen {
 
     opacity: 1;
-    transition: all linear 1s;
-    animation: passwordShow 1s linear forwards;
-
+    transition: all linear 500ms;
+    animation: passwordShow 500ms linear forwards;
 }
 
 @keyframes passwordShow {
 
     form {
-
-
         visibility: hidden;
         opacity: 0;
-
     }
 
     to {
-
-
         visibility: visible;
         opacity: 1;
         z-index: 100;
-
-
     }
 }
 
 .modelClose {
-
-
-    transition: all linear 1s;
-    animation: passwordHide 1s linear forwards;
-
+    transition: all linear 500ms;
+    animation: passwordHide 500ms linear forwards;
 }
 
 
@@ -1120,14 +1084,12 @@ screen and (max-height: 700px) {
         opacity: 1;
         z-index: 100;
         visibility: visible;
-
     }
 
     to {
         opacity: 0;
         z-index: 0;
         visibility: hidden;
-
     }
 }
 
@@ -1137,11 +1099,8 @@ screen and (max-height: 700px) {
 
 
 .teacherLoungTrue {
-
     background-image: url('/images/teacherLoungeBg.png');
-    transition: all ease-in-out 1s;
-
-
+    transition: all ease-in-out 500ms;
 }
 
 
@@ -1150,9 +1109,7 @@ screen and (max-height: 700px) {
 .teacherLoungFalse {
 
     background-image: url('/images/bg-image.png');
-    transition: all ease-in-out 1s;
-
-
+    transition: all ease-in-out 500ms;
 }
 
 
@@ -1161,9 +1118,9 @@ screen and (max-height: 700px) {
 
 .hidebgComp {
 
-    animation: hidebgelement forwards ease-in-out 1s;
+    animation: hidebgelement forwards ease-in-out 500ms;
 
-    transition: animation ease-in-out 1s;
+    transition: animation ease-in-out 500ms;
 
 }
 
@@ -1239,7 +1196,6 @@ screen and (max-height: 700px) {
     }
 }
 
-
 .MenuHideAnimation {
     animation: menuHide ease-in-out 2s forwards;
     transition: animation ease-in-out 2s;
@@ -1255,4 +1211,283 @@ screen and (max-height: 700px) {
     to {
         left: -100%;
     }
+}
+
+
+/* gift shoppe image size 1024px */
+
+@media screen and (min-width:425px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 80px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 80px;
+    }
+
+    .mainDiv {
+        transform: translateY(0px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-14px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 64px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 80px;
+    }
+
+}
+
+/* gift shoppe image size 1024px */
+
+@media screen and (min-width:1024px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 64px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 80px;
+    }
+
+}
+
+
+/* gift shoppe image size 1280px */
+
+@media screen and (min-width:1280px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 64px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 80px;
+    }
+
+}
+
+/* gift shoppe image size 1366px */
+
+@media screen and (min-width:1366px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+}
+
+/* gift shoppe image size 1440px */
+
+@media screen and (min-width:1440px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 90px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 64px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 80px;
+    }
+
+}
+
+/* gift shoppe image size 1600px */
+
+@media screen and (min-width:1600px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 85px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 110px;
+    }
+
+}
+
+/* gift shoppe image size 1990px */
+
+@media screen and (min-width:1920px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 85px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 110px;
+    }
+
 }

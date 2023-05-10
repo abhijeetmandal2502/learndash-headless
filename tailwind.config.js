@@ -22,10 +22,6 @@ module.exports = {
 
       },
 
-      fontFamily: {
-        Barlow: ['Barlow', 'sans-serif'],
-      },
-
     },
 
     screens: {
