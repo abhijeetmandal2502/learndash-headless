@@ -151,18 +151,18 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                 <div className={` ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
                     <div className='relative grid grid-cols-12   overflow-y-scroll'>
                         <div className={`  md:col-span-6 col-span-12 md:pl-16 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
-                            <div className='hidden pt-6 md:block'>
+                            <div className='hidden -mt-5 max-h-[170px]  md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
                             <div className='hidden md:block'>
-                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2 mt-4 rounded-3xl`} onClick={() => { startMethodHide() }}>
+                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-4 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
                                     <BiArrowBack size={20} className="text-white 3xl:w-[30px] 3xl:h-[30px] " /><span className='minismallf'>lobby</span></button>
                             </div>
 
 
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
                                 <div className='px-3 mt-10 md:pt-32 md:px-0 '>
-                                    <h2 className='superlargef'>simply choose.</h2>
+                                    <h2 className='superlargef text-black'>simply choose.</h2>
                                     <p className='my-5 3xl:py-10 dubblelargef'>smile, you can’t make a bad choice.</p>
                                 </div>
                             </div>

@@ -181,11 +181,9 @@ const Home = () => {
     return (
         <>
             <Head>
-
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
                 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
@@ -383,12 +381,10 @@ const Home = () => {
             </div>
 
             {/* drowable component */}
-
             <div className={` md:block hidden  ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                 <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                     <div className=" overflow-y-scroll">
                         <div className="flex flex-col">
-
                             <Disclosure as="div" className=' list-none rounded-full text-gray'>
                                 {({ open }) => (
                                     <>

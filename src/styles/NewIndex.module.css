@@ -1213,6 +1213,228 @@ screen and (max-height: 700px) {
     }
 }
 
+/* gift shoppi image size on minheight */
+@media (max-height:650px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 60px !important;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 60px !important;
+    }
+
+    .mainDiv {
+        transform: translateY(0px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-14px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 64px !important;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 80px !important;
+    }
+
+}
+
+@media (max-height:600px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 60px !important;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 60px !important;
+    }
+
+    .mainDiv {
+        transform: translateY(0px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-14px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 40px !important;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 60px !important;
+    }
+
+}
+
+@media (max-height:500px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 60px !important;
+        margin-top: 10px !important;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 60px !important;
+        margin-top: 10px !important;
+    }
+
+    .mainDiv {
+        transform: translateY(0px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-14px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 40px !important;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 60px !important;
+    }
+
+}
+
+@media (max-height:400px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 40px !important;
+        margin-top: 10px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 40px !important;
+        margin-top: 10px;
+    }
+
+    .mainDiv {
+        transform: translateY(0px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-5px) !important;
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 20px !important;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 40px !important;
+    }
+
+}
+
+
+@media (max-height:250px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 25px !important;
+        margin-top: 10px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms !important;
+        background-size: 25px !important;
+        margin-top: 10px;
+    }
+
+    .mainDiv {
+        transform: translateY(0px);
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-3px) !important;
+        transition: all ease-in-out 500ms;
+
+    }
+
+    .mainDiv>.content {
+        margin-top: 10px !important;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 25px !important;
+    }
+
+}
 
 /* gift shoppe image size 1024px */
 

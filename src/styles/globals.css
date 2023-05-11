@@ -387,7 +387,6 @@ ol {
 
 }
 
-
 .giftCardActive {
   background: #D4D4D4;
   box-shadow: rgb(0 0 0 / 21%) -107px -69px 15px -85px inset;
@@ -405,66 +404,962 @@ ol {
   -moz-filter: grayscale(100%);
 }
 
-@media screen and (max-height:499px) {
+/* responsive min height  */
 
-  /* menu boxsize */
-  .menuBoxsizebigMenu {
-    min-height: 300px;
+/* minheight screen size image  */
+
+@media (max-height:750px) {
+
+  .logoImg {
+
+    width: 230px;
+    height: 270px;
+
   }
 
-  .menuBoxsizesmallMenu {
+  .ncbtmbImg {
+
+    height: 70px !important;
+    width: 70px !important;
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 55px !important;
+    width: 35px !important;
+
+  }
+
+  .iamBackImg {
+    height: 70px;
+    width: 70px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 70px !important;
+    height: 70px !important;
+
+  }
+
+  .doorGate {
+    width: 40px !important;
+    height: 67px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 11px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px !important;
+    height: 3px !important;
+    position: absolute !important;
+    top: 28px !important;
+    left: 25px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+@media (max-height:650px) {
+
+  .logoImg {
+
+    width: 230px;
+    height: 270px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 70px !important;
+    width: 70px !important;
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 60px !important;
+    width: 35px !important;
+
+  }
+
+  .iamBackImg {
+    height: 70px;
+    width: 70px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 70px !important;
+    height: 70px !important;
+
+  }
+
+  .doorGate {
+    width: 40px !important;
+    height: 67px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 11px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px !important;
+    height: 3px !important;
+    position: absolute !important;
+    top: 28px !important;
+    left: 25px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+@media (max-height:600px) {
+
+  .logoImg {
+
+    width: 230px;
+    height: 270px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 60px !important;
+    width: 60px !important;
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 35px !important;
+    width: 35px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 40px !important;
+    width: 30px !important;
+
+  }
+
+  .iamBackImg {
+    height: 70px;
+    width: 70px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 70px !important;
+    height: 70px !important;
+
+  }
+
+  .doorGate {
+    width: 40px !important;
+    height: 67px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 11px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px !important;
+    height: 3px !important;
+    position: absolute !important;
+    top: 28px !important;
+    left: 25px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+@media (max-height:500px) {
+
+  .logoImg {
+
+    width: 230px;
+    height: 270px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 40px !important;
+    width: 40px !important;
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 25px !important;
+    width: 25px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 25px !important;
+    width: 20px !important;
+
+  }
+
+  .iamBackImg {
+    height: 70px;
+    width: 70px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 70px !important;
+    height: 70px !important;
+
+  }
+
+  .doorGate {
+    width: 40px !important;
+    height: 67px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 11px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px !important;
+    height: 3px !important;
+    position: absolute !important;
+    top: 28px !important;
+    left: 25px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+@media (max-height:400px) {
+
+  .logoImg {
+
+    width: 150px !important;
+    height: 140px !important;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 30px !important;
+    width: 30px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: px !important;
+    width: px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 24px !important;
+    width: 16px !important;
+
+  }
+
+  .iamBackImg {
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 40px !important;
+    height: 40px !important;
+
+  }
+
+  .doorGate {
+    width: 19px !important;
+    height: 38px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 8px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 1.5px !important;
+    height: 2px !important;
+    position: absolute !important;
+    top: 13px !important;
+    left: 13px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+@media (max-height:250px) {
+
+  .logoImg {
+
+    width: 150px !important;
+    height: 140px !important;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 20px !important;
+    width: 20px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 15px !important;
+    width: 15px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 10px !important;
+    width: 9px !important;
+
+  }
+
+  .iamBackImg {
+    height: 40px !important;
+    width: 40px !important;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 40px !important;
+    height: 40px !important;
+
+  }
+
+  .doorGate {
+    width: 19px !important;
+    height: 38px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 8px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 1.5px !important;
+    height: 2px !important;
+    position: absolute !important;
+    top: 13px !important;
+    left: 13px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+/* minheight screen size font  */
+
+@media (max-height:750px) {
+
+  .extxlsmallf {
+    font-size: 12px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 11px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 25px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 25px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+
+  .superlargef {
+    font-size: 55px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 65px !important;
+  }
+
+  .startFont {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-top: 20px !important;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
-}
-
-@media screen and (min-height:500px) {
-
-  /* menu boxsize */
-  .menuBoxsizebigMenu {
-    min-height: 400px;
-  }
-
   .menuBoxsizesmallMenu {
-    min-height: 240px;
-  }
+    min-height: 180px;
+  } */
+
 
 }
 
-@media screen and (min-height:768px) {
+@media (max-height:650px) {
+
+  .extxlsmallf {
+    font-size: 12px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 11px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 25px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 25px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+
+  .superlargef {
+    font-size: 55px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 65px !important;
+  }
+
+  .startFont {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-top: 20px !important;
+
+  }
 
   /* menu boxsize */
-  .menuBoxsizebigMenu {
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
   .menuBoxsizesmallMenu {
-    min-height: 240px;
-  }
+    min-height: 180px;
+  } */
+
 
 }
 
-@media screen and (min-height:1024px) {
+/* minheight screen size font  */
+@media (max-height:600px) {
 
-  /* menu boxsize */
-  .menuBoxsizebigMenu {
-    min-height: 320px;
+  .extxlsmallf {
+    font-size: 12px !important;
   }
 
-  .menuBoxsizesmallMenu {
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 11px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 20px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 25px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+
+  .superlargef {
+    font-size: 55px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 65px !important;
+  }
+
+  .startFont {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-top: 20px !important;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
+
+
 }
 
+@media (max-height:500px) {
+
+  .extxlsmallf {
+    font-size: 12px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 11px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 15px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 25px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+
+  .superlargef {
+    font-size: 55px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 65px !important;
+  }
+
+  .startFont {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-top: 20px !important;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
+
+
+}
+
+@media (max-height:400px) {
+
+  .extxlsmallf {
+    font-size: 8px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 11px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 12px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+
+  .superlargef {
+    font-size: 20px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 25px !important;
+  }
+
+  .startFont {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 12px !important;
+    margin-top: 10px !important;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
+
+
+}
+
+@media (max-height:400px) {
+
+  .extxlsmallf {
+    font-size: 8px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 11px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 8px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+
+  .superlargef {
+    font-size: 40px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 45px !important;
+  }
+
+  .startFont {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 12px !important;
+    margin-top: 10px !important;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
+
+
+}
 
 /* custom image size for small desktop device */
 @media only screen and (min-width:425px) {
 
   .logoImg {
 
-    width: 200px;
-    height: 250px;
+    width: 230px;
+    height: 270px;
 
   }
 
@@ -534,6 +1429,97 @@ ol {
     left: 30px;
   }
 
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 140px;
+    height: 140px
+  }
+
+
+}
+
+/* custom image size for small desktop device */
+@media only screen and (min-width:1024px) {
+
+  .logoImg {
+
+    width: 240px;
+    height: 280px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 90px;
+    width: 90px;
+    margin-top: 12px;
+    margin-bottom: 0px;
+
+  }
+
+  .conciergeImg {
+
+    height: 50px;
+    width: 50px;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 60px;
+    width: 60px;
+
+  }
+
+  .teacherLounge {
+    height: 60px;
+    width: 40px;
+
+  }
+
+  .iamBackImg {
+    height: 70px;
+    width: 70px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 94px;
+    height: 150px;
+
+  }
+
+  .doorGate {
+    width: 45px;
+    height: 150px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 0px;
+    left: 18px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 70px;
+    left: 30px;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 160px;
+    height: 160px
+  }
+
 
 }
 
@@ -549,8 +1535,8 @@ ol {
 
   .ncbtmbImg {
 
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
     margin-top: 8px;
     margin-bottom: 0px;
 
@@ -613,6 +1599,12 @@ ol {
     left: 30px;
   }
 
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 170px;
+    height: 170px
+  }
+
 
 }
 
@@ -629,7 +1621,7 @@ ol {
   .ncbtmbImg {
 
     height: 90px;
-    width: 90px;
+    width: 80px;
     margin-top: 8px;
     margin-bottom: 0px;
 
@@ -692,6 +1684,12 @@ ol {
     left: 40px;
   }
 
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 200px;
+    height: 200px
+  }
+
 
 }
 
@@ -707,7 +1705,7 @@ ol {
 
   .ncbtmbImg {
 
-    height: 100px;
+    height: 90px;
     width: 100px;
     margin-top: 12px;
     margin-bottom: 0px;
@@ -774,6 +1772,12 @@ ol {
   }
 
 
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 220px;
+    height: 220px
+  }
+
 }
 
 /* custom image size for 1600 desktop device */
@@ -789,10 +1793,9 @@ ol {
   .ncbtmbImg {
 
     height: 100px;
-    width: 150px;
-
+    width: 100px;
     margin-top: 12px;
-    margin-bottom: 55px;
+    margin-bottom: 0px;
 
   }
 
@@ -868,8 +1871,8 @@ ol {
 
   .ncbtmbImg {
 
-    height: 100px;
-    width: 140px;
+    height: 80px;
+    width: 120px;
     margin-top: 12px;
     margin-bottom: 55px;
 
@@ -932,6 +1935,12 @@ ol {
     left: 65px;
   }
 
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 275px;
+    height: 275px
+  }
+
 
 }
 
@@ -954,7 +1963,7 @@ ol {
   }
 
   .largef {
-    font-size: 20px !important;
+    font-size: 16px !important;
   }
 
   .extlargef {
@@ -995,7 +2004,7 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    font-size: 11px;
   }
 
   .mediumf {
@@ -1003,7 +2012,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 15px;
   }
 
   .extlargef {
@@ -1022,7 +2031,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 50px;
+    font-size: 40px;
+    line-height: 45px;
   }
 
   .superlargef {
@@ -1039,13 +2049,13 @@ ol {
   }
 
   /* menu boxsize */
-  .menuBoxsizebigMenu {
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
   .menuBoxsizesmallMenu {
     min-height: 180px;
-  }
+  } */
 
 
 }
@@ -1065,7 +2075,7 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .mediumf {
@@ -1073,7 +2083,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .extlargef {
@@ -1092,7 +2102,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 50px;
+    font-size: 45px;
+    line-height: 50px;
   }
 
   .superlargef {
@@ -1109,13 +2120,13 @@ ol {
   }
 
   /* menu boxsize */
-  .menuBoxsizebigMenu {
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
   .menuBoxsizesmallMenu {
     min-height: 180px;
-  }
+  } */
 
 
 }
@@ -1131,7 +2142,7 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .mediumf {
@@ -1158,7 +2169,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 50px;
+    font-size: 60px;
+    line-height: 50px;
   }
 
   .superlargef {
@@ -1176,13 +2188,13 @@ ol {
   }
 
   /* menu boxsize */
-  .menuBoxsizebigMenu {
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
   .menuBoxsizesmallMenu {
     min-height: 180px;
-  }
+  } */
 
 
 }
@@ -1207,7 +2219,7 @@ ol {
   }
 
   .mediumf {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .largef {
@@ -1229,7 +2241,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 50px;
+    font-size: 60px;
+    line-height: 65px;
   }
 
   .superlargef {
@@ -1247,13 +2260,13 @@ ol {
   }
 
   /* menu boxsize */
-  .menuBoxsizebigMenu {
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
   .menuBoxsizesmallMenu {
     min-height: 180px;
-  }
+  } */
 }
 
 /* cutom font size for max screen size 1440 or default size of all types fonts */
@@ -1299,7 +2312,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 50px;
+    font-size: 60px;
+    line-height: 65px;
   }
 
   .superlargef {
@@ -1317,13 +2331,13 @@ ol {
   }
 
   /* menu boxsize */
-  .menuBoxsizebigMenu {
+  /* .menuBoxsizebigMenu {
     min-height: 200px;
   }
 
   .menuBoxsizesmallMenu {
     min-height: 180px;
-  }
+  } */
 
 
 }
@@ -1432,7 +2446,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px;
+    font-size: 70px;
+    line-height: 75px;
   }
 
   .superlargef {
