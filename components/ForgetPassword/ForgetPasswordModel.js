@@ -70,7 +70,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
         <>
             {step1 ?
                 <div>
-                    <div className='flex justify-between pb-5 '>
+                    <div className={`flex justify-between ${styles.backBtn} pb-5 `}>
                         <button className=' font-normal py-2 pb-4' onClick={() => HideForgetPasswordModel()}>
                             <div className='flex justify-center items-center space-x-2'>
                                 <BiLeftArrowAlt size={25} className='3xl:w-10 3xl:h-10' />
@@ -86,9 +86,9 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                         <div className=' border-b-4 text-left w-[33%] mediumf  border-bodergray text-gray'>step2</div>
                         <div className=' border-b-4 text-left w-[33%] mediumf  border-bodergray text-gray'>step3</div>
                     </div>
-                    <h2 className='py-6 text-2xl 3xl:text-4xl'>Simple Password Reset</h2>
+                    <h2 className={`py-6 extlargef ${styles.title}`}>Simple Password Reset</h2>
                     <form onSubmit={handleSubmit((data) => console.log('data', data))}>
-                        <div className='py-2'>
+                        <div className={`py-2 ${styles.newPassword}`}>
 
                             <label className='font-bold '>
                                 enter new password
@@ -102,14 +102,14 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                             {/* {errors.password && <p className=' text-[#D30820]'> <span className='text-[#D30820] border border-[#D30820] rounded-full py-0.4 px-1.5 text-xs' >!</span> oops! password is blank!</p>} */}
                         </div>
 
-                        <button className="w-full px-4 mt-4 3xl:mt-8 py-2 3xl:py-5  mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit" onClick={() => { HandleStep1() }}>next
+                        <button className={`w-full px-4 mt-4 3xl:mt-8 py-2 3xl:py-5  mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none ${styles.nextBtn}`} type="submit" onClick={() => { HandleStep1() }}>next
 
                         </button>
                     </form>
                 </div> : ""}
 
             {step2 ? <div >
-                <div className='flex justify-between pb-5 xl:pb-5 lg:pb-3 '>
+                <div className={`flex justify-between pb-5 ${styles.backBtn} `}>
                     <button className=' font-normal py-2 lg:pb-0 xl:pb-4 pb-4' onClick={() => HandleBackStep2()}>
                         <div className='flex justify-center items-center space-x-2'>
                             <BiLeftArrowAlt size={25} className='3xl:w-10 3xl:h-10' />
@@ -125,9 +125,9 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                     <div className=' border-b-4 text-left w-[33%]  mediumf border-voilet text-voilet'>step2</div>
                     <div className=' border-b-4 text-left w-[33%]  mediumf border-bodergray text-gray'>step3</div>
                 </div>
-                <h2 className='py-6 text-2xl 3xl:text-4xl'>Simple Password Reset</h2>
+                <h2 className={`py-6 extlargef ${styles.title}`}>Simple Password Reset</h2>
                 <form onSubmit={handleSubmit((data) => console.log('data', data))}>
-                    <div className='py-2'>
+                    <div className={`py-2 ${styles.newPassword}`}>
 
                         <label className='font-bold '>
                             enter your account email address
@@ -147,7 +147,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
 
                     </div>
 
-                    <button className="w-full px-4 mt-4 3xl:mt-8 py-2 3xl:py-5  mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit" onClick={() => { HandleStep2() }}>send code
+                    <button className={`w-full px-4 mt-4 3xl:mt-8 py-2 3xl:py-5  mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none ${styles.nextBtn}`} type="submit" onClick={() => { HandleStep2() }}>send code
 
                     </button>
 
@@ -159,7 +159,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                 : ""}
 
             {step3 ? <div >
-                <div className='flex justify-between pb-5 xl:pb-5 lg:pb-3 '>
+                <div className={`flex justify-between pb-5 ${styles.backBtn} `}>
                     <button className=' font-normal py-2 lg:pb-0 xl:pb-4 pb-4' onClick={() => HandleBackStep3()}>
                         <div className='flex justify-center items-center space-x-2'>
                             <BiLeftArrowAlt size={25} className='3xl:w-10 3xl:h-10' />
@@ -175,9 +175,9 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                     <div className=' border-b-4 text-left w-[33%]  mediumf border-voilet text-voilet'>step2</div>
                     <div className=' border-b-4 text-left w-[33%]  mediumf border-voilet text-voilet'>step3</div>
                 </div>
-                <h2 className='py-6 text-2xl 3xl:text-4xl'>Simple Password Reset</h2>
+                <h2 className={`py-6 extlargef ${styles.title}`}>Simple Password Reset</h2>
                 <form >
-                    <div className='py-2'>
+                    <div className={`py-2 ${styles.newPassword}`}>
 
                         <label className='font-bold '>
                             check your email, enter 4-digit code
@@ -188,7 +188,7 @@ const ForgetPasswordModel = ({ HideForgetPasswordModel, changeDuration, HandleFo
                         />
                     </div>
 
-                    <button className="w-full px-4 mt-4 3xl:mt-8 py-2 3xl:py-5  mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none" type="submit" onClick={() => { HandleAllStepDone(), HandleFormTitle(); }}>next
+                    <button className={`w-full px-4 mt-4 3xl:mt-8 py-2 3xl:py-5  mb-5 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none ${styles.nextBtn}`} type="submit" onClick={() => { HandleAllStepDone(), HandleFormTitle(); }}>next
 
                     </button>
                 </form>

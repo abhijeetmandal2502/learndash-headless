@@ -7,7 +7,6 @@
 
 }
 
-
 @keyframes transformUp {
 
     from {
@@ -79,35 +78,13 @@
 .childparentoff {
     animation-name: animatechildoff;
     animation-fill-mode: forwards;
-    animation-duration: 2s;
+    animation-duration: 500ms;
     animation-timing-function: linear;
     position: absolute;
 }
 
 @keyframes animatechildoff {
-    /* 0% {
-        left: 0px;
-        bottom: 320px;
-        opacity: 1;
-    }
 
-    25% {
-        left: 0px;
-        bottom: 200px;
-        opacity: 0.8;
-    }
-
-    60% {
-        left: 0px;
-        bottom: 100px;
-        opacity: 0.5;
-    }
-
-    100% {
-        left: 0px;
-        bottom: 60px;
-        opacity: 0;
-    } */
 
     0% {
         right: 250px;
@@ -288,6 +265,84 @@
 
 }
 
+@media screen and (max-width:1366px) {
+    .childparentoff {
+        animation-name: animatechildoff;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        position: absolute;
+    }
+
+    @keyframes animatechildoff {
+
+        0% {
+            right: 180px;
+            top: 80px;
+            opacity: 1;
+        }
+
+        25% {
+            right: 150px;
+            top: 40px;
+            opacity: 0.8;
+        }
+
+        60% {
+            right: 120px;
+            top: 20px;
+            opacity: 0.5;
+        }
+
+        100% {
+            right: 0px;
+            top: -20px;
+            opacity: 0;
+        }
+
+    }
+
+
+    .childparenton {
+
+        animation-name: animatechildon;
+        animation-fill-mode: forwards;
+        animation-duration: 500ms;
+        position: absolute;
+        animation-timing-function: linear;
+
+    }
+
+    @keyframes animatechildon {
+
+        0% {
+            right: 0px;
+            top: -20px;
+            opacity: 0;
+        }
+
+        25% {
+            right: 100px;
+            top: 20px;
+            opacity: 0.5;
+        }
+
+        60% {
+            right: 120px;
+            top: 40px;
+            opacity: 0.8;
+        }
+
+        100% {
+            right: 100px;
+            top: 80px;
+            opacity: 1;
+
+        }
+
+
+    }
+}
 
 
 /* @media only screen and (max-height: 700px) {
@@ -1095,16 +1150,10 @@ screen and (max-height: 700px) {
 
 /* teacher login true and teacher false  */
 
-
-
-
 .teacherLoungTrue {
     background-image: url('/images/teacherLoungeBg.png');
     transition: all ease-in-out 500ms;
 }
-
-
-
 
 .teacherLoungFalse {
 
@@ -1287,7 +1336,6 @@ screen and (max-height: 700px) {
     .mainDiv:hover {
         transform: translateY(-14px);
         transition: all ease-in-out 500ms;
-
     }
 
     .mainDiv>.content {

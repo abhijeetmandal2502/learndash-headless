@@ -332,7 +332,10 @@ const Home = () => {
 
                         </div>
                     </div>
-                    <div className={`fixed top-[45%] xl:left-[75%] lg:left-[80%] left-[75%] -translate-x-[25%] -translate-y-[25%] z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}><IwannaTech /></div>
+                    <div className={` ${TeacherCss.imgTech}  z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}>
+
+                        <IwannaTech />
+                    </div>
                     {/* Login Model For im back */}
                     <div className={` col-span-12 md:col-span-5  z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className="relative ">
@@ -345,7 +348,7 @@ const Home = () => {
                     {/* Login model for Teacher Lounge */}
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
-                        <div className={` bg-white relative  border border-bordergray xl:p-10 p-10 lg:p-5`}>
+                        <div className={` bg-white relative  border border-bordergray xl:p-5 p-7 lg:p-5`}>
 
                             <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>

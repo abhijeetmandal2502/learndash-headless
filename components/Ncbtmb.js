@@ -79,9 +79,9 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   return (
     <>
-      <div className='relative h-screen ml-11 overflow-hidden bg-transparent '>
+      <div className='relative h-screen ml-11  overflow-hidden bg-transparent '>
         {/* this loby button for desktop */}
-        <button className={`md:flex hidden items-center space-x-1 mt-[72px] bg-black text-white font-bold mb-5 ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
+        <button className={`md:flex hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf '>lobby</span>
         </button>
         {/* loby button code end */}
@@ -91,7 +91,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
           </div>
 
           <div className='md:col-span-6 col-span-12'>
-            <Image src="/images/NCBTMB.svg" height={323} width={323} alt="ncbtmblatest" className={`hidden md:block  nbctmbcompnentImg `} />
+            <Image src="/images/NCBTMB.svg" height={323} width={323} alt="ncbtmblatest" className={`hidden md:block nbctmbcompnentImg`} />
             <Image src="/images/ncbtmb.svg" height={200} width={200} alt="ncbtmb" className={`md:hidden absolute top-6 -right-4`} />
           </div>
         </div>
@@ -102,7 +102,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
             <p className=' md:hidden mediumf'>Select a State</p>
           </div>
           <Select
-            className={` w-80   mediumf z-[100] ${styles.selectBox} `}
+            className={` ncbtmbDropDown   mediumf z-[100] ${styles.selectBox} `}
             defaultValue={selectedOption}
             onChange={setSelectedOption}
             options={options}

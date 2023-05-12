@@ -19,7 +19,6 @@
     }
 }
 
-
 .opacityAnimation1 {
 
     animation-name: hideDiv;
@@ -146,13 +145,11 @@
     }
 }
 
-
 .scrollHidden {
     overflow-x: hidden;
 }
 
 /* doorAnimation */
-
 
 .mainAnimation .startDoorAnimateOpen {
 
@@ -160,7 +157,6 @@
 
     transition: opacity 100ms ease-in-out;
 }
-
 
 .mainAnimation:hover.startDoorAnimateOpen {
     opacity: 1;
@@ -187,10 +183,6 @@
     }
 }
 
-
-
-
-
 .mainAnimation:hover.startDoorAnimateClose {
 
     animation: hideDoor 2s ease-in-out forwards;
@@ -211,8 +203,6 @@
     }
 }
 
-
-
 .hideNcbtmbdiv {
 
     visibility: hidden;
@@ -227,9 +217,93 @@
     transition: 1s ease-in-out;
 }
 
-
 .lobby:hover {
 
     background-color: #9747FF;
     transition: all ease-in-out 500ms;
+}
+
+
+
+@media (max-height:750px) {
+
+    .textAreaHeight {
+
+        max-height: 100px !important;
+    }
+
+    .inputHeight {
+
+        max-height: 40px !important;
+    }
+
+
+}
+
+@media (max-height:650px) {
+
+    .textAreaHeight {
+
+        max-height: 75px !important;
+    }
+
+    .inputHeight {
+
+        max-height: 40px !important;
+    }
+
+    .concorgemtTop {
+
+        margin-top: 45px !important;
+    }
+
+
+}
+
+@media (max-height:500px) {
+
+    .textAreaHeight {
+
+        max-height: 40px !important;
+    }
+
+    .inputHeight {
+
+        max-height: 20px !important;
+    }
+
+    .concorgemtTop {
+
+        margin-top: 10px !important;
+    }
+
+
+}
+
+@media (max-height:400px) {
+
+    .textAreaHeight {
+
+        max-height: 40px !important;
+    }
+
+    .inputHeight {
+
+        max-height: 20px !important;
+    }
+
+    .concorgemtTop {
+
+        margin-top: 0px !important;
+    }
+
+    .marginTopsendBtn {
+
+        margin-top: 0px !important;
+    }
+
+    .paddingTopsendBtn {
+
+        padding-top: 0px !important;
+    }
 }

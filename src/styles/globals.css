@@ -404,16 +404,191 @@ ol {
   -moz-filter: grayscale(100%);
 }
 
+/* ncbtmbselectbox */
+
+.ncbtmbDropDown {
+
+  width: 320px !important;
+
+}
+
+.nctbmbmtTop {
+
+  margin-top: 50px;
+}
+
 /* responsive min height  */
 
 /* minheight screen size image  */
+
+@media (max-height:992px) {
+
+  .logoImg {
+
+    width: 230px !important;
+    height: 220px !important;
+  }
+
+  .ncbtmbImg {
+
+    height: 100px !important;
+    width: 100px !important;
+    margin-top: 25px !important;
+    margin-bottom: 5px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 75px !important;
+    width: 75px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 70px !important;
+    width: 50px !important;
+
+  }
+
+  .iamBackImg {
+    height: 100px !important;
+    width: 100px !important;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 120px !important;
+    height: 120px !important;
+
+  }
+
+  .doorGate {
+    width: 58px !important;
+    height: 120px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 22px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 3px !important;
+    height: 3px !important;
+    position: absolute !important;
+    top: 45px !important;
+    left: 35px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 230px !important;
+    height: 230px !important;
+  }
+}
+
+@media (max-height:812px) {
+
+  .logoImg {
+
+    width: 230px !important;
+    height: 220px !important;
+  }
+
+  .ncbtmbImg {
+
+    height: 100px !important;
+    width: 100px !important;
+    margin-top: 25px !important;
+    margin-bottom: 5px !important;
+
+  }
+
+  .conciergeImg {
+
+    height: 75px !important;
+    width: 75px !important;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 50px !important;
+    width: 50px !important;
+
+  }
+
+  .teacherLounge {
+    height: 70px !important;
+    width: 50px !important;
+
+  }
+
+  .iamBackImg {
+    height: 100px !important;
+    width: 100px !important;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 120px !important;
+    height: 120px !important;
+
+  }
+
+  .doorGate {
+    width: 58px !important;
+    height: 120px !important;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 1px !important;
+    left: 22px !important;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 3px !important;
+    height: 3px !important;
+    position: absolute !important;
+    top: 45px !important;
+    left: 35px !important;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 230px !important;
+    height: 230px !important;
+  }
+}
 
 @media (max-height:750px) {
 
   .logoImg {
 
-    width: 230px;
-    height: 270px;
+    width: 230px !important;
+    height: 230px !important;
 
   }
 
@@ -485,20 +660,16 @@ ol {
 
   /* ncbtmb approved image */
   .nbctmbcompnentImg {
-    width: 140px;
-    height: 140px
+    width: 160px !important;
+    height: 160px !important;
   }
-
-
 }
 
 @media (max-height:650px) {
 
   .logoImg {
-
-    width: 230px;
-    height: 270px;
-
+    width: 230px !important;
+    height: 220px !important;
   }
 
   .ncbtmbImg {
@@ -569,8 +740,8 @@ ol {
 
   /* ncbtmb approved image */
   .nbctmbcompnentImg {
-    width: 140px;
-    height: 140px
+    width: 140px !important;
+    height: 140px !important;
   }
 
 
@@ -579,10 +750,8 @@ ol {
 @media (max-height:600px) {
 
   .logoImg {
-
-    width: 230px;
-    height: 270px;
-
+    width: 200px !important;
+    height: 230px !important;
   }
 
   .ncbtmbImg {
@@ -653,8 +822,14 @@ ol {
 
   /* ncbtmb approved image */
   .nbctmbcompnentImg {
-    width: 140px;
-    height: 140px
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .ncbtmbDropDown {
+
+    width: 220px !important;
+
   }
 
 
@@ -664,8 +839,8 @@ ol {
 
   .logoImg {
 
-    width: 230px;
-    height: 270px;
+    width: 150px !important;
+    height: 160px !important;
 
   }
 
@@ -737,8 +912,13 @@ ol {
 
   /* ncbtmb approved image */
   .nbctmbcompnentImg {
-    width: 140px;
-    height: 140px
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .nctbmbmtTop {
+
+    margin-top: 0px !important;
   }
 
 
@@ -914,7 +1094,7 @@ ol {
 
 /* minheight screen size font  */
 
-@media (max-height:750px) {
+@media (max-height:812px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -929,7 +1109,7 @@ ol {
   }
 
   .smallf {
-    font-size: 11px !important;
+    font-size: 14px !important;
   }
 
   .mediumf {
@@ -957,8 +1137,70 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
-    line-height: 45px !important;
+    font-size: 60px !important;
+    line-height: 60px !important;
+  }
+
+  .superlargef {
+    font-size: 55px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 65px !important;
+  }
+
+  .startFont {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-top: 20px !important;
+
+  }
+}
+
+@media (max-height:750px) {
+
+  .extxlsmallf {
+    font-size: 12px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    font-size: 13px !important;
+  }
+
+  .mediumf {
+    font-size: 20px !important;
+  }
+
+  .largef {
+    font-size: 15px !important;
+  }
+
+  .extlargef {
+    font-size: 25px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 25px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 25px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 50px !important;
+    line-height: 50px !important;
   }
 
   .superlargef {
@@ -1060,7 +1302,6 @@ ol {
 
 }
 
-/* minheight screen size font  */
 @media (max-height:600px) {
 
   .extxlsmallf {
@@ -1076,11 +1317,11 @@ ol {
   }
 
   .smallf {
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 
   .mediumf {
-    font-size: 20px !important;
+    font-size: 16px !important;
   }
 
   .largef {
@@ -1104,8 +1345,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
-    line-height: 45px !important;
+    font-size: 25px !important;
+    line-height: 28px !important;
   }
 
   .superlargef {
@@ -1149,11 +1390,11 @@ ol {
   }
 
   .smallf {
-    font-size: 11px !important;
+    font-size: 9px !important;
   }
 
   .mediumf {
-    font-size: 20px !important;
+    font-size: 12px !important;
   }
 
   .largef {
@@ -1161,7 +1402,7 @@ ol {
   }
 
   .extlargef {
-    font-size: 25px !important;
+    font-size: 20px !important;
   }
 
   .dubblelargef {
@@ -1177,8 +1418,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
-    line-height: 45px !important;
+    font-size: 13px !important;
+    line-height: 15px !important;
   }
 
   .superlargef {
@@ -1218,15 +1459,15 @@ ol {
   }
 
   .minismallf {
-    font-size: 15px !important;
+    font-size: 10px !important;
   }
 
   .smallf {
-    font-size: 11px !important;
+    font-size: 7px !important;
   }
 
   .mediumf {
-    font-size: 20px !important;
+    font-size: 10px !important;
   }
 
   .largef {
@@ -1250,14 +1491,14 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
-    line-height: 45px !important;
+    font-size: 15px !important;
+    line-height: 17px !important;
   }
 
   .superlargef {
-    font-size: 20px !important;
+    font-size: 40px !important;
     letter-spacing: 0.001em !important;
-    line-height: 25px !important;
+    line-height: 45px !important;
   }
 
   .startFont {
@@ -1280,7 +1521,7 @@ ol {
 
 }
 
-@media (max-height:400px) {
+@media (max-height:250px) {
 
   .extxlsmallf {
     font-size: 8px !important;
@@ -2116,6 +2357,74 @@ ol {
     font-size: 30px;
     font-weight: 500;
     line-height: 44px;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
+
+
+}
+
+/* cutom font size for max screen size 1280 or default size of all types fonts */
+@media only screen and (min-width:992px) {
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 15px;
+  }
+
+  .mediumf {
+    font-size: 16px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 25px;
+  }
+
+  .dubblelargef {
+    font-size: 20px;
+  }
+
+  .triplelargef {
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+  }
+
+  .fourxllargef {
+    font-size: 60px;
+    line-height: 50px;
+  }
+
+  .superlargef {
+    font-size: 60px;
+    letter-spacing: 0.001em;
+    line-height: 60px;
+  }
+
+  .startFont {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: -10px;
 
   }
 

@@ -37,12 +37,12 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             content: <LoginModel title="welcome back" />
         },
         {
-            image: "/images/Concierge.svg",
+            image: "/images/ConciergeNew.svg",
             title: "concierge",
             content: <Conceierge />
         },
         {
-            image: "/images/ncbtmb.svg",
+            image: "/images/NCBTMB.svg",
             title: "ncbtmb approved",
             content: <Ncbtmb />
         },
