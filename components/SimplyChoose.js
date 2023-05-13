@@ -19,7 +19,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
-
     const [activePaymentCard, setActivePaymentCard] = useState(false)
     console.log("activePaymentCard", activePaymentCard)
     const showPaymentOpt = () => {
@@ -161,7 +160,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
 
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
-                                <div className='px-3 mt-10 md:pt-32 md:px-0 '>
+                                <div className={`px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
                                     <h2 className='superlargef text-black'>simply choose.</h2>
                                     <p className='my-5 3xl:py-10 dubblelargef'>smile, you can’t make a bad choice.</p>
                                 </div>
@@ -226,7 +225,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                     <p className={`md:pt-[170px] pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
                                         {data[0].discription}
                                     </p>
-                                    <div className={`absolute bottom-0 p-4 right-0  ${ShowGiftShoppi ? 'block' : styles.hide1}  `} >
+                                    <div className={`absolute bottom-0 right-0  ${ShowGiftShoppi ? 'block transition-all ease-in-out duration-1000' : styles.hide1}  `} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                                     </div>
                                 </div>
@@ -269,17 +268,17 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                                 ${item.price}
                                                             </p>
                                                         </div>
-                                                        {selectedArray[index] !== index ? <p className=' absolute top-[80%] left-[20%] font-bold  largef text-[#FF5C00] '>
+                                                        {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
                                                             +add
-                                                        </p> : <div className=' flex absolute top-[85%] left-[0%] font-bold  largef text-[#FF5C00] '>
-                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
+                                                        </p> : <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
+                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
                                                             <p className={`text-[#AC6CFF] largef font-semibold`}>
                                                                 added
                                                             </p>
                                                         </div>}
                                                         <div className=''>
-                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className='3xl:w-[150px] 3xl:h-[150px]' /> :
-                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className='3xl:w-[150px] 3xl:h-[150px]' />}
+                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} /> :
+                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />}
                                                         </div>
                                                     </div>
                                                 </div>

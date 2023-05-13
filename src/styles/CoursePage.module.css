@@ -4,7 +4,6 @@
     animation: transformUp 1s ease-in-out forwards;
     position: relative;
 
-
 }
 
 
@@ -31,7 +30,6 @@
         /* color: #9747FF; */
     }
 
-
     .cardBackgroundHover:hover {
 
         background-color: rgba(128, 128, 128, 0.164);
@@ -40,7 +38,6 @@
         z-index: 100;
         transition: all ease-in-out 500ms;
     }
-
 
     .cardBackgroundHover {
 
@@ -52,15 +49,11 @@
     }
 }
 
-
-
-
 .hide1 {
 
     display: none;
     opacity: 0;
     transition: all 1s ease-in-out;
-
 }
 
 .cardBackgroundHover:hover .hide1 {
@@ -82,7 +75,6 @@
         opacity: 1;
         display: block;
     }
-
 }
 
 .cardBackgroundHover .hide1 {
@@ -91,7 +83,6 @@
     transition: color 500ms ease-in;
     animation: animateTextHide 500ms linear both;
     display: block;
-
 }
 
 @keyframes animateTextHide {
@@ -104,10 +95,6 @@
         opacity: 0;
 
     }
-
-
-
-
 }
 
 
@@ -119,18 +106,12 @@
 
 }
 
-
-
-
-
 .cardBackgroundHover>.discriptionAnimation {
 
     transition: all ease 1000ms;
     transform: translateY(0px);
 
 }
-
-
 
 
 .show1 {
@@ -142,8 +123,6 @@
 }
 
 @keyframes showAnimate {
-
-
     from {
         opacity: 0;
         /* transform: translateY(100px); */
@@ -152,8 +131,6 @@
     to {
         opacity: 1;
     }
-
-
 }
 
 
@@ -195,7 +172,6 @@
 
 
 }
-
 
 .submitbtnbg {
 
@@ -241,10 +217,7 @@
     background-size: 180px;
 }
 
-
-
 /* giftShoppy Active */
-
 .activeGiftShoppy {
 
     background-image: url(/images/homeColor.svg);
@@ -268,8 +241,155 @@
 
 }
 
+/* course price image */
+
+.priceBack {
+    width: 85px !important;
+    height: 85px !important;
+    margin-bottom: 15px !important;
+}
+
+@media (max-height:750px) {
+
+    .deleteIcon {
+
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
 
 
+@media (max-height:650px) {
+
+
+    /* gift shoppi css  */
+
+    .mainDiv>.gift {
+
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px !important;
+    }
+
+    .mainDiv:hover>.gift {
+
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px !important;
+    }
+
+    /* giftShoppy Active */
+    .activeGiftShoppy {
+
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px !important;
+    }
+
+    /* giftShoppy Inactive */
+
+    .inActiveGiftShoppy {
+
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px !important;
+
+    }
+
+    .deleteIcon {
+
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+
+}
+
+@media (max-height:550px) {
+
+
+    /* gift shoppi css  */
+
+    .mainDiv>.gift {
+
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 130px !important;
+    }
+
+    .mainDiv:hover>.gift {
+
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 130px !important;
+    }
+
+    /* giftShoppy Active */
+    .activeGiftShoppy {
+
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 130px !important;
+    }
+
+    /* giftShoppy Inactive */
+
+    .inActiveGiftShoppy {
+
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 130px !important;
+
+    }
+
+    .priceBack {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* title main simply choose */
+
+    .titleMain {
+
+        margin-top: 70px !important;
+        padding-top: 0px;
+    }
+}
+
+@media (max-height:450px) {
+
+    .priceBack {
+        width: 70px !important;
+        height: 70px !important;
+        margin-bottom: 8px !important;
+    }
+
+}
 
 
 .coursePriceSelectedBg {
@@ -278,19 +398,15 @@
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.42);
 }
 
-
 .emptyBasketTotalAmt {
 
     background: linear-gradient(180deg, #B6B6B6 0%, #6C6C6C 100%);
 }
 
-
-
 .readyToCheckoutBg {
 
     background: linear-gradient(180deg, #AC6BFF 0%, #7721E8 100%);
 }
-
 
 /* toggle animation */
 

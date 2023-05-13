@@ -54,14 +54,14 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
     return (
         <>
-            <div className='md:mx-5 md:p-0 p-4 h-screen md:mb-0 mb-20 overflow-y-scroll'>
+            <div className='md:mx-5 md:p-0 p-4  md:mb-0 mb-20 overflow-y-scroll'>
                 {/* gift card */}
                 <div className=''>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
-                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className='md:w-[349px] w-[150px] h-[125px]  md:h-[221px]' />
+                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={`md:w-[349px] w-[150px] h-[125px]  md:h-[221px] ${styles.redeemCardImage} `} />
 
                         <div >
-                            <h2 className='md:text-[50px] text-[19px] tracking-wide md:leading-[107%] leading-tight '>{giftCardDetail.title}</h2>
+                            <h2 className='md:text-[50px] text-[19px]  tracking-wide md:leading-[107%] leading-tight '>{giftCardDetail.title}</h2>
                             <p className='md:block hidden dubblelargef  leading-tight md:leading-[107%]'>{giftCardDetail.DueBalance}</p>
                         </div>
                     </div>

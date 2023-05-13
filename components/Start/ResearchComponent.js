@@ -116,7 +116,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                     {courseData && courseData.map((item, index) => {
                         return (
                             <div key={index} className='flex items-center space-x-4 py-0.3'>
-                                <AiOutlineCheck size={25} className='text-[#9747FF]' />
+                                <AiOutlineCheck size={16} className='text-[#9747FF]' />
                                 <p className='tracking-wider smallf'>{item}</p>
                             </div>
                         )

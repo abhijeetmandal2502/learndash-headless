@@ -62,8 +62,11 @@ const AddToCart = () => {
 
             <div className={` relative grid grid-cols-9 bg-white my-5 mx-5 shadow-2xl  p-3 md:p-4`}>
                 <div className={`col-span-1 relative flex items-start justify-start`}>
-                    <Image src="/start/cart.svg" width={40} height={40} alt="empty basket" />
-                    <div className='absolute w-5 h-5 text-white rounded-full left-6 md:left-6 2xl:left-7 -top-[6px] bg-voilet'><p className='flex items-center justify-center'>2</p></div>
+                    <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px]`} alt="empty basket" />
+                    <div className='absolute w-4 h-4 text-white rounded-full bg-voilet  -right-1 -top-1 translate-x-1 translate-y-1'>
+                        <p className='flex items-center justify-center text-[10px]'>2</p>
+
+                    </div>
                 </div>
                 <div className='col-span-8 pl-4'>
                     <div className={`flex justify-between items-center`}>
@@ -72,7 +75,7 @@ const AddToCart = () => {
                         </div>
                         <div className={`flex space-x-3 items-center`}>
                             <div className='text-black extlargef' >$40</div>
-                            <RiDeleteBin6Line size={24} />
+                            <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} />
                         </div>
                     </div>
                     <div className='w-full my-2 border-b-[2px] border-lightgray'></div>
@@ -82,7 +85,7 @@ const AddToCart = () => {
                         </div>
                         <div className={`flex space-x-3 items-center`}>
                             <p className=' text-black extlargef'>$40</p>
-                            <RiDeleteBin6Line size={24} />
+                            <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} />
                         </div>
                     </div>
                 </div>

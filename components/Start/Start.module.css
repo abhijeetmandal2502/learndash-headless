@@ -3,8 +3,6 @@
     color: black;
     font-weight: 600;
     transition: all 500ms ease-in-out;
-
-
 }
 
 
@@ -44,7 +42,6 @@
 
     animation: upDownAnimate linear 500ms infinite alternate;
 }
-
 
 @keyframes upDownAnimate {
 
@@ -93,4 +90,104 @@
 
 .modelzindex {
     z-index: 100;
+}
+
+/* redeem gift card responsive css */
+
+@media (max-height:812px) {
+    .creditCardImage {
+        width: 260px !important;
+        height: 140px !important;
+    }
+
+    .creditCardbtn {
+        margin-top: 0px !important;
+    }
+
+    .paypalImage {
+        width: 100px !important;
+        height: 120px !important;
+    }
+
+}
+
+
+@media (max-height:750px) {
+
+    .redeemCardImage {
+        width: 180px !important;
+        height: 140px !important;
+    }
+
+    .splitPaymentMethod {
+        width: 190px !important;
+        height: 130px !important;
+    }
+
+    .splitPaymentCardMain {
+
+        margin-top: 10px !important;
+    }
+
+
+    .creditCardImage {
+        width: 260px !important;
+        height: 140px !important;
+    }
+
+    .creditCardbtn {
+        margin-top: 0px !important;
+    }
+
+    .paymentDialog {
+
+        max-width: 750px !important;
+
+    }
+
+
+    .splitPaymentForm {
+
+        padding: 0px 130px 0px 130px !important;
+    }
+
+
+}
+
+@media (max-height:650px) {
+
+    .redeemCardImage {
+        width: 180px !important;
+        height: 140px !important;
+    }
+
+    .splitPaymentMethod {
+        width: 170px !important;
+        height: 120px !important;
+    }
+
+    .splitPaymentCardMain {
+
+        margin-top: 10px !important;
+    }
+
+    .creditCardImage {
+        width: 260px !important;
+        height: 140px !important;
+    }
+
+    .creditCardbtn {
+        margin-top: 0px !important;
+    }
+
+    .paypalsuccessMain {
+
+        margin-top: 20px !important;
+    }
+
+    .paypalsuccessInner {
+
+        padding: 10px !important;
+    }
+
 }

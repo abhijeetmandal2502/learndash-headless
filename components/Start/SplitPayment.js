@@ -89,7 +89,7 @@ const SplitPayment = () => {
 
             {/* model popup */}
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative md:z-10 z-50 " onClose={closeModal}>
+                <Dialog as="div" className="relative md:z-50 z-50 " onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -103,7 +103,7 @@ const SplitPayment = () => {
                     </Transition.Child>
 
                     <div className="fixed md:inset-0 top-0 md:h-auto h-screen overflow-y-auto">
-                        <div className="flex items-center justify-center min-h-full md:p-4 text-center">
+                        <div className="flex items-center justify-center min-h-full  text-center">
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
@@ -113,7 +113,7 @@ const SplitPayment = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-[1077px] transform overflow-hidden  bg-white md:p-6 text-left align-middle shadow-xl transition-all h-screen md:h-auto overflow-y-scroll">
+                                <Dialog.Panel className={`w-full max-w-[1077px]  transform overflow-hidden  bg-white md:p-6 text-left align-middle shadow-xl transition-all h-screen md:h-auto overflow-y-scroll ${styles.paymentDialog} `}>
                                     <div className="flex items-center md:justify-end justify-between ">
                                         <div className='md:hidden flex space-x-2 justify-center items-center pl-5'>
                                             <FiArrowLeft size={25} />
@@ -127,7 +127,7 @@ const SplitPayment = () => {
                                             x
                                         </button>
                                     </div>
-                                    <div className='flex items-center justify-center md:pb-10 mt-2'>
+                                    <div className='flex items-center justify-center'>
                                         {!successModel ? <SplitPayMethod openModal={openModal} addSplitPayment={addSplitPayment} closeModal={closeModal} /> : ""}
 
                                         {successModel ? <Congratulation /> : ""}

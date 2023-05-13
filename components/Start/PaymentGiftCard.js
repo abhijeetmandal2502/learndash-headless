@@ -142,7 +142,7 @@ const PaymentGiftCard = () => {
                                             x
                                         </button>
                                     </div>
-                                    <div className='flex items-center justify-center pb-10 h-screen overflow-y-scroll md:pt-0 pt-20'>
+                                    <div className='flex items-center justify-center pb-10  overflow-y-scroll md:pt-0 pt-20'>
                                         {!cograteModel ? <RadeemCardDetail giftCardDetail={giftCardDetail} addGiftCard={addGiftCard} closeModal={closeModal} /> : ""}
 
                                         {cograteModel ? <Congratulation /> : ""}

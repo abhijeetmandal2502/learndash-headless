@@ -41,7 +41,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
         DueBalance: "remaining due: $20"
     }
     // payment options data 
-    console.log('PaypalPayment', PaypalPayment, CreditCardPayment);
+    // console.log('PaypalPayment', PaypalPayment, CreditCardPayment);
 
     return (
         <>
@@ -50,7 +50,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
                     <div className='md:px-16 md:block hidden'>
                         <div className='flex justify-between items-center space-x-3'>
-                            <Image src="/start/splitPayment.png" width={250} height={165} alt="split card" />
+                            <Image src="/start/splitPayment.png" width={250} height={165} className={`${styles.splitPaymentMethod}`} alt="split card" />
 
                             <div>
                                 <h2 className='fourxllargef tracking-wide leading-[107%]'>split payment methods</h2>
@@ -77,7 +77,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
                     {/* payment options */}
 
-                    <div className=' grid grid-cols-12 md:mx-20 md:mt-[71px] relative md:mb-20 mb-5 md:px-0 px-5'>
+                    <div className={`grid grid-cols-12 md:mx-20 md:mt-[71px] relative md:mb-20 mb-5 md:px-0 px-5 ${styles.splitPaymentCardMain}`}>
                         {/* add gift payment card */}
                         <div className=' md:col-span-5 col-span-12 md:flex items-center justify-between px-7'>
                             <div className=' cursor-pointer' onClick={() => { ShowPaymentOptionWithGiftCard() }}>
@@ -146,18 +146,18 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
                     </div>
 
-                    <div className=' md:px-0 px-5 absolute md:-bottom-28 -bottom-12 right-0'>
-                        <div className='flex justify-between items-center space-x-5'>
-                            <p className=' minismallf text-[14px] text-voilet font-normal'>total due: $40</p>
 
-                            <div className={` mx-auto`}>
-                                <button type="button"
-                                    onClick={() => { addSplitPayment(), closeModal() }}
-                                    className={`w-full px-16  py-2 tracking-[0.02em] text-white   ${(showSplitPayment == undefined && CreditCardPayment == undefined) || (showSplitPayment == undefined && PaypalPayment == undefined) ? 'bg-voilet opacity-1' : styles.btnDesabledBg}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
-                                </button>
-                            </div>
+                    <div className='flex justify-between md:justify-end items-center space-x-5'>
+                        <p className=' minismallf text-[14px] text-voilet font-normal'>total due: $40</p>
+
+                        <div className={` mx-auto`}>
+                            <button type="button"
+                                onClick={() => { addSplitPayment(), closeModal() }}
+                                className={`w-full px-16  py-2 tracking-[0.02em] text-white   ${(showSplitPayment == undefined && CreditCardPayment == undefined) || (showSplitPayment == undefined && PaypalPayment == undefined) ? 'bg-voilet opacity-1' : styles.btnDesabledBg}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                            </button>
                         </div>
                     </div>
+
                 </div>
                 {/* add gift card payment  */}
                 <div className={`${showSplitPayment ? 'block transition-all ease-in duration-1000' : 'hidden'} w-full absolute top-10 left-0`}>
