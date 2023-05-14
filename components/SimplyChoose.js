@@ -20,7 +20,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
     const [activePaymentCard, setActivePaymentCard] = useState(false)
-    console.log("activePaymentCard", activePaymentCard)
+    // console.log("activePaymentCard", activePaymentCard)
     const showPaymentOpt = () => {
         setActivePaymentCard(true);
     }
@@ -126,7 +126,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
         setIsOpen(isOpen)
     }
     const drowerClose = () => {
-
         setIsOpen(!isOpen)
     }
     // console.log('panel', panel, selectedCourse, isOpen)
@@ -158,7 +157,6 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                     <BiArrowBack size={20} className="text-white 3xl:w-[30px] 3xl:h-[30px] " /><span className='minismallf'>lobby</span></button>
                             </div>
 
-
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
                                 <div className={`px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
                                     <h2 className='superlargef text-black'>simply choose.</h2>
@@ -166,7 +164,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 </div>
                             </div>
                             {/* Selected Courses details of simply choose section on click */}
-                            <div className={`2xl:mt-16 hidden md:grid grid-cols-12 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
+                            <div className={` hidden md:grid grid-cols-12 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
                                 <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-5'>

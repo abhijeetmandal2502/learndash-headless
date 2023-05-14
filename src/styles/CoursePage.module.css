@@ -318,8 +318,6 @@
 }
 
 @media (max-height:550px) {
-
-
     /* gift shoppi css  */
 
     .mainDiv>.gift {
@@ -458,10 +456,6 @@
     line-height: 1.6;
 }
 
-.shine {
-    position: relative;
-    overflow: hidden;
-}
 
 .shine {
     position: relative;

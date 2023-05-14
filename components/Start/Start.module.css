@@ -92,6 +92,49 @@
     z-index: 100;
 }
 
+/* image hover shine */
+
+.image_wrapper {
+    height: auto;
+    width: auto;
+    border-radius: 6px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.6;
+}
+
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+
+.shine:hover::before,
+.shine:focus::before {
+    animation: shine 0.85s;
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
 /* redeem gift card responsive css */
 
 @media (max-height:812px) {
@@ -126,7 +169,7 @@
 
     .splitPaymentCardMain {
 
-        margin-top: 10px !important;
+        margin-top: 10px 0px 0px 0px !important;
     }
 
 
@@ -190,4 +233,12 @@
         padding: 10px !important;
     }
 
+}
+
+
+@media (max-width:1280px) {
+
+    .paymentDialog {
+        max-width: 750px !important;
+    }
 }

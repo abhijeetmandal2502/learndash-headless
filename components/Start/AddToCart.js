@@ -52,7 +52,7 @@ const AddToCart = () => {
         }
     }
 
-    console.log('ShowPaymentOption', ShowPaymentOption)
+    // console.log('ShowPaymentOption', ShowPaymentOption)
 
 
     return (

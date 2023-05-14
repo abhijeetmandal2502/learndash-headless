@@ -13,7 +13,7 @@ const Congratulation = () => {
     return (
         <>
             <div className='md:mx-10 md:px-0 px-5'>
-                <h3 className='text-center hidden md:block tracking-wider superlargef extlargef leading-tight md:pb-12'>congratulations! <br></br> your course has begun!</h3>
+                <h3 className='text-center hidden md:block tracking-wider superlargef  leading-tight md:pb-12'>congratulations! <br></br> your course has begun!</h3>
                 {/* title for mobile */}
                 <h3 className='text-center md:hidden  tracking-wider dubblelargef leading-tight md:pb-12'>congratulations! your course has begun!</h3>
 

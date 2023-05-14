@@ -10,6 +10,19 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
     const [showSplitPayment, setShowSplitPayment] = useState(false);
     const [CreditCardPayment, setCreditCardPayment] = useState(false);
     const [PaypalPayment, setPaypalPayment] = useState(false);
+
+    const [active, setActive] = useState(false);
+
+    const handleMouseOver = () => {
+        setActive(true);
+    };
+
+    const handleMouseOut = () => {
+        setActive(false);
+    };
+
+
+
     // paypal disabled 
 
     const ShowPaymentOptionWithGiftCard = () => {
@@ -80,11 +93,19 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                     <div className={`grid grid-cols-12 md:mx-20 md:mt-[71px] relative md:mb-20 mb-5 md:px-0 px-5 ${styles.splitPaymentCardMain}`}>
                         {/* add gift payment card */}
                         <div className=' md:col-span-5 col-span-12 md:flex items-center justify-between px-7'>
-                            <div className=' cursor-pointer' onClick={() => { ShowPaymentOptionWithGiftCard() }}>
+                            <div className={`${styles2.mainDiv} relative  cursor-pointer`} onClick={() => { ShowPaymentOptionWithGiftCard() }}>
                                 <p className='extsmallf  tracking-wide py-3 text-center leading-[107%]'>+ add gift card(s)</p>
                                 <div className=' flex justify-center'>
-                                    <Image src={`/start/AddGiftPayment.svg`} width={218} height={150} alt="gift card" className={`md:w-auto md:h-auto w-[150px] h-[100px] ${showSplitPayment == undefined ? 'hidden' : ''}`} />
 
+                                    <div
+                                        className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv}`}
+
+                                    >
+                                        <div className={`${styles2.gift} w-[218px] h-[150px] ${showSplitPayment == undefined ? 'hidden' : ''} `}>
+
+                                        </div>
+
+                                    </div>
                                     {showSplitPayment == undefined ? <div className='relative'>
                                         <Image src={`/start/giftCardSelcted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[250px] h-[150px]' />
                                         <div className={`absolute top-0 right-8`}>
@@ -106,7 +127,15 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                 <div className={`col-span-5 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
                                     <p className='extsmallf py-3 text-center leading-[107%]'>+ add credit card(s)</p>
                                     <div className='flex justify-center items-center relative'>
-                                        < Image src={`/start/AddCreditCard.svg`} width={146} height={150} alt="credit card" className={`md:w-auto md:h-auto w-[80px] h-[70px] ${CreditCardPayment == undefined ? 'hidden' : ''}`} />
+
+
+                                        <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv}`}>
+
+                                            <div className={`${styles2.creditCard} w-[146px] h-[150px] ${CreditCardPayment == undefined ? 'hidden' : ''} `}>
+
+                                            </div>
+
+                                        </div>
 
                                         {CreditCardPayment == undefined ?
                                             <div className='relative'>
@@ -127,7 +156,23 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                 <div className={`col-span-5 ${CreditCardPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithPaypal() }}>
                                     <p className='extsmallf tracking-wide text-center py-3 leading-[107%]'>+ add paypal</p>
                                     <div className='flex justify-center items-center relative'>
-                                        <Image src={`/start/AddPaypal.svg`} width={146} height={150} alt="credit card" className={`md:w-auto md:h-auto w-[80px] h-[70px] ${PaypalPayment == undefined ? 'hidden' : ''}`} />
+
+                                        <div className={`${styles.image_wrapper, styles.shine}`}>
+
+
+                                            {/* <Image src={`/start/AddPaypal.svg`} width={146} height={150} alt="credit card" className={`md:w-auto md:h-auto w-[80px] h-[70px] ${PaypalPayment == undefined ? 'hidden' : ''}`} /> */}
+                                        </div>
+
+
+                                        <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv}`}>
+
+                                            <div className={`${styles2.paypalPayment} w-[146px] h-[150px] ${PaypalPayment == undefined ? 'hidden' : ''} `}>
+
+                                            </div>
+
+                                        </div>
+
+
 
                                         {PaypalPayment == undefined ? <div className='relative'>
 

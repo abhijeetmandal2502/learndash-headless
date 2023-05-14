@@ -6,7 +6,6 @@
 
 }
 
-
 @keyframes hidebgelement {
 
     0% {
@@ -21,5 +20,144 @@
         opacity: 0;
         display: none !important;
         visibility: hidden;
+    }
+}
+
+/* payment logo image */
+
+
+.mainDiv>.gift {
+
+    background-image: url(/start/AddGiftCard.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 218px;
+}
+
+.mainDiv:hover>.gift {
+
+    background-image: url(/start/gigtHover.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 218px;
+}
+
+/* credit card */
+
+.mainDiv>.creditCard {
+
+    background-image: url(/start/AddCreditCard.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 146px;
+}
+
+.mainDiv:hover>.creditCard {
+
+    background-image: url(/start/creditHover.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 146px;
+}
+
+/* paypal payment */
+
+
+.mainDiv>.paypalPayment {
+
+    background-image: url(/start/AddPaypal.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 146px;
+}
+
+.mainDiv:hover>.paypalPayment {
+
+    background-image: url(/start/paypalHover.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 146px;
+}
+
+
+
+@media (max-height:750px) or (max-width:1280px) {
+
+    .mainDiv>.gift {
+
+        background-image: url(/start/AddGiftCard.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px;
+        width: 170px;
+    }
+
+    .mainDiv:hover>.gift {
+
+        background-image: url(/start/gigtHover.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px;
+    }
+
+    /* credit card */
+
+    .mainDiv>.creditCard {
+
+        background-image: url(/start/AddCreditCard.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 105px;
+    }
+
+    .mainDiv:hover>.creditCard {
+
+        background-image: url(/start/creditHover.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 105px;
+    }
+
+    /* paypal payment */
+
+
+    .mainDiv>.paypalPayment {
+
+        background-image: url(/start/AddPaypal.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 105px;
+    }
+
+    .mainDiv:hover>.paypalPayment {
+
+        background-image: url(/start/paypalHover.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 105px;
     }
 }
