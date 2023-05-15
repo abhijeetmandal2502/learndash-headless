@@ -135,7 +135,30 @@
     }
 }
 
+/* payBy gift card */
+
+.payByGiftCard {
+
+    width: 200px;
+    height: 150px
+}
+
+/* redeem gift card iamge */
+
+.redeemCardImage {
+    width: 140px;
+    height: 110px;
+}
+
 /* redeem gift card responsive css */
+
+
+/* payment by credit card image */
+
+.creditCardImage {
+    width: 260px !important;
+    height: 140px !important;
+}
 
 @media (max-height:812px) {
     .creditCardImage {
@@ -152,14 +175,41 @@
         height: 120px !important;
     }
 
+    .splitPaymentMethod {
+        width: 150px !important;
+        height: 120px !important;
+    }
+
+}
+
+@media (max-height:992px) {
+    .creditCardImage {
+        width: 260px !important;
+        height: 140px !important;
+    }
+
+    .creditCardbtn {
+        margin-top: 0px !important;
+    }
+
+    .paypalImage {
+        width: 100px !important;
+        height: 120px !important;
+    }
+
+    .splitPaymentMethod {
+        width: 150px !important;
+        height: 120px !important;
+    }
+
 }
 
 
 @media (max-height:750px) {
 
     .redeemCardImage {
-        width: 180px !important;
-        height: 140px !important;
+        width: 120px !important;
+        height: 100px !important;
     }
 
     .splitPaymentMethod {
@@ -167,15 +217,20 @@
         height: 130px !important;
     }
 
-    .splitPaymentCardMain {
+    /* .splitPaymentCardMain {
 
         margin-top: 10px 0px 0px 0px !important;
+    } */
+
+    .splitPaymentCardMain {
+
+        margin-top: 10px !important;
     }
 
 
     .creditCardImage {
-        width: 260px !important;
-        height: 140px !important;
+        width: 200px !important;
+        height: 120px !important;
     }
 
     .creditCardbtn {
@@ -194,14 +249,20 @@
         padding: 0px 130px 0px 130px !important;
     }
 
+    .selectedCoursepriceBg {
+
+        width: 100px !important;
+        height: 100px !important;
+    }
+
 
 }
 
 @media (max-height:650px) {
 
     .redeemCardImage {
-        width: 180px !important;
-        height: 140px !important;
+        width: 100px !important;
+        height: 80px !important;
     }
 
     .splitPaymentMethod {
@@ -211,7 +272,7 @@
 
     .splitPaymentCardMain {
 
-        margin-top: 10px !important;
+        margin-top: 10px 10px 0px 10px !important;
     }
 
     .creditCardImage {
@@ -233,7 +294,90 @@
         padding: 10px !important;
     }
 
+    .selectedCoursepriceBg {
+
+        width: 80px !important;
+        height: 80px !important;
+    }
+
 }
+
+@media (max-height:550px) {
+
+    .splitPaymentMethod {
+        width: 130px !important;
+        height: 90px !important;
+    }
+
+    .creditCardImage {
+        width: 170px !important;
+        height: 80px !important;
+    }
+
+    .creditCardbtn {
+        margin-top: 0px !important;
+    }
+
+    .payByGiftCard {
+
+        width: 100px !important;
+        height: 60px !important;
+    }
+
+    .selectedCoursepriceBg {
+
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+@media (max-height:450px) {
+
+    .redeemCardImage {
+        width: 80px !important;
+        height: 60px !important;
+    }
+
+    .splitPaymentMethod {
+        width: 130px !important;
+        height: 80px !important;
+    }
+
+    .creditCardImage {
+        width: 150px !important;
+        height: 70px !important;
+    }
+
+    .creditCardbtn {
+        margin-top: 0px !important;
+
+    }
+
+    .payByGiftCard {
+
+        width: 90px !important;
+        height: 60px !important;
+    }
+
+    .congrateTitle {
+
+        padding-bottom: 5px !important;
+    }
+
+
+    .congfrateContinueBtn {
+
+        padding: 0px 0px 0px 0px;
+
+    }
+
+    .selectedCoursepriceBg {
+
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
 
 
 @media (max-width:1280px) {
@@ -241,4 +385,6 @@
     .paymentDialog {
         max-width: 750px !important;
     }
+
+
 }

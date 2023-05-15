@@ -62,10 +62,9 @@ const AddToCart = () => {
 
             <div className={` relative grid grid-cols-9 bg-white my-5 mx-5 shadow-2xl  p-3 md:p-4`}>
                 <div className={`col-span-1 relative flex items-start justify-start`}>
-                    <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px]`} alt="empty basket" />
-                    <div className='absolute w-4 h-4 text-white rounded-full bg-voilet  -right-1 -top-1 translate-x-1 translate-y-1'>
+                    <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px] ${styles.cartIcon}`} alt="empty basket" />
+                    <div className='absolute w-4 h-4 text-white rounded-full bg-voilet  right-0 -top-0 translate-x-0 translate-y-0'>
                         <p className='flex items-center justify-center text-[10px]'>2</p>
-
                     </div>
                 </div>
                 <div className='col-span-8 pl-4'>
@@ -131,11 +130,10 @@ const AddToCart = () => {
                     <div className='flex items-center justify-between'>
                         {paymentCart?.map((item, id) => {
                             return (
-
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md ${styles.paymentIcon} `} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext extsmallf z-10">
                                             <div className='relative'>

@@ -21,8 +21,6 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
         setActive(false);
     };
 
-
-
     // paypal disabled 
 
     const ShowPaymentOptionWithGiftCard = () => {
@@ -90,58 +88,49 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
                     {/* payment options */}
 
-                    <div className={`grid grid-cols-12 md:mx-20 md:mt-[71px] relative md:mb-20 mb-5 md:px-0 px-5 ${styles.splitPaymentCardMain}`}>
+                    <div className={`grid grid-cols-12 md:mx-16 2xl:mx-20 relative md:mb-5 mb-5 md:px-0 px-5 ${styles.splitPaymentCardMain}`}>
                         {/* add gift payment card */}
-                        <div className=' md:col-span-5 col-span-12 md:flex items-center justify-between px-7'>
+                        <div className=' md:col-span-5 col-span-12 md:flex items-center justify-between mx-7'>
                             <div className={`${styles2.mainDiv} relative  cursor-pointer`} onClick={() => { ShowPaymentOptionWithGiftCard() }}>
                                 <p className='extsmallf  tracking-wide py-3 text-center leading-[107%]'>+ add gift card(s)</p>
                                 <div className=' flex justify-center'>
-
                                     <div
-                                        className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv}`}
+                                        className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}
 
                                     >
-                                        <div className={`${styles2.gift} w-[218px] h-[150px] ${showSplitPayment == undefined ? 'hidden' : ''} `}>
-
+                                        <div className={`${styles2.gift}  ${showSplitPayment == undefined ? 'hidden' : ''}  `}>
                                         </div>
 
                                     </div>
                                     {showSplitPayment == undefined ? <div className='relative'>
                                         <Image src={`/start/giftCardSelcted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[250px] h-[150px]' />
-                                        <div className={`absolute top-0 right-8`}>
+                                        <div className={`absolute top-0 right-2`}>
                                             <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
                                         </div>
                                     </div> : ""}
                                 </div>
                                 <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${showSplitPayment == undefined ? 'text-voilet mt-0 font-semibold' : 'text-gray mt-5'}`}> {showSplitPayment == undefined ? '$20 applied' : '$0 applied'} </p>
                             </div>
-                            <div className='flex justify-center py-2'>
-                                <p className='bg-black text-white px-3 max-w-[38px] md:w-full  extlargef rounded-full'>+</p>
+                            <div className='flex justify-center mx-2'>
+                                <p className='bg-black text-white px-3 py-0.5 max-w-[38px] min-w-[30px] md:w-full  text-[24px] rounded-full'>+</p>
                             </div>
                         </div>
 
                         <div className=' md:col-span-7 col-span-12  '>
                             <div className='grid grid-cols-12  '>
-
                                 {/* add credit card payment */}
                                 <div className={`col-span-5 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
                                     <p className='extsmallf py-3 text-center leading-[107%]'>+ add credit card(s)</p>
                                     <div className='flex justify-center items-center relative'>
-
-
-                                        <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv}`}>
-
-                                            <div className={`${styles2.creditCard} w-[146px] h-[150px] ${CreditCardPayment == undefined ? 'hidden' : ''} `}>
-
+                                        <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}>
+                                            <div className={`${styles2.creditCard}  ${CreditCardPayment == undefined ? 'hidden' : ''} `}>
                                             </div>
-
                                         </div>
 
                                         {CreditCardPayment == undefined ?
                                             <div className='relative'>
                                                 <Image src={`/start/creditCardSeleted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[300px] h-[100px] ' />
-
-                                                <div className={`absolute top-0 right-3`}>
+                                                <div className={`absolute top-0 right-2`}>
                                                     <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
                                                 </div>
                                             </div> : ""}
@@ -158,26 +147,17 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                     <div className='flex justify-center items-center relative'>
 
                                         <div className={`${styles.image_wrapper, styles.shine}`}>
-
-
                                             {/* <Image src={`/start/AddPaypal.svg`} width={146} height={150} alt="credit card" className={`md:w-auto md:h-auto w-[80px] h-[70px] ${PaypalPayment == undefined ? 'hidden' : ''}`} /> */}
                                         </div>
 
 
-                                        <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv}`}>
-
+                                        <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}>
                                             <div className={`${styles2.paypalPayment} w-[146px] h-[150px] ${PaypalPayment == undefined ? 'hidden' : ''} `}>
-
                                             </div>
-
                                         </div>
-
-
-
                                         {PaypalPayment == undefined ? <div className='relative'>
-
                                             <Image src={`/start/paypalSelected.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[200px] h-[100px]' />
-                                            <div className={`absolute top-0 right-3`}>
+                                            <div className={`absolute top-0 right-4`}>
                                                 <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
                                             </div>
                                         </div> : ""}

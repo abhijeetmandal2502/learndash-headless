@@ -78,7 +78,7 @@ const CheckoutForm = () => {
                                 </div>
 
                                 <button type="button"
-                                    onClick={openModal} className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
+                                    onClick={openModal} className={`w-full px-4 mt-5 py-2 mb-5 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
                                 </button>
                             </div>
                         </div>

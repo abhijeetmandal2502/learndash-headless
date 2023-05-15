@@ -426,7 +426,8 @@ ol {
   .logoImg {
 
     width: 300px !important;
-    height: 230px !important;
+    height: 100px !important;
+    margin-top: 50px;
   }
 
   .ncbtmbImg {
@@ -507,7 +508,8 @@ ol {
   .logoImg {
 
     width: 230px !important;
-    height: 220px !important;
+    height: 80px !important;
+    margin-top: 40px !important;
   }
 
   .ncbtmbImg {
@@ -588,7 +590,8 @@ ol {
   .logoImg {
 
     width: 230px !important;
-    height: 230px !important;
+    height: 80px !important;
+    margin-top: 50px !important;
 
   }
 
@@ -631,22 +634,22 @@ ol {
 
 
   .doorFrame {
-    width: 70px !important;
-    height: 70px !important;
+    width: 100px !important;
+    height: 100px !important;
 
   }
 
   .doorGate {
-    width: 40px !important;
-    height: 67px !important;
+    width: 56px !important;
+    height: 94px !important;
 
   }
 
   .doorGateMainDiv {
 
     position: absolute;
-    top: 1px !important;
-    left: 11px !important;
+    top: 3px !important;
+    left: 16px !important;
   }
 
   .gateHandleMainDiv {
@@ -654,8 +657,8 @@ ol {
     width: 2px !important;
     height: 3px !important;
     position: absolute !important;
-    top: 28px !important;
-    left: 25px !important;
+    top: 38px !important;
+    left: 40px !important;
   }
 
   /* ncbtmb approved image */
@@ -669,7 +672,8 @@ ol {
 
   .logoImg {
     width: 230px !important;
-    height: 220px !important;
+    height: 80px !important;
+    margin-top: 40px !important;
   }
 
   .ncbtmbImg {
@@ -711,22 +715,22 @@ ol {
 
 
   .doorFrame {
-    width: 70px !important;
-    height: 70px !important;
+    width: 100px !important;
+    height: 100px !important;
 
   }
 
   .doorGate {
-    width: 40px !important;
-    height: 67px !important;
+    width: 70px !important;
+    height: 95px !important;
 
   }
 
   .doorGateMainDiv {
 
     position: absolute;
-    top: 1px !important;
-    left: 11px !important;
+    top: 2px !important;
+    left: 9px !important;
   }
 
   .gateHandleMainDiv {
@@ -734,8 +738,8 @@ ol {
     width: 2px !important;
     height: 3px !important;
     position: absolute !important;
-    top: 28px !important;
-    left: 25px !important;
+    top: 38px !important;
+    left: 45px !important;
   }
 
   /* ncbtmb approved image */
@@ -751,7 +755,8 @@ ol {
 
   .logoImg {
     width: 200px !important;
-    height: 230px !important;
+    height: 90px !important;
+    margin-top: 40px !important;
   }
 
   .ncbtmbImg {
@@ -840,7 +845,8 @@ ol {
   .logoImg {
 
     width: 150px !important;
-    height: 160px !important;
+    height: 70px !important;
+    margin-top: 35px !important;
 
   }
 
@@ -928,8 +934,9 @@ ol {
 
   .logoImg {
 
-    width: 150px !important;
-    height: 140px !important;
+    width: 120px !important;
+    height: 40px !important;
+    margin-top: 50px !important;
 
   }
 
@@ -1013,7 +1020,8 @@ ol {
   .logoImg {
 
     width: 150px !important;
-    height: 140px !important;
+    height: 50px !important;
+    margin-top: 45px !important;
 
   }
 
@@ -1138,8 +1146,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
-    line-height: 40px !important;
+    font-size: 30px !important;
+    line-height: 45px !important;
   }
 
   .superlargef {
@@ -1201,8 +1209,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
-    line-height: 40px !important;
+    font-size: 30px !important;
+    line-height: 45px !important;
   }
 
   .superlargef {
@@ -1274,7 +1282,7 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px !important;
+    font-size: 30px !important;
     line-height: 45px !important;
   }
 
@@ -1352,9 +1360,9 @@ ol {
   }
 
   .superlargef {
-    font-size: 55px !important;
+    font-size: 30px !important;
     letter-spacing: 0.001em !important;
-    line-height: 65px !important;
+    line-height: 40px !important;
   }
 
   .startFont {
@@ -1400,11 +1408,11 @@ ol {
   }
 
   .largef {
-    font-size: 15px !important;
+    font-size: 13px !important;
   }
 
   .extlargef {
-    font-size: 20px !important;
+    font-size: 10px !important;
   }
 
   .dubblelargef {
@@ -1420,14 +1428,14 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 13px !important;
+    font-size: 15px !important;
     line-height: 15px !important;
   }
 
   .superlargef {
-    font-size: 55px !important;
+    font-size: 30px !important;
     letter-spacing: 0.001em !important;
-    line-height: 65px !important;
+    line-height: 40px !important;
   }
 
   .startFont {
@@ -1473,11 +1481,11 @@ ol {
   }
 
   .largef {
-    font-size: 15px !important;
+    font-size: 12px !important;
   }
 
   .extlargef {
-    font-size: 25px !important;
+    font-size: 12px !important;
   }
 
   .dubblelargef {
@@ -1498,9 +1506,9 @@ ol {
   }
 
   .superlargef {
-    font-size: 40px !important;
+    font-size: 20px !important;
     letter-spacing: 0.001em !important;
-    line-height: 45px !important;
+    line-height: 30px !important;
   }
 
   .startFont {
@@ -2385,7 +2393,7 @@ ol {
   }
 
   .smallf {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .mediumf {
@@ -2405,9 +2413,10 @@ ol {
   }
 
   .triplelargef {
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: 1px;
     font-weight: 600;
+    line-height: 20px !important;
 
   }
 
@@ -2453,7 +2462,7 @@ ol {
   }
 
   .smallf {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .mediumf {
@@ -2473,9 +2482,10 @@ ol {
   }
 
   .triplelargef {
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 1px;
     font-weight: 600;
+    line-height: 25px !important;
 
   }
 
@@ -2552,8 +2562,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 40px;
+    line-height: 60px;
   }
 
   .superlargef {
@@ -2616,21 +2626,21 @@ ol {
   }
 
   .triplelargef {
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 1px;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 30px !important;
   }
 
   .fourxllargef {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 50px;
   }
 
   .superlargef {
-    font-size: 65px;
+    font-size: 50px;
     letter-spacing: 0.001em;
-    line-height: 90px;
+    line-height: 60px;
   }
 
   .startFont {
@@ -2679,20 +2689,21 @@ ol {
   }
 
   .triplelargef {
-    font-size: 34px;
+    font-size: 25px;
     letter-spacing: 1px;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 30px !important;
   }
 
   .fourxllargef {
-    font-size: 50px;
+    font-size: 40px;
     line-height: 50px;
   }
 
   .superlargef {
-    font-size: 65px;
+    font-size: 50px;
     letter-spacing: 0.025em;
+    line-height: 60px;
   }
 
   .startFont {
@@ -2765,9 +2776,10 @@ ol {
   }
 
   .triplelargef {
-    font-size: 37px;
+    font-size: 30px;
     letter-spacing: 1px;
     font-weight: 600 !important;
+    line-height: 35px !important;
 
   }
 
@@ -2794,13 +2806,14 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 60px;
+    font-size: 40px;
     line-height: 60px;
   }
 
   .superlargef {
-    font-size: 70px;
+    font-size: 55px;
     letter-spacing: 0.025em;
+    line-height: 60px;
   }
 
   /* custom font for start */

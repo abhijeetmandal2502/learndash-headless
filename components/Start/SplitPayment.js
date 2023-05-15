@@ -113,7 +113,7 @@ const SplitPayment = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className={`w-full max-w-[1077px]  transform overflow-hidden  bg-white md:p-6 text-left align-middle shadow-xl transition-all h-screen md:h-auto overflow-y-scroll ${styles.paymentDialog} `}>
+                                <Dialog.Panel className={`w-full max-w-[900px]  transform overflow-hidden  bg-white md:p-6 text-left align-middle shadow-xl transition-all h-screen md:h-auto overflow-y-scroll ${styles.paymentDialog} `}>
                                     <div className="flex items-center md:justify-end justify-between ">
                                         <div className='md:hidden flex space-x-2 justify-center items-center pl-5'>
                                             <FiArrowLeft size={25} />

@@ -54,14 +54,15 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
     return (
         <>
-            <div className='md:mx-5 md:p-0 p-4  md:mb-0 mb-20 overflow-y-scroll'>
+            <div className='md:mx-5 md:p-0 p-4
+             md:mb-0 '>
                 {/* gift card */}
                 <div className=''>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
-                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={`md:w-[349px] w-[150px] h-[125px]  md:h-[221px] ${styles.redeemCardImage} `} />
+                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={` ${styles.redeemCardImage} `} />
 
                         <div >
-                            <h2 className='md:text-[50px] text-[19px]  tracking-wide md:leading-[107%] leading-tight '>{giftCardDetail.title}</h2>
+                            <h2 className='fourxllargef  tracking-wide md:leading-[107%] leading-tight '>{giftCardDetail.title}</h2>
                             <p className='md:block hidden dubblelargef  leading-tight md:leading-[107%]'>{giftCardDetail.DueBalance}</p>
                         </div>
                     </div>
@@ -74,7 +75,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                 <div className=' grid  grid-cols-12 gap-2'>
                     <div className=' md:col-span-5 col-span-12'>
-                        <p className='px-9 mb-3'>gift card #</p>
+                        <p className='px-9 mb-3 mediumf'>gift card #</p>
 
                         <div className='flex items-center space-x-2 mb-4'>
                             <p className='bg-lightgray text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[0].cardId}</p>
@@ -88,7 +89,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                         {showGiftCardDetail ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -97,7 +98,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -106,7 +107,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                             </div>
 
                             <div className=' col-span-8'>
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -132,7 +133,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                         {showGiftCardDetail2 ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -141,7 +142,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -151,7 +152,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                             <div className=' col-span-8'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -177,7 +178,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                         {showGiftCardDetail3 ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -186,7 +187,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -196,7 +197,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                             <div className=' col-span-8'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -222,7 +223,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                         {showGiftCardDetail4 ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -231,7 +232,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -241,7 +242,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                             <div className=' col-span-8'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -260,13 +261,13 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                     <div className=' md:col-span-7 col-span-12 relative'>
                         {/* gift detail card for desktop */}
                         <div className='  hidden md:grid md:grid-cols-7 grid-cols-8 mb-3'>
-                            <div className=' md:col-span-2 col-span-4'>
+                            <div className='smallf md:col-span-2 col-span-4'>
                                 balnce
                             </div>
-                            <div className=' md:col-span-2 col-span-4'>
+                            <div className='smallf md:col-span-2 col-span-4'>
                                 expires
                             </div>
-                            <div className=' md:col-span-2 col-span-8'>
+                            <div className='smallf md:col-span-2 col-span-8'>
                                 redeem how much
                             </div>
                         </div>
@@ -293,7 +294,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                         {/* continue button */}
 
-                        <div className=' absolute md:-bottom-10 -bottom-24 left-1/2 -translate-x-1/2 w-full '>
+                        <div className=' absolute md:bottom-0 -bottom-24 left-1/2 -translate-x-1/2 w-full '>
                             <div className='md:flex  flex-col md:space-y-0 space-y-5 justify-between items-center'>
                                 {showGiftCardDetail ? <div className='mediumf '>redeem <span className='text-voilet border-b'>1 gift card</span> for <span className='text-voilet border-b'>$20</span></div> : ""}
 

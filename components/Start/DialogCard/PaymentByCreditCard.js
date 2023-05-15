@@ -20,7 +20,7 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
 
 
                         <div >
-                            <h2 className='md:text-[45px] largf tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
+                            <h2 className=' fourxllargef tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
                             <p className='md:text-[32px] mediumf  md:leading-[107%] leading-tight hidden md:block'>{giftCardDetail.DueBalance}</p>
 
                         </div>
@@ -32,7 +32,7 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
                 </div>
                 {/* credit card detail  */}
 
-                <div className={`md:px-72 ${styles.splitPaymentForm}`}>
+                <div className={`md:px-48 ${styles.splitPaymentForm}`}>
                     <div className={``}>
                         <label className="mt-5 mb-1.5  font-bold  leading-4 smallf ">credit card info</label>
                         <div className="flex justify-between mb-3 ">
@@ -58,7 +58,7 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
                         <p className={`text-gray smallf `}>save payment for future purchases?</p>
                     </div>
 
-                    <div className={`mt-14 ${styles.creditCardbtn} flex flex-col justify-center space-y-5`}>
+                    <div className={`mt-10 ${styles.creditCardbtn} flex flex-col justify-center space-y-2`}>
                         <div className='mediumf text-center '>apply <span className='text-voilet border-b'>$20 payment</span> to credit card</div>
 
                         <div className={` mx-auto`}>

@@ -65,7 +65,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                             <div className={` flex flex-col justify-center  ${!panel ? 'block' : 'hidden'}`} onClick={() => {
                                 setPanel(true)
                             }}>
-                                <Image src="/images/newPriceOrange.svg" width={200} height={200} alt="prceBg" />
+                                <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
                                 <div className=' text-center font-bold  smallf text-[#FF5C00] '>
                                     +add
                                 </div>

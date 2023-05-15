@@ -58,10 +58,9 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                 {/* gift card */}
                 <div className=''>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
-                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className='md:w-[349px] w-[150px] h-[125px]  md:h-[221px]' />
-
+                        <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={`${styles.payByGiftCard}`} />
                         <div >
-                            <h2 className='md:text-[50px] text-[19px] tracking-wide md:leading-[107%] leading-tight '>{giftCardDetail.title}</h2>
+                            <h2 className='fourxllargef tracking-wide md:leading-[107%] leading-tight '>{giftCardDetail.title}</h2>
                             <p className='md:block hidden dubblelargef  leading-tight md:leading-[107%]'>{giftCardDetail.DueBalance}</p>
 
                         </div>
@@ -75,7 +74,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
 
                 <div className=' grid  grid-cols-12 gap-2'>
                     <div className=' md:col-span-5 col-span-12'>
-                        <p className='px-9 mb-3'>gift card #</p>
+                        <p className='px-9 mb-3 mediumf'>gift card #</p>
 
                         <div className='flex items-center space-x-2 mb-4'>
                             <p className='bg-lightgray text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[0].cardId}</p>
@@ -89,7 +88,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         {showGiftCardDetail ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -134,7 +133,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         {showGiftCardDetail2 ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -143,7 +142,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -153,7 +152,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
 
                             <div className=' col-span-8'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -179,7 +178,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         {showGiftCardDetail3 ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -188,7 +187,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -198,7 +197,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
 
                             <div className=' col-span-8'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -224,7 +223,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         {showGiftCardDetail4 ? <div className=' md:hidden grid grid-cols-8 gap-2 md:ml-0 ml-10'>
                             <div className='col-span-4'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     balnce
                                 </div>
                                 <div className='  p-1.5 bg-lightgray smallf'>
@@ -233,7 +232,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                             </div>
 
                             <div className='col-span-4'>
-                                <div className=''>
+                                <div className='smallf'>
                                     expires
                                 </div>
                                 <div className=' p-1.5 bg-lightgray smallf'>
@@ -243,7 +242,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
 
                             <div className=' col-span-8'>
 
-                                <div className=''>
+                                <div className='smallf'>
                                     redeem how much
                                 </div>
                                 <div className=' flex justify-between items-center p-1.5 border border-gray'>
@@ -262,13 +261,13 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                     <div className=' md:col-span-7 col-span-12 relative'>
                         {/* gift detail card for desktop */}
                         <div className='  hidden md:grid md:grid-cols-7 grid-cols-8 mb-3'>
-                            <div className=' md:col-span-2 col-span-4'>
+                            <div className=' md:col-span-2 col-span-4 smallf'>
                                 balnce
                             </div>
-                            <div className=' md:col-span-2 col-span-4'>
+                            <div className=' md:col-span-2 col-span-4 smallf'>
                                 expires
                             </div>
-                            <div className=' md:col-span-2 col-span-8'>
+                            <div className=' md:col-span-2 col-span-8 smallf'>
                                 redeem how much
                             </div>
                         </div>

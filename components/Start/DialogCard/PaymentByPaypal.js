@@ -33,7 +33,7 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
                 <div className='md:px-48'>
                     <div className={`mt-14 flex flex-col justify-center space-y-5 ${styles.paypalsuccessMain}`}>
 
-                        <div className={`md:px-24 px-12 py-16 bg-lightgray flex flex-col justify-center items-center space-y-3 ${styles.paypalsuccessInner}`}>
+                        <div className={` p-5 bg-lightgray flex flex-col justify-center items-center space-y-3 ${styles.paypalsuccessInner}`}>
 
                             <Image src="/start/PayPalsuccessfull.svg" width={260} height={70} alt="paypal logo" />
                             <p className='md:text-[35px] extlargef md:mt-0 mt-5 md:text-left text-center tracking-wide '>$20 payment successful!</p>
