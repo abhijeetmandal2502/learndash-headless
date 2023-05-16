@@ -196,8 +196,6 @@ const Start = () => {
         }
     })
 
-
-
     return (
         <>
             <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>

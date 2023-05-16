@@ -295,10 +295,12 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         {/* continue button */}
 
                         <div className=' absolute md:-bottom-10 -bottom-24 left-1/2 -translate-x-1/2 w-full '>
-                            <div className='md:flex  flex-col md:space-y-0 space-y-5 justify-between items-center'>
-                                {showGiftCardDetail ? <div className='mediumf '>redeem <span className='text-voilet border-b'>1 gift card</span> for <span className='text-voilet border-b'>$20</span></div> : ""}
+                            <div className='md:flex   md:space-y-0 space-y-5 justify-end md:space-x-5 items-center'>
+                                {showGiftCardDetail ?
+                                    <div className='mediumf '>redeem <span className='text-voilet border-b'>1 gift card</span> for <span className='text-voilet border-b'>$20</span>
+                                    </div> : ""}
 
-                                <div className={` mx-auto`}>
+                                <div className={`mr-3 `}>
                                     <button type="button"
                                         onClick={() => { openModal(), setShowSplitPayment() }}
                                         className={`w-full px-16  py-2 tracking-[0.02em] text-white   ${showGiftCardDetail ? styles.paymentbyGiftCardBtn : 'bg-gray opacity-[0.5]'}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue

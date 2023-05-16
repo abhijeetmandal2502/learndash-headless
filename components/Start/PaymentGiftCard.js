@@ -35,7 +35,7 @@ const PaymentGiftCard = () => {
     const [cograteModel, setCongrateModel] = useState(false);
 
 
-    console.log('addGift', addGift);
+    //  console.log('addGift', addGift);
     return (
         <>
             {/* widthout selected */}
@@ -43,9 +43,9 @@ const PaymentGiftCard = () => {
                 <div >
                     <div className='flex items-center justify-center md:pt-8'>
 
-                        <Image className='md:-ml-8  ' src="/start/GiftCard3D.png" width={150} height={100} alt="gift card" />
+                        <Image className={`${styles.giftCardLogo}`} src="/start/GiftCard3D.png" width={150} height={100} alt="gift card" />
 
-                        <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
+                        <p className='dubblelargef pt-3 text-black leading-[107%]'>due: $40</p>
                     </div>
 
                     <div className={`max-w-[75%] mx-auto mb-6`}>
@@ -136,7 +136,7 @@ const PaymentGiftCard = () => {
                                         </div>
                                         <button
                                             type="button"
-                                            className="text-3xl md:pr-0 pr-5"
+                                            className="text-3xl md:pr-0 pr-5 text-black"
                                             onClick={closeModal}
                                         >
                                             x

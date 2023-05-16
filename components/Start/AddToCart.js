@@ -125,7 +125,7 @@ const AddToCart = () => {
 
                 <div className='px-3'>
 
-                    <input type="email" placeholder='your email' className='w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
+                    <input type="email" placeholder='your email' className='w-full bg-white px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
 
                     <div className='flex items-center justify-between'>
                         {paymentCart?.map((item, id) => {

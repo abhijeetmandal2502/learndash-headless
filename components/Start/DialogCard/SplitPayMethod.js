@@ -62,15 +62,14 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                     <div className='md:px-16 md:block hidden'>
                         <div className='flex justify-between items-center space-x-3'>
                             <Image src="/start/splitPayment.png" width={250} height={165} className={`${styles.splitPaymentMethod}`} alt="split card" />
-
                             <div>
                                 <h2 className='fourxllargef tracking-wide leading-[107%]'>split payment methods</h2>
                                 <p className='extlargef  font-Barlow  tracking-wide leading-[107%] md:mt-3'>use up to 4 gift cards plus one (1) additional payment method (simply click on an icon to pay)</p>
-
                             </div>
                         </div>
-                    </div>
 
+                        <p className=' dubblelargef text-[14px] py-3 text-center text-black font-normal'><span className='border-black border-b font-semibold'>total cost: $40</span></p>
+                    </div>
                     {/* card header for mpobile */}
 
                     <div className='md:hidden px-5'>
@@ -95,16 +94,16 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                 <p className='extsmallf  tracking-wide py-3 text-center leading-[107%]'>+ add gift card(s)</p>
                                 <div className=' flex justify-center'>
                                     <div
-                                        className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}
+                                        className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl xl:hover:shadow-xl lg:hover:shadow-xl md:hover:shadow-sm hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}
 
                                     >
                                         <div className={`${styles2.gift}  ${showSplitPayment == undefined ? 'hidden' : ''}  `}>
                                         </div>
 
                                     </div>
-                                    {showSplitPayment == undefined ? <div className='relative'>
+                                    {showSplitPayment == undefined ? <div className='relative shadow-2xl shadow-zinc-600 rounded-xl transition-all ease-in-out duration-500'>
                                         <Image src={`/start/giftCardSelcted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[250px] h-[150px]' />
-                                        <div className={`absolute top-0 right-2`}>
+                                        <div className={`absolute -top-2 -right-2`}>
                                             <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
                                         </div>
                                     </div> : ""}
@@ -117,7 +116,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                         </div>
 
                         <div className=' md:col-span-7 col-span-12  '>
-                            <div className='grid grid-cols-12  '>
+                            <div className='grid grid-cols-12'>
                                 {/* add credit card payment */}
                                 <div className={`col-span-5 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
                                     <p className='extsmallf py-3 text-center leading-[107%]'>+ add credit card(s)</p>
@@ -128,10 +127,12 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                         </div>
 
                                         {CreditCardPayment == undefined ?
-                                            <div className='relative'>
-                                                <Image src={`/start/creditCardSeleted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[300px] h-[100px] ' />
-                                                <div className={`absolute top-0 right-2`}>
-                                                    <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
+                                            <div className='relative shadow-2xl shadow-zinc-600 rounded-xl transition-all ease-in-out duration-500'>
+                                                <Image src={`/start/creditCardSeleted.svg`} width={300} height={200} alt="gift card" className={`md:w-auto md:h-auto w-[146px] h-[150px] ${styles2.creditCardSelected}`}
+                                                />
+                                                <div className={`absolute -top-2 -right-2`}>
+                                                    <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className=''
+                                                    />
                                                 </div>
                                             </div> : ""}
                                     </div>
@@ -155,9 +156,9 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                             <div className={`${styles2.paypalPayment} w-[146px] h-[150px] ${PaypalPayment == undefined ? 'hidden' : ''} `}>
                                             </div>
                                         </div>
-                                        {PaypalPayment == undefined ? <div className='relative'>
-                                            <Image src={`/start/paypalSelected.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[200px] h-[100px]' />
-                                            <div className={`absolute top-0 right-4`}>
+                                        {PaypalPayment == undefined ? <div className='relative shadow-2xl shadow-zinc-600 rounded-xl transition-all ease-in-out duration-500'>
+                                            <Image src={`/start/paypalSelected.svg`} width={300} height={200} alt="gift card" className={`md:w-auto md:h-auto w-[146px] h-[150px] ${styles2.paypalSelected}`} />
+                                            <div className={`absolute -top-2 -right-2`}>
                                                 <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
                                             </div>
                                         </div> : ""}
@@ -173,7 +174,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
 
                     <div className='flex justify-between md:justify-end items-center space-x-5'>
-                        <p className=' minismallf text-[14px] text-voilet font-normal'>total due: $40</p>
+                        <p className=' minismallf text-[14px] text-voilet font-normal'><span className='border-voilet border-b font-semibold'>remaining due: $40</span></p>
 
                         <div className={` mx-auto`}>
                             <button type="button"

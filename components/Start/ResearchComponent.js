@@ -48,11 +48,10 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                     <div className='flex space-x-2 justify-center items-center'>
 
-                        <h2 className='triplelargef tracking-wide md:leading-[40px]'>
+                        <h2 className='mediumf tracking-wide text-black'>
                             using research
                             to market your practice
                         </h2>
-
                         {/* price component for mobile */}
 
                         <div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
@@ -62,11 +61,11 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                 </div>
                             </div>
 
-                            <div className={` flex flex-col justify-center  ${!panel ? 'block' : 'hidden'}`} onClick={() => {
+                            <div className={` flex flex-col justify-center items-center ${!panel ? 'block' : 'hidden'}`} onClick={() => {
                                 setPanel(true)
                             }}>
                                 <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
-                                <div className=' text-center font-bold  smallf text-[#FF5C00] '>
+                                <div className=' text-center font-bold  smallf  text-[#FF5C00] '>
                                     +add
                                 </div>
                             </div>
@@ -88,7 +87,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                     </div>
                     <div className='flex items-center py-2 space-x-5 '>
                         <div className='flex items-center space-x-1 cursor-pointer'>
-                            <Image src="/images/GaelWood.png" width={55} height={60} alt="author" />
+                            <Image src="/images/GaelWood.png" width={55} height={60} alt="author" className={`${styles.authorImage}`} />
 
                             {/* <h3 className={`${styles.element} border-b border-bordergray leading-4 smallf`} >Geal Wood</h3> */}
                             <button
@@ -101,10 +100,10 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         </div>
                         <div className='flex space-x-1.5 items-center'>
                             <MdOutlineWatchLater size={20} />
-                            <h3 className='font-semibold smallf'>4 Hours</h3>
+                            <h3 className='font-semibold text-black smallf'>4 Hours</h3>
                         </div>
                     </div>
-                    <p className='py-1 tracking-wide smallf'>Do you know the difference in valid research and website hype? Learn basic concepts of research...</p>
+                    <p className='py-1 tracking-wide smallf text-black'>Do you know the difference in valid research and website hype? Learn basic concepts of research...</p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
                         onClick={() => { openModal(), setAboutCourse(true), setInstructor(false) }}
                         type="button"
@@ -117,11 +116,11 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         return (
                             <div key={index} className='flex items-center space-x-4 py-0.3'>
                                 <AiOutlineCheck size={16} className='text-[#9747FF]' />
-                                <p className='tracking-wider smallf'>{item}</p>
+                                <p className='tracking-wider smallf text-black'>{item}</p>
                             </div>
                         )
                     })}
-                    <button className='pt-2 font-semibold leading-5 border-b border-black smallf'>
+                    <button className='pt-2 font-semibold leading-5 border-b border-black smallf text-black'>
                         read our refund policy
                     </button>
                 </div>

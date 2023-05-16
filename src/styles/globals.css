@@ -16,7 +16,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Barlow', sans-serif;
-  font-weight: normal
+  font-weight: normal;
+  color: black !important;
 }
 
 /* font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
@@ -1117,7 +1118,7 @@ ol {
   }
 
   .smallf {
-    font-size: 14px !important;
+    font-size: 11px !important;
   }
 
   .mediumf {
@@ -1130,11 +1131,11 @@ ol {
   }
 
   .extlargef {
-    font-size: 18px !important;
+    font-size: 20px !important;
   }
 
   .dubblelargef {
-    font-size: 16px !important;
+    font-size: 20px !important;
   }
 
   .triplelargef {
@@ -1146,7 +1147,7 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 30px !important;
+    font-size: 35px !important;
     line-height: 45px !important;
   }
 
@@ -1180,7 +1181,7 @@ ol {
   }
 
   .smallf {
-    font-size: 12px !important;
+    font-size: 11px !important;
   }
 
   .mediumf {
@@ -1196,8 +1197,8 @@ ol {
   }
 
   .dubblelargef {
-    font-size: 16px !important;
-    line-height: 22px !important;
+    font-size: 22px !important;
+    line-height: 27px !important;
   }
 
   .triplelargef {
@@ -1254,7 +1255,7 @@ ol {
   }
 
   .smallf {
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 
   .mediumf {
@@ -1335,7 +1336,7 @@ ol {
   }
 
   .largef {
-    font-size: 15px !important;
+    font-size: 12px !important;
   }
 
   .extlargef {
@@ -1428,8 +1429,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 15px !important;
-    line-height: 15px !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
   }
 
   .superlargef {
@@ -2393,7 +2394,7 @@ ol {
   }
 
   .smallf {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .mediumf {

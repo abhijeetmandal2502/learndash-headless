@@ -19,6 +19,7 @@ module.exports = {
         dakgray: '#393939',
         lightgray: '#EDEDED',
         green: '#38CD97',
+        purple: '#F5EDFF',
 
       },
 

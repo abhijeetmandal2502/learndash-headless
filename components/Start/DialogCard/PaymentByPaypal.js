@@ -18,8 +18,8 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
                         </div>
 
                         <div >
-                            <h2 className=' extlargef tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
-                            <p className='  md:leading-[107%] leading-tight hidden md:block'>{giftCardDetail.DueBalance}</p>
+                            <h2 className=' fourxllargef tracking-wide md:leading-[107%] text-black leading-tight'>{giftCardDetail.title}</h2>
+                            <p className=' dubblelargef text-voilet font-semibold   md:leading-[150%] leading-tight hidden md:block'><span className='border-b border-voilet'>{giftCardDetail.DueBalance}</span></p>
 
                         </div>
                     </div>
@@ -33,10 +33,10 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
                 <div className='md:px-48'>
                     <div className={`mt-14 flex flex-col justify-center space-y-5 ${styles.paypalsuccessMain}`}>
 
-                        <div className={` p-5 bg-lightgray flex flex-col justify-center items-center space-y-3 ${styles.paypalsuccessInner}`}>
+                        <div className={` p-5 bg-purple flex flex-col justify-center items-center space-y-3 ${styles.paypalsuccessInner}`}>
 
                             <Image src="/start/PayPalsuccessfull.svg" width={260} height={70} alt="paypal logo" />
-                            <p className='md:text-[35px] extlargef md:mt-0 mt-5 md:text-left text-center tracking-wide '>$20 payment successful!</p>
+                            <p className='md:text-[35px] text-black extlargef md:mt-0 mt-5 md:text-left text-center tracking-wide '>$20 payment successful!</p>
 
                         </div>
 

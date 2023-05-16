@@ -37,27 +37,27 @@ const CheckoutForm = () => {
                                 <div className="flex-col mt-2">
 
                                     <div className={`${styles.formbg} p-4`}>
-                                        <label className="mt-5 mb-1.5  font-bold  leading-4 smallf">credit card info</label>
+                                        <label className="mt-5 mb-1.5  font-bold text-black leading-4 smallf">credit card info</label>
                                         <div className="flex justify-between mb-2 ">
                                             <div className="max-w-[48%]">
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
+                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
                                             </div>
                                             <div className="max-w-[48%]">
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
+                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
                                             </div>
                                         </div>
                                         <div>
-                                            <input className="w-full leading-3 border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
+                                            <input className="w-full bg-white leading-3 border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
                                         </div>
                                         <div className="flex flex-row mt-2 space-x-2">
                                             <div>
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
+                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
                                             </div>
                                             <div>
-                                                <input className="w-full leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
+                                                <input className="w-full bg-white leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
                                             </div>
                                             <div>
-                                                <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
+                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
                                             </div>
                                         </div>
                                     </div>
@@ -65,11 +65,11 @@ const CheckoutForm = () => {
                                     <div className="flex items-center py-2 ">
                                         <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
                                         {/* </div> */}
-                                        <label Htmlfor="link-checkbox" className={`text-black text-sm ml-2 cursor-pointer`}>save payment for future purchases?</label>
+                                        <label Htmlfor="link-checkbox" className={`text-black smallf ml-2 cursor-pointer`}>save payment for future purchases?</label>
                                     </div>
 
                                     <div className={`relative`}>
-                                        <input className="w-full leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
+                                        <input className="w-full bg-white smallf leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                                         <div className="absolute cursor-pointer top-2 right-2">
                                             <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
                                         </div>

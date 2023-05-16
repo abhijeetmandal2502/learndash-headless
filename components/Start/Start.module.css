@@ -139,8 +139,8 @@
 
 .payByGiftCard {
 
-    width: 200px;
-    height: 150px
+    width: 180px;
+    height: 130px
 }
 
 /* redeem gift card iamge */
@@ -156,8 +156,14 @@
 /* payment by credit card image */
 
 .creditCardImage {
-    width: 260px !important;
+    width: 169px !important;
     height: 140px !important;
+}
+
+.selectedCoursepriceBg {
+
+    width: 120px !important;
+    height: 80px !important;
 }
 
 @media (max-height:812px) {
@@ -184,8 +190,8 @@
 
 @media (max-height:992px) {
     .creditCardImage {
-        width: 260px !important;
-        height: 140px !important;
+        width: 169px !important;
+        height: 100px !important;
     }
 
     .creditCardbtn {
@@ -194,7 +200,7 @@
 
     .paypalImage {
         width: 100px !important;
-        height: 120px !important;
+        height: 90px !important;
     }
 
     .splitPaymentMethod {
@@ -203,7 +209,6 @@
     }
 
 }
-
 
 @media (max-height:750px) {
 
@@ -229,7 +234,13 @@
 
 
     .creditCardImage {
-        width: 200px !important;
+        width: 108px !important;
+        height: 120px !important;
+    }
+
+    .payByGiftCard {
+
+        width: 140px !important;
         height: 120px !important;
     }
 
@@ -247,12 +258,34 @@
     .splitPaymentForm {
 
         padding: 0px 130px 0px 130px !important;
+
+        margin-top: 0px !important;
     }
 
     .selectedCoursepriceBg {
 
         width: 100px !important;
-        height: 100px !important;
+        height: 70px !important;
+    }
+
+
+    .paypalLogo {
+
+        width: 60px !important;
+        height: 30px !important;
+    }
+
+
+    .giftCardLogo {
+
+        width: 80px !important;
+        height: 60px !important;
+    }
+
+    .splitPaymentLogo {
+
+        width: 80px !important;
+        height: 60px !important;
     }
 
 
@@ -276,8 +309,14 @@
     }
 
     .creditCardImage {
-        width: 260px !important;
-        height: 140px !important;
+        width: 108px !important;
+        height: 100px !important;
+    }
+
+    .payByGiftCard {
+
+        width: 120px !important;
+        height: 80px !important;
     }
 
     .creditCardbtn {
@@ -296,8 +335,33 @@
 
     .selectedCoursepriceBg {
 
+        width: 114px !important;
+        height: 60px !important;
+    }
+
+    .authorImage {
+
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .paypalLogo {
+
+        width: 60px !important;
+        height: 30px !important;
+    }
+
+
+    .giftCardLogo {
+
         width: 80px !important;
-        height: 80px !important;
+        height: 60px !important;
+    }
+
+    .splitPaymentLogo {
+
+        width: 80px !important;
+        height: 60px !important;
     }
 
 }
@@ -310,7 +374,7 @@
     }
 
     .creditCardImage {
-        width: 170px !important;
+        width: 108px !important;
         height: 80px !important;
     }
 
@@ -326,8 +390,28 @@
 
     .selectedCoursepriceBg {
 
-        width: 70px !important;
-        height: 70px !important;
+        width: 114px !important;
+        height: 60px !important;
+    }
+
+
+    .paypalLogo {
+
+        width: 60px !important;
+        height: 30px !important;
+    }
+
+
+    .giftCardLogo {
+
+        width: 80px !important;
+        height: 60px !important;
+    }
+
+    .splitPaymentLogo {
+
+        width: 80px !important;
+        height: 60px !important;
     }
 }
 
@@ -344,7 +428,7 @@
     }
 
     .creditCardImage {
-        width: 150px !important;
+        width: 108px !important;
         height: 70px !important;
     }
 
@@ -373,12 +457,29 @@
 
     .selectedCoursepriceBg {
 
-        width: 50px !important;
-        height: 50px !important;
+        width: 114px !important;
+        height: 60px !important;
+    }
+
+    .paypalLogo {
+
+        width: 60px !important;
+        height: 30px !important;
+    }
+
+
+    .giftCardLogo {
+
+        width: 80px !important;
+        height: 60px !important;
+    }
+
+    .splitPaymentLogo {
+
+        width: 80px !important;
+        height: 60px !important;
     }
 }
-
-
 
 @media (max-width:1280px) {
 
@@ -387,4 +488,22 @@
     }
 
 
+}
+
+@media (min-width:1280px) {
+
+    .authorImage {
+
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+@media (min-width:992px) {
+
+    .authorImage {
+
+        width: 30px !important;
+        height: 30px !important;
+    }
 }

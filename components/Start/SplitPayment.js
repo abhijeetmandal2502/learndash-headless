@@ -33,9 +33,9 @@ const SplitPayment = () => {
                 {!addPayment ? <div>
                     <div className='flex items-center justify-center pt-8'>
 
-                        <Image src="/start/splitPayment.png" width={100} height={100} alt="split payment" />
+                        <Image src="/start/splitPayment.png" width={100} height={100} className={`${styles.splitPaymentLogo}`} alt="split payment" />
 
-                        <p className='triplelargef pt-3 leading-[107%]'>due: $40</p>
+                        <p className='triplelargef pt-3 text-black leading-[107%]'>due: $40</p>
                     </div>
 
                     <div className={`max-w-[100%] mx-auto mb-6`}>
@@ -53,22 +53,22 @@ const SplitPayment = () => {
                     <div >
                         <div className=' md:pt-8 flex  justify-center items-center'>
 
-                            <Image className='md:-ml-8  ' src="/start/splitPayment.png" width={100} height={100} alt="gift card" />
+                            <Image src="/start/splitPayment.png" width={100} height={100} alt="gift card" className={`${styles.splitPaymentLogo} md:-ml-8 `} />
 
                             <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
                         </div>
                         <div className=' bg-lightgray flex justify-center items-center space-x-2 px-3 py-1'>
-                            <p className=''>
+                            <p className='smallf'>
                                 1 gift cards applied:
                             </p>
-                            <p className=''>
+                            <p className='mediumf'>
                                 $20
                             </p>
                             <Image src='/start/edit.svg' width={25} height={25} alt="image" />
                         </div>
 
                         <div className={`relative mt-6`}>
-                            <input className="w-full leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
+                            <input className="w-full smallf leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                             <div className="absolute cursor-pointer top-2 right-2">
                                 <Image src="/images/eyeIcon.svg" width={20} height={13} alt="show hide password icon" />
                             </div>

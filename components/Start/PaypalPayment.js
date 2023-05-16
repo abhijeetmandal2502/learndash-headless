@@ -22,13 +22,13 @@ const PaypalPayment = () => {
                 <div>
                     <div className='flex flex-col items-center justify-center py-8'>
 
-                        <Image src="/start/PayPalLogo.png" width={152} height={40} alt="paypal" />
+                        <Image src="/start/PayPalLogo.png" width={152} height={40} alt="paypal" className={`${styles.paypalLogo}`} />
 
-                        <p className='extlargef pt-3 text-center leading-[107%]'>$40 payment successful!</p>
+                        <p className='extlargef pt-3 text-center text-black leading-[107%]'>$40 payment successful!</p>
                     </div>
                     <div className={`relative`} >
                         {/* <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label> */}
-                        <input className="w-full leading-4 border smallf border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
+                        <input className="w-full bg-white leading-4 border smallf border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                         <div className="absolute cursor-pointer top-2 right-2">
                             <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
                         </div>
