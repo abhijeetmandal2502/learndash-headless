@@ -53,13 +53,9 @@ const AddToCart = () => {
     }
 
     // console.log('ShowPaymentOption', ShowPaymentOption)
-
-
     return (
         <>
-
             {/* selected items componets  */}
-
             <div className={` relative grid grid-cols-9 bg-white my-5 mx-5 shadow-2xl  p-3 md:p-4`}>
                 <div className={`col-span-1 relative flex items-start justify-start`}>
                     <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px] ${styles.cartIcon}`} alt="empty basket" />
@@ -77,7 +73,7 @@ const AddToCart = () => {
                             <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} />
                         </div>
                     </div>
-                    <div className='w-full my-2 border-b-[2px] border-lightgray'></div>
+                    <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
                     <div className={`flex justify-between items-center`}>
                         <div className={`flex space-x-5 items-center `}>
                             <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>

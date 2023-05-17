@@ -11,15 +11,12 @@ import AboutCourse from './DialogCard/AboutCourse'
 import { useRouter } from 'next/router'
 import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
 import AddToCart from './AddToCart'
-
-
 const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, setPanel }) => {
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
-
     const [aboutCourse, setAboutCourse] = useState(false);
     const [instructor, setInstructor] = useState(false);
 

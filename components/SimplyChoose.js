@@ -15,7 +15,6 @@ import { useRouter } from 'next/router'
 import GiftCardPaymentOption from './giftshop/GiftCardpPaymentOption'
 const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel, setActiveTabIndex }) => {
 
-
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);

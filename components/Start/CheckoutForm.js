@@ -36,8 +36,8 @@ const CheckoutForm = () => {
                             <div className="flex flex-col lg:w-full">
                                 <div className="flex-col mt-2">
 
-                                    <div className={`${styles.formbg} p-4`}>
-                                        <label className="mt-5 mb-1.5  font-bold text-black leading-4 smallf">credit card info</label>
+                                    <div className={`${styles.formbg} p-2`}>
+                                        <label className="mt-5 mb-2  font-bold text-black leading-4 smallf">credit card info</label>
                                         <div className="flex justify-between mb-2 ">
                                             <div className="max-w-[48%]">
                                                 <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
