@@ -205,6 +205,14 @@
         height: 120px !important;
     }
 
+    /* form input field padding */
+
+    .formbg input {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+
 }
 
 @media (max-height:750px) {
@@ -285,6 +293,29 @@
         height: 60px !important;
     }
 
+    /* checkoutform padding */
+
+    .formbg {
+
+        padding: 6px !important;
+    }
+
+    .passwordInput input {
+
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
+    /* submitbtn */
+
+    .submitbtnbg {
+
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        padding-bottom: 4px !important;
+        padding-top: 4px !important;
+    }
+
 
 }
 
@@ -361,6 +392,43 @@
         height: 60px !important;
     }
 
+    .passwordInput input {
+
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+    }
+
+    .formbg input {
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+    }
+
+    .cardDetailForm {
+
+        margin-top: 0px !important;
+    }
+
+    .namelastnameInput {
+
+        margin-bottom: 0px !important;
+    }
+
+    .formTitle {
+
+        margin-top: 1px !important;
+        margin-bottom: 1px !important;
+
+    }
+
+    .checkoutFormMain {
+        margin-top: 0px !important;
+    }
+
+    .checkoutFormPassword {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
 }
 
 @media (max-height:550px) {
@@ -398,7 +466,6 @@
         height: 30px !important;
     }
 
-
     .giftCardLogo {
 
         width: 80px !important;
@@ -409,6 +476,33 @@
 
         width: 80px !important;
         height: 60px !important;
+    }
+
+    .authorComMain {
+
+        padding-bottom: 8px !important;
+        padding-top: 8px !important;
+    }
+
+    .authorCard {
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .refoundpolicyComp {
+
+        padding-bottom: 2px !important;
+        padding-top: 2px !important;
+    }
+
+    .checkIcon {
+
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .refoundPcBtn {
+        padding-top: 2px !important;
     }
 }
 
@@ -475,6 +569,78 @@
 
         width: 80px !important;
         height: 60px !important;
+    }
+
+    .namelastnameInput {
+
+        margin-bottom: 0px !important;
+    }
+
+
+    /* checkoutform padding */
+
+    .formbg {
+
+        padding: 3px !important;
+    }
+
+    .passwordInput input {
+
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    /* submitbtn */
+
+    .submitbtnbg {
+
+        margin-top: 3px !important;
+        margin-bottom: 6px !important;
+        padding-bottom: 2px !important;
+        padding-top: 2px !important;
+    }
+
+
+    .passEyeIcon {
+
+        width: 15px !important;
+        height: 14px !important;
+
+    }
+
+    .paypalPaymentsuccess {
+
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* research components */
+
+    .authorComMain {
+
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
+    }
+
+    .authorCard {
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .refoundpolicyComp {
+
+        padding-bottom: 2px !important;
+        padding-top: 2px !important;
+    }
+
+    .checkIcon {
+
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .refoundPcBtn {
+        padding-top: 0px !important;
     }
 }
 

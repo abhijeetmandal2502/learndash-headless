@@ -426,8 +426,8 @@ ol {
 
   .logoImg {
 
-    width: 300px !important;
-    height: 100px !important;
+    width: 260px !important;
+    height: 80px !important;
     margin-top: 50px;
   }
 
@@ -755,8 +755,8 @@ ol {
 @media (max-height:600px) {
 
   .logoImg {
-    width: 200px !important;
-    height: 90px !important;
+    width: 150px !important;
+    height: 60px !important;
     margin-top: 40px !important;
   }
 
@@ -846,7 +846,7 @@ ol {
   .logoImg {
 
     width: 150px !important;
-    height: 70px !important;
+    height: 50px !important;
     margin-top: 35px !important;
 
   }
@@ -1397,7 +1397,7 @@ ol {
   }
 
   .minismallf {
-    font-size: 15px !important;
+    font-size: 10px !important;
   }
 
   .smallf {

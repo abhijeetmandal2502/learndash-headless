@@ -18,22 +18,22 @@ const AddToCart = () => {
 
     const paymentCart = [
         {
-            icon: "/start/credit.png",
+            icon: "/start/credit.svg",
             content: <CheckoutForm />,
             cardTooltips: "pay with credit card"
         },
         {
-            icon: "/start/paypal.png",
+            icon: "/start/paypal.svg",
             content: <PaypalPayment />,
             cardTooltips: "pay with paypal"
         },
         {
-            icon: "/start/giftCard.png",
+            icon: "/start/giftcard.svg",
             content: <PaymentGiftCard />,
             cardTooltips: "use gift card"
         },
         {
-            icon: "/start/split.png",
+            icon: "/start/split.svg",
             content: <SplitPayment />,
             cardTooltips: "split payment method"
         },
@@ -51,12 +51,11 @@ const AddToCart = () => {
             setLessMoreBtn('view more')
         }
     }
-
     // console.log('ShowPaymentOption', ShowPaymentOption)
     return (
         <>
             {/* selected items componets  */}
-            <div className={` relative grid grid-cols-9 bg-white my-5 mx-5 shadow-2xl  p-3 md:p-4`}>
+            <div className={` relative grid grid-cols-9 bg-white my-4 mx-5 shadow-2xl  p-3 md:p-4 ${styles.addedItemList}`}>
                 <div className={`col-span-1 relative flex items-start justify-start`}>
                     <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px] ${styles.cartIcon}`} alt="empty basket" />
                     <div className='absolute w-4 h-4 text-white rounded-full bg-voilet  right-0 -top-0 translate-x-0 translate-y-0'>
@@ -87,9 +86,9 @@ const AddToCart = () => {
                 <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute -bottom-2 flex px-2  left-1/2 -translate-x-1/2 `}>
                     {/* ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}> */}
                     <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
-                        <MdKeyboardArrowDown className='text-white' size={20} />
+                        <MdKeyboardArrowDown className={`text-white ${styles.viewMoreIcon}`} size={25} />
                     </div>
-                    <p className={`text-white extsmallf  pr-1 font-thin`}>{lessMoreBtn}
+                    <p className={`text-white smallf  pr-1 font-thin`}>{lessMoreBtn}
                     </p>
 
                 </div>
@@ -99,16 +98,15 @@ const AddToCart = () => {
             {/* checkout componets  */}
             <div className={`${styles.readyToCheckoutBg} mt-3 mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
-                <div className={`flex justify-between items-center px-6 py-2`}>
-                    <div className={`flex space-x-1 items-center `}>
-                        <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" />
+                <div className={`flex justify-between items-center px-6 py-1 ${styles.addedItemList}`}>
+                    <div className={`flex space-x-1 items-center  `}>
+                        <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" className={`${styles.checkoutIcon}`} />
                         <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
                     </div>
                     <div className={`flex flex-col justify-end items-end`}>
-                        <p className='text-white -mb-[5px] font-bold extsmallf'>total</p>
-                        <div className='font-thin text-white extlargef' >$40</div>
+                        <p className='text-white -mb-[5px] font-bold smallf'>total</p>
+                        <div className='font-thin text-white largef' >$40</div>
                     </div>
-
                 </div>
 
                 <div className={`hidden md:block rounded-full bg-black w-5 h-5 absolute -bottom-2  left-1/2 -translate-x-1/2 ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}>
@@ -120,8 +118,7 @@ const AddToCart = () => {
             <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
-
-                    <input type="email" placeholder='your email' className='w-full bg-white px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
+                    <input type="email" placeholder='your email' className={`w-full bg-white px-5 py-[6px] smallf mt-4 mb-2 border border-gray ${styles.emailspaing}`} />
 
                     <div className='flex items-center justify-between'>
                         {paymentCart?.map((item, id) => {

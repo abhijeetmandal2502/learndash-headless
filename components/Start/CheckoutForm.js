@@ -29,60 +29,58 @@ const CheckoutForm = () => {
     return (
         <>
             <div className="flex items-center justify-center ">
-                <div className="flex ">
-                    <div className="flex flex-col items-start justify-start ">
-
-                        <div className="flex flex-col justify-center w-full space-y-6 xl:flex-row xl:justify-between xl:space-y-0 xl:space-x-6">
-                            <div className="flex flex-col lg:w-full">
-                                <div className="flex-col mt-2">
-
-                                    <div className={`${styles.formbg} p-2`}>
-                                        <label className="mt-5 mb-2  font-bold text-black leading-4 smallf">credit card info</label>
-                                        <div className="flex justify-between mb-2 ">
-                                            <div className="max-w-[48%]">
-                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
-                                            </div>
-                                            <div className="max-w-[48%]">
-                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
-                                            </div>
+                <div className="flex flex-col items-start justify-start ">
+                    <div className="flex flex-col justify-center w-full space-y-6 xl:flex-row xl:justify-between xl:space-y-0 xl:space-x-6">
+                        <div className="flex flex-col lg:w-full">
+                            <div className={`flex-col mt-2 ${styles.checkoutFormMain}`}>
+                                <div className={`${styles.formbg} p-2`}>
+                                    <div className={` mb-2  font-bold text-black leading-4 smallf ${styles.formTitle}`}>credit card info
+                                    </div>
+                                    <div className={`flex justify-between mb-2 ${styles.namelastnameInput}`}>
+                                        <div className="max-w-[48%]">
+                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
+                                        </div>
+                                        <div className="max-w-[48%]">
+                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="number" placeholder="**** **** **** *****" />
+                                    </div>
+                                    <div className={`flex flex-row mt-2 space-x-2 ${styles.cardDetailForm}`}>
+                                        <div>
+                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
                                         </div>
                                         <div>
-                                            <input className="w-full bg-white leading-3 border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
+                                            <input className="w-full bg-white leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
                                         </div>
-                                        <div className="flex flex-row mt-2 space-x-2">
-                                            <div>
-                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
-                                            </div>
-                                            <div>
-                                                <input className="w-full bg-white leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
-                                            </div>
-                                            <div>
-                                                <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
-                                            </div>
+                                        <div>
+                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
                                         </div>
                                     </div>
-
-                                    <div className="flex items-center py-2 ">
-                                        <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
-                                        {/* </div> */}
-                                        <label Htmlfor="link-checkbox" className={`text-black smallf ml-2 cursor-pointer`}>save payment for future purchases?</label>
-                                    </div>
-
-                                    <div className={`relative`}>
-                                        <input className="w-full bg-white smallf leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
-                                        <div className="absolute cursor-pointer top-2 right-2">
-                                            <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
-                                        </div>
-                                    </div>
-
                                 </div>
 
-                                <button type="button"
-                                    onClick={openModal} className={`w-full px-4 mt-5 py-2 mb-5 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
-                                </button>
+                                <div className={`flex items-center py-2 ${styles.checkoutFormPassword}`}>
+                                    <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-black border-gray-300 cursor-pointer" />
+                                    {/* </div> */}
+                                    <label Htmlfor="link-checkbox" className={`text-black smallf ml-2 cursor-pointer`}>save payment for future purchases?</label>
+                                </div>
+
+                                <div className={`relative ${styles.passwordInput}`}>
+                                    <input className="w-full bg-white smallf leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
+                                    <div className="absolute cursor-pointer top-2 right-2">
+                                        <Image src="/images/eyeIcon.svg" width={22} height={15} className={`${styles.passEyeIcon}`} alt="show hide password icon" />
+                                    </div>
+                                </div>
+
                             </div>
+
+                            <button type="button"
+                                onClick={openModal} className={`w-full px-4 mt-4 py-2 mb-5 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course! $40.00
+                            </button>
                         </div>
                     </div>
+
                 </div>
             </div >
 

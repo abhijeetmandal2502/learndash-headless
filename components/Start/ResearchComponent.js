@@ -41,7 +41,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
         <>
 
             <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-full pb-16 z-1'>
-                <div className='py-4 border-b-2 border-bordergray '>
+                <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
                     <div className='flex space-x-2 justify-center items-center'>
 
@@ -79,10 +79,10 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                         </div>
                     </div>
-                    <div className='mt-2 cursor-pointer hidden md:block '>
+                    <div className='mt-2 -ml-2 cursor-pointer hidden md:block '>
                         <Image src="/start/horizontaladdbutton.svg" width={120} height={50} alt="btn" />
                     </div>
-                    <div className='flex items-center py-2 space-x-5 '>
+                    <div className={`flex items-center py-2 space-x-5 ${styles.authorCard}`}>
                         <div className='flex items-center space-x-1 cursor-pointer'>
                             <Image src="/images/GaelWood.png" width={55} height={60} alt="author" className={`${styles.authorImage}`} />
 
@@ -108,18 +108,18 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         show more
                     </button>
                 </div>
-                <div className='py-3'>
+                <div className={`py-3 ${styles.refoundpolicyComp}`}>
                     {courseData && courseData.map((item, index) => {
                         return (
                             <div key={index} className='flex items-center space-x-4 py-0.3'>
-                                <AiOutlineCheck size={16} className='text-[#9747FF]' />
+                                <AiOutlineCheck size={16} className={`text-[#9747FF] ${styles.checkIcon}`} />
                                 <p className='tracking-wider smallf text-black'>{item}</p>
                             </div>
                         )
                     })}
-                    <button className='pt-2 font-semibold leading-5 border-b border-black smallf text-black'>
+                    <div className={`pt-2 font-semibold leading-5 border-b border-black smallf text-black ${styles.refoundPcBtn}`}>
                         read our refund policy
-                    </button>
+                    </div>
                 </div>
             </div>
 
