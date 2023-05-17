@@ -43,7 +43,7 @@ const PaymentGiftCard = () => {
                 <div >
                     <div className='flex items-center justify-center md:pt-8'>
 
-                        <Image className={`${styles.giftCardLogo}`} src="/start/GiftCard3D.png" width={150} height={100} alt="gift card" />
+                        <Image className={`${styles.giftCardLogo}`} src="/start/GiftCard3D.svg" width={150} height={100} alt="gift card" />
 
                         <p className='dubblelargef pt-3 text-black leading-[107%]'>due: $40</p>
                     </div>

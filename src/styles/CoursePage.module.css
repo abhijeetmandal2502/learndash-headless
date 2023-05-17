@@ -275,6 +275,24 @@
         height: 18px !important;
 
     }
+
+
+    .giftCountImg {
+
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .giftCountMain {
+        padding: 5px !important;
+    }
+
+    .addGiftMain {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding: 3px 16px 3px 16px !important;
+
+    }
 }
 
 @media (max-height:750px) {
@@ -304,6 +322,37 @@
         width: 15px !important;
         height: 15px !important;
 
+    }
+
+    .giftAddedList {
+        padding: 0px 12px 0px 12px !important;
+    }
+
+    .giftCountImg {
+
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .giftCountMain {
+        padding: 5px !important;
+    }
+
+    .addGiftMain {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding: 3px 16px 3px 16px !important;
+
+    }
+
+    .editIcon {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .editComp {
+
+        margin-bottom: 0px 0px 0px 0px !important;
     }
 }
 
@@ -565,6 +614,56 @@
     }
 
 }
+
+/* media query max-width */
+
+@media (max-width:1280px) {
+
+    .mainDiv>.gift {
+
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px;
+    }
+
+    .mainDiv:hover>.gift {
+
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px;
+    }
+
+    /* giftShoppy Active */
+    .activeGiftShoppy {
+
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px;
+    }
+
+    /* giftShoppy Inactive */
+
+    .inActiveGiftShoppy {
+
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 150px;
+
+    }
+}
+
 
 
 .coursePriceSelectedBg {

@@ -46,7 +46,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel className="relative md:-mt-[40px] pt-[40px] w-[100%]  md:w-[72%] md:p-6 p-2 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
-                                    <div className="absolute z-50 text-white md:text-black right-2 -top-0 md:top-28 md:right-10">
+                                    <div className="absolute z-50 text-white md:text-black right-2 -top-0 md:top-24 md:right-10">
                                         <button
                                             type="button"
                                             className="text-3xl z-50"
@@ -71,7 +71,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                             >
                                                 <div className={` flex ecardBtn md:px-9 items-center space-x-3`}>
                                                     <div className='ecardRotate ecardImgBox'>
-                                                        <Image src="/start/eGift.svg" width={71} height={60} alt="gift" />
+                                                        <Image src="/start/eGift.svg" width={71} height={60} alt="gift" className={`${styles.giftImg}`} />
                                                     </div>
                                                     <div className='flex items-center md:items-start'>
                                                         <p className='font-semibold largef'>
@@ -95,18 +95,18 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                             >
                                                 <div className={` flex ecardBtn justify-between md:px-9 w-100 items-center space-x-3`}>
                                                     <div className='ecardImgAni ecardImgBox'>
-                                                        <Image src="/start/PhysicalGift.svg" width={71} height={60} alt="gift" />
+                                                        <Image src="/start/PhysicalGift.svg" width={71} height={60} alt="gift" className={`${styles.giftImg}`} />
                                                     </div>
                                                     <div className='relative '>
                                                         <div className='flex items-center md:items-start'>
-                                                            <p className='font-semibold largef'>
+                                                            <p className='font-semibold px-2 largef'>
                                                                 physical gift cards
                                                             </p>
                                                             <div className={`bg-black ml-2 mr-2 rounded-full w-6 h-6 text-white text-center smallf flex items-center justify-center  `}>
                                                                 99
                                                             </div>
                                                         </div>
-                                                        <p className='hidden md:block absolute minismallf font-bold text-[#9747FF]'>$1 shipping anywhere in the us!</p>
+                                                        <p className='hidden md:block absolute minismallf font-bold smallf'>$1 shipping anywhere in the us!</p>
                                                     </div>
                                                 </div>
                                             </Tab>

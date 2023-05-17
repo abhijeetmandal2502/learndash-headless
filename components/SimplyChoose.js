@@ -14,7 +14,6 @@ import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
 import GiftCardPaymentOption from './giftshop/GiftCardpPaymentOption'
 const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel, setActiveTabIndex }) => {
-
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
@@ -29,17 +28,14 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
     // model for gift dialog form
-
     let [isOpenD, setIsOpenD] = useState(false)
 
     function closeModal() {
         setIsOpenD(false)
     }
-
     function openModal() {
         setIsOpenD(true)
     }
-
     // console.log('isOpenD', isOpenD)
 
     const data = [
@@ -219,7 +215,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                     </div>
                                     <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%]  `}>
                                     </div>
-                                    <p className={`md:pt-[150px] pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
+                                    <p className={` ${ShowGiftShoppi ? 'md:pt-[150px]' : ''}  md:pt-[150px] pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
                                         {data[0].discription}
                                     </p>
                                     <div className={`absolute bottom-0 right-0  ${ShowGiftShoppi ? 'block transition-all ease-in-out duration-1000' : styles.hide1}  `} >
@@ -255,7 +251,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                             >
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-start justify-center space-x-1 font-bold mediumf'>
-                                                        <MdOutlineWatchLater size={25} className='3xl:w-[40px] 3xl:h-[40px]' />
+                                                        <MdOutlineWatchLater size={25} className='' />
                                                         <p className='mediumf font-bold'>{item.duration}</p>
                                                     </div>
 
@@ -348,11 +344,11 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                             </div>
                                                         </div>
                                                         <div className=''>
-                                                            <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} alt='price' />
+                                                            <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} alt='price' className={`${styles.priceBack}`} />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className={`md:pt-10 pt-5 leading-10  font-Barlow xl:textmediumf  md:text-[28px]   mediumf ${styles.discriptionAnimation}`}>
+                                                <div className={`md:pt-10 pt-5 leading-10  font-Barlow dubblelargef ${styles.discriptionAnimation}`}>
                                                     {item.discription}
                                                 </div>
                                                 <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >

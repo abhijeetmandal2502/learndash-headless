@@ -1329,6 +1329,7 @@ ol {
 
   .smallf {
     font-size: 10px !important;
+    line-height: 14px;
   }
 
   .mediumf {
@@ -1696,7 +1697,7 @@ ol {
   .logoImg {
 
     width: 240px;
-    height: 280px;
+    height: 245px;
 
   }
 
@@ -2402,7 +2403,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 14px;
   }
 
   .extlargef {
@@ -2410,7 +2411,8 @@ ol {
   }
 
   .dubblelargef {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .triplelargef {
@@ -2471,7 +2473,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .extlargef {
@@ -2545,7 +2547,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .extlargef {

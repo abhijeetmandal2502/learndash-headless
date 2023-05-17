@@ -8,8 +8,8 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
     return (
         <>
 
-            <div className='relative md:pb-28'>
-                <div className={`grid grid-cols-12 p-6 md:p-10  `}>
+            <div className='relative'>
+                <div className={`grid grid-cols-12 p-6 md:p-10 ${styles.fromFormComp} `}>
                     <div className={`flex items-center mm:block md:col-span-4 col-span-12`}>
                         <Image className='w-[150px]' src="/start/GiftCard3D.svg" width={392} height={251} alt="gift" />
                         <div className='col-span-12 md:hidden md:col-span-2 triplelargef'>from:</div>
@@ -21,7 +21,7 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                             <div className='hidden col-span-12 md:block md:col-span-2 dubblelargef'>from:</div>
 
                             <div className='col-span-12 md:col-span-10'>
-                                <div className='grid grid-cols-12 gap-3'>
+                                <div className={`grid grid-cols-12 gap-3 ${styles.fromFormMain}`}>
                                     <div className='col-span-6'>
                                         <input placeholder='your first name' type='text' className='w-full px-4 py-2 border outline-none smallf border-gray ' />
                                     </div>
@@ -41,8 +41,8 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                         </div>
                     </div>
                 </div>
-                <div className='col-span-12 m-6 md:col-span-1 dubblelargef'>to:</div>
-                <div className='bg-[#f2e9ff] md:m-6 p-[16px] max-h-[220px] overflow-scroll'>
+                <div className={`col-span-12 m-6 md:col-span-1 dubblelargef ${styles.toFormtitle}`}>to:</div>
+                <div className={`bg-[#f2e9ff] md:m-6 p-[16px] max-h-[220px] overflow-scroll ${styles.toFormtitle}`}>
                     {giftcardQty.map((item, key) =>
                         <div key={key} className={`grid grid-cols-12 gap-2 `}>
                             <div className='col-span-6 md:col-span-1 dubblelargef'><span className='flex justify-center w-6 h-6 text-sm rounded-full bg-[#e0c9ff] item-center'>1</span></div>
@@ -50,7 +50,7 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                                 <RiDeleteBin6Line size={28} className="text-gray" />
                             </div>
                             <div className='col-span-12 md:col-span-11'>
-                                <div className='grid grid-cols-12 md:grid-cols-10 '>
+                                <div className={`grid grid-cols-12 md:grid-cols-10 ${styles.fromFormMain}`}>
                                     <div className='col-span-6 md:col-span-2 md:mx-1.5'>
                                         <input placeholder=' first name' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4' />
                                     </div>
@@ -140,7 +140,7 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                 </div>
 
                 {/* total gift and total amount */}
-                <div className={`absolute bottom-0 left-0 w-full bg-white flex justify-center py-5 px-2 space-x-2 `} onClick={() => { showPaymentOpt() }}>
+                <div className={`absolute bottom-0 left-0 w-full bg-white flex justify-center py-5 px-2 space-x-2 cursor-pointer ${styles.addgiftCardBtn} `} onClick={() => { showPaymentOpt() }}>
                     <div className={`flex justify-center items-center space-x-2`}>
                         <div className='extlargef'>
                             0

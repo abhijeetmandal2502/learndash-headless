@@ -57,16 +57,13 @@ const GiftCardPaymentOption = () => {
 
         }
     ]
-
-
     return (
         <>
-
             {/* selected items componets  */}
 
-            <div className={` relative grid grid-cols-9 bg-white my-5  shadow-2xl  p-3 md:p-4 `}>
+            <div className={` relative grid grid-cols-9 bg-white my-5  shadow-2xl  p-3 md:p-4 ${styles.addGiftMain} `}>
 
-                <div className='col-span-9 bg-lightgray p-3  h-[80px] overflow-y-scroll'>
+                <div className={`col-span-9 bg-lightgray p-3  h-[80px] overflow-y-scroll ${styles.giftAddedList}`}>
 
                     {OrderList?.map((item, key) => {
                         return (
@@ -76,10 +73,10 @@ const GiftCardPaymentOption = () => {
 
                                         <Image src={item.giftType} width={25} height={25} alt="gift" />
 
-                                        <p className={`text-black minismallf font-bold leading-[130%]`}>{item.name} </p>
+                                        <p className={`text-black smallf font-bold leading-[130%]`}>{item.name} </p>
                                     </div>
                                     <div className={`flex space-x-3 items-center`}>
-                                        <div className='text-black minismallf' >${item.price} </div>
+                                        <div className='text-black smallf' >${item.price} </div>
                                         <RiDeleteBin6Line size={15} />
                                     </div>
                                 </div>
@@ -105,20 +102,20 @@ const GiftCardPaymentOption = () => {
                 <div className='  col-span-9 grid grid-cols-12 gap-4 mt-2'>
 
                     <div className=' col-span-6 flex items-center space-x-5'>
-                        <div className=' bg-lightgray p-3 relative'>
-                            <Image src="/start/eGift.svg" width={50} height={50} alt="gift" />
-                            <div className='absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-7 -top-[6px] bg-voilet'><p className='flex items-center justify-center'>1</p></div>
+                        <div className={`bg-lightgray p-3 relative ${styles.giftCountMain}`}>
+                            <Image src="/start/eGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
+                            <div className='absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-7 -top-[6px] bg-voilet'><p className='flex items-center smallf justify-center'>1</p></div>
                         </div>
-                        <div className='bg-lightgray p-3 relative'>
-                            <Image src="/start/PhysicalGift.svg" width={50} height={50} alt="gift" />
-                            <div className='absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-7 -top-[6px] bg-voilet'><p className='flex items-center justify-center'>2</p></div>
+                        <div className={`bg-lightgray p-3 relative ${styles.giftCountMain}`}>
+                            <Image src="/start/PhysicalGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
+                            <div className='absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-7 -top-[6px] bg-voilet'><p className='flex smallf items-center justify-center'>2</p></div>
                         </div>
                     </div>
 
-                    <div className=' col-span-6 rounded-3xl border border-voilet  py-1 my-3 flex justify-center space-x-3 items-center w-full'>
+                    <div className={`col-span-6 rounded-3xl border border-voilet  py-1 my-3 flex justify-center space-x-3 items-center w-full ${styles.editComp}`}>
 
-                        <Image src="/start/edit.svg" width={25} height={25} alt="edit" />
-                        <div className='text-voilet font-bold'>edit</div>
+                        <Image src="/start/edit.svg" width={25} height={25} alt="edit" className={`${styles.editIcon}`} />
+                        <div className='text-voilet mediumf font-bold'>edit</div>
 
                     </div>
                 </div>
@@ -154,7 +151,7 @@ const GiftCardPaymentOption = () => {
 
                 <div className='px-3'>
 
-                    <input type="email" placeholder='your email' className='w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray' />
+                    <input type="email" placeholder='your email' className={`w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray ${styles.emailspaing}`} />
 
                     <div className='flex items-center justify-center space-x-2'>
                         {paymentCart?.map((item, id) => {
@@ -163,7 +160,7 @@ const GiftCardPaymentOption = () => {
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md     `} src={item.icon} width={60} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md  ${styles.paymentIcon}   `} src={item.icon} width={60} height={60} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>
