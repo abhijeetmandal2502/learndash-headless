@@ -642,6 +642,18 @@
     .refoundPcBtn {
         padding-top: 0px !important;
     }
+
+
+    .giftbtnIcon {
+
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .cvvzipSection {
+
+        margin-top: 0px !important;
+    }
 }
 
 @media (max-width:1280px) {

@@ -56,8 +56,6 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
         }, 50)
     }
 
-
-
     const handleClickLobby = () => {
         router.push({
             pathname: '/',
@@ -77,7 +75,6 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
             <div
                 className={`
                 relative
-
                 hidden
             md:grid grid-cols-12 md:h-screen  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden
               
@@ -119,15 +116,17 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                     /> : ""}
                 </div>
 
-                <div className='flex flex-col col-span-12 p-10 2xl:space-y-40 xl:space-y-30 lg:space-y-20 md:space-y-10 3xl:space-y-24 md:col-span-11 2xl:pl-20 md:pl-20'>
+                <div className='flex flex-col col-span-12 p-10 md:space-y-5 md:col-span-11 2xl:pl-20 md:pl-20'>
 
                     <div>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='minismallf font-semibold '>lobby</span></div> : ""}
+                        {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3  py-2    hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${styles.lobbyMain}  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
+                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" />
+                            <span className='minismallf font-semibold '>lobby</span>
+                        </div> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
 
@@ -140,6 +139,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     <div className={`${openTab === 1 ? "block" : "hidden"} ${openTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">
                                         <About />
                                     </div>
+
                                     <div className={`${openTab === 2 ? "block" : "hidden"} ${openTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll  `} id="link2">
                                         <Instructors />
                                         <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
@@ -240,7 +240,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             </div>
                         </div>
                         <div className='absolute -translate-x-1/2 bottom-5 left-1/2'>
-                            {/* <MusicCard textColor={textColor} /> */}
+                            <MusicCard textColor={textColor} />
                         </div>
                     </div>
                 </div>

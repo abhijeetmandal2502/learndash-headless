@@ -36,7 +36,7 @@ const CheckOutFormMobile = () => {
                                     <div>
                                         <input className="w-full leading-3 border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
                                     </div>
-                                    <div className="flex flex-row mt-2 space-x-2">
+                                    <div className={`flex flex-row mt-2 space-x-2 ${styles.cvvzipSection}`}>
                                         <div>
                                             <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
                                         </div>
@@ -52,7 +52,8 @@ const CheckOutFormMobile = () => {
                             </div>
 
                             <div type="button"
-                                onClick={() => { openModal() }} className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none flex justify-center items-center space-x-2`}  > <Image src="/start/giftBtnIcon.svg" alt="gift btn" width="25" height="25" /> <div>send gift: $92.00</div>
+                                onClick={() => { openModal() }} className={`w-full px-4 mt-3 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none flex justify-center items-center space-x-2`}  >
+                                <Image src="/start/giftBtnIcon.svg" alt="gift btn" width="25" height="25" className={`${styles.giftbtnIcon}`} /> <div>send gift: $92.00</div>
                             </div>
                         </div>
                     </div>

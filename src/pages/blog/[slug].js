@@ -12,12 +12,11 @@ import { FiArrowDown } from 'react-icons/fi';
 import stylesScrollBtn from '../../../components/Start/Start.module.css'
 import { getSinglePostBySlug } from '../../../apis/AllPostApi'
 import moment from 'moment/moment';
-
 import Link from 'next/link'
 
 const Blog = (props) => {
 
-    console.log('SinglePostData', props.SinglePostData)
+    // console.log('SinglePostData', props.SinglePostData)
 
     const router = useRouter()
 
@@ -83,7 +82,7 @@ const Blog = (props) => {
                 </div>
 
                 <div className='grid grid-cols-12'>
-                    <div className={`col-span-12 md:col-span-11 2xl:ml-20 md:ml-16 max-h-screen ${styles.fadeAnimation}`}>
+                    <div className={`col-span-12 md:col-span-11  md:ml-24 max-h-screen ${styles.fadeAnimation}`}>
                         <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <Link href="/blog">
@@ -104,11 +103,25 @@ const Blog = (props) => {
                         <div className=' md:mr-5 flex md:hidden items-center justify-between px-3 pt-5'>
 
                             <Link href="/blog">
-                                <button className='text-white bg-[#3A3A3A] py-3 px-6  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 extsmallf ' onClick={() => { }} > <TfiMenuAlt size={14} /> <div className=' font-[600]'>view all posts</div></button>
+                                <div
+                                    className='text-white bg-[#3A3A3A] py-3 px-6  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 extsmallf ' onClick={() => { }} >
+                                    <TfiMenuAlt size={14} />
+                                    <div className=' font-[600]'>view all posts</div>
+                                </div>
                             </Link>
                             <div className='flex space-x-2'>
-                                <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={15} className='' /> <div className='minismallf pr-1 '> back</div></button>
-                                <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='minismallf  pl-1' >next</div> <HiOutlineArrowSmRight size={15} className='' /> </button>
+                                <div
+                                    onClick={() => { }}
+                                    className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                    <HiOutlineArrowSmLeft size={15} className='' />
+                                    <div className='minismallf pr-1 '> back</div>
+                                </div>
+                                <div
+                                    onClick={() => { }}
+                                    className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                    <div className='minismallf  pl-1' >next</div>
+                                    <HiOutlineArrowSmRight size={15} className='' />
+                                </div>
                             </div>
 
                         </div>
@@ -118,22 +131,28 @@ const Blog = (props) => {
                         <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `} onClick={() => { handlelobby() }} >
                             <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf font-semibold '>lobby</span></button>
 
-                        {singlePost ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3'>
-                            <div className={`bg-transparent md:pb-40  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
+                        {singlePost ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3  '>
+                            <div className={`bg-transparent md:pb-96  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 <div className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                    <h2 className='text-white font-normal triplelargef md:leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{singlePost?.title.rendered}</h2>
+                                    <h2 className='text-white fourxllargef  tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{singlePost?.title.rendered}
+                                    </h2>
                                     <div className='flex  flex-wrap'>
-                                        <div className='text-white pr-1 md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>{singlePost?.name}</div>
-                                        <div className='text-gray md:text-[22px] text-[16px] 3xl:text-[32px] 4xl:text-[42px] leading-[207%]'>| {moment(singlePost?.date).format("MMMM  DD YYYY")}</div>
+                                        <div className='text-white pr-1  mediumf leading-[207%]'>
+                                            {singlePost?.name}
+                                        </div>
+                                        <div className='text-gray  mediumf leading-[207%]'>| {moment(singlePost?.date).format("MMMM  DD YYYY")}
+                                        </div>
                                     </div>
-                                    <div className='text-gray md:py-8 py-4 minismallf lg:text-[20px] md:mediumf  tracking-wider' dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}></div>
+                                    <div className='text-gray md:py-8 py-4  smallf  tracking-wider' dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}>
 
-                                    <Image src="/images/blogBanner1.png" width="800" height="450" className="md:w-[850px] md:h-[350px] w-[500px] h-[250px]" alt="Banner Image" />
+                                    </div>
+
+                                    <Image src="/images/blogBanner1.png" width="800" height="450" className={`md:w-[850px] md:h-[350px] w-[500px] h-[250px] ${styles.blogBannerImg}`} alt="Banner Image" />
 
                                     {/* <h4 className='text-white font-normal py-3 pt-10 mediumf  tracking-wide'>{item.subHeaderTitle}</h4>
 
-                                    <p className='text-gray md:py-8  md:text-[22px] minismallf  tracking-wider '>{item.subDiscription}</p> */}
+                                    <p className='text-gray md:py-8   minismallf  tracking-wider '>{item.subDiscription}</p> */}
 
                                 </div>
 

@@ -136,8 +136,7 @@ const Start = () => {
 
         isInitialRender.current = false
     }
-    // ((activeTabIndex * 30) + 'px')
-    const activeTab = ((activeTabIndex * 30) + 'px')
+
     const movePointerTop = () => {
         setActiveTabIndex(activeTabIndex + 1)
     }
@@ -145,16 +144,13 @@ const Start = () => {
     const movePointerBottom = () => {
         setActiveTabIndex(activeTabIndex - 1)
     }
-
     useEffect(() => {
 
         positionFun()
 
     }, [activeTabIndex])
 
-
     //console.log('activeTabIndex', activeTabIndex)
-
     const [positionTop, setPositionTop] = useState('')
     const positionFun = (() => {
         if (activeTabIndex == 0) {
@@ -230,8 +226,12 @@ const Start = () => {
                             {/* Loop through tab data and render button for each. */}
 
                             {/* pointer circle for desktop  */}
-                            <div className=' hidden md:block relative w-[0.4px] h-[400px] 3xl:h-[528px] mt-4 3xl:mt-[25px] bg-white'>
-                                <div className={`absolute ${activeTabIndex === 0 ? 'md:mt-[339.2px] mt-[339.2px] 3xl:mt-[476px]' : 'mt-[340px] 3xl:mt-[476.2px] '}  ${styles.transformTopBottomIndicater}  left-[-49px] top-[99px] md:top-2 3xl:top-[9.5px]`} style={selectStyles}>
+                            <div className={` hidden md:block ${styles.pointerPathMain}`}>
+                                <div
+                                    className={`${styles.pointerPathInner}
+                                 
+                                ${styles.transformTopBottomIndicater} `}
+                                    style={selectStyles}>
                                     <svg>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
                                         </circle>
@@ -288,7 +288,8 @@ const Start = () => {
                                                     className={`  
                                                                     ${i === activeTabIndex ? 'opacity-1 transition-all ease-out duration-1000 translate-y-[transformAnimate]' : 'opacity-0'}
                                                                      absolute top-[-30px] left-[-45px] w-full 
-                                                                     ${styles.shadow}`}
+                                                                     ${styles.shadow}
+                                                                     `}
                                                 >
                                                 </div>
                                             </div>

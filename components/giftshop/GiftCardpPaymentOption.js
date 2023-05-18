@@ -61,9 +61,9 @@ const GiftCardPaymentOption = () => {
         <>
             {/* selected items componets  */}
 
-            <div className={` relative grid grid-cols-9 bg-white my-5  shadow-2xl  p-3 md:p-4 ${styles.addGiftMain} `}>
+            <div className={` relative grid grid-cols-9 bg-white my-5  shadow-2xl md:mx-5   p-3 md:p-4 ${styles.addGiftMain} `}>
 
-                <div className={`col-span-9 bg-lightgray p-3  h-[80px] overflow-y-scroll ${styles.giftAddedList}`}>
+                <div className={`col-span-9 ${styles.giftListBg} p-3  h-[80px] overflow-y-scroll ${styles.giftAddedList}`}>
 
                     {OrderList?.map((item, key) => {
                         return (
@@ -73,14 +73,14 @@ const GiftCardPaymentOption = () => {
 
                                         <Image src={item.giftType} width={25} height={25} alt="gift" />
 
-                                        <p className={`text-black smallf font-bold leading-[130%]`}>{item.name} </p>
+                                        <p className={`text-black smallf font-semibold leading-[130%]`}>{item.name} </p>
                                     </div>
                                     <div className={`flex space-x-3 items-center`}>
                                         <div className='text-black smallf' >${item.price} </div>
                                         <RiDeleteBin6Line size={15} />
                                     </div>
                                 </div>
-                                <div className='w-full my-2 border-b-[1px] border-gray'></div>
+                                <div className='w-full my-2 border-b-[1px] border-gray '></div>
                             </>
                         )
                     })}
@@ -102,20 +102,25 @@ const GiftCardPaymentOption = () => {
                 <div className='  col-span-9 grid grid-cols-12 gap-4 mt-2'>
 
                     <div className=' col-span-6 flex items-center space-x-5'>
-                        <div className={`bg-lightgray p-3 relative ${styles.giftCountMain}`}>
+                        <div className={`${styles.giftListBg} p-2 relative ${styles.giftCountMain}`}>
                             <Image src="/start/eGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
-                            <div className='absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-7 -top-[6px] bg-voilet'><p className='flex items-center smallf justify-center'>1</p></div>
+                            <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-16  -top-[6px] bg-voilet ${styles.counterComp}`}>
+                                <p className='flex items-center smallf justify-center'>1</p>
+                            </div>
                         </div>
-                        <div className={`bg-lightgray p-3 relative ${styles.giftCountMain}`}>
+                        <div className={`${styles.giftListBg} p-2 relative ${styles.giftCountMain}`}>
                             <Image src="/start/PhysicalGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
-                            <div className='absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-7 -top-[6px] bg-voilet'><p className='flex smallf items-center justify-center'>2</p></div>
+                            <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-16 -top-[6px] bg-voilet ${styles.counterComp}`}>
+
+                                <p className='flex smallf items-center justify-center'>2</p>
+                            </div>
                         </div>
                     </div>
 
                     <div className={`col-span-6 rounded-3xl border border-voilet  py-1 my-3 flex justify-center space-x-3 items-center w-full ${styles.editComp}`}>
 
                         <Image src="/start/edit.svg" width={25} height={25} alt="edit" className={`${styles.editIcon}`} />
-                        <div className='text-voilet mediumf font-bold'>edit</div>
+                        <div className='text-voilet smallf font-bold'>edit</div>
 
                     </div>
                 </div>
@@ -126,7 +131,7 @@ const GiftCardPaymentOption = () => {
             {/* checkout componets  */}
             <div className={`${styles.readyToCheckoutBg} mt-3 mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
-                <div className={`flex justify-between items-center px-6 py-2`}>
+                <div className={`flex justify-between items-center px-6 py-2 ${styles.readyToCheckoutBgInner}`}>
                     <div>
                         <p className={`text-white smallf font-thin tracking-wide  leading-[130%]`}>simple checkout</p>
 
@@ -134,7 +139,7 @@ const GiftCardPaymentOption = () => {
                     </div>
                     <div className={`flex flex-col justify-end items-end`}>
                         {/* <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p> */}
-                        <div className='font-thin text-white extlargef' >$90</div>
+                        <div className='font-[500] text-white extlargef' >$90</div>
                     </div>
 
                 </div>
@@ -147,7 +152,7 @@ const GiftCardPaymentOption = () => {
 
             {/* payment option componet desktop  */}
 
-            <div className={` hidden md:block mx-5 bg-white shadow-2xl pb-4 ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
+            <div className={` hidden md:block mx-5 bg-white shadow-2xl pb-4 ${styles.paymentOptionMain} ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
 
@@ -160,7 +165,7 @@ const GiftCardPaymentOption = () => {
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md  ${styles.paymentIcon}   `} src={item.icon} width={60} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md  ${styles.paymentIcongiftShoppe}   `} src={item.icon} width={60} height={60} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>
@@ -195,7 +200,7 @@ const GiftCardPaymentOption = () => {
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md mt-2  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md  `} src={item.icon} width={60} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md   `} src={item.icon} width={60} height={60} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>

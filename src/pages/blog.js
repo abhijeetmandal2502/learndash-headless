@@ -63,7 +63,6 @@ const BlogListing = (props) => {
         setCurrentData(item, index)
         router.push('/blog/slug')
     }
-
     const HandleCloseBtn = () => {
 
         router.push('/')
@@ -100,7 +99,7 @@ const BlogListing = (props) => {
                 </div>
 
                 <div className='grid grid-cols-12 '>
-                    <div className={`col-span-12 md:col-span-11 2xl:ml-20 md:ml-16 max-h-screen ${styles.fadeAnimation} ${styles.leftRightAnimation} ${styles.bgMenuMobblog}`}>
+                    <div className={`col-span-12 md:col-span-11 md:ml-24 max-h-screen ${styles.fadeAnimation} ${styles.leftRightAnimation} ${styles.bgMenuMobblog}`}>
                         <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <div className='flex md:hidden items-center justify-center mt-5'
@@ -117,6 +116,7 @@ const BlogListing = (props) => {
                                 <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='minismallf font-semibold '>lobby</span></button>
                         </Link>
 
+                        {/* for mobile device */}
                         <div className='flex justify-center md:hidden md:mt-0 mt-5 md:px-0 px-3'>
                             <div className='border  border-white w-full 2xl:max-w-[270px] 3xl:max-w-[350px]   pb-2 ' >
                                 <button className={`text-white mediumf text-[20px] 2xl:text-[20px] 3xl:text-[30px] px-5 md:py-3 py-1 flex items-center space-x-24 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className='2xl:text-[24px] 3xl:text-[35px] '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} className="3xl:w-10 3xl:h-10" /></div> </button>
@@ -142,13 +142,14 @@ const BlogListing = (props) => {
                                     allPost?.map((item, index) => {
                                         return (
                                             // <Link key={index} href={`/blog/${index + 1}`}>
-                                            <div key={index} className="mb-10 md:mt-0 mt-5 border-b border-bordergray md:max-w-[90%] lg:max-w-[100%] ">
-                                                <h2 className='text-white font-normal lg:text-[49px] triplelargef md:leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item?.title.rendered}</h2>
+                                            <div key={index} className={`mb-10 md:mt-0 mt-5 border-b border-bordergray md:max-w-[90%] lg:max-w-[100%] ${styles.blogMain}`}>
+                                                <h2 className='text-white font-normal fourxllargef {
+ md:leading-[207%] tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{item?.title.rendered}</h2>
                                                 <div className='flex  flex-wrap'>
-                                                    <div className='text-white pr-1 md:text-[22px] smallf  leading-[207%]'>{item?.name}</div>
-                                                    <div className='text-gray md:text-[22px] smallf  leading-[207%]'>| {moment(item?.date).format("MMMM  DD YYYY")}</div>
+                                                    <div className='text-white pr-1 md:py-2 smallf  leading-[207%]'>{item?.name}</div>
+                                                    <div className='text-gray md:py-2 mediumf  leading-[207%]'>| {moment(item?.date).format("MMMM  DD YYYY")}</div>
                                                 </div>
-                                                <div className='text-gray md:py-8 py-2 text-[14px] mediumf tracking-wider ' dangerouslySetInnerHTML={{ __html: item?.content.rendered }}>
+                                                <div className='text-gray md:py-5 py-2  mediumf tracking-wider ' dangerouslySetInnerHTML={{ __html: item?.content.rendered }}>
                                                 </div>
 
 
@@ -168,8 +169,13 @@ const BlogListing = (props) => {
                             <div className=' bg-transparent md:col-span-4 lg:col-span-4 md:block hidden col-span-12 mr-10'>
 
                                 <div className='flex justify-center '>
-                                    <div className='border  border-white w-full 2xl:max-w-[270px] 3xl:max-w-[350px]   pb-2 ' >
-                                        <button className={`text-white mediumf  px-5 py-3 flex items-center space-x-3 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className='mediumf'>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} className="3xl:w-10 3xl:h-10" /></div> </button>
+                                    <div className='border  border-white w-full pb-2 max-w-10 ' >
+                                        <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between `} type="btn" onClick={() => { handleClickTogle() }} >
+                                            <div className='mediumf'>blog categories</div>
+                                            <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff} mr-3`}>
+                                                <MdKeyboardArrowDown size={20} className="3xl:w-10 3xl:h-10" />
+                                            </div>
+                                        </div>
                                         {colourOptions?.map((item, index) => {
 
                                             return (

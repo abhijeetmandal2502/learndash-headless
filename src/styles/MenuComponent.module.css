@@ -4,11 +4,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-duration: 2s;
-
-
-
 }
-
 
 @keyframes aboutShow {
     from {
@@ -22,18 +18,15 @@
     }
 }
 
-
 .hide {
     opacity: 0;
 }
-
 
 .navli:hover.showLine {
     opacity: 1;
     color: #9747FF;
     transition: all ease-in-out 500ms;
 }
-
 
 /* css for Nav component */
 
@@ -46,11 +39,7 @@
     -ms-transition: all 700ms ease-in-out;
     transition: color 700ms ease-in-out;
     font-weight: bold;
-
-
-
 }
-
 
 .navli.active {
 
@@ -61,9 +50,6 @@
     transition: color 700ms ease-in-out;
     font-weight: bold;
     opacity: 1;
-
-
-
 }
 
 .navli.activeShowLine {
@@ -71,9 +57,6 @@
     opacity: 1;
     color: #9747FF;
     transition: all ease-in-out 500ms;
-
-
-
 }
 
 .navli {
@@ -99,7 +82,6 @@
 
         font-size: 1rem;
     }
-
 }
 
 @media only screen and (min-width:769px) and (max-width:1024px) {
@@ -116,13 +98,9 @@
 
         font-size: 1.4rem;
     }
-
 }
 
-
 /* media query for extra large device  */
-
-
 @media only screen and (min-width:1921px) {
 
     .navli {
@@ -169,9 +147,6 @@
         transition: color 700ms ease-in-out;
         font-weight: bold;
         opacity: 1;
-
-
-
     }
 }
 
@@ -182,7 +157,6 @@
     -webkit-transition: all 700ms ease-in-out;
     -ms-transition: all 700ms ease-in-out;
     transition: all 700ms ease-in-out;
-
 }
 
 
@@ -207,14 +181,9 @@
     -moz-transition: background-image 1s ease-in-out;
     -o-transition: background-image 1s ease-in-out;
     transition: background-image 1s ease-in-out;
-
-
 }
 
-
-
 .aboutBackground {
-
     background-image: url(/images/about-bg.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -225,15 +194,11 @@
     transition-delay: 10ms;
 }
 
-
-
 .fadeAnimation {
     animation: fadeAnimate 2s ease;
 }
 
 @keyframes fadeAnimate {
-
-
     from {
         opacity: 0;
         transform: translateY(100px);
@@ -242,10 +207,7 @@
     to {
         opacity: 1;
     }
-
-
 }
-
 
 /* for mobile */
 
@@ -288,8 +250,6 @@
     to {
         opacity: 1;
     }
-
-
 }
 
 .instructorBackground {
@@ -304,7 +264,6 @@
     transition-delay: 10ms;
 }
 
-
 .blogBackground {
     background-image: url(/images/blog-bg.png);
     background-repeat: no-repeat;
@@ -317,14 +276,11 @@
 
 }
 
-
 .hidescrollBar::-webkit-scrollbar {
     display: none;
 }
 
-
 /* i wannt a tech css  */
-
 
 .iwannaTechStart {
 
@@ -335,7 +291,6 @@
     transition: all 1s ease-in-out;
     transition-delay: 10ms;
 }
-
 
 .whyTechbg {
 
@@ -428,7 +383,6 @@
     transition: all 1s ease-in-out;
 }
 
-
 .shadow {
 
     filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
@@ -472,7 +426,6 @@
     }
 }
 
-
 .toggleAnimationOff {
     transform: rotate(0deg);
     transition: all ease-in-out 500ms;
@@ -493,8 +446,6 @@
         opacity: 0;
     }
 }
-
-
 
 .selectOptionOpen {
 
@@ -621,7 +572,6 @@ screen and (max-height: 700px) {
     }
 }
 
-
 .vertmoveDown {
     /* -webkit-animation: mover 2s infinite alternate; */
     animation: moverDown 2s infinite alternate;
@@ -636,7 +586,6 @@ screen and (max-height: 700px) {
 
     100% {
         transform: translateY(-10px);
-
     }
 }
 
@@ -650,7 +599,6 @@ screen and (max-height: 700px) {
     }
 }
 
-
 /* set background for mobile */
 
 @media screen and (max-width:626px) {
@@ -661,7 +609,6 @@ screen and (max-height: 700px) {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
     }
 
     .bgMenuMobblog {
@@ -670,18 +617,14 @@ screen and (max-height: 700px) {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
     }
 
 
 }
 
-
 .aboutHideAnimat {
-
     animation: hideAbout 100ms forwards ease;
     animation-delay: 500ms;
-
 }
 
 @keyframes hideAbout {
@@ -702,4 +645,137 @@ screen and (max-height: 700px) {
 .zindexMobileHeader {
 
     z-index: 0 !important;
+}
+
+/* media query css for responsive */
+
+@media (max-height:750px) {
+
+    .socialIconComp {
+
+        margin-top: 10px !important;
+    }
+}
+
+@media(max-height:550px) {
+
+    .mobileNum {
+
+        margin-top: 5px !important;
+    }
+
+    .lobbyMain {
+
+        max-width: 80px !important
+    }
+
+    .instructorImg {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .blogMain {
+
+        margin-top: 20px !important;
+    }
+
+    .blogBannerImg {
+
+        height: 200px !important;
+    }
+}
+
+@media(max-height:450px) {
+    .socialIconComp {
+
+        margin-top: 5px !important;
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
+    }
+
+    .lobbyMain {
+
+        max-width: 80px !important;
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+
+    }
+
+    .socialIconComp>.socialIcon {
+
+        padding: 6px 0px 6px 0px !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .navli {
+
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+    .contactIcon {
+
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .instructorImg {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .blogMain {
+
+        margin-top: 20px !important;
+    }
+
+    .blogBannerImg {
+
+        height: 170px !important;
+    }
+
+}
+
+
+/* start page navigation css */
+
+
+.pointerPathMain {
+
+    height: 400px !important;
+    width: 0.4px !important;
+    margin-top: 16px;
+    position: relative;
+    background: white;
+}
+
+.pointerPathInner {
+    position: absolute;
+    margin-top: 339.2px;
+    left: -49px;
+    top: 8px;
+
+}
+
+
+@media (max-height:650px) {
+
+    .pointerPathMain {
+
+        height: 300px !important;
+        width: 0.4px !important;
+        margin-top: 16px !important;
+        position: relative !important;
+        background: white !important;
+    }
+
+    .pointerPathInner {
+        position: absolute !important;
+        margin-top: 339.2px !important;
+        left: -49px !important;
+        top: 8px !important;
+
+    }
+
 }

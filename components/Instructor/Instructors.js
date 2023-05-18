@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import ScrollBtn from 'components/Start/ScrollBtn'
+import styles from '../../src/styles/MenuComponent.module.css'
 
 const Instructors = () => {
 
@@ -35,11 +36,11 @@ const Instructors = () => {
                         <div key={index} className='bg-transparent grid grid-cols-12 border-b instructorBorder mb-10 pt-2 pb-4 lg:gap-5 gap-3 2xl:gap-0  '>
 
                             <div className='md:col-span-4 col-span-12 md:py-0 py-5  '>
-                                <Image src={item.image} width={500} height={500} alt="instructor image" className=' md:w-[200px] md:h-[200px] w-[120px] h-[120px]  3xl:w-[300px] 3xl:h-[300px] 4xl:w-[400px] 4xl:h-[400px]' />
+                                <Image src={item.image} width={500} height={500} alt="instructor image" className={`md:w-[200px] md:h-[200px] w-[120px] h-[120px] ${styles.instructorImg}`} />
                             </div>
                             <div className='md:col-span-8 col-span-12 '>
-                                <h3 className='  text-left font-normal triplelargef  text-white py-3'>{item.name}</h3>
-                                <p className='pb-5  text-left text-gray'>{item.discription}</p>
+                                <h3 className='  text-left font-normal fourxllargef  text-white py-3'>{item.name}</h3>
+                                <p className='pb-5  text-left text-gray mediumf'>{item.discription}</p>
                             </div>
                         </div>
                     )

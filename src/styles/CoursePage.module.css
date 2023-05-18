@@ -7,6 +7,14 @@
 }
 
 
+/* scrollbar css */
+
+.giftListBg::-webkit-scrollbar {
+    width: 3px;
+    color: black !important;
+}
+
+
 @keyframes transformUp {
 
     from {
@@ -250,6 +258,10 @@
     margin-bottom: 15px !important;
 }
 
+.giftListBg {
+    background: rgba(151, 71, 255, 0.07);
+}
+
 /* cart payment icon */
 
 /* .paymentIcon {
@@ -354,11 +366,16 @@
 
         margin-bottom: 0px 0px 0px 0px !important;
     }
+
+    .paymentIcongiftShoppe {
+        width: 30px !important;
+        height: 30px !important;
+
+    }
 }
 
 
 @media (max-height:650px) {
-
 
     /* gift shoppi css  */
 
@@ -442,6 +459,7 @@
         padding-top: 0.5px !important;
 
         margin-top: 3px !important;
+        margin-bottom: 2px !important;
     }
 
     .addedItemList {
@@ -455,6 +473,41 @@
         width: 15px !important;
         height: 15px !important;
 
+    }
+
+
+    .giftCountImg {
+
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .giftCountMain {
+        padding: 3px !important;
+    }
+
+    .addGiftMain {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding: 3px 16px 3px 16px !important;
+
+    }
+
+    .editComp {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .counterComp {
+        position: absolute;
+        width: 15px !important;
+        height: 15px !important;
+        left: 20px !important;
+    }
+
+    .paymentOptionMain {
+
+        padding-bottom: 0px !important;
     }
 
 }
@@ -563,6 +616,69 @@
         height: 15px !important;
 
     }
+
+
+    .giftAddedList {
+        padding: 0px 12px 0px 12px !important;
+
+        max-height: 40px !important;
+    }
+
+    .giftCountImg {
+
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .giftCountMain {
+        padding: 2px !important;
+    }
+
+    .addGiftMain {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding: 3px 16px 3px 16px !important;
+
+    }
+
+    .editComp {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .counterComp {
+        position: absolute;
+        width: 13px !important;
+        height: 13px !important;
+        left: 15px !important;
+    }
+
+    .paymentOptionMain {
+
+        padding-bottom: 0px !important;
+    }
+
+    .editIcon {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .paymentIcongiftShoppe {
+        width: 20px !important;
+        height: 20px !important;
+
+    }
+
+    .readyToCheckoutBg {
+        margin-top: 4px !important;
+    }
+
+    .readyToCheckoutBgInner {
+
+        padding-bottom: 2px !important;
+        padding-top: 2px !important;
+    }
+
 }
 
 @media (max-height:450px) {
@@ -611,6 +727,12 @@
         width: 15px !important;
         height: 15px !important;
 
+    }
+
+    .giftAddedList {
+        padding: 0px 12px 0px 12px !important;
+
+        max-height: 30px !important;
     }
 
 }
