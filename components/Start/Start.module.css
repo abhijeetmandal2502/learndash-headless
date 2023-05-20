@@ -163,6 +163,15 @@
     height: 80px !important;
 }
 
+@media (max-width:1024px) {
+
+    .selectedCoursepriceBg {
+
+        width: 216px !important;
+        height: 78px !important;
+    }
+}
+
 @media (max-height:812px) {
     .creditCardImage {
         width: 260px !important;
@@ -181,6 +190,17 @@
     .splitPaymentMethod {
         width: 150px !important;
         height: 120px !important;
+    }
+
+    .paypalPaymentsuccess {
+
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .selectedCoursepriceBg {
+        width: 120px !important;
+        height: 46px !important;
     }
 
 }
@@ -210,6 +230,12 @@
     .formbg input {
         padding-top: 3px !important;
         padding-bottom: 3px !important;
+    }
+
+
+    .selectedCoursepriceBg {
+        width: 216px !important;
+        height: 63px !important;
     }
 
 
@@ -269,8 +295,8 @@
 
     .selectedCoursepriceBg {
 
-        width: 100px !important;
-        height: 70px !important;
+        width: 200px !important;
+        height: 53px !important;
     }
 
 
@@ -311,9 +337,21 @@
     .submitbtnbg {
 
         margin-top: 6px !important;
-        margin-bottom: 6px !important;
-        padding-bottom: 4px !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 7px !important;
         padding-top: 4px !important;
+    }
+
+    .paypalPaymentsuccess {
+
+        padding-top: 10px !important;
+        padding-bottom: 14px !important;
+    }
+
+    .passEyeIcon {
+
+        width: 10px !important;
+        height: 10px !important;
     }
 
 
@@ -428,6 +466,15 @@
         padding-top: 0px !important;
         padding-bottom: 0px !important;
     }
+
+    .submitbtnbg {
+
+        margin-top: 20px !important;
+        margin-bottom: 8px !important;
+        padding-bottom: 2px !important;
+        padding-top: 2px !important;
+    }
+
 
 }
 
@@ -594,7 +641,7 @@
 
     .submitbtnbg {
 
-        margin-top: 3px !important;
+        margin-top: 20px !important;
         margin-bottom: 6px !important;
         padding-bottom: 2px !important;
         padding-top: 2px !important;
@@ -643,7 +690,6 @@
         padding-top: 0px !important;
     }
 
-
     .giftbtnIcon {
 
         width: 10px !important;
@@ -681,4 +727,15 @@
         width: 30px !important;
         height: 30px !important;
     }
+}
+
+
+@media screen and (min-width:992px) {
+
+    .selectedCoursepriceBg {
+
+        width: 161px !important;
+        height: 75px !important;
+    }
+
 }

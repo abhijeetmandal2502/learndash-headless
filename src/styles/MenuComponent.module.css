@@ -755,15 +755,30 @@ screen and (max-height: 700px) {
     margin-top: 339.2px;
     left: -49px;
     top: 8px;
+}
 
+.tabLable {
+    font-size: 18px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.dotes {
+    position: relative;
+    width: 24px;
+    height: 36px;
 }
 
 
-@media (max-height:650px) {
+
+
+@media (max-height:750px) {
 
     .pointerPathMain {
 
-        height: 300px !important;
+        height: 292px !important;
         width: 0.4px !important;
         margin-top: 16px !important;
         position: relative !important;
@@ -772,10 +787,59 @@ screen and (max-height: 700px) {
 
     .pointerPathInner {
         position: absolute !important;
-        margin-top: 339.2px !important;
+        margin-top: 232px !important;
         left: -49px !important;
         top: 8px !important;
 
+    }
+
+    .tabLable {
+        font-size: 15px !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    .dotes {
+        position: relative !important;
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+}
+
+@media (max-height:650px) {
+
+    .pointerPathMain {
+
+        height: 210px !important;
+        width: 0.4px !important;
+        margin-top: 16px !important;
+        position: relative !important;
+        background: white !important;
+    }
+
+    .pointerPathInner {
+        position: absolute !important;
+        margin-top: 232px !important;
+        left: -49px !important;
+        top: 8px !important;
+
+    }
+
+    .tabLable {
+        font-size: 10px !important;
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    .dotes {
+        position: relative !important;
+        width: 24px !important;
+        height: 20px !important;
     }
 
 }

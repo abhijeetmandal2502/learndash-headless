@@ -27,24 +27,24 @@ const CheckOutFormMobile = () => {
                                     <label className="mt-5 mb-1.5  font-bold  leading-4 smallf">credit card info</label>
                                     <div className="flex justify-between mb-2 ">
                                         <div className="max-w-[48%]">
-                                            <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
+                                            <input className="w-full leading-3 border smallf bg-white border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
                                         </div>
                                         <div className="max-w-[48%]">
-                                            <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
+                                            <input className="w-full leading-3 border bg-white smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
                                         </div>
                                     </div>
                                     <div>
-                                        <input className="w-full leading-3 border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
+                                        <input className="w-full leading-3 bg-white border border-bordergray md:p-2 p-1 " type="number" placeholder="**** **** **** *****" />
                                     </div>
                                     <div className={`flex flex-row mt-2 space-x-2 ${styles.cvvzipSection}`}>
                                         <div>
-                                            <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
+                                            <input className="w-full leading-3 bg-white border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
                                         </div>
                                         <div>
-                                            <input className="w-full leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
+                                            <input className="w-full leading-3 bg-white text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
                                         </div>
                                         <div>
-                                            <input className="w-full leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
+                                            <input className="w-full leading-3 bg-white border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
                                         </div>
                                     </div>
                                 </div>

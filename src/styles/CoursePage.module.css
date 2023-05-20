@@ -788,6 +788,107 @@
 
 
 
+@media screen and (min-width:992px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1280px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1366px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1440px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1600px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1750px) {
+
+    .priceBack {
+
+        width: 69px !important;
+        height: 73px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1850px) {
+
+    .priceBack {
+
+        width: 90px !important;
+        height: 102px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+@media screen and (min-width:1920px) {
+
+    .priceBack {
+
+        width: 111px !important;
+        height: 106px !important;
+        margin-bottom: 15px !important;
+    }
+
+}
+
+
+
 .coursePriceSelectedBg {
 
     /* background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%); */

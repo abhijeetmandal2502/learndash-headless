@@ -6,8 +6,6 @@ import styles from '../src/styles/Ncbtmb.module.css'
 import Select from 'react-select';
 import { AiOutlineCheck } from 'react-icons/ai'
 import Link from 'next/link'
-
-
 const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   const options = [
@@ -79,15 +77,15 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   return (
     <>
-      <div className='relative h-screen ml-11  overflow-hidden bg-transparent '>
+      <div className='relative h-screen md:pl-28 overflow-hidden bg-transparent '>
         {/* this loby button for desktop */}
-        <button className={`md:flex hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-4 3xl:px-6 py-2 3xl:py-2.5 rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
-          <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf '>lobby</span>
+        <button className={`md:flex hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-5 py-2  rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
+          <BiArrowBack size={20} className="text-white " /><span className='mediumf '>lobby</span>
         </button>
         {/* loby button code end */}
         <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4`}>
           <div className='md:col-span-6 col-span-12'>
-            <h2 className='fourxllargef text-black '>all courses<br></br>ncbtmb<br></br>approved.</h2>
+            <h2 className='triplelargefXXXL text-black '>all courses ncbtmb approved.</h2>
           </div>
 
           <div className='md:col-span-6 col-span-12'>

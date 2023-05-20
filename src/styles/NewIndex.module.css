@@ -1723,8 +1723,7 @@ screen and (max-height: 700px) {
 }
 
 /* gift shoppe image size 1990px */
-
-@media screen and (min-width:1920px) {
+@media screen and (min-width:1750px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
@@ -1749,7 +1748,6 @@ screen and (max-height: 700px) {
     .mainDiv:hover {
         transform: translateY(-10px);
         transition: all ease-in-out 500ms;
-
     }
 
     .mainDiv>.content {
@@ -1758,6 +1756,80 @@ screen and (max-height: 700px) {
 
     .mainDiv:hover>.content {
         margin-top: 110px;
+    }
+
+}
+
+@media screen and (min-width:1850px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+    }
+
+    .mainDiv>.content {
+        margin-top: 85px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 110px;
+    }
+
+}
+
+@media screen and (min-width:1920px) {
+
+    /* gift shoppi css  */
+    .mainDiv>.gift {
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 120px;
+    }
+
+    .mainDiv:hover>.gift {
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: top;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 140px;
+
+    }
+
+    .mainDiv:hover {
+        transform: translateY(-10px);
+        transition: all ease-in-out 500ms;
+    }
+
+    .mainDiv>.content {
+        margin-top: 120px;
+    }
+
+    .mainDiv:hover>.content {
+        margin-top: 120px;
     }
 
 }

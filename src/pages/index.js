@@ -187,7 +187,7 @@ const Home = () => {
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
-                <div className='relative flex flex-col justify-between col-span-12 px-5 -mt-10 md:pl-20 md:col-span-6 '>
+                <div className='relative flex flex-col justify-between col-span-12 px-5  md:pl-28 md:col-span-6 '>
                     <div className=' space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
                         {/* menu icon for small device */}
@@ -203,17 +203,17 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className={`w-full pb-28 ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='superlargef  text-black '>massage ce.</p>
+                    <div className={`w-full homepdmng ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
+                        <p className='superlargef   text-black '>massage ce.</p>
                         <p className='superlargef text-black '> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
-                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-28 left-10 3xl:top-72 3xl:left-10 4xl:top-96 4xl:left-10     w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
+                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-24 left-0 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
 
-                    <div className={`absolute top-28 left-10  3xl:top-72 3xl:left-10 4xl:top-96 4xl:left-10 w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
+                    <div className={`absolute top-32 left-0  w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
                 </div>
                 <div className={`col-span-12 md:col-span-5   relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1} `}>
                     {/*index  grid 6 main div  */}
@@ -275,7 +275,6 @@ const Home = () => {
 
 
                             <div className=' md:col-span-6 h-[100vh] border-l 3xl:border-l-2 border-gray w-full '>
-
                                 {/* i am back */}
                                 <div className={`w-full h-1/2 menuBoxsizebigMenu flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer  ${styles.cardAnimation}   `} onClick={() => { HandleClick(); }}>
 
@@ -366,9 +365,9 @@ const Home = () => {
                 {/*index page main menu sidebar component */}
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l 3xl:border-l-2 border-b-gray md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
                     <div className='cursor-pointer '>
-                        <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-5 left-1/2 '>
+                        <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-12 left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                <p className='font-semibold dubblelargef text-black '>menu</p>
+                                <p className='font-semibold largef text-black '>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
@@ -376,7 +375,7 @@ const Home = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className='absolute -translate-x-1/2 bottom-5 left-1/2'>
+                        <div className='absolute -translate-x-1/2 bottom-12 left-1/2'>
                             <MusicCard />
                         </div>
                     </div>

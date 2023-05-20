@@ -74,7 +74,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                                         <Image src="/start/eGift.svg" width={71} height={60} alt="gift" className={`${styles.giftImg}`} />
                                                     </div>
                                                     <div className='flex items-center md:items-start'>
-                                                        <p className='font-semibold largef'>
+                                                        <p className='font-semibold mediumf'>
                                                             e-gift cards
                                                         </p>
                                                         <div className={`bg-black mx-2  flex items-center justify-center rounded-full w-6 h-6 text-white smallf text-center`}>
@@ -99,14 +99,14 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                                     </div>
                                                     <div className='relative '>
                                                         <div className='flex items-center md:items-start'>
-                                                            <p className='font-semibold px-2 largef'>
+                                                            <p className='font-semibold px-2 mediumf'>
                                                                 physical gift cards
                                                             </p>
                                                             <div className={`bg-black ml-2 mr-2 rounded-full w-6 h-6 text-white text-center smallf flex items-center justify-center  `}>
                                                                 99
                                                             </div>
                                                         </div>
-                                                        <p className='hidden md:block absolute minismallf font-bold smallf'>$1 shipping anywhere in the us!</p>
+                                                        <p className='hidden md:block absolute smallf'>$1 shipping anywhere in the us!</p>
                                                     </div>
                                                 </div>
                                             </Tab>

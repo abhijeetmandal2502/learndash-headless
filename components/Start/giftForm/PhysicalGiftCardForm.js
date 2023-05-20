@@ -23,18 +23,19 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                             <div className='col-span-12 md:col-span-10'>
                                 <div className={`grid grid-cols-12 gap-3 ${styles.fromFormMain}`}>
                                     <div className='col-span-6'>
-                                        <input placeholder='your first name' type='text' className='w-full px-4 py-2 border outline-none smallf border-gray ' />
+                                        <input placeholder='your first name' type='text' className='w-full px-4 bg-white py-2 border outline-none smallf border-gray ' />
                                     </div>
 
                                     <div className='col-span-6'>
-                                        <input placeholder='your last name' type='text' className='w-full px-4 py-2 border outline-none border-gray smallf' />
+                                        <input placeholder='your last name' type='text' className='w-full px-4 py-2 border outline-none bg-white border-gray smallf' />
                                     </div>
 
                                     <div className='col-span-12'>
-                                        <input placeholder='company' type='text' className='border border-gray outline-none min-w-[100%] smallf py-2 px-4 ' />
+                                        <input placeholder='company' type='text' className='border bg-white border-gray outline-none min-w-[100%] smallf py-2 px-4 ' />
                                     </div>
                                     <div className='col-span-12'>
-                                        <input placeholder='your email address' type='text' className='border border-gray outline-none min-w-[100%] smallf py-2 px-4 ' />
+                                        <input placeholder='your email address' type='text' className='border border-gray outline-none bg-white
+                                         min-w-[100%] smallf py-2 px-4 ' />
                                     </div>
                                 </div>
                             </div>
@@ -52,18 +53,18 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                             <div className='col-span-12 md:col-span-11'>
                                 <div className={`grid grid-cols-12 md:grid-cols-10 ${styles.fromFormMain}`}>
                                     <div className='col-span-6 md:col-span-2 md:mx-1.5'>
-                                        <input placeholder=' first name' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4' />
+                                        <input placeholder=' first name' type='text' className='border border-gray outline-none bg-white w-[100%] smallf py-2 px-4' />
                                     </div>
                                     <div className='col-span-6 md:col-span-2 md:mx-1.5'>
-                                        <input placeholder='last name' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4' />
+                                        <input placeholder='last name' type='text' className='border bg-white border-gray outline-none w-[100%] smallf py-2 px-4' />
                                     </div>
                                     <div className='col-span-12 md:col-span-3 md:mx-1.5'>
-                                        <input placeholder='recipient email' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4' />
+                                        <input placeholder='recipient email' type='text' className='border bg-white border-gray outline-none w-[100%] smallf py-2 px-4' />
                                     </div>
 
                                     {/*this code for  mobile */}
                                     <div className='col-span-12 md:hidden '>
-                                        <input placeholder='city' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
+                                        <input placeholder='city' type='text' className='border border-gray bg-white outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
                                     </div>
                                     <div className='col-span-6 md:hidden '>
                                         <select className='smallf py-2.5 px-4 -mt-5 bg-white border border-gray text-gray' name="cars" id="cars">
@@ -76,15 +77,15 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
 
 
                                     <div className='col-span-6 md:hidden '>
-                                        <input placeholder='zip' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
+                                        <input placeholder='zip' type='text' className='border border-gray bg-white outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
                                     </div>
                                     {/*this code for  mobile end*/}
                                     <div className='col-span-6 md:col-span-1 md:mx-1.5'>
-                                        <input placeholder='qty' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4' />
+                                        <input placeholder='qty' type='text' className='border border-gray bg-white outline-none w-[100%] smallf py-2 px-4' />
                                     </div>
 
                                     <div className='col-span-6 md:col-span-2 md:mx-1.5'>
-                                        <input placeholder='$ amount' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4' />
+                                        <input placeholder='$ amount' type='text' className='border bg-white border-gray outline-none w-[100%] smallf py-2 px-4' />
                                     </div>
 
                                     <div className='items-center hidden col-span-1 md:flex '>
@@ -92,14 +93,14 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                                     </div>
 
                                     <div className='col-span-12 md:col-span-4 mx-1.5 '>
-                                        <textarea id="w3review" rows="4" cols="60" className='border  border-gray outline-none w-[100%] smallf max-h-[90px] py-2 px-4 mb-6 mt-3 text-gray'>
+                                        <textarea id="w3review" rows="4" cols="60" className='border  border-gray outline-none w-[100%] bg-white smallf max-h-[90px] py-2 px-4 mb-6 mt-3 text-gray'>
                                             message (if left blank, this shows by default): ”this card may be small, but says a ton! a token of thanks for all you’ve done!”
                                         </textarea>
                                     </div>
                                     <div className=' hidden md:block col-span-4 mx-1.5 mt-3 '>
                                         <div className='flex items-center justify-between space-x-2'>
                                             <div className='col-span-2 '>
-                                                <input placeholder='city' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
+                                                <input placeholder='city' type='text' className='border border-gray bg-white outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
                                             </div>
                                             <div className='col-span-2 '>
                                                 <select className='smallf py-2.5 px-4 -mt-5 bg-white border border-gray text-gray' name="cars" id="cars">
@@ -110,7 +111,7 @@ const PhysicalGiftCardForm = ({ showPaymentOpt }) => {
                                                 </select>
                                             </div>
                                             <div className='col-span-2 '>
-                                                <input placeholder='zip' type='text' className='border border-gray outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
+                                                <input placeholder='zip' type='text' className='border border-gray bg-white bg-white outline-none w-[100%] smallf py-2 px-4 mb-3 ' />
                                             </div>
                                         </div>
                                     </div>

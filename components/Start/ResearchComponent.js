@@ -45,7 +45,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                     <div className='flex space-x-2 justify-center items-center'>
 
-                        <h2 className='mediumf tracking-wide text-black'>
+                        <h2 className='fourxllargef tracking-wide text-black'>
                             using research
                             to market your practice
                         </h2>
@@ -112,7 +112,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                     {courseData && courseData.map((item, index) => {
                         return (
                             <div key={index} className='flex items-center space-x-4 py-0.3'>
-                                <AiOutlineCheck size={16} className={`text-[#9747FF] ${styles.checkIcon}`} />
+                                <AiOutlineCheck size={20} className={`text-[#9747FF] ${styles.checkIcon}`} />
                                 <p className='tracking-wider smallf text-black'>{item}</p>
                             </div>
                         )

@@ -232,7 +232,7 @@ const Start = () => {
                                  
                                 ${styles.transformTopBottomIndicater} `}
                                     style={selectStyles}>
-                                    <svg>
+                                    <svg className={``}>
                                         <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
                                         </circle>
                                     </svg>
@@ -253,7 +253,7 @@ const Start = () => {
                                         <div key={i} className='flex  justify-start items-center '>
 
                                             {/* for desktop */}
-                                            <div className={` hidden md:block relative w-6 h-9 ${i === activeTabIndex
+                                            <div className={` hidden md:block  ${styles.dotes} ${i === activeTabIndex
                                                 ? styles.dotsBorder
                                                 : ""
                                                 }}`}
@@ -273,7 +273,6 @@ const Start = () => {
                                             </div>
 
                                             {/* for mobile */}
-
                                             <div className={` md:hidden block relative w-6 h-9 ${i === activeTabIndex
                                                 ? styles.dotsBorder
                                                 : ""
@@ -295,8 +294,8 @@ const Start = () => {
                                             </div>
                                             <p
 
-                                                className={` md:block hidden text-white opacity-[0.6] text-[18px] 3xl:text-[28px] py-[3px] cursor-pointer transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.shadowHover}   ${i === activeTabIndex
-                                                    ? `font-bold opacity-[1] hover:[20px] 3xl:hover:[30px] ${styles.shadow}`
+                                                className={` md:block hidden  transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.tabLable}  ${styles.shadowHover}   ${i === activeTabIndex
+                                                    ? `font-bold opacity-[1] ${styles.shadow}`
                                                     : ""
                                                     } `}
                                                 // Change the active tab on click.

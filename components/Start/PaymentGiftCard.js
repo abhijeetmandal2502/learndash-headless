@@ -64,7 +64,7 @@ const PaymentGiftCard = () => {
                 <div >
                     <div className=' md:pt-8 flex flex-col justify-center items-center'>
 
-                        <Image className='md:-ml-8  ' src="/start/GiftCard3D.png" width={150} height={100} alt="gift card" />
+                        <Image className='md:-ml-8  ' src="/start/GiftCard3D.svg" width={150} height={100} alt="gift card" />
 
                         <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
                     </div>
@@ -87,7 +87,7 @@ const PaymentGiftCard = () => {
                     <div className={`relative mt-6`}>
                         <input className="w-full leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                         <div className="absolute cursor-pointer top-2 right-2">
-                            <Image src="/images/eyeIcon.svg" width={20} height={13} alt="show hide password icon" />
+                            <Image src="/images/eyeIcon.svg" width={20} height={13} className={`${styles.passEyeIcon}`} alt="show hide password icon" />
                         </div>
                     </div>
                     <button type="button"

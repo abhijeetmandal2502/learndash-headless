@@ -13,10 +13,10 @@ const Conceierge = ({ conceiergeHide }) => {
 
     return (
         <>
-            <div className=' bg-transparent md:px-7  ml-4'>
-                <button className={`md:flex hidden items-center space-x-1  md:mt-[70px] bg-black text-white font-bold  ${styles.lobby} px-4 py-2 rounded-3xl  ${styles.concorgemtTop} `} type='button' onClick={() => conceiergeHide()}  >
-                    <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" />
-                    <span className='minismallf'>lobby</span>
+            <div className=' bg-transparent md:pl-28'>
+                <button className={`md:flex hidden items-center space-x-1  md:mt-[80px] bg-black text-white font-bold  ${styles.lobby} px-5 py-2 rounded-3xl  ${styles.concorgemtTop} `} type='button' onClick={() => conceiergeHide()}  >
+                    <BiArrowBack size={20} className="text-white" />
+                    <span className='mediumf'>lobby</span>
                 </button>
 
                 <h2 className=' my-5 fourxllargef text-black leading-tight'>ok, deep breath.<br></br>how can we help?

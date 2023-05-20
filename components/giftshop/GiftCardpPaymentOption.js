@@ -104,15 +104,15 @@ const GiftCardPaymentOption = () => {
                     <div className=' col-span-6 flex items-center space-x-5'>
                         <div className={`${styles.giftListBg} p-2 relative ${styles.giftCountMain}`}>
                             <Image src="/start/eGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
-                            <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-16  -top-[6px] bg-voilet ${styles.counterComp}`}>
-                                <p className='flex items-center smallf justify-center'>1</p>
+                            <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10   -top-[6px] bg-voilet ${styles.counterComp}`}>
+                                <p className='flex items-center extsmallf justify-center'>1</p>
                             </div>
                         </div>
                         <div className={`${styles.giftListBg} p-2 relative ${styles.giftCountMain}`}>
                             <Image src="/start/PhysicalGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
-                            <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10 2xl:left-16 -top-[6px] bg-voilet ${styles.counterComp}`}>
+                            <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10  -top-[6px] bg-voilet ${styles.counterComp}`}>
 
-                                <p className='flex smallf items-center justify-center'>2</p>
+                                <p className='flex extsmallf items-center justify-center'>2</p>
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@ const GiftCardPaymentOption = () => {
 
                 <div className='px-3'>
 
-                    <input type="email" placeholder='your email' className={`w-full px-5 py-[6px] smallf mt-4 mb-2 border border-gray ${styles.emailspaing}`} />
+                    <input type="email" placeholder='your email' className={`w-full px-5 py-[6px] bg-white smallf mt-4 mb-2 border border-gray ${styles.emailspaing}`} />
 
                     <div className='flex items-center justify-center space-x-2'>
                         {paymentCart?.map((item, id) => {

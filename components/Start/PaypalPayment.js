@@ -30,7 +30,7 @@ const PaypalPayment = () => {
                         {/* <label className="mt-8 mb-1.5 text-xs leading-4 font-bold ">create Password</label> */}
                         <input className="w-full bg-white leading-4 border smallf border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                         <div className="absolute cursor-pointer top-2 right-2">
-                            <Image src="/images/eyeIcon.svg" width={22} height={15} alt="show hide password icon" />
+                            <Image src="/images/eyeIcon.svg" width={22} height={15} className={`${styles.passEyeIcon}`} alt="show hide password icon" />
                         </div>
                     </div>
 

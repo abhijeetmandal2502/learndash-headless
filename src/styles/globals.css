@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 
-
-
 a {
   color: inherit;
   text-decoration: none;
@@ -66,7 +64,14 @@ body {
   }
 } */
 
+input {
+  background-color: #FFFFFF !important;
+}
 
+textarea {
+
+  background-color: #FFFFFF !important;
+}
 
 
 .Boxshadow {
@@ -98,8 +103,6 @@ body {
   }
 
 }
-
-
 
 .zoom-effect-container:hover .image-card img {
   -ms-transform: scale(1.1);
@@ -417,6 +420,12 @@ ol {
   margin-top: 50px;
 }
 
+/* home message padding */
+
+.homepdmng {
+  padding-bottom: 112px;
+}
+
 /* responsive min height  */
 
 /* minheight screen size image  */
@@ -425,16 +434,16 @@ ol {
 
   .logoImg {
 
-    width: 260px !important;
-    height: 80px !important;
-    margin-top: 50px;
+    width: 360px;
+    height: 320px;
+    /* margin-top: 50px; */
   }
 
   .ncbtmbImg {
 
-    height: 100px !important;
-    width: 100px !important;
-    margin-top: 25px !important;
+    height: 130px !important;
+    width: 130px !important;
+    margin-top: 14px !important;
     margin-bottom: 5px !important;
 
   }
@@ -487,13 +496,21 @@ ol {
     left: 22px !important;
   }
 
+  /* .gateHandleMainDiv {
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    top: 43px;
+    left: 48px;
+  } */
+
   .gateHandleMainDiv {
 
     width: 3px !important;
-    height: 3px !important;
+    height: 15px !important;
     position: absolute !important;
-    top: 45px !important;
-    left: 35px !important;
+    top: 48px !important;
+    left: 43px !important;
   }
 
   /* ncbtmb approved image */
@@ -503,13 +520,13 @@ ol {
   }
 }
 
-@media (max-height:812px) {
+@media (max-height:840px) {
 
   .logoImg {
 
     width: 230px !important;
     height: 80px !important;
-    margin-top: 40px !important;
+    margin-top: 68px !important;
   }
 
   .ncbtmbImg {
@@ -580,8 +597,8 @@ ol {
 
   /* ncbtmb approved image */
   .nbctmbcompnentImg {
-    width: 230px !important;
-    height: 230px !important;
+    width: 175px !important;
+    height: 175px !important;
   }
 }
 
@@ -673,7 +690,7 @@ ol {
   .logoImg {
     width: 230px !important;
     height: 80px !important;
-    margin-top: 40px !important;
+    margin-top: 62px !important;
   }
 
   .ncbtmbImg {
@@ -754,9 +771,9 @@ ol {
 @media (max-height:600px) {
 
   .logoImg {
-    width: 150px !important;
+    width: 177px !important;
     height: 60px !important;
-    margin-top: 40px !important;
+    margin-top: 69px !important;
   }
 
   .ncbtmbImg {
@@ -827,8 +844,8 @@ ol {
 
   /* ncbtmb approved image */
   .nbctmbcompnentImg {
-    width: 80px !important;
-    height: 80px !important;
+    width: 196px !important;
+    height: 97px !important;
   }
 
   .ncbtmbDropDown {
@@ -846,7 +863,7 @@ ol {
 
     width: 150px !important;
     height: 50px !important;
-    margin-top: 35px !important;
+    margin-top: 55px !important;
 
   }
 
@@ -1102,7 +1119,7 @@ ol {
 
 /* minheight screen size font  */
 
-@media (max-height:812px) {
+@media (max-height:840px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1117,7 +1134,9 @@ ol {
   }
 
   .smallf {
-    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
+    font-size: 12px !important;
+    line-height: 24px !important;
   }
 
   .mediumf {
@@ -1134,7 +1153,8 @@ ol {
   }
 
   .dubblelargef {
-    font-size: 17px !important;
+    font-size: 30px !important;
+    line-height: 35px !important;
   }
 
   .triplelargef {
@@ -1146,14 +1166,14 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 35px !important;
-    line-height: 45px !important;
+    font-size: 31px !important;
+    line-height: 40px !important;
   }
 
   .superlargef {
-    font-size: 55px !important;
-    letter-spacing: 0.001em !important;
-    line-height: 65px !important;
+    font-size: 80px !important;
+    letter-spacing: -1px !important;
+    line-height: 90px !important;
   }
 
   .startFont {
@@ -1162,6 +1182,10 @@ ol {
     line-height: 20px !important;
     margin-top: 20px !important;
 
+  }
+
+  .nctbmbmtTop {
+    margin-top: 20px !important;
   }
 }
 
@@ -1180,11 +1204,14 @@ ol {
   }
 
   .smallf {
-    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
+    font-size: 12px !important;
+    line-height: 24px !important;
   }
 
   .mediumf {
     font-size: 16px !important;
+    font-weight: 500 !important;
   }
 
   .largef {
@@ -1192,25 +1219,31 @@ ol {
   }
 
   .extlargef {
-    font-size: 16px !important;
+    font-size: 24px !important;
   }
 
   .dubblelargef {
-    font-size: 16px !important;
-    line-height: 27px !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
   }
 
   .triplelargef {
-    font-size: 16px !important;
+    font-size: 24px !important;
     letter-spacing: 1px !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     line-height: 18px !important;
 
   }
 
+  .triplelargefXXXL {
+    font-size: 40px !important;
+    line-height: 50px !important;
+    font-weight: 400 !important;
+  }
+
   .fourxllargef {
-    font-size: 30px !important;
-    line-height: 45px !important;
+    font-size: 27px !important;
+    line-height: 30px !important;
   }
 
   .superlargef {
@@ -1227,14 +1260,13 @@ ol {
 
   }
 
-  /* menu boxsize */
-  /* .menuBoxsizebigMenu {
-    min-height: 200px;
-  }
+  .nctbmbmtTop {
+    margin-top: 8px !important;
+    /* padding-left: 7px !important;
+    padding-right: 7px !important; */
 
-  .menuBoxsizesmallMenu {
-    min-height: 180px;
-  } */
+    padding: 2px 7px 2px 7px !important;
+  }
 
 
 }
@@ -1255,6 +1287,7 @@ ol {
 
   .smallf {
     font-size: 10px !important;
+    line-height: 10px !important;
   }
 
   .mediumf {
@@ -1281,9 +1314,15 @@ ol {
 
   }
 
-  .fourxllargef {
-    font-size: 30px !important;
+  .triplelargefXXXL {
+    font-size: 35px !important;
     line-height: 45px !important;
+    font-weight: 400 !important;
+  }
+
+  .fourxllargef {
+    font-size: 22px !important;
+    line-height: 32px !important;
   }
 
   .superlargef {
@@ -1300,14 +1339,9 @@ ol {
 
   }
 
-  /* menu boxsize */
-  /* .menuBoxsizebigMenu {
-    min-height: 200px;
+  .nctbmbmtTop {
+    margin-top: 15px !important;
   }
-
-  .menuBoxsizesmallMenu {
-    min-height: 180px;
-  } */
 
 
 }
@@ -1332,7 +1366,7 @@ ol {
   }
 
   .mediumf {
-    font-size: 16px !important;
+    font-size: 12px !important;
   }
 
   .largef {
@@ -1355,6 +1389,12 @@ ol {
 
   }
 
+  .triplelargefXXXL {
+    font-size: 34px !important;
+    line-height: 31px !important;
+    font-weight: 400 !important;
+  }
+
   .fourxllargef {
     font-size: 25px !important;
     line-height: 28px !important;
@@ -1374,14 +1414,13 @@ ol {
 
   }
 
-  /* menu boxsize */
-  /* .menuBoxsizebigMenu {
-    min-height: 200px;
-  }
+  .nctbmbmtTop {
+    margin-top: 3px !important;
+    /* padding-left: 7px !important;
+    padding-right: 7px !important; */
 
-  .menuBoxsizesmallMenu {
-    min-height: 180px;
-  } */
+    padding: 2px 7px 2px 7px !important;
+  }
 
 
 }
@@ -1428,6 +1467,12 @@ ol {
 
   }
 
+  .triplelargefXXXL {
+    font-size: 20px !important;
+    line-height: 22px !important;
+    font-weight: 400 !important;
+  }
+
   .fourxllargef {
     font-size: 18px !important;
     line-height: 18px !important;
@@ -1447,14 +1492,12 @@ ol {
 
   }
 
-  /* menu boxsize */
-  /* .menuBoxsizebigMenu {
-    min-height: 200px;
-  }
+  /* nctbmb mttop */
 
-  .menuBoxsizesmallMenu {
-    min-height: 180px;
-  } */
+  .nctbmbmtTop {
+    margin-top: 3px !important;
+    padding: 2px 7px 2px 7px !important;
+  }
 
 
 }
@@ -1611,7 +1654,8 @@ ol {
   .logoImg {
 
     width: 230px;
-    height: 270px;
+    height: 81px;
+    margin-top: 40px;
 
   }
 
@@ -1695,8 +1739,9 @@ ol {
 
   .logoImg {
 
-    width: 240px;
-    height: 245px;
+    width: 230px;
+    height: 80px;
+    margin-top: 40px;
 
   }
 
@@ -1780,8 +1825,9 @@ ol {
 
   .logoImg {
 
-    width: 240px;
-    height: 260px;
+    margin-top: 40px;
+    width: 214px;
+    height: 80px;
 
   }
 
@@ -1864,14 +1910,12 @@ ol {
 @media only screen and (min-width:1366px) {
 
   .logoImg {
-
-    width: 260px;
-    height: 260px;
-
+    width: 243px;
+    height: 87px;
+    margin-top: 40px;
   }
 
   .ncbtmbImg {
-
     height: 90px;
     width: 80px;
     margin-top: 8px;
@@ -1950,9 +1994,9 @@ ol {
 
   .logoImg {
 
-    width: 300px;
-    height: 250px;
-
+    width: 276px;
+    height: 95px;
+    margin-top: 60px;
   }
 
   .ncbtmbImg {
@@ -2037,8 +2081,9 @@ ol {
 
   .logoImg {
 
-    width: 320px;
-    height: 210px;
+    width: 276px;
+    height: 95px;
+    margin-top: 60px;
 
   }
 
@@ -2112,12 +2157,13 @@ ol {
 }
 
 /* custom image size for 1920 desktop device */
-@media only screen and (min-width:1920px) {
+@media only screen and (min-width:1750px) {
 
   .logoImg {
 
-    width: 320px;
-    height: 210px;
+    width: 276px;
+    height: 95px;
+    margin-top: 60px;
 
   }
 
@@ -2191,6 +2237,184 @@ ol {
   .nbctmbcompnentImg {
     width: 275px;
     height: 275px
+  }
+
+
+}
+
+/* custom image size for 1920 desktop device */
+@media only screen and (min-width:1850px) {
+
+  .logoImg {
+
+    width: 276px;
+    height: 85px;
+    margin-top: 60px;
+
+
+  }
+
+  .ncbtmbImg {
+
+    height: 80px;
+    width: 120px;
+    margin-top: 12px;
+    margin-bottom: 55px;
+
+  }
+
+  .conciergeImg {
+
+    height: 85px;
+    width: 85px;
+
+  }
+
+  .giftShoppeImg {
+
+    height: 110px;
+    width: 110px;
+
+  }
+
+  .teacherLounge {
+    height: 90px;
+    width: 60px;
+
+  }
+
+  .iamBackImg {
+    height: 90px;
+    width: 90px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 170px;
+    height: 220px;
+
+  }
+
+  .doorGate {
+    width: 90px;
+    height: 160px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  .gateHandleMainDiv {
+
+    width: 2px;
+    height: 3px;
+    position: absolute;
+    top: 70px;
+    left: 65px;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 275px;
+    height: 275px
+  }
+
+
+}
+
+/* custom image size for 1920 desktop device */
+@media only screen and (min-width:1920px) {
+
+  .logoImg {
+    margin-top: 60px;
+    width: 360px;
+    height: 120px;
+
+  }
+
+  .ncbtmbImg {
+
+    height: 100px;
+    width: 140px;
+    margin-top: 12px;
+    margin-bottom: 55px;
+
+  }
+
+  .conciergeImg {
+
+    height: 85px;
+    width: 85px;
+    margin-bottom: 20px !important;
+
+  }
+
+  /* .giftShoppeImg {
+
+    height: 110px;
+    width: 110px;
+
+  } */
+
+  .teacherLounge {
+    height: 90px;
+    width: 60px;
+
+  }
+
+  .iamBackImg {
+    height: 90px;
+    width: 90px;
+
+  }
+
+  /* door image start here */
+
+
+  .doorFrame {
+    width: 260px;
+    height: 174px;
+
+  }
+
+  .doorGate {
+    width: 90px;
+    height: 176px;
+
+  }
+
+  .doorGateMainDiv {
+
+    position: absolute;
+    top: 0px;
+    left: 73px;
+  }
+
+  .gateHandleMainDiv {
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    top: 80px;
+    left: 75px;
+  }
+
+  /* ncbtmb approved image */
+  .nbctmbcompnentImg {
+    width: 275px;
+    height: 275px
+  }
+
+  .checkIcon {
+    width: 20px;
+    height: 20px;
+
   }
 
 
@@ -2343,7 +2567,8 @@ ol {
   }
 
   .dubblelargef {
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 30px;
     letter-spacing: 1px;
   }
 
@@ -2358,6 +2583,12 @@ ol {
     line-height: 50px;
   }
 
+  .supermediumf {
+    font-size: 45px;
+    letter-spacing: -1.5px;
+    line-height: 50px;
+  }
+
   .superlargef {
     font-size: 60px;
     letter-spacing: 0.001em;
@@ -2365,9 +2596,10 @@ ol {
   }
 
   .startFont {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
     line-height: 44px;
+    margin-top: -14px;
 
   }
 
@@ -2398,7 +2630,7 @@ ol {
   }
 
   .mediumf {
-    font-size: 16px;
+    font-size: 11px;
   }
 
   .largef {
@@ -2410,21 +2642,36 @@ ol {
   }
 
   .dubblelargef {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 1px;
   }
 
   .triplelargef {
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 600;
-    line-height: 20px !important;
+    line-height: 20px;
+
+  }
+
+  .triplelargefXXXL {
+    font-size: 40px;
+    line-height: 57px;
+    font-weight: 400;
 
   }
 
   .fourxllargef {
-    font-size: 38px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .supermediumf {
+    font-size: 41px;
+    letter-spacing: -1.5px;
+    line-height: 45px;
+
   }
 
   .superlargef {
@@ -2437,7 +2684,7 @@ ol {
     font-size: 35px;
     font-weight: 500;
     line-height: 44px;
-    margin-top: -10px;
+    margin-top: 10px;
 
   }
 
@@ -2487,26 +2734,41 @@ ol {
     font-size: 20px;
     letter-spacing: 1px;
     font-weight: 600;
-    line-height: 25px !important;
+    line-height: 25px;
+
+  }
+
+
+  .triplelargefXXXL {
+    font-size: 48px;
+    line-height: 57px;
+    font-weight: 400;
 
   }
 
   .fourxllargef {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+
+  .supermediumf {
+    font-size: 50px;
+    letter-spacing: -1.5px;
+    line-height: 55px;
   }
 
   .superlargef {
-    font-size: 60px;
+    font-size: 57px;
     letter-spacing: 0.001em;
     line-height: 60px;
   }
 
   .startFont {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 500;
     line-height: 44px;
-    margin-top: -10px;
+    margin-top: -9px;
 
   }
 
@@ -2538,7 +2800,8 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 16px;
   }
 
   .mediumf {
@@ -2563,15 +2826,29 @@ ol {
     font-weight: 600;
   }
 
+
+  .triplelargefXXXL {
+    font-size: 52px;
+    line-height: 63px;
+    font-weight: 400;
+
+  }
+
   .fourxllargef {
-    font-size: 40px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .supermediumf {
+    font-size: 55px;
+    letter-spacing: -1.5px;
     line-height: 60px;
   }
 
   .superlargef {
-    font-size: 55px;
+    font-size: 60px;
     letter-spacing: 0.001em;
-    line-height: 55px;
+    line-height: 64px;
   }
 
   .startFont {
@@ -2608,7 +2885,8 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .mediumf {
@@ -2635,18 +2913,25 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 28px;
+    line-height: 35px;
   }
 
   .superlargef {
-    font-size: 50px;
+    font-size: 65px;
     letter-spacing: 0.001em;
-    line-height: 60px;
+    line-height: 68px;
+  }
+
+  .triplelargefXXXL {
+    font-size: 55px;
+    letter-spacing: 1px;
+    font-weight: 400 !important;
+
   }
 
   .startFont {
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 500;
     line-height: 44px;
     margin-top: 20px;
@@ -2671,7 +2956,7 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .mediumf {
@@ -2679,7 +2964,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .extlargef {
@@ -2702,24 +2987,37 @@ ol {
     line-height: 50px;
   }
 
+  .supermediumf {
+    font-size: 61px;
+    letter-spacing: -1.5px;
+    line-height: 69px;
+  }
+
   .superlargef {
-    font-size: 50px;
-    letter-spacing: 0.025em;
-    line-height: 60px;
+    font-size: 65px;
+    letter-spacing: -0.5px;
+    line-height: 70px;
+  }
+
+  .triplelargefXXXL {
+    font-size: 55px;
+    font-weight: 400 !important;
+
+
   }
 
   .startFont {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 500;
     line-height: 44px;
-    margin-top: 40px;
+    margin-top: 2px;
 
   }
 
 }
 
 /* cutom font size for max screen size 1920 or default size of all types fonts */
-@media only screen and (min-width:1920px) {
+@media only screen and (min-width:1750px) {
 
 
 
@@ -2736,7 +3034,8 @@ ol {
   }
 
   .smallf {
-    font-size: 16px;
+    line-height: 25px;
+    font-size: 18px;
   }
 
   .smallfXL {
@@ -2803,7 +3102,131 @@ ol {
   .triplelargefXXXL {
     font-size: 55px;
     letter-spacing: 1px;
+    font-weight: 400 !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 37px;
+    line-height: 48px;
+  }
+
+  .supermediumf {
+    font-size: 61px;
+    letter-spacing: -1.5px;
+    line-height: 69px;
+  }
+
+  .superlargef {
+    font-size: 77px;
+    letter-spacing: -0.5px;
+    line-height: 80px;
+  }
+
+  /* custom font for start */
+
+  .startFont {
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: 0px;
+
+
+  }
+
+
+
+}
+
+/* cutom font size for max screen size 1920 or default size of all types fonts */
+@media only screen and (min-width:1850px) {
+
+
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .extxlsmallf {
+    font-size: 16px;
+  }
+
+  .smallf {
+    line-height: 25px;
+    font-size: 19px;
+  }
+
+  .smallfXL {
+
+    font-size: 18px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .mediumfXL {
+
+    font-size: 22px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 20px;
+  }
+
+  .dubblelargef {
+    font-size: 24px;
+  }
+
+  .dubblelargefXL {
+    font-size: 28px;
+  }
+
+  .dubblelargefXXL {
+    font-size: 32px;
+  }
+
+  .dubblelargefXXXL {
+    font-size: 35px;
+  }
+
+
+
+  .triplelargef {
+    font-size: 30px;
+    letter-spacing: 1px;
     font-weight: 600 !important;
+    line-height: 35px !important;
+
+  }
+
+
+  .triplelargefXL {
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+
+  }
+
+  .triplelargefXXL {
+    font-size: 45px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+
+  }
+
+  .triplelargefXXXL {
+    font-size: 55px;
+    letter-spacing: 1px;
+    font-weight: 400 !important;
 
   }
 
@@ -2812,10 +3235,16 @@ ol {
     line-height: 60px;
   }
 
+  .supermediumf {
+    font-size: 61px;
+    letter-spacing: -1.5px;
+    line-height: 69px;
+  }
+
   .superlargef {
-    font-size: 55px;
-    letter-spacing: 0.025em;
-    line-height: 60px;
+    font-size: 87px;
+    letter-spacing: -0.5px;
+    line-height: 90px;
   }
 
   /* custom font for start */
@@ -2831,6 +3260,129 @@ ol {
 
 }
 
+/* cutom font size for max screen size 1920 or default size of all types fonts */
+@media only screen and (min-width:1920px) {
+
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .extxlsmallf {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    /* line-height: 40px; */
+  }
+
+  .smallf {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+  }
+
+  .smallfXL {
+
+    font-size: 18px;
+  }
+
+  .mediumf {
+    font-size: 20px;
+  }
+
+  .mediumfXL {
+
+    font-size: 22px;
+  }
+
+  .largef {
+    font-size: 24px;
+  }
+
+  .extlargef {
+    font-size: 20px;
+  }
+
+  .dubblelargef {
+    font-size: 41px;
+    line-height: 45px;
+    letter-spacing: -0.5px;
+  }
+
+  .dubblelargefXL {
+    font-size: 28px;
+  }
+
+  .dubblelargefXXL {
+    font-size: 32px;
+  }
+
+  .dubblelargefXXXL {
+    font-size: 35px;
+  }
+
+  .triplelargef {
+    font-size: 40px;
+    letter-spacing: 0px;
+    font-weight: 500 !important;
+    line-height: 35px !important;
+
+  }
+
+
+  .triplelargefXL {
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+
+  }
+
+  .triplelargefXXL {
+    font-size: 45px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+
+  }
+
+  .triplelargefXXXL {
+    font-size: 55px;
+    line-height: 60px;
+    font-weight: 400 !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .supermediumf {
+    font-size: 61px;
+    letter-spacing: -1.5px;
+    line-height: 69px;
+  }
+
+  .superlargef {
+    font-size: 110px;
+    letter-spacing: -1.5px;
+    line-height: 130px;
+  }
+
+  /* custom font for start */
+
+  .startFont {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: 41px;
+
+  }
+
+
+
+}
 
 /* @media only screen and(min ) */
 
