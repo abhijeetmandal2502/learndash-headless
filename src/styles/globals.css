@@ -1136,7 +1136,7 @@ ol {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height: 24px !important;
+    line-height: 16px !important;
   }
 
   .mediumf {
@@ -1206,7 +1206,7 @@ ol {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height: 24px !important;
+    line-height: 16px !important;
   }
 
   .mediumf {
@@ -1242,8 +1242,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 27px !important;
-    line-height: 30px !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
   }
 
   .superlargef {
@@ -2885,8 +2885,8 @@ ol {
   }
 
   .smallf {
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 19px;
   }
 
   .mediumf {
@@ -3335,14 +3335,14 @@ ol {
   .triplelargefXL {
     font-size: 40px;
     letter-spacing: 1px;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
 
   }
 
   .triplelargefXXL {
     font-size: 45px;
     letter-spacing: 1px;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
 
   }
 

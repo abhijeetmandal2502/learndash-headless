@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import Congratulation from "../DialogCard/Congratulation";
+import Success from './Success'
 const CheckOutFormMobile = () => {
 
     let [isOpen, setIsOpen] = useState(false)
@@ -98,7 +99,7 @@ const CheckOutFormMobile = () => {
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center pb-10 mt-2'>
-                                        <Congratulation />
+                                        <Success />
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

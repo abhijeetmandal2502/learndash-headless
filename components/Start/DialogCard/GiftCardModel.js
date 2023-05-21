@@ -13,10 +13,6 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
         return classes.filter(Boolean).join(' ')
     }
 
-    const alertModel = () => {
-        alert('i am open')
-    }
-
     return (
         <>
             {/* model popup */}

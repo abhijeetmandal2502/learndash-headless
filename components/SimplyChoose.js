@@ -143,7 +143,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                 <div className={` ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
                     <div className='relative grid grid-cols-11   overflow-y-scroll'>
-                        <div className={`  md:col-span-6 col-span-12 md:pl-28 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
+                        <div className={` relative md:col-span-6 col-span-12 md:pl-28 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                             <div className='hidden   md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
@@ -159,14 +159,14 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 </div>
                             </div>
                             {/* Selected Courses details of simply choose section on click */}
-                            <div className={` hidden md:grid grid-cols-12 md:grid-cols-9 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
-                                <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
+                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
+                                <button className='absolute top-10 text-2xl left-[90%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-4'>
                                     <ResearchComponent />
                                 </div>
                                 {/* course checkout */}
-                                <div className='col-span-12 md:col-span-5'>
+                                <div className={`col-span-12 md:col-span-5 ${styles.addtoCard}`}>
                                     <AddToCart />
                                 </div>
                             </div>
@@ -174,7 +174,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             {/* giftcard  details of simply choose section on click */}
 
                             <div className={`md:mt-8 2xl:mt-16 hidden md:grid grid-cols-12 ${!ShowGiftShoppi || hideForm === true ? styles.hide1 : styles.fadeAnimation}  `}>
-                                <button className='absolute top-4 text-2xl left-[43%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
+                                <button className='absolute top-10 text-2xl left-[90%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-5'>
                                     <SimpleGiftCard />

@@ -262,6 +262,14 @@
     background: rgba(151, 71, 255, 0.07);
 }
 
+/* addto cart */
+
+.addtoCard {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+}
+
 /* cart payment icon */
 
 /* .paymentIcon {
@@ -278,9 +286,15 @@
         height: 22px !important;
 
     }
+
+    .addtoCard {
+        position: absolute;
+        top: 125px;
+        left: 50%;
+    }
 }
 
-@media(max-height:812px) {
+@media(max-height:840px) {
 
     .viewMoreIcon {
         width: 18px !important;
@@ -304,6 +318,12 @@
         margin-top: 0px !important;
         padding: 3px 16px 3px 16px !important;
 
+    }
+
+    .addtoCard {
+        position: absolute !important;
+        top: 112px !important;
+        left: 50% !important;
     }
 }
 
@@ -372,8 +392,13 @@
         height: 30px !important;
 
     }
-}
 
+    .addtoCard {
+        position: absolute !important;
+        top: 100px !important;
+        left: 50% !important;
+    }
+}
 
 @media (max-height:650px) {
 
@@ -785,8 +810,6 @@
 
     }
 }
-
-
 
 @media screen and (min-width:992px) {
 
