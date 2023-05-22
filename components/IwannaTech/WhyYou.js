@@ -79,7 +79,6 @@ const WhyYou = ({ activeTabIndex }) => {
                 </div>
 
                 {/* for extra large device */}
-
                 <div className={`relative col-span-12 md:col-span-8 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'}  `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
                         <div className='relative overflow-hidden w-full h-[600px]  '>
@@ -102,21 +101,20 @@ const WhyYou = ({ activeTabIndex }) => {
                 </div>
 
                 {/* for samll device */}
-
                 <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-20  `}>
 
                     <div className={` relative  flex 2xl:mr-20 md:-mr-16 lg:mr-5   mr-10`}>
-                        <div className='relative overflow-hidden w-full h-[500px]  '>
-                            <div className={`w-[400px] absolute bottom-[46px] right-[50.5px]`}>
+                        <div className={`${styles.imageCompMain}`}>
+                            <div className={`${styles.whyUsRactComp}`}>
 
-                                <Image src='/images/WhyYouRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[500px]`} />
+                                <Image src='/images/WhyYouRectangle.png' width={1000} height={600} alt="wanna tech png" className={` ${styles.whyUsRactImage}`} />
                             </div>
-                            <div className={`-rotate-[30deg] absolute -bottom-[140px] -right-[80.5px]  z-10 `}>
+                            <div className={`${styles.whyUsYellowBgComp}`}>
                                 <Image src='/images/SubtractBrown.png' width={1000} height={600} alt="wanna tech png" className={` w-[450px]`} />
 
                             </div>
                         </div>
-                        <div className={` absolute bottom-[40px]  right-[0px] ${styles.fadeAnimationInfinite} w-[500px]`}>
+                        <div className={` ${styles.whyUsMainObjImageComp} ${styles.fadeAnimationInfinite} `}>
                             <Image src='/images/dog.png' width={1000} height={700} alt="wanna tech png" className={` `} />
                         </div>
                         <div className='z-50 absolute bottom-[0%] left-[45%]'>

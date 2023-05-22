@@ -172,8 +172,8 @@
 
 .animateGetStartedMan {
 
-    animation: ManAimate ease-in-out 2s infinite alternate;
-    transition: all ease-in-out 1s;
+    animation: ManAimate ease-in-out 1300ms infinite alternate;
+    transition: all ease-in-out 1300ms;
 
 }
 
@@ -182,12 +182,12 @@
 
     0% {
 
-        transform: rotate(-6.28deg);
+        transform: rotate(-3.50deg);
     }
 
     100% {
 
-        transform: translateY(-5%);
+        transform: translateY(-5.5%);
     }
 }
 
@@ -363,4 +363,341 @@
         margin-right: 40px;
     }
 
+}
+
+
+/* why us image animated image components */
+
+.imageCompMain {
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 450px;
+}
+
+
+.whyUsRactComp {
+    position: absolute;
+    width: 400px;
+    bottom: 46px;
+    right: 50.5px;
+}
+
+.whyUsRactImage {
+    width: 500px;
+}
+
+
+.whyUsYellowBgComp {
+    position: absolute;
+    bottom: -130px;
+    right: -86px;
+    z-index: 10;
+    transform: rotate(-32deg);
+}
+
+.whyUsYellowBgImage {
+    width: 450px;
+}
+
+.whyUsMainObjImageComp {
+    position: absolute;
+    bottom: 36px;
+    right: 44px;
+    width: 453px;
+}
+
+
+
+/* get started componet */
+
+
+.getstartedCompMain {
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 416px;
+}
+
+
+.getStartedRactComp {
+    position: absolute;
+    width: 345px;
+    bottom: 46px;
+    right: 50.5px;
+}
+
+.getStartedRactImage {
+    width: 390px;
+}
+
+.getStartedYellowBgComp {
+    position: absolute;
+    bottom: -105px;
+    right: -55px;
+    z-index: 10;
+    transform: rotate(-32deg);
+}
+
+.getStartedYellowBgImage {
+    width: 376px;
+}
+
+
+.getStartedMainObjImageComp {
+
+    position: absolute;
+    bottom: 10px;
+    right: 7px;
+    width: 450px;
+}
+
+.getStartedManImage {
+
+    width: 400px;
+}
+
+
+
+
+/* responsive for destop */
+
+@media (max-height:750px) {
+    /* why us image animated image components */
+
+    .imageCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 416px;
+    }
+
+
+    .whyUsRactComp {
+        position: absolute;
+        width: 400px;
+        bottom: 46px;
+        right: 50.5px;
+    }
+
+    .whyUsRactImage {
+        width: 500px;
+    }
+
+    .whyUsYellowBgComp {
+        position: absolute;
+        bottom: -130px;
+        right: -86px;
+        z-index: 10;
+        transform: rotate(-32deg)
+    }
+
+    .whyUsYellowBgImage {
+        width: 450px;
+    }
+
+    .whyUsMainObjImageComp {
+        position: absolute;
+        bottom: 42px;
+        right: 23px;
+        width: 460px;
+    }
+
+    /* get started componet */
+
+
+    .getstartedCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 328px;
+    }
+
+
+    .getStartedRactComp {
+        position: absolute;
+        width: 282px;
+        bottom: 59px;
+        right: 54.5px;
+    }
+
+    .getStartedRactImage {
+        width: 390px;
+    }
+
+    .getStartedYellowBgComp {
+        position: absolute;
+        bottom: -64px;
+        right: -30px;
+        z-index: 10;
+        transform: rotate(-32deg);
+    }
+
+    .getStartedYellowBgImage {
+        width: 305px;
+    }
+
+
+    .getStartedMainObjImageComp {
+
+        position: absolute;
+        bottom: 30px;
+        right: 56px;
+        width: 324px;
+    }
+
+    .getStartedManImage {
+
+        width: 325px;
+    }
+
+
+
+}
+
+
+@media (max-height:600px) {
+    /* why us image animated image components */
+
+    .imageCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 416px;
+    }
+
+
+    .whyUsRactComp {
+        position: absolute;
+        width: 338px;
+        bottom: 116px;
+        right: 50.5px;
+    }
+
+    .whyUsRactImage {
+        width: 500px;
+    }
+
+    .whyUsYellowBgComp {
+        position: absolute;
+        bottom: -76px;
+        right: -95px;
+        z-index: 10;
+        transform: rotate(-27deg);
+    }
+
+    .whyUsYellowBgImage {
+        width: 450px;
+    }
+
+    .whyUsMainObjImageComp {
+        position: absolute;
+        bottom: 105px;
+        right: 37px;
+        width: 390px;
+    }
+}
+
+@media (max-height:500px) {
+    /* why us image animated image components */
+
+    .imageCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 380px;
+    }
+
+
+    .whyUsRactComp {
+        position: absolute;
+        width: 307px;
+        bottom: 116px;
+        right: 50.5px;
+    }
+
+    .whyUsRactImage {
+        width: 300px;
+    }
+
+    .whyUsYellowBgComp {
+        position: absolute;
+        bottom: -46px;
+        right: -95px;
+        z-index: 10;
+        transform: rotate(-31deg);
+    }
+
+    .whyUsYellowBgImage {
+        width: 400px;
+    }
+
+    .whyUsMainObjImageComp {
+        position: absolute;
+        bottom: 105px;
+        right: 37px;
+        width: 359px;
+    }
+
+
+    /* get started componet */
+
+
+    .getstartedCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 340px;
+    }
+
+
+    .getStartedRactComp {
+        position: absolute;
+        width: 345px;
+        bottom: 108px;
+        right: 24.5px;
+    }
+
+    .getStartedRactImage {
+        width: 243px;
+    }
+
+    .getStartedYellowBgComp {
+        position: absolute;
+        bottom: 3px;
+        right: 54px;
+        z-index: 10;
+        transform: rotate(-32deg);
+    }
+
+    .getStartedYellowBgImage {
+        width: 261px;
+    }
+
+
+    .getStartedMainObjImageComp {
+
+        position: absolute;
+        bottom: 86px;
+        right: -4px;
+        width: 404px
+    }
+
+    .getStartedManImage {
+
+        width: 276px;
+    }
+
+
+    .getStarted {
+
+        margin-right: -7rem;
+    }
 }

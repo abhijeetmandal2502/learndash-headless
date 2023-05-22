@@ -194,8 +194,8 @@ const Start = () => {
 
     return (
         <>
-            <div className={`relative grid grid-cols-12  ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
-                <div className=' flex flex-col   md:col-span-11 col-span-12 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-10 3xl:space-y-24 md:p-10 z-10'>
+            <div className={`relative grid grid-cols-12 pl-[2%] ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
+                <div className=' flex flex-col   md:col-span-11 col-span-12   z-10'>
                     <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                         <LogoCard LogoImage="/images/WhiteLogo.svg" />
                         <Link href="/">
@@ -212,16 +212,16 @@ const Start = () => {
                     <div className='md:block hidden'>
                         <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
-                                <Link href="/">
-                                    <Image src='/images/WhiteLogo.svg' height='30' width='120' alt='logo' className='max-sm:h-[40px] max-sm:[50px] 2xl:h-[120px] 2xl:w-[310px] 3xl:h-[180px] 3xl:w-[500px]  h-[100px] w-[250px]' />
-                                </Link>
+
+                                <LogoCard LogoImage="/images/WhiteLogo.svg" />
+
                             </div>
                             <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 3xl:px-3 3xl:py-2.5 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { router.push('/') }} >
                                 <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='mediumf  font-semibold'>lobby</span></button>
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-12  md:pl-2 md:px-0 pl-5 '>
+                    <div className='grid grid-cols-12 mt-[4%]  md:pl-2 md:px-0 pl-5 '>
                         <div className=" md:col-span-2 flex -space-x-[3px] ">
                             {/* Loop through tab data and render button for each. */}
 
@@ -232,10 +232,13 @@ const Start = () => {
                                  
                                 ${styles.transformTopBottomIndicater} `}
                                     style={selectStyles}>
-                                    <svg className={``}>
-                                        <circle cx="50" cy={50} r="10" stroke="white" stroke-width="2" fill="none">
-                                        </circle>
-                                    </svg>
+
+                                    <div className={``}>
+                                        <svg className='h-[20px]' >
+                                            <circle cx="50" cy={9} r="8" stroke="white" stroke-width="2" fill="none">
+                                            </circle>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             {/* pointer circle for mobile  */}

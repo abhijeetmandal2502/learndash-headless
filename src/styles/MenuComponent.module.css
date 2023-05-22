@@ -402,7 +402,7 @@
     .shadowHover:hover {
 
         filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
-        font-size: 30px;
+        /* font-size: 30px; */
         transition: all ease-in-out 500ms;
     }
 }
@@ -754,7 +754,7 @@ screen and (max-height: 700px) {
     position: absolute;
     margin-top: 339.2px;
     left: -49px;
-    top: 8px;
+    top: 49px;
 }
 
 .tabLable {
@@ -772,10 +772,9 @@ screen and (max-height: 700px) {
 }
 
 
-
-
 @media (max-height:750px) {
 
+    /* pointer section */
     .pointerPathMain {
 
         height: 292px !important;
@@ -789,7 +788,7 @@ screen and (max-height: 700px) {
         position: absolute !important;
         margin-top: 232px !important;
         left: -49px !important;
-        top: 8px !important;
+        top: 49px !important;
 
     }
 
@@ -813,6 +812,77 @@ screen and (max-height: 700px) {
 
     .pointerPathMain {
 
+        height: 270px !important;
+        width: 0.4px !important;
+        margin-top: 16px !important;
+        position: relative !important;
+        background: white !important;
+    }
+
+    .pointerPathInner {
+        position: absolute !important;
+        margin-top: 254px !important;
+        left: -49px !important;
+        top: 7.5px !important;
+
+    }
+
+    .tabLable {
+        font-size: 14px !important;
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    .dotes {
+        position: relative !important;
+        width: 26px !important;
+        height: 25px !important;
+    }
+
+}
+
+@media (max-height:550px) {
+
+    .pointerPathMain {
+
+        height: 240px !important;
+        width: 0.4px !important;
+        margin-top: 16px !important;
+        position: relative !important;
+        background: white !important;
+    }
+
+    .pointerPathInner {
+        position: absolute !important;
+        margin-top: 185px !important;
+        left: -49px !important;
+        top: 55px !important;
+
+    }
+
+    .tabLable {
+        font-size: 13px !important;
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    .dotes {
+        position: relative !important;
+        width: 24px !important;
+        height: 22.5px !important;
+    }
+
+}
+
+
+@media (max-height:500px) {
+
+    .pointerPathMain {
+
         height: 210px !important;
         width: 0.4px !important;
         margin-top: 16px !important;
@@ -822,9 +892,9 @@ screen and (max-height: 700px) {
 
     .pointerPathInner {
         position: absolute !important;
-        margin-top: 232px !important;
+        margin-top: 155px !important;
         left: -49px !important;
-        top: 8px !important;
+        top: 48px !important;
 
     }
 
@@ -840,6 +910,76 @@ screen and (max-height: 700px) {
         position: relative !important;
         width: 24px !important;
         height: 20px !important;
+    }
+
+}
+
+@media (max-height:470px) {
+
+    .pointerPathMain {
+
+        height: 190px !important;
+        width: 0.4px !important;
+        margin-top: 16px !important;
+        position: relative !important;
+        background: white !important;
+    }
+
+    .pointerPathInner {
+        position: absolute !important;
+        margin-top: 132px !important;
+        left: -49px !important;
+        top: 60.5px !important;
+
+    }
+
+    .tabLable {
+        font-size: 10px !important;
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    .dotes {
+        position: relative !important;
+        width: 22px !important;
+        height: 18px !important;
+    }
+
+}
+
+@media (max-height:437px) {
+
+    .pointerPathMain {
+
+        height: 160px !important;
+        width: 0.4px !important;
+        margin-top: 16px !important;
+        position: relative !important;
+        background: white !important;
+    }
+
+    .pointerPathInner {
+        position: absolute !important;
+        margin-top: 103px !important;
+        left: -49px !important;
+        top: 75px !important;
+
+    }
+
+    .tabLable {
+        font-size: 9px !important;
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    .dotes {
+        position: relative !important;
+        width: 18px !important;
+        height: 14px !important;
     }
 
 }

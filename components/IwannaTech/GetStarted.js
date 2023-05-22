@@ -59,7 +59,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
-                        <div className='relative overflow-hidden w-full h-[500px]  '>
+                        <div className='relative  w-full h-[426px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
 
                                 <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[500px]`} />
@@ -80,7 +80,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
-                        <div className='relative overflow-hidden w-full h-[600px]  '>
+                        <div className='relative  w-full h-[450px]  '>
                             <div className={`w-[600px] absolute bottom-[46px] right-[50.5px]`}>
 
                                 <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[600px]`} />
@@ -100,19 +100,19 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} bottom-16 `}>
 
-                    <div className={` relative  flex xl:mr-20 md:-mr-12 lg:-mr-16`}>
-                        <div className='relative overflow-hidden w-full h-[500px]  '>
-                            <div className={`w-[400px] absolute bottom-[46px] right-[50.5px]`}>
+                    <div className={` relative  flex xl:mr-20 md:-mr-12 lg:-mr-16 ${styles.getStarted}`}>
+                        <div className={`${styles.getstartedCompMain}`}>
+                            <div className={`${styles.getStartedRactComp}`}>
 
-                                <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={` w-[500px]`} />
+                                <Image src='/images/getStartedRectangle.png' width={1000} height={600} alt="wanna tech png" className={`${styles.getStartedRactImage}`} />
                             </div>
-                            <div className={`-rotate-[32deg] absolute -bottom-[130px] -right-[80.5px]  z-10 `}>
-                                <Image src='/images/SubtractHotpink.png' width={1000} height={600} alt="wanna tech png" className={` w-[450px]`} />
+                            <div className={`${styles.getStartedYellowBgComp} `}>
+                                <Image src='/images/SubtractHotpink.png' width={1000} height={600} alt="wanna tech png" className={`${styles.getStartedYellowBgImage}`} />
 
                             </div>
                         </div>
-                        <div className={` absolute bottom-[30px]  right-[60px] ${styles.imgRotate} w-[450px]`}>
-                            <Image src='/images/getStartedMan.png' width={1000} height={700} alt="wanna tech png" className={` `} />
+                        <div className={` ${styles.getStartedMainObjImageComp} ${styles.animateGetStartedMan} `}>
+                            <Image src='/images/getStartedMan.png' width={800} height={500} alt="wanna tech png" className={`${styles.getStartedManImage} `} />
                         </div>
 
                     </div>
