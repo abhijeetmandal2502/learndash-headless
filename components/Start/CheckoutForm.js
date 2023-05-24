@@ -4,6 +4,7 @@ import styles from '../Start/Start.module.css'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import Congratulation from "./DialogCard/Congratulation";
+import { MdLock } from "react-icons/md";
 
 const CheckoutForm = () => {
     const countries = ["China", "Russia", "UK"];
@@ -38,24 +39,25 @@ const CheckoutForm = () => {
                                     </div>
                                     <div className={`flex justify-between mb-2 ${styles.namelastnameInput}`}>
                                         <div className="max-w-[48%]">
-                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="first name" />
+                                            <input className="w-full p-1 leading-3 bg-white border smallf border-bordergray md:p-2" type="text" placeholder="first name" />
                                         </div>
                                         <div className="max-w-[48%]">
-                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="text" placeholder="last name" />
+                                            <input className="w-full p-1 leading-3 bg-white border smallf border-bordergray md:p-2" type="text" placeholder="last name" />
                                         </div>
                                     </div>
-                                    <div>
-                                        <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1" type="number" placeholder="**** **** **** *****" />
+                                    <div className="relative">
+                                        <input className="w-full p-1 leading-3 bg-white border smallf border-bordergray md:p-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" type="number" placeholder="**** **** **** *****" />
+                                        <MdLock className="mediumf absolute top-[30%] right-[2%]" />
                                     </div>
                                     <div className={`flex flex-row mt-2 space-x-2 ${styles.cardDetailForm}`}>
                                         <div>
-                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="mm/yy" />
+                                            <input className="w-full p-1 leading-3 bg-white border smallf border-bordergray md:p-2 " type="text" placeholder="mm/yy" />
                                         </div>
                                         <div>
-                                            <input className="w-full bg-white leading-3 text-gray-600 border smallf border-bordergray md:p-2 p-1 " type="email" placeholder="cvc" />
+                                            <input className="w-full p-1 leading-3 text-gray-600 bg-white border smallf border-bordergray md:p-2 " type="text" placeholder="cvc" />
                                         </div>
                                         <div>
-                                            <input className="w-full bg-white leading-3 border smallf border-bordergray md:p-2 p-1 " type="text" placeholder="zip" />
+                                            <input className="w-full p-1 leading-3 bg-white border smallf border-bordergray md:p-2 " type="text" placeholder="zip" />
                                         </div>
                                     </div>
                                 </div>
@@ -67,10 +69,10 @@ const CheckoutForm = () => {
                                 </div>
 
                                 <div className={`relative ${styles.passwordInput}`}>
-                                    <input className="w-full bg-white smallf leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
-                                    <div className="absolute cursor-pointer top-2 right-2">
+                                    <input className="w-full p-1 mb-2 leading-3 bg-white border border-gray smallf md:p-2" type="password" placeholder="create password" />
+                                    {/* <div className="absolute cursor-pointer top-2 right-2">
                                         <Image src="/images/eyeIcon.svg" width={22} height={15} className={`${styles.passEyeIcon}`} alt="show hide password icon" />
-                                    </div>
+                                    </div> */}
                                 </div>
 
                             </div>

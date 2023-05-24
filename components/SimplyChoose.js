@@ -143,7 +143,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                 <div className={` ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
                     <div className='relative grid grid-cols-11 overflow-y-scroll'>
-                        <div className={` relative md:col-span-6 col-span-12 md:pl-28 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
+                        <div className={` relative md:col-span-6 col-span-12 md:pl-[12%]  md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                             <div className='hidden md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
@@ -249,9 +249,11 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                 onClick={() => { handleClick(index, item) }}
                                             >
                                                 <div className='flex justify-between'>
-                                                    <div className='flex items-start justify-center space-x-1 font-bold mediumf'>
-                                                        <MdOutlineWatchLater size={25} className='' />
-                                                        <p className='font-bold mediumf'>{item.duration}</p>
+                                                    <div>
+                                                        <div className='flex items-center justify-center space-x-1 font-semibold mediumf'>
+                                                            <MdOutlineWatchLater className='largef' />
+                                                            <p className='font-bold mediumf'>{item.duration}</p>
+                                                        </div>
                                                     </div>
 
                                                     {/* course price components */}

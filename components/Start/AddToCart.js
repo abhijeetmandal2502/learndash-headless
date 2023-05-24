@@ -58,7 +58,7 @@ const AddToCart = () => {
             <div className={` relative grid grid-cols-9 bg-white my-4 mx-5 shadow-2xl  p-3 md:p-4 ${styles.addedItemList}`}>
                 <div className={`col-span-1 relative flex items-start justify-start`}>
                     <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px] ${styles.cartIcon}`} alt="empty basket" />
-                    <div className='absolute w-4 h-4 text-white rounded-full bg-voilet  right-0 -top-0 translate-x-0 translate-y-0'>
+                    <div className='absolute right-0 w-4 h-4 text-white translate-x-0 translate-y-0 rounded-full bg-voilet -top-0'>
                         <p className='flex items-center justify-center text-[10px]'>2</p>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ const AddToCart = () => {
                             <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>
                         </div>
                         <div className={`flex space-x-3 items-center`}>
-                            <p className=' text-black extlargef'>$40</p>
+                            <p className='text-black extlargef'>$40</p>
                             <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} />
                         </div>
                     </div>
@@ -96,7 +96,7 @@ const AddToCart = () => {
             </div>
 
             {/* checkout componets  */}
-            <div className={`${styles.readyToCheckoutBg} mt-3 mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
+            <div className={`${styles.readyToCheckoutBg} mt-[5%] mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
                 <div className={`flex justify-between items-center px-6 py-1 ${styles.addedItemList}`}>
                     <div className={`flex space-x-1 items-center  `}>
@@ -118,7 +118,7 @@ const AddToCart = () => {
             <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
 
                 <div className='px-3'>
-                    <input type="email" placeholder='your email' className={`w-full bg-white px-5 py-[6px] smallf mt-4 mb-2 border border-gray ${styles.emailspaing}`} />
+                    <input type="email" placeholder='your email' className={`w-full   mt-4 mb-2 border border-gray bg-white leading-3  smallf p-1  md:p-2 ${styles.emailspaing}`} />
 
                     <div className='flex items-center justify-between'>
                         {paymentCart?.map((item, id) => {
@@ -128,7 +128,7 @@ const AddToCart = () => {
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
                                             <Image className={`rounded-md ${styles.paymentIcon} `} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
-                                        <div className="tooltiptext extsmallf z-10">
+                                        <div className="z-10 tooltiptext extsmallf">
                                             <div className='relative'>
                                                 <span>{item.cardTooltips}</span>
                                                 <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />
@@ -161,7 +161,7 @@ const AddToCart = () => {
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
                                             <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
-                                        <div className="tooltiptext extsmallf z-10">
+                                        <div className="z-10 tooltiptext extsmallf">
                                             <div className='relative'>
                                                 <span>{item.cardTooltips}</span>
                                                 <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />

@@ -187,7 +187,7 @@ const Home = () => {
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
-                <div className='relative flex flex-col justify-between col-span-12 px-5 md:pl-28 md:col-span-6 '>
+                <div className='relative flex flex-col justify-between col-span-12 px-5 md:pl-[12%] md:col-span-6 '>
                     <div className='space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
                         {/* menu icon for small device */}

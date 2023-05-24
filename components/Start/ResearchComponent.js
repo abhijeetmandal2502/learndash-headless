@@ -40,20 +40,20 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
     return (
         <>
 
-            <div className='bg-transparent md:px-0 px-5 overflow-y-scroll h-full pb-16 z-1'>
+            <div className='h-full px-5 pb-16 overflow-y-scroll bg-transparent md:px-0 z-1'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
-                    <div className='flex space-x-2 justify-center items-center'>
+                    <div className='flex items-center justify-center space-x-2'>
 
-                        <h2 className='fourxllargef tracking-wide text-black'>
+                        <h2 className='tracking-wide text-black fourxllargef'>
                             using research
                             to market your practice
                         </h2>
                         {/* price component for mobile */}
 
                         <div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
-                            <div className='absolute top-[33%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                <div className='largef font-semibold text-white'>
+                            <div className='absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                <div className='font-semibold text-white mediumf'>
                                     $40
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                 setPanel(true)
                             }}>
                                 <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
-                                <div className=' text-center font-bold  smallf  text-[#FF5C00] '>
+                                <div className=' text-center font-bold  mediumf  text-[#FF5C00] '>
                                     +add
                                 </div>
                             </div>
@@ -79,7 +79,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                         </div>
                     </div>
-                    <div className='mt-2 -ml-2 cursor-pointer hidden md:block '>
+                    <div className='hidden mt-2 -ml-2 cursor-pointer md:block '>
                         <Image src="/start/horizontaladdbutton.svg" width={120} height={50} alt="btn" />
                     </div>
                     <div className={`flex items-center py-2 space-x-5 ${styles.authorCard}`}>
@@ -100,7 +100,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                             <h3 className='font-semibold text-black smallf'>4 Hours</h3>
                         </div>
                     </div>
-                    <p className='py-1 tracking-wide smallf text-black'>Do you know the difference in valid research and website hype? Learn basic concepts of research...</p>
+                    <p className='py-1 tracking-wide text-black smallf'>Do you know the difference in valid research and website hype? Learn basic concepts of research...</p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
                         onClick={() => { openModal(), setAboutCourse(true), setInstructor(false) }}
                         type="button"
@@ -113,7 +113,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                         return (
                             <div key={index} className='flex items-center space-x-4 py-0.3'>
                                 <AiOutlineCheck size={20} className={`text-[#9747FF] ${styles.checkIcon}`} />
-                                <p className='tracking-wider smallf text-black'>{item}</p>
+                                <p className='tracking-wider text-black smallf'>{item}</p>
                             </div>
                         )
                     })}
@@ -159,7 +159,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                             x
                                         </button>
                                     </div>
-                                    <div className='flex items-center justify-center md:pb-20 mt-2'>
+                                    <div className='flex items-center justify-center mt-2 md:pb-20'>
                                         {instructor ? <YourInstructor /> : ""}
                                         {aboutCourse ? <AboutCourse /> : ""}
                                     </div>
@@ -176,7 +176,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
             {/* checkout form for mobile */}
 
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                <div className="overflow-y-scroll z-50 ">
+                <div className="z-50 overflow-y-scroll ">
                     <div className="flex flex-col">
 
                         <Disclosure as="div" className='list-none rounded-full text-gray '>
@@ -185,8 +185,8 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                     <div className={`w-full `}>
                                         <div className={`bg-lightgray relative pt-10 z-50`}>
 
-                                            <h4 className='text-black text-left dubblelargef px-5'>simple checkout</h4>
-                                            <button className=' extlargef text-black absolute top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
+                                            <h4 className='px-5 text-left text-black dubblelargef'>simple checkout</h4>
+                                            <button className='absolute text-black extlargef top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
                                             <AddToCart />
