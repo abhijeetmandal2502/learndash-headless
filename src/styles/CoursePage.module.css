@@ -30,6 +30,64 @@
     }
 }
 
+@media screen and (max-height:650px) {
+    .mainDivGrid {
+        padding: 8px;
+    }
+
+    .discriptionAnimation {
+        line-height: 100% !important;
+    }
+
+}
+
+@media screen and (min-height:350px) {
+
+
+
+    .priceBack {
+        width: 57px !important;
+        height: 54px !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* .mainDiv>.gift {
+
+        background-image: url(/images/homeBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 75px !important;
+    }
+
+    .mainDiv:hover>.gift {
+
+        background-image: url(/images/homeColor.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 80px !important;
+    } */
+
+}
+
+@media screen and (min-height:651px) {
+
+
+    .mainDivGrid {
+        padding: auto;
+    }
+
+    .priceBack {
+        width: auto !important;
+        height: auto !important;
+        margin-bottom: auto !important;
+    }
+
+}
+
 @media screen and (min-width:426px) {
 
     .cardBackground {
@@ -280,6 +338,7 @@
 
 
 @media(max-height:992px) {
+
 
     .viewMoreIcon {
         width: 22px !important;
@@ -813,11 +872,13 @@
 
 @media screen and (min-width:992px) {
 
+
+
     .priceBack {
 
-        width: 69px !important;
-        height: 73px !important;
-        margin-bottom: 15px !important;
+        width: 69px;
+        height: 73px;
+        margin-bottom: 15px;
     }
 
 }
@@ -826,9 +887,9 @@
 
     .priceBack {
 
-        width: 69px !important;
-        height: 73px !important;
-        margin-bottom: 15px !important;
+        width: 69px;
+        height: 73px;
+        margin-bottom: 15px;
     }
 
 }
@@ -837,9 +898,9 @@
 
     .priceBack {
 
-        width: 69px !important;
-        height: 73px !important;
-        margin-bottom: 15px !important;
+        width: 69px;
+        height: 73px;
+        margin-bottom: 15px;
     }
 
 }
@@ -848,9 +909,9 @@
 
     .priceBack {
 
-        width: 69px !important;
-        height: 73px !important;
-        margin-bottom: 15px !important;
+        width: 69px;
+        height: 73px;
+        margin-bottom: 15px;
     }
 
 }
@@ -859,9 +920,9 @@
 
     .priceBack {
 
-        width: 69px !important;
-        height: 73px !important;
-        margin-bottom: 15px !important;
+        width: 69px;
+        height: 73px;
+        margin-bottom: 15px;
     }
 
 }
@@ -870,9 +931,9 @@
 
     .priceBack {
 
-        width: 69px !important;
-        height: 73px !important;
-        margin-bottom: 15px !important;
+        width: 69px;
+        height: 73px;
+        margin-bottom: 15px;
     }
 
 }

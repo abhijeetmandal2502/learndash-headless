@@ -128,9 +128,9 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const LogoImage = "/images/Logo.svg"
     return (
         <>
-            <div className="w-full relative">
+            <div className="relative w-full">
 
-                <div className="fixed md:hidden top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in -z-10">
+                <div className="fixed top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in md:hidden -z-10">
                     <Image
                         className={`${styles.aboutMain}`}
                         src="/images/start-bg.png"
@@ -142,9 +142,9 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                 </div>
 
                 <div className={` ${selectedCourse ? styles.hide1 : styles.fadeAnimation}`}>
-                    <div className='relative grid grid-cols-11   overflow-y-scroll'>
+                    <div className='relative grid grid-cols-11 overflow-y-scroll'>
                         <div className={` relative md:col-span-6 col-span-12 md:pl-28 md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
-                            <div className='hidden   md:block'>
+                            <div className='hidden md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
                             <div className='hidden md:block'>
@@ -154,7 +154,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
                                 <div className={`px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
-                                    <h2 className='superlargef text-black'>simply choose.</h2>
+                                    <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                         <div className={`md:col-span-5 col-span-12 relative 3xl:border-l border-gray `}>
                             <div className={`grid grid-cols-12  md:h-screen md:overflow-y-scroll no-scrollbar overflow-x-hidden relative ${start === true ? styles.gridMain : ""}`}>
 
-                                <div className={`relative hidden md:block ${styles.mainDiv} bg-transparent md:col-span-6  relative col-span-12 md:border border-t border-bordergray   py-5 pl-10 pr-5 md:mt-0 mt-5  flex flex-col justify-between    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} style={{ height: "33.33vh" }} onClick={() => { { handleGiftComponent(), handleClick() } }} >
+                                <div className={`relative hidden md:block ${styles.mainDiv} ${styles.mainDivGrid}  bg-transparent md:col-span-6  relative col-span-12 md:border border-t border-bordergray    md:py-5 md:pl-8 md:pr-5  md:mt-0 mt-5  flex flex-col justify-between    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `} style={{ height: "33.33vh" }} onClick={() => { { handleGiftComponent(), handleClick() } }} >
 
                                     <div className='flex justify-between'>
                                         <div className='flex items-center justify-center space-x-1'>
@@ -223,7 +223,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 </div>
 
                                 {/* gift shoppe card for mobile */}
-                                <div className={` md:hidden block ${styles.mainDiv} bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `}
+                                <div className={` md:hidden block ${styles.mainDiv} ${styles.mainDivGrid}  bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col    ${ShowGiftShoppi ? styles.cardBackground : styles.cardBackgroundHover} `}
                                     onClick={() => { { setActiveTabIndex(4) } }}
                                 >
                                     <div className='flex justify-between'>
@@ -232,7 +232,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                             <p className='font-bold mediumf'>{data[0].duration}</p>
                                         </div>
                                     </div>
-                                    <div className='flex justify-between items-center'>
+                                    <div className='flex items-center justify-between'>
                                         <Image src="/images/homeColor.svg" width={100} height={100} alt='home' />
                                         <p className={`md:pt-0 pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
                                             {data[0].discription}
@@ -245,13 +245,13 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} style={{ height: "33.33vh" }} className={` relative ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray py-5 pl-10 pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
+                                            <div key={index} style={{ height: "33.33vh" }} className={` ${styles.mainDivGrid}  relative ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
                                                 onClick={() => { handleClick(index, item) }}
                                             >
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-start justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} className='' />
-                                                        <p className='mediumf font-bold'>{item.duration}</p>
+                                                        <p className='font-bold mediumf'>{item.duration}</p>
                                                     </div>
 
                                                     {/* course price components */}
@@ -287,18 +287,18 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                                             </div>
                                             {/* for mobile */}
-                                            <div key={index} className={`md:hidden ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   p-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
+                                            <div key={index} className={`md:hidden ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
-                                                        <div><p className='mediumf font-bold'>{item.duration}</p></div>
+                                                        <div><p className='font-bold mediumf'>{item.duration}</p></div>
                                                     </div>
 
                                                     {/* course price components */}
 
                                                     <div className={` relative `} onClick={() => { setPanel(true), selectedCourseMethod(), drowerOpen() }}>
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                            <p className=' mediumf font-semibold text-white'>
+                                                            <p className='font-semibold text-white mediumf'>
                                                                 ${item.price}
                                                             </p>
                                                         </div>
@@ -329,7 +329,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                             </div>
 
                                             {/* gift shoppi course card */}
-                                            {ShowGiftShoppi ? <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray h-[33.33vh] md:p-10 p-5 md:mt-0 mt-5  flex flex-col justify-between`} >
+                                            {ShowGiftShoppi ? <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray h-[33.33vh] md:p-10 md:py-5 md:pl-10 md:pr-5 md:mt-0 mt-5  flex flex-col justify-between`} >
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1'>
                                                         <MdOutlineWatchLater />

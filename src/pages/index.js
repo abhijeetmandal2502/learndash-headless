@@ -187,8 +187,8 @@ const Home = () => {
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
-                <div className='relative flex flex-col justify-between col-span-12 px-5  md:pl-28 md:col-span-6 '>
-                    <div className=' space-x-5 cursor-pointer '>
+                <div className='relative flex flex-col justify-between col-span-12 px-5 md:pl-28 md:col-span-6 '>
+                    <div className='space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
                         {/* menu icon for small device */}
                         <div className='md:hidden'>
@@ -204,8 +204,8 @@ const Home = () => {
 
                     </div>
                     <div className={`w-full homepdmng ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
-                        <p className='superlargef   text-black '>massage ce.</p>
-                        <p className='superlargef text-black '> simplified. </p>
+                        <p className='text-black superlargef '>massage ce.</p>
+                        <p className='text-black superlargef '> simplified. </p>
                     </div>
 
                     {/* conceierge components */}
@@ -223,12 +223,11 @@ const Home = () => {
                             {/* first grid */}
                             <div className=' md:col-span-6 w-full h-[100vh] border-l border-gray'>
                                 {/* start components */}
-                                <div className={` w-full h-1/2 menuBoxsizebigMenu  flex flex-col overflow-hidden relative justify-center   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                <div className={` w-full h-1/2 menuBoxsizebigMenu  flex flex-col overflow-hidden relative justify-center  cursor-pointer   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
                                     <div className={` md:space-x-0 flex md:flex-col relative `}>
                                         <Door />
                                         <div className='w-full'>
-                                            <h3 className=' startFont
-                                              lineUp text-center'>start</h3>
+                                            <h3 className='text-center startFont lineUp'>start</h3>
                                             <p className={` extxlsmallf pt-1 ${Styles.hide1} text-center lineUp`}>start a course today!</p>
                                         </div>
                                     </div>
@@ -246,7 +245,7 @@ const Home = () => {
                                         </div>
 
                                         <div className='w-full'>
-                                            <h3 className='mt-1  font-semibold md:text-center triplelargef lineUp'>concierge</h3>
+                                            <h3 className='mt-1 font-semibold md:text-center triplelargef lineUp'>concierge</h3>
                                             <p className={` extxlsmallf ${styles.hide} text-center lineUp`}>have a question? get in touch!</p>
                                         </div>
                                     </div>
@@ -263,7 +262,7 @@ const Home = () => {
                                         </div>
 
                                         <div className={`w-full ${styles.content}`}>
-                                            <h3 className=' triplelargef lineUp text-center'>gift shoppe</h3>
+                                            <h3 className='text-center triplelargef lineUp'>gift shoppe</h3>
                                             <p className={`extxlsmallf ${styles.hide} text-center lineUp`}>gift ce to a friends</p>
                                         </div>
                                     </div>
@@ -283,7 +282,7 @@ const Home = () => {
                                             <Image alt='start' src='/images/iambackkey.svg' height='300' width='300' />
                                         </div>
                                         <div className='w-full'>
-                                            <h3 className=' triplelargef lineUp text-center'>i’m back</h3>
+                                            <h3 className='text-center triplelargef lineUp'>i’m back</h3>
                                             <p className={` extxlsmallf ${styles.hide} text-center  lineUp`}>existing user login</p>
                                         </div>
                                     </div>
@@ -295,13 +294,13 @@ const Home = () => {
                                 {/* ncbtmb approved component */}
 
                                 <div className={` w-full h-1/4 menuBoxsizesmallMenu   relative overflow-hidden border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}  `} onClick={() => ncbtmbMethod()}>
-                                    <div className=' cursor-pointer '>
+                                    <div className='cursor-pointer '>
                                         <div className='md:mx-auto ncbtmbImg ncbtmbShadow '>
                                             <Image alt='start' src='/images/NCBTMB.svg' height='400' width='400' />
                                         </div>
 
-                                        <div className=' w-full'>
-                                            <h3 className=' text-center triplelargef lineUp'>ncbtmb approved</h3>
+                                        <div className='w-full '>
+                                            <h3 className='text-center triplelargef lineUp'>ncbtmb approved</h3>
                                             <p className={` extxlsmallf ${styles.hide} text-center lineUp`}>check if your state is approved</p>
                                         </div>
                                     </div>
@@ -318,7 +317,7 @@ const Home = () => {
                                             <Image alt='start' src='/images/teacherLoungeNew.svg' height='200' width='150' />
                                         </div>
                                         <div className='w-full '>
-                                            <h3 className=' lineUp text-center triplelargef '>teacher’s lounge</h3>
+                                            <h3 className='text-center lineUp triplelargef'>teacher’s lounge</h3>
                                             <p className={` extxlsmallf  ${styles.hide} text-center  lineUp`}>existing instructor please login here!</p>
                                         </div>
                                     </div>
@@ -367,7 +366,7 @@ const Home = () => {
                     <div className='cursor-pointer '>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-12 left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                <p className='font-semibold largef text-black '>menu</p>
+                                <p className='font-semibold text-black largef '>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
@@ -385,12 +384,12 @@ const Home = () => {
             {/* drowable component */}
             <div className={` md:block hidden  ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                 <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
-                    <div className=" overflow-y-scroll">
+                    <div className="overflow-y-scroll ">
                         <div className="flex flex-col">
-                            <Disclosure as="div" className=' list-none rounded-full text-gray'>
+                            <Disclosure as="div" className='list-none rounded-full text-gray'>
                                 {({ open }) => (
                                     <>
-                                        <Disclosure.Button className=" w-full">
+                                        <Disclosure.Button className="w-full ">
                                             <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                         </Disclosure.Button>
                                         <Disclosure.Panel className="w-full py-1 text-white ">
@@ -411,7 +410,7 @@ const Home = () => {
                         <Disclosure as="div" className='list-none rounded-full text-gray'>
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="w-full z-50">
+                                    <Disclosure.Button className="z-50 w-full">
                                         <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                     </Disclosure.Button>
                                     <Disclosure.Panel className="w-full py-1 text-white ">

@@ -195,11 +195,11 @@ const Start = () => {
     return (
         <>
             <div className={`relative grid grid-cols-12 pl-[2%] ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
-                <div className=' flex flex-col   md:col-span-11 col-span-12   z-10'>
+                <div className='z-10 flex flex-col col-span-12  md:col-span-11'>
                     <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                         <LogoCard LogoImage="/images/WhiteLogo.svg" />
                         <Link href="/">
-                            <div className='flex md:hidden items-center justify-center mt-5    '
+                            <div className='flex items-center justify-center mt-5 md:hidden '
                             >
                                 <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                     <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
@@ -209,15 +209,15 @@ const Start = () => {
                         </Link>
                     </div>
 
-                    <div className='md:block hidden'>
-                        <div className='2xl:pl-14 md:pl-14 2xl:mt-2 mt-1 '>
+                    <div className='hidden md:block'>
+                        <div className='mt-1 2xl:pl-14 md:pl-14 2xl:mt-2 '>
                             <div className={`flex justify-between items-center space-x-5 cursor-pointer `}>
 
                                 <LogoCard LogoImage="/images/WhiteLogo.svg" />
 
                             </div>
                             <button className={`flex items-center space-x-1 bg-black text-white px-5 py-2 3xl:px-3 3xl:py-2.5 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-1`} onClick={() => { router.push('/') }} >
-                                <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='mediumf  font-semibold'>lobby</span></button>
+                                <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='font-semibold mediumf'>lobby</span></button>
                         </div>
                     </div>
 
@@ -250,10 +250,10 @@ const Start = () => {
                                     </svg>
                                 </div>
                             </div>
-                            <div className=' flex flex-col  justify-start items-start '>
+                            <div className='flex flex-col items-start justify-start '>
                                 {tabsData.map((tab, i) => {
                                     return (
-                                        <div key={i} className='flex  justify-start items-center '>
+                                        <div key={i} className='flex items-center justify-start '>
 
                                             {/* for desktop */}
                                             <div className={` hidden md:block  ${styles.dotes} ${i === activeTabIndex
@@ -263,7 +263,7 @@ const Start = () => {
                                                 ref={navRef}
                                                 onClick={() => { setActiveTabIndex(i) }}
                                             >
-                                                <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
+                                                <div className='absolute w-full -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>
                                                     <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
                                                 </div>
                                                 <div
@@ -283,7 +283,7 @@ const Start = () => {
 
                                                 onClick={() => { setActiveTabIndex(i) }}
                                             >
-                                                <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
+                                                <div className='absolute w-full -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>
                                                     <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
                                                 </div>
                                                 <div
@@ -332,16 +332,16 @@ const Start = () => {
                         </div >
                     </div >
                 </div >
-                <div className='col-span-12  p-4 max-sm:invisible md:col-span-1 hidden md:flex justify-center items-center relative h-screen w-full border-l border-white z-50 '>
-                    <div className=' cursor-pointer'>
-                        <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
+                <div className='relative z-50 items-center justify-center hidden w-full h-screen col-span-12 p-4 border-l border-white max-sm:invisible md:col-span-1 md:flex '>
+                    <div className='cursor-pointer '>
+                        <div className='absolute flex items-center justify-center -translate-x-1/2 top-5 left-1/2 '
                             onClick={() => { router.push('/') }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white 3xl:text-[30px] '>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
-                        <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
+                        <div className='absolute -translate-x-1/2  bottom-5 left-1/2'>
                             <MusicCard textColor="text-white" />
                         </div>
                     </div>
