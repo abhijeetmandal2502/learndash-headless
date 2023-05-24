@@ -40,7 +40,7 @@ const WhyUs = ({ activeTabIndex }) => {
                             <Image src='/images/man.png' width={500} height={350} alt="wanna tech png" className={` `} />
                         </div>
                         {/* logo for mobile */}
-                        <div className=' absolute top-20 left-3'>
+                        <div className='absolute top-20 left-3'>
                             <Image src="/images/WhiteLogo.svg" width="100" height="200" alt="tech logo" />
                         </div>
 
@@ -48,12 +48,12 @@ const WhyUs = ({ activeTabIndex }) => {
                 </div>
 
 
-                <div className='col-span-12 md:col-span-4 flex justify-center items-strat'>
+                <div className='flex justify-center col-span-12 md:col-span-4 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold md:text-[40px] triplelargef ${styles.shadow} md:leading-[80px] tracking-wide`}>Why Us?</h2>
-                        <h4 className='mediumf md:text-[35px] font-semibold 3xl:py-8 py-4'>because we’re</h4>
-                        <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" />
-                        <p className='text-white font-bold smallf pt-5'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                        <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>why us?</h2>
+                        <h4 className='py-4 font-semibold fourxllargef 3xl:py-8'>because we’re</h4>
+                        <Image src="/images/WhiteLogo.svg" width="400" height="250" alt="tech logo" />
+                        <p className='pt-5 font-semibold lowercase leading-[130%] text-white 2xl:pt-10 2xl:tracking-wide  largef'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
                             <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>
 
@@ -64,7 +64,7 @@ const WhyUs = ({ activeTabIndex }) => {
 
                 <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-0`}>
-                        <div className='relative overflow-hidden w-full h-[500px]  '>
+                        <div className='relative overflow-hidden w-full h-[500px] 2xl:h-[480px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
 
                                 <Image src='/images/RectangleWhyUs.png' width={1000} height={600} alt="wanna tech png" className={` w-[500px]`} />
@@ -104,7 +104,7 @@ const WhyUs = ({ activeTabIndex }) => {
 
                 <div className={`relative col-span-12 md:col-span-8 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  `}>
 
-                    <div className={` relative  xl:mr-20 md:-mr-10 mr-0`}>
+                    <div className={` relative   md:mr-16 mr-8`}>
                         <div className={`${styles.imageCompMain}`}>
                             <div className={`${styles.whyUsRactComp}`}>
                                 <Image src='/images/RectangleWhyUs.png' width={1000} height={600} alt="wanna tech png" className={`${styles.whyUsRactImage}`} />

@@ -10,7 +10,8 @@
 
 .shadow {
 
-    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
+    /* filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3)); */
+    text-shadow: 0px 14px 16px rgba(0, 0, 0, 0.3);
 }
 
 .shadowHover:hover {
@@ -363,6 +364,10 @@
         margin-right: 40px;
     }
 
+    .imgbox {
+        width: 84%;
+    }
+
 }
 
 
@@ -374,6 +379,7 @@
     overflow: hidden;
     width: 100%;
     height: 450px;
+
 }
 
 
@@ -465,7 +471,16 @@
 /* responsive for destop */
 
 @media (max-height:750px) {
+
     /* why us image animated image components */
+
+    .imgbox {
+        width: 84%;
+    }
+
+    .bottomContent {
+        bottom: 0%;
+    }
 
     .imageCompMain {
 
@@ -473,6 +488,7 @@
         overflow: hidden;
         width: 100%;
         height: 416px;
+
     }
 
 
@@ -560,15 +576,28 @@
 }
 
 
-@media (max-height:600px) {
+
+
+@media (max-height:700px) {
     /* why us image animated image components */
+
+    .imgbox {
+        width: 64%;
+    }
+
+
+    .bottomContent {
+        bottom: 18%;
+    }
 
     .imageCompMain {
 
         position: relative;
         overflow: hidden;
         width: 100%;
-        height: 416px;
+        /* height: 416px; */
+        height: 468px;
+
     }
 
 
@@ -584,34 +613,57 @@
     }
 
     .whyUsYellowBgComp {
-        position: absolute;
+        /* position: absolute;
         bottom: -76px;
         right: -95px;
         z-index: 10;
-        transform: rotate(-27deg);
+        transform: rotate(-27deg); */
+        position: absolute;
+        bottom: -56px;
+        right: -106px;
+        z-index: 10;
+        transform: rotate(-31deg);
     }
 
     .whyUsYellowBgImage {
-        width: 450px;
+        /* width: 450px; */
+        width: 426px;
+
     }
 
     .whyUsMainObjImageComp {
-        position: absolute;
+        /* position: absolute;
         bottom: 105px;
         right: 37px;
-        width: 390px;
+        width: 390px; */
+        position: absolute;
+        bottom: 98px;
+        right: 37px;
+        width: 399px;
     }
 }
 
 @media (max-height:500px) {
+
     /* why us image animated image components */
+
+    .imgbox {
+        width: 48%;
+    }
+
+    .bottomContent {
+        bottom: 14%;
+    }
+
 
     .imageCompMain {
 
         position: relative;
         overflow: hidden;
         width: 100%;
-        height: 380px;
+        /* height: 380px; */
+        height: 438px;
+
     }
 
 
@@ -632,6 +684,11 @@
         right: -95px;
         z-index: 10;
         transform: rotate(-31deg);
+        /* position: absolute;
+        bottom: -21px;
+        right: -36px;
+        z-index: 10;
+        transform: rotate(-31deg); */
     }
 
     .whyUsYellowBgImage {
@@ -696,8 +753,8 @@
     }
 
 
-    .getStarted {
+    /* .getStarted {
 
         margin-right: -7rem;
-    }
+    } */
 }

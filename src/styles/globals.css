@@ -1144,7 +1144,7 @@ ol {
   }
 
   .largef {
-    font-size: 15px !important;
+    font-size: 20px !important;
 
   }
 
@@ -1215,7 +1215,7 @@ ol {
   }
 
   .largef {
-    font-size: 15px !important;
+    font-size: 20px !important;
   }
 
   .extlargef {
@@ -1242,8 +1242,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 16px !important;
-    line-height: 19px !important;
+    font-size: 16px;
+    line-height: 19px;
   }
 
   .superlargef {
@@ -1371,7 +1371,7 @@ ol {
   }
 
   .largef {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
   .extlargef {
@@ -2440,7 +2440,7 @@ ol {
   }
 
   .largef {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 
   .extlargef {
@@ -2457,6 +2457,11 @@ ol {
 
   .fourxllargef {
     font-size: 36px !important;
+  }
+
+  .fivexllargef {
+    font-size: 40px;
+
   }
 
   .superlargef {
@@ -2512,6 +2517,11 @@ ol {
     line-height: 45px;
   }
 
+  .fivexllargef {
+    font-size: 40px;
+
+  }
+
   .superlargef {
     font-size: 55px;
     letter-spacing: 0.001em;
@@ -2536,6 +2546,102 @@ ol {
 
 
 }
+
+
+/* cutom font size for max screen size 1280 or default size of all types fonts */
+@media only screen and (min-width:992px) {
+  .extsmallf {
+    font-size: 13px;
+  }
+
+  .minismallf {
+    font-size: 15px;
+  }
+
+  .smallf {
+    font-size: 10px;
+  }
+
+  .mediumf {
+    font-size: 11px;
+  }
+
+  .largef {
+    font-size: 14px;
+  }
+
+  .extlargef {
+    font-size: 16px;
+  }
+
+  .dubblelargefXXL {
+    font-size: 18px;
+  }
+
+  .dubblelargef {
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 1px;
+  }
+
+  .triplelargef {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 20px;
+
+  }
+
+  .triplelargefXXXL {
+    font-size: 40px;
+    line-height: 57px;
+    font-weight: 400;
+
+  }
+
+  .fourxllargef {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .supermediumf {
+    font-size: 41px;
+    letter-spacing: -1.5px;
+    line-height: 45px;
+
+  }
+
+  .fivexllargef {
+    font-size: 38px;
+
+  }
+
+  .superlargef {
+    font-size: 50px;
+    letter-spacing: 0.001em;
+    line-height: 50px;
+  }
+
+  .startFont {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-top: 10px;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
+
+
+}
+
 
 /* cutom font size for max screen size 1024 or default size of all types fonts */
 @media only screen and (min-width:1024px) {
@@ -2579,6 +2685,10 @@ ol {
     font-weight: 600;
   }
 
+  .dubblelargefXXL {
+    font-size: 18px;
+  }
+
   .fourxllargef {
     font-size: 45px;
     line-height: 50px;
@@ -2588,6 +2698,11 @@ ol {
     font-size: 45px;
     letter-spacing: -1.5px;
     line-height: 50px;
+  }
+
+  .fivexllargef {
+    font-size: 42px;
+
   }
 
   .superlargef {
@@ -2601,91 +2716,6 @@ ol {
     font-weight: 500;
     line-height: 44px;
     margin-top: -14px;
-
-  }
-
-  /* menu boxsize */
-  /* .menuBoxsizebigMenu {
-    min-height: 200px;
-  }
-
-  .menuBoxsizesmallMenu {
-    min-height: 180px;
-  } */
-
-
-}
-
-/* cutom font size for max screen size 1280 or default size of all types fonts */
-@media only screen and (min-width:992px) {
-  .extsmallf {
-    font-size: 13px;
-  }
-
-  .minismallf {
-    font-size: 15px;
-  }
-
-  .smallf {
-    font-size: 10px;
-  }
-
-  .mediumf {
-    font-size: 11px;
-  }
-
-  .largef {
-    font-size: 14px;
-  }
-
-  .extlargef {
-    font-size: 16px;
-  }
-
-  .dubblelargef {
-    font-size: 17px;
-    line-height: 21px;
-    letter-spacing: 1px;
-  }
-
-  .triplelargef {
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    line-height: 20px;
-
-  }
-
-  .triplelargefXXXL {
-    font-size: 40px;
-    line-height: 57px;
-    font-weight: 400;
-
-  }
-
-  .fourxllargef {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .supermediumf {
-    font-size: 41px;
-    letter-spacing: -1.5px;
-    line-height: 45px;
-
-  }
-
-  .superlargef {
-    font-size: 50px;
-    letter-spacing: 0.001em;
-    line-height: 50px;
-  }
-
-  .startFont {
-    font-size: 35px;
-    font-weight: 500;
-    line-height: 44px;
-    margin-top: 10px;
 
   }
 
@@ -2720,7 +2750,7 @@ ol {
   }
 
   .largef {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .extlargef {
@@ -2750,6 +2780,15 @@ ol {
   .fourxllargef {
     font-size: 28px;
     line-height: 35px;
+  }
+
+  .fivexllargef {
+    font-size: 48px;
+
+  }
+
+  .dubblelargefXXL {
+    font-size: 20px;
   }
 
 
@@ -2817,6 +2856,10 @@ ol {
     font-size: 25px;
   }
 
+  .dubblelargefXXL {
+    font-size: 22px;
+  }
+
   .dubblelargef {
     font-size: 19px;
   }
@@ -2838,6 +2881,11 @@ ol {
   .fourxllargef {
     font-size: 30px;
     line-height: 40px;
+  }
+
+  .fivexllargef {
+    font-size: 52px;
+
   }
 
   .supermediumf {
@@ -2895,7 +2943,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .extlargef {
@@ -2913,9 +2961,19 @@ ol {
     line-height: 30px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 24px;
+  }
+
+
   .fourxllargef {
     font-size: 28px;
     line-height: 35px;
+  }
+
+  .fivexllargef {
+    font-size: 56px;
+
   }
 
   .superlargef {
@@ -2965,7 +3023,7 @@ ol {
   }
 
   .largef {
-    font-size: 16px;
+    font-size: 22px;
   }
 
   .extlargef {
@@ -2989,11 +3047,21 @@ ol {
     line-height: 50px;
   }
 
+  .dubblelargefXXL {
+    font-size: 28px;
+  }
+
   .supermediumf {
     font-size: 61px;
     letter-spacing: -1.5px;
     line-height: 69px;
   }
+
+  .fivexllargef {
+    font-size: 60px;
+
+  }
+
 
   .superlargef {
     font-size: 65px;
@@ -3055,7 +3123,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .extlargef {
@@ -3072,7 +3140,7 @@ ol {
   }
 
   .dubblelargefXXL {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .dubblelargefXXXL {
@@ -3112,6 +3180,11 @@ ol {
   .fourxllargef {
     font-size: 37px;
     line-height: 48px;
+  }
+
+  .fivexllargef {
+    font-size: 64px;
+
   }
 
   .supermediumf {
@@ -3176,7 +3249,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .extlargef {
@@ -3193,7 +3266,7 @@ ol {
   }
 
   .dubblelargefXXL {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .dubblelargefXXXL {
@@ -3241,6 +3314,11 @@ ol {
     font-size: 61px;
     letter-spacing: -1.5px;
     line-height: 69px;
+  }
+
+  .fivexllargef {
+    font-size: 66px;
+
   }
 
   .superlargef {
@@ -3301,7 +3379,7 @@ ol {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .extlargef {
@@ -3319,7 +3397,7 @@ ol {
   }
 
   .dubblelargefXXL {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .dubblelargefXXXL {
@@ -3360,6 +3438,11 @@ ol {
     font-size: 40px;
     line-height: 50px;
   }
+
+  .fivexllargef {
+    font-size: 70px;
+  }
+
 
   .supermediumf {
     font-size: 61px;

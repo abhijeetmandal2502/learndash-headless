@@ -9,23 +9,23 @@ const Needed = () => {
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
 
-                <div className=' md:hidden  col-span-12 md:col-span-7 flex justify-center items-start '>
+                <div className='flex items-start justify-center col-span-12 md:hidden md:col-span-7'>
                     <div className={`${styles.shadow} ${styles.imgRotate}  `}>
                         <Image src='/images/needed.png' width={350} height={350} alt="wanna tech png" className={``} />
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
+                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold md:text-[40px] triplelargef ${styles.shadow} 2xl:leading-[80px] 3xl:leading-[100px] 4xl:leading-[100px] lg:leading-[60px]  tracking-wide`}>what’s needed?</h2>
+                        <h2 className={`text-white font-semibold leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>what’s <br />needed?</h2>
 
-                        <p className='text-white font-bold smallf pt-5'> Both you AND your course need to already be approved by NCBTMB
+                        <p className='pt-5 font-semibold xl:max-w-[90%] text-white lowercase largef'> Both you AND your course need to already be approved by NCBTMB
                             <br></br><br></br>  Also, your course cannot teach Massage Technique, or Soft Tissue Manipulation.</p>
-                        <h4 className='2xl:text-[35px] 3xl:2xl:text-[50px] lg:text-[25px] font-semibold 3xl:py-6 py-4'>cool! glad you’re here!!</h4>
+                        <h4 className='py-4 font-semibold dubblelargef 3xl:py-6'>cool! glad you’re here!!</h4>
 
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-7 hidden md:flex justify-center items-start -mt-16 xl:-mt-16 lg:-mt-10'>
-                    <div className={`${styles.shadow} ${styles.imgRotate}  `}>
+                <div className='items-start justify-center hidden col-span-12 -mt-16 md:col-span-7 md:flex xl:-mt-16 lg:-mt-10'>
+                    <div className={`${styles.shadow} ${styles.imgRotate} ${styles.imgbox} `}>
                         <Image src='/images/needed.png' width={550} height={550} alt="wanna tech png" className={`3xl:w-[700px] 3xl:h-[700px]
                         4xl:w-[900px] 4xl:h-[900px]`} />
                     </div>

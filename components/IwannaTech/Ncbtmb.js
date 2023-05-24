@@ -9,24 +9,24 @@ const Ncbtmb = () => {
         <>
             <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
 
-                <div className='col-span-12 md:col-span-7 flex justify-center items-start md:hidden '>
+                <div className='flex items-start justify-center col-span-12 md:col-span-7 md:hidden '>
                     <div className={`${styles.shadow} ${styles.imgRotate} `}>
                         <Image src='/images/ncbtmbOrange.png' width={250} height={250} alt="wanna tech png" className={``} />
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
+                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white font-[600]  md:text-[45px] dubblelargef  ${styles.shadow} xl:leading-[70px] 3xl:leading-[75px] lg:leading-[50px] leading-[35px] md:leading-[50px]  tracking-wide`}>are both you <span className='border-b-4'>and</span> your course ncbtmb approved?</h2>
-                        <button className=' cursor-pointer mt-5 rounded-3xl border border-white px-7 py-2.5 text-white font-normal mediumf  hover:text-black  hover:bg-white transition-all ease-in-out duration-1000'>
+                        <h2 className={`text-white font-[600] leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>are both you<br /> <span className='border-b-4'>and</span> your<br /> course ncbtmb approved?</h2>
+                        <button className=' cursor-pointer mt-5 rounded-3xl border xl:border-2 border-white px-7 py-2.5 text-white font-normal mediumf  hover:text-black  hover:bg-white transition-all ease-in-out duration-1000'>
                             if not, click here!
                         </button>
-                        <h4 className=' extlargef font-bold xl:py-4 md:py-4 3xl:md:py-6 py-4'>That’s kind of a big deal</h4>
-                        <p className='text-white font-bold  mediumf  xl:pt-5 lg:pt-0 md:py-4'> Compliance requires both Provider and Course to be pre-approved.</p>
+                        <h4 className='pt-5 font-semibold fourxllargef 2xl:pt-10 '>that’s kind of a big deal</h4>
+                        <p className='font-semibold text-white lowercase largef lg:pt-0 '> Compliance requires both Provider and Course to be pre-approved.</p>
 
                     </div>
                 </div>
-                <div className='col-span-12 md:col-span-7 hidden md:flex justify-center items-start xl:-mt-16 lg:-mt-10 -mt-10 '>
-                    <div className={`${styles.shadow} ${styles.imgRotate} `}>
+                <div className='items-start justify-center hidden col-span-12 -mt-10 md:col-span-7 md:flex xl:-mt-16 lg:-mt-10 '>
+                    <div className={`${styles.shadow} ${styles.imgRotate} ${styles.imgbox}`}>
                         <Image src='/images/ncbtmbOrange.png' width={550} height={550} alt="wanna tech png" className={`3xl:w-[700px] 3xl:h-[700px]
                         4xl:w-[900px] 4xl:h-[900px]`} />
                     </div>

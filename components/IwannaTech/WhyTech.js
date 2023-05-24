@@ -29,26 +29,31 @@ const WhyTech = () => {
     ]
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={` bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
 
                 <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start 2xl:-mt-20 md:hidden`}>
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 
-                <div className='col-span-12 md:col-span-6 flex justify-center items-strat'>
+                <div className='flex justify-center col-span-12 md:col-span-6 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold  md:text-[45px] dubblelargef ${styles.shadow} leading-[80px] tracking-wide`}>Why teach?</h2>
+                        <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} tracking-wide`}>Why teach?</h2>
                         {
                             data?.map((item, id) => {
                                 return (<>
-                                    <div key={id} className='2xl:py-2 py-1'>
-                                        <div className='flex space-x-2 items-center'>
+                                    <div key={id} className='py-1 2xl:py-2'>
+                                        <div className='flex items-center space-x-2'>
                                             <div className='p-1.5 rounded-full bg-white'>
-                                                <FaCheck className='font-bold 3xl:w-7 3xl:h-7' size={15} />
+                                                <FaCheck className='font-bold 3xl:w-5 3xl:h-5' size={15} />
                                             </div>
-                                            <h6 className='font-bold md:text-[18px] smallf'>{item.title}</h6>
+                                            <p className='font-semibold leading-4 dubblelargefXXL'>{item.title}</p>
                                         </div>
-                                        <p className=' font-thin smallf text-white'>{item.content}</p>
+                                        <div className='flex items-center space-x-2'>
+                                            <div className='p-1.5 opacity-0 rounded-full bg-white'>
+                                                <FaCheck className='font-bold 3xl:w-5 3xl:h-2' size={15} />
+                                            </div>
+                                            <p className='font-thin leading-7 text-white 2xl:leading-10 mediumf'>{item.content}</p>
+                                        </div>
                                     </div>
                                 </>)
                             })
@@ -57,7 +62,7 @@ const WhyTech = () => {
                     </div>
                 </div>
 
-                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 md:flex justify-center items-start 2xl:-mt-20   hidden `}>
+                <div className={`${styles.shadow}  ${styles.imgRotate} ${styles.imgbox}  col-span-12 md:col-span-6 md:flex justify-center items-start 2xl:-mt-20   hidden `}>
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 

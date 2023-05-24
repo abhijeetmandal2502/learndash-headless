@@ -26,7 +26,7 @@ const GetStarted = ({ activeTabIndex }) => {
                 {/* for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  ${styles.imgcenter}`}>
 
-                    <div className={` relative  flex  `}>
+                    <div className={` relative  flex   `}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
                             <div className={`w-[175px] absolute bottom-[40px] right-[20px]`}>
 
@@ -43,14 +43,14 @@ const GetStarted = ({ activeTabIndex }) => {
                     </div>
                 </div>
 
-                <div className='col-span-12 md:col-span-5 flex justify-center items-strat'>
+                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold md:text-[40px] triplelargef  ${styles.shadow} leading-[50px] md:leading-[60px] 2xl:leading-[80px] 3xl:leading-[100px] 4xl:leading-[110px] tracking-wide`}>ready to get started?
+                        <h2 className={`text-white font-semibold fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>ready to get started?
                         </h2>
-                        <button className=' mt-5 rounded-3xl border border-white px-7 py-2.5 text-white font-normal largef  hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
+                        <button className=' mt-5 rounded-3xl border xl:border-2 border-white px-7 py-2.5 text-white font-normal largef  hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
                             click here!
                         </button>
-                        <p className='text-white font-bold smallf  tracking-wide pt-5'> Your time has come! Make it happen!</p>
+                        <p className='pt-5 font-semibold xl:max-w-[90%] text-white lowercase largef'> Your time has come! Make it happen!</p>
 
                     </div>
                 </div>
@@ -58,7 +58,7 @@ const GetStarted = ({ activeTabIndex }) => {
                 {/* for desktop  */}
 
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
-                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                    <div className={` relative  flex  mr-20 2xl:mr-16`}>
                         <div className='relative  w-full h-[426px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
 
@@ -79,7 +79,7 @@ const GetStarted = ({ activeTabIndex }) => {
                 {/* for extra large device */}
 
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
-                    <div className={` relative  flex 2xl:mr-20  mr-0`}>
+                    <div className={` relative  flex 2xl:mr-20  mr-`}>
                         <div className='relative  w-full h-[450px]  '>
                             <div className={`w-[600px] absolute bottom-[46px] right-[50.5px]`}>
 
@@ -100,7 +100,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} bottom-16 `}>
 
-                    <div className={` relative  flex xl:mr-20 md:-mr-12 lg:-mr-16 ${styles.getStarted}`}>
+                    <div className={` relative  flex mr-8 ${styles.getStarted}`}>
                         <div className={`${styles.getstartedCompMain}`}>
                             <div className={`${styles.getStartedRactComp}`}>
 
