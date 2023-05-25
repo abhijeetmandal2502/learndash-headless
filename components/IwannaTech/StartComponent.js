@@ -18,13 +18,13 @@ const StartComponent = () => {
                     <div>
                         <h2 className={`text-white md:font-semibold leading-[100%]    fivexllargef font-bold ${styles.shadow} tracking-wide`}>so you <br />  wanna teach?</h2>
                         <p className='mt-2 font-thin text-white md:mt-2 lg:mt-4 dubblelargef'>cool! glad you’re here!</p>
-                        <p className='mt-5 md:mt-10 triplelargef '>look around!</p>
+                        <p className='mt-[4%]  triplelargef '>look around!</p>
                     </div>
                 </div>
 
                 {/* image for desktop */}
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove} ${styles.imgbox}  col-span-12 md:col-span-6 md:flex hidden justify-center items-start 2xl:-mt-16 lg:-mt-0  `}>
-                    <Image src='/images/iwannatech.png' width={700} height={700} alt="wanna tech png" className={``} />
+                    <Image src='/images/iwannatech.png' width={600} height={600} alt="wanna tech png" className={``} />
                 </div>
 
             </div>

@@ -364,9 +364,6 @@
         margin-right: 40px;
     }
 
-    .imgbox {
-        width: 84%;
-    }
 
 }
 
@@ -474,8 +471,12 @@
 
     /* why us image animated image components */
 
-    .imgbox {
+    .imgbox img {
         width: 84%;
+    }
+
+    .imgboxcommi img {
+        width: 60%;
     }
 
     .bottomContent {
@@ -581,8 +582,13 @@
 @media (max-height:700px) {
     /* why us image animated image components */
 
-    .imgbox {
-        width: 64%;
+    .imgbox img {
+        /* width: 64%; */
+        width: 80%;
+    }
+
+    .imgboxcommi img {
+        width: 50%;
     }
 
 
@@ -647,8 +653,13 @@
 
     /* why us image animated image components */
 
-    .imgbox {
-        width: 48%;
+    .imgbox img {
+        /* width: 48%; */
+        width: 65%;
+    }
+
+    .imgboxcommi img {
+        width: 40%;
     }
 
     .bottomContent {
@@ -670,17 +681,17 @@
     .whyUsRactComp {
         position: absolute;
         width: 307px;
-        bottom: 116px;
-        right: 50.5px;
+        bottom: 158px;
+        right: -22.5px;
     }
 
     .whyUsRactImage {
-        width: 300px;
+        width: 263px;
     }
 
     .whyUsYellowBgComp {
         position: absolute;
-        bottom: -46px;
+        bottom: -36px;
         right: -95px;
         z-index: 10;
         transform: rotate(-31deg);
@@ -697,9 +708,126 @@
 
     .whyUsMainObjImageComp {
         position: absolute;
-        bottom: 105px;
+        bottom: 152px;
+        right: -8px;
+        width: 315px;
+    }
+
+
+    /* get started componet */
+
+
+    .getstartedCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 340px;
+    }
+
+
+    .getStartedRactComp {
+        position: absolute;
+        width: 345px;
+        bottom: 108px;
+        right: 24.5px;
+    }
+
+    .getStartedRactImage {
+        width: 243px;
+    }
+
+    .getStartedYellowBgComp {
+        position: absolute;
+        bottom: 3px;
+        right: 54px;
+        z-index: 10;
+        transform: rotate(-32deg);
+    }
+
+    .getStartedYellowBgImage {
+        width: 261px;
+    }
+
+
+    .getStartedMainObjImageComp {
+
+        position: absolute;
+        bottom: 86px;
+        right: -4px;
+        width: 404px
+    }
+
+    .getStartedManImage {
+
+        width: 276px;
+    }
+
+
+    /* .getStarted {
+
+        margin-right: -7rem;
+    } */
+}
+
+
+@media (max-height:450px) {
+
+    /* why us image animated image components */
+
+    .imgbox img {
+        /* width: 48%; */
+        width: 65%;
+    }
+
+    .imgboxcommi img {
+        width: 40%;
+    }
+
+    .bottomContent {
+        bottom: 14%;
+    }
+
+
+    .imageCompMain {
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        /* height: 380px; */
+        height: 448px;
+
+    }
+
+
+    .whyUsRactComp {
+        position: absolute;
+        width: 307px;
+        bottom: 220px;
+        right: -35.5px;
+    }
+
+    .whyUsRactImage {
+        width: 226px;
+    }
+
+    .whyUsYellowBgComp {
+        position: absolute;
+        bottom: 90px;
+        right: -95px;
+        z-index: 10;
+        transform: rotate(-31deg);
+    }
+
+    .whyUsYellowBgImage {
+        width: 324px;
+    }
+
+    .whyUsMainObjImageComp {
+        position: absolute;
+        bottom: 218px;
         right: 37px;
-        width: 359px;
+        width: 240px;
     }
 
 

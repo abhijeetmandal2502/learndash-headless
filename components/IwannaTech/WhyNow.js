@@ -25,12 +25,18 @@ const WhyNow = () => {
                             We want to help you succeed and we have created a nice e-learning platform to do it!</p>
                     </div>
                 </div>
-                <div className='items-start justify-center hidden col-span-12 md:col-span-7 md:flex'>
+                {/* <div className='items-start justify-center hidden col-span-12 md:col-span-7 md:flex'>
                     <div className={`${styles.shadow} ${styles.scaleAnimation} ${styles.imgbox} -mt-10 `}>
                         <Image src='/images/whyNow.png' width={500} height={500} alt="wanna tech png" className={`3xl:w-[700px] 3xl:h-[700px]
                         4xl:w-[900px] 4xl:h-[900px]`} />
                     </div>
+                </div> */}
+
+                {/* image for desktop */}
+                <div className={`${styles.shadow} ${styles.scaleAnimation}  ${styles.imgbox}  col-span-12 md:col-span-6 md:flex hidden justify-center items-start 2xl:-mt-16 lg:-mt-0  `}>
+                    <Image src='/images/whyNow.png' width={600} height={600} alt="wanna tech png" className={``} />
                 </div>
+
 
             </div>
         </>

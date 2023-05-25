@@ -24,11 +24,15 @@ const Needed = () => {
 
                     </div>
                 </div>
-                <div className='items-start justify-center hidden col-span-12 -mt-16 md:col-span-7 md:flex xl:-mt-16 lg:-mt-10'>
+                {/* <div className='items-start justify-center hidden col-span-12 -mt-16 md:col-span-7 md:flex xl:-mt-16 lg:-mt-10'>
                     <div className={`${styles.shadow} ${styles.imgRotate} ${styles.imgbox} `}>
                         <Image src='/images/needed.png' width={550} height={550} alt="wanna tech png" className={`3xl:w-[700px] 3xl:h-[700px]
                         4xl:w-[900px] 4xl:h-[900px]`} />
                     </div>
+                </div> */}
+
+                <div className={`${styles.shadow} ${styles.imgRotate}  ${styles.imgbox} mt-[-15%]  col-span-12 md:col-span-6 md:flex hidden justify-center items-start  `}>
+                    <Image src='/images/needed.png' width={600} height={600} alt="wanna tech png" className={``} />
                 </div>
 
             </div>

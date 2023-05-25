@@ -23,9 +23,9 @@ const Create = () => {
 
                     </div>
                 </div>
-                <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove} ${styles.imgbox} col-span-12 md:col-span-7 hidden md:flex justify-center items-start xl:-mt-5 lg:-mt-3 -mt-5  `} >
-                    <Image src='/images/create.png' width={550} height={550} alt="wanna tech png" className={`3xl:w-[700px] 3xl:h-[700px]
-                        4xl:w-[900px] 4xl:h-[900px]`} />
+
+                <div className={`${styles.shadow}   ${styles.vertmove}  ${styles.imgbox}  col-span-12 md:col-span-6 md:flex hidden justify-center items-start 2xl:-mt-16 lg:-mt-0  `}>
+                    <Image src='/images/create.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 
             </div>

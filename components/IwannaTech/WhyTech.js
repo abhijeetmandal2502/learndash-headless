@@ -44,15 +44,15 @@ const WhyTech = () => {
                                     <div key={id} className='py-1 2xl:py-2'>
                                         <div className='flex items-center space-x-2'>
                                             <div className='p-1.5 rounded-full bg-white'>
-                                                <FaCheck className='font-bold 3xl:w-5 3xl:h-5' size={15} />
+                                                <FaCheck className='font-bold mediumf' />
                                             </div>
                                             <p className='font-semibold leading-4 dubblelargefXXL'>{item.title}</p>
                                         </div>
                                         <div className='flex items-center space-x-2'>
-                                            <div className='p-1.5 opacity-0 rounded-full bg-white'>
-                                                <FaCheck className='font-bold 3xl:w-5 3xl:h-2' size={15} />
+                                            <div className='px-1.5 xl:py-1.5 py-0 opacity-0 rounded-full bg-white'>
+                                                <FaCheck className='font-bold mediumf ' />
                                             </div>
-                                            <p className='font-thin leading-7 text-white 2xl:leading-10 mediumf'>{item.content}</p>
+                                            <p className='font-thin leading-[120%] tracking-wider text-white 2xl:tracking-normal  mediumf'>{item.content}</p>
                                         </div>
                                     </div>
                                 </>)
@@ -63,7 +63,7 @@ const WhyTech = () => {
                 </div>
 
                 <div className={`${styles.shadow}  ${styles.imgRotate} ${styles.imgbox}  col-span-12 md:col-span-6 md:flex justify-center items-start 2xl:-mt-20   hidden `}>
-                    <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
+                    <Image src='/images/whyTech.png' width={600} height={600} alt="wanna tech png" className={``} />
                 </div>
 
             </div>
