@@ -203,6 +203,14 @@
         height: 46px !important;
     }
 
+    .submitbtnbg {
+
+        margin-top: 0px !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
+    }
+
 }
 
 @media (max-height:992px) {
@@ -326,11 +334,16 @@
         padding: 6px !important;
     }
 
-    /* .passwordInput input {
+    .passwordInput input {
 
-        padding-top: 2px !important;
-        padding-bottom: 2px !important;
-    } */
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+    .formbg input {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
 
     /* submitbtn */
 
@@ -432,23 +445,23 @@
 
     .passwordInput input {
 
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
     }
 
     .formbg input {
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
     }
 
     .cardDetailForm {
 
-        margin-top: 0px !important;
+        margin-top: 3px !important;
     }
 
     .namelastnameInput {
 
-        margin-bottom: 0px !important;
+        margin-bottom: 3px !important;
     }
 
     .formTitle {
@@ -463,18 +476,22 @@
     }
 
     .checkoutFormPassword {
-        padding-top: 0px !important;
-        padding-bottom: 0px !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
     }
 
-    /* 
     .submitbtnbg {
+        margin-top: 6px !important;
+        margin-bottom: 12px px !important;
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
 
-        margin-top: 20px !important;
-        margin-bottom: 8px !important;
-        padding-bottom: 2px !important;
-        padding-top: 2px !important;
-    } */
+    .checkIcon {
+
+        width: 12px !important;
+        height: 12px !important;
+    }
 
 
 }
@@ -545,8 +562,8 @@
 
     .checkIcon {
 
-        width: 10px !important;
-        height: 10px !important;
+        width: 12px !important;
+        height: 12px !important;
     }
 
     .refoundPcBtn {
@@ -642,7 +659,7 @@
 
     .submitbtnbg {
 
-        margin-top: 20px !important;
+        margin-top: 2px !important;
         margin-bottom: 6px !important;
         padding-bottom: 2px !important;
         padding-top: 2px !important;

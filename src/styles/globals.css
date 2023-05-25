@@ -1167,7 +1167,81 @@ ol {
 
   .fourxllargef {
     font-size: 31px !important;
-    line-height: 40px !important;
+    line-height: 32px !important;
+  }
+
+  .superlargef {
+    font-size: 80px !important;
+    letter-spacing: -1px !important;
+    line-height: 90px !important;
+  }
+
+  .startFont {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    margin-top: 20px !important;
+
+  }
+
+  .nctbmbmtTop {
+    margin-top: 20px !important;
+  }
+}
+
+/* min-width-992 and max-height 840px */
+
+@media (max-height:840px) and (min-width:992px) {
+
+
+
+  .extxlsmallf {
+    font-size: 12px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 15px !important;
+  }
+
+  .smallf {
+    letter-spacing: 0.5px !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+
+  .mediumf {
+    font-size: 16px !important;
+  }
+
+  .largef {
+    font-size: 20px !important;
+
+  }
+
+  .extlargef {
+    font-size: 20px !important;
+  }
+
+  .dubblelargef {
+    font-size: 30px !important;
+    line-height: 35px !important;
+  }
+
+  .triplelargef {
+    font-size: 24px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 30px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 15px !important;
+    line-height: 22px !important;
   }
 
   .superlargef {
@@ -1219,7 +1293,7 @@ ol {
   }
 
   .extlargef {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
 
   .dubblelargef {
@@ -2690,8 +2764,8 @@ ol {
   }
 
   .fourxllargef {
-    font-size: 45px;
-    line-height: 50px;
+    font-size: 19px;
+    line-height: 25px;
   }
 
   .supermediumf {
@@ -3089,8 +3163,6 @@ ol {
 /* cutom font size for max screen size 1920 or default size of all types fonts */
 @media only screen and (min-width:1750px) {
 
-
-
   .extsmallf {
     font-size: 13px;
   }
@@ -3104,7 +3176,7 @@ ol {
   }
 
   .smallf {
-    line-height: 25px;
+    line-height: 20px;
     font-size: 18px;
   }
 
@@ -3179,7 +3251,7 @@ ol {
 
   .fourxllargef {
     font-size: 37px;
-    line-height: 48px;
+    line-height: 40px;
   }
 
   .fivexllargef {

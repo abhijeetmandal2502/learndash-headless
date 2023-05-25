@@ -419,10 +419,10 @@
 
     .emailspaing {
 
-        /* padding-bottom: 2px !important;
-        padding-top: 2px !important;
+        padding-bottom: 3px !important;
+        padding-top: 3px !important;
 
-        margin-top: 6px !important; */
+        margin-top: 6px !important;
     }
 
     .addedItemList {
@@ -548,7 +548,7 @@
 
     .paymentIcon {
 
-        width: 50px !important;
+        width: 39px !important;
         height: 30px !important;
 
     }
@@ -562,11 +562,11 @@
 
     .emailspaing {
 
-        padding-bottom: 3px !important;
-        padding-top: 3px !important;
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
 
-        margin-top: 3px !important;
-        margin-bottom: 2px !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
     }
 
     .addedItemList {
