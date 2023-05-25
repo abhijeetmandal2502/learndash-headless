@@ -364,7 +364,7 @@
         margin-right: 40px;
     }
 
-    .imgbox {
+    .imgbox img {
         width: 84%;
     }
 
@@ -474,7 +474,7 @@
 
     /* why us image animated image components */
 
-    .imgbox {
+    .imgbox img {
         width: 84%;
     }
 
@@ -581,7 +581,7 @@
 @media (max-height:700px) {
     /* why us image animated image components */
 
-    .imgbox {
+    .imgbox img {
         width: 64%;
     }
 
@@ -647,7 +647,7 @@
 
     /* why us image animated image components */
 
-    .imgbox {
+    .imgbox img {
         width: 48%;
     }
 

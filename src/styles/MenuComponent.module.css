@@ -847,16 +847,16 @@ screen and (max-height: 700px) {
 
     .pointerPathMain {
 
-        height: 240px !important;
+        height: 250px !important;
         width: 0.4px !important;
-        margin-top: 16px !important;
+        margin-top: 10px !important;
         position: relative !important;
         background: white !important;
     }
 
     .pointerPathInner {
         position: absolute !important;
-        margin-top: 185px !important;
+        margin-top: 184px !important;
         left: -49px !important;
         top: 55px !important;
 
@@ -883,16 +883,16 @@ screen and (max-height: 700px) {
 
     .pointerPathMain {
 
-        height: 210px !important;
+        height: 222px !important;
         width: 0.4px !important;
-        margin-top: 16px !important;
+        margin-top: 11px !important;
         position: relative !important;
         background: white !important;
     }
 
     .pointerPathInner {
         position: absolute !important;
-        margin-top: 155px !important;
+        margin-top: 161px !important;
         left: -49px !important;
         top: 48px !important;
 
@@ -918,16 +918,19 @@ screen and (max-height: 700px) {
 
     .pointerPathMain {
 
-        height: 190px !important;
+        /* height: 190px !important; */
+        height: 200px !important;
         width: 0.4px !important;
-        margin-top: 16px !important;
+        /* margin-top: 16px !important; */
+        margin-top: 10px !important;
         position: relative !important;
         background: white !important;
     }
 
     .pointerPathInner {
         position: absolute !important;
-        margin-top: 132px !important;
+        /* margin-top: 132px !important; */
+        margin-top: 127px !important;
         left: -49px !important;
         top: 60.5px !important;
 
@@ -953,16 +956,19 @@ screen and (max-height: 700px) {
 
     .pointerPathMain {
 
-        height: 160px !important;
+        /* height: 160px !important; */
+        height: 170px !important;
         width: 0.4px !important;
-        margin-top: 16px !important;
+        /* margin-top: 16px !important; */
+        margin-top: 10px !important;
         position: relative !important;
         background: white !important;
     }
 
     .pointerPathInner {
         position: absolute !important;
-        margin-top: 103px !important;
+        /* margin-top: 103px !important; */
+        margin-top: 85px !important;
         left: -49px !important;
         top: 75px !important;
 
