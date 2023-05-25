@@ -389,7 +389,7 @@ const Home = () => {
                             <Disclosure as="div" className='list-none rounded-full text-gray'>
                                 {({ open }) => (
                                     <>
-                                        <Disclosure.Button className="w-full ">
+                                        <Disclosure.Button className="w-full cursor-none ">
                                             <MenuComponent HideMenuMethod={HideMenuMethod} On={On} drowerClose={drowerClose} />
                                         </Disclosure.Button>
                                         <Disclosure.Panel className="w-full py-1 text-white ">

@@ -76,6 +76,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 className={`
                 relative
                 hidden
+                cursor-default
             md:grid grid-cols-12 md:h-screen  bg-cover bg-center bg-no-repeat md:overflow-y-hidden overflow-x-hidden
               
             ${openTab === 4 ? styles.iwannaTechStart : ""} 
@@ -125,7 +126,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                         {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3  py-2    hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${styles.lobbyMain}  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
                             <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" />
-                            <span className='minismallf font-semibold '>lobby</span>
+                            <span className='font-semibold minismallf '>lobby</span>
                         </div> : ""}
                     </div>
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
@@ -235,7 +236,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         <div className='absolute flex items-center justify-center -translate-x-1/2 top-5 left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                <p className='font-semibold mediumf text-white'>Close </p>
+                                <p className='font-semibold text-white mediumf'>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
@@ -292,7 +293,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 <div className='flex items-center '
                                     onClick={() => { HandleCloseBtn(), drowerClose() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold  text-white'>Close </p>
+                                        <p className='font-semibold text-white'>Close </p>
                                         <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                                     </div>
                                 </div>
@@ -372,7 +373,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 <div className='flex items-center '
                                     onClick={() => { HandleCloseBtn(), drowerClose() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold  text-white'>Close </p>
+                                        <p className='font-semibold text-white'>Close </p>
                                         <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                                     </div>
                                 </div>
