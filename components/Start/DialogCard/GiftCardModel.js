@@ -102,7 +102,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                                                 99
                                                             </div>
                                                         </div>
-                                                        <p className='hidden md:block absolute smallf'>$1 shipping anywhere in the us!</p>
+                                                        <p className='hidden md:block absolute extsmallf'>$1 shipping anywhere in the us!</p>
                                                     </div>
                                                 </div>
                                             </Tab>

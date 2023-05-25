@@ -561,13 +561,19 @@
     }
 
     .checkIcon {
-
         width: 12px !important;
         height: 12px !important;
     }
 
     .refoundPcBtn {
         padding-top: 2px !important;
+    }
+
+    .submitbtnbg {
+        margin-top: 6px !important;
+        margin-bottom: 12px px !important;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
     }
 }
 
@@ -638,8 +644,21 @@
 
     .namelastnameInput {
 
-        margin-bottom: 0px !important;
+        margin-bottom: 2px !important;
     }
+
+
+    .formbg input {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+    .cardDetailForm {
+
+        margin-top: 0px !important;
+    }
+
+
 
 
     /* checkoutform padding */

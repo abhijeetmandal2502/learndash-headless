@@ -20,12 +20,12 @@ const GiftCardPaymentOption = () => {
 
     const paymentCart = [
         {
-            icon: "/start/credit.png",
+            icon: "/start/credit.svg",
             content: <CheckOutFormMobile />,
             cardTooltips: "pay with credit card"
         },
         {
-            icon: "/start/paypal.png",
+            icon: "/start/paypal.svg",
             content: <PaypalPayment />,
             cardTooltips: "pay with paypal"
         },
@@ -63,7 +63,7 @@ const GiftCardPaymentOption = () => {
 
             <div className={` relative grid grid-cols-9 bg-white my-5  shadow-2xl md:mx-5   p-3 md:p-4 ${styles.addGiftMain} `}>
 
-                <div className={`col-span-9 ${styles.giftListBg} p-3  h-[80px] overflow-y-scroll ${styles.giftAddedList}`}>
+                <div className={`col-span-9 ${styles.giftListBg} p-3 h-[95px] overflow-y-scroll ${styles.giftAddedList}`}>
 
                     {OrderList?.map((item, key) => {
                         return (
@@ -71,7 +71,7 @@ const GiftCardPaymentOption = () => {
                                 <div key={key} className={`flex justify-between items-center`}>
                                     <div className={`flex space-x-5 items-center `}>
 
-                                        <Image src={item.giftType} width={25} height={25} alt="gift" />
+                                        <Image src={item.giftType} width={30} height={30} alt="gift" />
 
                                         <p className={`text-black smallf font-semibold leading-[130%]`}>{item.name} </p>
                                     </div>
@@ -102,13 +102,13 @@ const GiftCardPaymentOption = () => {
                 <div className='  col-span-9 grid grid-cols-12 gap-4 mt-2'>
 
                     <div className=' col-span-6 flex items-center space-x-5'>
-                        <div className={`${styles.giftListBg} p-2 relative ${styles.giftCountMain}`}>
+                        <div className={`${styles.giftListBg} relative ${styles.giftCountMain}`}>
                             <Image src="/start/eGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
                             <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10   -top-[6px] bg-voilet ${styles.counterComp}`}>
                                 <p className='flex items-center extsmallf justify-center'>1</p>
                             </div>
                         </div>
-                        <div className={`${styles.giftListBg} p-2 relative ${styles.giftCountMain}`}>
+                        <div className={`${styles.giftListBg} relative ${styles.giftCountMain}`}>
                             <Image src="/start/PhysicalGift.svg" width={50} height={50} alt="gift" className={`${styles.giftCountImg}`} />
                             <div className={`absolute w-5 h-5 text-white rounded-full left-12 md:left-10  -top-[6px] bg-voilet ${styles.counterComp}`}>
 
@@ -139,7 +139,7 @@ const GiftCardPaymentOption = () => {
                     </div>
                     <div className={`flex flex-col justify-end items-end`}>
                         {/* <p className='text-white -mb-[5px] font-bold text-[10px]'>total</p> */}
-                        <div className='font-[500] text-white extlargef' >$90</div>
+                        <div className='font-[500] text-white triplelargef' >$90</div>
                     </div>
 
                 </div>
@@ -156,7 +156,7 @@ const GiftCardPaymentOption = () => {
 
                 <div className='px-3'>
 
-                    <input type="email" placeholder='your email' className={`w-full px-5 py-[6px] bg-white smallf mt-4 mb-2 border border-gray ${styles.emailspaing}`} />
+                    <input type="email" placeholder='your email' className={`w-full px-5 py-[6px] bg-white smallf mt-4 mb-2 font-[500] border border-gray ${styles.emailspaing}`} />
 
                     <div className='flex items-center justify-center space-x-2'>
                         {paymentCart?.map((item, id) => {
@@ -165,7 +165,7 @@ const GiftCardPaymentOption = () => {
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md  ${styles.paymentIcongiftShoppe}   `} src={item.icon} width={60} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md  ${styles.paymentIcongiftShoppe}   `} src={item.icon} width={80} height={80} alt="empty basket" />
                                         </div>
                                         <div className="tooltiptext text-[12px] z-10">
                                             <div className='relative'>

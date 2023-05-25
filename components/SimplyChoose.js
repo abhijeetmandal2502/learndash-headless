@@ -194,7 +194,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 </div> : ""}
 
                                 {/* gift card payment detail */}
-                                {activePaymentCard ? <div className='col-span-12 md:col-span-7 -mt-28'>
+                                {activePaymentCard ? <div className='col-span-12 md:col-span-7 -mt-[25%]'>
                                     <GiftCardPaymentOption />
                                 </div> : ""}
 
@@ -339,7 +339,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                     </div>
                                                     <div className={` relative `}>
                                                         <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                            <div className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-black'>
+                                                            <div className=' mediumf  font-semibold text-black'>
                                                                 ${item.price}
                                                             </div>
                                                         </div>

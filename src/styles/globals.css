@@ -1360,8 +1360,8 @@ ol {
   }
 
   .smallf {
-    font-size: 10px !important;
-    line-height: 10px !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
   }
 
   .mediumf {
@@ -3222,7 +3222,7 @@ ol {
   .triplelargef {
     font-size: 30px;
     letter-spacing: 1px;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     line-height: 35px !important;
 
   }

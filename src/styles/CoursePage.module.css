@@ -10,8 +10,20 @@
 /* scrollbar css */
 
 .giftListBg::-webkit-scrollbar {
-    width: 3px;
-    color: black !important;
+    width: 4px;
+
+    background-color: lightgrey;
+
+
+
+}
+
+.giftListBg::-webkit-scrollbar-thumb {
+    /* width: 25px; */
+    background-color: black !important;
+    border-radius: 0%;
+
+
 }
 
 
@@ -61,11 +73,11 @@
         padding: auto;
     }
 
-    .priceBack {
-        width: auto !important;
-        height: auto !important;
-        margin-bottom: auto !important;
-    }
+    /* .priceBack {
+        width: auto;
+        height: auto;
+        margin-bottom: auto;
+    } */
 
 }
 
@@ -292,13 +304,14 @@
 /* course price image */
 
 .priceBack {
-    width: 85px !important;
-    height: 85px !important;
-    margin-bottom: 15px !important;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 15px;
 }
 
 .giftListBg {
     background: rgba(151, 71, 255, 0.07);
+
 }
 
 /* addto cart */
@@ -338,6 +351,8 @@
         transition: all ease-in-out 500ms;
         background-size: 150px !important;
     }
+
+
 }
 
 
@@ -376,6 +391,40 @@
     }
 }
 
+
+@media(max-height:900px) {
+
+    .viewMoreIcon {
+        width: 18px !important;
+        height: 18px !important;
+
+    }
+
+
+    .giftCountImg {
+
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .giftCountMain {
+        padding: 3px !important;
+    }
+
+    .addGiftMain {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding: 3px 16px 3px 16px !important;
+
+    }
+
+    .addtoCard {
+        position: absolute !important;
+        top: 112px !important;
+        left: 50% !important;
+    }
+}
+
 @media(max-height:840px) {
 
     .viewMoreIcon {
@@ -407,9 +456,58 @@
         top: 112px !important;
         left: 50% !important;
     }
+
+    .giftAddedList {
+        padding: 0px 12px 0px 12px !important;
+        height: 70px !important;
+    }
 }
 
 @media (max-height:750px) {
+
+    .mainDiv>.gift {
+
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 100px !important;
+    }
+
+    .mainDiv:hover>.gift {
+
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 125px !important;
+    }
+
+    /* giftShoppy Active */
+    .activeGiftShoppy {
+
+        background-image: url(/images/homeColor.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 140px !important;
+    }
+
+    /* giftShoppy Inactive */
+
+    .inActiveGiftShoppy {
+
+        background-image: url(/images/homeBlack.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 500ms;
+        background-size: 140px !important;
+
+    }
 
     .deleteIcon {
 
@@ -440,6 +538,7 @@
 
     .giftAddedList {
         padding: 0px 12px 0px 12px !important;
+        height: 70px !important;
     }
 
     .giftCountImg {
@@ -470,8 +569,8 @@
     }
 
     .paymentIcongiftShoppe {
-        width: 30px !important;
-        height: 30px !important;
+        width: 45px !important;
+        height: 45px !important;
 
     }
 
@@ -480,6 +579,8 @@
         top: 100px !important;
         left: 50% !important;
     }
+
+
 }
 
 @media (max-height:650px) {
@@ -514,7 +615,7 @@
         background-position: center;
         object-fit: cover;
         transition: all ease-in-out 500ms;
-        background-size: 150px !important;
+        background-size: 120px !important;
     }
 
     /* giftShoppy Inactive */
@@ -526,7 +627,7 @@
         background-position: center;
         object-fit: cover;
         transition: all ease-in-out 500ms;
-        background-size: 150px !important;
+        background-size: 120px !important;
 
     }
 
@@ -555,7 +656,7 @@
 
     .priceBack {
         width: 60px !important;
-        height: 70px !important;
+        height: 60px !important;
         margin-bottom: 15px !important;
     }
 
@@ -617,6 +718,10 @@
         padding-bottom: 0px !important;
     }
 
+    .giftAddedList {
+        height: 73px !important;
+    }
+
 }
 
 @media (max-height:550px) {
@@ -650,7 +755,7 @@
         background-position: center;
         object-fit: cover;
         transition: all ease-in-out 500ms;
-        background-size: 130px !important;
+        background-size: 80px !important;
     }
 
     /* giftShoppy Inactive */
@@ -662,7 +767,7 @@
         background-position: center;
         object-fit: cover;
         transition: all ease-in-out 500ms;
-        background-size: 130px !important;
+        background-size: 80px !important;
 
     }
 
@@ -699,11 +804,11 @@
 
     .emailspaing {
 
-        padding-bottom: 0.5px !important;
-        padding-top: 0.5px !important;
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
 
-        margin-top: 1px !important;
-        margin-bottom: 0px !important;
+        margin-top: 5px !important;
+        margin-bottom: 3px !important;
     }
 
     .checkoutIcon {
@@ -728,7 +833,7 @@
     .giftAddedList {
         padding: 0px 12px 0px 12px !important;
 
-        max-height: 40px !important;
+        height: 60px !important;
     }
 
     .giftCountImg {
@@ -771,8 +876,8 @@
     }
 
     .paymentIcongiftShoppe {
-        width: 20px !important;
-        height: 20px !important;
+        width: 30px !important;
+        height: 30px !important;
 
     }
 
@@ -840,6 +945,14 @@
         padding: 0px 12px 0px 12px !important;
 
         max-height: 30px !important;
+    }
+
+    .emailspaing {
+
+        padding-bottom: 3px !important;
+        padding-top: 3px !important;
+        margin-top: 5px !important;
+        margin-bottom: 3px !important;
     }
 
 }

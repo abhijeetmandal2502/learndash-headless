@@ -39,6 +39,11 @@ const SimpleGiftCard = () => {
                 <div className='pl-5'>
                     <h3 className='pb-3 text-black dubblelargef'>ce as a gift? yep!</h3>
                     <p className={`mb-5 leading-7 smallf text-blck ${styles.giftCardContent}`}>be a superhero in 3 minutes! have a beautifully crafted cesimple gift card instantly emailed to a lucky recipient or physically delivered within 5 days!
+
+                    </p>
+
+                    <p className={`mb-5 leading-7 smallf text-blck ${styles.giftCardContent}`}>
+
                         you’ll receive an email confirmation too! gift cards are valid for 5 years! <span className='font-bold text-black '>simple!</span></p>
 
                     <div className='md-4'>

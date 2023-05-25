@@ -124,7 +124,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3  py-2    hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${styles.lobbyMain}  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { handleClickLobby() }} >
+                        {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3  py-2    hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${styles.lobbyMain}  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HandleCloseBtn(), drowerClose() }} >
                             <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" />
                             <span className='font-semibold minismallf '>lobby</span>
                         </div> : ""}
