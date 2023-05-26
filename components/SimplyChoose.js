@@ -119,7 +119,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const stringData = selectedArray.map((item) => {
         return item;
     })
-    console.log("ShowGiftShoppi", simplyChoose, ShowGiftShoppi, hideForm)
+    // console.log("ShowGiftShoppi", simplyChoose, ShowGiftShoppi, hideForm)
 
     //   drower for mobile 
     const router = useRouter();
@@ -133,12 +133,12 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     const drowerOpen = () => {
 
-        setIsOpen(isOpen)
+        setIsOpen(!isOpen)
     }
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
-    // console.log('panel', panel, selectedCourse, isOpen)
+    console.log('panel', panel, selectedCourse, isOpen)
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -262,7 +262,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} style={{ height: "33.33vh" }} className={` ${styles.mainDivGrid}  relative ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
+                                            <div key={index} style={{ height: "33.33vh" }} className={` ${styles.mainDivGrid}  relative ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t hidden md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
                                                 onClick={() => { handleClick(index, item) }}
                                             >
                                                 <div className='flex justify-between'>
@@ -306,7 +306,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                                             </div>
                                             {/* for mobile */}
-                                            <div key={index} className={`md:hidden ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray   md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5  flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
+                                            <div key={index} className={`md:hidden ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  p-5   flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
@@ -331,7 +331,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                         </div>}
                                                         <div className=''>
                                                             {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" /> :
-                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" />}
+                                                                <Image src="/images/newPriceOrange.svg" width={80} height={80} alt="prceBg" />}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -376,7 +376,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                         </>
                                     )
 
-                                })}
+                                })} <div className='hidden md:block'>
+                                    <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
+                                        <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
+                                </div>
 
 
                             </div>

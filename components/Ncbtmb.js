@@ -83,18 +83,18 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
           <BiArrowBack size={20} className="text-white " /><span className='mediumf '>lobby</span>
         </button>
         {/* loby button code end */}
-        <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4`}>
+        <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4 md:mt-0 mt-10`}>
           <div className='md:col-span-6 col-span-12'>
             <h2 className='triplelargefXXXL text-black '>all courses ncbtmb approved.</h2>
           </div>
 
           <div className='md:col-span-6 col-span-12'>
             <Image src="/images/NCBTMB.svg" height={323} width={323} alt="ncbtmblatest" className={`hidden md:block nbctmbcompnentImg`} />
-            <Image src="/images/ncbtmb.svg" height={200} width={200} alt="ncbtmb" className={`md:hidden absolute top-6 -right-4`} />
+            <Image src="/images/NCBTMB.svg" height={120} width={120} alt="ncbtmb" className={`md:hidden absolute top-6 right-4`} />
           </div>
         </div>
 
-        <div className={`${styles.selectBox} mt-5`}>
+        <div className={`${styles.selectBox} mt-20`}>
           <div className='py-1 font-semibold '>
             <p className='hidden md:block mediumf text-black'>accepted in your state?</p>
             <p className=' md:hidden mediumf'>Select a State</p>

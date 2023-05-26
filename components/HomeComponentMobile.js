@@ -112,12 +112,18 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                 <div className="flex justify-center w-full ">
                                                     <div className={` w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}`}>
                                                         <div className={` fixed top-0 z-10  w-full bg-white`}>
-                                                            <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
-                                                                <LogoCard LogoImage={LogoImage} />
+                                                            <div className='flex items-center justify-between px-3 py-4 space-x-5 cursor-pointer'>
+                                                                {/* <LogoCard LogoImage={LogoImage} /> */}
+
+                                                                <div className=''>
+                                                                    <Link href="/">
+                                                                        <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                                                    </Link>
+                                                                </div>
                                                                 <div className='lg:hidden'>
                                                                     <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                                                        <p className='font-semibold text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
-                                                                        <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <p className='font-semibold text-xl '>menu</p>
+                                                                        <svg width="24" height="24" className={`   ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                                                             <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                                                             <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
@@ -129,7 +135,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                                 <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {(activeTabIndex == 4 ? 'start' : 'lobby') && (selectedCourse == true ? 'courses' : 'lobby')}  </span></button>
                                                         </div>
 
-                                                        <div className={`text-black mt-[120px] ${activeTabIndex === 0 ? 'px-0' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
+                                                        <div className={`text-black mt-[100px] ${activeTabIndex === 0 ? 'px-0' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
                                                     </div>
                                                 </div>
                                                 <Disclosure.Panel className="w-full py-1 text-white ">

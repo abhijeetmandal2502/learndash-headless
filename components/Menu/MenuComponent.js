@@ -131,7 +131,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             <span className='font-semibold minismallf '>lobby</span>
                         </div> : ""}
                     </div>
-                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 `} >
+                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 md:pt-[5%] `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
                             <div className="">
@@ -169,7 +169,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
-                            <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
+                            <li className={`${styles.navli} text-white   py-4 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
@@ -185,7 +185,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                                 <div className={`pl-2 triplelargef ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white  py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(2);
@@ -197,7 +197,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 our instructors
                                 <div className={`pl-2 triplelargef  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white  py-4 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(3);
@@ -213,7 +213,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                                 <div className={`pl-2 triplelargef  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white lg:my-1  2xl:my-4 py-2 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white  py-4 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(4);

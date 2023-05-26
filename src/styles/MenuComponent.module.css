@@ -647,7 +647,32 @@ screen and (max-height: 700px) {
     z-index: 0 !important;
 }
 
+
+/* lobby width default */
+
+.lobbyMain {
+
+    max-width: 125px;
+    padding: 8px 10px 8px 10px;
+}
+
 /* media query css for responsive */
+
+@media (max-height:950px) {
+    .lobbyMain {
+
+        max-width: 124px !important;
+        padding: 10px 10px 10px 10px;
+    }
+}
+
+@media (max-height:840px) {
+    .lobbyMain {
+
+        max-width: 80px !important;
+        padding: 10px 10px 10px 10px;
+    }
+}
 
 @media (max-height:750px) {
 
