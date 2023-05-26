@@ -14,10 +14,10 @@ import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
 import GiftCardPaymentOption from './giftshop/GiftCardpPaymentOption'
 import { GoGift } from 'react-icons/go'
-const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel, setActiveTabIndex }) => {
+const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, setShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel, setActiveTabIndex, simplyChoose, setSimplyChoose }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
-    const [hideForm, setHideForm] = useState(false);
+    const [hideForm, setHideForm] = useState(true);
     const [activePaymentCard, setActivePaymentCard] = useState(false)
     // console.log("activePaymentCard", activePaymentCard)
     const showPaymentOpt = () => {
@@ -89,6 +89,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     ]
     const handleClick = (index, item) => {
         setSelected(index, item);
+        setSimplyChoose(true)
 
         const tempArray = [...selectedArray]
         if (tempArray[index] == index) { tempArray[index] = undefined }
@@ -100,12 +101,25 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     const functionHideForm = () => {
         setHideForm(true)
-
+        setShowGiftShoppi(false)
         setSelected(false);
+        setSimplyChoose(true)
+
+
+        if (ShowGiftShoppi === true) {
+            setHideForm(false)
+
+        }
+
+
     }
+
+
+
     const stringData = selectedArray.map((item) => {
         return item;
     })
+    console.log("ShowGiftShoppi", simplyChoose, ShowGiftShoppi, hideForm)
 
     //   drower for mobile 
     const router = useRouter();
@@ -154,10 +168,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             </div>
 
                             <div className={`flex flex-col justify-between ${selected === false && hideForm === false ? styles.show1 : styles.hide1} ${selected === false && hideForm ? styles.show1 : styles.hide1}  `}>
-                                <div className={`px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
+                                {simplyChoose && <div className={`px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
                                     <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
-                                </div>
+                                </div>}
                             </div>
                             {/* Selected Courses details of simply choose section on click */}
                             <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
@@ -342,7 +356,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                     </div>
                                                     <div className={` relative `}>
                                                         <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                            <div className=' mediumf  font-semibold text-black'>
+                                                            <div className='font-semibold text-black mediumf'>
                                                                 ${item.price}
                                                             </div>
                                                         </div>

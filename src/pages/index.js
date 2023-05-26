@@ -55,9 +55,12 @@ const Home = () => {
 
     // state for gift shoppy
     const [ShowGiftShoppi, setShowGiftShoppi] = useState(false);
+    const [simplyChoose, setSimplyChoose] = useState(true);
+
 
     const handleGiftComponent = () => {
         setShowGiftShoppi(true);
+        setSimplyChoose(false)
     }
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
@@ -142,6 +145,7 @@ const Home = () => {
         setShowConceierge()
         setIsloaded()
         setShowGiftShoppi(false)
+        setSimplyChoose(true)
 
     }
 
@@ -355,7 +359,7 @@ const Home = () => {
                 {/* simply choose component for Start button */}
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
-                        <SimplyChoose startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} />
+                        <SimplyChoose setSimplyChoose={setSimplyChoose} simplyChoose={simplyChoose} startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} setShowGiftShoppi={setShowGiftShoppi} />
                     </div>
                     <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} drowerOpen={drowerOpen} />

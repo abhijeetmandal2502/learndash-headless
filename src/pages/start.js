@@ -192,14 +192,22 @@ const Start = () => {
         }
     })
 
+
+    const LogoImage = "/images/WhiteLogo.svg"
     return (
         <>
-            <div className={`relative grid grid-cols-12 pl-[2%] ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
-                <div className='z-10 flex flex-col col-span-12  md:col-span-11'>
-                    <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
-                        <LogoCard LogoImage="/images/WhiteLogo.svg" />
+            <div className={`relative grid grid-cols-12 md:pl-[2%] ${tabsData[activeTabIndex].background} ${styles.aboutMain} h-screen md:overflow-hidden overflow-y-scroll`}>
+                <div className='z-10 flex flex-col col-span-12 md:col-span-11'>
+                    <div className={`flex md:hidden justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 py-4 w-full `}>
+                        {/* <LogoCard LogoImage="/images/WhiteLogo.svg" /> */}
+
+                        <div className=''>
+                            <Link href="/">
+                                <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                            </Link>
+                        </div>
                         <Link href="/">
-                            <div className='flex items-center justify-center mt-5 md:hidden '
+                            <div className='flex items-center justify-center md:hidden '
                             >
                                 <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                     <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
@@ -263,7 +271,7 @@ const Start = () => {
                                                 ref={navRef}
                                                 onClick={() => { setActiveTabIndex(i) }}
                                             >
-                                                <div className='absolute w-full -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>
+                                                <div className='absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
                                                     <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
                                                 </div>
                                                 <div
@@ -283,7 +291,7 @@ const Start = () => {
 
                                                 onClick={() => { setActiveTabIndex(i) }}
                                             >
-                                                <div className='absolute w-full -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>
+                                                <div className='absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
                                                     <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
                                                 </div>
                                                 <div
@@ -341,7 +349,7 @@ const Start = () => {
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
-                        <div className='absolute -translate-x-1/2  bottom-5 left-1/2'>
+                        <div className='absolute -translate-x-1/2 bottom-5 left-1/2'>
                             <MusicCard textColor="text-white" />
                         </div>
                     </div>

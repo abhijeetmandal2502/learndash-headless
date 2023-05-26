@@ -13,6 +13,7 @@ import BlogListing from 'components/BlogListing'
 import { FiArrowDown } from 'react-icons/fi'
 import stylesScrollBtn from '../Start/Start.module.css'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
     const [show, setShow] = useState(false);
@@ -285,8 +286,12 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 <div className='absolute top-0 w-full '>
                     <div className='relative'>
                         <div className={`${openMobTab > 0 ? ' -translate-x-full transition-all ease-in-out duration-1000' : 'translate-x-0 transition-all ease-in-out duration-1000'} md:bg-transparent ${styles.bgMenuMob}`}>
-                            <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
-                                <LogoCard LogoImage={LogoImage} />
+                            <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer py-4 ${!showLogo ? styles.hide : styles.aboutMain}`}>
+                                <div className=''>
+                                    <Link href="/">
+                                        <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                    </Link>
+                                </div>
 
                                 <div className='flex items-center '
                                     onClick={() => { HandleCloseBtn(), drowerClose() }}>

@@ -12,6 +12,7 @@ import { Disclosure } from '@headlessui/react'
 import MobileDrawerRighrt from './Menu/MobileDrawerRight';
 import MobileDrawerLeft from './Menu/MobileDrawerLeft';
 import GiftCardMobile from './giftshop/GiftCardMobile';
+import Link from 'next/link';
 
 const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const router = useRouter();
@@ -88,7 +89,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         <>
             <div className="relative m-auto bg-transparent lg:px-8 default-page-width-header">
 
-                <div className="fixed md:hidden top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in ">
+                <div className="fixed top-0 left-0 w-screen h-screen transition-all duration-1000 ease-in md:hidden ">
                     <Image
                         className={`${styles.aboutMain}`}
                         src="/images/bg-image.png"
@@ -108,7 +109,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                     <Disclosure as="div" className=''>
                                         {({ open }) => (
                                             <>
-                                                <div className="flex justify-center w-full  ">
+                                                <div className="flex justify-center w-full ">
                                                     <div className={` w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}`}>
                                                         <div className={` fixed top-0 z-10  w-full bg-white`}>
                                                             <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
@@ -147,8 +148,14 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                             <>
                                                 <div className="w-full">
                                                     <div className=''>
-                                                        <div className='flex items-center justify-between px-3 space-x-5 cursor-pointer'>
-                                                            <LogoCard LogoImage={LogoImage} />
+                                                        <div className='flex items-center justify-between px-3 py-4 space-x-5 cursor-pointer'>
+                                                            {/* <LogoCard LogoImage={LogoImage} /> */}
+
+                                                            <div className=''>
+                                                                <Link href="/">
+                                                                    <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                                                </Link>
+                                                            </div>
                                                             {/* menu icon for small device */}
                                                             <div className=''>
                                                                 <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
@@ -163,15 +170,15 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
 
                                                         </div>
                                                         <div className='px-6 py-2 mb-5 font-normal text-left text-black '>
-                                                            <p className='triplelargef'>massage ce.</p>
-                                                            <p className='triplelargef'> simplified. </p>
+                                                            <p className='text-4xl'>massage ce.</p>
+                                                            <p className='text-4xl'> simplified. </p>
                                                         </div>
 
                                                         {
                                                             menuList?.map((item, id) => {
                                                                 return (
                                                                     <>
-                                                                        <div className=' border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
+                                                                        <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
                                                                             <div key={id} className='flex items-center px-3 py-5 space-x-5'>
                                                                                 <Image alt='start' src={item.image} height='80' width='80' />
                                                                                 <h3 className='mt-4 text-black dubblelargef '>{item.title}</h3>

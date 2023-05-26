@@ -83,13 +83,22 @@ const Blog = (props) => {
 
                 <div className='grid grid-cols-12'>
                     <div className={`col-span-12 md:col-span-11  md:pl-[7%] max-h-screen ${styles.fadeAnimation}`}>
-                        <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
-                            <LogoCard LogoImage={LogoImage} />
+
+                        <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 py-4 md:py-0`}>
+                            <div className='hidden md:block'>
+                                <LogoCard LogoImage={LogoImage} />
+                            </div>
+
+                            <div className='block md:hidden'>
+                                <Link href="/">
+                                    <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                </Link>
+                            </div>
                             <Link href="/blog">
-                                <div className='flex md:hidden items-center justify-center mt-5    '
+                                <div className='flex items-center justify-center md:hidden '
                                 >
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold  text-white'>Close </p>
+                                        <p className='font-semibold text-white'>Close </p>
 
                                         <AiOutlineClose size={20} className="text-white " />
 
@@ -97,10 +106,24 @@ const Blog = (props) => {
                                 </div>
                             </Link>
                         </div>
+                        {/* <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
+                            <LogoCard LogoImage={LogoImage} />
+                            <Link href="/blog">
+                                <div className='flex items-center justify-center mt-5 md:hidden '
+                                >
+                                    <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
+                                        <p className='font-semibold text-white'>Close </p>
+
+                                        <AiOutlineClose size={20} className="text-white " />
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </div> */}
 
 
                         {/* view all post button for mobile  */}
-                        <div className=' md:mr-5 flex md:hidden items-center justify-between px-3 pt-5'>
+                        <div className='flex items-center justify-between px-3 pt-5 md:mr-5 md:hidden'>
 
                             <Link href="/blog">
                                 <div
@@ -114,12 +137,12 @@ const Blog = (props) => {
                                     onClick={() => { }}
                                     className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <HiOutlineArrowSmLeft size={15} className='' />
-                                    <div className='minismallf pr-1 '> back</div>
+                                    <div className='pr-1 minismallf '> back</div>
                                 </div>
                                 <div
                                     onClick={() => { }}
                                     className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
-                                    <div className='minismallf  pl-1' >next</div>
+                                    <div className='pl-1 minismallf' >next</div>
                                     <HiOutlineArrowSmRight size={15} className='' />
                                 </div>
                             </div>
@@ -130,53 +153,53 @@ const Blog = (props) => {
 
                         <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3  py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4  `} onClick={() => { handlelobby() }} >
                             <BiArrowBack size={20} className="text-white " />
-                            <span className='smallf font-semibold '>lobby</span>
+                            <span className='font-semibold smallf '>lobby</span>
                         </button>
 
-                        {singlePost ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3  '>
+                        {singlePost ? <div className='grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 '>
                             <div className={`bg-transparent md:pb-96  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 <div className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                    <h2 className='text-white fourxllargef  tracking-wide hover:text-voilet transition-all ease-in-out duration-500'>{singlePost?.title.rendered}
+                                    <h2 className='tracking-wide text-white transition-all duration-500 ease-in-out fourxllargef hover:text-voilet'>{singlePost?.title.rendered}
                                     </h2>
-                                    <div className='flex  flex-wrap'>
+                                    <div className='flex flex-wrap'>
                                         <div className='text-white pr-1  mediumf leading-[207%]'>
                                             {singlePost?.name}
                                         </div>
                                         <div className='text-gray  mediumf leading-[207%]'>| {moment(singlePost?.date).format("MMMM  DD YYYY")}
                                         </div>
                                     </div>
-                                    <div className='text-gray md:py-8 py-4  smallf  tracking-wider' dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}>
+                                    <div className='py-4 tracking-wider text-gray md:py-8 smallf' dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}>
 
                                     </div>
 
                                     <Image src="/images/blogBanner1.png" width="800" height="450" className={`md:w-[850px] md:h-[350px] w-[500px] h-[250px] ${styles.blogBannerImg}`} alt="Banner Image" />
 
-                                    {/* <h4 className='text-white font-normal py-3 pt-10 mediumf  tracking-wide'>{item.subHeaderTitle}</h4>
+                                    {/* <h4 className='py-3 pt-10 font-normal tracking-wide text-white mediumf'>{item.subHeaderTitle}</h4>
 
-                                    <p className='text-gray md:py-8   minismallf  tracking-wider '>{item.subDiscription}</p> */}
+                                    <p className='tracking-wider text-gray md:py-8 minismallf '>{item.subDiscription}</p> */}
 
                                 </div>
 
                             </div>
-                            <div className='flex bg-transparent md:col-span-4 col-span-12 justify-center'>
+                            <div className='flex justify-center col-span-12 bg-transparent md:col-span-4'>
                                 <div className=' md:mr-5'>
 
                                     <Link href="/blog">
                                         <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='mediumf font-[600]'>view all posts</div></button>
                                     </Link>
-                                    <div className='flex pt-7  md:space-x-4 2xl:space-x-10'>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' /> <div className='mediumf pr-1 '> back</div></button>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='mediumf  pl-1' >next</div> <HiOutlineArrowSmRight size={20} className='' /> </button>
+                                    <div className='flex pt-7 md:space-x-4 2xl:space-x-10'>
+                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' /> <div className='pr-1 mediumf '> back</div></button>
+                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='pl-1 mediumf' >next</div> <HiOutlineArrowSmRight size={20} className='' /> </button>
                                     </div>
 
                                 </div>
                             </div>
                         </div> : <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-screen w-full ${styles.blogBackground}`}> loading...</div>}
                     </div>
-                    <div className='col-span-12 md:col-span-1 relative border-l border-white max-h-screen md:block hidden '>
+                    <div className='relative hidden max-h-screen col-span-12 border-l border-white md:col-span-1 md:block '>
                         <div className=''>
-                            <div className=' cursor-pointer'>
+                            <div className='cursor-pointer '>
                                 <Link href="/blog">
                                     <div className='  absolute top-[5%] left-1/2 -translate-x-1/2  '
                                         onClick={() => { }}>
