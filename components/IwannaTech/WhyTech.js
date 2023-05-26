@@ -35,7 +35,7 @@ const WhyTech = () => {
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 
-                <div className='flex justify-center col-span-12 md:col-span-6 items-strat'>
+                <div className='flex justify-start col-span-12 md:col-span-6 items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} tracking-wide`}>Why teach?</h2>
                         {

@@ -1157,6 +1157,10 @@ ol {
     line-height: 35px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 28px !important;
+  }
+
   .triplelargef {
     font-size: 24px !important;
     letter-spacing: 1px !important;
@@ -1168,6 +1172,10 @@ ol {
   .fourxllargef {
     font-size: 31px !important;
     line-height: 32px !important;
+  }
+
+  .fivexllargef {
+    font-size: 64px !important;
   }
 
   .superlargef {
@@ -1301,6 +1309,10 @@ ol {
     line-height: 28px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 26px !important;
+  }
+
   .triplelargef {
     font-size: 24px !important;
     letter-spacing: 1px !important;
@@ -1318,6 +1330,10 @@ ol {
   .fourxllargef {
     font-size: 16px;
     line-height: 19px;
+  }
+
+  .fivexllargef {
+    font-size: 52px !important;
   }
 
   .superlargef {
@@ -1381,6 +1397,10 @@ ol {
     line-height: 30px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 24px !important;
+  }
+
   .triplelargef {
     font-size: 18px !important;
     letter-spacing: 1px !important;
@@ -1398,6 +1418,10 @@ ol {
   .fourxllargef {
     font-size: 22px !important;
     line-height: 32px !important;
+  }
+
+  .fivexllargef {
+    font-size: 42px !important;
   }
 
   .superlargef {
@@ -1456,6 +1480,10 @@ ol {
     font-size: 16px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 20px !important;
+  }
+
   .triplelargef {
     font-size: 18px !important;
     letter-spacing: 1px !important;
@@ -1473,6 +1501,10 @@ ol {
   .fourxllargef {
     font-size: 25px !important;
     line-height: 28px !important;
+  }
+
+  .fivexllargef {
+    font-size: 38px !important;
   }
 
   .superlargef {
@@ -1534,6 +1566,10 @@ ol {
     font-size: 16px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 18px !important;
+  }
+
   .triplelargef {
     font-size: 15px !important;
     letter-spacing: 1px !important;
@@ -1551,6 +1587,10 @@ ol {
   .fourxllargef {
     font-size: 18px !important;
     line-height: 18px !important;
+  }
+
+  .fivexllargef {
+    font-size: 38px !important;
   }
 
   .superlargef {
@@ -1573,6 +1613,87 @@ ol {
     margin-top: 3px !important;
     padding: 2px 7px 2px 7px !important;
   }
+
+
+}
+
+@media (max-height:485px) {
+
+  .extxlsmallf {
+    font-size: 8px !important;
+  }
+
+  .extsmallf {
+    font-size: 13px !important;
+  }
+
+  .minismallf {
+    font-size: 10px !important;
+  }
+
+  .smallf {
+    font-size: 7px !important;
+  }
+
+  .mediumf {
+    font-size: 10px !important;
+  }
+
+  .largef {
+    font-size: 12px !important;
+  }
+
+  .extlargef {
+    font-size: 12px !important;
+  }
+
+  .dubblelargef {
+    font-size: 16px !important;
+  }
+
+  .dubblelargefXXL {
+    font-size: 16px !important;
+  }
+
+  .triplelargef {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    line-height: 12px !important;
+
+  }
+
+  .fourxllargef {
+    font-size: 15px !important;
+    line-height: 17px !important;
+  }
+
+  .superlargef {
+    font-size: 20px !important;
+    letter-spacing: 0.001em !important;
+    line-height: 30px !important;
+  }
+
+  .fivexllargef {
+    font-size: 32px !important;
+  }
+
+  .startFont {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 12px !important;
+    margin-top: 10px !important;
+
+  }
+
+  /* menu boxsize */
+  /* .menuBoxsizebigMenu {
+    min-height: 200px;
+  }
+
+  .menuBoxsizesmallMenu {
+    min-height: 180px;
+  } */
 
 
 }
@@ -1611,6 +1732,10 @@ ol {
     font-size: 16px !important;
   }
 
+  .dubblelargefXXL {
+    font-size: 16px !important;
+  }
+
   .triplelargef {
     font-size: 11px !important;
     letter-spacing: 1px !important;
@@ -1628,6 +1753,10 @@ ol {
     font-size: 20px !important;
     letter-spacing: 0.001em !important;
     line-height: 30px !important;
+  }
+
+  .fivexllargef {
+    font-size: 35px !important;
   }
 
   .startFont {

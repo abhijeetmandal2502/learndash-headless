@@ -26,9 +26,7 @@ const StartComponent = () => {
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove} ${styles.imgbox}  col-span-12 md:col-span-6 md:flex hidden justify-center items-start 2xl:-mt-16 lg:-mt-0  `}>
                     <Image src='/images/iwannatech.png' width={600} height={600} alt="wanna tech png" className={``} />
                 </div>
-
             </div>
-
         </>
     )
 }
