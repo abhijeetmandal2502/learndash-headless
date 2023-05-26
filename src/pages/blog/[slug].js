@@ -83,7 +83,7 @@ const Blog = (props) => {
 
                 <div className='grid grid-cols-12'>
                     <div className={`col-span-12 md:col-span-11  md:pl-[7%] max-h-screen ${styles.fadeAnimation}`}>
-                        <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
+                        <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <Link href="/blog">
                                 <div className='flex md:hidden items-center justify-center mt-5    '

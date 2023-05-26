@@ -100,12 +100,12 @@ const BlogListing = (props) => {
 
                 <div className='grid grid-cols-12 '>
                     <div className={`col-span-12 md:col-span-11 md:pl-[7%] max-h-screen ${styles.fadeAnimation} ${styles.leftRightAnimation} ${styles.bgMenuMobblog}`}>
-                        <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 `}>
+                        <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <div className='flex md:hidden items-center justify-center mt-5'
                                 onClick={() => { HandleCloseBtn() }}>
                                 <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                    <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                    <p className='font-semibold  text-white'>Close </p>
                                     <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                                 </div>
                             </div>

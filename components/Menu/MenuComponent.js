@@ -117,7 +117,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                     /> : ""}
                 </div>
 
-                <div className='flex flex-col col-span-12 p-10 md:space-y-5 md:col-span-11 2xl:pl-20 md:pl-20'>
+                <div className='flex flex-col col-span-12 pr-10 md:space-y-5 md:col-span-11 md:pl-[7%] '>
+
 
                     <div>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
@@ -227,7 +228,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         </ul>
                     </div> : ""}
                 </div>
-                <div className='relative flex items-center justify-center w-full h-screen col-span-12 p-4 border-l border-white max-sm:invisible md:col-span-1 '>
+                <div className='relative flex items-center justify-center w-full h-screen col-span-12 px-4 border-l border-white max-sm:invisible md:col-span-1 '>
+
                     <div className='cursor-pointer '>
                         <div className='absolute -translate-x-1/2 top-[5%] left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>

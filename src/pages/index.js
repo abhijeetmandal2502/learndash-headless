@@ -358,7 +358,7 @@ const Home = () => {
                         <SimplyChoose startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} />
                     </div>
                     <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-                        <SideMenu ShowMenuMethod={ShowMenuMethod} />
+                        <SideMenu ShowMenuMethod={ShowMenuMethod} drowerOpen={drowerOpen} />
                     </div>
                 </div>
                 {/*index page main menu sidebar component */}
@@ -367,7 +367,7 @@ const Home = () => {
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-[5%] left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                                 <p className='font-semibold text-black largef '>menu</p>
-                                <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="24" height="24" className={`   ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />

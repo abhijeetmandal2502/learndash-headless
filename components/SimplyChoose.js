@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BiArrowBack } from 'react-icons/bi'
+import { BiArrowBack, BiGift } from 'react-icons/bi'
 import { MdOutlineWatchLater } from 'react-icons/md'
 import ResearchComponent from './Start/ResearchComponent'
 import Image from 'next/image'
@@ -13,6 +13,7 @@ import GiftCardBtn from './Start/GiftCardBtn'
 import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
 import GiftCardPaymentOption from './giftshop/GiftCardpPaymentOption'
+import { GoGift } from 'react-icons/go'
 const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel, setActiveTabIndex }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
@@ -208,8 +209,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                                     <div className='flex justify-between'>
                                         <div className='flex items-center justify-center space-x-1'>
-                                            <Image src="/images/gift.svg" width={25} height={25} alt='gift' className='3xl:w-[40px] 3xl:h-[40px]' />
-                                            <div className='font-bold mediumf'>{data[0].duration}</div>
+                                            {/* <Image src="/images/gift.svg" width={25} height={25} alt='gift' className='3xl:w-[40px] 3xl:h-[40px]' /> */}
+
+                                            <GoGift className='mediumf' />
+                                            <div className='font-[500] mediumf'>{data[0].duration}</div>
                                         </div>
                                     </div>
                                     <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%]  `}>
@@ -250,7 +253,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                             >
                                                 <div className='flex justify-between'>
                                                     <div>
-                                                        <div className='flex items-center justify-center space-x-1 font-semibold mediumf'>
+                                                        <div className='flex items-center justify-center space-x-1 font-[500] mediumf'>
                                                             <MdOutlineWatchLater className='largef' />
                                                             <p className='font-bold mediumf'>{item.duration}</p>
                                                         </div>
