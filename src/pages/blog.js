@@ -99,7 +99,7 @@ const BlogListing = (props) => {
                 </div>
 
                 <div className='grid grid-cols-12 '>
-                    <div className={`col-span-12 md:col-span-11 md:ml-24 max-h-screen ${styles.fadeAnimation} ${styles.leftRightAnimation} ${styles.bgMenuMobblog}`}>
+                    <div className={`col-span-12 md:col-span-11 md:pl-[7%] max-h-screen ${styles.fadeAnimation} ${styles.leftRightAnimation} ${styles.bgMenuMobblog}`}>
                         <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <div className='flex md:hidden items-center justify-center mt-5'
@@ -112,21 +112,21 @@ const BlogListing = (props) => {
                         </div>
 
                         <Link href="/">
-                            <button className={`  hidden  md:flex items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `}  >
+                            <button className={`  hidden  md:flex items-center space-x-1 bg-dakgray text-white px-3  py-2  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`}  >
                                 <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='minismallf font-semibold '>lobby</span></button>
                         </Link>
 
                         {/* for mobile device */}
                         <div className='flex justify-center md:hidden md:mt-0 mt-5 md:px-0 px-3'>
-                            <div className='border  border-white w-full 2xl:max-w-[270px] 3xl:max-w-[350px]   pb-2 ' >
-                                <button className={`text-white mediumf text-[20px] 2xl:text-[20px] 3xl:text-[30px] px-5 md:py-3 py-1 flex items-center space-x-24 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className='2xl:text-[24px] 3xl:text-[35px] '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} className="3xl:w-10 3xl:h-10" /></div> </button>
+                            <div className='border  border-white w-full    pb-2 ' >
+                                <button className={`text-white mediumf  px-5 md:py-3 py-1 flex items-center space-x-24 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className=' '>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} className="" /></div> </button>
                                 {colourOptions?.map((item, index) => {
 
                                     return (
                                         <>
                                             {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                <input className="form-check-input appearance-none h-4 3xl:h-6 3xl:w-6 w-4  border-2   rounded-sm checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 3xl:mt-2.5 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
+                                                <input className="form-check-input appearance-none h-4  w-4  border-2   rounded-sm checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
                                                 <label className="text-gray mediumf ml-0.2">{item.label}</label>
                                             </div>}
                                         </>
@@ -153,10 +153,10 @@ const BlogListing = (props) => {
                                                 </div>
 
 
-                                                <Link href={`blog/${item?.slug}`} className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 max-w-[155px] 3xl:rounded-3xl hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
+                                                <Link href={`blog/${item?.slug}`} className='text-white flex space-x-1 items-center border border-white rounded-3xl px-3 max-w-[155px]  hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
                                                 >
                                                     <span className='mediumf  ml-1'>read more</span>
-                                                    <BsArrowRightShort className='text-white 3xl:w-12 3xl:h-12' size={25} />
+                                                    <BsArrowRightShort className='text-white ' size={25} />
                                                 </Link>
                                             </div>
                                             //     </Link>
@@ -173,7 +173,7 @@ const BlogListing = (props) => {
                                         <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between `} type="btn" onClick={() => { handleClickTogle() }} >
                                             <div className='mediumf'>blog categories</div>
                                             <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff} mr-3`}>
-                                                <MdKeyboardArrowDown size={20} className="3xl:w-10 3xl:h-10" />
+                                                <MdKeyboardArrowDown size={20} className="" />
                                             </div>
                                         </div>
                                         {colourOptions?.map((item, index) => {
@@ -182,7 +182,7 @@ const BlogListing = (props) => {
                                                 <>
                                                     {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                        <input className="form-check-input appearance-none h-4 3xl:h-6 3xl:w-6 w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1 3xl:mt-2.5 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
+                                                        <input className="form-check-input appearance-none h-4  w-4  border-2   rounded-sm bg-white checked:bg-voilet checked:border-white focus:outline-none transition duration-200 mt-1  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
                                                         <label className="text-gray mediumf ml-0.2">{item.label}</label>
                                                     </div>}
                                                 </>
@@ -200,17 +200,15 @@ const BlogListing = (props) => {
                         <div className=''>
                             <div className=' cursor-pointer'>
 
-                                <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
+                                <div className='   absolute top-[5%] left-1/2 -translate-x-1/2  '
                                     onClick={() => { HandleCloseBtn() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
-
-                                        <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
-
+                                        <p className='font-semibold mediumf  text-white'>Close </p>
+                                        <AiOutlineClose size={20} className="text-white " />
                                     </div>
                                 </div>
 
-                                <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
+                                <div className=' absolute bottom-[5%] left-1/2 -translate-x-1/2'>
                                     <MusicCard textColor={textColor} />
                                 </div>
                             </div>
@@ -218,7 +216,7 @@ const BlogListing = (props) => {
                     </div>
                 </div>
                 <div className={` absolute bottom-5 left-5 z-[100]  md:flex hidden justify-center items-center`}>
-                    <FiArrowDown size={25} className={`text-white 3xl:w-12 3xl:h-12 ${stylesScrollBtn.UpDownAnimation} `} />
+                    <FiArrowDown size={25} className={`text-white  ${stylesScrollBtn.UpDownAnimation} `} />
 
                 </div>
             </div>

@@ -82,16 +82,16 @@ const Blog = (props) => {
                 </div>
 
                 <div className='grid grid-cols-12'>
-                    <div className={`col-span-12 md:col-span-11  md:ml-24 max-h-screen ${styles.fadeAnimation}`}>
+                    <div className={`col-span-12 md:col-span-11  md:pl-[7%] max-h-screen ${styles.fadeAnimation}`}>
                         <div className={`flex justify-between items-center space-x-5 md:pt-10 cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
                             <LogoCard LogoImage={LogoImage} />
                             <Link href="/blog">
                                 <div className='flex md:hidden items-center justify-center mt-5    '
                                 >
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold 3xl:text-[25px] text-white'>Close </p>
+                                        <p className='font-semibold  text-white'>Close </p>
 
-                                        <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+                                        <AiOutlineClose size={20} className="text-white " />
 
                                     </div>
                                 </div>
@@ -128,8 +128,10 @@ const Blog = (props) => {
 
 
 
-                        <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3 3xl:px-3 py-2 3xl:py-2.5 4xl:px-5  4xl:py-4  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 3xl:-mt-10 `} onClick={() => { handlelobby() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" /><span className='smallf font-semibold '>lobby</span></button>
+                        <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3  py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4  `} onClick={() => { handlelobby() }} >
+                            <BiArrowBack size={20} className="text-white " />
+                            <span className='smallf font-semibold '>lobby</span>
+                        </button>
 
                         {singlePost ? <div className='grid grid-cols-12 gap-4 max-h-screen md:pt-10 mt-2 md:px-0 px-3  '>
                             <div className={`bg-transparent md:pb-96  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
@@ -164,8 +166,8 @@ const Blog = (props) => {
                                         <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='mediumf font-[600]'>view all posts</div></button>
                                     </Link>
                                     <div className='flex pt-7  md:space-x-4 2xl:space-x-10'>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 3xl:px-3 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='3xl:w-8 3xl:h-8' /> <div className='mediumf pr-1 '> back</div></button>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5 3xl:px-3 border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='mediumf  pl-1' >next</div> <HiOutlineArrowSmRight size={20} className='3xl:w-8 3xl:h-8' /> </button>
+                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' /> <div className='mediumf pr-1 '> back</div></button>
+                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='mediumf  pl-1' >next</div> <HiOutlineArrowSmRight size={20} className='' /> </button>
                                     </div>
 
                                 </div>
@@ -176,17 +178,17 @@ const Blog = (props) => {
                         <div className=''>
                             <div className=' cursor-pointer'>
                                 <Link href="/blog">
-                                    <div className='flex items-center justify-center   absolute top-5 left-1/2 -translate-x-1/2  '
+                                    <div className='  absolute top-[5%] left-1/2 -translate-x-1/2  '
                                         onClick={() => { }}>
                                         <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                            <p className='font-semibold text-white 3xl:text-[25px]'>Close </p>
+                                            <p className='font-semibold text-white mediumf '>Close </p>
 
-                                            <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+                                            <AiOutlineClose size={20} className="text-white" />
 
                                         </div>
                                     </div>
                                 </Link>
-                                <div className=' absolute bottom-5 left-1/2 -translate-x-1/2'>
+                                <div className=' absolute bottom-[5%] left-1/2 -translate-x-1/2'>
                                     <MusicCard textColor={textColor} />
                                 </div>
                             </div>
@@ -194,7 +196,7 @@ const Blog = (props) => {
                     </div>
                 </div>
                 <div className={` absolute bottom-5 left-5 z-[100]  md:flex hidden justify-center items-center`}>
-                    <FiArrowDown size={25} className={`text-white 3xl:w-12 3xl:h-12 ${stylesScrollBtn.UpDownAnimation} `} />
+                    <FiArrowDown size={25} className={`text-white  ${stylesScrollBtn.UpDownAnimation} `} />
 
                 </div>
             </div>

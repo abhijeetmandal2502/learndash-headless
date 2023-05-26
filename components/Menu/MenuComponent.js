@@ -192,9 +192,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link2"
                                 role="tablist"
                             >
-
                                 our instructors
-
                                 <div className={`pl-2 triplelargef  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
                             <li className={`${styles.navli} text-white lg:my-1 xl:my-2  2xl:my-4 py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
@@ -223,9 +221,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link4"
                                 role="tablist"
                             >
-
                                 i wanna teach!
-
                                 <div className={`pl-2 triplelargef ${openTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
                         </ul>
@@ -233,14 +229,14 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 </div>
                 <div className='relative flex items-center justify-center w-full h-screen col-span-12 p-4 border-l border-white max-sm:invisible md:col-span-1 '>
                     <div className='cursor-pointer '>
-                        <div className='absolute flex items-center justify-center -translate-x-1/2 top-5 left-1/2 '
+                        <div className='absolute -translate-x-1/2 top-[5%] left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white mediumf'>Close </p>
                                 <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
                             </div>
                         </div>
-                        <div className='absolute -translate-x-1/2 bottom-5 left-1/2'>
+                        <div className='absolute -translate-x-1/2 bottom-[5%] left-1/2'>
                             <MusicCard textColor={textColor} />
                         </div>
                     </div>

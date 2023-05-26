@@ -364,7 +364,7 @@ const Home = () => {
                 {/*index page main menu sidebar component */}
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l 3xl:border-l-2 border-b-gray md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
                     <div className='cursor-pointer '>
-                        <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-12 left-1/2 '>
+                        <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-[5%] left-1/2 '>
                             <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                                 <p className='font-semibold text-black largef '>menu</p>
                                 <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -374,7 +374,7 @@ const Home = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className='absolute -translate-x-1/2 bottom-12 left-1/2'>
+                        <div className='absolute -translate-x-1/2 bottom-[5%] left-1/2'>
                             <MusicCard />
                         </div>
                     </div>
