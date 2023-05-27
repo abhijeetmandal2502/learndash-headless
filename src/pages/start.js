@@ -359,12 +359,12 @@ const Start = () => {
 
 
 
-                {activeTabIndex < 11 ? <div className={`${styles.arrowUpDown} z-[1000] absolute bottom-5 left-1/2 md:block hidden `}>
+                {activeTabIndex < 11 ? <div className={`${styles.arrowUpDown} z-[1000] absolute bottom-5 left-1/2 md:block hidden cursor-pointer `} onClick={() => { movePointerTop() }}>
                     <SlArrowDown size={20} className={`${styles.one} text-white`} />
                     <SlArrowDown size={20} className={`${styles.two} text-white`} />
                     <SlArrowDown size={20} className={`${styles.three} text-white`} />
                 </div> : ""}
-                {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-5 left-1/2 md:block hidden  `}>
+                {activeTabIndex > 0 ? <div className={`${styles.arrowUpDown} z-[1000] absolute top-5 left-1/2 md:block hidden cursor-pointer  `} onClick={() => { movePointerBottom() }}>
                     <SlArrowUp size={20} className={`${styles.one} text-white`} />
                     <SlArrowUp size={20} className={`${styles.two} text-white`} />
                     <SlArrowUp size={20} className={`${styles.three} text-white`} />
