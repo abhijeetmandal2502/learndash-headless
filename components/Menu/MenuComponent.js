@@ -370,8 +370,12 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
                         <div className={`absolute top-0 left-0 w-full h-screen overflow-y-scroll ${openMobTab == "" ? ' translate-x-full transition-all ease-in-out duration-1000' : ''}  `}>
 
-                            <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
-                                <LogoCard LogoImage={LogoImage} />
+                            <div className={` flex px-3 justify-between items-center space-x-5 cursor-pointer py-4 ${!showLogo ? styles.hide : styles.aboutMain}`}>
+                                <div className=''>
+                                    <Link href="/">
+                                        <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                    </Link>
+                                </div>
 
                                 <div className='flex items-center '
                                     onClick={() => { HandleCloseBtn(), drowerClose() }}>

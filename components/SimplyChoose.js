@@ -262,49 +262,77 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 {data?.slice(1).map((item, index) => {
                                     return (
                                         <>
-                                            <div key={index} style={{ height: "33.33vh" }} className={` ${styles.mainDivGrid}  relative ${ShowGiftShoppi === true ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t hidden md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
-                                                onClick={() => { handleClick(index, item) }}
-                                            >
+                                            {/* for desktop */}
+                                            {/* gift shoppi course card */}
+                                            {ShowGiftShoppi ? <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray h-[33.33vh] md:p-10 md:py-5 md:pl-10 md:pr-5 md:mt-0 mt-5  flex flex-col justify-between`} >
                                                 <div className='flex justify-between'>
-                                                    <div>
-                                                        <div className='flex items-center justify-center space-x-1 font-[500] mediumf'>
-                                                            <MdOutlineWatchLater className='largef' />
-                                                            <p className='font-bold mediumf'>{item.duration}</p>
-                                                        </div>
+                                                    <div className='flex items-center justify-center space-x-1'>
+                                                        <MdOutlineWatchLater />
+                                                        <div className='mediumf'>{item.duration}</div>
                                                     </div>
-
-                                                    {/* course price components */}
-                                                    <div className={` relative `} >
-                                                        <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                            <p className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
+                                                    <div className={` relative `}>
+                                                        <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                                            <div className='font-semibold text-black mediumf'>
                                                                 ${item.price}
-                                                            </p>
+                                                            </div>
                                                         </div>
-                                                        {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
-                                                            +add
-                                                        </p> : <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
-                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
-                                                            <p className={`text-[#AC6CFF] largef font-semibold`}>
-                                                                added
-                                                            </p>
-                                                        </div>}
                                                         <div className=''>
-                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} /> :
-                                                                <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />}
+                                                            <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} alt='price' className={`${styles.priceBack}`} />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className={`absolute bottom-[10%]   font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
                                                     {item.discription}
                                                 </div>
-
-                                                <div className='hidden md:block'>
-                                                    <div className={` absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
-                                                        <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
-                                                    </div>
+                                                <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                                    <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                                                 </div>
 
-                                            </div>
+                                            </div> :
+                                                <div key={index} className={` ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
+                                                    onClick={() => { handleClick(index, item) }}
+                                                >
+                                                    <div className='flex justify-between'>
+                                                        <div>
+                                                            <div className='flex items-center justify-center space-x-1 font-[500] mediumf'>
+                                                                <MdOutlineWatchLater className='largef' />
+                                                                <p className='font-bold mediumf'>{item.duration}</p>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* course price components */}
+                                                        <div className={` relative `} >
+                                                            <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                                                                <p className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
+                                                                    ${item.price}
+                                                                </p>
+                                                            </div>
+                                                            {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
+                                                                +add
+                                                            </p> : <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
+                                                                <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
+                                                                <p className={`text-[#AC6CFF] largef font-semibold`}>
+                                                                    added
+                                                                </p>
+                                                            </div>}
+                                                            <div className=''>
+                                                                {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} /> :
+                                                                    <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className={`absolute bottom-[10%]   font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
+                                                        {item.discription}
+                                                    </div>
+
+                                                    <div className='hidden md:block'>
+                                                        <div className={` absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                                            <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>}
+
                                             {/* for mobile */}
                                             <div key={index} className={`md:hidden ${ShowGiftShoppi ? 'hidden' : ""}   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray  p-5   flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), selectedCourseMethod() }}>
                                                 <div className='flex justify-between'>
@@ -347,40 +375,14 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
                                             </div>
 
-                                            {/* gift shoppi course card */}
-                                            {ShowGiftShoppi ? <div key={index} className={`bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray h-[33.33vh] md:p-10 md:py-5 md:pl-10 md:pr-5 md:mt-0 mt-5  flex flex-col justify-between`} >
-                                                <div className='flex justify-between'>
-                                                    <div className='flex items-center justify-center space-x-1'>
-                                                        <MdOutlineWatchLater />
-                                                        <div className='mediumf'>{item.duration}</div>
-                                                    </div>
-                                                    <div className={` relative `}>
-                                                        <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                            <div className='font-semibold text-black mediumf'>
-                                                                ${item.price}
-                                                            </div>
-                                                        </div>
-                                                        <div className=''>
-                                                            <Image src="/start/giftshoppiPriceBg.svg" width={68} height={69} alt='price' className={`${styles.priceBack}`} />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className={`absolute bottom-[10%]   font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
-                                                    {item.discription}
-                                                </div>
-                                                <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
-                                                    <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
-                                                </div>
 
-                                            </div> : ""}
                                         </>
                                     )
 
-                                })}
-                                {/* <div className='hidden md:block'>
+                                })} <div className='hidden md:block'>
                                     <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
                                         <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
-                                </div> */}
+                                </div>
 
 
                             </div>
