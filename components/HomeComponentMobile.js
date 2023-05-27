@@ -30,7 +30,9 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/start.png",
             title: "start",
-            content: <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
+            content: <div className='-mt-7'>
+                <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
+            </div>
         },
         {
             image: "/images/new-imback.png",
@@ -135,7 +137,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                                 <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {(activeTabIndex == 4 ? 'start' : 'lobby') && (selectedCourse == true ? 'courses' : 'lobby')}  </span></button>
                                                         </div>
 
-                                                        <div className={`text-black mt-[100px] ${activeTabIndex === 0 ? 'px-0' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
+                                                        <div className={`text-black mt-[120px] ${activeTabIndex === 0 ? 'px-0' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
                                                     </div>
                                                 </div>
                                                 <Disclosure.Panel className="w-full py-1 text-white ">
@@ -187,7 +189,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                                         <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
                                                                             <div key={id} className='flex items-center px-3 py-5 space-x-5'>
                                                                                 <Image alt='start' src={item.image} height='80' width='80' />
-                                                                                <h3 className='mt-4 text-black dubblelargef '>{item.title}</h3>
+                                                                                <h3 className='mt-4 text-black text-2xl '>{item.title}</h3>
                                                                             </div>
                                                                         </div>
                                                                     </>

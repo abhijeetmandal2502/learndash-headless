@@ -976,7 +976,7 @@ screen and (max-height: 700px) {
     }
 }
 
-.animatMenuLine>path:first-child {
+/* .animatMenuLine>path:first-child {
 
     animation: animateLine 500ms infinite;
 
@@ -1002,7 +1002,7 @@ screen and (max-height: 700px) {
         -webkit-transform: scale(1);
         transition: scale 500ms ease;
     }
-}
+} */
 
 
 /* door open animation */

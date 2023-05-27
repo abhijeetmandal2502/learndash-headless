@@ -84,8 +84,11 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
         </button>
         {/* loby button code end */}
         <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4 md:mt-0 mt-10`}>
-          <div className='md:col-span-6 col-span-12'>
-            <h2 className='triplelargefXXXL text-black '>all courses ncbtmb approved.</h2>
+          <div className='md:col-span-6 col-span-12 hidden md:block'>
+            <h2 className='triplelargefXXXL text-black  '>all courses ncbtmb approved.</h2>
+          </div>
+          <div className='md:col-span-6 col-span-12 md:hidden w-1/2'>
+            <h2 className=' text-3xl text-black '>all courses ncbtmb approved.</h2>
           </div>
 
           <div className='md:col-span-6 col-span-12'>
@@ -94,7 +97,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
           </div>
         </div>
 
-        <div className={`${styles.selectBox} mt-20`}>
+        <div className={`${styles.selectBox} md:mt-20`}>
           <div className='py-1 font-semibold '>
             <p className='hidden md:block mediumf text-black'>accepted in your state?</p>
             <p className=' md:hidden mediumf'>Select a State</p>
