@@ -6,6 +6,11 @@
 
 }
 
+.gridMaincontent {
+    transition: all ease-in-out 2s;
+    animation-delay: 4s;
+    animation: transformUpcontetn 2s ease-in-out forwards;
+}
 
 /* scrollbar css */
 
@@ -26,19 +31,33 @@
 
 }
 
-
-@keyframes transformUp {
+@keyframes transformUpcontetn {
 
     from {
-        top: 100px;
+
         opacity: 0;
 
     }
 
     to {
 
-        top: 0;
+
         opacity: 1;
+    }
+}
+
+@keyframes transformUp {
+
+    from {
+        top: 100px;
+        /* opacity: 0; */
+
+    }
+
+    to {
+
+        top: 0;
+        /* opacity: 1; */
     }
 }
 
