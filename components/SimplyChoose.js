@@ -376,10 +376,11 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                         </>
                                     )
 
-                                })} <div className='hidden md:block'>
+                                })}
+                                {/* <div className='hidden md:block'>
                                     <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
                                         <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
-                                </div>
+                                </div> */}
 
 
                             </div>
