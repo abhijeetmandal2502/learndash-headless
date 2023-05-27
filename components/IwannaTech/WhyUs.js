@@ -20,7 +20,7 @@ const WhyUs = ({ activeTabIndex }) => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} max-h-screen  `}>
+            <div className={`bg-transparent grid grid-cols-12  max-h-screen ${styles.fadeAnimation}`}>
 
                 {/* image for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2 ${styles.imgcenter} `}>

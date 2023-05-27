@@ -31,7 +31,7 @@ const WhyTech = () => {
         <>
             <div className={` bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
 
-                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start 2xl:-mt-20 md:hidden`}>
+                <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start  md:hidden`}>
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />
                 </div>
 

@@ -132,10 +132,15 @@ const Start = () => {
         selectStyles.opacity = 1
         selectStyles.transition = isInitialRender.current
             ? `opacity 150ms 150ms`
-            : `transform 1000ms 0ms, opacity 150ms 150ms, height 150ms`
+            : `transform 500ms 0ms, opacity 150ms 150ms, height 150ms`
 
         isInitialRender.current = false
     }
+
+
+
+    const updownAnimation = selectStyles.transform;
+    console.log('selectStyles', updownAnimation)
 
     const movePointerTop = () => {
         setActiveTabIndex(activeTabIndex + 1)
@@ -149,8 +154,6 @@ const Start = () => {
         positionFun()
 
     }, [activeTabIndex])
-
-    //console.log('activeTabIndex', activeTabIndex)
     const [positionTop, setPositionTop] = useState('')
     const positionFun = (() => {
         if (activeTabIndex == 0) {
@@ -191,8 +194,6 @@ const Start = () => {
 
         }
     })
-
-
     const LogoImage = "/images/WhiteLogo.svg"
     return (
         <>
@@ -241,8 +242,8 @@ const Start = () => {
                                 ${styles.transformTopBottomIndicater} `}
                                     style={selectStyles}>
 
-                                    <div className={``}>
-                                        <svg className='h-[20px]' >
+                                    <div className={`${styles.shadow}`}>
+                                        <svg className={`h-[20px] `} >
                                             <circle cx="50" cy={9} r="8" stroke="white" stroke-width="2" fill="none">
                                             </circle>
                                         </svg>
@@ -335,7 +336,7 @@ const Start = () => {
                             </div>
                         </div >
                         {/* Show active tab content. */}
-                        <div className={`pb-4 -mt-4 col-span-10 md:col-span-10 z-0 ${styles.fadeAnimation}`} >
+                        <div className={`pb-4  col-span-10 md:col-span-10 z-0  `}  >
                             <div>{tabsData[activeTabIndex].content}</div>
                         </div >
                     </div >

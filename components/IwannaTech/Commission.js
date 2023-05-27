@@ -31,7 +31,7 @@ const Commission = () => {
 
 
 
-            <div className='bg-transparent ${styles.fadeAnimation} '>
+            <div className={`bg-transparent ${styles.fadeAnimation}`}>
                 <h2 className={`text-white font-semibold md:mb-16  fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>commission
                 </h2>
                 <div className={`grid grid-cols-12 `}>

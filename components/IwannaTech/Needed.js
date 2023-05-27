@@ -7,7 +7,7 @@ const Needed = () => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent grid grid-cols-12`}>
 
                 <div className='flex items-start justify-center col-span-12 md:hidden md:col-span-7'>
                     <div className={`${styles.shadow} ${styles.imgRotate}  `}>

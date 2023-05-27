@@ -8,7 +8,7 @@ const StartComponent = () => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} xl:mt-8 lg:mt-8 mt-8`}>
+            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation} `}>
                 {/* image for mobile */}
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove}  col-span-12 md:col-span-6 flex  md:hidden justify-center items-start   `}>
                     <Image src='/images/iwannatech.png' width={200} height={200} alt="wanna tech png" className={``} />

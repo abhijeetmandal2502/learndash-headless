@@ -462,7 +462,9 @@
     width: 400px;
 }
 
-
+.startCompMt {
+    margin-top: 393px;
+}
 
 
 /* responsive for destop */
@@ -572,12 +574,13 @@
         width: 325px;
     }
 
+    .startCompMt {
+        margin-top: 280px;
+    }
+
 
 
 }
-
-
-
 
 @media (max-height:700px) {
     /* why us image animated image components */
@@ -646,6 +649,10 @@
         bottom: 98px;
         right: 37px;
         width: 399px;
+    }
+
+    .startCompMt {
+        margin-top: 240px;
     }
 }
 
@@ -763,13 +770,16 @@
         width: 276px;
     }
 
+    .startCompMt {
+        margin-top: 190px;
+    }
+
 
     /* .getStarted {
 
         margin-right: -7rem;
     } */
 }
-
 
 @media (max-height:450px) {
 
@@ -878,6 +888,10 @@
     .getStartedManImage {
 
         width: 276px;
+    }
+
+    .startCompMt {
+        margin-top: 160px;
     }
 
 
