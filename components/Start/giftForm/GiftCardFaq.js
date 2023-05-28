@@ -28,21 +28,21 @@ const GiftCardFaq = () => {
 
     return (
         <>
-            <div className={`h-96 overflow-y-auto px-32 `}>
+            <div className={`h-96 overflow-y-auto md:px-32 `}>
                 <div className={``}>
-                    <h2 className={` text-center supermediumf pb-8 tracking-[0.5px]`}>
+                    <h2 className={` text-center supermediumf text-[40px] pb-8 tracking-[0.5px]`}>
                         gift card faq
                     </h2>
                     {
                         faqData?.map((item, key) => {
                             return (
                                 <>
-                                    <div key={key} className={``}>
+                                    <div key={key} className={`mb-5 md:mb-0`}>
                                         <div >
-                                            <h4 className={`dubblelargefXL font-[500] text-center pb-2 tracking-[0.5px]`}>
+                                            <h4 className={`dubblelargefXL text-[24px] font-[500] text-center pb-2 tracking-[0.5px]`}>
                                                 {item?.subTitle}
                                             </h4>
-                                            <p className={`mediumf text-center tracking-[0.5px]`}>
+                                            <p className={`mediumf text-[19px] text-center tracking-[0.5px]`}>
                                                 {item?.content}
                                             </p>
                                         </div>

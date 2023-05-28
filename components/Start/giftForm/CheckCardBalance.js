@@ -35,9 +35,9 @@ const CheckCardBalance = () => {
 
     return (
         <>
-            <div className={`px-48`}>
+            <div className={`md:px-48`}>
                 {!showBalaence ? <div>
-                    <h4 className={`triplelargefXL text-center pb-8 font-normal`}>
+                    <h4 className={`triplelargefXL text-[36px] text-center pb-8 font-normal`}>
                         enter gift card account #to check balance
                     </h4>
                     <div className='flex justify-center items-center'>

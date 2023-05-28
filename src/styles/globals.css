@@ -228,8 +228,6 @@ ol {
 
 }
 
-
-
 .zoom-effect-container:hover .image-card img {
   -ms-transform: scale(1.1);
   /* IE 9 */
@@ -1119,7 +1117,7 @@ ol {
 
 /* minheight screen size font  */
 
-@media (max-height:840px) {
+@media (max-height:840px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1271,7 +1269,7 @@ ol {
   }
 }
 
-@media (max-height:750px) {
+@media (max-height:750px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1361,7 +1359,7 @@ ol {
 
 }
 
-@media (max-height:650px) {
+@media (max-height:650px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1445,7 +1443,7 @@ ol {
 
 }
 
-@media (max-height:600px) {
+@media (max-height:600px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1532,7 +1530,7 @@ ol {
 
 }
 
-@media (max-height:500px) {
+@media (max-height:500px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1617,7 +1615,7 @@ ol {
 
 }
 
-@media (max-height:485px) {
+@media (max-height:485px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 8px !important;
@@ -1698,7 +1696,7 @@ ol {
 
 }
 
-@media (max-height:400px) {
+@media (max-height:400px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 8px !important;
@@ -1779,7 +1777,7 @@ ol {
 
 }
 
-@media (max-height:250px) {
+@media (max-height:250px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 8px !important;

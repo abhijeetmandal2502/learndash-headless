@@ -350,7 +350,7 @@
 } */
 
 
-@media(max-height:750px) {
+@media(max-height:750px) and (min-width:992px) {
     .mainDiv>.gift {
 
         background-image: url(/images/homeBlack.svg);
@@ -375,7 +375,7 @@
 }
 
 
-@media(max-height:992px) {
+@media(max-height:992px) and (min-width:992px) {
     .mainDiv>.gift {
 
         background-image: url(/images/homeBlack.svg);
@@ -411,7 +411,7 @@
 }
 
 
-@media(max-height:900px) {
+@media(max-height:900px) and (min-width:992px) {
 
     .viewMoreIcon {
         width: 18px !important;
@@ -444,7 +444,7 @@
     }
 }
 
-@media(max-height:840px) {
+@media(max-height:840px) and (min-width:992px) {
 
     .viewMoreIcon {
         width: 18px !important;
@@ -482,7 +482,7 @@
     }
 }
 
-@media (max-height:750px) {
+@media (max-height:750px) and (min-width:992px) {
 
     .mainDiv>.gift {
 
@@ -602,7 +602,7 @@
 
 }
 
-@media (max-height:650px) {
+@media (max-height:650px) and (min-width:992px) {
 
     /* gift shoppi css  */
 
@@ -743,7 +743,7 @@
 
 }
 
-@media (max-height:550px) {
+@media (max-height:550px) and (min-width:992px) {
     /* gift shoppi css  */
 
     .mainDiv>.gift {
@@ -912,7 +912,7 @@
 
 }
 
-@media (max-height:450px) {
+@media (max-height:450px) and (min-width:992px) {
 
     .priceBack {
         width: 50px !important;
@@ -978,7 +978,7 @@
 
 /* media query max-width */
 
-@media (max-width:1280px) {
+@media (max-width:1280px) and (min-width:992px) {
 
     .mainDiv>.gift {
 

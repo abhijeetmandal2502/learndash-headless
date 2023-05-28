@@ -83,7 +83,7 @@ const AddToCart = () => {
                         </div>
                     </div>
                 </div>
-                <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute -bottom-2 flex px-2  left-1/2 -translate-x-1/2 `}>
+                <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute -bottom-2 flex px-2  left-1/2 -translate-x-1/2  `}>
                     {/* ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}> */}
                     <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
                         <MdKeyboardArrowDown className={`text-white ${styles.viewMoreIcon}`} size={25} />
@@ -98,7 +98,7 @@ const AddToCart = () => {
             {/* checkout componets  */}
             <div className={`${styles.readyToCheckoutBg} mt-[5%] mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
-                <div className={`flex justify-between items-center px-6 py-1 ${styles.addedItemList}`}>
+                <div className={`flex justify-between items-center px-6 py-1  ${styles.addedItemList}`}>
                     <div className={`flex space-x-1 items-center  `}>
                         <Image src="/start/emptyBasketPrice.svg" width={25} height={27} alt="empty basket" className={`${styles.checkoutIcon}`} />
                         <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
@@ -147,7 +147,7 @@ const AddToCart = () => {
 
             </div>
             {/* payment option componet mobile  */}
-            <div className={`mx-5 bg-white shadow-2xl pb-4 md:hidden`}>
+            <div className={`mx-5 bg-white shadow-2xl pb-14 md:hidden`}>
 
                 <div className='px-3'>
 

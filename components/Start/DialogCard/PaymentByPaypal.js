@@ -8,7 +8,7 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
             <div className='mx-5'>
                 {/* gift card */}
 
-                <div className=''>
+                <div className='hidden md:block'>
                     <div className='flex  space-x-5 items-center justify-center'>
                         <div className='hidden md:block'>
                             <Image src={giftCardDetail.image} width={149} height={221} className={`${styles.paypalImage}`} alt="gift card" />
@@ -23,9 +23,22 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
 
                         </div>
                     </div>
+
+                </div>
+                {/* for moblile */}
+                <div className='md:hidden '>
+                    <div className='flex  space-x-5 items-center justify-center'>
+                        <div className=''>
+                            <Image src={giftCardDetail.image} width={100} height={100} alt="gift card" />
+                        </div>
+
+                        <div >
+                            <h2 className=' text-[22px] tracking-wide  text-black leading-tight'>{giftCardDetail.title}</h2>
+                        </div>
+                    </div>
                     {/* title for mobile */}
-                    <div className='md:hidden mb-10'>
-                        <p className={`extlargef text-voilet text-center md:leading-[107%] leading-tight `}>{giftCardDetail.DueBalance}</p>
+                    <div className=' mb-10'>
+                        <p className={`extlargef text-voilet text-center underline  leading-tight `}>{giftCardDetail.DueBalance}</p>
                     </div>
                 </div>
                 {/* credit card detail  */}
@@ -43,7 +56,7 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
                         <div className={` mx-auto mt-16`}>
                             <button type="button"
                                 onClick={() => { setPaypalPayment() }}
-                                className={`px-16  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                                className={`md:px-16 px-32  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
 
                             </button>
                         </div>

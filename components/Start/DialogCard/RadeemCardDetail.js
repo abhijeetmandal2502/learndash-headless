@@ -57,7 +57,9 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
             <div className='md:mx-5 md:p-0 p-4
              md:mb-0 '>
                 {/* gift card */}
-                <div className=''>
+
+                {/* for desktop */}
+                <div className='hidden md:block'>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
                         <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={` ${styles.redeemCardImage} `} />
 
@@ -66,8 +68,21 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                             <p className='md:block hidden dubblelargef text-black  leading-tight md:leading-[107%]'>{giftCardDetail.DueBalance}</p>
                         </div>
                     </div>
+                </div>
 
-                    <p className=' text-center md:hidden  text-voilet largef font-bold py-2 leading-tight '>{giftCardDetail.DueBalance}</p>
+                {/* for mobile */}
+
+                <div className='md:hidden'>
+                    <div className='flex  md:space-x-5 space-x-2 items-center'>
+                        <Image src={giftCardDetail.image} width={300} height={200} alt="redeem card" className={`  `} />
+
+                        <div >
+                            <h2 className='text-[24px] leading-[24px] py-1 tracking-wide '>{giftCardDetail.title}</h2>
+                            <p className=' text-[16px]   '>{giftCardDetail.DueBalance}</p>
+                        </div>
+                    </div>
+
+                    {/* <p className=' text-center md:hidden  text-voilet largef font-bold py-2 leading-tight '>{giftCardDetail.DueBalance}</p> */}
                 </div>
 
 
@@ -295,9 +310,9 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
                         {/* continue button */}
 
                         <div className=' absolute md:bottom-0 -bottom-24 left-1/2 -translate-x-1/2 w-full  '>
-                            <div className='md:flex md:space-x-2  md:space-y-0 space-y-5 justify-end '>
+                            <div className='md:flex md:space-x-2  md:space-y-0 space-y-5 justify-end pb-2'>
                                 {showGiftCardDetail ?
-                                    <div className='mediumf '>redeem
+                                    <div className='mediumf text-center '>redeem
                                         <span className='text-voilet border-b'>1 gift card</span>
                                         for <span className='text-voilet border-b'>$20</span>
                                     </div>

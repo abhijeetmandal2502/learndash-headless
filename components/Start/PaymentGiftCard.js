@@ -128,7 +128,7 @@ const PaymentGiftCard = () => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className={`w-full max-w-[900px] md:p-6  text-left align-middle transition-all transform bg-white shadow-xl ${styles.paymentDialog}`}>
+                                <Dialog.Panel className={`w-full md:max-w-[900px] md:p-6  text-left align-middle transition-all transform bg-white shadow-xl ${styles.paymentDialog}`}>
                                     <div className={`flex items-center  md:justify-end  ${cograteModel ? ' justify-end' : 'justify-between'}`}>
                                         <div className={`md:hidden flex space-x-2 justify-center items-center pl-5 ${cograteModel ? 'hidden' : ""}`}>
                                             <FiArrowLeft size={25} />

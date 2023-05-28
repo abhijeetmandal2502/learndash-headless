@@ -236,7 +236,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white mediumf'>Close </p>
-                                <AiOutlineClose size={20} className="text-white 3xl:w-10 3xl:h-10" />
+                                <AiOutlineClose size={20} className="text-white " />
                             </div>
                         </div>
                         <div className='absolute -translate-x-1/2 bottom-[5%] left-1/2'>

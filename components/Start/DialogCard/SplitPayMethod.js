@@ -56,7 +56,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
     return (
         <>
-            <div className=' md:h-auto  md:mb-0 mb-20 overflow-y-scroll'>
+            <div className=' md:h-auto  md:mb-0 mb-20 overflow-y-scroll '>
                 <div className={`relative  ${showSplitPayment || CreditCardPayment || PaypalPayment ? styles2.hidebgComp : ""} `}>
 
                     <div className='md:px-16 md:block hidden'>
@@ -72,14 +72,14 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                     </div>
                     {/* card header for mpobile */}
 
-                    <div className='md:hidden px-5'>
+                    <div className='md:hidden px-5 mt-3'>
                         <div className='md:flex justify-between items-center space-x-3'>
                             <div className='flex justify-center items-center '>
                                 <Image src="/start/splitPayment.png" width={80} height={60} alt="split card" />
-                                <h2 className=' largef  tracking-wide leading-[107%]'>split payment methods</h2>
+                                <h2 className=' text-[25px] font-[400] tracking-wide leading-[107%]'>split payment methods</h2>
                             </div>
                             <div>
-                                <p className='smallf  text-center font-Barlow  tracking-wide leading-[107%] md:mt-3'>use up to 4 gift cards plus one (1) additional payment method (simply click on an icon to pay)</p>
+                                <p className='text-[18px]  text-center font-Barlow  tracking-wide leading-[107%] md:mt-3'>use up to 4 gift cards plus one (1) additional payment method (simply click on an icon to pay)</p>
 
                             </div>
                         </div>
@@ -91,7 +91,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                         {/* add gift payment card */}
                         <div className=' md:col-span-5 col-span-12 md:flex items-center justify-between mx-7'>
                             <div className={`${styles2.mainDiv} relative  cursor-pointer`} onClick={() => { ShowPaymentOptionWithGiftCard() }}>
-                                <p className='extsmallf  tracking-wide py-3 text-center leading-[107%]'>+ add gift card(s)</p>
+                                <p className='smallf font-semibold  tracking-wide md:py-3 pt-4 pb-1 text-center leading-[107%]'>+ add gift card(s)</p>
                                 <div className=' flex justify-center'>
                                     <div
                                         className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl xl:hover:shadow-xl lg:hover:shadow-xl md:hover:shadow-sm hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}
@@ -108,18 +108,18 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                         </div>
                                     </div> : ""}
                                 </div>
-                                <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${showSplitPayment == undefined ? 'text-voilet mt-0 font-semibold' : 'text-gray mt-5'}`}> {showSplitPayment == undefined ? '$20 applied' : '$0 applied'} </p>
+                                <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${showSplitPayment == undefined ? 'text-voilet md:mt-5 mt-2  font-semibold' : 'text-gray md:mt-5 mt-2 '}`}> {showSplitPayment == undefined ? '$20 applied' : '$0 applied'} </p>
                             </div>
-                            <div className='flex justify-center mx-2'>
-                                <p className='bg-black text-white px-3 py-0.5 max-w-[38px] min-w-[30px] md:w-full  text-[24px] rounded-full'>+</p>
+                            <div className='flex justify-center mx-2 mt-2 md:mt-0'>
+                                <p className='bg-black text-white px-3 md:py-0.5 max-w-[38px] min-w-[30px] md:w-full  text-[24px] rounded-full'>+</p>
                             </div>
                         </div>
 
                         <div className=' md:col-span-7 col-span-12  '>
                             <div className='grid grid-cols-12'>
                                 {/* add credit card payment */}
-                                <div className={`col-span-5 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
-                                    <p className='extsmallf py-3 text-center leading-[107%]'>+ add credit card(s)</p>
+                                <div className={`col-span-6 ${PaypalPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithCreditCard() }}>
+                                    <p className='smallf font-semibold py-3 text-center leading-[107%]'>+ add credit card(s)</p>
                                     <div className='flex justify-center items-center relative'>
                                         <div className={`${styles.image_wrapper, styles.shine} ${styles2.mainDiv} hover:shadow-2xl hover:shadow-zinc-600 hover:rounded-xl transition-all ease-in-out duration-500 `}>
                                             <div className={`${styles2.creditCard}  ${CreditCardPayment == undefined ? 'hidden' : ''} `}>
@@ -144,7 +144,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
                                 {/* add paypal payment */}
                                 <div className={`col-span-5 ${CreditCardPayment == undefined ? 'opacity-[0.5]  disabled cursor-not-allowed' : ''}`} onClick={() => { PaymentWithPaypal() }}>
-                                    <p className='extsmallf tracking-wide text-center py-3 leading-[107%]'>+ add paypal</p>
+                                    <p className='smallf font-semibold tracking-wide text-center py-3 leading-[107%]'>+ add paypal</p>
                                     <div className='flex justify-center items-center relative'>
 
                                         <div className={`${styles.image_wrapper, styles.shine}`}>
@@ -167,19 +167,19 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
                                 </div>
                             </div>
 
-                            <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${(PaypalPayment == undefined) || (CreditCardPayment == undefined) ? 'text-voilet mt-0 font-semibold' : 'text-gray mt-5'}`}> {(PaypalPayment == undefined) || (CreditCardPayment == undefined) ? '$20 applied' : '$0 applied'} </p>
+                            <p className={`dubblelargef   text-center leading-[121%] tracking-wider ${(PaypalPayment == undefined) || (CreditCardPayment == undefined) ? 'text-voilet md:mt-5 mt-2  font-semibold' : 'text-gray md:mt-5 mt-2 '}`}> {(PaypalPayment == undefined) || (CreditCardPayment == undefined) ? '$20 applied' : '$0 applied'} </p>
                         </div>
 
                     </div>
 
 
-                    <div className='flex justify-between md:justify-end items-center space-x-5'>
-                        <p className=' minismallf text-[14px] text-voilet font-normal'><span className='border-voilet border-b font-semibold'>remaining due: $40</span></p>
+                    <div className={`${styles2.shadowbtnContinue}   py-5 flex justify-between md:justify-end items-center space-x-5 px-5 md:px-0`}>
+                        <p className=' minismallf text-[14px] text-center text-voilet font-normal'><span className='border-voilet border-b font-semibold'>remaining due: $40</span></p>
 
                         <div className={` mx-auto`}>
                             <button type="button"
                                 onClick={() => { addSplitPayment(), closeModal() }}
-                                className={`w-full px-16  py-2 tracking-[0.02em] text-white   ${(showSplitPayment == undefined && CreditCardPayment == undefined) || (showSplitPayment == undefined && PaypalPayment == undefined) ? 'bg-voilet opacity-1' : styles.btnDesabledBg}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                                className={`w-full md:px-16 px-10  py-2 tracking-[0.02em] text-white   ${(showSplitPayment == undefined && CreditCardPayment == undefined) || (showSplitPayment == undefined && PaypalPayment == undefined) ? 'bg-voilet opacity-1' : styles.btnDesabledBg}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
                             </button>
                         </div>
                     </div>

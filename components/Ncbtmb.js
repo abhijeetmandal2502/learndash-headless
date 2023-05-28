@@ -77,7 +77,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   return (
     <>
-      <div className='relative h-screen md:pl-28 overflow-hidden bg-transparent '>
+      <div className='relative h-screen md:pl-[12%] overflow-hidden bg-transparent '>
         {/* this loby button for desktop */}
         <button className={`md:flex hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-5 py-2  rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white " /><span className='mediumf '>lobby</span>

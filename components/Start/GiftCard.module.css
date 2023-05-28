@@ -91,6 +91,14 @@
     }
 }
 
+@media (max-width:992px) {
+
+    .eGiftbg {
+        padding: 12px !important;
+        margin: 0px 0px 0px 0px !important;
+    }
+}
+
 
 
 /* responsive css for giftshoppe max-width */

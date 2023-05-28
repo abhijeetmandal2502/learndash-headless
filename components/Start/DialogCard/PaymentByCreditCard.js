@@ -7,25 +7,35 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
 
             <div className='mx-5'>
                 {/* gift card */}
-                <div className=''>
+
+                {/* for desktop */}
+                <div className='md:block hidden'>
                     <div className='flex  space-x-5 items-center'>
-                        <div className='hidden md:block'>
+                        <div className=''>
                             <Image src={giftCardDetail.image} width={349} height={221} className={`${styles.creditCardImage}`} alt="gift card" />
                         </div>
-                        <div className='md:hidden'>
-                            <Image src={giftCardDetail.image} width={150} height={200} alt="gift card" />
-                        </div>
-
 
                         <div >
                             <h2 className=' fourxllargef tracking-wide md:leading-[107%] leading-tight'>{giftCardDetail.title}</h2>
-                            <p className='md:text-[32px] dubblelargf  md:leading-[107%] leading-tight hidden md:block'><span className='border-b border-voilet text-voilet'>{giftCardDetail.DueBalance}</span></p>
+                            <p className='md:text-[32px] dubblelargf  md:leading-[107%] leading-tight '><span className='border-b border-voilet text-voilet'>{giftCardDetail.DueBalance}</span></p>
 
+                        </div>
+                    </div>
+                </div>
+
+                {/* for mobile */}
+                <div className='md:hidden'>
+                    <div className='flex  space-x-5 items-center'>
+                        <div className='md:hidden'>
+                            <Image src={giftCardDetail.image} width={150} height={200} alt="gift card" />
+                        </div>
+                        <div >
+                            <h2 className='text-[22px]  tracking-wide  leading-tight'>{giftCardDetail.title}</h2>
                         </div>
                     </div>
                     {/* title for mobile */}
                     <div className='md:hidden mb-10'>
-                        <p className={`extlargef text-voilet text-center md:leading-[107%] leading-tight `}>{giftCardDetail.DueBalance}</p>
+                        <p className={` text-[30px] underline tracking-tight text-voilet text-center md:leading-[107%] leading-tight `}>{giftCardDetail.DueBalance}</p>
                     </div>
                 </div>
                 {/* credit card detail  */}
@@ -53,16 +63,16 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
 
                     <div className={`flex items-center space-x-1 py-3 mt-2`}>
                         <Image src="/images/savePassword.svg" width={19} height={19} alt="password icon" />
-                        <p className={`text-gray smallf `}>save payment for future purchases?</p>
+                        <p className={` smallf `}>save payment for future purchases?</p>
                     </div>
 
                     <div className={`mt-10 ${styles.creditCardbtn} flex flex-col justify-center space-y-2`}>
-                        <div className='mediumf text-center '>apply <span className='text-voilet border-b'>$20 payment</span> to credit card</div>
+                        <div className='mediumf font-[500] text-center '>apply <span className='text-voilet border-b'>$20 payment</span> to credit card</div>
 
                         <div className={` mx-auto`}>
                             <button type="button"
                                 onClick={() => { setCreditCardPayment() }}
-                                className={`px-16  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf  font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                                className={`md:px-16 px-32 py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf  font-semibold traking-[0.02em] focus:outline-none`}  >continue
                             </button>
                         </div>
                     </div>

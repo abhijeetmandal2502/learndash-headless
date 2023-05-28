@@ -32,7 +32,7 @@ const SimpleGiftCard = () => {
     }
     return (
         <>
-            <div className='bg-transparent'>
+            <div className='bg-transparent '>
                 <div className=''>
                     <Image className={`max-w-[335px] -ml-[16%] ${styles.giftCardImage}`} src="/start/GiftCard3D.svg" width={500} height={314} alt="gift" />
                 </div>

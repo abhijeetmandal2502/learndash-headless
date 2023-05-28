@@ -55,8 +55,8 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
     return (
         <>
             <div className='md:mx-5 md:p-0 p-4 h-screen md:mb-0 mb-20 overflow-y-scroll'>
-                {/* gift card */}
-                <div className=''>
+                {/* gift card desktop */}
+                <div className='md:block hidden' >
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
                         <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={`${styles.payByGiftCard}`} />
                         <div >
@@ -65,8 +65,17 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
 
                         </div>
                     </div>
+                </div>
+                {/* gift card mobile */}
+                <div className='md:hidden'>
+                    <div className='flex  md:space-x-5 space-x-2 items-center'>
+                        <Image src={giftCardDetail.image} width={300} height={200} alt="redeem card" />
+                        <div >
+                            <h2 className='  text-[22px] leading-tight '>{giftCardDetail.title}</h2>
+                        </div>
+                    </div>
 
-                    <p className=' text-center md:hidden  text-voilet largef font-bold py-2 leading-tight '>{giftCardDetail.DueBalance}</p>
+                    <p className=' text-center underline    text-voilet text-[30px] font-[500] py-2 out leading-tight '>{giftCardDetail.DueBalance}</p>
                 </div>
 
 
@@ -77,7 +86,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         <p className='px-9 mb-3 mediumf'>gift card #</p>
 
                         <div className='flex items-center space-x-2 mb-4'>
-                            <p className='bg-lightgray text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[0].cardId}</p>
+                            <p className='bg-purple text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[0].cardId}</p>
                             <div className='flex justify-between items-center w-full border border-gray p-1' onClick={() => { setShowGiftCardDetail(true) }}>
                                 <div className={`mediumf leading-[130%] ${showGiftCardDetail ? 'text-black' : 'text-gray'}`}>
                                     {showGiftCardDetail ? (cardData[0].giftSrNoDcript) : (cardData[0].giftSrNo)}
@@ -122,7 +131,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         </div> : ""}
 
                         <div className='flex items-center space-x-2 mb-4 md:mt-0 mt-4'>
-                            <p className='bg-lightgray text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[1].cardId}</p>
+                            <p className='bg-purple text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[1].cardId}</p>
                             <div className='flex justify-between items-center w-full border border-gray p-1' onClick={() => { setShowGiftCardDetail2(true) }}>
                                 <div className={`mediumf leading-[130%] ${showGiftCardDetail2 ? 'text-black' : 'text-gray'}`}>
                                     {showGiftCardDetail2 ? (cardData[1].giftSrNoDcript) : (cardData[1].giftSrNo)}
@@ -167,7 +176,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         </div> : ""}
 
                         <div className='flex items-center space-x-2 mb-4 md:mt-0 mt-4'>
-                            <p className='bg-lightgray text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[2].cardId}</p>
+                            <p className='bg-purple text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[2].cardId}</p>
                             <div className='flex justify-between items-center w-full border border-gray p-1' onClick={() => { setShowGiftCardDetail3(true) }}>
                                 <div className={`mediumf leading-[130%] ${showGiftCardDetail3 ? 'text-black' : 'text-gray'}`}>
                                     {showGiftCardDetail3 ? (cardData[2].giftSrNoDcript) : (cardData[2].giftSrNo)}
@@ -212,7 +221,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         </div> : ""}
 
                         <div className='flex items-center space-x-2 mb-4 md:mt-0 mt-4'>
-                            <p className='bg-lightgray text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[3].cardId}</p>
+                            <p className='bg-purple text-black px-2.5 py-0.5 mediumf rounded-full'>{cardData[3].cardId}</p>
                             <div className='flex justify-between items-center w-full border border-gray p-1' onClick={() => { setShowGiftCardDetail4(true) }}>
                                 <div className={`mediumf leading-[130%] ${showGiftCardDetail4 ? 'text-black' : 'text-gray'}`}>
                                     {showGiftCardDetail4 ? (cardData[3].giftSrNoDcript) : (cardData[3].giftSrNo)}
@@ -297,10 +306,10 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                         <div className=' absolute md:-bottom-10 -bottom-24 left-1/2 -translate-x-1/2 w-full '>
                             <div className='md:flex   md:space-y-0 space-y-5 justify-end md:space-x-5 items-center'>
                                 {showGiftCardDetail ?
-                                    <div className='mediumf '>redeem <span className='text-voilet border-b'>1 gift card</span> for <span className='text-voilet border-b'>$20</span>
+                                    <div className='mediumf text-center '>redeem <span className='text-voilet border-b'>1 gift card</span> for <span className='text-voilet border-b'>$20</span>
                                     </div> : ""}
 
-                                <div className={`mr-3 `}>
+                                <div className={`md:mr-3 `}>
                                     <button type="button"
                                         onClick={() => { openModal(), setShowSplitPayment() }}
                                         className={`w-full px-16  py-2 tracking-[0.02em] text-white   ${showGiftCardDetail ? styles.paymentbyGiftCardBtn : 'bg-gray opacity-[0.5]'}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
