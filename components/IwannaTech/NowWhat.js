@@ -3,7 +3,7 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const NowWhat = () => {
+const NowWhat = ({ direction }) => {
     const data = [
         'there is no cost to you',
         'you re under no obligation either party cancel anytime.',
@@ -12,7 +12,7 @@ const NowWhat = () => {
     ]
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent grid grid-cols-12 ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
                 <div className='flex items-start justify-center col-span-12 md:col-span-7 md:hidden '>
                     <div className={`${styles.shadow} ${styles.imgRotateNowWhat} `}>
                         <Image src='/images/nowWhat.png' width={250} height={250} alt="wanna tech png" />
@@ -29,7 +29,7 @@ const NowWhat = () => {
                         {
                             data?.map((item, id) => {
                                 return (<>
-                                    <div key={id} className='py-2'>
+                                    <div key={id} className='py-2 w-[80%]'>
                                         <div className='flex items-start space-x-2'>
                                             <div className='md:p-1.5 p-1 rounded-full mediumf bg-white'>
                                                 <FaCheck className='font-bold text-green mediumf' />
@@ -51,7 +51,7 @@ const NowWhat = () => {
                     </div>
                 </div> */}
                 <div className={`${styles.shadow} ${styles.imgRotateNowWhat}  ${styles.imgbox}  mt-[-15%] 2xl:mt-[-18%] col-span-12 md:col-span-6 md:flex hidden justify-center items-start   `}>
-                    <Image src='/images/nowWhat.png' width={700} height={700} alt="wanna tech png" className={``} />
+                    <Image src='/images/nowWhat.png' width={650} height={650} alt="wanna tech png" className={``} />
                 </div>
 
             </div>

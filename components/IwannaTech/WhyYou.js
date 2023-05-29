@@ -3,7 +3,7 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const WhyYou = ({ activeTabIndex }) => {
+const WhyYou = ({ activeTabIndex, direction }) => {
     const [loading, setLoading] = useState(false)
     //console.log('res', loading, activeTabIndex)
 
@@ -19,7 +19,7 @@ const WhyYou = ({ activeTabIndex }) => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent grid grid-cols-12 ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
 
                 {/* for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2 ${styles.imgcenter} `}>
@@ -50,7 +50,7 @@ const WhyYou = ({ activeTabIndex }) => {
                         <h2 className={`text-white font-semibold  leading-[100%]    fivexllargef  ${styles.shadow}   tracking-wide `}>why you?</h2>
                         <h4 className='py-2 font-semibold text-black fourxllargef xl:pt-4 lg:py-0'>tell us about <br></br> your pedigre
                         </h4>
-                        <p className='font-semibold text-white lowercase largef lg:pt-0 '>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <p className=' text-white font-[450] leading-[130%] 2xl:leading-[120%] lowercase largef lg:pt-2 '>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
                     </div>

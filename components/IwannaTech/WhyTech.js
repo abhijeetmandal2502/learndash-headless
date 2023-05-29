@@ -3,7 +3,7 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const WhyTech = () => {
+const WhyTech = ({ direction }) => {
 
     const data = [
         {
@@ -29,7 +29,7 @@ const WhyTech = () => {
     ]
     return (
         <>
-            <div className={` bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={` bg-transparent grid grid-cols-12 ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
 
                 <div className={`${styles.shadow}  ${styles.imgRotate}  col-span-12 md:col-span-6 flex justify-center items-start  md:hidden`}>
                     <Image src='/images/whyTech.png' width={700} height={700} alt="wanna tech png" className={``} />

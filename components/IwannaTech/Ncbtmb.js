@@ -3,11 +3,11 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const Ncbtmb = () => {
+const Ncbtmb = ({ direction }) => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent grid grid-cols-12 ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
 
                 <div className='flex items-start justify-center col-span-12 md:col-span-7 md:hidden '>
                     <div className={`${styles.shadow} ${styles.imgRotate} `}>
@@ -21,7 +21,7 @@ const Ncbtmb = () => {
                             if not, click here!
                         </button>
                         <h4 className='pt-5 font-semibold fourxllargef 2xl:pt-10 '>that’s kind of a big deal</h4>
-                        <p className='font-semibold text-white lowercase largef lg:pt-0 '> Compliance requires both Provider and Course to be pre-approved.</p>
+                        <p className='font-semibold text-white leading-[130%] 2xl:leading-[120%] lowercase largef lg:pt-0 '> Compliance requires both Provider and Course to be pre-approved.</p>
 
                     </div>
                 </div>

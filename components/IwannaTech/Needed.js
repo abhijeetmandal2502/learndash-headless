@@ -3,11 +3,11 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const Needed = () => {
+const Needed = ({ direction }) => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12`}>
+            <div className={`bg-transparent grid grid-cols-12 ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
 
                 <div className='flex items-start justify-center col-span-12 md:hidden md:col-span-7'>
                     <div className={`${styles.shadow} ${styles.imgRotate}  `}>
@@ -18,7 +18,7 @@ const Needed = () => {
                     <div>
                         <h2 className={`text-white font-semibold leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>what’s <br />needed?</h2>
 
-                        <p className='pt-5 font-semibold xl:max-w-[90%] text-white lowercase largef'> Both you AND your course need to already be approved by NCBTMB
+                        <p className='py-5 lg:py-8 font-semibold leading-[130%] 2xl:leading-[120%] xl:max-w-[90%] text-white lowercase largef'> Both you AND your course need to already be approved by NCBTMB
                             <br></br><br></br>  Also, your course cannot teach Massage Technique, or Soft Tissue Manipulation.</p>
                         <h4 className='py-4 font-semibold dubblelargef 3xl:py-6'>cool! glad you’re here!!</h4>
 

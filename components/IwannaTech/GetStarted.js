@@ -3,7 +3,7 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const GetStarted = ({ activeTabIndex }) => {
+const GetStarted = ({ activeTabIndex, direction }) => {
 
     const [loading, setLoading] = useState(false)
     //console.log('res', loading, activeTabIndex)
@@ -21,7 +21,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12  ${styles.fadeAnimation}  `}>
+            <div className={`bg-transparent grid grid-cols-12  ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown} `}>
 
                 {/* for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  ${styles.imgcenter}`}>
@@ -57,7 +57,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 {/* for desktop  */}
 
-                <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
+                <div className={`relative mr-[25%] col-span-12 md:col-span-7 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-7 `}>
                     <div className={` relative  flex  mr-20 2xl:mr-16`}>
                         <div className='relative  w-full h-[426px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>
@@ -78,7 +78,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 {/* for extra large device */}
 
-                <div className={`relative col-span-12 md:col-span-7 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
+                <div className={`relative mr-[25%] col-span-12 md:col-span-7 h-[100vh] 3xl:block 2xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-5 `}>
                     <div className={` relative  flex 2xl:mr-20  mr-`}>
                         <div className='relative  w-full h-[450px]  '>
                             <div className={`w-[600px] absolute bottom-[46px] right-[50.5px]`}>
@@ -98,7 +98,7 @@ const GetStarted = ({ activeTabIndex }) => {
 
                 {/* for destop small device */}
 
-                <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} bottom-16 `}>
+                <div className={`relative col-span-12 md:col-span-7 h-[100vh] 2xl:hidden md:block hidden ${loading ? styles.tranatationNone : 'opacity-0'} bottom-12 `}>
 
                     <div className={` relative  flex mr-8 ${styles.getStarted}`}>
                         <div className={`${styles.getstartedCompMain}`}>
@@ -117,9 +117,6 @@ const GetStarted = ({ activeTabIndex }) => {
 
                     </div>
                 </div>
-
-
-
             </div>
         </>
     )

@@ -3,7 +3,7 @@ import styles from '../../components/IwannaTech/IwanntTech.module.css'
 import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa'
 
-const Commission = () => {
+const Commission = ({ direction }) => {
 
     return (
         <>
@@ -31,7 +31,7 @@ const Commission = () => {
 
 
 
-            <div className={`bg-transparent ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
                 <h2 className={`text-white font-semibold md:mb-16  fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>commission
                 </h2>
                 <div className={`grid grid-cols-12 `}>
@@ -55,12 +55,12 @@ const Commission = () => {
                 <div className={`grid grid-cols-12 -mt-[2%] 2xl:-mt-[2%]`}>
                     <div className='flex justify-start col-span-12 md:col-span-6   w-[80%] '>
 
-                        <p className={`pt-5 font-semibold xl:max-w-[90%] text-white lowercase largef `}>earning are split 50/50 and you are paid once a month, forever!</p>
+                        <p className={`pt-5 font-[450] leading-[130%] 2xl:leading-[120%] xl:max-w-[90%] text-white lowercase largef `}>earning are split 50/50 and you are paid once a month, forever!</p>
 
                     </div>
 
                     <div className='col-span-12 md:col-span-6  w-[80%] flex justify-center '>
-                        <p className={`pt-5  font-semibold xl:max-w-[90%] text-white lowercase largef `}>…And you can check on your course’s progress and edit your course anytime on our realtime dashboard!</p>
+                        <p className={`pt-5  font-[450] leading-[130%] 2xl:leading-[120%] xl:max-w-[90%] text-white lowercase largef `}>…And you can check on your course’s progress and edit your course anytime on our realtime dashboard!</p>
                     </div>
                 </div>
 

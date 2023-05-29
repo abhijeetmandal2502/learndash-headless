@@ -27,88 +27,102 @@ const Start = () => {
 
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState(0);
+    const [direction, setDirection] = useState('');
+
+    const pointerChange = (index) => {
+
+        if (index > activeTabIndex) {
+            setDirection('down')
+        } else if (index !== activeTabIndex) {
+            setDirection('up')
+        }
+        setActiveTabIndex(index)
+    }
+
+    console.log('direction', direction)
+
     const tabsData = [
         {
             id: 1,
             label: "start",
-            content: <StartComponent />,
+            content: <StartComponent direction={direction} />,
             background: styles.iwannaTechStart
         },
         {
             id: 2,
             label: "why teach",
             content:
-                <WhyTech />,
+                <WhyTech direction={direction} />,
             background: styles.whyTechbg
         },
         {
             id: 3,
             label: "why us",
             content:
-                <WhyUs activeTabIndex={activeTabIndex} />,
+                <WhyUs activeTabIndex={activeTabIndex} direction={direction} />,
             background: styles.whyUsbg
         },
         {
             id: 4,
             label: "why now",
             content:
-                <WhyNow />,
+                <WhyNow direction={direction} />,
             background: styles.whyNowbg
         },
         {
             id: 5,
             label: "needed",
             content:
-                <Needed />,
+                <Needed direction={direction} />,
             background: styles.neededbg
         },
         {
             id: 6,
             label: "ncbtmb",
             content:
-                <Ncbtmb />,
+                <Ncbtmb direction={direction} />,
             background: styles.ncbtmbbg
         },
         {
             id: 7,
             label: "why you",
             content:
-                <WhyYou activeTabIndex={activeTabIndex} />,
+                <WhyYou activeTabIndex={activeTabIndex} direction={direction} />,
             background: styles.whyyoubg
         },
         {
             id: 8,
             label: "now what",
             content:
-                <NowWhat />,
+                <NowWhat direction={direction} />,
             background: styles.nowwhatbg
         },
         {
             id: 9,
             label: "create",
             content:
-                <Create />,
+                <Create direction={direction} />,
             background: styles.createbg
         },
         {
             id: 10,
             label: "never alone",
             content:
-                <NeverAlone />,
+                <NeverAlone direction={direction} />,
             background: styles.neverAlonebg
         },
         {
             id: 11,
             label: "commission",
             content:
-                <Commission />,
+                <Commission direction={direction} />,
             background: styles.commissionbg
         },
         {
             id: 12,
             label: "get started",
             content:
-                <GetStarted activeTabIndex={activeTabIndex} />,
+                <GetStarted activeTabIndex={activeTabIndex} direction={direction} />,
             background: styles.getstartedbg
         },
     ];
@@ -154,6 +168,7 @@ const Start = () => {
         positionFun()
 
     }, [activeTabIndex])
+    console.log("activeTabIndex", activeTabIndex)
     const [positionTop, setPositionTop] = useState('')
     const positionFun = (() => {
         if (activeTabIndex == 0) {
@@ -306,12 +321,12 @@ const Start = () => {
                                             </div>
                                             <p
 
-                                                className={` md:block hidden  transition-all ease-in-out duration-500 hover:font-bold hover:opacity-[1] ${styles.tabLable}  ${styles.shadowHover}   ${i === activeTabIndex
-                                                    ? `font-bold opacity-[1] ${styles.shadow}`
+                                                className={` md:block hidden cursor-pointer text-[#ffffff94]  transition-all ease-in-out duration-500 hover:text-white hover:font-bold hover:opacity-[1] ${styles.tabLable}  ${styles.shadowHover}   ${i === activeTabIndex
+                                                    ? `font-bold  text-[#ffff] opacity-[1] ${styles.shadow}`
                                                     : ""
                                                     } `}
                                                 // Change the active tab on click.
-                                                onClick={() => { setActiveTabIndex(i) }}
+                                                onClick={() => pointerChange(i)}
                                                 ref={el => (buttonRefs[i] = el)}
                                             >
                                                 {tab.label}
