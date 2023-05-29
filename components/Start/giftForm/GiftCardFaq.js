@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from '../../../src/styles/CoursePage.module.css'
+
 const GiftCardFaq = () => {
 
     const faqData = [
@@ -28,7 +30,7 @@ const GiftCardFaq = () => {
 
     return (
         <>
-            <div className={`h-96 overflow-y-auto md:px-32 `}>
+            <div className={`md:h-96 h-screen overflow-y-auto md:px-32 ${styles.successScrollHide} `}>
                 <div className={``}>
                     <h2 className={` text-center supermediumf text-[40px] pb-8 tracking-[0.5px]`}>
                         gift card faq

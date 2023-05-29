@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import styles from '../../../src/styles/CoursePage.module.css'
+
 
 const CheckCardBalance = () => {
 
@@ -35,7 +37,7 @@ const CheckCardBalance = () => {
 
     return (
         <>
-            <div className={`md:px-48`}>
+            <div className={`md:px-48 h-screen`}>
                 {!showBalaence ? <div>
                     <h4 className={`triplelargefXL text-[36px] text-center pb-8 font-normal`}>
                         enter gift card account #to check balance
@@ -56,7 +58,7 @@ const CheckCardBalance = () => {
                 </div> : ""}
 
                 {showBalaence ? <div className={``}>
-                    <Image src="/start/GiftCard3D.svg" width={235} height={235} />
+                    <Image src="/start/GiftCard3D.svg" width={235} height={235} className={`w-[335px]`} />
 
                     <div className='flex justify-center items-center'>
                         <div>
@@ -66,8 +68,23 @@ const CheckCardBalance = () => {
 
                             {/* gift balance counter */}
 
-                            <div key={count} className={``}>
-                                {count}
+                            <div key={count} className={` flex justify-center items-center  ${styles.counterMain}`}>
+
+                                <div className={`w-full  ${styles.counterInner} bg-white`}>
+
+                                    <div className={`grid grid-cols-12 `}>
+
+                                        <div className={`col-span-3 text-[53px] flex justify-center items-center  ${styles.counterNumberEle} `}>$</div>
+                                        <div className={`col-span-3 text-[53px] flex justify-center items-center  ${styles.counterNumberEle} `}>7</div>
+                                        <div className={`col-span-3 text-[53px] flex justify-center items-center  ${styles.counterNumberEle} `}>2</div>
+                                        <div className={`col-span-3 text-[53px] flex justify-center items-center  ${styles.counterNumberEle} `}></div>
+
+                                    </div>
+
+                                </div>
+                                {/* {count} */}
+
+
                             </div>
 
 

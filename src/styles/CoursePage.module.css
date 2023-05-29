@@ -31,6 +31,35 @@
 
 }
 
+
+/* balence counter  */
+
+.counterMain {
+    width: 290.51px;
+    height: 98.6px;
+    background: linear-gradient(180deg, #AC6CFF 0%, #6400E6 100%);
+    border-radius: 7.53192px;
+    z-index: 5;
+
+}
+
+.counterInner {
+
+    border: 2.05416px solid #FFFFFF;
+    box-shadow: inset 0px 0px 24.6499px rgba(0, 0, 0, 0.43);
+    border-radius: 5.47776px;
+    z-index: 10;
+
+    width: 275.53px;
+    height: 85.23px;
+}
+
+.counterNumberEle {
+    background: linear-gradient(180deg, #C6C6C6 0%, #E7E7E7 10.42%, #FFFFFF 53.12%, #E1E1E1 87.5%, #C6C6C6 97.92%);
+    border-right: 0.68472px solid #7A7A7A;
+}
+
+
 @keyframes transformUpcontetn {
 
     from {
@@ -70,6 +99,19 @@
         line-height: 100% !important;
     }
 
+}
+
+
+.successScrollHide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.successScrollHide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* @media screen and (min-height:350px) {
@@ -374,7 +416,6 @@
 
 }
 
-
 @media(max-height:992px) and (min-width:992px) {
     .mainDiv>.gift {
 
@@ -409,7 +450,6 @@
         left: 50%;
     }
 }
-
 
 @media(max-height:900px) and (min-width:992px) {
 
@@ -1125,6 +1165,20 @@
     }
 
 }
+
+
+/* resposive media query for tablet */
+
+
+/* @media screen and (min-width:550px) {
+
+    .paymentIcon {
+
+        width: 200px;
+        height: 200px;
+    }
+} */
+
 
 
 

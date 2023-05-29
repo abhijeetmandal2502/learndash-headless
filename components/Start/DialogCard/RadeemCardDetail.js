@@ -72,7 +72,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                 {/* for mobile */}
 
-                <div className='md:hidden'>
+                <div className='md:hidden '>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
                         <Image src={giftCardDetail.image} width={300} height={200} alt="redeem card" className={`  `} />
 
@@ -88,7 +88,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                 {/* card detail  */}
 
-                <div className=' grid  grid-cols-12 gap-2'>
+                <div className=' grid  grid-cols-12 gap-2 '>
                     <div className=' md:col-span-5 col-span-12'>
                         <p className='px-9 mb-3 text-black font-semibold mediumf'>gift card #</p>
 

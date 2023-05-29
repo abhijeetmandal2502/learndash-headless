@@ -45,7 +45,12 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
 
                     <div className='flex items-center justify-center space-x-2'>
 
-                        <h2 className='tracking-wide text-black fourxllargef'>
+                        <h2 className='tracking-wide hidden md:block text-black fourxllargef'>
+                            using research
+                            to market your practice
+                        </h2>
+
+                        <h2 className='tracking-wide md:hidden text-[32px] mt-5 leading-[110%] text-black                    '>
                             using research
                             to market your practice
                         </h2>
@@ -117,7 +122,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                             </div>
                         )
                     })}
-                    <div className={`pt-2 font-semibold leading-5 border-b border-black smallf text-black ${styles.refoundPcBtn}`}>
+                    <div className={`pt-2 w-max font-semibold leading-5 border-b border-black smallf text-black ${styles.refoundPcBtn}`}>
                         read our refund policy
                     </div>
                 </div>

@@ -58,7 +58,7 @@ const AddToCart = () => {
             <div className={` relative grid grid-cols-9 bg-white my-4 mx-5 shadow-2xl  p-3 md:p-4 ${styles.addedItemList}`}>
                 <div className={`col-span-1 relative flex items-start justify-start`}>
                     <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px] ${styles.cartIcon}`} alt="empty basket" />
-                    <div className='absolute right-0 w-4 h-4 text-white translate-x-0 translate-y-0 rounded-full bg-voilet -top-0'>
+                    <div className='absolute md:right-0 -right-2 w-4 h-4 text-white translate-x-0 translate-y-0 rounded-full bg-voilet -top-0'>
                         <p className='flex items-center justify-center text-[10px]'>2</p>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const AddToCart = () => {
                         </div>
                     </div>
                 </div>
-                <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute -bottom-2 flex px-2  left-1/2 -translate-x-1/2  `}>
+                <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute md:-bottom-2 -bottom-[15px] flex px-2  left-1/2 -translate-x-1/2  `}>
                     {/* ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}> */}
                     <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
                         <MdKeyboardArrowDown className={`text-white ${styles.viewMoreIcon}`} size={25} />
