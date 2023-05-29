@@ -10,7 +10,7 @@ const SideMenu = ({ ShowMenuMethod, drowerOpen }) => {
 
     return (
         <>
-            <div className=' cursor-pointer'>
+            <div className='cursor-pointer '>
                 <div className='flex items-center justify-center space-x-2  absolute top-[5%] left-1/2 -translate-x-1/2'>
                     <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                         <p className='font-semibold largef'>menu</p>

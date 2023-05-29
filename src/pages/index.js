@@ -20,6 +20,8 @@ import Door from 'components/Start/Door'
 import HomeComponentMobile from 'components/HomeComponentMobile'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
+import { IoIosMenu } from 'react-icons/io'
+import { TfiMenu } from 'react-icons/tfi'
 
 const Home = () => {
 
@@ -203,6 +205,7 @@ const Home = () => {
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
                                 </svg>
+
                             </div>
                         </div>
 
@@ -367,18 +370,24 @@ const Home = () => {
                 </div>
                 {/*index page main menu sidebar component */}
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l 3xl:border-l-2 border-b-gray md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
-                    <div className='cursor-pointer '>
+                    <div className=''>
                         <div className='absolute flex items-center justify-center space-x-2 -translate-x-1/2 top-[3.5%] left-1/2 '>
-                            <div className='flex items-center justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                <p className='font-semibold text-black largef '>menu</p>
-                                <svg width="24" height="24" className={`   ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <div className='flex items-center cursor-pointer  justify-center max-[768px]:space-x-1 space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
+                                <p className='font-semibold leading-[100%] text-black largef '>menu</p>
+                                <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
                                 </svg>
+                                {/* <TfiMenu className='text-black extlargef ' /> */}
+                                {/* <svg width="24" height="24" viewBox="0 0 24 24" className={`hidden   ${styles.animatMenuLine}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 8.80005H20" stroke="#9747FF" stroke-width="2" />
+                                    <path d="M0 14L20 14" stroke="#9747FF" stroke-width="2" />
+                                    <path d="M0 19.2L20 19.2" stroke="#9747FF" stroke-width="2" />
+                                </svg> */}
                             </div>
                         </div>
-                        <div className='absolute -translate-x-1/2 bottom-[5%] left-1/2'>
+                        <div className='absolute cursor-pointer -translate-x-1/2 bottom-[3.5%] left-1/2'>
                             <MusicCard />
                         </div>
                     </div>
