@@ -14,7 +14,7 @@ const Ncbtmb = ({ direction }) => {
                         <Image src='/images/ncbtmbOrange.png' width={250} height={250} alt="wanna tech png" className={``} />
                     </div>
                 </div>
-                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
+                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
                         <h2 className={`text-white font-[600] leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>are both you<br /> <span className='border-b-4'>and</span> your<br /> course ncbtmb approved?</h2>
                         <button className=' cursor-pointer mt-5 rounded-3xl border xl:border-2 border-white px-7 py-2.5 text-white font-normal mediumf  hover:text-black  hover:bg-white transition-all ease-in-out duration-1000'>

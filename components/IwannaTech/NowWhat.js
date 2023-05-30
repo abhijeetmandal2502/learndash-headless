@@ -18,7 +18,7 @@ const NowWhat = ({ direction }) => {
                         <Image src='/images/nowWhat.png' width={250} height={250} alt="wanna tech png" />
                     </div>
                 </div>
-                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
+                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div className='mt-5'>
                         <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} leading-[100%]  tracking-wide`}>Now what?
                         </h2>

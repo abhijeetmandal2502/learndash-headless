@@ -15,7 +15,7 @@ const NeverAlone = ({ direction }) => {
                 </div>
 
 
-                <div className='flex items-start mt-[8%] justify-center col-span-12 md:col-span-5'>
+                <div className='flex items-start mt-[8%] justify-center md:justify-start col-span-12 md:col-span-5'>
                     <div>
                         <h2 className={`text-white font-semibold  fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>never alone!
                         </h2>

@@ -350,7 +350,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     onClick={e => {
                                         e.preventDefault();
                                         setOpenMobTab(4);
-                                        router.push('/start');
+                                        router.push('/iwanna-teach');
                                     }}
                                     data-toggle="tab"
                                     href="#link4"

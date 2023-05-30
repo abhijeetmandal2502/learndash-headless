@@ -25,7 +25,7 @@ const WhyUs = ({ activeTabIndex, direction }) => {
                 {/* image for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2 ${styles.imgcenter} `}>
 
-                    <div className={` relative  flex  mr-0`}>
+                    <div className={` relative  flex  sm:mr-[40%] mr-[0]`}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
                             <div className={`w-[175px] absolute bottom-[46px] right-[0px]`}>
 
@@ -48,11 +48,11 @@ const WhyUs = ({ activeTabIndex, direction }) => {
                 </div>
 
 
-                <div className='flex justify-center col-span-12 md:col-span-4 items-strat'>
+                <div className='flex justify-center md:justify-start col-span-12 md:col-span-4 items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>why us?</h2>
                         <h4 className='py-4 font-semibold fourxllargef 3xl:py-8'>because we’re</h4>
-                        <Image src="/images/WhiteLogo.svg" width="400" height="250" alt="tech logo" />
+                        <Image src="/images/WhiteLogo.svg" width="300" height="250" alt="tech logo" />
                         <p className='pt-5 font-[450] lowercase leading-[130%] 2xl:leading-[120%] text-white 2xl:pt-10 2xl:tracking-wide  largef'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
                             <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>

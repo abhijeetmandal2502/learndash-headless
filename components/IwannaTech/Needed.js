@@ -14,7 +14,7 @@ const Needed = ({ direction }) => {
                         <Image src='/images/needed.png' width={350} height={350} alt="wanna tech png" className={``} />
                     </div>
                 </div>
-                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
+                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>what’s <br />needed?</h2>
 

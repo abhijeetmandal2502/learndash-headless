@@ -351,7 +351,7 @@ const Start = () => {
                             </div>
                         </div >
                         {/* Show active tab content. */}
-                        <div className={`pb-4  col-span-10 md:col-span-10 z-0  `}  >
+                        <div className={`pb-4  col-span-10 md:col-span-10 z-0 sm:pb-5  `}  >
                             <div>{tabsData[activeTabIndex].content}</div>
                         </div >
                     </div >

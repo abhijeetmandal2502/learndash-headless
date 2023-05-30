@@ -16,7 +16,7 @@ const WhyNow = ({ direction }) => {
                 </div>
 
                 {/* for desktop */}
-                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
+                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold  fivexllargef ${styles.shadow}    tracking-wide `}>why now?</h2>
                         <h4 className='pt-5 pb-2 font-bold leading-[100%] fourxllargef 2xl:pt-6'>we ve been <br></br> here 15 years !</h4>

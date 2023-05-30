@@ -12,7 +12,7 @@ const Create = ({ direction }) => {
                 <div className={`${styles.shadow} ${styles.bannerAnimation} ${styles.vertmove} md:hidden col-span-12 md:col-span-7 flex justify-center items-start mt-5`} >
                     <Image src='/images/create.png' width={250} height={250} alt="wanna tech png" className={``} />
                 </div>
-                <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
+                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
                         <h2 className={`text-white font-semibold  fivexllargef ${styles.shadow} leading-[100%]  tracking-wide`}>start creating
                         </h2>

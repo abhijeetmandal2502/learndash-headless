@@ -111,10 +111,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
         }
 
-
     }
-
-
 
     const stringData = selectedArray.map((item) => {
         return item;

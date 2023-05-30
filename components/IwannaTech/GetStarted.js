@@ -26,7 +26,7 @@ const GetStarted = ({ activeTabIndex, direction }) => {
                 {/* for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2  ${styles.imgcenter}`}>
 
-                    <div className={` relative  flex   `}>
+                    <div className={` relative  flex  sm:mr-[40%] `}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
                             <div className={`w-[175px] absolute bottom-[40px] right-[20px]`}>
 
