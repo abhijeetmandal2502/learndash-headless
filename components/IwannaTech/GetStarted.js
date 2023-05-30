@@ -57,7 +57,7 @@ const GetStarted = ({ activeTabIndex, direction }) => {
 
                 {/* for desktop  */}
 
-                <div className={`relative mr-[25%] col-span-12 md:col-span-7 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-7 `}>
+                <div className={`relative mr-[5%] col-span-12 md:col-span-7 h-[100vh] 2xl:block 3xl:hidden md:hidden hidden ${loading ? styles.tranatationNone : 'opacity-0'} mt-7 `}>
                     <div className={` relative  flex  mr-20 2xl:mr-16`}>
                         <div className='relative  w-full h-[426px]  '>
                             <div className={`w-[500px] absolute bottom-[46px] right-[50.5px]`}>

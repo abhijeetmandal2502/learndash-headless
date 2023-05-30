@@ -250,10 +250,39 @@
 
 
 .fadeAnimation {
-    animation: fadeAnimate 1s ease;
+    animation: fadeAnimateup 1s;
+    margin-top: 50px;
+    /* animation: animatio 1000ms; */
+    transition: 1s;
+    animation-duration: 1s;
+    animation-delay: .1s;
+    /* animation-direction: alternate; */
+    animation-fill-mode: forwards;
 }
 
-@keyframes fadeAnimate {
+
+@keyframes fadeAnimateup {
+
+    0%,
+
+    0% {
+        transform: translateY(2px);
+    }
+
+    2% {
+        transform: translateY(2px);
+    }
+
+    70%,
+    100% {
+
+        transform: translateY(-50px);
+
+    }
+
+}
+
+/* @keyframes fadeAnimate {
 
 
     from {
@@ -268,14 +297,64 @@
     }
 
 
-}
+} */
 
-
+/* .fadeAnimationDown {
+    transform: translateY(-50px);
+} */
 .fadeAnimationDown {
-    animation: fadeAnimateDown 1s ease;
+    /* transform: translateY(50px); */
+    /* transition-timing-function: cubic-bezier(0.7, -0.4, 0.4, 1.4); */
+    /* transition-duration: 1000ms; */
+    /* transition-property: transform; */
+    margin-top: -50px;
+    animation: animatio 1000ms;
+    transition: 1s;
+    animation-duration: 1s;
+    animation-delay: .1s;
+    /* animation-direction: alternate; */
+    animation-fill-mode: forwards;
 }
 
-@keyframes fadeAnimateDown {
+
+/* .fadeAnimationDown {
+    transition-duration: 1000ms;
+    transition-property: transform;
+    animation-name: fadeAnimationDown;
+} */
+
+
+
+/* .fadeAnimationDown {
+    animation: fadeAnimationDown 1s ease;
+    transition-duration: 1000ms;
+
+} */
+
+@keyframes animatio {
+
+    0%,
+
+    0% {
+        transform: translateY(-2px);
+    }
+
+    2% {
+        transform: translateY(-2px);
+    }
+
+    70%,
+    100% {
+
+        transform: translateY(50px);
+
+    }
+
+}
+
+
+
+/* @keyframes fadeAnimateDown {
 
 
     from {
@@ -285,10 +364,8 @@
 
     to {
         opacity: 1;
-
-
     }
-}
+} */
 
 
 .fadeAnimationInfinite {
