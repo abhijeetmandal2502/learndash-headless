@@ -10,7 +10,7 @@ import Congratulation from './DialogCard/Congratulation'
 const PaymentGiftCard = () => {
     // card detail
     const giftCardDetail = {
-        image: "/start/GiftCard3D.png",
+        image: "/start/GiftCard3D.svg",
         title: "redeem gift cards",
         DueBalance: "(maximum 4)"
     }

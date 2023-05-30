@@ -64,9 +64,7 @@ body {
   }
 } */
 
-input {
-  background-color: #FFFFFF !important;
-}
+
 
 textarea {
 
@@ -415,13 +413,20 @@ ol {
 
 .nctbmbmtTop {
 
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 /* home message padding */
 
 .homepdmng {
   padding-bottom: 112px;
+}
+
+/* gift shipping default  */
+.giftShipping {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 100%;
 }
 
 /* responsive min height  */
@@ -687,7 +692,7 @@ ol {
 
   .logoImg {
     width: 200px !important;
-    height: 80px !important;
+    height: 50px !important;
     margin-top: 40px !important;
   }
 
@@ -1199,7 +1204,11 @@ ol {
 
 @media (max-height:840px) and (min-width:992px) {
 
-
+  .giftShipping {
+    font-size: 13px !important;
+    line-height: 100%;
+    margin-bottom: 3px;
+  }
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1270,6 +1279,12 @@ ol {
 }
 
 @media (max-height:750px) and (min-width:992px) {
+
+  .giftShipping {
+    font-size: 12px !important;
+    line-height: 50% !important;
+
+  }
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1450,12 +1465,17 @@ ol {
 
 @media (max-height:600px) and (min-width:992px) {
 
+  .giftShipping {
+    font-size: 11px !important;
+    line-height: 100%;
+  }
+
   .extxlsmallf {
     font-size: 12px !important;
   }
 
   .extsmallf {
-    font-size: 13px !important;
+    font-size: 10px !important;
   }
 
   .minismallf {
@@ -1539,12 +1559,17 @@ ol {
 
 @media (max-height:500px) and (min-width:992px) {
 
+  .giftShipping {
+    font-size: 10px !important;
+    line-height: 100%;
+  }
+
   .extxlsmallf {
     font-size: 12px !important;
   }
 
   .extsmallf {
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
 
   .minismallf {
@@ -1625,6 +1650,11 @@ ol {
 }
 
 @media (max-height:485px) and (min-width:992px) {
+
+  .giftShipping {
+    font-size: 9px !important;
+    line-height: 100%;
+  }
 
   .extxlsmallf {
     font-size: 8px !important;
@@ -1709,6 +1739,10 @@ ol {
 
 @media (max-height:400px) and (min-width:992px) {
 
+  .giftShipping {
+    font-size: 7px !important;
+  }
+
   .extxlsmallf {
     font-size: 8px !important;
   }
@@ -1791,6 +1825,10 @@ ol {
 }
 
 @media (max-height:250px) and (min-width:992px) {
+
+  .giftShipping {
+    font-size: 6px !important;
+  }
 
   .extxlsmallf {
     font-size: 8px !important;

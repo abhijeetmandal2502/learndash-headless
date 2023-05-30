@@ -122,6 +122,8 @@ const Home = () => {
             setIsloaded(false)
         }, 200)
 
+        setStart(false)
+
     }
 
     const ncbtmbMethodHide = () => {

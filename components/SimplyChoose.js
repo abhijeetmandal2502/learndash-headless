@@ -162,7 +162,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             <div className='hidden md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
-                            <div className='hidden md:block'>
+                            <div className='hidden md:block -z-50'>
                                 <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
                                     <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
                             </div>

@@ -224,6 +224,18 @@
 }
 
 
+.concorgemtTop {
+
+    margin-top: 50px !important;
+}
+
+@media (max-height:840px) {
+
+    .concorgemtTop {
+
+        margin-top: 30px !important;
+    }
+}
 
 @media (max-height:750px) {
 
@@ -235,6 +247,11 @@
     .inputHeight {
 
         max-height: 40px !important;
+    }
+
+    .concorgemtTop {
+
+        margin-top: 30px !important;
     }
 
 
@@ -254,7 +271,7 @@
 
     .concorgemtTop {
 
-        margin-top: 45px !important;
+        margin-top: 10px !important;
     }
 
 
