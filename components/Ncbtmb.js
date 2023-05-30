@@ -4,6 +4,7 @@ import Lobby from './card/Lobby'
 import { BiArrowBack, BiCheck } from 'react-icons/bi'
 import styles from '../src/styles/Ncbtmb.module.css'
 import Select from 'react-select';
+import stylestow from '../src/styles/CoursePage.module.css'
 import { AiOutlineCheck } from 'react-icons/ai'
 import Link from 'next/link'
 const Ncbtmb = ({ ncbtmbMethodHide }) => {
@@ -79,19 +80,23 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
     <>
       <div className='relative h-screen md:pl-[12%] overflow-hidden bg-transparent '>
         {/* this loby button for desktop */}
-        <button className={`md:flex  hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-5 py-2  rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
+        {/* <button className={`md:flex  hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-5 py-2  rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white " /><span className='mediumf '>lobby</span>
-        </button>
+        </button> */}
+        <div className='hidden mt-8 md:block -z-50'>
+          <button className={`flex items-center space-x-1 ${stylestow.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
+            <BiArrowBack size={20} className={`text-white ${stylestow.backIcon}`} /><span className='mediumf'>lobby</span></button>
+        </div>
         {/* loby button code end */}
         <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4 md:mt-0 mt-10`}>
-          <div className='md:col-span-6 col-span-12 hidden md:block'>
-            <h2 className='triplelargefXXXL text-black  '>all courses ncbtmb approved.</h2>
+          <div className='hidden col-span-12 md:col-span-6 md:block'>
+            <h2 className='text-black triplelargefXXXL '>all courses ncbtmb approved.</h2>
           </div>
-          <div className='md:col-span-6 col-span-12 md:hidden w-1/2'>
-            <h2 className=' text-3xl text-black '>all courses ncbtmb approved.</h2>
+          <div className='w-1/2 col-span-12 md:col-span-6 md:hidden'>
+            <h2 className='text-3xl text-black '>all courses ncbtmb approved.</h2>
           </div>
 
-          <div className='md:col-span-6 col-span-12'>
+          <div className='col-span-12 md:col-span-6'>
             <Image src="/images/NCBTMB.svg" height={323} width={323} alt="ncbtmblatest" className={`hidden md:block nbctmbcompnentImg`} />
             <Image src="/images/NCBTMB.svg" height={120} width={120} alt="ncbtmb" className={`md:hidden absolute top-6 right-4`} />
           </div>
@@ -99,7 +104,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
         <div className={`${styles.selectBox} `}>
           <div className='py-1 font-semibold '>
-            <p className='hidden md:block mediumf text-black'>accepted in your state?</p>
+            <p className='hidden text-black md:block mediumf'>accepted in your state?</p>
             <p className=' md:hidden mediumf'>Select a State</p>
           </div>
           <Select
@@ -131,7 +136,7 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
               <BiCheck size={25} className='text-white md:text-[25px] smallf' />
             </div>
             <h3 className='leading-none text-black triplelargef'>Texas? yep! you’re fine.<br /><Link href="/"></Link><div className='border-b w-max md:hidden border-voilet text-voilet' >click here.</div></h3>
-            <button className='hidden leading-6 border-b md:block border-voilet text-voilet  extlargef'> click here.</button>
+            <button className='hidden leading-6 border-b md:block border-voilet text-voilet extlargef'> click here.</button>
           </div>
 
           <div className='py-3'>
@@ -140,14 +145,14 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
                 <div key={index}>
                   <div className='md:flex hidden  items-center space-x-4 py-0.3'>
                     <AiOutlineCheck size={16} className='text-[#9747FF]' />
-                    <p className=' smallf text-black '>{item}</p>
+                    <p className='text-black smallf'>{item}</p>
                   </div>
                   <div className='grid grid-cols-12 md:hidden '>
                     <div className='col-span-1'>
                       <AiOutlineCheck size={20} className='mt-1 text-[#9747FF]' />
                     </div>
                     <div className='col-span-11'>
-                      <p className='mediumf text-black '>{item}</p>
+                      <p className='text-black mediumf '>{item}</p>
                     </div>
                   </div>
                 </div>
