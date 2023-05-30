@@ -115,7 +115,7 @@ const LoginModel = ({ changeDuration, title }) => {
                                 <p className='mediumf'>remember me</p>
                             </div>
 
-                            <button className='font-[600] mediumf hover:text-voilet  ' type="button" onClick={() => ShowForgetPasswordModel()} >forget Password</button>
+                            <button className='font-[600] mediumf hover:text-voilet  ' type="button" onClick={() => ShowForgetPasswordModel()} >forget password</button>
                         </div>
 
 
