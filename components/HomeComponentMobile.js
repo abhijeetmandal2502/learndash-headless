@@ -30,11 +30,11 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         {
             image: "/images/start.png",
             title: "start",
-            content: <div className='-mt-7'>
-                {/* <div className='px-5'>
-                    <h2 className='text-black '>simply choose.</h2>
-                    <p className='py-2 '>smile, you can’t make a bad choice.</p>
-                </div> */}
+            content: <div className='mt-7'>
+                <div className='px-5'>
+                    <h2 className='text-black text-[40px] '>simply choose.</h2>
+                    <p className='py-2 text-[25px] '>smile, you can’t make a bad choice.</p>
+                </div>
                 <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
             </div>
         },
@@ -117,7 +117,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                             <>
                                                 <div className="flex justify-center w-full ">
                                                     <div className={` w-full h-screen  z-10 ${activeTabIndex === 0 ? "bg-[url('/images/start-bg.png')]" : ""}`}>
-                                                        <div className={` fixed top-0 z-10  w-full bg-white`}>
+                                                        <div className={` fixed top-0 z-20  w-full bg-white`}>
                                                             <div className='flex items-center justify-between px-3 py-4 space-x-5 cursor-pointer'>
                                                                 {/* <LogoCard LogoImage={LogoImage} /> */}
 
@@ -141,7 +141,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                                 <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> {(activeTabIndex == 4 ? 'start' : 'lobby') && (selectedCourse == true ? 'courses' : 'lobby')}  </span></button>
                                                         </div>
 
-                                                        <div className={`text-black mt-[120px] ${activeTabIndex === 0 ? 'px-0' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
+                                                        <div className={`text-black mt-[120px]  ${activeTabIndex === 0 ? 'px-0 ' : 'px-3 '}`}>{menuList[activeTabIndex]?.content}</div>
                                                     </div>
                                                 </div>
                                                 <Disclosure.Panel className="w-full py-1 text-white ">
