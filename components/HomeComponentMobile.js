@@ -31,6 +31,10 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             image: "/images/start.png",
             title: "start",
             content: <div className='-mt-7'>
+                {/* <div className='px-5'>
+                    <h2 className='text-black '>simply choose.</h2>
+                    <p className='py-2 '>smile, you can’t make a bad choice.</p>
+                </div> */}
                 <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
             </div>
         },
@@ -168,7 +172,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                             <div className=''>
                                                                 <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
                                                                     <p className='font-semibold text-black text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
-                                                                    <svg width="24" height="24" className={` 4xl:w-[50px] 4xl:h-[50px] 3xl:w-[40px] 3xl:h-[40px]  ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                         <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
                                                                         <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                                                         <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />

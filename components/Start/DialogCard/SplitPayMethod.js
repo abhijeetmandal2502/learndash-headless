@@ -102,7 +102,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
 
                                     </div>
                                     {showSplitPayment == undefined ? <div className='relative shadow-2xl shadow-zinc-600 rounded-xl transition-all ease-in-out duration-500'>
-                                        <Image src={`/start/giftCardSelcted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[250px] h-[150px]' />
+                                        <Image src={`/start/giftCardSelcted.svg`} width={300} height={200} alt="gift card" className='md:w-auto md:h-auto w-[213px] h-[150px]' />
                                         <div className={`absolute -top-2 -right-2`}>
                                             <Image src="/start/splitEdit.svg" width={30} height={30} alt="credit card" className='' />
                                         </div>

@@ -36,7 +36,7 @@ const PaypalPayment = () => {
 
                     <button type="button"
                         onClick={() => { openModal() }}
-                        className={`w-full px-4 mt-4 mb-6 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course!<span className='ml-1 border-b'>$40</span>
+                        className={`w-full px-4 mb-10 mt-5 py-2 tracking-wide text-white    ${styles.submitbtnbg} rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >start course!<span className='ml-1 border-b'>$40</span>
                     </button>
                 </div>
             </div>

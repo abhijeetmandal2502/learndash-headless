@@ -56,9 +56,9 @@ const AddToCart = () => {
         <>
             {/* selected items componets  */}
             <div className={` relative grid grid-cols-9 bg-white my-4 mx-5 shadow-2xl  p-3 md:p-4 ${styles.addedItemList}`}>
-                <div className={`col-span-1 relative flex items-start justify-start`}>
-                    <Image src="/start/cart.svg" width={40} height={40} className={` w-[40px] h-[40px] ${styles.cartIcon}`} alt="empty basket" />
-                    <div className='absolute md:right-0 -right-2 w-4 h-4 text-white translate-x-0 translate-y-0 rounded-full bg-voilet -top-0'>
+                <div className={`col-span-1 relative flex items-start justify-start w-[30px] h-[30px]`}>
+                    <Image src="/start/cart.svg" width={40} height={40} className={`  ${styles.cartIcon}`} alt="empty basket" />
+                    <div className='absolute  -right-2 w-4 h-4 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet -top-1'>
                         <p className='flex items-center justify-center text-[10px]'>2</p>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ const AddToCart = () => {
                                 <>
                                     <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
                                         <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                            <Image className={`rounded-md     `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                            <Image className={`rounded-md ${styles.PaymentIconMob}`} src={item.icon} width={200} height={60} alt="empty basket" />
                                         </div>
                                         <div className="z-10 tooltiptext extsmallf">
                                             <div className='relative'>

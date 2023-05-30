@@ -1065,6 +1065,17 @@
     }
 }
 
+@media screen and (max-width:640px) {}
+
+@media screen and (max-width:991px) {
+    .PaymentIconMob {
+
+        width: 150px;
+
+    }
+
+}
+
 @media screen and (min-width:992px) {
 
 

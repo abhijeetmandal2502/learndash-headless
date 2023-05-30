@@ -57,7 +57,7 @@ const SplitPayment = () => {
 
                             <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
                         </div>
-                        <div className=' bg-lightgray flex justify-center items-center space-x-2 px-3 py-1'>
+                        <div className=' bg-purple flex justify-center items-center space-x-2 px-3 py-1'>
                             <p className='smallf'>
                                 1 gift cards applied:
                             </p>

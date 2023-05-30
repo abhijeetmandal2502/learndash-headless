@@ -286,13 +286,13 @@
 
 
     .paypalSelected {
-        width: 95px !important;
-        height: 88px !important;
+        width: 80px !important;
+        height: 80px !important;
     }
 
 
     .creditCardSelected {
-        width: 95px !important;
-        height: 88px !important;
+        width: 80px !important;
+        height: 80px !important;
     }
 }

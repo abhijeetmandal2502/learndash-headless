@@ -41,7 +41,7 @@ const PaymentGiftCard = () => {
             {/* widthout selected */}
             {!addGift ? <div className='flex items-center justify-center space-between'>
                 <div >
-                    <div className='flex items-center justify-center md:pt-8'>
+                    <div className='flex items-center justify-center pt-5'>
 
                         <Image className={`${styles.giftCardLogo}`} src="/start/GiftCard3D.svg" width={150} height={100} alt="gift card" />
 
@@ -60,7 +60,7 @@ const PaymentGiftCard = () => {
 
             {/* with selected gift */}
 
-            {addGift ? <div className='flex items-center justify-center space-between'>
+            {addGift ? <div className='flex items-center justify-center space-between mt-1'>
                 <div >
                     <div className=' md:pt-8 flex flex-col justify-center items-center'>
 
@@ -68,7 +68,7 @@ const PaymentGiftCard = () => {
 
                         <p className='dubblelargef pt-3 leading-[107%]'>due: $40</p>
                     </div>
-                    <div className=' bg-lightgray flex justify-center items-center space-x-2 px-3 py-1'>
+                    <div className=' bg-purple flex justify-center items-center space-x-2 px-3 py-1 mt-1'>
 
                         <p className=''>
                             1 gift cards applied:
@@ -82,8 +82,6 @@ const PaymentGiftCard = () => {
 
                     </div>
 
-
-
                     <div className={`relative mt-6`}>
                         <input className="w-full leading-4 border border-bordergray md:p-2 p-1" type="password" placeholder="create password" />
                         <div className="absolute cursor-pointer top-2 right-2">
@@ -96,7 +94,7 @@ const PaymentGiftCard = () => {
                     </button>
 
                     <button type="button"
-                        className={`w-full px-4 mt-3 py-2 tracking-wide text-voilet rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >keep shopping!
+                        className={`w-full px-4 mt-2 py-2 tracking-wide text-voilet rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >keep shopping!
                     </button>
 
                 </div>
@@ -117,7 +115,7 @@ const PaymentGiftCard = () => {
                         <div className="fixed md:inset-0 bg-black bg-opacity-25" />
                     </Transition.Child>
 
-                    <div className={`fixed md:inset-0 overflow-y-auto `}>
+                    <div className={`fixed sm:inset-0 md:inset-0 overflow-y-auto `}>
                         <div className="flex items-center justify-center min-h-full md:p-4 text-center">
                             <Transition.Child
                                 as={Fragment}

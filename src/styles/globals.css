@@ -2686,6 +2686,104 @@ ol {
   }
 }
 
+/* custom font size for small device */
+@media only screen and (max-width:640px) {
+  .extsmallf {
+    font-size: 11px !important;
+  }
+
+  .minismallf {
+    font-size: 14px !important;
+  }
+
+  .smallf {
+    font-size: 16px !important;
+  }
+
+  .mediumf {
+    font-size: 18px !important;
+  }
+
+  .largef {
+    font-size: 16px;
+  }
+
+  .extlargef {
+    font-size: 22px !important;
+  }
+
+  .dubblelargef {
+    font-size: 30px !important;
+  }
+
+  .triplelargef {
+    font-size: 40px !important;
+  }
+
+  .fourxllargef {
+    font-size: 36px !important;
+  }
+
+  .fivexllargef {
+    font-size: 40px;
+
+  }
+
+  .superlargef {
+    font-size: 46px !important;
+    /* letter-spacing: 0.025em; */
+  }
+}
+
+/* custom font size for small device */
+@media only screen and (max-width:991px) {
+  .extsmallf {
+    font-size: 11px !important;
+  }
+
+  .minismallf {
+    font-size: 14px !important;
+  }
+
+  .smallf {
+    font-size: 16px !important;
+  }
+
+  .mediumf {
+    font-size: 18px !important;
+  }
+
+  .largef {
+    font-size: 16px;
+  }
+
+  .extlargef {
+    font-size: 22px !important;
+  }
+
+  .dubblelargef {
+    font-size: 30px !important;
+  }
+
+  .triplelargef {
+    font-size: 40px !important;
+  }
+
+  .fourxllargef {
+    font-size: 36px !important;
+  }
+
+  .fivexllargef {
+    font-size: 40px;
+
+  }
+
+  .superlargef {
+    font-size: 46px !important;
+    /* letter-spacing: 0.025em; */
+  }
+}
+
 /* cutom font size for max screen size 1920 or default size of all types fonts */
 @media only screen and (min-width:426px) {
 
@@ -2762,7 +2860,6 @@ ol {
 
 
 }
-
 
 /* cutom font size for max screen size 1280 or default size of all types fonts */
 @media only screen and (min-width:992px) {
@@ -2857,7 +2954,6 @@ ol {
 
 
 }
-
 
 /* cutom font size for max screen size 1024 or default size of all types fonts */
 @media only screen and (min-width:1024px) {

@@ -352,7 +352,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                                         {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             +add
                                                         </div> : <div className=' flex absolute top-[85%] left-[0%] font-[500]  text-[16px] text-[#FF5C00] '>
-                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={30} /></div>
+                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={15} /></div>
                                                             <p className={`text-[#AC6CFF] text-[16px] font-[500]`}>
                                                                 added
                                                             </p>

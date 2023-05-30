@@ -40,7 +40,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
     return (
         <>
 
-            <div className='h-full px-5 pb-16 overflow-y-scroll bg-transparent md:px-0 z-1'>
+            <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-1'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
                     <div className='flex items-center justify-center space-x-2'>
@@ -73,8 +73,8 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                             </div>
 
                             <div className={`${panel ? 'block' : 'hidden'}`} >
-                                <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" />
-                                <div className=' flex  font-bold  largef text-[#FF5C00] '>
+                                <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" className={`${styles.selectedCoursepriceBg}`} />
+                                <div className=' flex justify-center font-bold  largef text-[#FF5C00] '>
                                     <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
                                     <div className={`text-[#AC6CFF] smallf font-semibold`}>
                                         added
@@ -176,8 +176,6 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                     </div>
                 </Dialog>
             </Transition>
-
-
             {/* checkout form for mobile */}
 
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
