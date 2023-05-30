@@ -125,9 +125,13 @@ const BlogListing = (props) => {
                         </Link>
 
                         {/* for mobile device */}
-                        <div className='flex justify-center px-3 mt-5 md:hidden md:mt-0 md:px-0'>
-                            <div className='w-full pb-2 border border-white ' >
-                                <button className={`text-white mediumf  px-5 md:py-3 py-1 flex items-center space-x-24 2xl:space-x-6`} type="btn" onClick={() => { handleClickTogle() }} ><div className=''>blog categories</div> <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}><MdKeyboardArrowDown size={20} className="" /></div> </button>
+                        <div className='flex justify-center px-5 mt-5 md:hidden md:mt-0 md:px-0'>
+                            <div className='w-full pb-2 border border-white  ' >
+                                <div className={`text-white mediumf   px-5 md:py-3 py-1 flex items-center  justify-between`} type="btn" onClick={() => { handleClickTogle() }} >
+                                    <div className=''>blog categories</div>
+                                    <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}>
+
+                                        <MdKeyboardArrowDown size={20} className="" /></div> </div>
                                 {colourOptions?.map((item, index) => {
 
                                     return (
@@ -143,7 +147,7 @@ const BlogListing = (props) => {
                             </div>
                         </div>
 
-                        {!currentData ? <div className='grid grid-cols-12 gap-4 px-3 md:px-0'>
+                        {!currentData ? <div className='grid grid-cols-12 gap-4 px-5  md:px-0'>
                             <div className={`bg-transparent md:pb-40  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
 
                                 {

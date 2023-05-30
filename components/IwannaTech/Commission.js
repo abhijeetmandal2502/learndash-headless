@@ -7,15 +7,14 @@ const Commission = ({ direction }) => {
 
     return (
         <>
-            <div className={`bg-transparent grid grid-cols-12 xl:gap-20 lg:gap-10 md:hidden  ${styles.fadeAnimation}`}>
+            <div className={`bg-transparent grid grid-cols-12 xl:gap-20 lg:gap-10 md:hidden  ${direction == "up" ? styles.fadeAnimation : styles.fadeAnimationDown}`}>
                 <div className='flex justify-center col-span-12 md:col-span-6 items-strat'>
                     <div className='mt-5 md:ml-20 md:mt-0'>
                         <h2 className={`text-white font-semibold fivexllargef ${styles.shadow} leading-[100%]  tracking-wide`}>commission
                         </h2>
 
-                        <div className={`${styles.vertmove}  md:mt-16 flex justify-center items-center`}>
-                            <Image src="/images/money.png" width="250" height="200" alt="tech logo" className={`3xl:w-[300px] 3xl:h-[300px]
-                        4xl:w-[200px] 4xl:h-[200px] `} />
+                        <div className={`${styles.vertmove} sm:mt-7  md:mt-16 flex justify-center items-center`}>
+                            <Image src="/images/money.png" width="250" height="200" alt="tech logo" className={` `} />
                         </div>
 
                         <p className={`pt-5 font-semibold xl:max-w-[90%] text-white lowercase largef `}>earning are split 50/50 and you are paid once a month, forever!</p>
@@ -39,7 +38,7 @@ const Commission = ({ direction }) => {
                         <div className='mt-5 md:mt-0'>
 
                             <div className={`${styles.shadow} ${styles.vertmove}  ${styles.imgboxcommi} flex justify-center items-center`}>
-                                <Image src="/images/money.png" width="250" height="250" alt="tech logo" className={`sm:w-[200px] sm:h-[200px]`} />
+                                <Image src="/images/money.png" width="250" height="250" alt="tech logo" className={``} />
                             </div>
                         </div>
                     </div>

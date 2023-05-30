@@ -156,12 +156,14 @@ const Start = () => {
     const updownAnimation = selectStyles.transform;
     console.log('selectStyles', updownAnimation)
 
-    const movePointerTop = () => {
+    const movePointerTop = (index) => {
         setActiveTabIndex(activeTabIndex + 1)
+        setDirection('down')
     }
 
-    const movePointerBottom = () => {
+    const movePointerBottom = (index) => {
         setActiveTabIndex(activeTabIndex - 1)
+        setDirection('up')
     }
     useEffect(() => {
 
@@ -305,7 +307,7 @@ const Start = () => {
                                                 : ""
                                                 }}`}
 
-                                                onClick={() => { setActiveTabIndex(i) }}
+                                                onClick={() => { pointerChange(i) }}
                                             >
                                                 <div className='absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
                                                     <Image src="/images/iwannaTechdot.svg" width={7} height={7} alt="i wanna tech dot" />
@@ -333,13 +335,15 @@ const Start = () => {
                                             </p>
 
 
-                                            {activeTabIndex < 11 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { movePointerTop() }}
+                                            {activeTabIndex > 0 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { movePointerBottom(i) }}
                                             >
                                                 <div className={`${styles.vertmoveDown}`}>
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} alt="slideUp" />
                                                 </div>
                                             </div> : ""}
-                                            {activeTabIndex > 0 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { movePointerBottom() }} >
+
+
+                                            {activeTabIndex < 11 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { movePointerTop(i) }} >
                                                 <div className={`${styles.vertmoveDown}`}
                                                 >
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} alt="slide up" />
