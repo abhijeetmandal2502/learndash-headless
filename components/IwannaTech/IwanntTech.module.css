@@ -619,9 +619,13 @@
 
 
     .getStartedRactComp {
-        position: absolute;
+        /* position: absolute;
         width: 282px;
         bottom: 59px;
+        right: 54.5px; */
+        position: absolute;
+        width: 328px;
+        bottom: 25px;
         right: 54.5px;
     }
 
@@ -630,29 +634,41 @@
     }
 
     .getStartedYellowBgComp {
-        position: absolute;
+        /* position: absolute;
         bottom: -64px;
         right: -30px;
+        z-index: 10;
+        transform: rotate(-32deg); */
+        position: absolute;
+        bottom: -116px;
+        right: -38px;
         z-index: 10;
         transform: rotate(-32deg);
     }
 
     .getStartedYellowBgImage {
-        width: 305px;
+        /* width: 305px; */
+        width: 350px;
+
     }
 
 
     .getStartedMainObjImageComp {
 
-        position: absolute;
+        /* position: absolute;
         bottom: 30px;
         right: 56px;
-        width: 324px;
+        width: 324px; */
+        position: absolute;
+        bottom: -8px;
+        right: 13px;
+        width: 424px;
     }
 
     .getStartedManImage {
 
-        width: 325px;
+        /* width: 325px; */
+        width: 379px;
     }
 
     .startCompMt {
