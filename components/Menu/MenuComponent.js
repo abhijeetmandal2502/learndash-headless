@@ -25,15 +25,12 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
     //handle close
     const HandleCloseBtn = () => {
         setTimeout(() => {
-            router.push({
-                pathname: '/',
-                query: { active: 'home' }
-            })
+
             if (router.asPath == '/?active=home') {
                 HideMenuMethod();
                 router.push('/');
             }
-            // setOpenTab(0)
+
         }, 500)
         // setTimeout(() => { setActiveTabIndex(0) }, 500)
     }
@@ -232,14 +229,14 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 <div className='relative flex items-center justify-center w-full h-screen col-span-12 px-4 border-l border-white max-sm:invisible md:col-span-1 '>
 
                     <div className='cursor-pointer '>
-                        <div className='absolute -translate-x-1/2 top-[5%] left-1/2 '
+                        <div className='absolute -translate-x-1/2 top-[3.5%] left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                <p className='font-semibold text-white mediumf'>Close </p>
-                                <AiOutlineClose size={20} className="text-white " />
+                                <p className='font-semibold text-white largef'>Close </p>
+                                <AiOutlineClose className="text-white largef " />
                             </div>
                         </div>
-                        <div className='absolute -translate-x-1/2 bottom-[5%] left-1/2'>
+                        <div className='absolute -translate-x-1/2 bottom-[3.5%] left-1/2'>
                             <MusicCard textColor={textColor} />
                         </div>
                     </div>

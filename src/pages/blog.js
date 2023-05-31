@@ -212,15 +212,15 @@ const BlogListing = (props) => {
                         <div className=''>
                             <div className='cursor-pointer '>
 
-                                <div className='   absolute top-[5%] left-1/2 -translate-x-1/2  '
+                                <div className='   absolute top-[3.5%] left-1/2 -translate-x-1/2  '
                                     onClick={() => { HandleCloseBtn() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold text-white mediumf'>Close </p>
-                                        <AiOutlineClose size={20} className="text-white " />
+                                        <p className='font-semibold text-white largef'>Close </p>
+                                        <AiOutlineClose className="text-white largef " />
                                     </div>
                                 </div>
 
-                                <div className=' absolute bottom-[5%] left-1/2 -translate-x-1/2'>
+                                <div className=' absolute bottom-[3.5%] left-1/2 -translate-x-1/2'>
                                     <MusicCard textColor={textColor} />
                                 </div>
                             </div>

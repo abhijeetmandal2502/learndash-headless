@@ -7,7 +7,7 @@ const MusicCard = ({ textColor }) => {
     return (
         <>
             {musicOn ? <div className='flex items-center justify-center space-x-2' onClick={() => setMusicOn(false)}>
-                <p className={`font-semibold dubblelargef ${textColor} `}>on</p>
+                <p className={`font-semibold largef ${textColor} `}>on</p>
                 <Image src="/images/sound.gif" width={25} height={25} alt="sound" className='' />
             </div> : ""}
 

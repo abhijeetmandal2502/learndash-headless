@@ -74,7 +74,7 @@ const RadeemCardDetail = ({ giftCardDetail, addGiftCard, closeModal }) => {
 
                 <div className='md:hidden '>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
-                        <Image src={giftCardDetail.image} width={300} height={200} alt="redeem card" className={`  `} />
+                        <Image src={giftCardDetail.image} width={200} height={200} alt="redeem card" className={`  `} />
 
                         <div >
                             <h2 className='text-[24px] leading-[24px] py-1 tracking-wide '>{giftCardDetail.title}</h2>

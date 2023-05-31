@@ -88,6 +88,17 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     ]
 
+    const HandlelobbyClick = () => {
+        setTimeout(() => {
+            if (router.asPath == '/?active=start') {
+                startMethodHide();
+                router.push('/');
+            }
+            // setOpenTab(0)
+        }, 500)
+        // setTimeout(() => { setActiveTabIndex(0) }, 500)
+    }
+
     const handleClick = (index, item) => {
         setSelected(index, item);
         // setSimplyChoose(true)
@@ -161,7 +172,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
                             <div className='hidden md:block -z-50'>
-                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
+                                <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { HandlelobbyClick() }}>
                                     <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
                             </div>
 

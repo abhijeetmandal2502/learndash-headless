@@ -35,7 +35,7 @@ const SplitPayMethod = ({ openModal, addSplitPayment, closeModal }) => {
         setPaypalPayment(true);
     }
     const giftCardDetail = {
-        image: "/start/GiftCard3D.png",
+        image: "/start/GiftCard3D.svg",
         title: "split payment with gift card(s)",
         DueBalance: "remaining due: $40"
     }

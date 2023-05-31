@@ -56,7 +56,7 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
         <>
             <div className='md:mx-5 md:p-0 p-4 h-screen md:mb-0 mb-20 overflow-y-scroll'>
                 {/* gift card desktop */}
-                <div className='md:block ' >
+                <div className='md:block hidden ' >
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
                         <Image src={giftCardDetail.image} width={349} height={221} alt="redeem card" className={`${styles.payByGiftCard}`} />
                         <div >

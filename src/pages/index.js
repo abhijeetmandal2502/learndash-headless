@@ -43,7 +43,6 @@ const Home = () => {
         setIsOpen(!isOpen)
     }
 
-
     //for login
     const [open, setOpen] = useState(false);
     const [down, setDown] = useState(false);
@@ -64,7 +63,7 @@ const Home = () => {
         setShowGiftShoppi(true);
         setSimplyChoose(false)
     }
-    console.log("showGiftShoppi", ShowGiftShoppi)
+    //console.log("showGiftShoppi", ShowGiftShoppi)
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
@@ -78,6 +77,10 @@ const Home = () => {
     useEffect(() => {
         if (router.asPath === "/?active=home") {
             setOn(true)
+        }
+
+        if (router.asPath === "/?active=start") {
+            setStart(true)
         }
     }, [])
 
@@ -152,6 +155,10 @@ const Home = () => {
         setShowGiftShoppi(false)
         setSimplyChoose(true)
 
+        router.push({
+            pathname: '/',
+            query: { active: 'start' }
+        })
     }
 
     // start hide method
