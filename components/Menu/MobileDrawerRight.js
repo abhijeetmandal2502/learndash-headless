@@ -1,6 +1,7 @@
 // import Image from "next/image";
 import React from "react";
 import { MdClose } from 'react-icons/md'
+import styles from '../../src/styles/MenuComponent.module.css'
 
 export default function MobileDrawerRighrt({ children, isOpen, setIsOpen, basePath }) {
     return (
@@ -8,8 +9,8 @@ export default function MobileDrawerRighrt({ children, isOpen, setIsOpen, basePa
             className={
                 " fixed overflow-hidden z-40   bg-opacity-25 inset-0 top-0 transform ease-in-out " +
                 (isOpen
-                    ? " transition-opacity opacity-100 duration-500 +translate-x-0"
-                    : " transition-all delay-1000 opacity-0 translate-x-full")
+                    ? ` transition-opacity opacity-100 duration-500 ${styles.mobiledrawer}  +translate-x-0`
+                    : ` transition-all delay-1000 opacity-0 translate-x-full  `)
             }
         >
             <section
