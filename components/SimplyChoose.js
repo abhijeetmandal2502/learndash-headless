@@ -135,7 +135,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
-    console.log('panel', panel, selectedCourse, isOpen)
+    // console.log('panel', panel, selectedCourse, isOpen)
 
     const LogoImage = "/images/Logo.svg"
     return (

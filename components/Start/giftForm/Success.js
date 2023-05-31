@@ -37,7 +37,7 @@ const Success = () => {
     return (
         <>
 
-            <div className={` h-screen  overflow-y-auto pb-40 ${styles.successScrollHide}`}>
+            <div className={` md:h-auto h-screen  overflow-y-auto pb-40 md:pb-0 ${styles.successScrollHide}`}>
                 {/* for desktop */}
                 <div className={`md:flex flex-col hidden `}>
                     <div className={`flex justify-center items-center`}>

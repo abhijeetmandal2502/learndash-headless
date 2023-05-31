@@ -121,7 +121,7 @@ const SplitPayment = () => {
                                         </div>
                                         <button
                                             type="button"
-                                            className="text-3xl md:pr-0 pr-5"
+                                            className="text-3xl md:pr-0 pr-5 z-[1000]"
                                             onClick={closeModal}
                                         >
                                             x

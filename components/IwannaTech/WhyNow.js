@@ -16,11 +16,11 @@ const WhyNow = ({ direction }) => {
                 </div>
 
                 {/* for desktop */}
-                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
+                <div className=' sm:pl-[30%] md:pl-0   flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold  fivexllargef ${styles.shadow}    tracking-wide `}>why now?</h2>
-                        <h4 className='pt-5 pb-2 font-bold leading-[100%] fourxllargef 2xl:pt-6'>we ve been <br></br> here 15 years !</h4>
-                        <p className='font-[450] lowercase leading-[130%] 2xl:leading-[120%] text-white  xl:max-w-[90%] largef md:pt-5'>But it seems just over the last few years, Online Continuing Education has exploded thanks to improved tech, and increased concerns for social distancing!
+                        <h2 className={`text-white md:font-semibold font-[500]  fivexllargef ${styles.shadow}    tracking-wide `}>why now?</h2>
+                        <h4 className='pt-3 pb-2 font-bold leading-[100%] fourxllargef 2xl:pt-6'>we ve been <br></br> here 15 years !</h4>
+                        <p className='font-[500] lowercase leading-[130%] 2xl:leading-[120%] text-white  xl:max-w-[90%] largef md:pt-5'>But it seems just over the last few years, Online Continuing Education has exploded thanks to improved tech, and increased concerns for social distancing!
                             <br></br><br></br>
                             We want to help you succeed and we have created a nice e-learning platform to do it!</p>
                     </div>

@@ -24,7 +24,7 @@ const WhyYou = ({ activeTabIndex, direction }) => {
                 {/* for mobile */}
                 <div className={`relative  col-span-12 md:col-span-8  2xl:hidden md:hidden ${loading ? styles.tranatationNone : 'opacity-0'} -mt-2 ${styles.imgcenter} `}>
 
-                    <div className={` relative  flex sm:mr-[60%] mr-10`}>
+                    <div className={` relative  flex sm:mr-[35%] mr-10`}>
                         <div className='relative overflow-hidden w-full h-[260px]  '>
                             <div className={`w-[175px] absolute bottom-[46px] right-[0px]`}>
 
@@ -39,18 +39,18 @@ const WhyYou = ({ activeTabIndex, direction }) => {
                             <Image src='/images/dog.png' width={500} height={350} alt="wanna tech png" className={` `} />
                         </div>
                         {/* bottom text */}
-                        <div className='absolute bottom-0 z-50 left-3'>
+                        <div className='absolute bottom-0 z-50 left-3 md:left-3 sm:left-[11.35rem]'>
                             <p className='text-white 3xl:text-[24px]'>(her name is bubbless!)</p>
                         </div>
 
                     </div>
                 </div>
-                <div className='flex justify-center md:justify-start col-span-12 md:col-span-4 items-strat'>
+                <div className='sm:pl-[30%] md:pl-0  flex justify-center md:justify-start col-span-12 md:col-span-4 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold  leading-[100%]    fivexllargef  ${styles.shadow}   tracking-wide `}>why you?</h2>
-                        <h4 className='py-2 font-semibold text-black fourxllargef xl:pt-4 lg:py-0'>tell us about <br></br> your pedigre
+                        <h2 className={`text-white md:font-semibold font-[500]  leading-[100%]    fivexllargef  ${styles.shadow}   tracking-wide `}>why you?</h2>
+                        <h4 className='py-2 font-semibold leading-[107%] text-black fourxllargef xl:pt-4 lg:py-0'>tell us about <br></br> your pedigre
                         </h4>
-                        <p className=' text-white font-[450] leading-[130%] 2xl:leading-[120%] lowercase largef lg:pt-2 '>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
+                        <p className=' text-white md:font-[450] font-[500] leading-[130%] 2xl:leading-[120%] lowercase largef lg:pt-2 '>In our introductory questionnaire you can tell us about yourself, describe your course, what the student can expect to learn, and why you are qualified to teach it!
                             <br></br><br></br>
                             If we determine your course is a good fit, we’ll let you into our clubhouse! From there you start creating!</p>
                     </div>

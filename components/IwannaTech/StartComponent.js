@@ -16,9 +16,9 @@ const StartComponent = ({ direction }) => {
 
                 <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white md:font-semibold leading-[100%]    fivexllargef font-bold ${styles.shadow} tracking-wide`}>so you <br />  wanna teach?</h2>
-                        <p className='mt-2 font-thin text-white md:mt-2 lg:mt-4 dubblelargef'>cool! glad you’re here!</p>
-                        <p className='mt-[4%]  triplelargef '>look around!</p>
+                        <h2 className={`text-white  md:font-semibold leading-[100%] fivexllargef font-[500] ${styles.shadow} tracking-wide`}>so you wanna <br /> teach?</h2>
+                        <p className='mt-2 font-[500] text-white md:mt-2 lg:mt-4 dubblelargef'>cool! glad you’re here!</p>
+                        <p className='mt-[4%] font-[600]  triplelargef '>look around!</p>
                     </div>
                 </div>
 
