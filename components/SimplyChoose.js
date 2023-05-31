@@ -96,7 +96,10 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
             }
             // setOpenTab(0)
         }, 500)
-        // setTimeout(() => { setActiveTabIndex(0) }, 500)
+        setActivePaymentCard(false)
+        setIsOpenD(false)
+        setShowGiftShoppi(false);
+        setSelected(false);
     }
 
     const handleClick = (index, item) => {
@@ -113,15 +116,16 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
 
     const functionHideForm = () => {
         setHideForm(true)
-        setShowGiftShoppi(false)
+        setShowGiftShoppi(false);
         setSelected(false);
         // setSimplyChoose(true)
-
-
         if (ShowGiftShoppi === true) {
             setHideForm(false)
+            setIsOpenD(false)
 
         }
+
+        setActivePaymentCard(false)
 
     }
 
