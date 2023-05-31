@@ -347,7 +347,7 @@ const Home = () => {
                     {/* Login Model For im back */}
                     <div className={` col-span-12 md:col-span-5  z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className="relative ">
-                            <div className={` bg-transparent relative  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
+                            <div className={` bg-transparent relative 3xl:max-w-[80%]  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <LoginModel changeDuration={changeDuration} title="welcome back !" />
                             </div>
 
@@ -356,7 +356,7 @@ const Home = () => {
                     {/* Login model for Teacher Lounge */}
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
-                        <div className={` bg-white max-w-[400px] relative  border border-bordergray xl:p-5 p-7 lg:p-5`}>
+                        <div className={` bg-white 3xl:max-w-[80%] relative  border border-bordergray xl:p-5 p-7 lg:p-5`}>
 
                             <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>

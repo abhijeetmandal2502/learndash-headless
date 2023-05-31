@@ -1145,13 +1145,19 @@ screen and (max-height: 700px) {
 
 .teacherLoungTrue {
     background-image: url('/images/teacherLoungeBg.png');
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 1s;
+    /* background-size: contain; */
+    /* background-position-x: right;
+    background-position-y: bottom; */
+    background-position: 0% 100%;
+    background-position-x: 100%;
 }
 
 .teacherLoungFalse {
 
     background-image: url('/images/bg-image.png');
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 1s;
+
 }
 
 

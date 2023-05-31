@@ -1,6 +1,6 @@
 .openModel {
 
-    animation: ModelOpen 500ms ease forwards;
+    animation: ModelOpen 1s ease forwards;
     transition: all ease-in-out 1s;
     display: block;
     position: absolute;
@@ -157,8 +157,8 @@
 
 .closeModel {
 
-    animation: ModelClose 500ms linear forwards;
-    transition: all ease-in-out 500ms;
+    animation: ModelClose .8s linear forwards;
+    transition: all ease-in-out .8s;
     position: absolute;
     z-index: 0;
 
@@ -168,13 +168,38 @@
 
 @keyframes ModelClose {
 
-
     0% {
 
         bottom: 30%;
         right: 50%;
         visibility: visible;
         opacity: 1;
+        height: 35%;
+        width: 50%;
+    }
+
+
+    100% {
+        bottom: 0;
+        right: 0;
+        visibility: hidden;
+        transform: none;
+        opacity: 0;
+        height: 25%;
+        width: 50%;
+        z-index: -10;
+    }
+
+
+
+
+    /* 0% {
+
+        bottom: 30%;
+        right: 50%;
+        visibility: visible;
+        opacity: 1;
+        height: 35%;
         width: 400px;
 
 
@@ -202,7 +227,7 @@
         width: 0px;
         height: 0;
 
-    }
+    } */
 
 
 
@@ -239,16 +264,15 @@
 
             bottom: 30%;
             right: 50%;
-
             opacity: 1;
-            width: 600px;
+            width: 50%;
         }
     }
 
     .closeModel {
 
-        animation: ModelClose 500ms linear forwards;
-        transition: all ease-in-out 500ms;
+        animation: ModelClose 1s linear forwards;
+        transition: all ease-in-out 1s;
         position: absolute;
         z-index: 0;
     }
@@ -257,6 +281,25 @@
 
 
         0% {
+
+            bottom: 30%;
+            right: 50%;
+            opacity: 1;
+            height: 35%;
+            width: 50%;
+        }
+
+
+        100% {
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            height: 25%;
+            width: 50%;
+            z-index: -10;
+        }
+
+        /* 0% {
 
             bottom: 30%;
             right: 50%;
@@ -286,7 +329,7 @@
             width: 0px;
             height: 0;
 
-        }
+        } */
 
 
 
