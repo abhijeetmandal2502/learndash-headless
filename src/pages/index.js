@@ -64,6 +64,7 @@ const Home = () => {
         setShowGiftShoppi(true);
         setSimplyChoose(false)
     }
+    console.log("showGiftShoppi", ShowGiftShoppi)
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
@@ -218,11 +219,11 @@ const Home = () => {
                     </div>
 
                     {/* conceierge components */}
-                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-24 left-0 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
+                    <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-24 xl:top-32 left-0 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
 
-                    <div className={`absolute top-[12%] 2xl:top-[15%] 3xl:top-[18%] left-0  w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
+                    <div className={`absolute top-24 xl:top-32   left-0  w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
                 </div>
                 <div className={`col-span-12 md:col-span-5   relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1}  `}>
                     {/*index  grid 6 main div  */}

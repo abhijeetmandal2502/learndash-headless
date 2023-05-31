@@ -4,6 +4,7 @@ import Lobby from './card/Lobby'
 import { BiArrowBack, BiCheck } from 'react-icons/bi'
 import styles from '../src/styles/Ncbtmb.module.css'
 import Select from 'react-select';
+import stylestwo from '../src/styles/Conceierge.module.css'
 import stylestow from '../src/styles/CoursePage.module.css'
 import { AiOutlineCheck } from 'react-icons/ai'
 import Link from 'next/link'
@@ -78,17 +79,17 @@ const Ncbtmb = ({ ncbtmbMethodHide }) => {
 
   return (
     <>
-      <div className='relative h-screen md:pl-[12%] overflow-hidden bg-transparent '>
+      <div className='relative  h-screen md:pl-[12%] overflow-hidden bg-transparent '>
         {/* this loby button for desktop */}
         {/* <button className={`md:flex  hidden items-center space-x-1 nctbmbmtTop bg-black text-white font-bold mb-5 ${styles.lobby} px-5 py-2  rounded-3xl `} type='button' onClick={() => ncbtmbMethodHide()}  >
           <BiArrowBack size={20} className="text-white " /><span className='mediumf '>lobby</span>
         </button> */}
-        <div className='hidden mt-8 md:block -z-50'>
-          <button className={`flex items-center space-x-1 ${stylestow.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { startMethodHide() }}>
-            <BiArrowBack size={20} className={`text-white ${stylestow.backIcon}`} /><span className='mediumf'>lobby</span></button>
-        </div>
+        <button className={`md:flex hidden items-center space-x-1  md:mt-[80px] bg-black text-white font-bold  ${stylestwo.lobby} px-5 py-2 rounded-3xl  ${stylestwo.concorgemtTop} `} type='button' onClick={() => ncbtmbMethodHide()}  >
+          <BiArrowBack size={20} className="text-white" />
+          <span className='mediumf'>lobby</span>
+        </button>
         {/* loby button code end */}
-        <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4 md:mt-0 mt-10`}>
+        <div className={`mb-6 md:my-0 grid grid-cols-12 gap-4 md:mt-4 mt-10`}>
           <div className='hidden col-span-12 md:col-span-6 md:block'>
             <h2 className='text-black triplelargefXXXL '>all courses ncbtmb approved.</h2>
           </div>
