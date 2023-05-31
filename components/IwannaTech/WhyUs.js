@@ -40,7 +40,7 @@ const WhyUs = ({ activeTabIndex, direction }) => {
                             <Image src='/images/man.png' width={500} height={350} alt="wanna tech png" className={` `} />
                         </div>
                         {/* logo for mobile */}
-                        <div className='absolute top-20 left-3'>
+                        <div className='absolute top-20 left-3 sm:left-[4.5rem]'>
                             <Image src="/images/WhiteLogo.svg" width="100" height="200" alt="tech logo" />
                         </div>
 
@@ -48,12 +48,12 @@ const WhyUs = ({ activeTabIndex, direction }) => {
                 </div>
 
 
-                <div className='flex justify-center md:justify-start col-span-12 md:col-span-4 items-strat'>
+                <div className=' sm:px-[12%]  flex justify-center md:justify-start col-span-12 md:col-span-4 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>why us?</h2>
-                        <h4 className='py-4 font-semibold fourxllargef 3xl:py-8'>because we’re</h4>
+                        <h2 className={`text-white md:font-semibold font-[500]   fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>why us?</h2>
+                        <h4 className='py-4 md:font-semibold font-[600] fourxllargef 3xl:py-8'>because we’re</h4>
                         <Image src="/images/WhiteLogo.svg" width="300" height="250" alt="tech logo" />
-                        <p className='pt-5 font-[450] lowercase leading-[130%] 2xl:leading-[120%] text-white 2xl:pt-10 2xl:tracking-wide  largef'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
+                        <p className='pt-5 font-[500] mb-10 md:mb-0 lowercase leading-[130%] 2xl:leading-[120%] text-white 2xl:pt-10 2xl:tracking-wide  largef'>You’ve probably already explored around and noticed we do things a little differently from other online ce sites!
                             <br></br><br></br>
                             We’re happy to disrupt the universe, and we’d love to have you part of it!</p>
 

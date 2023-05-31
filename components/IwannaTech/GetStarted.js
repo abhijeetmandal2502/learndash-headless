@@ -45,12 +45,12 @@ const GetStarted = ({ activeTabIndex, direction }) => {
 
                 <div className='flex justify-center col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>ready to get started?
+                        <h2 className={`text-white md:font-semibold font-[500] fivexllargef ${styles.shadow} leading-[100%] tracking-wide`}>ready to get started?
                         </h2>
                         <button className=' mt-5 rounded-3xl border xl:border-2 border-white px-7 py-2.5 text-white font-normal largef  hover:text-black hover:bg-white transition-all ease-in-out duration-1000'>
                             click here!
                         </button>
-                        <p className='pt-5 font-semibold xl:max-w-[90%] text-white lowercase largef'> Your time has come! Make it happen!</p>
+                        <p className='pt-5 md:font-semibold font-[500] xl:max-w-[90%] text-white lowercase largef'> Your time has come! Make it happen!</p>
 
                     </div>
                 </div>

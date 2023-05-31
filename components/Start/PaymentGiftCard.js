@@ -48,7 +48,7 @@ const PaymentGiftCard = () => {
                         <p className='dubblelargef pt-3 text-black leading-[107%]'>due: $40</p>
                     </div>
 
-                    <div className={`max-w-[75%] mx-auto mb-6`}>
+                    <div className={`max-w-[80%] mx-auto mb-6`}>
                         <button type="button"
                             onClick={() => { openModal() }}
                             className={`w-full px-4 mt-4 py-3 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >redeem gift card

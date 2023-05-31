@@ -35,9 +35,9 @@ const WhyTech = ({ direction }) => {
                     <Image src='/images/whyTech.png' width={200} height={200} alt="wanna tech png" className={``} />
                 </div>
 
-                <div className='flex justify-center  md:justify-start col-span-12 md:col-span-6 items-strat'>
-                    <div>
-                        <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} tracking-wide`}>Why teach?</h2>
+                <div className='sm:px-[20%] md:px-0 flex justify-center  md:justify-start col-span-12 md:col-span-6 items-start'>
+                    <div className={``}>
+                        <h2 className={`text-white font-[500]  sm:text-center  fivexllargef ${styles.shadow} tracking-wide`}>Why teach?</h2>
                         {
                             data?.map((item, id) => {
                                 return (<>
@@ -46,13 +46,13 @@ const WhyTech = ({ direction }) => {
                                             <div className='p-1.5 rounded-full bg-white'>
                                                 <FaCheck className='font-bold mediumf' />
                                             </div>
-                                            <p className='font-semibold leading-4 dubblelargefXXL'>{item.title}</p>
+                                            <p className='font-semibold extlargef leading-[107% sm:pb-2] dubblelargefXXL'>{item.title}</p>
                                         </div>
                                         <div className='flex items-center space-x-2'>
                                             <div className='px-1.5 xl:py-1.5 py-0 opacity-0 rounded-full bg-white'>
                                                 <FaCheck className='font-bold mediumf ' />
                                             </div>
-                                            <p className='font-thin leading-[120%] tracking-wider text-white 2xl:tracking-normal  mediumf'>{item.content}</p>
+                                            <p className='font-[500] leading-[107%] tracking-wider text-white 2xl:tracking-normal   mediumf'>{item.content}</p>
                                         </div>
                                     </div>
                                 </>)

@@ -18,11 +18,11 @@ const NowWhat = ({ direction }) => {
                         <Image src='/images/nowWhat.png' width={250} height={250} alt="wanna tech png" />
                     </div>
                 </div>
-                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
+                <div className='sm:pl-[30%] md:pl-0  flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div className='mt-5'>
-                        <h2 className={`text-white font-semibold   fivexllargef ${styles.shadow} leading-[100%]  tracking-wide`}>Now what?
+                        <h2 className={`text-white md:font-semibold font-[500] fivexllargef ${styles.shadow} leading-[100%]  tracking-wide`}>Now what?
                         </h2>
-                        <h4 className='py-4 font-semibold fourxllargef 3xl:py-8'>now we enter<br></br>contact:
+                        <h4 className='py-4 font-semibold fourxllargef leading-[107%] 3xl:py-8'>now we enter<br></br>contact:
                         </h4>
 
                         {/* <Image src="/images/WhiteLogo.svg" width="350" height="250" alt="tech logo" /> */}
@@ -34,7 +34,7 @@ const NowWhat = ({ direction }) => {
                                             <div className='md:p-1.5 p-1 rounded-full mediumf bg-white'>
                                                 <FaCheck className='font-bold text-green mediumf' />
                                             </div>
-                                            <p className='font-thin leading-[120%] text-white largef'>{item}</p>
+                                            <p className='md:font-thin font-[500] leading-[120%] text-white largef'>{item}</p>
                                         </div>
 
                                     </div>

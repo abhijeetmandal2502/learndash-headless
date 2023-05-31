@@ -14,13 +14,13 @@ const Needed = ({ direction }) => {
                         <Image src='/images/needed.png' width={350} height={350} alt="wanna tech png" className={``} />
                     </div>
                 </div>
-                <div className='flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
+                <div className='sm:pl-[30%] pl-[10%] md:pl-0  flex justify-center md:justify-start col-span-12 md:col-span-5 items-strat'>
                     <div>
-                        <h2 className={`text-white font-semibold leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>what’s <br />needed?</h2>
+                        <h2 className={`text-white md:font-semibold font-[500] leading-[100%] fivexllargef ${styles.shadow}  tracking-wide`}>what’s needed?</h2>
 
-                        <p className='py-5 lg:py-8 font-semibold leading-[130%] 2xl:leading-[120%] xl:max-w-[90%] text-white lowercase largef'> Both you AND your course need to already be approved by NCBTMB
+                        <p className='py-5 lg:py-8 md:font-semibold font-[500]  leading-[130%] 2xl:leading-[120%] xl:max-w-[90%] text-white lowercase largef'> Both you AND your course need to already be approved by NCBTMB
                             <br></br><br></br>  Also, your course cannot teach Massage Technique, or Soft Tissue Manipulation.</p>
-                        <h4 className='py-4 font-semibold dubblelargef 3xl:py-6'>cool! glad you’re here!!</h4>
+                        <h4 className='py-4 md:font-semibold font-[500] text-black  dubblelargef'>cool! glad you’re here!!</h4>
 
                     </div>
                 </div>

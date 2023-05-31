@@ -335,7 +335,7 @@ const Start = () => {
                                             </p>
 
 
-                                            {activeTabIndex > 0 ? <div className={` z-[1000] absolute bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { movePointerBottom(i) }}
+                                            {activeTabIndex > 0 ? <div className={` z-[1000] fixed bottom-5 left-1/2  -translate-x-1/2 block md:hidden `} onClick={() => { movePointerBottom(i) }}
                                             >
                                                 <div className={`${styles.vertmoveDown}`}>
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} alt="slideUp" />
@@ -343,7 +343,7 @@ const Start = () => {
                                             </div> : ""}
 
 
-                                            {activeTabIndex < 11 ? <div className={`  rotate-180 absolute top-24 left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { movePointerTop(i) }} >
+                                            {activeTabIndex < 11 ? <div className={`  rotate-180 fixed top-[72px] left-1/2 -translate-x-1/2 z-[1000]  block md:hidden `} onClick={() => { movePointerTop(i) }} >
                                                 <div className={`${styles.vertmoveDown}`}
                                                 >
                                                     <Image src="/start/SlideUpIcon.svg" width={25} height={25} alt="slide up" />

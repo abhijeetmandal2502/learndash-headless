@@ -20,51 +20,6 @@ body {
 /* font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 
 
-/* @layer base {
-
-  h1 {
-    @apply text-4xl;
-    font-style: normal;
-    font-weight: 500;
-
-  }
-
-  h2 {
-    @apply text-3xl;
-    font-style: normal;
-    font-weight: 500;
-  }
-
-  h3 {
-    @apply text-2xl;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  h4 {
-    @apply text-xl;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  ul {
-    @apply list-disc;
-  }
-
-  ol {
-    @apply list-decimal;
-  }
-
-
-  p {
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 33px;
-  }
-} */
-
-
 
 textarea {
 
@@ -411,6 +366,11 @@ ol {
 
 }
 
+
+input {
+  background-color: white !important;
+}
+
 .nctbmbmtTop {
 
   margin-top: 25px;
@@ -692,7 +652,7 @@ ol {
 
   .logoImg {
     width: 200px !important;
-    height: 50px !important;
+    height: 65px !important;
     margin-top: 40px !important;
   }
 
@@ -1459,7 +1419,6 @@ ol {
   .nctbmbmtTop {
     margin-top: 15px !important;
   }
-
 
 }
 
@@ -2800,19 +2759,20 @@ ol {
   }
 
   .dubblelargef {
-    font-size: 30px !important;
+    font-size: 20px !important;
   }
 
   .triplelargef {
-    font-size: 40px !important;
+    font-size: 20px !important;
+
   }
 
   .fourxllargef {
-    font-size: 36px !important;
+    font-size: 20px !important;
   }
 
   .fivexllargef {
-    font-size: 40px;
+    font-size: 30px;
 
   }
 
