@@ -1007,3 +1007,67 @@ screen and (max-height: 700px) {
     }
 
 }
+
+/* .mobiledrawer {
+    transition: 1.5s;
+    animation: showdrawer 1.5s ease-in-out;
+} */
+.mobiledrawerhide {
+    animation: fadeinback 10s ease-in-out;
+    transition: 10s;
+}
+
+@keyframes fadeinback {
+    0% {
+        opacity: 1;
+
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+.mobiledrawer {
+    /* -webkit-animation: 1s ease 0s normal forwards 1 fadein; */
+    animation: fadeinannimation 1.5s ease-in-out;
+    transition: 1.5s;
+}
+
+@keyframes fadeinannimation {
+    0% {
+
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* 
+@keyframes showdrawer {
+
+    0% {
+        opacity: .01;
+    }
+
+    20% {
+        opacity: .05;
+    }
+
+    40% {
+        opacity: .15;
+    }
+
+    60% {
+        opacity: .25;
+    }
+
+    10% {
+        opacity: 1;
+    }
+} */
