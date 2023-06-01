@@ -14,6 +14,7 @@ import MobileDrawerLeft from './Menu/MobileDrawerLeft';
 import GiftCardMobile from './giftshop/GiftCardMobile';
 import Link from 'next/link';
 
+
 const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState('');
@@ -31,12 +32,9 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             image: "/images/start.png",
             title: "start",
             content: <div className='-mt-7'>
-                {/* <div className='px-5'>
-                    <h2 className='text-black text-[40px] '>simply choose.</h2>
-                    <p className='py-2 text-[2px] '>smile, you can’t make a bad choice.</p>
-                </div> */}
                 <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
-            </div>
+            </div>,
+
         },
         {
             image: "/images/new-imback.png",
