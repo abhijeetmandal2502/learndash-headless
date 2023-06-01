@@ -103,7 +103,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
     }
 
     const handleClick = (index, item) => {
-        setSelected(index, item);
+        setSelected(index);
         // setSimplyChoose(true)
 
         const tempArray = [...selectedArray]
@@ -192,7 +192,7 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             {console.log(styles.show1)}
                             {/* ${(selected === false && !ShowGiftShoppi) ? styles.show1 : styles.hide1}  */}
 
-                            <div className={`flex flex-col justify-between ${(!selected && !ShowGiftShoppi) ? styles.show1 : styles.hide1}  `}>
+                            <div className={`flex flex-col justify-between ${((!selected && selected !== 0) && !ShowGiftShoppi) ? styles.show1 : styles.hide1}  `}>
                                 <div className={`px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
                                     <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
@@ -289,11 +289,13 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                                         <Fragment key={index} >
                                             {/* for desktop */}
                                             {/* gift shoppi course card */}
-                                            {ShowGiftShoppi ? <div className={`${start === true ? styles.gridMaincontent : ""} hidden  bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray h-[33.33vh] md:p-10 md:py-5 md:pl-10 md:pr-5 md:mt-0 mt-5  md:flex flex-col justify-between`} >
+                                            {ShowGiftShoppi ? <div className={`${start === true ? styles.gridMaincontent : ""} hidden  bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray h-[33.33vh] md:p-10 md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5  md:flex flex-col justify-between`} >
                                                 <div className='flex justify-between'>
-                                                    <div className='flex items-center justify-center space-x-1'>
-                                                        <MdOutlineWatchLater />
-                                                        <div className='mediumf'>{item.duration}</div>
+                                                    <div>
+                                                        <div className='flex items-center justify-center space-x-1 font-[500] mediumf'>
+                                                            <MdOutlineWatchLater className='largef' />
+                                                            <p className='font-bold mediumf'>{item.duration}</p>
+                                                        </div>
                                                     </div>
                                                     <div className={` relative `}>
                                                         <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
