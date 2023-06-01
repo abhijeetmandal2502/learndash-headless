@@ -12,8 +12,8 @@ export default function MobileDrawerLeft({ children, isOpen, setIsOpen, basePath
             className={
                 " fixed overflow-hidden z-40  bg-opacity-25 inset-0 top-0 transform ease-in-out " +
                 (isOpen
-                    ? `transition-opacity opacity-100 duration-700 ${styles.mobiledrawerhide} -translate-x-0`
-                    : ` -transition-all delay-500 opacity-0 -translate-x-full`)
+                    ? " transition-opacity opacity-100 duration-700 -translate-x-0"
+                    : " -transition-all delay-500 opacity-0 -translate-x-full")
             }
         >
             <section
