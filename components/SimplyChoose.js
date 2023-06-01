@@ -175,10 +175,19 @@ const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftSho
                             <div className='hidden md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
-                            <div className='hidden md:block -z-50'>
+
+                            <div className='w-max  '>
+
+                                <button className={`  hidden  md:flex items-center space-x-1 bg-black text-white px-[30%] py-2  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`} onClick={() => { HandlelobbyClick() }} >
+                                    <BiArrowBack className="text-white font-semibold minismallf" /><span className='font-semibold minismallf '>lobby</span></button>
+
+                            </div>
+
+
+                            {/* <div className='hidden md:block -z-50'>
                                 <button className={`flex items-center space-x-1 ${styles.submitbtnbg} font-bold  text-white px-5 py-2  rounded-3xl`} onClick={() => { HandlelobbyClick() }}>
                                     <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
-                            </div>
+                            </div> */}
 
                             {console.log(styles.show1)}
                             {/* ${(selected === false && !ShowGiftShoppi) ? styles.show1 : styles.hide1}  */}

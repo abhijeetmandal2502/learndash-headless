@@ -14,6 +14,14 @@ const Conceierge = ({ conceiergeHide }) => {
     return (
         <>
             <div className=' bg-transparent md:pl-[12%]'>
+
+                {/* <div className='w-max md:mt-[80px] '>
+
+                    <button className={`  hidden  md:flex items-center space-x-1 bg-black text-white px-[30%] py-2  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`} onClick={() => { HandlelobbyClick() }} >
+                        <BiArrowBack className="text-white font-semibold minismallf" /><span className='font-semibold minismallf '>lobby</span></button>
+
+                </div> */}
+
                 <button className={`md:flex hidden items-center space-x-1  md:mt-[80px] bg-black text-white font-bold  ${styles.lobby} px-5 py-2 rounded-3xl  ${styles.concorgemtTop} `} type='button' onClick={() => conceiergeHide()}  >
                     <BiArrowBack size={20} className="text-white" />
                     <span className='mediumf'>lobby</span>

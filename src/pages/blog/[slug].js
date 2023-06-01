@@ -82,7 +82,7 @@ const Blog = (props) => {
                 </div>
 
                 <div className='grid grid-cols-12'>
-                    <div className={`col-span-12 md:col-span-11  md:pl-[7%] max-h-screen ${styles.fadeAnimation}`}>
+                    <div className={`col-span-12 md:col-span-11  md:pl-[7%] max-h-screen ${styles.onlyfadeIn}`}>
 
                         <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent  md:px-0 px-3 md:pb-0 pb-5 py-4 md:py-0`}>
                             <div className='hidden md:block'>
@@ -98,28 +98,15 @@ const Blog = (props) => {
                                 <div className='flex items-center justify-center md:hidden '
                                 >
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold text-white'>Close </p>
+                                        <p className='font-semibold minismallf text-white'>Close </p>
 
-                                        <AiOutlineClose size={20} className="text-white " />
+                                        <AiOutlineClose className="text-white font-semibold minismallf" />
 
                                     </div>
                                 </div>
                             </Link>
                         </div>
-                        {/* <div className={`flex justify-between items-center space-x-5  cursor-pointer md:bg-transparent bg-black md:px-0 px-3 md:pb-0 pb-5 `}>
-                            <LogoCard LogoImage={LogoImage} />
-                            <Link href="/blog">
-                                <div className='flex items-center justify-center mt-5 md:hidden '
-                                >
-                                    <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
-                                        <p className='font-semibold text-white'>Close </p>
 
-                                        <AiOutlineClose size={20} className="text-white " />
-
-                                    </div>
-                                </div>
-                            </Link>
-                        </div> */}
 
 
                         {/* view all post button for mobile  */}
@@ -151,25 +138,26 @@ const Blog = (props) => {
 
 
 
-                        <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-3  py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4  `} onClick={() => { handlelobby() }} >
-                            <BiArrowBack size={20} className="text-white " />
-                            <span className='font-semibold smallf '>lobby</span>
-                        </button>
+                        <div className='w-max'>
+                            <button className={`md:flex hidden items-center space-x-1 bg-dakgray text-white px-[30%]  py-2 hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4  `} onClick={() => { handlelobby() }} >
+                                <BiArrowBack className="text-white minismallf" />
+                                <span className='font-semibold minismallf '>lobby</span>
+                            </button>
+                        </div>
 
                         {singlePost ? <div className='grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 '>
                             <div className={`bg-transparent md:pb-96  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 <div className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                    <h2 className='tracking-wide text-white transition-all duration-500 ease-in-out fourxllargef hover:text-voilet'>{singlePost?.title.rendered}
+                                    <h2 className='tracking-wide cursor-default text-white transition-all duration-500 ease-in-out fourxllargef '>{singlePost?.title.rendered}
                                     </h2>
-                                    <div className='flex flex-wrap'>
-                                        <div className='text-white pr-1  mediumf leading-[207%]'>
-                                            {singlePost?.name}
-                                        </div>
-                                        <div className='text-gray  mediumf leading-[207%]'>| {moment(singlePost?.date).format("MMMM  DD YYYY")}
-                                        </div>
+
+                                    <div className='flex justify-start  items-center flex-wrap'>
+                                        <div className='text-white pr-3 md:py-2 smallf font-[700]   leading-[207%]'>Laura Allen</div>
+                                        <div className='text-white md:py-2 mediumf   leading-[207%]'>| <span className='pl-1 font-[300]  leading-[120%]'>{moment(singlePost?.date).format("MMMM  DD YYYY")}</span></div>
                                     </div>
-                                    <div className='py-4 tracking-wider text-gray md:py-8 smallf' dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}>
+
+                                    <div className={`py-4 tracking-wider text-gray md:py-8 smallf ${styles.singlePostContent}`} dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}>
 
                                     </div>
 
@@ -182,8 +170,8 @@ const Blog = (props) => {
                                 </div>
 
                             </div>
-                            <div className='flex justify-center col-span-12 bg-transparent md:col-span-4'>
-                                <div className=' md:mr-5'>
+                            <div className='flex justify-end col-span-12 bg-transparent md:col-span-4  md:mr-10'>
+                                <div className=''>
 
                                     <Link href="/blog">
                                         <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='mediumf font-[600]'>view all posts</div></button>

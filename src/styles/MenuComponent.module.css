@@ -6,6 +6,34 @@
     animation-duration: 2s;
 }
 
+
+.singlePostContent>p {
+
+    font-size: 20px;
+    line-height: 140%;
+    font-weight: 400;
+}
+
+
+.lineClampContent {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+}
+
+.lineClampContent>p {
+    font-size: 20px;
+    /* line-height: 140%; */
+    font-weight: 400;
+}
+
+.lineClampContent img {
+
+    display: none !important;
+}
+
 @keyframes aboutShow {
     from {
 
@@ -26,19 +54,33 @@
     opacity: 1;
     color: #9747FF;
     transition: all ease-in-out 500ms;
+
 }
 
 /* css for Nav component */
+
+.navlitext {
+    transform: translateX(2px);
+    transition: 200ms ease-in;
+
+}
+
+.navlitext:hover {
+    transform: translateX(-2px);
+    transition: 200ms ease-in;
+
+}
 
 
 .navli:hover {
 
     color: #9747FF;
     font-size: 1.9rem;
-    -webkit-transition: all 700ms ease-in-out;
-    -ms-transition: all 700ms ease-in-out;
-    transition: color 700ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
     font-weight: bold;
+
 }
 
 .navli.active {
@@ -60,11 +102,12 @@
 }
 
 .navli {
+
     color: white;
     font-size: 1.9rem;
-    -webkit-transition: all 700ms ease-in-out;
-    -ms-transition: all 700ms ease-in-out;
-    transition: color 700ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
     font-weight: bold;
 }
 
@@ -202,6 +245,22 @@
     from {
         opacity: 0;
         transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.onlyfadeIn {
+    animation: onlyfade 2s ease;
+}
+
+@keyframes onlyfade {
+    from {
+        opacity: 0;
+
     }
 
     to {
@@ -451,17 +510,19 @@
 
     animation: toggleOpen 1000ms ease;
     transition: all ease 1000ms;
+    overflow: hidden;
 }
 
 @keyframes toggleOpen {
 
     from {
-        opacity: 0.5;
+
+        height: 0;
     }
 
 
     to {
-        opacity: 1;
+        height: fit-content;
     }
 
 }

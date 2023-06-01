@@ -123,12 +123,26 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             <LogoCard LogoImage={LogoImage} />
                         </div>
 
-                        {On ? <div className={` max-w-[100px] flex items-center space-x-1 bg-dakgray text-white px-3  py-2    hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4 ${styles.lobbyMain}  ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HandleCloseBtn(), drowerClose() }} >
-                            <BiArrowBack size={20} className="text-white 3xl:w-8 3xl:h-8" />
-                            <span className='font-semibold minismallf '>lobby</span>
-                        </div> : ""}
+                        {On ?
+                            // <div className={`w-max`} >
+                            //     <div className={`flex items-center justify-center space-x-1 bg-dakgray text-white px-[80%]  py-2 cursor-pointer   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4   ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HandleCloseBtn(), drowerClose() }} >
+                            //         <BiArrowBack className="text-white font-semibold minismallf " />
+                            //         <span className='font-semibold minismallf '>lobby</span>
+                            //     </div> </div> 
+
+                            <div className='w-max  '>
+                                <Link href="/" >
+                                    <button className={`  hidden  md:flex items-center space-x-1 bg-dakgray text-white px-[30%] py-2  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`} onClick={() => { HandleCloseBtn(), drowerClose() }} >
+                                        <BiArrowBack className="text-white font-semibold minismallf" /><span className='font-semibold minismallf '>lobby</span></button>
+                                </Link>
+                            </div>
+
+                            : ""}
                     </div>
-                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 md:pt-[5%] `} >
+
+
+
+                    {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 md:pt-10 `} >
 
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
                             <div className="">
@@ -163,10 +177,10 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                         </div>
 
                         <ul
-                            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
+                            className={`flex items-end mb-0 list-none flex-wrap xl:pt-3 xl:pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
-                            <li className={`${styles.navli} text-white   py-4 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
+                            <li className={`${styles.navli} w-max text-white xl:my-4  my-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
@@ -178,11 +192,11 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 role="tablist"
                             >
 
-                                about
+                                <span className={`${styles.navlitext}`}>about</span>
 
                                 <div className={`pl-2 triplelargef ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white  py-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white xl:my-4 my-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(2);
@@ -191,10 +205,12 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link2"
                                 role="tablist"
                             >
-                                our instructors
+
+                                <span className={`${styles.navlitext}`}>our instructors</span>
+
                                 <div className={`pl-2 triplelargef  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white  py-4 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white xl:my-4 my-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(3);
@@ -206,11 +222,10 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 role="tablist"
                             >
 
-                                blog central
-
+                                <span className={`${styles.navlitext}`}>blog central</span>
                                 <div className={`pl-2 triplelargef  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
-                            <li className={`${styles.navli} text-white  py-4 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
+                            <li className={`${styles.navli} text-white xl:my-4 my-2 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
                                     setOpenTab(4);
@@ -220,7 +235,8 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link4"
                                 role="tablist"
                             >
-                                i wanna teach!
+                                <span className={`${styles.navlitext}`}>  i wanna teach!</span>
+
                                 <div className={`pl-2 triplelargef ${openTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
                         </ul>
