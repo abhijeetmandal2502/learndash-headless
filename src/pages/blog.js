@@ -12,9 +12,11 @@ import { FiArrowDown } from 'react-icons/fi';
 import stylesScrollBtn from '../../components/Start/Start.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
-import { getAllPostData } from '../../apis/AllPostApi'
+import { getAllPostData, getPostCategories } from '../../apis/AllPostApi'
 import moment from 'moment/moment';
 import HTMLReactParser from 'html-react-parser';
+import useSWR from 'swr'
+import { fetcher } from '../../utils/swrFetcher'
 
 
 const BlogListing = (props) => {
@@ -22,48 +24,6 @@ const BlogListing = (props) => {
     const [toggleOn, setToggleOn] = useState(false)
     const [currentData, setCurrentData] = useState(false);
 
-    const blogData = [
-
-        {
-
-            title: "observing confidentiality",
-            name: "Laura Allen",
-            date: "June-3-2022",
-            discription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            subHeaderTitle: 'blog subheader example',
-            subDiscription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            image: "/images/blogBanner.png",
-
-        },
-        {
-
-            title: "observing confidentiality",
-            name: "Laura Allen",
-            date: "June-3-2022",
-            discription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            subHeaderTitle: 'blog subheader example',
-            subDiscription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            image: "/images/blogBanner.png",
-            image: "/images/blogBanner.png",
-        },
-        {
-
-            title: "observing confidentiality",
-            name: "Laura Allen",
-            date: "June-3-2022",
-            discription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            subHeaderTitle: 'blog subheader example',
-            subDiscription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            image: "/images/blogBanner.png",
-            image: "/images/blogBanner.png",
-        },
-    ]
-    //handle click blog listing
-
-    const handleClick = (item, index) => {
-        setCurrentData(item, index)
-        router.push('/blog/slug')
-    }
     const HandleCloseBtn = () => {
 
         router.push('/')
@@ -78,12 +38,18 @@ const BlogListing = (props) => {
         setToggleOn(!toggleOn)
     }
     const handleChange = (e) => {
+        // console.log(e.target.value);
 
-        const { name, checked } = e.target;
     }
     const allPost = props.allPostData
 
-    console.log('posts', allPost)
+
+    // categories fatching 
+
+    const { data: postCategoriesData, error, isLoading } = useSWR(`${process.env.API_BASE_URL}/wp/v2/categories`, fetcher);
+
+    // console.log('headerData', headerData)
+
 
     return (
         <>
@@ -138,14 +104,14 @@ const BlogListing = (props) => {
                                     <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}>
 
                                         <MdKeyboardArrowDown size={20} className="" /></div> </div>
-                                {colourOptions?.map((item, index) => {
+                                {postCategoriesData?.map((item, index) => {
 
                                     return (
                                         <>
                                             {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
-                                                <label className="text-gray mediumf ml-0.2">{item.label}</label>
+                                                <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.name} onChange={handleChange()} id="flexCheckDefault" />
+                                                <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                             </div>}
                                         </>
                                     )
@@ -208,15 +174,16 @@ const BlogListing = (props) => {
                                                 <MdKeyboardArrowDown size={20} className="" />
                                             </div>
                                         </div>
-                                        {colourOptions?.map((item, index) => {
-
+                                        {postCategoriesData?.map((item, index) => {
                                             return (
                                                 <>
                                                     {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                        <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" name={item.label} onChange={handleChange} id="flexCheckDefault" />
-                                                        <label className="text-gray mediumf ml-0.2">{item.label}</label>
+                                                        <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.name} onChange={(e) => handleChange(e)} />
+                                                        <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                                     </div>}
+
+
                                                 </>
                                             )
                                         })}
@@ -262,21 +229,16 @@ export default BlogListing
 // call blog api here
 
 export async function getServerSideProps() {
-
-
     const [allPostData,] = await Promise.all([
         getAllPostData(),
 
     ])
-
-
     return {
         props: {
             allPostData
         }
     }
 }
-
 
 
 

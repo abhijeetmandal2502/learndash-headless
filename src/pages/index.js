@@ -374,7 +374,7 @@ const Home = () => {
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <SimplyChoose setSimplyChoose={setSimplyChoose} simplyChoose={simplyChoose} startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} setShowGiftShoppi={setShowGiftShoppi} />
                     </div>
-                    <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex justify-center items-center relative h-screen w-full border-l border-bodergray  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+                    <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex items-center relative h-screen w-full border-l border-bodergray  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} drowerOpen={drowerOpen} />
                     </div>
                 </div>
@@ -389,12 +389,7 @@ const Home = () => {
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
                                 </svg>
-                                {/* <TfiMenu className='text-black extlargef ' /> */}
-                                {/* <svg width="24" height="24" viewBox="0 0 24 24" className={`hidden   ${styles.animatMenuLine}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 8.80005H20" stroke="#9747FF" stroke-width="2" />
-                                    <path d="M0 14L20 14" stroke="#9747FF" stroke-width="2" />
-                                    <path d="M0 19.2L20 19.2" stroke="#9747FF" stroke-width="2" />
-                                </svg> */}
+
                             </div>
                         </div>
                         <div className='absolute cursor-pointer -translate-x-1/2 bottom-[3.5%] left-1/2'>
