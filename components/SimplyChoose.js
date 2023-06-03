@@ -14,7 +14,18 @@ import GiftCardModel from './Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
 import GiftCardPaymentOption from './giftshop/GiftCardpPaymentOption'
 import { GoGift } from 'react-icons/go'
-const SimplyChoose = ({ startMethodHide, handleGiftComponent, start, ShowGiftShoppi, setShowGiftShoppi, selectedCourse, selectedCourseMethod, panel, setPanel, setActiveTabIndex, simplyChoose, setSimplyChoose }) => {
+const SimplyChoose = ({
+    startMethodHide,
+    handleGiftComponent,
+    start,
+    ShowGiftShoppi,
+    setShowGiftShoppi,
+    selectedCourse,
+    selectedCourseMethod,
+    panel,
+    setPanel,
+    setActiveTabIndex,
+    AllCourseData }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(true);

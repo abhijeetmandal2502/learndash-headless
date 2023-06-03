@@ -22,8 +22,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
 import { IoIosMenu } from 'react-icons/io'
 import { TfiMenu } from 'react-icons/tfi'
+import { getCourses } from 'apis/AllPostApi'
 
-const Home = () => {
+const Home = (props) => {
 
     const router = useRouter();
 
@@ -192,14 +193,15 @@ const Home = () => {
         setIsloaded(true)
     }, [])
 
+    const AllCourseData = props.allCourse
+    // console.log('allCourse', allPost);
+
     const LogoImage = "/images/Logo.svg"
 
     return (
         <>
             <Head>
-                {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" /> */}
+
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
@@ -372,7 +374,7 @@ const Home = () => {
                 {/* simply choose component for Start button */}
                 <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
-                        <SimplyChoose setSimplyChoose={setSimplyChoose} simplyChoose={simplyChoose} startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} setShowGiftShoppi={setShowGiftShoppi} />
+                        <SimplyChoose setSimplyChoose={setSimplyChoose} simplyChoose={simplyChoose} startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} setShowGiftShoppi={setShowGiftShoppi} AllCourseData={AllCourseData} />
                     </div>
                     <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex items-center relative h-screen w-full border-l border-bodergray  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} drowerOpen={drowerOpen} />
@@ -450,6 +452,19 @@ const Home = () => {
 
 
 export default Home
+
+
+export async function getServerSideProps() {
+    const [allCourse] = await Promise.all([
+        getCourses()
+    ])
+    return {
+        props: {
+            allCourse,
+
+        }
+    }
+}
 
 
 

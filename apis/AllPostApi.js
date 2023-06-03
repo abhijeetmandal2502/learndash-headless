@@ -37,12 +37,12 @@ export async function getSinglePostBySlug(slug) {
     }
 }
 
-// get post categorires 
+//get all courses
 
 
-export async function getPostCategories() {
+export async function getCourses() {
     try {
-        const res = await fetch(`${process.env.API_BASE_URL}/wp/v2/categories`);
+        const res = await fetch(`${process.env.API_BASE_URL}/ldlms/v1/sfwd-courses`);
         if (res.ok) {
             const result = await res.json();
             return result;

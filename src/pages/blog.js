@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsArrowRightShort } from 'react-icons/bs'
-import { colourOptions } from "../../components/Data";
 import styles from '../../src/styles/MenuComponent.module.css';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { useRouter } from 'next/router'
@@ -12,7 +11,7 @@ import { FiArrowDown } from 'react-icons/fi';
 import stylesScrollBtn from '../../components/Start/Start.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
-import { getAllPostData, getPostCategories } from '../../apis/AllPostApi'
+import { getAllPostData, getCourses } from '../../apis/AllPostApi'
 import moment from 'moment/moment';
 import HTMLReactParser from 'html-react-parser';
 import useSWR from 'swr'
@@ -22,7 +21,9 @@ import { fetcher } from '../../utils/swrFetcher'
 const BlogListing = (props) => {
     const router = useRouter();
     const [toggleOn, setToggleOn] = useState(false)
-    const [currentData, setCurrentData] = useState(false);
+    const [postByCategories, setpostByCategories] = useState([])
+
+
 
     const HandleCloseBtn = () => {
 
@@ -37,18 +38,20 @@ const BlogListing = (props) => {
 
         setToggleOn(!toggleOn)
     }
-    const handleChange = (e) => {
-        // console.log(e.target.value);
 
+    const handleChange = (e) => {
+        const data = e.target.value;
+        setpostByCategories([...data]);
     }
     const allPost = props.allPostData
-
 
     // categories fatching 
 
     const { data: postCategoriesData, error, isLoading } = useSWR(`${process.env.API_BASE_URL}/wp/v2/categories`, fetcher);
 
-    // console.log('headerData', headerData)
+
+
+    console.log('Catg', postByCategories)
 
 
     return (
@@ -98,28 +101,32 @@ const BlogListing = (props) => {
 
                         {/* for mobile device */}
                         <div className='flex justify-center px-5 mt-5 md:hidden md:mt-0 md:px-0'>
-                            <div className='w-full pb-2 border border-white  ' >
-                                <div className={`text-white mediumf   px-5 md:py-3 py-1 flex items-center  justify-between`} type="btn" onClick={() => { handleClickTogle() }} >
-                                    <div className=''>blog categories</div>
+                            <div className=' pb-2 border border-white w-max ' >
+                                <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between space-x-10 `} onClick={() => { handleClickTogle() }} >
+                                    <div className='mediumf'>blog categories</div>
                                     <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}>
+                                        <MdKeyboardArrowDown size={20} className="" />
+                                    </div>
+                                </div>
 
-                                        <MdKeyboardArrowDown size={20} className="" /></div> </div>
                                 {postCategoriesData?.map((item, index) => {
-
                                     return (
                                         <>
                                             {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.name} onChange={handleChange()} id="flexCheckDefault" />
+                                                <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.id} onChange={(e) => handleChange(e)} />
                                                 <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                             </div>}
+
+
                                         </>
                                     )
                                 })}
+
                             </div>
                         </div>
 
-                        {!currentData ? <div className='grid grid-cols-12 gap-4 px-5 mt-2 md:pt-10 md:px-0'>
+                        <div className='grid grid-cols-12 gap-4 px-5 mt-2 md:pt-10 md:px-0'>
                             <div className={`bg-transparent md:pb-40  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
 
                                 {
@@ -168,18 +175,19 @@ const BlogListing = (props) => {
 
                                 <div className='flex justify-end '>
                                     <div className=' pb-2 border border-white w-max ' >
-                                        <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between space-x-10 `} type="btn" onClick={() => { handleClickTogle() }} >
+                                        <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between space-x-10 `} onClick={() => { handleClickTogle() }} >
                                             <div className='mediumf'>blog categories</div>
-                                            <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff} `}>
+                                            <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}>
                                                 <MdKeyboardArrowDown size={20} className="" />
                                             </div>
                                         </div>
+
                                         {postCategoriesData?.map((item, index) => {
                                             return (
                                                 <>
                                                     {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                        <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.name} onChange={(e) => handleChange(e)} />
+                                                        <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.id} onChange={(e) => handleChange(e)} />
                                                         <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                                     </div>}
 
@@ -187,13 +195,15 @@ const BlogListing = (props) => {
                                                 </>
                                             )
                                         })}
+
                                     </div>
                                 </div>
+
 
                             </div>
 
 
-                        </div> : ""}
+                        </div>
                     </div>
                     <div className='relative hidden max-h-screen col-span-12 border-l border-white md:col-span-1 md:block'>
                         <div className=''>
@@ -229,13 +239,15 @@ export default BlogListing
 // call blog api here
 
 export async function getServerSideProps() {
-    const [allPostData,] = await Promise.all([
+    const [allPostData, courses] = await Promise.all([
         getAllPostData(),
 
     ])
     return {
         props: {
-            allPostData
+            allPostData,
+
+
         }
     }
 }
