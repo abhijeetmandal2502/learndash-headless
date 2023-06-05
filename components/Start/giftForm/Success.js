@@ -42,7 +42,7 @@ const Success = () => {
                 <div className={`md:flex flex-col hidden `}>
                     <div className={`flex justify-center items-center`}>
                         <div>
-                            <Image src="/start/GiftCard3D.svg" width="235" height="235" />
+                            <Image src="/start/GiftCard3D.svg" width="235" height="235" alt='gift card' />
                             <h4 className='text-center triplelargefXL'>Success</h4>
                             <p className='text-center mediumf mb-4'>gift card have been sent to :</p>
                         </div>
@@ -125,7 +125,7 @@ const Success = () => {
                 <div className={`flex flex-col md:hidden `}>
                     <div className={`flex justify-center items-center`}>
                         <div >
-                            <Image src="/start/GiftCard3D.svg" width="200" height="200" />
+                            <Image src="/start/GiftCard3D.svg" width="200" height="200" alt='gift card' />
                             <h4 className='text-center text-[45px] '>Success</h4>
                             <p className='text-center text-[22px] mb-4'>gift card have been sent to :</p>
                         </div>

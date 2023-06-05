@@ -21,7 +21,7 @@ const GiftBalance = () => {
                 {/* <h4 className={`triplelargefXL text-center pb-8 font-normal`}>
                     enter gift card account #to check balance
                 </h4> */}
-                <Image src="/start/GiftCard3D.svg" width={300} height={200} />
+                <Image src="/start/GiftCard3D.svg" width={300} height={200} alt='gift card' />
 
                 <div className='flex justify-center items-center'>
                     <div>

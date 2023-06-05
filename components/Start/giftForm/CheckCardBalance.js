@@ -47,7 +47,7 @@ const CheckCardBalance = () => {
                             <div className='smallf border border-lightgray text-gray py-1 text-center mb-4'>
                                 gift card account number
                             </div>
-                            <Image src="/start/recaptcha.svg" width={300} height={200} />
+                            <Image src="/start/recaptcha.svg" width={300} height={200} alt="captcha" />
                             <div className={`bg-black text-white text-center font-[500] rounded-3xl px-3 py-2 mt-6`}
                                 onClick={() => { handleCounter() }}
                             >
@@ -58,7 +58,7 @@ const CheckCardBalance = () => {
                 </div> : ""}
 
                 {showBalaence ? <div className={``}>
-                    <Image src="/start/GiftCard3D.svg" width={235} height={235} className={`w-[335px]`} />
+                    <Image src="/start/GiftCard3D.svg" width={235} height={235} className={`w-[335px]`} alt="balance" />
 
                     <div className='flex justify-center items-center'>
                         <div>

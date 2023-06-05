@@ -21,9 +21,40 @@ import { fetcher } from '../../utils/swrFetcher'
 const BlogListing = (props) => {
     const router = useRouter();
     const [toggleOn, setToggleOn] = useState(false)
-    const [postByCategories, setpostByCategories] = useState([])
+    const [catId, setCatId] = useState([]);
+    const [checked, setChecked] = React.useState(false);
 
+    //filter post by categories
 
+    const allPost = props.allPostData
+    const [filterPost, setFilterPost] = useState(allPost)
+
+    // console.log('filterPost', filterPost)
+
+    const getFilterPost = async () => {
+
+        try {
+
+            const getCategoriesPost = await fetch(`${process.env.API_BASE_URL}/wp/v2/posts?categories=${catId}`);
+
+            const response = await getCategoriesPost.json()
+
+            setFilterPost(response)
+        }
+        catch (e) {
+            console.error("API Error", e.message);
+            return null;
+        }
+
+    }
+
+    useEffect(() => {
+
+        if (catId > 0) {
+            getFilterPost()
+        }
+
+    }, [catId])
 
     const HandleCloseBtn = () => {
 
@@ -40,10 +71,19 @@ const BlogListing = (props) => {
     }
 
     const handleChange = (e) => {
-        const data = e.target.value;
-        setpostByCategories([...data]);
+
+        setChecked((state) => !state)
+        if (e.target.checked) { setCatId((oldArray) => [...oldArray, e.target.value]); }
+        else { removeCities(e); console.log(catId) }
+
+        //console.log('user', catId)
     }
-    const allPost = props.allPostData
+
+    const removeCities = (e) => {
+        setCatId([...catId.filter((city) =>
+            city !== e.target.value)])
+    }
+
 
     // categories fatching 
 
@@ -51,7 +91,7 @@ const BlogListing = (props) => {
 
 
 
-    console.log('Catg', postByCategories)
+
 
 
     return (
@@ -130,7 +170,7 @@ const BlogListing = (props) => {
                             <div className={`bg-transparent md:pb-40  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
 
                                 {
-                                    allPost?.map((item, index) => {
+                                    filterPost?.map((item, index) => {
                                         return (
                                             // <Link key={index} href={`/blog/${index + 1}`}>
                                             <div key={index} className={`mb-10 md:mt-0 mt-5 border-b border-bordergray md:max-w-[90%] lg:max-w-[100%] ${styles.blogMain}`}>
@@ -183,11 +223,12 @@ const BlogListing = (props) => {
                                         </div>
 
                                         {postCategoriesData?.map((item, index) => {
+
                                             return (
                                                 <>
                                                     {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
 
-                                                        <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.id} onChange={(e) => handleChange(e)} />
+                                                        <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" defaultChecked={checked} type="checkbox" value={item.id} onChange={(e) => handleChange(e)} />
                                                         <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                                     </div>}
 
