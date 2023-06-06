@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../../src/styles/MenuComponent.module.css';
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import { TfiMenuAlt } from 'react-icons/tfi'
@@ -10,7 +10,7 @@ import LogoCard from 'components/card/LogoCard';
 import { BiArrowBack } from 'react-icons/bi';
 import { FiArrowDown } from 'react-icons/fi';
 import stylesScrollBtn from '../../../components/Start/Start.module.css'
-import { getSinglePostBySlug } from '../../../apis/AllPostApi'
+import { getPostPerPage, getSinglePostBySlug } from '../../../apis/AllPostApi'
 import moment from 'moment/moment';
 import Link from 'next/link'
 
@@ -20,42 +20,6 @@ const Blog = (props) => {
 
     const router = useRouter()
 
-    const blogData = [
-
-        {
-
-            title: "observing confidentiality",
-            name: "Laura Allen",
-            date: "June-3-2022",
-            discription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            subHeaderTitle: 'blog subheader example',
-            subDiscription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            image: "/images/blogBanner.png",
-
-        },
-        {
-
-            title: "observing confidentiality",
-            name: "Laura Allen",
-            date: "June-3-2022",
-            discription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            subHeaderTitle: 'blog subheader example',
-            subDiscription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            image: "/images/blogBanner.png",
-            image: "/images/blogBanner.png",
-        },
-        {
-
-            title: "observing confidentiality",
-            name: "Laura Allen",
-            date: "June-3-2022",
-            discription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            subHeaderTitle: 'blog subheader example',
-            subDiscription: "A graduate of Shaw University and The Whole You School of Massage Therapy, Allen began her studies of bodywork in 1993, and has been a licensed massage therapist since 1999. From 1998-2003, she was the administrator and an instructor at The Whole You. From 2003-2016, she owned THERA-SSAGE, a multi-disciplinary clinic offering chiropractic, massage therapy, acupuncture, esthetics, naturopathy, and nutritional counseling.",
-            image: "/images/blogBanner.png",
-            image: "/images/blogBanner.png",
-        },
-    ]
     const textColor = "text-white"
 
     const LogoImage = "/images/WhiteLogo.svg";
@@ -63,8 +27,42 @@ const Blog = (props) => {
 
         router.replace('/')
     }
-
     const singlePost = props.SinglePostData
+
+
+
+    //  find index of single post 
+
+    const blogIndex = (props.postDataPerPage).map((item) => item.id)
+
+    const getCurrentIndex = blogIndex.findIndex(checkIndex)
+
+    const [activeIndex, setActiveIndex] = useState(getCurrentIndex)
+    const [filterSinglePost, setFilterSinglePost] = useState(singlePost);
+
+    function checkIndex(index) {
+        return index == singlePost.id;
+    }
+
+    // get next post 
+    const getNextPost = () => {
+        setActiveIndex(activeIndex + 1)
+        setTimeout(() => { setFilterSinglePost(props.postDataPerPage[activeIndex]) }, 2000)
+        router.push({
+            pathname: `/blog/${filterSinglePost.slug}`,
+        })
+    }
+    // get Privious post 
+    const getPriviousPost = () => {
+        setActiveIndex(activeIndex - 1)
+        setTimeout(() => { setFilterSinglePost(props.postDataPerPage[activeIndex]) }, 2000)
+        router.push({
+            pathname: `/blog/${filterSinglePost.slug}`,
+        })
+    }
+    console.log(activeIndex, filterSinglePost)
+
+    console.log(props.postDataPerPage[activeIndex])
 
 
     return (
@@ -145,19 +143,19 @@ const Blog = (props) => {
                             </button>
                         </div>
 
-                        {singlePost ? <div className='grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 '>
+                        {filterSinglePost ? <div className='grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 '>
                             <div className={`bg-transparent md:pb-96  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 <div className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                    <h2 className='tracking-wide cursor-default text-white transition-all duration-500 ease-in-out fourxllargef '>{singlePost?.title.rendered}
+                                    <h2 className='tracking-wide cursor-default text-white transition-all duration-500 ease-in-out fourxllargef '>{filterSinglePost?.title.rendered}
                                     </h2>
 
                                     <div className='flex justify-start  items-center flex-wrap'>
                                         <div className='text-white pr-3 md:py-2 smallf font-[700]   leading-[207%]'>Laura Allen</div>
-                                        <div className='text-white md:py-2 mediumf   leading-[207%]'>| <span className='pl-1 font-[300]  leading-[120%]'>{moment(singlePost?.date).format("MMMM  DD YYYY")}</span></div>
+                                        <div className='text-white md:py-2 mediumf   leading-[207%]'>| <span className='pl-1 font-[300]  leading-[120%]'>{moment(filterSinglePost?.date).format("MMMM  DD YYYY")}</span></div>
                                     </div>
 
-                                    <div className={`py-4 tracking-wider text-gray md:py-8 smallf ${styles.singlePostContent}`} dangerouslySetInnerHTML={{ __html: singlePost?.content.rendered }}>
+                                    <div className={`py-4 tracking-wider text-gray md:py-8 smallf ${styles.singlePostContent}`} dangerouslySetInnerHTML={{ __html: filterSinglePost?.content.rendered }}>
 
                                     </div>
 
@@ -174,11 +172,22 @@ const Blog = (props) => {
                                 <div className=''>
 
                                     <Link href="/blog">
-                                        <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} > <TfiMenuAlt size={25} /> <div className='mediumf font-[600]'>view all posts</div></button>
+                                        <button className='text-white bg-[#3A3A3A] py-3 px-6 lg:px-7 rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 ' onClick={() => { }} >
+                                            <TfiMenuAlt size={25} />
+                                            <div className='mediumf font-[600]'>view all posts</div>
+                                        </button>
                                     </Link>
                                     <div className='flex pt-7 md:space-x-4 2xl:space-x-10'>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' /> <div className='pr-1 mediumf '> back</div></button>
-                                        <button onClick={() => { }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <div className='pl-1 mediumf' >next</div> <HiOutlineArrowSmRight size={20} className='' /> </button>
+                                        {/* back btn */}
+                                        {!activeIndex <= 0 ? <button onClick={() => { getPriviousPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' />
+                                            <div className='pr-1 mediumf '> back</div>
+                                        </button> : ""}
+
+                                        {/* next btn  */}
+                                        {activeIndex <= (props.postDataPerPage).length ? <button onClick={() => { getNextPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                            <div className='pl-1 mediumf' >next</div>
+                                            <HiOutlineArrowSmRight size={20} className='' />
+                                        </button> : ''}
                                     </div>
 
                                 </div>
@@ -228,10 +237,20 @@ export const getStaticPaths = async ({ context }) => {
 
 export async function getStaticProps(context) {
     const slug = context.params.slug;
-    const SinglePostData = await getSinglePostBySlug(slug);
+
+    const [postDataPerPage, SinglePostData] = await Promise.all([
+        getPostPerPage(),
+        getSinglePostBySlug(slug)
+    ])
+
+
     return {
         props: {
+
+            postDataPerPage,
             SinglePostData,
         }, revalidate: 60,
     }
 }
+
+

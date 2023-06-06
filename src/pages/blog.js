@@ -11,7 +11,7 @@ import { FiArrowDown } from 'react-icons/fi';
 import stylesScrollBtn from '../../components/Start/Start.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
-import { getAllPostData, getCourses } from '../../apis/AllPostApi'
+import { getAllPostData, getPostPerPage } from '../../apis/AllPostApi'
 import moment from 'moment/moment';
 import HTMLReactParser from 'html-react-parser';
 import useSWR from 'swr'
@@ -35,7 +35,7 @@ const BlogListing = (props) => {
 
         try {
 
-            const getCategoriesPost = await fetch(`${process.env.API_BASE_URL}/wp/v2/posts?categories=${catId}`);
+            const getCategoriesPost = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/wp/v2/posts?categories=${catId}`);
 
             const response = await getCategoriesPost.json()
 
@@ -50,8 +50,16 @@ const BlogListing = (props) => {
 
     useEffect(() => {
 
-        if (catId > 0) {
+        if (catId > []) {
             getFilterPost()
+        }
+
+        if (checked == false) {
+
+            setTimeout(() => {
+
+                setFilterPost(allPost)
+            }, 200)
         }
 
     }, [catId])
@@ -87,12 +95,7 @@ const BlogListing = (props) => {
 
     // categories fatching 
 
-    const { data: postCategoriesData, error, isLoading } = useSWR(`${process.env.API_BASE_URL}/wp/v2/categories`, fetcher);
-
-
-
-
-
+    const { data: postCategoriesData, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_BASE_URL}/wp/v2/categories`, fetcher);
 
     return (
         <>
@@ -280,15 +283,13 @@ export default BlogListing
 // call blog api here
 
 export async function getServerSideProps() {
-    const [allPostData, courses] = await Promise.all([
+    const [allPostData] = await Promise.all([
         getAllPostData(),
 
     ])
     return {
         props: {
             allPostData,
-
-
         }
     }
 }
