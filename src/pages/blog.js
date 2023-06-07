@@ -82,7 +82,7 @@ const BlogListing = (props) => {
 
         setChecked((state) => !state)
         if (e.target.checked) { setCatId((oldArray) => [...oldArray, e.target.value]); }
-        else { removeCities(e); console.log(catId) }
+        else { removeCities(e); }
 
         //console.log('user', catId)
     }

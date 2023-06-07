@@ -50,54 +50,54 @@ const SimplyChoose = ({
     }
     // console.log('isOpenD', isOpenD)
 
-    const data = [
-        {
-            price: 40,
-            duration: "give ce as a gift",
-            discription: "gift shoppe"
-        },
-        {
-            price: 40,
-            duration: "4  Hours",
-            discription: "using research to market your practice"
-        },
-        {
-            price: 40,
-            duration: "2 Hours",
-            discription: "spa masterclass"
-        },
-        {
-            price: 40,
-            duration: "4  Hours",
-            discription: "spa masterclass"
-        },
-        {
-            price: 40,
-            duration: "2 Hours",
-            discription: "using research to market your practice"
-        },
-        {
-            price: 40,
-            duration: "4  Hours",
-            discription: "spa masterclass"
-        },
-        {
-            price: 40,
-            duration: "2 Hours",
-            discription: "using research to market your practice"
-        },
-        {
-            price: 40,
-            duration: "2 Hours",
-            discription: "spa masterclass"
-        },
-        {
-            price: 40,
-            duration: "4  Hours",
-            discription: "using research to market your practice"
-        },
+    // const data = [
+    //     {
+    //         price: 40,
+    //         duration: "give ce as a gift",
+    //         discription: "gift shoppe"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "4  Hours",
+    //         discription: "using research to market your practice"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "2 Hours",
+    //         discription: "spa masterclass"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "4  Hours",
+    //         discription: "spa masterclass"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "2 Hours",
+    //         discription: "using research to market your practice"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "4  Hours",
+    //         discription: "spa masterclass"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "2 Hours",
+    //         discription: "using research to market your practice"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "2 Hours",
+    //         discription: "spa masterclass"
+    //     },
+    //     {
+    //         price: 40,
+    //         duration: "4  Hours",
+    //         discription: "using research to market your practice"
+    //     },
 
-    ]
+    // ]
 
     const HandlelobbyClick = () => {
         setTimeout(() => {
@@ -133,9 +133,11 @@ const SimplyChoose = ({
         if (ShowGiftShoppi === true) {
             setHideForm(false)
             setIsOpenD(false)
+
         }
 
         setActivePaymentCard(false)
+
     }
 
     const stringData = selectedArray.map((item) => {
@@ -160,11 +162,7 @@ const SimplyChoose = ({
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
-
-    // course list data from api 
-    const courseList =AllCourseData;
-    //console.log('courseList',courseList);
-
+     console.log('courselist', AllCourseData)
     const LogoImage = "/images/Logo.svg"
     return (
         <>
@@ -263,13 +261,13 @@ const SimplyChoose = ({
                                             {/* <Image src="/images/gift.svg" width={25} height={25} alt='gift' className='3xl:w-[40px] 3xl:h-[40px]' /> */}
 
                                             <GoGift className='mediumf' />
-                                            <div className='font-[500] mediumf'>{data[0].duration}</div>
+                                            <div className='font-[500] mediumf'>give ce as a gift</div>
                                         </div>
                                     </div>
                                     <div className={`  ${ShowGiftShoppi ? styles.activeGiftShoppy : styles.gift} ${!ShowGiftShoppi ? styles.inActiveGiftShoppy : styles.gift}} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%]  `}>
                                     </div>
                                     <p className={` pt-5 absolute bottom-[10%] dubblelargef ${styles.discriptionAnimation}`}>
-                                        {data[0].discription}
+                                    gift shoppe
                                     </p>
                                     <div className={`absolute bottom-0 right-0  ${ShowGiftShoppi ? 'block transition-all ease-in-out duration-1000' : styles.hide1}  `} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
@@ -283,20 +281,20 @@ const SimplyChoose = ({
                                     <div className='flex justify-between'>
                                         <div className='flex items-center justify-center space-x-1'>
                                             <Image src="/images/gift.svg" width={25} height={25} alt='gift' />
-                                            <p className='font-bold mediumf'>{data[0].duration}</p>
+                                            <p className='font-bold mediumf'>give ce as a gift</p>
                                         </div>
                                     </div>
                                     <div className='flex items-center justify-between'>
                                         <Image src="/images/homeColor.svg" width={100} height={100} alt='home' />
                                         <p className={`md:pt-0 pt-5 leading-10 font-normal   dubblelargef ${styles.discriptionAnimation}`}>
-                                            {data[0].discription}
+                                        gift shoppe
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* all course list */}
 
-                                {courseList?.slice(1).map((item, index) => {
+                                {AllCourseData?.slice(1).map((item, index) => {
                                     return (
                                         <Fragment key={index} >
                                             {/* for desktop */}
@@ -315,8 +313,8 @@ const SimplyChoose = ({
                                                     <div className={` relative `}>
                                                         <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <div className='font-semibold text-black mediumf'>
-                                                                {/* ${item.price} */}
-                                                                $40
+                                                                ${item?.course_price}
+                                                                {/* $40 */}
                                                             </div>
                                                         </div>
                                                         <div className=''>
@@ -324,8 +322,8 @@ const SimplyChoose = ({
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className={`absolute bottom-[10%] ${styles.lineClampContent}  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
-                                                    {item.title.rendered}
+                                                <div className={`absolute bottom-[10%] ${styles.lineClampContent}   font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
+                                                    {item?.title?.rendered}
                                                 </div>
                                                 <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
                                                     <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
@@ -350,7 +348,7 @@ const SimplyChoose = ({
                                                         <div className={` relative `} >
                                                             <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                                 <p className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
-                                                                    {/* {item.course_price} */} $40
+                                                                    ${item?.course_price}
                                                                 </p>
                                                             </div>
                                                             {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
@@ -368,7 +366,7 @@ const SimplyChoose = ({
                                                         </div>
                                                     </div>
                                                     <div className={`absolute bottom-[10%] ${styles.lineClampContent}  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
-                                                    {item.title.rendered}
+                                                        {item?.title?.rendered}
                                                     </div>
 
                                                     <div className='hidden md:block'>
@@ -384,7 +382,11 @@ const SimplyChoose = ({
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
-                                                        <div><p className='font-[500] mediumf'>{item.duration}</p></div>
+                                                        <div><p className='font-[500] mediumf'>
+                                                            {/* {item.duration} */}
+                                                            4 Hours
+                                                            </p>
+                                                            </div>
                                                     </div>
 
                                                     {/* course price components */}
@@ -392,7 +394,7 @@ const SimplyChoose = ({
                                                     <div className={` relative `} onClick={() => { setPanel(true), selectedCourseMethod(), drowerOpen() }}>
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='font-semibold text-white text-[16px]'>
-                                                                ${item.price}
+                                                                ${item.course_price}
                                                             </p>
                                                         </div>
                                                         {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
@@ -411,8 +413,8 @@ const SimplyChoose = ({
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <p className={`md:pt-10 pt-5 leading-8  font-Barlow    font-[500] text-[22px]  ${styles.discriptionAnimation}`}>
-                                                    {item.discription}
+                                                <p className={`md:pt-10 pt-5 leading-8 ${styles.lineClampContent}  font-Barlow    font-[500] text-[22px]  ${styles.discriptionAnimation}`}>
+                                                    {item?.title?.rendered}
                                                 </p>
 
                                                 <div className='hidden md:block'>
