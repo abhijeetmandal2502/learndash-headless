@@ -35,12 +35,10 @@ const Home = (props) => {
     const basePath = pathArr[1];
 
     const drowerOpen = () => {
-
         setIsOpen(!isOpen)
     }
 
     const drowerClose = () => {
-
         setIsOpen(!isOpen)
     }
 
@@ -128,7 +126,6 @@ const Home = (props) => {
         }, 200)
 
         setStart(false)
-
     }
 
     const ncbtmbMethodHide = () => {
@@ -142,20 +139,17 @@ const Home = (props) => {
             setShowNcbtmb()
             setIsloaded(false)
         }, 200)
-
     }
 
     // show hide for start 
 
     const startMethod = () => {
-
         setStart(true)
         setShowNcbtmb()
         setShowConceierge()
         setIsloaded()
         setShowGiftShoppi(false)
         setSimplyChoose(true)
-
         router.push({
             pathname: '/',
             query: { active: 'start' }
@@ -167,7 +161,6 @@ const Home = (props) => {
     const startMethodHide = () => {
         setStart(false)
     }
-
     // side menu show hide method 
 
     const ShowMenuMethod = () => {
@@ -195,7 +188,6 @@ const Home = (props) => {
 
     const AllCourseData = props.allCourse
     // console.log('allCourse', allPost);
-
     const LogoImage = "/images/Logo.svg"
 
     return (

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from '../../../src/styles/MenuComponent.module.css';
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import { TfiMenuAlt } from 'react-icons/tfi'
@@ -14,61 +14,42 @@ import { getPostPerPage, getSinglePostBySlug } from '../../../apis/AllPostApi'
 import moment from 'moment/moment';
 import Link from 'next/link'
 
-const Blog = (props) => {
+const Blog = ({postDataPerPage,singlePostData}) => {
 
-    // console.log('SinglePostData', props.SinglePostData)
-
+    const [currentPostId,setCurrentPostId]=useState(singlePostData?.id);
+    const [currentIndex,setCurrentIndex]=useState(0);
     const router = useRouter()
-
     const textColor = "text-white"
-
     const LogoImage = "/images/WhiteLogo.svg";
     const handlelobby = () => {
-
         router.replace('/')
     }
-    const singlePost = props.SinglePostData
 
-
-
-    //  find index of single post 
-
-    const blogIndex = (props.postDataPerPage).map((item) => item.id)
-
-    const getCurrentIndex = blogIndex.findIndex(checkIndex)
-
-    const [activeIndex, setActiveIndex] = useState(getCurrentIndex)
-    const [filterSinglePost, setFilterSinglePost] = useState(singlePost);
-
-    function checkIndex(index) {
-        return index == singlePost.id;
-    }
+    useEffect(()=>{
+        const index = postDataPerPage.findIndex(x => x.id === currentPostId);
+        setCurrentIndex(index);
+        router.push(`/blog/${postDataPerPage[index]?.slug}`)
+    },[currentPostId])
 
     // get next post 
     const getNextPost = () => {
-        setActiveIndex(activeIndex + 1)
-        setTimeout(() => { setFilterSinglePost(props.postDataPerPage[activeIndex]) }, 2000)
-        router.push({
-            pathname: `/blog/${filterSinglePost.slug}`,
-        })
+        if(postDataPerPage[currentIndex + 1]?.id){
+            setCurrentPostId(postDataPerPage[currentIndex + 1]?.id)
+            setCurrentIndex(currentIndex + 1)
+        }
     }
+
     // get Privious post 
     const getPriviousPost = () => {
-        setActiveIndex(activeIndex - 1)
-        setTimeout(() => { setFilterSinglePost(props.postDataPerPage[activeIndex]) }, 2000)
-        router.push({
-            pathname: `/blog/${filterSinglePost.slug}`,
-        })
+        if(currentIndex>0){
+            setCurrentPostId(postDataPerPage[currentIndex - 1]?.id)
+            setCurrentIndex(currentIndex - 1)
+        }
     }
-    console.log(activeIndex, filterSinglePost)
-
-    console.log(props.postDataPerPage[activeIndex])
-
 
     return (
         <>
             <div className={` relative   h-screen overflow-hidden  w-screen`}>
-
                 <div className="absolute top-0 left-0 w-screen h-screen -z-10">
                     <Image
                         src="/images/blog-bg.png"
@@ -119,13 +100,13 @@ const Blog = (props) => {
                             </Link>
                             <div className='flex space-x-2'>
                                 <div
-                                    onClick={() => { }}
+                                    onClick={() => { getPriviousPost()}}
                                     className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <HiOutlineArrowSmLeft size={15} className='' />
                                     <div className='pr-1 minismallf '> back</div>
                                 </div>
                                 <div
-                                    onClick={() => { }}
+                                    onClick={() => { getNextPost()}}
                                     className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <div className='pl-1 minismallf' >next</div>
                                     <HiOutlineArrowSmRight size={15} className='' />
@@ -143,23 +124,23 @@ const Blog = (props) => {
                             </button>
                         </div>
 
-                        {filterSinglePost ? <div className='grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 '>
+                        {singlePostData ? <div className='grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 '>
                             <div className={`bg-transparent md:pb-96  md:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar} `}>
 
                                 <div className="mb-10 border-b border-bordergray md:max-w-[85%] ">
-                                    <h2 className='tracking-wide cursor-default text-white transition-all duration-500 ease-in-out fourxllargef '>{filterSinglePost?.title.rendered}
+                                    <h2 className='tracking-wide cursor-default text-white transition-all duration-500 ease-in-out fourxllargef '>{singlePostData?.title.rendered}
                                     </h2>
 
                                     <div className='flex justify-start  items-center flex-wrap'>
                                         <div className='text-white pr-3 md:py-2 smallf font-[700]   leading-[207%]'>Laura Allen</div>
-                                        <div className='text-white md:py-2 mediumf   leading-[207%]'>| <span className='pl-1 font-[300]  leading-[120%]'>{moment(filterSinglePost?.date).format("MMMM  DD YYYY")}</span></div>
+                                        <div className='text-white md:py-2 mediumf   leading-[207%]'>| <span className='pl-1 font-[300]  leading-[120%]'>{moment(singlePostData?.date).format("MMMM  DD YYYY")}</span></div>
                                     </div>
 
-                                    <div className={`py-4 tracking-wider text-gray md:py-8 smallf ${styles.singlePostContent}`} dangerouslySetInnerHTML={{ __html: filterSinglePost?.content.rendered }}>
+                                    <div className={`py-4 tracking-wider text-gray md:py-8 smallf ${styles.singlePostContent}`} dangerouslySetInnerHTML={{ __html: singlePostData?.content.rendered }}>
 
                                     </div>
 
-                                    <Image src="/images/blogBanner1.png" width="800" height="450" className={`md:w-[850px] md:h-[350px] w-[500px] h-[250px] ${styles.blogBannerImg}`} alt="Banner Image" />
+                                    {/* <Image src="/images/blogBanner1.png" width="800" height="450" className={`md:w-[850px] md:h-[350px] w-[500px] h-[250px] ${styles.blogBannerImg}`} alt="Banner Image" /> */}
 
                                     {/* <h4 className='py-3 pt-10 font-normal tracking-wide text-white mediumf'>{item.subHeaderTitle}</h4>
 
@@ -179,15 +160,15 @@ const Blog = (props) => {
                                     </Link>
                                     <div className='flex pt-7 md:space-x-4 2xl:space-x-10'>
                                         {/* back btn */}
-                                        {!activeIndex <= 0 ? <button onClick={() => { getPriviousPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' />
+                                     <button onClick={() => { getPriviousPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' />
                                             <div className='pr-1 mediumf '> back</div>
-                                        </button> : ""}
+                                        </button>
 
                                         {/* next btn  */}
-                                        {activeIndex <= (props.postDataPerPage).length ? <button onClick={() => { getNextPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                       <button onClick={() => { getNextPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                             <div className='pl-1 mediumf' >next</div>
                                             <HiOutlineArrowSmRight size={20} className='' />
-                                        </button> : ''}
+                                        </button>
                                     </div>
 
                                 </div>
@@ -226,19 +207,11 @@ const Blog = (props) => {
 
 export default Blog
 
-export const getStaticPaths = async ({ context }) => {
 
-    return {
-        paths: [],
-        fallback: "blocking"
-    };
-}
-
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const slug = context.params.slug;
 
-    const [postDataPerPage, SinglePostData] = await Promise.all([
+    const [postDataPerPage, singlePostData] = await Promise.all([
         getPostPerPage(),
         getSinglePostBySlug(slug)
     ])
@@ -248,8 +221,8 @@ export async function getStaticProps(context) {
         props: {
 
             postDataPerPage,
-            SinglePostData,
-        }, revalidate: 60,
+            singlePostData,
+        },
     }
 }
 
