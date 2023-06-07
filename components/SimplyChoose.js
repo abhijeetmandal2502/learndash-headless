@@ -313,7 +313,7 @@ const SimplyChoose = ({
                                                     <div className={` relative `}>
                                                         <div className='absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <div className='font-semibold text-black mediumf'>
-                                                                ${item?.course_price}
+                                                                {item?.course_price}
                                                                 {/* $40 */}
                                                             </div>
                                                         </div>
@@ -348,7 +348,7 @@ const SimplyChoose = ({
                                                         <div className={` relative `} >
                                                             <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                                 <p className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
-                                                                    ${item?.course_price}
+                                                                    {item?.course_price}
                                                                 </p>
                                                             </div>
                                                             {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
@@ -394,7 +394,7 @@ const SimplyChoose = ({
                                                     <div className={` relative `} onClick={() => { setPanel(true), selectedCourseMethod(), drowerOpen() }}>
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='font-semibold text-white text-[16px]'>
-                                                                ${item.course_price}
+                                                                {item.course_price}
                                                             </p>
                                                         </div>
                                                         {selectedArray[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
