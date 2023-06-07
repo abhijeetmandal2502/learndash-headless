@@ -13,6 +13,7 @@ import GiftCardModel from '../../components/Start/DialogCard/GiftCardModel'
 import { useRouter } from 'next/router'
 import GiftCardPaymentOption from '../../components/giftshop/GiftCardpPaymentOption'
 import { GoGift } from 'react-icons/go'
+import SideMenu from 'components/SideMenu'
 const GiftShoppe = ({ }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
@@ -87,10 +88,12 @@ const GiftShoppe = ({ }) => {
 
     const HandlelobbyClick = () => {
         setTimeout(() => {
-            if (router.asPath == '/?active=start') {
-                startMethodHide();
-                router.push('/');
-            }
+
+            router.push('/');
+            // if (router.asPath == '/?active=start') {
+            //     startMethodHide();
+                
+            // }
             // setOpenTab(0)
         }, 500)
         setActivePaymentCard(false)
@@ -116,7 +119,6 @@ const GiftShoppe = ({ }) => {
             setHideForm(false)
             setIsOpenD(false)
         }
-
         setActivePaymentCard(false)
     }
 
@@ -130,12 +132,10 @@ const GiftShoppe = ({ }) => {
     // drower for mobile
     const currentPath = router?.query?.active;
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpenLeft, setIsOpenLeft] = useState(true);
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
 
     const drowerOpen = () => {
-
         setIsOpen(!isOpen)
     }
     const drowerClose = () => {
@@ -159,7 +159,11 @@ const GiftShoppe = ({ }) => {
                     />
                 </div>
                 
-                <div className={`${styles.fadeAnimation}`}>
+              
+
+<div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full  grid grid-cols-12`}>
+                    <div className={`col-span-12 md:col-span-11`}>
+                    <div className={`${styles.fadeAnimation}`}>
                     <div className='relative grid grid-cols-11 overflow-y-scroll'>
                         <div className={` relative md:col-span-6 col-span-12 md:pl-[12%]  md:h-screen overflow-scroll ${styles.hidescrollBar}`}>
                             <div className='hidden md:block'>
@@ -326,10 +330,7 @@ const GiftShoppe = ({ }) => {
                                                         <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                                                     </div>
                                                 </div>
-
                                             </div>
-
-
                                         </Fragment>
                                     )
 
@@ -348,9 +349,13 @@ const GiftShoppe = ({ }) => {
                 {/* <div div className={` z-9 absolute top-0 md:hidden ${selectedCourse ? styles.fadeAnimation : styles.hide1} `}>
                     <ResearchComponent drowerOpen={drowerOpen} drowerClose={drowerClose} isOpen={isOpen} setIsOpen={setIsOpen} panel={panel} setPanel={setPanel} />
                 </div > */}
-            </div >
-
-
+                    </div >
+                    <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex items-center relative h-screen w-full border-l border-bodergray`}>
+                        <SideMenu/>
+                    </div>
+                    </div>
+                    
+                </div>
 
 
         </>

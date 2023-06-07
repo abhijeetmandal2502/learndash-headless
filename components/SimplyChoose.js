@@ -133,11 +133,9 @@ const SimplyChoose = ({
         if (ShowGiftShoppi === true) {
             setHideForm(false)
             setIsOpenD(false)
-
         }
 
         setActivePaymentCard(false)
-
     }
 
     const stringData = selectedArray.map((item) => {
@@ -162,7 +160,10 @@ const SimplyChoose = ({
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
-    // console.log('panel', panel, selectedCourse, isOpen)
+
+    // course list data from api 
+    const courseList =AllCourseData;
+    //console.log('courseList',courseList);
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -295,7 +296,7 @@ const SimplyChoose = ({
 
                                 {/* all course list */}
 
-                                {data?.slice(1).map((item, index) => {
+                                {courseList?.slice(1).map((item, index) => {
                                     return (
                                         <Fragment key={index} >
                                             {/* for desktop */}
@@ -320,7 +321,7 @@ const SimplyChoose = ({
                                                     </div>
                                                 </div>
                                                 <div className={`absolute bottom-[10%]   font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
-                                                    {item.discription}
+                                                    {item.title.rendered}
                                                 </div>
                                                 <div className={`absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
                                                     <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
@@ -342,7 +343,7 @@ const SimplyChoose = ({
                                                         <div className={` relative `} >
                                                             <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                                 <p className='md:text-[24px] mediumf xl:text-[24px] font-semibold text-white'>
-                                                                    ${item.price}
+                                                                    {item.course_price}
                                                                 </p>
                                                             </div>
                                                             {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
@@ -359,8 +360,8 @@ const SimplyChoose = ({
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className={`absolute bottom-[10%]   font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
-                                                        {item.discription}
+                                                    <div className={`absolute bottom-[10%] line-clamp-3  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
+                                                    {item.title.rendered}
                                                     </div>
 
                                                     <div className='hidden md:block'>

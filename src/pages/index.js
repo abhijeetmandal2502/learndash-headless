@@ -66,7 +66,6 @@ const Home = (props) => {
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
-
         setOpenTeacherLogin(true)
         setShowConceierge()
         setShowNcbtmb()
@@ -124,7 +123,6 @@ const Home = (props) => {
             setShowConceierge()
             setIsloaded(false)
         }, 200)
-
         setStart(false)
     }
 
@@ -133,7 +131,6 @@ const Home = (props) => {
     }
     // conceierge approved 
     const conceiergeMethod = () => {
-
         setShowConceierge(true)
         setTimeout(() => {
             setShowNcbtmb()
@@ -142,7 +139,6 @@ const Home = (props) => {
     }
 
     // show hide for start 
-
     const startMethod = () => {
         setStart(true)
         setShowNcbtmb()
@@ -181,7 +177,6 @@ const Home = (props) => {
     }
     // hwen page loaded css 
     const [isLoaded, setIsloaded] = useState(false)
-
     useEffect(() => {
         setIsloaded(true)
     }, [])
@@ -358,7 +353,6 @@ const Home = (props) => {
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
                         <div className={` bg-white 3xl:max-w-[80%] relative  border border-bordergray xl:p-5 p-7 lg:p-5`}>
-
                             <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>
                     </div>

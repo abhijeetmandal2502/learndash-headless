@@ -59,7 +59,7 @@ const BlogListing = (props) => {
             setTimeout(() => {
 
                 setFilterPost(allPost)
-            }, 200)
+            }, 100)
         }
 
     }, [catId])
@@ -170,7 +170,7 @@ const BlogListing = (props) => {
                         </div>
 
                         <div className='grid grid-cols-12 gap-4 px-5 mt-2 md:pt-10 md:px-0'>
-                            <div className={`bg-transparent md:pb-40  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
+                            <div className={`bg-transparent md:pb-72  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
 
                                 {
                                     filterPost?.map((item, index) => {

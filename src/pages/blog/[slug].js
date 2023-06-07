@@ -160,15 +160,15 @@ const Blog = ({postDataPerPage,singlePostData}) => {
                                     </Link>
                                     <div className='flex pt-7 md:space-x-4 2xl:space-x-10'>
                                         {/* back btn */}
-                                     <button onClick={() => { getPriviousPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' />
+                                    {currentIndex>0? <button onClick={() => { getPriviousPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '> <HiOutlineArrowSmLeft size={20} className='' />
                                             <div className='pr-1 mediumf '> back</div>
-                                        </button>
+                                        </button>:""}
 
                                         {/* next btn  */}
-                                       <button onClick={() => { getNextPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                       { postDataPerPage[currentIndex + 1]?.id ?<button onClick={() => { getNextPost() }} className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                             <div className='pl-1 mediumf' >next</div>
                                             <HiOutlineArrowSmRight size={20} className='' />
-                                        </button>
+                                        </button>:""}
                                     </div>
 
                                 </div>
