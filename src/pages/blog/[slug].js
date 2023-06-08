@@ -99,18 +99,18 @@ const Blog = ({postDataPerPage,singlePostData}) => {
                                 </div>
                             </Link>
                             <div className='flex space-x-2'>
-                                <div
+                                {currentIndex>0?<div
                                     onClick={() => { getPriviousPost()}}
                                     className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <HiOutlineArrowSmLeft size={15} className='' />
                                     <div className='pr-1 minismallf '> back</div>
-                                </div>
-                                <div
+                                </div>:""}
+                                {postDataPerPage[currentIndex + 1]?.id ?<div
                                     onClick={() => { getNextPost()}}
                                     className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <div className='pl-1 minismallf' >next</div>
                                     <HiOutlineArrowSmRight size={15} className='' />
-                                </div>
+                                </div>:""}
                             </div>
 
                         </div>

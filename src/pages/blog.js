@@ -29,16 +29,14 @@ const BlogListing = (props) => {
     const allPost = props.allPostData
     const [filterPost, setFilterPost] = useState(allPost)
 
-    // console.log('filterPost', filterPost)
+    // console.log('filterPost', allPost.headers)
 
     const getFilterPost = async () => {
 
         try {
 
             const getCategoriesPost = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/wp/v2/posts?categories=${catId}`);
-
             const response = await getCategoriesPost.json()
-
             setFilterPost(response)
         }
         catch (e) {
@@ -91,8 +89,6 @@ const BlogListing = (props) => {
         setCatId([...catId.filter((city) =>
             city !== e.target.value)])
     }
-
-
     // categories fatching 
 
     const { data: postCategoriesData, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_BASE_URL}/wp/v2/categories`, fetcher);
@@ -144,7 +140,7 @@ const BlogListing = (props) => {
 
                         {/* for mobile device */}
                         <div className='flex justify-center px-5 mt-5 md:hidden md:mt-0 md:px-0'>
-                            <div className=' pb-2 border border-white w-max ' >
+                            <div className=' border border-white w-max ' >
                                 <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between space-x-10 `} onClick={() => { handleClickTogle() }} >
                                     <div className='mediumf'>blog categories</div>
                                     <div className={`${toggleOn ? styles.toggleAnimation : styles.toggleAnimationOff}`}>
@@ -170,7 +166,7 @@ const BlogListing = (props) => {
                         </div>
 
                         <div className='grid grid-cols-12 gap-4 px-5 mt-2 md:pt-10 md:px-0'>
-                            <div className={`bg-transparent md:pb-72  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
+                            <div className={`bg-transparent md:pb-72 pb-32  md:col-span-8 lg:col-span-8 col-span-12 h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
 
                                 {
                                     filterPost?.map((item, index) => {
@@ -201,7 +197,7 @@ const BlogListing = (props) => {
                                                 {/* <div className='py-2 tracking-wider text-gray md:py-5 mediumf' >
                                                 </div> */}
 
-                                                <Link href={`blog/${item?.slug}`} className='text-white flex space-x-1 justify-center items-center border border-white rounded-3xl px-3 max-w-[155px]  hover:border-black py-1 mt-2 mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
+                                                <Link href={`blog/${item?.slug}`} className='text-white flex space-x-1 justify-center items-center border border-white rounded-3xl px-3 max-w-[155px]  hover:border-black py-1 mt-3  mb-3 md:mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
                                                 >
                                                     <span className='ml-1 font-[600]   mediumf'>read more</span>
                                                     <BsArrowRightShort className='text-white font-[600]  mediumf' />
@@ -211,8 +207,6 @@ const BlogListing = (props) => {
                                         )
                                     })
                                 }
-
-
                             </div>
                             <div className='hidden col-span-12 mr-10 bg-transparent md:col-span-4 lg:col-span-4 md:block'>
 
@@ -282,17 +276,29 @@ export default BlogListing
 
 // call blog api here
 
-export async function getServerSideProps() {
-    const [allPostData] = await Promise.all([
-        getAllPostData(),
+// export async function getServerSideProps() {
+//     const [allPostData] = await Promise.all([
+//         getAllPostData(),
 
-    ])
-    return {
-        props: {
-            allPostData,
-        }
-    }
-}
+//     ])
+//     return {
+//         props: {
+//             allPostData,
+//         }
+//     }
+// }
+
+export async function getStaticProps() {
+    const [allPostData] = await Promise.all([
+                getAllPostData(),
+            ])
+            return {
+                props: {
+                    allPostData,
+                },
+                revalidate: 3600,
+            }
+  }
 
 
 
