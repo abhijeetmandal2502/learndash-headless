@@ -88,7 +88,6 @@ const GiftShoppe = ({ }) => {
 
     const HandlelobbyClick = () => {
         setTimeout(() => {
-
             router.push('/');
             // if (router.asPath == '/?active=start') {
             //     startMethodHide();
@@ -112,14 +111,16 @@ const GiftShoppe = ({ }) => {
     };
 
     const functionHideForm = () => {
-        setHideForm(true)
+        setHideForm(true);
         setSelected(false);
+
         // setSimplyChoose(true)
-        if (ShowGiftShoppi === true) {
-            setHideForm(false)
-            setIsOpenD(false)
-        }
+     
         setActivePaymentCard(false)
+
+        router.push({
+            pathname:'/courses'
+        })
     }
 
     const stringData = selectedArray.map((item) => {
@@ -141,8 +142,7 @@ const GiftShoppe = ({ }) => {
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
-    // console.log('panel', panel, selectedCourse, isOpen)
-
+   
     const LogoImage = "/images/Logo.svg"
     return (
         <>

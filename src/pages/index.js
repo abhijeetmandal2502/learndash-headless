@@ -7,8 +7,8 @@ import styles2 from '../styles/Conceierge.module.css'
 import LoginModel from 'components/LoginModel';
 import Conceierge from 'components/Conceierge'
 import Ncbtmb from 'components/Ncbtmb'
-import SimplyChoose from 'components/SimplyChoose'
-import SideMenu from 'components/SideMenu'
+// import SimplyChoose from 'components/SimplyChoose'
+// import SideMenu from 'components/SideMenu'
 import MenuComponent from 'components/Menu/MenuComponent'
 import MusicCard from 'components/card/MusicCard'
 import LogoCard from 'components/card/LogoCard'
@@ -20,9 +20,9 @@ import Door from 'components/Start/Door'
 import HomeComponentMobile from 'components/HomeComponentMobile'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
-import { IoIosMenu } from 'react-icons/io'
-import { TfiMenu } from 'react-icons/tfi'
-import { getCourses } from 'apis/AllPostApi'
+// import { IoIosMenu } from 'react-icons/io'
+// import { TfiMenu } from 'react-icons/tfi'
+// import { getCourses } from 'apis/AllPostApi'
 
 const Home = (props) => {
 
@@ -37,7 +37,7 @@ const Home = (props) => {
     const drowerOpen = () => {
         setIsOpen(!isOpen)
     }
-
+    
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
@@ -53,16 +53,7 @@ const Home = (props) => {
     // for menu open close 
     const [On, setOn] = useState();
 
-    // state for gift shoppy
-    const [ShowGiftShoppi, setShowGiftShoppi] = useState(false);
-    const [simplyChoose, setSimplyChoose] = useState(true);
-
-
-    const handleGiftComponent = () => {
-        setShowGiftShoppi(true);
-        setSimplyChoose(false)
-    }
-    //console.log("showGiftShoppi", ShowGiftShoppi)
+   
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
@@ -75,8 +66,9 @@ const Home = (props) => {
     useEffect(() => {
         if (router.asPath === "/?active=home") {
             setOn(true)
+            setIsOpen(!isOpen)
         }
-
+        
         if (router.asPath === "/?active=start") {
             setStart(true)
         }
@@ -138,27 +130,6 @@ const Home = (props) => {
         }, 200)
     }
 
-    // show hide for start 
-    const startMethod = () => {
-        setStart(true)
-        setShowNcbtmb()
-        setShowConceierge()
-        setIsloaded()
-        setShowGiftShoppi(false)
-        setSimplyChoose(true)
-        router.push({
-            pathname: '/',
-            query: { active: 'start' }
-        })
-    }
-
-    // start hide method
-
-    const startMethodHide = () => {
-        setStart(false)
-    }
-    // side menu show hide method 
-
     const ShowMenuMethod = () => {
         setOn(true)
         setShowNcbtmb()
@@ -181,8 +152,6 @@ const Home = (props) => {
         setIsloaded(true)
     }, [])
 
-    const AllCourseData = props.allCourse
-    // console.log('allCourse', allPost);
     const LogoImage = "/images/Logo.svg"
 
     return (
@@ -229,7 +198,14 @@ const Home = (props) => {
                             {/* first grid */}
                             <div className=' md:col-span-6 w-full h-[100vh] border-l border-gray'>
                                 {/* start components */}
-                                <div className={` w-full h-1/2 menuBoxsizebigMenu  flex flex-col overflow-hidden relative justify-center  cursor-pointer   ${Styles.rotateChild} ${styles2.mainAnimation} `} onClick={() => startMethod()} >
+                                <div className={` w-full h-1/2 menuBoxsizebigMenu  flex flex-col overflow-hidden relative justify-center  cursor-pointer  
+                                 ${Styles.rotateChild} ${styles2.mainAnimation} `} 
+                                //  onClick={() => startMethod()} 
+                                onClick={() => { router.push({
+                                    pathname:'/courses'
+
+                                }) }}
+                                >
                                     <div className={` md:space-x-0 flex md:flex-col relative `}>
                                         <Door />
                                         <div className='w-full'>
@@ -261,7 +237,12 @@ const Home = (props) => {
                                 </div>
 
                                 {/* gift shoppe */}
-                                <div className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} onClick={() => { startMethod(), handleGiftComponent() }}>
+                                <div 
+                                className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} 
+                                onClick={() => { router.push({
+                                    pathname:'/giftshoppe'
+
+                                }) }}>
                                     <div className={` image-card ${styles.mainDiv}`}>
 
                                         <div className={`${styles.gift} absolute -top-5 left-1/2 -translate-x-1/2 -translate-y-0 w-[100%] h-[100%]  `}>
@@ -358,14 +339,14 @@ const Home = (props) => {
                     </div>
                 </div>
                 {/* simply choose component for Start button */}
-                <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
+                {/* <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <SimplyChoose setSimplyChoose={setSimplyChoose} simplyChoose={simplyChoose} startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} setShowGiftShoppi={setShowGiftShoppi} AllCourseData={AllCourseData} />
                     </div>
                     <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex items-center relative h-screen w-full border-l border-bodergray  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
                         <SideMenu ShowMenuMethod={ShowMenuMethod} drowerOpen={drowerOpen} />
                     </div>
-                </div>
+                </div> */}
                 {/*index page main menu sidebar component */}
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l 3xl:border-l-2 border-b-gray md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
                     <div className=''>
@@ -388,7 +369,7 @@ const Home = (props) => {
             </div>
 
             {/* drowable component */}
-            <div className={` md:block hidden  ${On === undefined ? styles2.hideNcbtmbdiv : ""}`}>
+            <div className={` md:block hidden  ${router.asPath !== "/?active=home"? styles2.hideNcbtmbdiv : ""}`}>
                 <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                     <div className="overflow-y-scroll ">
                         <div className="flex flex-col">
@@ -436,21 +417,10 @@ const Home = (props) => {
     )
 }
 
-
 export default Home
 
 
-export async function getServerSideProps() {
-    const [allCourse] = await Promise.all([
-        getCourses()
-    ])
-    return {
-        props: {
-            allCourse,
 
-        }
-    }
-}
 
 
 

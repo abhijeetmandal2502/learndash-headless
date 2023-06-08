@@ -1272,8 +1272,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 24px !important;
-    line-height: 28px !important;
+    font-size: 16px !important;
+    line-height: 23px !important;
   }
 
   .dubblelargefXXL {
@@ -2961,6 +2961,11 @@ input {
     font-size: 15px;
   }
 
+  .smallfXL {
+
+    font-size: 12px;
+  }
+
   .smallf {
     font-size: 12px;
   }
@@ -3047,6 +3052,11 @@ input {
 
   .smallf {
     font-size: 14px;
+  }
+
+  .smallfXL {
+
+    font-size: 13px;
   }
 
   .mediumf {
@@ -3412,7 +3422,7 @@ input {
 
   .smallfXL {
 
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .mediumf {

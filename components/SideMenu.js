@@ -2,9 +2,18 @@ import React from 'react'
 import Image from 'next/image'
 import MusicCard from './card/MusicCard'
 import styles from '../src/styles/NewIndex.module.css'
+import { useRouter } from 'next/router'
 
 
 const SideMenu = ({ ShowMenuMethod, drowerOpen }) => {
+    const router =useRouter();
+
+   const handledrower = ()=>{
+    router.push({
+        pathname: '/',
+        query: { active: 'home' }
+    })
+   }
 
     const textColor = 'text-black'
 
@@ -12,7 +21,7 @@ const SideMenu = ({ ShowMenuMethod, drowerOpen }) => {
         <>
             <div className='cursor-pointer '>
                 <div className='flex items-center  space-x-2  absolute top-[2.7%] left-1/2 -translate-x-1/2'>
-                    <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
+                    <div className='flex items-center justify-center space-x-2' onClick={() => {  handledrower() }}>
                         <p className='font-semibold largef'>menu</p>
                         <svg width="24" height="24" className={`${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
