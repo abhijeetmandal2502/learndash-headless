@@ -11,7 +11,7 @@ a {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Barlow';
+  font-family: 'Barlow'!important;
   color: black !important;
 }
 
@@ -1179,7 +1179,7 @@ input {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height: 16px !important;
+    line-height:100%!important;
   }
 
   .mediumf {
@@ -1255,7 +1255,7 @@ input {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height: 16px !important;
+    line-height:100% !important;
   }
 
   .mediumf {
@@ -1346,7 +1346,7 @@ input {
 
   .smallf {
     font-size: 12px !important;
-    line-height: 16px !important;
+    line-height:100% !important;
   }
 
   .mediumf {
@@ -2968,6 +2968,7 @@ input {
 
   .smallf {
     font-size: 12px;
+    line-height: 100%;
   }
 
   .mediumf {
@@ -3052,6 +3053,7 @@ input {
 
   .smallf {
     font-size: 14px;
+    line-height: 100%;
   }
 
   .smallfXL {
@@ -3163,7 +3165,7 @@ input {
   }
 
   .largef {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .extlargef {
@@ -3249,7 +3251,7 @@ input {
 
   .smallf {
     font-size: 14px;
-    line-height: 19px;
+    line-height:100%;
   }
 
   .mediumf {
@@ -3257,7 +3259,7 @@ input {
   }
 
   .largef {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .extlargef {
@@ -3330,6 +3332,7 @@ input {
 
   .smallf {
     font-size: 14px;
+    line-height: 100%;
   }
 
   .mediumf {
@@ -3416,7 +3419,7 @@ input {
   }
 
   .smallf {
-    line-height: 20px;
+    line-height: 100%;
     font-size: 17px;
   }
 
@@ -3435,7 +3438,7 @@ input {
   }
 
   .largef {
-    font-size: 28px;
+    font-size: 23px;
   }
 
   .extlargef {
@@ -3542,7 +3545,7 @@ input {
   }
 
   .smallf {
-    line-height: 25px;
+    line-height:100%;
     font-size: 19px;
   }
 
@@ -3561,7 +3564,7 @@ input {
   }
 
   .largef {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .extlargef {
@@ -3674,7 +3677,7 @@ input {
 
   .smallf {
     font-size: 18px;
-    line-height: 30px;
+    line-height:100%;
     letter-spacing: 0.5px;
   }
 
@@ -3684,7 +3687,7 @@ input {
   }
 
   .mediumf {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .mediumfXL {
@@ -3693,7 +3696,7 @@ input {
   }
 
   .largef {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .extlargef {

@@ -183,9 +183,7 @@ const Blog = ({postDataPerPage,singlePostData}) => {
                                         onClick={() => { }}>
                                         <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                             <p className='font-semibold text-white largef '>Close </p>
-
                                             <AiOutlineClose className="text-white largef" />
-
                                         </div>
                                     </div>
                                 </Link>

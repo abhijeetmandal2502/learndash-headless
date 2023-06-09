@@ -202,7 +202,6 @@
 
     from {
         opacity: 0;
-
     }
 
     to {
@@ -227,7 +226,6 @@
 
     to {
         opacity: 0;
-
     }
 }
 
@@ -249,7 +247,6 @@
 
 
 .show1 {
-
     display: block;
     opacity: 1;
     transition: all 1s ease-in-out;
@@ -303,8 +300,6 @@
         height: 0;
         visibility: hidden;
     }
-
-
 }
 
 .submitbtnbg {
@@ -330,7 +325,6 @@
 }
 
 /* gift shoppi css  */
-
 .mainDiv>.gift {
 
     background-image: url(/images/homeBlack.svg);
@@ -372,7 +366,6 @@
     object-fit: cover;
     transition: all ease-in-out 500ms;
     background-size: 180px;
-
 }
 
 /* course price image */
@@ -385,11 +378,9 @@
 
 .giftListBg {
     background: rgba(151, 71, 255, 0.07);
-
 }
 
 /* addto cart */
-
 .addtoCard {
     position: absolute;
     top: 160px;
@@ -407,7 +398,6 @@
 
 @media(max-height:750px) and (min-width:992px) {
     .mainDiv>.gift {
-
         background-image: url(/images/homeBlack.svg);
         background-repeat: no-repeat;
         background-position: center;
@@ -417,7 +407,6 @@
     }
 
     .mainDiv:hover>.gift {
-
         background-image: url(/images/homeColor.svg);
         background-repeat: no-repeat;
         background-position: center;
@@ -425,8 +414,6 @@
         transition: all ease-in-out 500ms;
         background-size: 150px !important;
     }
-
-
 }
 
 @media(max-height:992px) and (min-width:992px) {
@@ -454,7 +441,6 @@
     .viewMoreIcon {
         width: 22px !important;
         height: 22px !important;
-
     }
 
     .addtoCard {
@@ -469,7 +455,6 @@
     .viewMoreIcon {
         width: 18px !important;
         height: 18px !important;
-
     }
 
 
@@ -507,7 +492,6 @@
 
 
     .giftCountImg {
-
         width: 30px !important;
         height: 30px !important;
     }

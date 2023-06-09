@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { MdOutlineWatchLater } from 'react-icons/md'
+import HTMLReactParser from 'html-react-parser';
 
 import styles from '../Start/Start.module.css'
 import { Dialog, Disclosure, Transition } from '@headlessui/react'
@@ -11,7 +12,16 @@ import AboutCourse from './DialogCard/AboutCourse'
 import { useRouter } from 'next/router'
 import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
 import AddToCart from './AddToCart'
-const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, setPanel }) => {
+const ResearchComponent = ({ 
+    drowerClose, 
+    drowerOpen, 
+    isOpen, 
+    setIsOpen, 
+    panel, 
+    setPanel,
+    selectedArray,
+    courseDetail,
+    selected }) => {
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
@@ -37,29 +47,31 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
         'instant certificate',
     ]
 
+   const  selestedCourseData = courseDetail[selected]
+
+
+    console.log('courseDetail',selestedCourseData,selected)
+
     return (
         <>
 
             <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-1'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
-                    <div className='flex items-center justify-center space-x-2'>
+                    <div className='flex items-center justify-start space-x-2'>
 
-                        <h2 className='tracking-wide hidden md:block text-black fourxllargef'>
-                            using research
-                            to market your practice
+                    <div className='max-w-[75%]'>
+                    <h2 className={`tracking-wide hidden md:block text-black   fourxllargef ${styles.lineClampContent} `}>
+                           {selestedCourseData?.title.rendered}
                         </h2>
+                      </div>
 
-                        <h2 className='tracking-wide md:hidden text-[32px] mt-5 leading-[110%] text-black                    '>
-                            using research
-                            to market your practice
-                        </h2>
                         {/* price component for mobile */}
 
-                        <div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
+                        {selestedCourseData?.course_price?<div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
                             <div className='absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                <div className='font-semibold text-white mediumf'>
-                                    $40
+                                <div className='font-semibold text-white extsmallf'>
+                                    {selestedCourseData?.course_price}
                                 </div>
                             </div>
 
@@ -82,7 +94,7 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                 </div>
                             </div>
 
-                        </div>
+                        </div>:""}
                     </div>
                     <div className='hidden mt-2 -ml-2 cursor-pointer md:block '>
                         <Image src="/start/horizontaladdbutton.svg" width={120} height={50} alt="btn" />
@@ -105,7 +117,9 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                             <h3 className='font-semibold text-black smallf'>4 Hours</h3>
                         </div>
                     </div>
-                    <p className='py-1 tracking-wide text-black smallf'>Do you know the difference in valid research and website hype? Learn basic concepts of research...</p>
+                    <p className={`py-1 tracking-wide text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: selestedCourseData?.content.rendered }}>
+                       
+                        </p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
                         onClick={() => { openModal(), setAboutCourse(true), setInstructor(false) }}
                         type="button"
@@ -165,8 +179,8 @@ const ResearchComponent = ({ drowerClose, drowerOpen, isOpen, setIsOpen, panel, 
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center mt-2 md:pb-20'>
-                                        {instructor ? <YourInstructor /> : ""}
-                                        {aboutCourse ? <AboutCourse /> : ""}
+                                        {instructor ? <YourInstructor  /> : ""}
+                                        {aboutCourse ? <AboutCourse title={selestedCourseData?.title.rendered} content={selestedCourseData?.content.rendered}/> : ""}
                                     </div>
 
 

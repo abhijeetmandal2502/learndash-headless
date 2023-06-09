@@ -34,6 +34,19 @@
 
 
 
+.lineClampContent {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 150px;
+    overflow: hidden;
+    padding-right: 2px;
+
+}
+
+
+
 /* updown animation for scroll btn */
 
 

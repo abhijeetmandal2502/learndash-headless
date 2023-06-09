@@ -10,7 +10,7 @@ import SplitPayment from './SplitPayment'
 import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 import { BsToggleOff } from 'react-icons/bs'
 
-const AddToCart = () => {
+const AddToCart = ({selectedArray,courseData}) => {
 
     const [activeIndex, setActiveIndex] = useState(0)
     const [ShowPaymentOption, setShowPaymentOption] = useState(false)

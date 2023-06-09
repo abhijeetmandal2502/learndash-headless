@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { BiArrowBack } from 'react-icons/bi';
 import { useRouter } from 'next/router';
@@ -18,13 +18,10 @@ import Link from 'next/link';
 const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const router = useRouter();
     const [activeTabIndex, setActiveTabIndex] = useState('');
-
     const [selectedCourse, setSelectedCourse] = useState(false)
-
     const [panel, setPanel] = useState(true);
 
     const selectedCourseMethod = () => {
-
         setSelectedCourse(true);
     }
     const menuList = [
@@ -32,35 +29,43 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             image: "/images/start.png",
             title: "start",
             content: <div className='-mt-7'>
-                <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} />
+                {/* <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} /> */}
             </div>,
+            path:'/courses'
 
         },
         {
             image: "/images/new-imback.png",
             title: "i’m back",
-            content: <LoginModel title="welcome back" />
+            content: <LoginModel title="welcome back" />,
+            path:'/'
         },
         {
             image: "/images/ConciergeNew.svg",
             title: "concierge",
-            content: <Conceierge />
+            content: <Conceierge />,
+            path:'/'
         },
         {
             image: "/images/NCBTMB.svg",
             title: "ncbtmb approved",
-            content: <Ncbtmb />
+            content: <Ncbtmb />,
+            path:'/'
         },
 
         {
             image: "/images/home1.svg",
             title: "gift shoppe",
-            content: <GiftCardMobile />
+            content: <div>
+                {/* <GiftCardMobile /> */}
+                </div>,
+            path:'/giftshoppe'
         },
         {
             image: "/images/new-teacherlouge.png",
             title: "teacher’s lounge",
-            content: <LoginModel title="Teacher's Lounge" />
+            content: <LoginModel title="Teacher's Lounge" />,
+            path:'/'
         },
     ]
 
@@ -85,6 +90,16 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                 setPanel(false)
         }
     }
+
+    useEffect(()=>{
+        if(router.asPath==='/'){ 
+            setIsOpenLeft(isOpenLeft)  
+        }
+if(router.asPath === '/courses'){
+    setIsOpen(!isOpen)
+}
+
+    },[])
 
 
     return (
@@ -186,12 +201,16 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                             menuList?.map((item, id) => {
                                                                 return (
                                                                     <>
-                                                                        <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
-                                                                            <div key={id} className='flex items-center px-3 py-5 space-x-5'>
+                                                                       <Fragment key={id}>
+                                                                      <Link href={`${item.path}`}>
+                                                                      <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
+                                                                            <div  className='flex items-center px-3 py-5 space-x-5'>
                                                                                 <Image alt='start' src={item.image} height='80' width='80' />
                                                                                 <h3 className='mt-4 text-black text-2xl '>{item.title}</h3>
                                                                             </div>
                                                                         </div>
+                                                                      </Link>
+                                                                       </Fragment>
                                                                     </>
                                                                 )
                                                             })

@@ -62,7 +62,7 @@ export async function getSinglePostBySlug(slug) {
 
 export async function getCourses() {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/ldlms/v1/sfwd-courses`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/ldlms/v1/sfwd-courses?_embed`);
         if (res.ok) {
             const result = await res.json();
             return result;
