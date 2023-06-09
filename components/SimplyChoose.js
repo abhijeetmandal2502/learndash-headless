@@ -209,7 +209,7 @@ const SimplyChoose = ({ courseData }) => {
                                                     </div>
 
                                                     {/* course price components */}
-                                                    <div className={` relative `} >
+                                                    {item?.course_price?<div className={` relative `} >
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='smallfXL leading-[100%] font-semibold text-white'>
                                                                 {item?.course_price}
@@ -227,7 +227,7 @@ const SimplyChoose = ({ courseData }) => {
                                                             {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} /> :
                                                                 <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />}
                                                         </div>
-                                                    </div>
+                                                    </div>:""}
                                                 </div>
                                                 <div className={`absolute bottom-[10%] ${styles.lineClampContent}  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
                                                     {item?.title?.rendered}
@@ -255,7 +255,7 @@ const SimplyChoose = ({ courseData }) => {
 
                                                     {/* course price components */}
 
-                                                    <div className={` relative `} onClick={() => { setPanel(true), drowerOpen() }}>
+                                                    {item?.course_price?<div className={` relative `} onClick={() => { setPanel(true), drowerOpen() }}>
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='font-semibold text-white text-[12px]'>
                                                                 {item.course_price}
@@ -275,7 +275,7 @@ const SimplyChoose = ({ courseData }) => {
                                                                 :
                                                                 <Image src="/images/newPriceOrange.svg" width={55} height={58} alt="prceBg" />}
                                                         </div>
-                                                    </div>
+                                                    </div>:''}
                                                 </div>
                                                 <p className={`md:pt-10 pt-5 leading-8 ${styles.lineClampContent}  font-Barlow    font-[500] text-[20px]  ${styles.discriptionAnimation}`}>
                                                     {item?.title?.rendered}
