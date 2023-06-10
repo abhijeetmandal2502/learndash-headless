@@ -190,11 +190,11 @@ const SimplyChoose = ({ courseData }) => {
 
                                 {/* all course list */}
 
-                                {courseData?.slice(1).map((item, index) => {
+                                {courseData?.map((item, index) => {
                                     return (
                                         <Fragment key={index} >
                                             {/* for desktop */}
-                                            <div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
+                                            {item?.course_price?<div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
                                                 onClick={() => { handleClick(index, item) }}
                                             >
                                                 <div className='flex justify-between'>
@@ -209,7 +209,7 @@ const SimplyChoose = ({ courseData }) => {
                                                     </div>
 
                                                     {/* course price components */}
-                                                    {item?.course_price?<div className={` relative `} >
+                                                    <div className={` relative `} >
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='smallfXL leading-[100%] font-semibold text-white'>
                                                                 {item?.course_price}
@@ -217,17 +217,25 @@ const SimplyChoose = ({ courseData }) => {
                                                         </div>
                                                         {selectedArray[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
                                                             +add
-                                                        </p> : <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
-                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
-                                                            <p className={`text-[#AC6CFF] largef font-semibold`}>
-                                                                added
-                                                            </p>
-                                                        </div>}
+                                                        </p> : 
+                                                        <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
+                                                        +add
+                                                    </p>
+                                                        // <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
+                                                        //     <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
+                                                        //     <p className={`text-[#AC6CFF] largef font-semibold`}>
+                                                        //         added
+                                                        //     </p>
+                                                        // </div>
+                                                        }
                                                         <div className=''>
-                                                            {selectedArray[index] == index ? <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} /> :
+                                                            {selectedArray[index] == index ? 
+                                                            <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />
+                                                            // <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />
+                                                             :
                                                                 <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />}
                                                         </div>
-                                                    </div>:""}
+                                                    </div>
                                                 </div>
                                                 <div className={`absolute bottom-[10%] ${styles.lineClampContent}  font-Barlow dubblelargef   font-normal  ${styles.discriptionAnimation}`}>
                                                     {item?.title?.rendered}
@@ -239,10 +247,10 @@ const SimplyChoose = ({ courseData }) => {
                                                     </div>
                                                 </div>
 
-                                            </div>
+                                            </div>:""}
 
                                             {/* for mobile */}
-                                            {openResearchComp ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item),setOpenResearchComp(false) }}>
+                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item),setOpenResearchComp(false) }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />

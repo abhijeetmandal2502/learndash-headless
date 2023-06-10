@@ -94,7 +94,7 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
 
                             <Link href="/blog">
                                 <div
-                                    className='text-white bg-[#3A3A3A] py-3 px-6  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 extsmallf ' onClick={() => { }} >
+                                    className='text-white bg-[#3A3A3A] md:py-3 py-2 md:px-6 px-3  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 extsmallf ' onClick={() => { }} >
                                     <TfiMenuAlt size={14} />
                                     <div className=' font-[600]'>view all posts</div>
                                 </div>
@@ -102,13 +102,13 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
                             <div className='flex space-x-2'>
                                 {currentIndex > 0 ? <div
                                     onClick={() => { getPriviousPost() }}
-                                    className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                    className='text-white flex space-x-1 items-center md:py-1.5 md:px-2.5 px-2 py-1  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <HiOutlineArrowSmLeft size={15} className='' />
                                     <div className='pr-1 minismallf '> back</div>
                                 </div> : ""}
                                 {postDataPerPage[currentIndex + 1]?.id ? <div
                                     onClick={() => { getNextPost() }}
-                                    className='text-white flex space-x-1 items-center py-1.5 px-2.5  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
+                                    className='text-white flex space-x-1 items-center md:py-1.5 md:px-2.5 px-2 py-1  border border-white rounded-3xl hover:bg-voilet transition-all ease-in-out duration-500 '>
                                     <div className='pl-1 minismallf' >next</div>
                                     <HiOutlineArrowSmRight size={15} className='' />
                                 </div> : ""}

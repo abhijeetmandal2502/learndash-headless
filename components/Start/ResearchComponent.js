@@ -117,7 +117,7 @@ const ResearchComponent = ({
                             <h3 className='font-semibold text-black smallf'>4 Hours</h3>
                         </div>
                     </div>
-                    <p className={`py-1 tracking-wide text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: selestedCourseData?.content.rendered }}>
+                    <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: selestedCourseData?.content.rendered }}>
                        
                         </p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
