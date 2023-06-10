@@ -254,10 +254,28 @@
 
 
 .onlyfadeIn {
-    animation: onlyfade 2s ease;
+    animation: onlyfade 2s ease-in-out;
+    transition: all ease-in-out 2s;
 }
 
 @keyframes onlyfade {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.onlyIwannaTechfadeIn {
+    animation: onlyfadeIwannaTech 3s ease-in-out;
+    transition: all ease-in-out 3s;
+}
+
+@keyframes onlyfadeIwannaTech {
     from {
         opacity: 0;
 

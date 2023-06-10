@@ -288,8 +288,6 @@ const SimplyChoose = ({ courseData }) => {
                                                 </div>
 
                                             </div> : ""}
-
-
                                         </Fragment>
                                     )
 
