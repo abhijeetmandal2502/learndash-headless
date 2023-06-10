@@ -218,10 +218,10 @@
 
     .submitbtnbg {
 
-        margin-top: 0px !important;
-        margin-bottom: 10px !important;
-        padding-bottom: 5px !important;
-        padding-top: 5px !important;
+        margin-top: 6px !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
     }
 
 }
@@ -349,13 +349,13 @@
 
     .passwordInput input {
 
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
     }
 
     .formbg input {
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
     }
 
     /* submitbtn */
@@ -364,8 +364,8 @@
 
         margin-top: 6px !important;
         margin-bottom: 12px !important;
-        padding-bottom: 7px !important;
-        padding-top: 4px !important;
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
     }
 
     .paypalPaymentsuccess {

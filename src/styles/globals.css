@@ -8,18 +8,24 @@ a {
   text-decoration: none;
 }
 
+
+
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Barlow'!important;
+  font-family: 'Barlow';
   color: black !important;
 }
 
 /* font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+
+
+
 textarea {
 
   background-color: #FFFFFF !important;
 }
+
 
 .Boxshadow {
   box-shadow: 0px 4px 52px 4px rgba(10, 6, 22, 0.08);
@@ -1076,7 +1082,7 @@ input {
 
 /* minheight screen size font  */
 
-/* @media (max-height:840px) and (min-width:992px) {
+@media (max-height:840px) and (min-width:992px) {
 
   .extxlsmallf {
     font-size: 12px !important;
@@ -1110,8 +1116,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 20px !important;
-    line-height: 25px !important;
+    font-size: 30px !important;
+    line-height: 35px !important;
   }
 
   .dubblelargefXXL {
@@ -1152,7 +1158,7 @@ input {
   .nctbmbmtTop {
     margin-top: 20px !important;
   }
-} */
+}
 
 /* min-width-992 and max-height 840px */
 
@@ -1179,7 +1185,7 @@ input {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height:100%!important;
+    line-height: 16px !important;
   }
 
   .mediumf {
@@ -1196,8 +1202,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 20px !important;
-    line-height: 25px !important;
+    font-size: 30px !important;
+    line-height: 35px !important;
   }
 
   .triplelargef {
@@ -1255,7 +1261,7 @@ input {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height:100% !important;
+    line-height: 16px !important;
   }
 
   .mediumf {
@@ -1272,8 +1278,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 16px !important;
-    line-height: 23px !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
   }
 
   .dubblelargefXXL {
@@ -1346,7 +1352,7 @@ input {
 
   .smallf {
     font-size: 12px !important;
-    line-height:100% !important;
+    line-height: 16px !important;
   }
 
   .mediumf {
@@ -2961,14 +2967,8 @@ input {
     font-size: 15px;
   }
 
-  .smallfXL {
-
-    font-size: 12px;
-  }
-
   .smallf {
     font-size: 12px;
-    line-height: 100%;
   }
 
   .mediumf {
@@ -3053,12 +3053,6 @@ input {
 
   .smallf {
     font-size: 14px;
-    line-height: 100%;
-  }
-
-  .smallfXL {
-
-    font-size: 13px;
   }
 
   .mediumf {
@@ -3165,7 +3159,7 @@ input {
   }
 
   .largef {
-    font-size: 19px;
+    font-size: 20px;
   }
 
   .extlargef {
@@ -3251,7 +3245,7 @@ input {
 
   .smallf {
     font-size: 14px;
-    line-height:100%;
+    line-height: 19px;
   }
 
   .mediumf {
@@ -3259,7 +3253,7 @@ input {
   }
 
   .largef {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .extlargef {
@@ -3332,7 +3326,6 @@ input {
 
   .smallf {
     font-size: 14px;
-    line-height: 100%;
   }
 
   .mediumf {
@@ -3348,8 +3341,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 30px;
+    line-height: 40px;
   }
 
   .triplelargef {
@@ -3419,13 +3412,13 @@ input {
   }
 
   .smallf {
-    line-height: 100%;
+    line-height: 20px;
     font-size: 17px;
   }
 
   .smallfXL {
 
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .mediumf {
@@ -3438,7 +3431,7 @@ input {
   }
 
   .largef {
-    font-size: 23px;
+    font-size: 28px;
   }
 
   .extlargef {
@@ -3446,8 +3439,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 35px;
+    line-height: 45px;
   }
 
   .dubblelargefXL {
@@ -3545,7 +3538,7 @@ input {
   }
 
   .smallf {
-    line-height:100%;
+    line-height: 25px;
     font-size: 19px;
   }
 
@@ -3564,7 +3557,7 @@ input {
   }
 
   .largef {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .extlargef {
@@ -3572,8 +3565,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 23px;
-    line-height: 30px;
+    font-size: 36px;
+    line-height: 46px;
   }
 
   .dubblelargefXL {
@@ -3677,7 +3670,7 @@ input {
 
   .smallf {
     font-size: 18px;
-    line-height:100%;
+    line-height: 30px;
     letter-spacing: 0.5px;
   }
 
@@ -3687,7 +3680,7 @@ input {
   }
 
   .mediumf {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .mediumfXL {
@@ -3696,7 +3689,7 @@ input {
   }
 
   .largef {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .extlargef {
@@ -3704,8 +3697,8 @@ input {
   }
 
   .dubblelargef {
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 41px;
+    line-height: 45px;
     letter-spacing: -0.5px;
   }
 

@@ -29,7 +29,7 @@ const BlogListing = (props) => {
     const allPost = props.allPostData
     const [filterPost, setFilterPost] = useState(allPost)
 
-    // console.log('filterPost', allPost.headers)
+     console.log('filterPost', allPost)
 
     const getFilterPost = async () => {
 
@@ -276,29 +276,29 @@ export default BlogListing
 
 // call blog api here
 
-// export async function getServerSideProps() {
+export async function getServerSideProps() {
+    const [allPostData] = await Promise.all([
+        getAllPostData(),
+
+    ])
+    return {
+        props: {
+            allPostData,
+        }
+    }
+}
+
+// export async function getStaticProps() {
 //     const [allPostData] = await Promise.all([
 //         getAllPostData(),
-
 //     ])
 //     return {
 //         props: {
 //             allPostData,
-//         }
+//         },
+//         revalidate:60,
 //     }
 // }
-
-export async function getStaticProps() {
-    const [allPostData] = await Promise.all([
-                getAllPostData(),
-            ])
-            return {
-                props: {
-                    allPostData,
-                },
-                revalidate: 3600,
-            }
-  }
 
 
 

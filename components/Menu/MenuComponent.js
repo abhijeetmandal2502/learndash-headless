@@ -180,7 +180,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             className={`flex items-end mb-0 list-none flex-wrap xl:pt-3 xl:pb-4 flex-col md:col-span-4 col-span-12  ${openTab === 4 || openTab === 3 ? 'hidden' : 'block'} ${router.asPath === '/?active=home' ? 'block' : 'hidden'}  `}
                             role="tablist"
                         >
-                            <li className={`${styles.navli} w-max text-white xl:my-4  my-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
+                            <li className={`${styles.navli} w-max text-white xl:my-4 lg:my-1  md:my-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
 
                             }
                                 onClick={e => {
