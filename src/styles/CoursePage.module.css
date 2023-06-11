@@ -6,6 +6,10 @@
 
 }
 
+.emptyBasketBg{
+    background: linear-gradient(180deg, #B6B6B6 0%, #6C6C6C 100%);
+}
+
 .gridMaincontent {
     transition: all ease-in-out 2s;
     animation-delay: 4s;
@@ -18,9 +22,6 @@
     width: 4px;
 
     background-color: lightgrey;
-
-
-
 }
 
 .giftListBg::-webkit-scrollbar-thumb {

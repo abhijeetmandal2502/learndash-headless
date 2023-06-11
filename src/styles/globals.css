@@ -3604,8 +3604,8 @@ input {
   }
 
   .smallf {
-    line-height: 25px;
-    font-size: 100%;
+    line-height:100% ;
+    font-size:16px ;
   }
 
   .smallfXL {
@@ -3632,7 +3632,7 @@ input {
 
   .dubblelargef {
     font-size: 36px;
-    line-height: 46px;
+    line-height: 40px;
   }
 
   .dubblelargefXL {

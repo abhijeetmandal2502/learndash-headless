@@ -585,8 +585,8 @@
     .submitbtnbg {
         margin-top: 6px !important;
         margin-bottom: 12px px !important;
-        padding-bottom: 0px !important;
-        padding-top: 0px !important;
+        padding-bottom: 8px !important;
+        padding-top: 8px !important;
     }
 }
 

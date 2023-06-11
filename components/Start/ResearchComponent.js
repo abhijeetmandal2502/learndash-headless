@@ -21,7 +21,9 @@ const ResearchComponent = ({
     setPanel,
     selectedArray,
     courseDetail,
-    selected }) => {
+    selected,
+    addCourse
+ }) => {
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
@@ -55,7 +57,7 @@ const ResearchComponent = ({
     return (
         <>
 
-            <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-1'>
+            <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
                     <div className='flex items-center justify-start space-x-2'>
@@ -68,7 +70,7 @@ const ResearchComponent = ({
 
                         {/* price component for mobile */}
 
-                        {selestedCourseData?.course_price?<div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
+                        {selestedCourseData?.course_price?<div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
                             <div className='absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                 <div className='font-semibold text-white extsmallf'>
                                     {selestedCourseData?.course_price}
@@ -96,8 +98,39 @@ const ResearchComponent = ({
 
                         </div>:""}
                     </div>
-                    <div className='hidden mt-2 -ml-2 cursor-pointer md:block '>
-                        <Image src="/start/horizontaladdbutton.svg" width={120} height={50} alt="btn" />
+                    <div className='hidden mt-2  cursor-pointer md:block '>
+                    {selestedCourseData?.course_price?<div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
+                            
+
+                            {addCourse<[0]?<div className={` relative flex  justify-start items-center w-max ${styles.shadowAddBtn}  `} >
+                                <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[40px] max-w-[120px] rounded-md`} width={200} height={50} alt="prceBg" />
+                                <div className='absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                            <div className=' text-center font-[500] smallf text-white '>
+                                    +add
+                                </div>
+                                <div className='font-[500] text-white smallf'>
+                                    {selestedCourseData?.course_price}
+                                </div>
+                                
+                            </div>
+                            </div>:""}
+
+                            {addCourse>[0]?<div className={`relative flex  justify-start items-center w-max`} >
+                                <Image src="/start/horizontal_added_button.svg" width={200} height={50} alt="prceBg" className={`${styles.selectedCoursepriceBg} max-h-[70px] max-w-[160px] rounded-md`} />
+                                <div className='absolute top-[45%] left-[55%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                            <div className=' text-center font-[500] smallf text-white '>
+                                    +added
+                                </div>
+                                <div className='font-[500] text-white smallf'>
+                                    {selestedCourseData?.course_price}
+                                </div>
+                                
+                            </div>
+                            </div>:""}
+
+                        </div>:""}
+
+                        {/* <Image src="/start/horizontal_added_button.svg" width={120} height={50} alt="btn" /> */}
                     </div>
                     <div className={`flex items-center py-2 space-x-5 ${styles.authorCard}`}>
                         <div className='flex items-center space-x-1 cursor-pointer'>
