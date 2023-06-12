@@ -64,6 +64,22 @@ const SimplyChoose = ({ courseData }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [openResearchComp, setOpenResearchComp] = useState(true)
 
+   const handleResearchComp =()=>{
+    setOpenResearchComp(false)
+
+   }
+   
+//    useEffect(()=>{
+//     if(openResearchComp==false){
+//         router.push({
+//             pathname: '/courses',
+//             query: { active: 'add-course' }
+//         })
+    
+//        }
+//    },[openResearchComp])
+  
+
 
     // const [isOpenLeft, setIsOpenLeft] = useState(true);
     const pathArr = router?.asPath?.split('/');
@@ -271,7 +287,7 @@ const SimplyChoose = ({ courseData }) => {
                                             </div> : ""}
 
                                             {/* for mobile */}
-                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), setOpenResearchComp(false) }}>
+                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), handleResearchComp()}}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />

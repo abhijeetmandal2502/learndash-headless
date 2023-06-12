@@ -2,7 +2,7 @@ import { getCourses } from "apis/AllPostApi";
 import MobileDrawerRighrt from "components/Menu/MobileDrawerRight";
 import SideMenu from "components/SideMenu"
 import SimplyChoose from "components/SimplyChoose"
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 import Link from 'next/link'
@@ -27,6 +27,10 @@ const router =useRouter();
     pathname:'/'
  })},1000)
 
+//  if(router.asPath=='/courses?active=add-course'){
+//     router.push('/courses')
+// }
+
  }
 
  const handledrower = ()=>{
@@ -35,6 +39,12 @@ const router =useRouter();
         query: { active: 'home' }
     })
    }
+
+
+//    useEffect(()=>{
+  
+
+//    },[])
 
     const courseData = props.allCourse;
     return(

@@ -1246,7 +1246,6 @@
 }
 
 .paymentCardHide{
-
     display: none;
     transition: display ease-in 500ms;
 }

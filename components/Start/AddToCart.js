@@ -49,7 +49,7 @@ const AddToCart = ({ filterAddedCourse }) => {
 
         else {
             setAddedListData(false)
-        }  
+        }
     }
 
     const HandleMoreLessBTn = () => {
@@ -62,6 +62,10 @@ const AddToCart = ({ filterAddedCourse }) => {
         }
     }
 
+    // get total payment 
+    // var number = Number(currency.replace(/[^0-9\.-]+/g, ""));
+
+    // const totalPrice = filterAddedCourse.length*i
 
     return (
         <>
@@ -104,7 +108,7 @@ const AddToCart = ({ filterAddedCourse }) => {
                                             </div>
                                             <div className={`flex space-x-3 items-center`}>
                                                 <div className='text-black extlargef' >{item?.course_price}</div>
-                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={()=>deleteItem(index)}/>
+                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => deleteItem(index)} />
                                             </div>
                                         </div>
                                         <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
@@ -126,7 +130,7 @@ const AddToCart = ({ filterAddedCourse }) => {
                                                 </div>
                                                 <div className={`flex space-x-3 items-center`}>
                                                     <div className='text-black extlargef' >{item?.course_price}</div>
-                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={()=>deleteItem(index)} />
+                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => deleteItem(index)} />
                                                 </div>
                                             </div>
                                             <div className='w-full my-1 border-b-[2px] border-lightgray'></div>

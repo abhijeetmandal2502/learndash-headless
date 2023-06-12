@@ -12,17 +12,17 @@ import AboutCourse from './DialogCard/AboutCourse'
 import { useRouter } from 'next/router'
 import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
 import AddToCart from './AddToCart'
-const ResearchComponent = ({ 
-    drowerClose, 
-    drowerOpen, 
-    isOpen, 
-    setIsOpen, 
-    panel, 
+const ResearchComponent = ({
+    drowerClose,
+    drowerOpen,
+    isOpen,
+    setIsOpen,
+    panel,
     setPanel,
     courseDetail,
     selected,
     filterAddedCourse
- }) => {
+}) => {
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
@@ -46,8 +46,8 @@ const ResearchComponent = ({
         'instant certificate',
     ]
 
-   const  selestedCourseData = courseDetail[selected]
-   // console.log('courseDetail',selestedCourseData,selected)
+    const selestedCourseData = courseDetail[selected]
+    // console.log('courseDetail',selestedCourseData,selected)
 
     return (
         <>
@@ -57,73 +57,80 @@ const ResearchComponent = ({
 
                     <div className='flex items-center justify-start space-x-2'>
 
-                    <div className='max-w-[75%]'>
-                    <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
-                           {selestedCourseData?.title.rendered}
-                        </h2>
-                      </div>
+                        <div className='max-w-[75%]'>
+                            <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
+                                {selestedCourseData?.title.rendered}
+                            </h2>
+                        </div>
 
                         {/* price component for mobile */}
 
-                        {selestedCourseData?.course_price?<div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
-                            <div className='absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                <div className='font-semibold text-white extsmallf'>
-                                    {selestedCourseData?.course_price}
-                                </div>
-                            </div>
-
-                            <div className={` flex flex-col justify-center items-center ${!panel ? 'block' : 'hidden'}`} onClick={() => {
-                                setPanel(true)
-                            }}>
+                        {selestedCourseData?.course_price ? <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
+                            
+                            {filterAddedCourse < [0] ? <div className={` relative flex flex-col  justify-start items-center w-max `} >
                                 <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
+                                <div className='absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                                    
+                                    <div className='font-[500] text-white smallf'>
+                                        {selestedCourseData?.course_price}
+                                    </div>
+                                </div>
                                 <div className=' text-center font-bold  mediumf  text-[#FF5C00] '>
                                     +add
                                 </div>
-                            </div>
+                            </div> : ""}
 
-                            <div className={`${panel ? 'block' : 'hidden'}`} >
-                                <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" className={`${styles.selectedCoursepriceBg}`} />
+                            {filterAddedCourse > [0] ? <div className={`relative flex flex-col justify-start items-center w-max`} >
+                                <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" className={`${styles.selectedCoursepriceBg} `} />
+                                <div className='absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                
+                                    <div className='font-[500] text-white smallf'>
+                                        {selestedCourseData?.course_price}
+                                    </div>
+
+                                </div>
+
                                 <div className=' flex justify-center font-bold  largef text-[#FF5C00] '>
                                     <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
                                     <div className={`text-[#AC6CFF] smallf font-semibold`}>
                                         added
                                     </div>
                                 </div>
-                            </div>
+                            </div> : ""}
 
-                        </div>:""}
+                        </div> : ""}
                     </div>
                     <div className='hidden mt-2  cursor-pointer md:block '>
-                    {selestedCourseData?.course_price?<div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
-                            
+                        {selestedCourseData?.course_price ? <div className={` relative `}>
 
-                            {filterAddedCourse<[0]?<div className={` relative flex  justify-start items-center w-max `} >
+
+                            {filterAddedCourse < [0] ? <div className={` relative flex  justify-start items-center w-max `} >
                                 <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} width={200} height={50} alt="prceBg" />
                                 <div className='absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
-                            <div className=' text-center font-[500] smallf text-white '>
-                                    +add
-                                </div>
-                                <div className='font-[500] text-white smallf'>
-                                    {selestedCourseData?.course_price}
-                                </div>
-                                
-                            </div>
-                            </div>:""}
+                                    <div className=' text-center font-[500] smallf text-white '>
+                                        +add
+                                    </div>
+                                    <div className='font-[500] text-white smallf'>
+                                        {selestedCourseData?.course_price}
+                                    </div>
 
-                            {filterAddedCourse>[0]?<div className={`relative flex  justify-start items-center w-max`} >
+                                </div>
+                            </div> : ""}
+
+                            {filterAddedCourse > [0] ? <div className={`relative flex  justify-start items-center w-max`} >
                                 <Image src="/start/horizontal_added_button.svg" width={200} height={50} alt="prceBg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} />
                                 <div className='absolute top-[45%] left-[55%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
-                            <div className=' text-center font-[500] smallf text-white '>
-                                    added
-                                </div>
-                                <div className='font-[500] text-white smallf'>
-                                    {selestedCourseData?.course_price}
-                                </div>
-                                
-                            </div>
-                            </div>:""}
+                                    <div className=' text-center font-[500] smallf text-white '>
+                                        added
+                                    </div>
+                                    <div className='font-[500] text-white smallf'>
+                                        {selestedCourseData?.course_price}
+                                    </div>
 
-                        </div>:""}
+                                </div>
+                            </div> : ""}
+
+                        </div> : ""}
 
                         {/* <Image src="/start/horizontal_added_button.svg" width={120} height={50} alt="btn" /> */}
                     </div>
@@ -146,8 +153,8 @@ const ResearchComponent = ({
                         </div>
                     </div>
                     <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: selestedCourseData?.content.rendered }}>
-                       
-                        </p>
+
+                    </p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
                         onClick={() => { openModal(), setAboutCourse(true), setInstructor(false) }}
                         type="button"
@@ -207,8 +214,8 @@ const ResearchComponent = ({
                                         </button>
                                     </div>
                                     <div className='flex items-center justify-center mt-2 md:pb-20'>
-                                        {instructor ? <YourInstructor  /> : ""}
-                                        {aboutCourse ? <AboutCourse title={selestedCourseData?.title.rendered} content={selestedCourseData?.content.rendered}/> : ""}
+                                        {instructor ? <YourInstructor /> : ""}
+                                        {aboutCourse ? <AboutCourse title={selestedCourseData?.title.rendered} content={selestedCourseData?.content.rendered} /> : ""}
                                     </div>
 
 
@@ -234,7 +241,7 @@ const ResearchComponent = ({
                                             <button className='absolute text-black extlargef top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
-                                            <AddToCart courseDetail={courseDetail} filterAddedCourse={filterAddedCourse}/>
+                                            <AddToCart courseDetail={courseDetail} filterAddedCourse={filterAddedCourse} />
                                         </div>
                                     </div>
                                     <Disclosure.Panel className="w-full py-1 text-white ">
