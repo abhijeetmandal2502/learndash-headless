@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState,useCallback } from 'react'
+import React, { Fragment, useEffect, useState, useCallback } from 'react'
 import { BiArrowBack, BiGift } from 'react-icons/bi'
 import { MdOutlineWatchLater } from 'react-icons/md'
 import ResearchComponent from './Start/ResearchComponent'
@@ -15,15 +15,15 @@ const SimplyChoose = ({ courseData }) => {
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(true);
     const [panel, setPanel] = useState(true)
-    const [addCourse,setAddCourse] =useState([])
+    const [addCourse, setAddCourse] = useState([])
 
-    const filterSelectedCourse = selectedArray.filter(function( element ) {
+    const filterSelectedCourse = selectedArray.filter(function (element) {
         return element !== undefined;
-     });
+    });
 
-     const addedSelectedCourse = addCourse.filter(function( element ) {
+    const addedSelectedCourse = addCourse.filter(function (element) {
         return element !== undefined;
-     });
+    });
     const HandlelobbyClick = () => {
         setTimeout(() => {
             router.push({
@@ -36,43 +36,34 @@ const SimplyChoose = ({ courseData }) => {
     const handleClick = (index) => {
         setSelected(index);
         const tempArray = [...selectedArray]
-        if (tempArray[index] == index) { tempArray[index] = undefined}
+        if (tempArray[index] == index) { tempArray[index] = undefined }
         else { tempArray[index] = index }
         setSelectedArray(tempArray)
         setHideForm(false)
     };
 
-
-   const handleAddCourse =(index)=>{
-    const tempArray = [...addCourse]
-        if (tempArray[index] == index) { 
-            tempArray[index] = undefined  
+    const handleAddCourse = (index) => {
+        const tempArray = [...addCourse]
+        if (tempArray[index] == index) {
+            tempArray[index] = undefined
         }
-        else { 
-            tempArray[index] = index   
+        else {
+            tempArray[index] = index
         }
         setAddCourse(tempArray)
-
-   }
-
-//    useEffect(()=>{
-//     if(filterSelectedCourse.length==0){
-//         setEmptyBasket(false)
-//     }
-    
-// },[filterSelectedCourse.length])
-
-    const functionHideForm = () => {
-        setHideForm(true)
-        setSelected(false); 
     }
 
+    // hide addtoCart form 
+    const functionHideForm = () => {
+        setHideForm(true)
+        setSelected(false);
+    }
     //   drower for mobile 
     const router = useRouter();
     const currentPath = router?.query?.active;
     const [isOpen, setIsOpen] = useState(false);
-    const [openResearchComp,setOpenResearchComp] =useState(true)
-   
+    const [openResearchComp, setOpenResearchComp] = useState(true)
+
 
     // const [isOpenLeft, setIsOpenLeft] = useState(true);
     const pathArr = router?.asPath?.split('/');
@@ -85,7 +76,19 @@ const SimplyChoose = ({ courseData }) => {
         setIsOpen(!isOpen)
     }
 
-    console.log('isOpen',addedSelectedCourse)
+    //store data in to array
+
+    var result = [];
+    for (var i = 0; i < addCourse.length; i++) {
+        var index = addCourse[i];
+        result.push(courseData[index]);
+    }
+
+    const filterAddedCourse = result.filter(function (element) {
+        return element !== undefined;
+    });
+
+  
     const LogoImage = "/images/Logo.svg"
     return (
         <>
@@ -138,11 +141,17 @@ const SimplyChoose = ({ courseData }) => {
                                 <button className='absolute top-10 text-2xl left-[90%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-4'>
-                                    <ResearchComponent selectedArray={selectedArray} courseDetail={courseData} selected={selected} addCourse={addedSelectedCourse} />
+                                    <ResearchComponent
+                                        courseDetail={courseData}
+                                        selected={selected}
+                                        filterAddedCourse={filterAddedCourse}
+                                    />
                                 </div>
                                 {/* course checkout */}
                                 <div className={`col-span-12 md:col-span-5 ${styles.addtoCard}`}>
-                                    <AddToCart selectedArray={selectedArray} courseData={courseData} addCourse={addedSelectedCourse} selected={selected} />
+                                    <AddToCart
+                                        filterAddedCourse={filterAddedCourse}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -206,7 +215,7 @@ const SimplyChoose = ({ courseData }) => {
                                     return (
                                         <Fragment key={index} >
                                             {/* for desktop */}
-                                            {item?.course_price?<div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
+                                            {item?.course_price ? <div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
                                                 onClick={() => { handleClick(index, item) }}
                                             >
                                                 <div className='flex justify-between'>
@@ -221,7 +230,7 @@ const SimplyChoose = ({ courseData }) => {
                                                     </div>
 
                                                     {/* course price components */}
-                                                    <div className={` relative `} onClick={()=>{handleAddCourse(index, item)}} >
+                                                    <div className={` relative `} onClick={() => { handleAddCourse(index, item) }} >
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='smallfXL leading-[100%] font-semibold text-white'>
                                                                 {item?.course_price}
@@ -229,22 +238,22 @@ const SimplyChoose = ({ courseData }) => {
                                                         </div>
                                                         {addCourse[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
                                                             +add
-                                                        </p> : 
-                                                    //     <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
-                                                    //     +add
-                                                    // </p>
-                                                        <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
-                                                            <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
-                                                            <p className={`text-[#AC6CFF] largef font-semibold`}>
-                                                                added
-                                                            </p>
-                                                        </div>
+                                                        </p> :
+                                                            //     <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
+                                                            //     +add
+                                                            // </p>
+                                                            <div className=' flex absolute top-[110%] left-[40%] -translate-y-[110%] -translate-x-[40%] font-bold  largef text-[#FF5C00] '>
+                                                                <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
+                                                                <p className={`text-[#AC6CFF] largef font-semibold`}>
+                                                                    added
+                                                                </p>
+                                                            </div>
                                                         }
                                                         <div className='' >
-                                                            {addCourse[index] == index ? 
-                                                            
-                                                             <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />
-                                                             :
+                                                            {addCourse[index] == index ?
+
+                                                                <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />
+                                                                :
                                                                 <Image src="/images/newPriceOrange.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />}
                                                         </div>
                                                     </div>
@@ -259,10 +268,10 @@ const SimplyChoose = ({ courseData }) => {
                                                     </div>
                                                 </div>
 
-                                            </div>:""}
+                                            </div> : ""}
 
                                             {/* for mobile */}
-                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item),setOpenResearchComp(false) }}>
+                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), setOpenResearchComp(false) }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
@@ -275,13 +284,13 @@ const SimplyChoose = ({ courseData }) => {
 
                                                     {/* course price components */}
 
-                                                    {item?.course_price?<div className={` relative `} onClick={() => { setPanel(true), drowerOpen() ,handleAddCourse(index, item) }}>
+                                                    {item?.course_price ? <div className={` relative `} onClick={() => { setPanel(true), drowerOpen(), handleAddCourse(index, item) }}>
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='font-semibold text-white text-[12px]'>
                                                                 {item.course_price}
                                                             </p>
                                                         </div>
-                                                        {addCourse[index] !== index? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
+                                                        {addCourse[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             +add
                                                         </div> : <div className=' flex absolute top-[85%] left-[0%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={15} /></div>
@@ -295,7 +304,7 @@ const SimplyChoose = ({ courseData }) => {
                                                                 :
                                                                 <Image src="/images/newPriceOrange.svg" width={55} height={58} alt="prceBg" />}
                                                         </div>
-                                                    </div>:''}
+                                                    </div> : ''}
                                                 </div>
                                                 <p className={`md:pt-10 pt-5 leading-8 ${styles.lineClampContent}  font-Barlow    font-[500] text-[20px]  ${styles.discriptionAnimation}`}>
                                                     {item?.title?.rendered}
@@ -323,9 +332,18 @@ const SimplyChoose = ({ courseData }) => {
                     </div>
                 </div >
                 {/* course selected component for mobile when click show  */}
-                {!openResearchComp?<div div className={` z-9 absolute top-0 md:hidden  `}>
-                    <ResearchComponent drowerOpen={drowerOpen} drowerClose={drowerClose} isOpen={isOpen} setIsOpen={setIsOpen} setPanel={setPanel} courseDetail={courseData} selected={selected} />
-                </div >:""}
+                {!openResearchComp ? <div div className={` z-9 absolute top-0 md:hidden  `}>
+                    <ResearchComponent
+                        drowerOpen={drowerOpen}
+                        drowerClose={drowerClose}
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        setPanel={setPanel}
+                        courseDetail={courseData}
+                        selected={selected}
+                        filterAddedCourse={filterAddedCourse}
+                    />
+                </div > : ""}
             </div >
 
 

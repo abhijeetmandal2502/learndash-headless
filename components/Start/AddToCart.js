@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import styles from '../../src/styles/CoursePage.module.css'
 import Image from 'next/image'
 
@@ -10,11 +10,12 @@ import SplitPayment from './SplitPayment'
 import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 import { BsToggleOff } from 'react-icons/bs'
 
-const AddToCart = ({ selectedArray, courseData ,addCourse}) => {
+const AddToCart = ({ filterAddedCourse }) => {
 
-    const [activeIndex, setActiveIndex] = useState(0)
-    const [ShowPaymentOption, setShowPaymentOption] = useState(false)
-    const [lessMoreBtn, setLessMoreBtn] = useState("view more")
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [ShowPaymentOption, setShowPaymentOption] = useState(false);
+    const [lessMoreBtn, setLessMoreBtn] = useState("view more");
+    const [addedListData, setAddedListData] = useState(false)
 
     const paymentCart = [
         {
@@ -39,69 +40,107 @@ const AddToCart = ({ selectedArray, courseData ,addCourse}) => {
         },
     ]
     const HandlePaymentOption = () => {
-
         if (!ShowPaymentOption) setShowPaymentOption(true);
         else setShowPaymentOption(false);
+
+        if (ShowPaymentOption) {
+            setAddedListData(true)
+        }
+
+        else {
+            setAddedListData(false)
+        }  
     }
 
     const HandleMoreLessBTn = () => {
         if (lessMoreBtn == 'view more') {
             setLessMoreBtn('view less')
+            setAddedListData(true)
         } else {
             setLessMoreBtn('view more')
+            setAddedListData(false)
         }
     }
-     console.log('ShowPaymentOption', addCourse,selectedArray)
+
+
     return (
         <>
             {/* empty basket  */}
-            
-            {addCourse<[0]?
-            <div className={`${styles.emptyBasketBg} mt-[30%]  bg-white my-4 mx-5 shadow-2xl  mx-5 cursor-pointer relative `}>
 
-                <div className={`flex justify-between items-center w-full space-x-5  px-6 py-1  ${styles.addedItemList}`}>
-                    <div className={`flex space-x-1 items-center`}>
-                        <Image src="/start/empt_basket_Icon.svg" width={30} height={27} alt="empty basket" className={`${styles.checkoutIcon}`} />
-                        <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>empty basket = sad basket</p>
-                    </div>
-                    <div className={`flex flex-col justify-end items-end`}>
-                        <p className='text-white -mb-[5px] font-bold smallf'>total</p>
-                        <div className='font-thin text-white largef' >$0</div>
-                    </div>
-                </div>
-            </div>:""}
+            {filterAddedCourse < [0] ?
+                <div className={`${styles.emptyBasketBg} mt-[30%]  bg-white my-4 mx-5 shadow-2xl  mx-5 cursor-pointer relative `}>
 
-            {addCourse>[0]?<div>
+                    <div className={`flex justify-between items-center w-full space-x-5  px-6 py-1 `}>
+                        <div className={`flex space-x-1 items-center`}>
+                            <Image src="/start/empt_basket_Icon.svg" width={30} height={27} alt="empty basket" className={`${styles.checkoutIcon}`} />
+                            <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>empty basket = sad basket</p>
+                        </div>
+                        <div className={`flex flex-col justify-end items-end`}>
+                            <p className='text-white -mb-[5px] font-bold smallf'>total</p>
+                            <div className='font-thin text-white largef' >$0</div>
+                        </div>
+                    </div>
+                </div> : ""}
+
+            {filterAddedCourse > [0] ? <div>
                 {/* selected items componets  */}
                 <div className={` relative grid grid-cols-9 bg-white my-4 mx-5 shadow-2xl  p-3 md:p-4 ${styles.addedItemList}`}>
 
                     <div className={`col-span-1 relative flex items-start justify-start w-[30px] h-[30px]`}>
                         <Image src="/start/cart.svg" width={40} height={40} className={`  ${styles.cartIcon}`} alt="empty basket" />
                         <div className='absolute  -right-2 w-4 h-4 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet -top-1'>
-                            <p className='flex items-center justify-center text-[10px]'>2</p>
+                            <p className='flex items-center justify-center text-[10px]'>{filterAddedCourse.length}</p>
                         </div>
                     </div>
-                    <div className='col-span-8 pl-4'>
-                        <div className={`flex justify-between items-center`}>
-                            <div className={`flex space-x-5 items-center `}>
-                                <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>
-                            </div>
-                            <div className={`flex space-x-3 items-center`}>
-                                <div className='text-black extlargef' >$40</div>
-                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} />
-                            </div>
-                        </div>
-                        <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
-                        <div className={`flex justify-between items-center`}>
-                            <div className={`flex space-x-5 items-center `}>
-                                <p className={`text-black smallf font-bold leading-[130%]`}>useing research to market your practice</p>
-                            </div>
-                            <div className={`flex space-x-3 items-center`}>
-                                <p className='text-black extlargef'>$40</p>
-                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} />
-                            </div>
-                        </div>
-                    </div>
+
+                    {addedListData ? <div className='col-span-8 pl-4'>
+                        {
+                            filterAddedCourse?.map((item, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <div className={`flex justify-between items-center`}>
+                                            <div className={`flex space-x-5 items-center `}>
+                                                <p className={`text-black smallf font-bold leading-[130%]`}>{item?.title.rendered}</p>
+                                            </div>
+                                            <div className={`flex space-x-3 items-center`}>
+                                                <div className='text-black extlargef' >{item?.course_price}</div>
+                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={()=>deleteItem(index)}/>
+                                            </div>
+                                        </div>
+                                        <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
+                                    </Fragment>
+                                )
+                            })
+
+                        }
+
+                    </div> :
+                        <div className='col-span-8 pl-4'>
+                            {
+                                filterAddedCourse?.slice(0, 2)?.map((item, index) => {
+                                    return (
+                                        <Fragment key={index}>
+                                            <div className={`flex justify-between items-center`}>
+                                                <div className={`flex space-x-5 items-center `}>
+                                                    <p className={`text-black smallf font-bold leading-[130%]`}>{item?.title.rendered}</p>
+                                                </div>
+                                                <div className={`flex space-x-3 items-center`}>
+                                                    <div className='text-black extlargef' >{item?.course_price}</div>
+                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={()=>deleteItem(index)} />
+                                                </div>
+                                            </div>
+                                            <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
+                                        </Fragment>
+                                    )
+                                })
+
+                            }
+
+                        </div>}
+
+
+
+
                     <div onClick={() => HandleMoreLessBTn()} className={`item-center transition duration-[1000ms] ease-in-out cursor-pointer rounded-full bg-black w-max h-max absolute md:-bottom-2 -bottom-[15px] flex px-2  left-1/2 -translate-x-1/2  `}>
                         {/* ${ShowPaymentOption ? styles.toggleOn : styles.toggleOff} `}> */}
                         <div className={` ${lessMoreBtn == 'view more' ? styles.toggleOff : styles.toggleOn} `}>
@@ -114,7 +153,7 @@ const AddToCart = ({ selectedArray, courseData ,addCourse}) => {
                 </div>
 
                 {/* checkout componets  */}
-                <div className={`${styles.readyToCheckoutBg} mt-[5%] mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
+                <div className={`${styles.readyToCheckoutBg}   mt-[5%] mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
                     <div className={`flex justify-between items-center px-6 py-1  ${styles.addedItemList}`}>
                         <div className={`flex space-x-1 items-center  `}>
@@ -122,7 +161,7 @@ const AddToCart = ({ selectedArray, courseData ,addCourse}) => {
                             <p className={`text-white smallf font-semibold tracking-wide  leading-[130%]`}>simple checkout</p>
                         </div>
                         <div className={`flex flex-col justify-end items-end`}>
-                            <p className='text-white -mb-[5px] font-bold smallf'>total</p>
+                            <p className='text-white mb-[5px] font-bold smallf'>total</p>
                             <div className='font-thin text-white largef' >$40</div>
                         </div>
                     </div>
@@ -133,7 +172,7 @@ const AddToCart = ({ selectedArray, courseData ,addCourse}) => {
                 </div>
 
                 {/* payment option componet desktop  */}
-                <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? 'transition-all ease-in duration-1000' : "hidden"}`}>
+                <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? styles.paymentCardShow : styles.paymentCardHide}`}>
 
                     <div className='px-3'>
                         <input type="email" placeholder='your email' className={`w-full   mt-4 mb-2 border border-gray bg-white leading-3  smallf p-1  md:p-2 ${styles.emailspaing}`} />
@@ -196,7 +235,7 @@ const AddToCart = ({ selectedArray, courseData ,addCourse}) => {
                     </div>
 
                 </div>
-            </div>:""}
+            </div> : ""}
 
         </>
     )

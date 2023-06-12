@@ -19,10 +19,9 @@ const ResearchComponent = ({
     setIsOpen, 
     panel, 
     setPanel,
-    selectedArray,
     courseDetail,
     selected,
-    addCourse
+    filterAddedCourse
  }) => {
 
     const router = useRouter();
@@ -32,7 +31,6 @@ const ResearchComponent = ({
     const [aboutCourse, setAboutCourse] = useState(false);
     const [instructor, setInstructor] = useState(false);
 
-
     function closeModal() {
         setOpen(false)
     }
@@ -40,7 +38,6 @@ const ResearchComponent = ({
     function openModal() {
         setOpen(true)
     }
-
     const courseData = [
         'ncbtmb approved',
         'start course instantly',
@@ -50,9 +47,7 @@ const ResearchComponent = ({
     ]
 
    const  selestedCourseData = courseDetail[selected]
-
-
-    console.log('courseDetail',selestedCourseData,selected)
+   // console.log('courseDetail',selestedCourseData,selected)
 
     return (
         <>
@@ -63,7 +58,7 @@ const ResearchComponent = ({
                     <div className='flex items-center justify-start space-x-2'>
 
                     <div className='max-w-[75%]'>
-                    <h2 className={`tracking-wide hidden md:block text-black   fourxllargef ${styles.lineClampContent} `}>
+                    <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
                            {selestedCourseData?.title.rendered}
                         </h2>
                       </div>
@@ -102,8 +97,8 @@ const ResearchComponent = ({
                     {selestedCourseData?.course_price?<div className={` relative `} onClick={() => { drowerOpen(), setPanel(true) }}>
                             
 
-                            {addCourse<[0]?<div className={` relative flex  justify-start items-center w-max ${styles.shadowAddBtn}  `} >
-                                <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[40px] max-w-[120px] rounded-md`} width={200} height={50} alt="prceBg" />
+                            {filterAddedCourse<[0]?<div className={` relative flex  justify-start items-center w-max `} >
+                                <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} width={200} height={50} alt="prceBg" />
                                 <div className='absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
                             <div className=' text-center font-[500] smallf text-white '>
                                     +add
@@ -115,11 +110,11 @@ const ResearchComponent = ({
                             </div>
                             </div>:""}
 
-                            {addCourse>[0]?<div className={`relative flex  justify-start items-center w-max`} >
-                                <Image src="/start/horizontal_added_button.svg" width={200} height={50} alt="prceBg" className={`${styles.selectedCoursepriceBg} max-h-[70px] max-w-[160px] rounded-md`} />
+                            {filterAddedCourse>[0]?<div className={`relative flex  justify-start items-center w-max`} >
+                                <Image src="/start/horizontal_added_button.svg" width={200} height={50} alt="prceBg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} />
                                 <div className='absolute top-[45%] left-[55%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
                             <div className=' text-center font-[500] smallf text-white '>
-                                    +added
+                                    added
                                 </div>
                                 <div className='font-[500] text-white smallf'>
                                     {selestedCourseData?.course_price}
@@ -239,7 +234,7 @@ const ResearchComponent = ({
                                             <button className='absolute text-black extlargef top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
-                                            <AddToCart />
+                                            <AddToCart courseDetail={courseDetail} filterAddedCourse={filterAddedCourse}/>
                                         </div>
                                     </div>
                                     <Disclosure.Panel className="w-full py-1 text-white ">

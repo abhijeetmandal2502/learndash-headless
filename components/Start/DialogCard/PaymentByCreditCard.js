@@ -72,7 +72,7 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
                         <div className={` mx-auto`}>
                             <button type="button"
                                 onClick={() => { setCreditCardPayment() }}
-                                className={`md:px-16 px-32 py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf  font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                                className={`md:px-16 px-24 py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf  font-semibold traking-[0.02em] focus:outline-none`}  >continue
                             </button>
                         </div>
                     </div>

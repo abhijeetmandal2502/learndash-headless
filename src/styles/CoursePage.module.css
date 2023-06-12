@@ -1245,6 +1245,17 @@
 
 }
 
+.paymentCardHide{
+
+    display: none;
+    transition: display ease-in 500ms;
+}
+.paymentCardShow{
+    display: block;
+    transition: display ease-in 500ms;
+}
+
+
 
 .image_wrapper {
     height: auto;
