@@ -10,20 +10,15 @@ import ScrollBtn from './Start/ScrollBtn'
 import AddToCart from './Start/AddToCart'
 import { useRouter } from 'next/router'
 import { GoGift } from 'react-icons/go'
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 const SimplyChoose = ({ courseData }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(true);
-    const [panel, setPanel] = useState(true)
-    const [addCourse, setAddCourse] = useState([])
+    const [panel, setPanel] = useState(true);
+    const [addCourse, setAddCourse] = useState([]);
+    //const [shipingInfo, setShipingInfo] = useState({});
 
-    const filterSelectedCourse = selectedArray.filter(function (element) {
-        return element !== undefined;
-    });
-
-    const addedSelectedCourse = addCourse.filter(function (element) {
-        return element !== undefined;
-    });
     const HandlelobbyClick = () => {
         setTimeout(() => {
             router.push({
@@ -33,7 +28,7 @@ const SimplyChoose = ({ courseData }) => {
         setSelected(false);
     }
 
-    const handleClick = (index) => {
+    const handleClick = (index,item) => {
         setSelected(index);
         const tempArray = [...selectedArray]
         if (tempArray[index] == index) { tempArray[index] = undefined }
@@ -41,6 +36,7 @@ const SimplyChoose = ({ courseData }) => {
         setSelectedArray(tempArray)
         setHideForm(false)
     };
+
 
     const handleAddCourse = (index) => {
         const tempArray = [...addCourse]
@@ -58,28 +54,15 @@ const SimplyChoose = ({ courseData }) => {
         setHideForm(true)
         setSelected(false);
     }
+
     //   drower for mobile 
     const router = useRouter();
-    const currentPath = router?.query?.active;
     const [isOpen, setIsOpen] = useState(false);
     const [openResearchComp, setOpenResearchComp] = useState(true)
 
-   const handleResearchComp =()=>{
-    setOpenResearchComp(false)
-
-   }
-   
-//    useEffect(()=>{
-//     if(openResearchComp==false){
-//         router.push({
-//             pathname: '/courses',
-//             query: { active: 'add-course' }
-//         })
-    
-//        }
-//    },[openResearchComp])
-  
-
+    const handleResearchComp = () => {
+        setOpenResearchComp(false)
+    }
 
     // const [isOpenLeft, setIsOpenLeft] = useState(true);
     const pathArr = router?.asPath?.split('/');
@@ -93,18 +76,17 @@ const SimplyChoose = ({ courseData }) => {
     }
 
     //store data in to array
-
     var result = [];
     for (var i = 0; i < addCourse.length; i++) {
         var index = addCourse[i];
         result.push(courseData[index]);
     }
-
     const filterAddedCourse = result.filter(function (element) {
         return element !== undefined;
     });
 
-  
+    setCookie('yourCart', JSON.stringify(filterAddedCourse))
+
     const LogoImage = "/images/Logo.svg"
     return (
         <>
@@ -287,7 +269,7 @@ const SimplyChoose = ({ courseData }) => {
                                             </div> : ""}
 
                                             {/* for mobile */}
-                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), handleResearchComp()}}>
+                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), handleResearchComp() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />

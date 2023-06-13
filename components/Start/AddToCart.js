@@ -8,7 +8,7 @@ import PaypalPayment from './PaypalPayment'
 import PaymentGiftCard from './PaymentGiftCard'
 import SplitPayment from './SplitPayment'
 import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
-import { BsToggleOff } from 'react-icons/bs'
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 const AddToCart = ({ filterAddedCourse }) => {
 
@@ -61,12 +61,7 @@ const AddToCart = ({ filterAddedCourse }) => {
             setAddedListData(false)
         }
     }
-
-    // get total payment 
-    // var number = Number(currency.replace(/[^0-9\.-]+/g, ""));
-
-    // const totalPrice = filterAddedCourse.length*i
-
+    
     return (
         <>
             {/* empty basket  */}

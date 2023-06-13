@@ -40,12 +40,6 @@ const router =useRouter();
     })
    }
 
-
-//    useEffect(()=>{
-  
-
-//    },[])
-
     const courseData = props.allCourse;
     return(
     <>
