@@ -29,14 +29,52 @@ const SimplyChoose = ({ courseData }) => {
     }
 
     const handleClick = (index,item) => {
+        
+        setFilterAddedCourse([...filterAddedCourse,item])
         setSelected(index);
         const tempArray = [...selectedArray]
         if (tempArray[index] == index) { tempArray[index] = undefined }
         else { tempArray[index] = index }
         setSelectedArray(tempArray)
-        setHideForm(false)
-    };
 
+        console.log("selected array :",item)
+        setHideForm(false)
+        var avlList = []
+        tempArray.map((item)=>{
+            if(item !=undefined){
+                avlList.push(item)
+            }
+        })
+
+        var avlProductId = getCookie("productId") ? getCookie("productId"):""
+
+        if(avlProductId.length===0){
+            avlProductId = item.id
+        }
+        else{
+           var ids = avlProductId.split(",")
+            if(!ids.includes(item.id.toString())){
+                avlProductId = avlProductId+','+item.id
+            }
+            else{
+               
+                var allIndexes = []
+                ids.map((key)=>{
+                    if(key !=item.id.toString()){
+                        allIndexes.push(key)
+                    }
+                })
+                console.log("get cookies 2",allIndexes)
+                avlProductId =  allIndexes.join(",")
+            }
+        }
+        setCookie("productId",avlProductId)
+        console.log("get cookies",getCookie("productId"))
+       
+
+       
+        setCookie('yourCart',avlList)
+    };
 
     const handleAddCourse = (index) => {
         const tempArray = [...addCourse]
@@ -54,7 +92,6 @@ const SimplyChoose = ({ courseData }) => {
         setHideForm(true)
         setSelected(false);
     }
-
     //   drower for mobile 
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
@@ -78,14 +115,38 @@ const SimplyChoose = ({ courseData }) => {
     //store data in to array
     var result = [];
     for (var i = 0; i < addCourse.length; i++) {
+        console.log("course data",courseData)
         var index = addCourse[i];
         result.push(courseData[index]);
-    }
-    const filterAddedCourse = result.filter(function (element) {
-        return element !== undefined;
-    });
 
-    setCookie('yourCart', JSON.stringify(filterAddedCourse))
+    }
+    const [filterAddedCourse,setFilterAddedCourse] =useState([])
+    const addItems = (id)=>{
+           
+        var tempArray = []
+        filterAddedCourse.map((item)=>{
+            if(item.id!==id){
+                tempArray.push(item)
+            }
+        })
+
+        console.log("add course id :",addCourse)
+
+        setFilterAddedCourse(tempArray)
+        
+    }
+
+    
+    
+    // var filterAddedCourse = [courseData[0]]
+    
+    console.log("abcd 1:",filterAddedCourse)
+    // const filterAddedCourse = (element)=>{
+    //     alert("a")
+    //     console.log("filter added course1 :",result,element)
+    // }
+
+    
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -112,7 +173,6 @@ const SimplyChoose = ({ courseData }) => {
 
                                 <button className={`  hidden  md:flex items-center space-x-1 bg-black text-white px-[30%] py-2  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`} onClick={() => { HandlelobbyClick() }} >
                                     <BiArrowBack className="text-white font-semibold minismallf" /><span className='font-semibold minismallf '>lobby</span></button>
-
                             </div>
 
                             {/* <div className='hidden md:block -z-50'>
@@ -149,6 +209,9 @@ const SimplyChoose = ({ courseData }) => {
                                 <div className={`col-span-12 md:col-span-5 ${styles.addtoCard}`}>
                                     <AddToCart
                                         filterAddedCourse={filterAddedCourse}
+                                        addCourse={addCourse}
+                                        setAddCourse={setAddCourse}
+                                        addItems={addItems}
                                     />
                                 </div>
                             </div>

@@ -10,8 +10,7 @@ import SplitPayment from './SplitPayment'
 import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
-const AddToCart = ({ filterAddedCourse }) => {
-
+const AddToCart = ({ filterAddedCourse,addItems }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [ShowPaymentOption, setShowPaymentOption] = useState(false);
     const [lessMoreBtn, setLessMoreBtn] = useState("view more");
@@ -61,6 +60,34 @@ const AddToCart = ({ filterAddedCourse }) => {
             setAddedListData(false)
         }
     }
+
+    const getAddedCourseFromcookie = getCookie('yourCart')
+    const removeFromCart = (productId) => {
+        addItems(productId.id)
+        const ids = getCookie("productId").split(",")
+        var alIndexes = []
+        ids.map((items)=>{
+            if(items != productId.id.toString()){
+                alIndexes.push(items)
+            }
+        })
+
+        setCookie("productId",alIndexes.join(","))
+
+        var newArray = filterAddedCourse
+        var temp = []
+        newArray.map((item,index)=>{
+            if(item.id !==productId.id){
+                temp.push(item)
+            }
+        })
+        filterAddedCourse = temp
+        var avlIndex =  filterAddedCourse.filter((item) => item.id !== productId.id);
+
+        console.log("data 1:",filterAddedCourse)
+    };
+    console.log("data :",filterAddedCourse)
+    //console.log('cookies',getAddedCourseFromcookie);
     
     return (
         <>
@@ -103,7 +130,7 @@ const AddToCart = ({ filterAddedCourse }) => {
                                             </div>
                                             <div className={`flex space-x-3 items-center`}>
                                                 <div className='text-black extlargef' >{item?.course_price}</div>
-                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => deleteItem(index)} />
+                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => removeFromCart(item)} />
                                             </div>
                                         </div>
                                         <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
@@ -125,7 +152,7 @@ const AddToCart = ({ filterAddedCourse }) => {
                                                 </div>
                                                 <div className={`flex space-x-3 items-center`}>
                                                     <div className='text-black extlargef' >{item?.course_price}</div>
-                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => deleteItem(index)} />
+                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => removeFromCart(item)} />
                                                 </div>
                                             </div>
                                             <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
