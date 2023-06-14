@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { MdOutlineWatchLater } from 'react-icons/md'
 import HTMLReactParser from 'html-react-parser';
@@ -29,7 +29,7 @@ const ResearchComponent = ({
 
 }) => {
 
-console.log('filterAddedCourse',filterAddedCourse)
+//console.log('filterAddedCourse',filterAddedCourse)
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)

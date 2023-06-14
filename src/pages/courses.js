@@ -20,17 +20,16 @@ const router =useRouter();
  const pathArr = router?.asPath?.split('/');
  const basePath = pathArr[1];
  const LogoImage = "/images/Logo.svg"
+
+ console.log('isOpen',isOpen)
+
+
  const backtoHome = () => {
     setIsOpen(!isOpen)
     setIsOpenLeft(isOpenLeft)
-  setTimeout(()=>{  router.push({
-    pathname:'/'
- })},1000)
-
-//  if(router.asPath=='/courses?active=add-course'){
-//     router.push('/courses')
-// }
-
+    setTimeout(()=>{  router.push({
+        pathname:'/'
+     })},500)
  }
 
  const handledrower = ()=>{
@@ -84,7 +83,9 @@ const router =useRouter();
                                                                 </div>
                                                             </div>
                                                             <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoHome() }} >
-                                                                <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> lobby </span></button>
+                                                                <BiArrowBack size={20} className="text-white " />
+                                                                <span className='font-semibold text-md 3xl:text-2xl'>lobby </span>
+                                                            </button>
                                                         </div>
 
                                                         <div className={`text-black mt-[120px] `}>

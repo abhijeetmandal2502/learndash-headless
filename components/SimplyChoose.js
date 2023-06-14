@@ -41,16 +41,12 @@ const SimplyChoose = ({ courseData }) => {
             router.push({
                 pathname: '/'
             })
-        }, 500)
+        }, 200)
 
         if (filterAddedCourse == "") {
-
             setHideForm(false)
             setSelected(false);
         }
-
-
-
     }
 
     const handleClick = (index, item) => {
@@ -100,6 +96,12 @@ const SimplyChoose = ({ courseData }) => {
         }
         setCookie("productId", avlProductId)
         setCookie('yourCart', avlList)
+
+
+        // router.push({
+        //     pathname: '/courses',
+        //     query: { active: 'addToCart' }
+        // })
     };
 
     const handleAddCourse = (index) => {
@@ -124,6 +126,15 @@ const SimplyChoose = ({ courseData }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [openResearchComp, setOpenResearchComp] = useState(true)
 
+    // useEffect(()=>{
+    //     if(router.asPath =='courses?active=addToCart'){
+    //     } else if (router.asPath =='/courses'){
+
+    //         setOpenResearchComp(true) 
+    //     }
+    // },[])
+
+   
     const handleResearchComp = () => {
         setOpenResearchComp(false)
     }
@@ -142,7 +153,7 @@ const SimplyChoose = ({ courseData }) => {
     //store data in to array
     var result = [];
     for (var i = 0; i < addCourse.length; i++) {
-        console.log("course data", courseData)
+       // console.log("course data", courseData)
         var index = addCourse[i];
         result.push(courseData[index]);
     }
@@ -159,7 +170,7 @@ const SimplyChoose = ({ courseData }) => {
         setFilterAddedCourse(tempArray)
     }
 
-    console.log("filter added course :", filterAddedCourse, addCourse)
+   // console.log("filter added course :", filterAddedCourse, addCourse)
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -193,8 +204,8 @@ const SimplyChoose = ({ courseData }) => {
                                     <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
                             </div> */}
 
-                            <div className={`flex flex-col justify-between ${hideForm ? styles.show1 : styles.hide1}  `}>
-                                <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
+                            <div className={`flex flex-col justify-between  `}>
+                                <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} ${hideForm ? styles.show1 : styles.hide1}  `}>
                                     <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
                                 </div>
@@ -299,7 +310,7 @@ const SimplyChoose = ({ courseData }) => {
                                         status = false
                                     }
 
-                                    console.log(`added status ${index}:`, status)
+                                    //console.log(`added status ${index}:`, status)
 
                                     return (
                                         <Fragment key={index} >

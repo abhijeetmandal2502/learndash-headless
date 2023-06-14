@@ -27,7 +27,6 @@ import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
 const Home = (props) => {
 
     const router = useRouter();
-
     // drower for mobile
     const currentPath = router?.query?.active;
     const [isOpen, setIsOpen] = useState(false);
