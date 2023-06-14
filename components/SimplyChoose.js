@@ -29,8 +29,13 @@ const SimplyChoose = ({ courseData }) => {
     }
 
     const handleClick = (index,item) => {
-        
-        setFilterAddedCourse([...filterAddedCourse,item])
+        var tempArr = filterAddedCourse
+        const checkvalues = obj=>obj.id===item.id
+        if(!tempArr.some(checkvalues)){
+            tempArr.push(item)
+        }
+        setFilterAddedCourse(tempArr)
+
         setSelected(index);
         const tempArray = [...selectedArray]
         if (tempArray[index] == index) { tempArray[index] = undefined }
@@ -69,10 +74,6 @@ const SimplyChoose = ({ courseData }) => {
             }
         }
         setCookie("productId",avlProductId)
-        console.log("get cookies",getCookie("productId"))
-       
-
-       
         setCookie('yourCart',avlList)
     };
 
@@ -85,6 +86,7 @@ const SimplyChoose = ({ courseData }) => {
             tempArray[index] = index
         }
         setAddCourse(tempArray)
+        getCookies('yourCart')
     }
 
     // hide addtoCart form 
@@ -118,7 +120,6 @@ const SimplyChoose = ({ courseData }) => {
         console.log("course data",courseData)
         var index = addCourse[i];
         result.push(courseData[index]);
-
     }
     const [filterAddedCourse,setFilterAddedCourse] =useState([])
     const addItems = (id)=>{
@@ -130,25 +131,12 @@ const SimplyChoose = ({ courseData }) => {
             }
         })
 
-        console.log("add course id :",addCourse)
-
         setFilterAddedCourse(tempArray)
-        
     }
 
-    
-    
-    // var filterAddedCourse = [courseData[0]]
-    
-    console.log("abcd 1:",filterAddedCourse)
-    // const filterAddedCourse = (element)=>{
-    //     alert("a")
-    //     console.log("filter added course1 :",result,element)
-    // }
+console.log("filter added course :",filterAddedCourse,addCourse)
 
-    
-
-    const LogoImage = "/images/Logo.svg"
+        const LogoImage = "/images/Logo.svg"
     return (
         <>
             <div className="relative w-full">
@@ -273,6 +261,15 @@ const SimplyChoose = ({ courseData }) => {
                                 {/* all course list */}
 
                                 {courseData?.map((item, index) => {
+                                    const id = item.id
+                                    const checkValue = obj => obj.id === id;
+                                    var status = true
+                                    if(!filterAddedCourse.some(checkValue)){
+                                        status = false
+                                    }
+
+                                    console.log(`added status ${index}:`,status)
+
                                     return (
                                         <Fragment key={index} >
                                             {/* for desktop */}
@@ -297,7 +294,7 @@ const SimplyChoose = ({ courseData }) => {
                                                                 {item?.course_price}
                                                             </p>
                                                         </div>
-                                                        {addCourse[index] !== index ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
+                                                        {!status ? <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
                                                             +add
                                                         </p> :
                                                             //     <p className=' absolute top-[110%] left-[50%] -translate-y-[110%] -translate-x-[50%] font-bold  largef text-[#FF5C00] '>
@@ -311,7 +308,7 @@ const SimplyChoose = ({ courseData }) => {
                                                             </div>
                                                         }
                                                         <div className='' >
-                                                            {addCourse[index] == index ?
+                                                            {status ?
 
                                                                 <Image src="/images/newPriceBackground.svg" width={100} height={100} alt="prceBg" className={`${styles.priceBack}`} />
                                                                 :
@@ -351,7 +348,7 @@ const SimplyChoose = ({ courseData }) => {
                                                                 {item.course_price}
                                                             </p>
                                                         </div>
-                                                        {addCourse[index] !== index ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
+                                                        {status ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             +add
                                                         </div> : <div className=' flex absolute top-[85%] left-[0%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={15} /></div>
