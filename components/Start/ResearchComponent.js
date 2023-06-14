@@ -21,8 +21,15 @@ const ResearchComponent = ({
     setPanel,
     courseDetail,
     selected,
-    filterAddedCourse
+    filterAddedCourse,
+
+    addItems,
+    setAddCourse,
+    addCourse
+
 }) => {
+
+console.log('filterAddedCourse',filterAddedCourse)
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
@@ -59,20 +66,20 @@ const ResearchComponent = ({
 
                         <div className='max-w-[75%]'>
                             <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
-                                {selestedCourseData?.title.rendered}
+                                {filterAddedCourse[0] ?.title.rendered}
                             </h2>
                         </div>
 
                         {/* price component for mobile */}
 
-                        {selestedCourseData?.course_price ? <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
+                        {filterAddedCourse[0]?.course_price ? <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
                             
                             {filterAddedCourse < [0] ? <div className={` relative flex flex-col  justify-start items-center w-max `} >
                                 <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
                                 <div className='absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
                                     
                                     <div className='font-[500] text-white smallf'>
-                                        {selestedCourseData?.course_price}
+                                        {filterAddedCourse[0]?.course_price}
                                     </div>
                                 </div>
                                 <div className=' text-center font-bold  mediumf  text-[#FF5C00] '>
@@ -85,7 +92,7 @@ const ResearchComponent = ({
                                 <div className='absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
                 
                                     <div className='font-[500] text-white smallf'>
-                                        {selestedCourseData?.course_price}
+                                        {filterAddedCourse[0]?.course_price}
                                     </div>
 
                                 </div>
@@ -101,7 +108,7 @@ const ResearchComponent = ({
                         </div> : ""}
                     </div>
                     <div className='hidden mt-2  cursor-pointer md:block '>
-                        {selestedCourseData?.course_price ? <div className={` relative `}>
+                        {filterAddedCourse[0]?.course_price ? <div className={` relative `}>
 
 
                             {filterAddedCourse < [0] ? <div className={` relative flex  justify-start items-center w-max `} >
@@ -111,7 +118,7 @@ const ResearchComponent = ({
                                         +add
                                     </div>
                                     <div className='font-[500] text-white smallf'>
-                                        {selestedCourseData?.course_price}
+                                        {filterAddedCourse[0]?.course_price}
                                     </div>
 
                                 </div>
@@ -124,7 +131,7 @@ const ResearchComponent = ({
                                         added
                                     </div>
                                     <div className='font-[500] text-white smallf'>
-                                        {selestedCourseData?.course_price}
+                                        {filterAddedCourse[0]?.course_price}
                                     </div>
 
                                 </div>
@@ -152,7 +159,7 @@ const ResearchComponent = ({
                             <h3 className='font-semibold text-black smallf'>4 Hours</h3>
                         </div>
                     </div>
-                    <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: selestedCourseData?.content.rendered }}>
+                    <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: filterAddedCourse[0]?.content.rendered }}>
 
                     </p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
@@ -241,7 +248,13 @@ const ResearchComponent = ({
                                             <button className='absolute text-black extlargef top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
-                                            <AddToCart courseDetail={courseDetail} filterAddedCourse={filterAddedCourse} />
+                                            <AddToCart 
+                                            courseDetail={courseDetail} 
+                                            filterAddedCourse={filterAddedCourse}
+                                            addCourse={addCourse}
+                                            setAddCourse={setAddCourse}
+                                            addItems={addItems}
+                                            />
                                         </div>
                                     </div>
                                     <Disclosure.Panel className="w-full py-1 text-white ">

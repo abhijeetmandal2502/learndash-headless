@@ -62,6 +62,7 @@ const AddToCart = ({ filterAddedCourse,addItems }) => {
     }
 
     const getAddedCourseFromcookie = getCookie('yourCart')
+
     const removeFromCart = (productId) => {
         addItems(productId.id)
         const ids = getCookie("productId").split(",")
@@ -83,12 +84,13 @@ const AddToCart = ({ filterAddedCourse,addItems }) => {
         })
         filterAddedCourse = temp
         var avlIndex =  filterAddedCourse.filter((item) => item.id !== productId.id);
-
-        console.log("data 1:",filterAddedCourse)
     };
-    console.log("data :",filterAddedCourse)
-    //console.log('cookies',getAddedCourseFromcookie);
-    
+
+    var total_price =0;
+    filterAddedCourse.map((cartProduct,id) => {
+        total_price +=  parseInt((cartProduct.course_price).replace("$", ""));
+    })
+
     return (
         <>
             {/* empty basket  */}
@@ -188,7 +190,7 @@ const AddToCart = ({ filterAddedCourse,addItems }) => {
                         </div>
                         <div className={`flex flex-col justify-end items-end`}>
                             <p className='text-white mb-[5px] font-bold smallf'>total</p>
-                            <div className='font-thin text-white largef' >$40</div>
+                            <div className='font-thin text-white largef' >${total_price}</div>
                         </div>
                     </div>
 

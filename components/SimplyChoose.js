@@ -14,24 +14,49 @@ import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 const SimplyChoose = ({ courseData }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
-    const [hideForm, setHideForm] = useState(true);
+    const [hideForm, setHideForm] = useState(false);
     const [panel, setPanel] = useState(true);
     const [addCourse, setAddCourse] = useState([]);
+    const [filterAddedCourse, setFilterAddedCourse] = useState([])
     //const [shipingInfo, setShipingInfo] = useState({});
+    // const [productIds,setProductids] = useState()
 
+    console.log('selected:', selected, filterAddedCourse);
+
+    useEffect(() => {
+        var productIds = getCookie("productId") ? getCookie("productId").split(",") : []
+
+        var tempArr = []
+        courseData.map((item) => {
+            if (productIds.includes(item.id.toString())) {
+                tempArr.push(item)
+            }
+        })
+        setFilterAddedCourse(tempArr)
+
+
+    }, [getCookie("productId")])
     const HandlelobbyClick = () => {
         setTimeout(() => {
             router.push({
                 pathname: '/'
             })
         }, 500)
-        setSelected(false);
+
+        if (filterAddedCourse == "") {
+
+            setHideForm(false)
+            setSelected(false);
+        }
+
+
+
     }
 
-    const handleClick = (index,item) => {
+    const handleClick = (index, item) => {
         var tempArr = filterAddedCourse
-        const checkvalues = obj=>obj.id===item.id
-        if(!tempArr.some(checkvalues)){
+        const checkvalues = obj => obj.id === item.id
+        if (!tempArr.some(checkvalues)) {
             tempArr.push(item)
         }
         setFilterAddedCourse(tempArr)
@@ -42,39 +67,39 @@ const SimplyChoose = ({ courseData }) => {
         else { tempArray[index] = index }
         setSelectedArray(tempArray)
 
-        console.log("selected array :",item)
+        console.log("selected array :", item)
         setHideForm(false)
         var avlList = []
-        tempArray.map((item)=>{
-            if(item !=undefined){
+        tempArray.map((item) => {
+            if (item != undefined) {
                 avlList.push(item)
             }
         })
 
-        var avlProductId = getCookie("productId") ? getCookie("productId"):""
+        var avlProductId = getCookie("productId") ? getCookie("productId") : ""
 
-        if(avlProductId.length===0){
+        if (avlProductId.length === 0) {
             avlProductId = item.id
         }
-        else{
-           var ids = avlProductId.split(",")
-            if(!ids.includes(item.id.toString())){
-                avlProductId = avlProductId+','+item.id
+        else {
+            var ids = avlProductId.split(",")
+            if (!ids.includes(item.id.toString())) {
+                avlProductId = avlProductId + ',' + item.id
             }
-            else{
-               
+            else {
+
                 var allIndexes = []
-                ids.map((key)=>{
-                    if(key !=item.id.toString()){
+                ids.map((key) => {
+                    if (key != item.id.toString()) {
                         allIndexes.push(key)
                     }
                 })
-                console.log("get cookies 2",allIndexes)
-                avlProductId =  allIndexes.join(",")
+                console.log("get cookies 2", allIndexes)
+                avlProductId = allIndexes.join(",")
             }
         }
-        setCookie("productId",avlProductId)
-        setCookie('yourCart',avlList)
+        setCookie("productId", avlProductId)
+        setCookie('yourCart', avlList)
     };
 
     const handleAddCourse = (index) => {
@@ -117,16 +142,16 @@ const SimplyChoose = ({ courseData }) => {
     //store data in to array
     var result = [];
     for (var i = 0; i < addCourse.length; i++) {
-        console.log("course data",courseData)
+        console.log("course data", courseData)
         var index = addCourse[i];
         result.push(courseData[index]);
     }
-    const [filterAddedCourse,setFilterAddedCourse] =useState([])
-    const addItems = (id)=>{
-           
+
+    const addItems = (id) => {
+
         var tempArray = []
-        filterAddedCourse.map((item)=>{
-            if(item.id!==id){
+        filterAddedCourse.map((item) => {
+            if (item.id !== id) {
                 tempArray.push(item)
             }
         })
@@ -134,9 +159,9 @@ const SimplyChoose = ({ courseData }) => {
         setFilterAddedCourse(tempArray)
     }
 
-console.log("filter added course :",filterAddedCourse,addCourse)
+    console.log("filter added course :", filterAddedCourse, addCourse)
 
-        const LogoImage = "/images/Logo.svg"
+    const LogoImage = "/images/Logo.svg"
     return (
         <>
             <div className="relative w-full">
@@ -168,7 +193,7 @@ console.log("filter added course :",filterAddedCourse,addCourse)
                                     <BiArrowBack size={20} className={`text-white ${styles.backIcon}`} /><span className='mediumf'>lobby</span></button>
                             </div> */}
 
-                            <div className={`flex flex-col justify-between ${((!selected && selected !== 0)) ? styles.show1 : styles.hide1}  `}>
+                            <div className={`flex flex-col justify-between ${hideForm ? styles.show1 : styles.hide1}  `}>
                                 <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} `}>
                                     <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
@@ -182,8 +207,10 @@ console.log("filter added course :",filterAddedCourse,addCourse)
                                 </div> : ""}
                             </div>
 
+
+
                             {/* Selected Courses details of simply choose section on click */}
-                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${selected === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${selected === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
+                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${filterAddedCourse === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${filterAddedCourse === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
                                 <button className='absolute top-10 text-2xl left-[90%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-4'>
@@ -191,6 +218,10 @@ console.log("filter added course :",filterAddedCourse,addCourse)
                                         courseDetail={courseData}
                                         selected={selected}
                                         filterAddedCourse={filterAddedCourse}
+
+                                        addCourse={addCourse}
+                                        setAddCourse={setAddCourse}
+                                        addItems={addItems}
                                     />
                                 </div>
                                 {/* course checkout */}
@@ -264,11 +295,11 @@ console.log("filter added course :",filterAddedCourse,addCourse)
                                     const id = item.id
                                     const checkValue = obj => obj.id === id;
                                     var status = true
-                                    if(!filterAddedCourse.some(checkValue)){
+                                    if (!filterAddedCourse.some(checkValue)) {
                                         status = false
                                     }
 
-                                    console.log(`added status ${index}:`,status)
+                                    console.log(`added status ${index}:`, status)
 
                                     return (
                                         <Fragment key={index} >
@@ -348,7 +379,7 @@ console.log("filter added course :",filterAddedCourse,addCourse)
                                                                 {item.course_price}
                                                             </p>
                                                         </div>
-                                                        {status ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
+                                                        {!status ? <div className=' absolute top-[80%] left-[20%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             +add
                                                         </div> : <div className=' flex absolute top-[85%] left-[0%] font-[500]  text-[16px] text-[#FF5C00] '>
                                                             <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={15} /></div>
@@ -357,7 +388,7 @@ console.log("filter added course :",filterAddedCourse,addCourse)
                                                             </p>
                                                         </div>}
                                                         <div className=''>
-                                                            {addCourse[index] == index ?
+                                                            {status ?
                                                                 <Image src="/images/newPriceBackground.svg" width={55} height={58} alt="prceBg" />
                                                                 :
                                                                 <Image src="/images/newPriceOrange.svg" width={55} height={58} alt="prceBg" />}
