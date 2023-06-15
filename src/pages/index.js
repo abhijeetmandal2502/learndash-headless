@@ -20,6 +20,7 @@ import Door from 'components/Start/Door'
 import HomeComponentMobile from 'components/HomeComponentMobile'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
+import TeacherLoginModel from 'components/TeacherLoginModel'
 // import { IoIosMenu } from 'react-icons/io'
 // import { TfiMenu } from 'react-icons/tfi'
 // import { getCourses } from 'apis/AllPostApi'
@@ -36,7 +37,7 @@ const Home = (props) => {
     const drowerOpen = () => {
         setIsOpen(!isOpen)
     }
-    
+
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
@@ -52,7 +53,7 @@ const Home = (props) => {
     // for menu open close 
     const [On, setOn] = useState();
 
-   
+
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
@@ -67,7 +68,7 @@ const Home = (props) => {
             setOn(true)
             setIsOpen(!isOpen)
         }
-        
+
         if (router.asPath === "/?active=start") {
             setStart(true)
         }
@@ -156,7 +157,9 @@ const Home = (props) => {
     return (
         <>
             <Head>
-
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
@@ -198,12 +201,14 @@ const Home = (props) => {
                             <div className=' md:col-span-6 w-full h-[100vh] border-l border-gray'>
                                 {/* start components */}
                                 <div className={` w-full h-1/2 menuBoxsizebigMenu  flex flex-col overflow-hidden relative justify-center  cursor-pointer  
-                                 ${Styles.rotateChild} ${styles2.mainAnimation} `} 
-                                //  onClick={() => startMethod()} 
-                                onClick={() => { router.push({
-                                    pathname:'/courses'
+                                 ${Styles.rotateChild} ${styles2.mainAnimation} `}
+                                    //  onClick={() => startMethod()} 
+                                    onClick={() => {
+                                        router.push({
+                                            pathname: '/courses'
 
-                                }) }}
+                                        })
+                                    }}
                                 >
                                     <div className={` md:space-x-0 flex md:flex-col relative `}>
                                         <Door />
@@ -236,12 +241,14 @@ const Home = (props) => {
                                 </div>
 
                                 {/* gift shoppe */}
-                                <div 
-                                className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `} 
-                                onClick={() => { router.push({
-                                    pathname:'/giftshoppe'
+                                <div
+                                    className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col relative overflow-hidden z-40 justify-center cursor-pointer border-t 3xl:border-t-2 border-gray  ${styles.cardAnimation}  `}
+                                    onClick={() => {
+                                        router.push({
+                                            pathname: '/giftshoppe'
 
-                                }) }}>
+                                        })
+                                    }}>
                                     <div className={` image-card ${styles.mainDiv}`}>
 
                                         <div className={`${styles.gift} absolute -top-5 left-1/2 -translate-x-1/2 -translate-y-0 w-[100%] h-[100%]  `}>
@@ -333,7 +340,7 @@ const Home = (props) => {
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
                         <div className={` bg-white 3xl:max-w-[80%] relative  border border-bordergray xl:p-5 p-7 lg:p-5`}>
-                            <LoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
+                            <TeacherLoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>
                     </div>
                 </div>
@@ -368,7 +375,7 @@ const Home = (props) => {
             </div>
 
             {/* drowable component */}
-            <div className={` md:block hidden  ${router.asPath !== "/?active=home"? styles2.hideNcbtmbdiv : ""}`}>
+            <div className={` md:block hidden  ${router.asPath !== "/?active=home" ? styles2.hideNcbtmbdiv : ""}`}>
                 <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                     <div className="overflow-y-scroll ">
                         <div className="flex flex-col">

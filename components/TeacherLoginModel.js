@@ -8,7 +8,7 @@ import styles from '../components/ForgetPassword/ForgetPassword.module.css'
 import styles2 from '../src/styles/LoginModel.module.css'
 import { AiOutlineClose } from 'react-icons/ai';
 
-const LoginModel = ({ changeDuration, title }) => {
+const TeacherLoginModel = ({ changeDuration, title }) => {
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
@@ -47,7 +47,7 @@ const LoginModel = ({ changeDuration, title }) => {
                     cookie.set('token', res2.token)
                     // cookie.set('user', res2.user)
 
-                    router.push(`/studentLogin`)
+                    router.push(`/welcomeTeacherLogin`)
                     toast.success('Success Notification !', {
                         position: toast.POSITION.TOP_RIGHT
                     });
@@ -134,4 +134,4 @@ const LoginModel = ({ changeDuration, title }) => {
 
 }
 
-export default LoginModel
+export default TeacherLoginModel

@@ -2,8 +2,6 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { MdOutlineWatchLater } from 'react-icons/md'
-import HTMLReactParser from 'html-react-parser';
-
 import styles from '../Start/Start.module.css'
 import { Dialog, Disclosure, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
@@ -12,6 +10,8 @@ import AboutCourse from './DialogCard/AboutCourse'
 import { useRouter } from 'next/router'
 import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
 import AddToCart from './AddToCart'
+import { getCartItems } from 'utils/addToCart';
+import { addToCart } from 'utils/addToCart'
 const ResearchComponent = ({
     drowerClose,
     drowerOpen,
@@ -20,16 +20,12 @@ const ResearchComponent = ({
     panel,
     setPanel,
     courseDetail,
-    selected,
     filterAddedCourse,
-
-    addItems,
-    setAddCourse,
-    addCourse
-
+    setFilterAddedCourse,
+    showCourseInfo,
 }) => {
 
-//console.log('filterAddedCourse',filterAddedCourse)
+
 
     const router = useRouter();
     let [Open, setOpen] = useState(false)
@@ -37,6 +33,7 @@ const ResearchComponent = ({
     const basePath = pathArr[1];
     const [aboutCourse, setAboutCourse] = useState(false);
     const [instructor, setInstructor] = useState(false);
+    const [cookieData, setCookieData] = useState([]);
 
     function closeModal() {
         setOpen(false)
@@ -53,46 +50,48 @@ const ResearchComponent = ({
         'instant certificate',
     ]
 
-    const selestedCourseData = courseDetail[selected]
-    // console.log('courseDetail',selestedCourseData,selected)
+    useEffect(() => {
+        setCookieData(getCartItems())
+        setFilterAddedCourse(getCartItems())
+    }, [])
+
+    console.log('showCourseInfo', cookieData[0])
 
     return (
         <>
 
-            <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
+            {showCourseInfo==0?<div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
                     <div className='flex items-center justify-start space-x-2'>
 
                         <div className='max-w-[75%]'>
                             <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
-                                {filterAddedCourse[0] ?.title.rendered}
+                                {cookieData[0]?.title}
                             </h2>
                         </div>
 
                         {/* price component for mobile */}
 
-                        {filterAddedCourse[0]?.course_price ? <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
-                            
-                            {filterAddedCourse < [0] ? <div className={` relative flex flex-col  justify-start items-center w-max `} >
+                        <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
+
+                            {cookieData?.find((item) => showCourseInfo?.id === item?.id) ? <div className={` relative flex flex-col  justify-start items-center w-max `} onClick={() => addToCart(showCourseInfo, 1)} >
                                 <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
                                 <div className='absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
-                                    
+
                                     <div className='font-[500] text-white smallf'>
-                                        {filterAddedCourse[0]?.course_price}
+                                        {cookieData[0]?.price}
                                     </div>
                                 </div>
                                 <div className=' text-center font-bold  mediumf  text-[#FF5C00] '>
                                     +add
                                 </div>
-                            </div> : ""}
-
-                            {filterAddedCourse > [0] ? <div className={`relative flex flex-col justify-start items-center w-max`} >
+                            </div> : <div className={`relative flex flex-col justify-start items-center w-max`} >
                                 <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" className={`${styles.selectedCoursepriceBg} `} />
                                 <div className='absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
-                
+
                                     <div className='font-[500] text-white smallf'>
-                                        {filterAddedCourse[0]?.course_price}
+                                        {cookieData[0]?.price}
                                     </div>
 
                                 </div>
@@ -103,41 +102,40 @@ const ResearchComponent = ({
                                         added
                                     </div>
                                 </div>
-                            </div> : ""}
+                            </div>}
 
-                        </div> : ""}
+
+
+                        </div>
                     </div>
                     <div className='hidden mt-2  cursor-pointer md:block '>
-                        {filterAddedCourse[0]?.course_price ? <div className={` relative `}>
+                        <div className={` relative `}>
 
-
-                            {filterAddedCourse < [0] ? <div className={` relative flex  justify-start items-center w-max `} >
-                                <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} width={200} height={50} alt="prceBg" />
-                                <div className='absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
-                                    <div className=' text-center font-[500] smallf text-white '>
-                                        +add
-                                    </div>
-                                    <div className='font-[500] text-white smallf'>
-                                        {filterAddedCourse[0]?.course_price}
-                                    </div>
-
-                                </div>
-                            </div> : ""}
-
-                            {filterAddedCourse > [0] ? <div className={`relative flex  justify-start items-center w-max`} >
+                            {cookieData?.find((item) => showCourseInfo?.id === item?.id) ? <div className={`relative flex  justify-start items-center w-max`} >
                                 <Image src="/start/horizontal_added_button.svg" width={200} height={50} alt="prceBg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} />
                                 <div className='absolute top-[45%] left-[55%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
                                     <div className=' text-center font-[500] smallf text-white '>
                                         added
                                     </div>
                                     <div className='font-[500] text-white smallf'>
-                                        {filterAddedCourse[0]?.course_price}
+                                        {cookieData[0]?.price}
                                     </div>
 
                                 </div>
-                            </div> : ""}
+                            </div> : <div className={` relative flex  justify-start items-center w-max `} onClick={() => addToCart(showCourseInfo, 1)} >
+                                <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} width={200} height={50} alt="prceBg" />
+                                <div className='absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                                    <div className=' text-center font-[500] smallf text-white '>
+                                        +add
+                                    </div>
+                                    <div className='font-[500] text-white smallf'>
+                                        {cookieData[0]?.price}
+                                    </div>
 
-                        </div> : ""}
+                                </div>
+                            </div>}
+
+                        </div>
 
                         {/* <Image src="/start/horizontal_added_button.svg" width={120} height={50} alt="btn" /> */}
                     </div>
@@ -159,7 +157,7 @@ const ResearchComponent = ({
                             <h3 className='font-semibold text-black smallf'>4 Hours</h3>
                         </div>
                     </div>
-                    <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: filterAddedCourse[0]?.content.rendered }}>
+                    <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: showCourseInfo?.content?.rendered }}>
 
                     </p>
                     <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
@@ -182,7 +180,135 @@ const ResearchComponent = ({
                         read our refund policy
                     </div>
                 </div>
-            </div>
+            </div>:<div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
+                <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
+
+                    <div className='flex items-center justify-start space-x-2'>
+
+                        <div className='max-w-[75%]'>
+                            <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
+                                {showCourseInfo?.title?.rendered}
+                            </h2>
+                        </div>
+
+                        {/* price component for mobile */}
+
+                        <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
+
+                            {cookieData?.find((item) => showCourseInfo?.id === item?.id) ? <div className={` relative flex flex-col  justify-start items-center w-max `} onClick={() => addToCart(showCourseInfo, 1)} >
+                                <Image src="/images/newPriceOrange.svg" className={`${styles.selectedCoursepriceBg}`} width={200} height={200} alt="prceBg" />
+                                <div className='absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+
+                                    <div className='font-[500] text-white smallf'>
+                                        {showCourseInfo?.course_price}
+                                    </div>
+                                </div>
+                                <div className=' text-center font-bold  mediumf  text-[#FF5C00] '>
+                                    +add
+                                </div>
+                            </div> : <div className={`relative flex flex-col justify-start items-center w-max`} >
+                                <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" className={`${styles.selectedCoursepriceBg} `} />
+                                <div className='absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+
+                                    <div className='font-[500] text-white smallf'>
+                                        {showCourseInfo?.course_price}
+                                    </div>
+
+                                </div>
+
+                                <div className=' flex justify-center font-bold  largef text-[#FF5C00] '>
+                                    <div className='flex items-center justify-center'><AiOutlineCheck className='text-[#AC6CFF]' size={20} /></div>
+                                    <div className={`text-[#AC6CFF] smallf font-semibold`}>
+                                        added
+                                    </div>
+                                </div>
+                            </div>}
+
+
+
+                        </div>
+                    </div>
+                    <div className='hidden mt-2  cursor-pointer md:block '>
+                        <div className={` relative `}>
+
+                            {cookieData?.find((item) => showCourseInfo?.id === item?.id) ? <div className={`relative flex  justify-start items-center w-max`} >
+                                <Image src="/start/horizontal_added_button.svg" width={200} height={50} alt="prceBg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} />
+                                <div className='absolute top-[45%] left-[55%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                                    <div className=' text-center font-[500] smallf text-white '>
+                                        added
+                                    </div>
+                                    <div className='font-[500] text-white smallf'>
+                                        {showCourseInfo?.course_price}
+                                    </div>
+
+                                </div>
+                            </div> : <div className={` relative flex  justify-start items-center w-max `} onClick={() => addToCart(showCourseInfo, 1)} >
+                                <Image src="/start/horizontal_add_button.svg" className={`${styles.selectedCoursepriceBg} max-h-[50px] max-w-[150px] rounded-md`} width={200} height={50} alt="prceBg" />
+                                <div className='absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
+                                    <div className=' text-center font-[500] smallf text-white '>
+                                        +add
+                                    </div>
+                                    <div className='font-[500] text-white smallf'>
+                                        {showCourseInfo?.course_price}
+                                    </div>
+
+                                </div>
+                            </div>}
+
+                        </div>
+
+                        {/* <Image src="/start/horizontal_added_button.svg" width={120} height={50} alt="btn" /> */}
+                    </div>
+                    <div className={`flex items-center py-2 space-x-5 ${styles.authorCard}`}>
+                        <div className='flex items-center space-x-1 cursor-pointer'>
+                            <Image src="/images/GaelWood.png" width={55} height={60} alt="author" className={`${styles.authorImage}`} />
+
+                            {/* <h3 className={`${styles.element} border-b border-bordergray leading-4 smallf`} >Geal Wood</h3> */}
+                            <button
+                                type="button"
+                                onClick={() => { openModal(), setInstructor(true), setAboutCourse(false) }}
+                                className={`${styles.element} border-b smallf border-bordergray leading-4`}
+                            >
+                                Gael Wood
+                            </button>
+                        </div>
+                        <div className='flex space-x-1.5 items-center'>
+                            <MdOutlineWatchLater size={20} />
+                            <h3 className='font-semibold text-black smallf'>4 Hours</h3>
+                        </div>
+                    </div>
+                    <p className={`py-1 tracking-wide courseDis text-black smallf ${styles.lineClampContent}`} dangerouslySetInnerHTML={{ __html: showCourseInfo?.content?.rendered }}>
+
+                    </p>
+                    <button className={`font-semibold border-b smallf ${styles.element} border-black leading-2`}
+                        onClick={() => { openModal(), setAboutCourse(true), setInstructor(false) }}
+                        type="button"
+                    >
+                        show more
+                    </button>
+                </div>
+                <div className={`py-3 ${styles.refoundpolicyComp}`}>
+                    {courseData && courseData.map((item, index) => {
+                        return (
+                            <div key={index} className='flex items-center space-x-4 py-0.3'>
+                                <AiOutlineCheck size={20} className={`text-[#9747FF] ${styles.checkIcon}`} />
+                                <p className='tracking-wider text-black smallf'>{item}</p>
+                            </div>
+                        )
+                    })}
+                    <div className={`pt-2 w-max font-semibold leading-5 border-b border-black smallf text-black ${styles.refoundPcBtn}`}>
+                        read our refund policy
+                    </div>
+                </div>
+            </div>}
+
+
+
+
+
+
+
+            
 
             {/* model popup */}
             <Transition appear show={Open} as={Fragment}>
@@ -248,12 +374,10 @@ const ResearchComponent = ({
                                             <button className='absolute text-black extlargef top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>
-                                            <AddToCart 
-                                            courseDetail={courseDetail} 
-                                            filterAddedCourse={filterAddedCourse}
-                                            addCourse={addCourse}
-                                            setAddCourse={setAddCourse}
-                                            addItems={addItems}
+                                            <AddToCart
+                                                courseDetail={courseDetail}
+                                                filterAddedCourse={filterAddedCourse}
+                                                setFilterAddedCourse={setFilterAddedCourse}
                                             />
                                         </div>
                                     </div>

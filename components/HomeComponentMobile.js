@@ -31,26 +31,25 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             content: <div className='-mt-7'>
                 {/* <SimplyChoose selectedCourseMethod={selectedCourseMethod} selectedCourse={selectedCourse} setPanel={setPanel} panel={panel} setActiveTabIndex={setActiveTabIndex} /> */}
             </div>,
-            path:'/courses'
-
+            path: '/courses'
         },
         {
             image: "/images/new-imback.png",
             title: "i’m back",
             content: <LoginModel title="welcome back" />,
-            path:'/'
+            path: '/'
         },
         {
             image: "/images/ConciergeNew.svg",
             title: "concierge",
             content: <Conceierge />,
-            path:'/'
+            path: '/'
         },
         {
             image: "/images/NCBTMB.svg",
             title: "ncbtmb approved",
             content: <Ncbtmb />,
-            path:'/'
+            path: '/'
         },
 
         {
@@ -58,14 +57,14 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
             title: "gift shoppe",
             content: <div>
                 {/* <GiftCardMobile /> */}
-                </div>,
-            path:'/giftshoppe'
+            </div>,
+            path: '/giftshoppe'
         },
         {
             image: "/images/new-teacherlouge.png",
             title: "teacher’s lounge",
             content: <LoginModel title="Teacher's Lounge" />,
-            path:'/'
+            path: '/'
         },
     ]
 
@@ -91,15 +90,15 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
         }
     }
 
-    useEffect(()=>{
-        if(router.asPath==='/'){ 
-            setIsOpenLeft(isOpenLeft)  
+    useEffect(() => {
+        if (router.asPath === '/') {
+            setIsOpenLeft(isOpenLeft)
         }
-if(router.asPath === '/courses'){
-    setIsOpen(!isOpen)
-}
+        if (router.asPath === '/courses') {
+            setIsOpen(!isOpen)
+        }
 
-    },[])
+    }, [])
 
 
     return (
@@ -201,16 +200,16 @@ if(router.asPath === '/courses'){
                                                             menuList?.map((item, id) => {
                                                                 return (
                                                                     <>
-                                                                       <Fragment key={id}>
-                                                                      <Link href={`${item.path}`}>
-                                                                      <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
-                                                                            <div  className='flex items-center px-3 py-5 space-x-5'>
-                                                                                <Image alt='start' src={item.image} height='80' width='80' />
-                                                                                <h3 className='mt-4 text-black text-2xl '>{item.title}</h3>
-                                                                            </div>
-                                                                        </div>
-                                                                      </Link>
-                                                                       </Fragment>
+                                                                        <Fragment key={id}>
+                                                                            <Link href={`${item.path}`}>
+                                                                                <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
+                                                                                    <div className='flex items-center px-3 py-5 space-x-5'>
+                                                                                        <Image alt='start' src={item.image} height='80' width='80' />
+                                                                                        <h3 className='mt-4 text-black text-2xl '>{item.title}</h3>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </Link>
+                                                                        </Fragment>
                                                                     </>
                                                                 )
                                                             })

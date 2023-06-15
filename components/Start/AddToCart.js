@@ -9,8 +9,9 @@ import PaymentGiftCard from './PaymentGiftCard'
 import SplitPayment from './SplitPayment'
 import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import { getCartItems, removeFromCart } from 'utils/addToCart'
 
-const AddToCart = ({ filterAddedCourse,addItems }) => {
+const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [ShowPaymentOption, setShowPaymentOption] = useState(false);
     const [lessMoreBtn, setLessMoreBtn] = useState("view more");
@@ -63,32 +64,15 @@ const AddToCart = ({ filterAddedCourse,addItems }) => {
 
     const getAddedCourseFromcookie = getCookie('yourCart')
 
-    const removeFromCart = (productId) => {
-        addItems(productId.id)
-        const ids = getCookie("productId").split(",")
-        var alIndexes = []
-        ids.map((items)=>{
-            if(items != productId.id.toString()){
-                alIndexes.push(items)
-            }
-        })
 
-        setCookie("productId",alIndexes.join(","))
-
-        var newArray = filterAddedCourse
-        var temp = []
-        newArray.map((item,index)=>{
-            if(item.id !==productId.id){
-                temp.push(item)
-            }
-        })
-        filterAddedCourse = temp
-        var avlIndex =  filterAddedCourse.filter((item) => item.id !== productId.id);
+    const removeCart = (productId) => {
+        removeFromCart(productId)
+        setFilterAddedCourse(getCartItems())
     };
 
-    var total_price =0;
-    filterAddedCourse.map((cartProduct,id) => {
-        total_price +=  parseInt((cartProduct.course_price).replace("$", ""));
+    var total_price = 0;
+    filterAddedCourse.map((cartProduct, id) => {
+        total_price +=  parseInt((cartProduct?.price).replace("$", ""));
     })
 
     return (
@@ -128,11 +112,11 @@ const AddToCart = ({ filterAddedCourse,addItems }) => {
                                     <Fragment key={index}>
                                         <div className={`flex justify-between items-center`}>
                                             <div className={`flex space-x-5 items-center `}>
-                                                <p className={`text-black smallf font-bold leading-[130%]`}>{item?.title.rendered}</p>
+                                                <p className={`text-black smallf font-bold leading-[130%]`}>{item?.title}</p>
                                             </div>
                                             <div className={`flex space-x-3 items-center`}>
-                                                <div className='text-black extlargef' >{item?.course_price}</div>
-                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => removeFromCart(item)} />
+                                                <div className='text-black extlargef' >{item?.price}</div>
+                                                <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => removeCart(item.id)} />
                                             </div>
                                         </div>
                                         <div className='w-full my-1 border-b-[2px] border-lightgray'></div>
@@ -150,11 +134,11 @@ const AddToCart = ({ filterAddedCourse,addItems }) => {
                                         <Fragment key={index}>
                                             <div className={`flex justify-between items-center`}>
                                                 <div className={`flex space-x-5 items-center `}>
-                                                    <p className={`text-black smallf font-bold leading-[130%]`}>{item?.title.rendered}</p>
+                                                    <p className={`text-black smallf font-bold leading-[130%]`}>{item?.title}</p>
                                                 </div>
                                                 <div className={`flex space-x-3 items-center`}>
-                                                    <div className='text-black extlargef' >{item?.course_price}</div>
-                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => removeFromCart(item)} />
+                                                    <div className='text-black extlargef' >{item?.price}</div>
+                                                    <RiDeleteBin6Line size={24} className={`${styles.deleteIcon}`} onClick={() => removeCart(item.id)} />
                                                 </div>
                                             </div>
                                             <div className='w-full my-1 border-b-[2px] border-lightgray'></div>

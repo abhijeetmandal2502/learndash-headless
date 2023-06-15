@@ -11,6 +11,10 @@ import AddToCart from './Start/AddToCart'
 import { useRouter } from 'next/router'
 import { GoGift } from 'react-icons/go'
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import MobileDrawerRighrt from './Menu/MobileDrawerRight'
+import { Disclosure } from '@headlessui/react'
+import Link from 'next/link'
+import { addToCart, getCartItems } from 'utils/addToCart'
 const SimplyChoose = ({ courseData }) => {
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
@@ -18,24 +22,33 @@ const SimplyChoose = ({ courseData }) => {
     const [panel, setPanel] = useState(true);
     const [addCourse, setAddCourse] = useState([]);
     const [filterAddedCourse, setFilterAddedCourse] = useState([])
-    //const [shipingInfo, setShipingInfo] = useState({});
-    // const [productIds,setProductids] = useState()
+    const [isOpen, setIsOpen] = useState(false);
+    const [openDrower, setOpenDrower] = useState(true);
+    const [showCourseInfo, setShowCourseInfo] = useState([])
 
-    console.log('selected:', selected, filterAddedCourse);
+     console.log('courseData',filterAddedCourse)
 
-    useEffect(() => {
-        var productIds = getCookie("productId") ? getCookie("productId").split(",") : []
 
-        var tempArr = []
-        courseData.map((item) => {
-            if (productIds.includes(item.id.toString())) {
-                tempArr.push(item)
-            }
+    const backtoCourses = () => {
+        setOpenDrower(false)
+        //router.push('/courses')
+        setOpenResearchComp(true)
+        setIsOpen(false)
+    }
+
+    const handledrower = () => {
+        router.push({
+            pathname: '/',
+            query: { active: 'home' }
         })
-        setFilterAddedCourse(tempArr)
+    }
 
 
-    }, [getCookie("productId")])
+    // console.log('selected:', selected, filterAddedCourse);
+
+    // useEffect(() => {
+    //     setFilterAddedCourse(getCartItems())
+    // }, [])
     const HandlelobbyClick = () => {
         setTimeout(() => {
             router.push({
@@ -49,71 +62,13 @@ const SimplyChoose = ({ courseData }) => {
         }
     }
 
-    const handleClick = (index, item) => {
-        var tempArr = filterAddedCourse
-        const checkvalues = obj => obj.id === item.id
-        if (!tempArr.some(checkvalues)) {
-            tempArr.push(item)
-        }
-        setFilterAddedCourse(tempArr)
-
-        setSelected(index);
-        const tempArray = [...selectedArray]
-        if (tempArray[index] == index) { tempArray[index] = undefined }
-        else { tempArray[index] = index }
-        setSelectedArray(tempArray)
-
-        console.log("selected array :", item)
-        setHideForm(false)
-        var avlList = []
-        tempArray.map((item) => {
-            if (item != undefined) {
-                avlList.push(item)
-            }
-        })
-
-        var avlProductId = getCookie("productId") ? getCookie("productId") : ""
-
-        if (avlProductId.length === 0) {
-            avlProductId = item.id
-        }
-        else {
-            var ids = avlProductId.split(",")
-            if (!ids.includes(item.id.toString())) {
-                avlProductId = avlProductId + ',' + item.id
-            }
-            else {
-
-                var allIndexes = []
-                ids.map((key) => {
-                    if (key != item.id.toString()) {
-                        allIndexes.push(key)
-                    }
-                })
-                console.log("get cookies 2", allIndexes)
-                avlProductId = allIndexes.join(",")
-            }
-        }
-        setCookie("productId", avlProductId)
-        setCookie('yourCart', avlList)
-
-
-        // router.push({
-        //     pathname: '/courses',
-        //     query: { active: 'addToCart' }
-        // })
+    const handleClick = (item) => {
+        addToCart(item, 1);
+        setFilterAddedCourse(getCartItems());
     };
 
-    const handleAddCourse = (index) => {
-        const tempArray = [...addCourse]
-        if (tempArray[index] == index) {
-            tempArray[index] = undefined
-        }
-        else {
-            tempArray[index] = index
-        }
-        setAddCourse(tempArray)
-        getCookies('yourCart')
+    const handleAddCourse = (index, item) => {
+        setShowCourseInfo(item)
     }
 
     // hide addtoCart form 
@@ -123,20 +78,12 @@ const SimplyChoose = ({ courseData }) => {
     }
     //   drower for mobile 
     const router = useRouter();
-    const [isOpen, setIsOpen] = useState(false);
+
     const [openResearchComp, setOpenResearchComp] = useState(true)
 
-    // useEffect(()=>{
-    //     if(router.asPath =='courses?active=addToCart'){
-    //     } else if (router.asPath =='/courses'){
-
-    //         setOpenResearchComp(true) 
-    //     }
-    // },[])
-
-   
     const handleResearchComp = () => {
         setOpenResearchComp(false)
+        setOpenDrower(true)
     }
 
     // const [isOpenLeft, setIsOpenLeft] = useState(true);
@@ -153,24 +100,24 @@ const SimplyChoose = ({ courseData }) => {
     //store data in to array
     var result = [];
     for (var i = 0; i < addCourse.length; i++) {
-       // console.log("course data", courseData)
+        // console.log("course data", courseData)
         var index = addCourse[i];
         result.push(courseData[index]);
     }
 
-    const addItems = (id) => {
+    // const addItems = (id) => {
 
-        var tempArray = []
-        filterAddedCourse.map((item) => {
-            if (item.id !== id) {
-                tempArray.push(item)
-            }
-        })
+    //     var tempArray = []
+    //     filterAddedCourse.map((item) => {
+    //         if (item.id !== id) {
+    //             tempArray.push(item)
+    //         }
+    //     })
 
-        setFilterAddedCourse(tempArray)
-    }
+    //     setFilterAddedCourse(tempArray)
+    // }
 
-   // console.log("filter added course :", filterAddedCourse, addCourse)
+    // console.log("filter added course :", filterAddedCourse, addCourse)
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -205,9 +152,11 @@ const SimplyChoose = ({ courseData }) => {
                             </div> */}
 
                             <div className={`flex flex-col justify-between  `}>
-                                <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} ${hideForm ? styles.show1 : styles.hide1}  `}>
+                                <div className='hidden md:block '>
+                                <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} ${hideForm || filterAddedCourse==0 ? styles.show1 : styles.hide1}  `}>
                                     <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
+                                </div>
                                 </div>
 
                                 {/* for mobile  */}
@@ -221,27 +170,22 @@ const SimplyChoose = ({ courseData }) => {
 
 
                             {/* Selected Courses details of simply choose section on click */}
-                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${filterAddedCourse === false && hideForm === false ? styles.hide1 : styles.fadeAnimation} ${filterAddedCourse === false ? styles.hide1 : styles.fadeAnimation} ${selected >= 0 && !hideForm ? styles.fadeAnimation : styles.hide1} `}>
+                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${filterAddedCourse==0? styles.hide1 : styles.fadeAnimation}  ${!hideForm ? styles.fadeAnimation : styles.hide1} `}>
                                 <button className='absolute top-10 text-2xl left-[90%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-4'>
                                     <ResearchComponent
-                                        courseDetail={courseData}
-                                        selected={selected}
                                         filterAddedCourse={filterAddedCourse}
-
-                                        addCourse={addCourse}
-                                        setAddCourse={setAddCourse}
-                                        addItems={addItems}
+                                        setFilterAddedCourse={setFilterAddedCourse}
+                                        showCourseInfo={showCourseInfo}
+                                      
                                     />
                                 </div>
                                 {/* course checkout */}
                                 <div className={`col-span-12 md:col-span-5 ${styles.addtoCard}`}>
                                     <AddToCart
                                         filterAddedCourse={filterAddedCourse}
-                                        addCourse={addCourse}
-                                        setAddCourse={setAddCourse}
-                                        addItems={addItems}
+                                        setFilterAddedCourse={setFilterAddedCourse}
                                     />
                                 </div>
                             </div>
@@ -313,10 +257,11 @@ const SimplyChoose = ({ courseData }) => {
                                     //console.log(`added status ${index}:`, status)
 
                                     return (
-                                        <Fragment key={index} >
+                                        <Fragment key={item.id} >
                                             {/* for desktop */}
                                             {item?.course_price ? <div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
-                                                onClick={() => { handleClick(index, item) }}
+                                                // onClick={() => { handleClick(index, item) }}
+                                                onClick={() => { handleAddCourse(index, item) }}
                                             >
                                                 <div className='flex justify-between'>
                                                     <div>
@@ -330,7 +275,10 @@ const SimplyChoose = ({ courseData }) => {
                                                     </div>
 
                                                     {/* course price components */}
-                                                    <div className={` relative `} onClick={() => { handleAddCourse(index, item) }} >
+                                                    <div className={` relative `}
+                                                        // onClick={() => { handleAddCourse(index, item) }} 
+                                                        onClick={() => { handleClick(item) }}
+                                                    >
                                                         <div className='absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <p className='smallfXL leading-[100%] font-semibold text-white'>
                                                                 {item?.course_price}
@@ -371,7 +319,7 @@ const SimplyChoose = ({ courseData }) => {
                                             </div> : ""}
 
                                             {/* for mobile */}
-                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(index, item), handleResearchComp() }}>
+                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(item), handleResearchComp() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
@@ -400,9 +348,9 @@ const SimplyChoose = ({ courseData }) => {
                                                         </div>}
                                                         <div className=''>
                                                             {status ?
-                                                                <Image src="/images/newPriceBackground.svg" width={55} height={58} alt="prceBg" />
+                                                                <Image src="/images/newPriceBackground.svg" width={70} height={70} alt="prceBg" />
                                                                 :
-                                                                <Image src="/images/newPriceOrange.svg" width={55} height={58} alt="prceBg" />}
+                                                                <Image src="/images/newPriceOrange.svg" width={70} height={70} alt="prceBg" />}
                                                         </div>
                                                     </div> : ''}
                                                 </div>
@@ -433,16 +381,67 @@ const SimplyChoose = ({ courseData }) => {
                 </div >
                 {/* course selected component for mobile when click show  */}
                 {!openResearchComp ? <div div className={` z-9 absolute top-0 md:hidden  `}>
-                    <ResearchComponent
-                        drowerOpen={drowerOpen}
-                        drowerClose={drowerClose}
-                        isOpen={isOpen}
-                        setIsOpen={setIsOpen}
-                        setPanel={setPanel}
-                        courseDetail={courseData}
-                        selected={selected}
-                        filterAddedCourse={filterAddedCourse}
-                    />
+
+                    <MobileDrawerRighrt isOpen={openDrower} setIsOpen={setOpenDrower} basePath={basePath}>
+                        <div className="overflow-y-scroll ">
+                            <div className="flex flex-col">
+
+                                <Disclosure as="div" className=''>
+                                    {({ open }) => (
+                                        <>
+                                            <div className="flex justify-center w-full ">
+                                                <div className={` w-full h-screen  z-10 `}>
+                                                    <div className={` fixed top-0 z-10  w-full bg-white`}>
+                                                        <div className='flex items-center justify-between px-3 py-4 space-x-5 cursor-pointer'>
+                                                            {/* <LogoCard LogoImage={LogoImage} /> */}
+
+                                                            <div className=''>
+                                                                <Link href="/">
+                                                                    <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                                                </Link>
+                                                            </div>
+                                                            <div className='lg:hidden'>
+                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { handledrower() }}>
+                                                                    <p className='font-semibold text-xl '>menu</p>
+                                                                    <svg width="24" height="24" className={`   ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
+                                                                        <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
+                                                                        <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoCourses() }} >
+                                                            <BiArrowBack size={20} className="text-white " />
+                                                            <span className='font-semibold text-md 3xl:text-2xl'>Courses </span>
+                                                        </button>
+                                                    </div>
+                                                    <div className='mt-28'>
+
+                                                        <ResearchComponent
+                                                            drowerOpen={drowerOpen}
+                                                            drowerClose={drowerClose}
+                                                            isOpen={isOpen}
+                                                            setIsOpen={setIsOpen}
+                                                            setPanel={setPanel}
+                                                            filterAddedCourse={filterAddedCourse}
+                                                            setFilterAddedCourse={setFilterAddedCourse}
+                                                            showCourseInfo={showCourseInfo}
+                                                        />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <Disclosure.Panel className="w-full py-1 text-white ">
+                                            </Disclosure.Panel>
+                                        </>
+                                    )}
+                                </Disclosure>
+                            </div>
+                        </div>
+                    </MobileDrawerRighrt>
+
+
                 </div > : ""}
             </div >
 
