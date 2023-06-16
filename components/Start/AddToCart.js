@@ -10,12 +10,15 @@ import SplitPayment from './SplitPayment'
 import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 import { getCartItems, removeFromCart } from 'utils/addToCart'
+import { productCartState } from 'recoil/atoms'
+import { useRecoilState } from 'recoil'
 
 const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [ShowPaymentOption, setShowPaymentOption] = useState(false);
     const [lessMoreBtn, setLessMoreBtn] = useState("view more");
     const [addedListData, setAddedListData] = useState(false)
+    const [productsRecoil,setProductsRecoil]=useRecoilState(productCartState)
 
     const paymentCart = [
         {
@@ -68,18 +71,19 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
     const removeCart = (productId) => {                               
         removeFromCart(productId)
         setFilterAddedCourse(getCartItems())
+        setProductsRecoil(getCartItems())
     };
 
     var total_price = 0;
     filterAddedCourse.map((cartProduct, id) => {
-        total_price +=  parseInt((cartProduct?.price).replace("$", ""));
+        total_price +=  parseInt((cartProduct?.price)?.replace("$", ""));
     })
 
     return (
         <>
             {/* empty basket  */}
 
-            {filterAddedCourse < [0] ?
+            {productsRecoil < [0] ?
                 <div className={`${styles.emptyBasketBg} mt-[30%]  bg-white my-4 mx-5 shadow-2xl  mx-5 cursor-pointer relative `}>
 
                     <div className={`flex justify-between items-center w-full space-x-5  px-6 py-1 `}>
@@ -94,20 +98,20 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
                     </div>
                 </div> : ""}
 
-            {filterAddedCourse > [0] ? <div>
+            {productsRecoil > [0] ? <div>
                 {/* selected items componets  */}
                 <div className={` relative grid grid-cols-9 bg-white my-4 mx-5 shadow-2xl  p-3 md:p-4 ${styles.addedItemList}`}>
 
                     <div className={`col-span-1 relative flex items-start justify-start w-[30px] h-[30px]`}>
                         <Image src="/start/cart.svg" width={40} height={40} className={`  ${styles.cartIcon}`} alt="empty basket" />
                         <div className='absolute  -right-2 w-4 h-4 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet -top-1'>
-                            <p className='flex items-center justify-center text-[10px]'>{filterAddedCourse.length}</p>
+                            <p className='flex items-center justify-center text-[10px]'>{productsRecoil.length}</p>
                         </div>
                     </div>
 
                     {addedListData ? <div className='col-span-8 pl-4'>
                         {
-                            filterAddedCourse?.map((item, index) => {
+                            productsRecoil?.map((item, index) => {
                                 return (
                                     <Fragment key={index}>
                                         <div className={`flex justify-between items-center`}>

@@ -57,6 +57,7 @@ const Courses = (props) => {
             </div>
             {/* for mobile componets with drower  */}
 
+
             <div className="md:hidden">
                 <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                     <div className="overflow-y-scroll ">

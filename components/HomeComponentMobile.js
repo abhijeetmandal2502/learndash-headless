@@ -13,6 +13,8 @@ import MobileDrawerRighrt from './Menu/MobileDrawerRight';
 import MobileDrawerLeft from './Menu/MobileDrawerLeft';
 import GiftCardMobile from './giftshop/GiftCardMobile';
 import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
+import { duration } from 'moment';
 
 
 const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
@@ -21,9 +23,6 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const [selectedCourse, setSelectedCourse] = useState(false)
     const [panel, setPanel] = useState(true);
 
-    const selectedCourseMethod = () => {
-        setSelectedCourse(true);
-    }
     const menuList = [
         {
             image: "/images/start.png",
@@ -74,7 +73,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     const pathArr = router?.asPath?.split('/');
     const basePath = pathArr[1];
     const LogoImage = "/images/Logo.svg"
-    let data = ""
+
     const backtoHome = () => {
 
         if (selectedCourse === true) {
@@ -91,7 +90,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
     }
 
     useEffect(() => {
-        if (router.asPath === '/') {
+        if (router.asPath == '/') {
             setIsOpenLeft(isOpenLeft)
         }
         if (router.asPath === '/courses') {
@@ -162,68 +161,78 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                 </div>
                             </div>
                         </MobileDrawerRighrt>
-                        <MobileDrawerLeft isOpen={isOpenLeft} setIsOpen={setIsOpenLeft} basePath={basePath}>
-                            <div className="overflow-y-scroll ">
-                                <div className="flex flex-col">
-                                    <Disclosure as="div">
-                                        {({ open }) => (
-                                            <>
-                                                <div className="w-full">
-                                                    <div className=''>
-                                                        <div className='flex items-center justify-between px-3 py-4 space-x-5 cursor-pointer'>
-                                                            {/* <LogoCard LogoImage={LogoImage} /> */}
 
-                                                            <div className=''>
-                                                                <Link href="/">
-                                                                    <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
-                                                                </Link>
-                                                            </div>
-                                                            {/* menu icon for small device */}
-                                                            <div className=''>
-                                                                <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
-                                                                    <p className='font-semibold text-black text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
-                                                                    <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
-                                                                        <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
-                                                                        <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
-                                                                    </svg>
+                        <AnimatePresence>
+                            <MobileDrawerLeft isOpen={isOpenLeft} setIsOpen={setIsOpenLeft} basePath={basePath}>
+                                <motion.div
+                                    className="overflow-y-scroll "
+                                    initial={{ x: -300, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ x: 300, opacity: 0 }}
+                                    transition={{duration:0.5}}
+                                >
+                                    <div className="flex flex-col">
+                                        <Disclosure as="div">
+                                            {({ open }) => (
+                                                <>
+                                                    <div className="w-full">
+                                                        <div className=''>
+                                                            <div className='flex items-center justify-between px-3 py-4 space-x-5 cursor-pointer'>
+                                                                {/* <LogoCard LogoImage={LogoImage} /> */}
+
+                                                                <div className=''>
+                                                                    <Link href="/">
+                                                                        <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
+                                                                    </Link>
                                                                 </div>
+                                                                {/* menu icon for small device */}
+                                                                <div className=''>
+                                                                    <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod(), drowerOpen() }}>
+                                                                        <p className='font-semibold text-black text-xl 4xl:text-[40px] 3xl:text-[30px]'>menu</p>
+                                                                        <svg width="24" height="24" className={` ${styles.animatMenuLine}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M0 8.80005H20.8" stroke="black" stroke-width="2" />
+                                                                            <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
+                                                                            <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div className='px-6 py-2 mb-5 font-normal text-left text-black '>
+                                                                <p className='text-4xl'>massage ce.</p>
+                                                                <p className='text-4xl'> simplified. </p>
                                                             </div>
 
-                                                        </div>
-                                                        <div className='px-6 py-2 mb-5 font-normal text-left text-black '>
-                                                            <p className='text-4xl'>massage ce.</p>
-                                                            <p className='text-4xl'> simplified. </p>
-                                                        </div>
-
-                                                        {
-                                                            menuList?.map((item, id) => {
-                                                                return (
-                                                                    <>
-                                                                        <Fragment key={id}>
-                                                                            <Link href={`${item.path}`}>
-                                                                                <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
-                                                                                    <div className='flex items-center px-3 py-5 space-x-5'>
-                                                                                        <Image alt='start' src={item.image} height='80' width='80' />
-                                                                                        <h3 className='mt-4 text-black text-2xl '>{item.title}</h3>
+                                                            {
+                                                                menuList?.map((item, id) => {
+                                                                    return (
+                                                                        <>
+                                                                            <Fragment key={id}>
+                                                                                <Link href={`${item.path}`}>
+                                                                                    <div className='border-t border-gray' onClick={() => { setActiveTabIndex(id), setIsOpen(!isOpen), setIsOpenLeft(!isOpenLeft) }}>
+                                                                                        <div className='flex items-center px-3 py-5 space-x-5'>
+                                                                                            <Image alt='start' src={item.image} height='80' width='80' />
+                                                                                            <h3 className='mt-4 text-black text-2xl '>{item.title}</h3>
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            </Link>
-                                                                        </Fragment>
-                                                                    </>
-                                                                )
-                                                            })
-                                                        }
+                                                                                </Link>
+                                                                            </Fragment>
+                                                                        </>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <Disclosure.Panel className="w-full py-1 text-white ">
-                                                </Disclosure.Panel>
-                                            </>
-                                        )}
-                                    </Disclosure>
-                                </div>
-                            </div>
-                        </MobileDrawerLeft>
+                                                    <Disclosure.Panel className="w-full py-1 text-white ">
+                                                    </Disclosure.Panel>
+                                                </>
+                                            )}
+                                        </Disclosure>
+                                    </div>
+                                </motion.div>
+                            </MobileDrawerLeft>
+                        </AnimatePresence>
+
                     </div>
                 </div>
             </div>

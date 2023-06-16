@@ -15,7 +15,11 @@ import MobileDrawerRighrt from './Menu/MobileDrawerRight'
 import { Disclosure } from '@headlessui/react'
 import Link from 'next/link'
 import { addToCart, getCartItems } from 'utils/addToCart'
+import { useRecoilState } from 'recoil'
+import { productCartState } from 'recoil/atoms'
 const SimplyChoose = ({ courseData }) => {
+    const [productsRecoil,setProductsRecoil]=useRecoilState(productCartState)
+
     const [selected, setSelected] = useState(false);
     const [selectedArray, setSelectedArray] = useState([])
     const [hideForm, setHideForm] = useState(false);
@@ -25,8 +29,7 @@ const SimplyChoose = ({ courseData }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [openDrower, setOpenDrower] = useState(true);
     const [showCourseInfo, setShowCourseInfo] = useState([])
-
-     console.log('courseData',filterAddedCourse)
+     
 
 
     const backtoCourses = () => {
@@ -59,6 +62,8 @@ const SimplyChoose = ({ courseData }) => {
     const handleClick = (item) => {
         addToCart(item, 1);
         setFilterAddedCourse(getCartItems());
+        setProductsRecoil(getCartItems());
+
     };
 
     const handleAddCourse = (index, item) => {
@@ -133,7 +138,7 @@ const SimplyChoose = ({ courseData }) => {
 
                             <div className={`flex flex-col justify-between  `}>
                                 <div className='hidden md:block '>
-                                <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} ${hideForm || filterAddedCourse==0 ? styles.show1 : styles.hide1}  `}>
+                                <div className={`hidden md:block px-3 mt-10 md:pt-32 md:px-0 ${styles.titleMain} ${hideForm || (productsRecoil.length==0 && showCourseInfo.length==0) ? styles.show1 : styles.hide1}  `}>
                                     <h2 className='text-black superlargef'>simply choose.</h2>
                                     <p className='py-2 dubblelargef'>smile, you can’t make a bad choice.</p>
                                 </div>
@@ -150,7 +155,7 @@ const SimplyChoose = ({ courseData }) => {
 
 
                             {/* Selected Courses details of simply choose section on click */}
-                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${filterAddedCourse==0? styles.hide1 : styles.fadeAnimation}  ${!hideForm ? styles.fadeAnimation : styles.hide1} `}>
+                            <div className={`  hidden md:grid grid-cols-12 md:grid-cols-9 ${productsRecoil.length==0 && showCourseInfo.length==0 ? styles.hide1 : styles.fadeAnimation}  ${!hideForm ? styles.fadeAnimation : styles.hide1} `}>
                                 <button className='absolute top-10 text-2xl left-[90%]' onClick={() => functionHideForm()}><AiOutlineClose /></button>
                                 {/* courses details */}
                                 <div className='col-span-12 md:col-span-4'>
@@ -230,7 +235,7 @@ const SimplyChoose = ({ courseData }) => {
                                     const id = item.id
                                     const checkValue = obj => obj.id === id;
                                     var status = true
-                                    if (!filterAddedCourse.some(checkValue)) {
+                                    if (!productsRecoil.some(checkValue)) {
                                         status = false
                                     }
 
@@ -239,7 +244,7 @@ const SimplyChoose = ({ courseData }) => {
                                     return (
                                         <Fragment key={item.id} >
                                             {/* for desktop */}
-                                            {item?.course_price ? <div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `}
+                                            {item?.course_price ? <div className={`hidden md:block ${styles.gridMaincontent} ${styles.mainDivGrid}  relative  h-[33.33vh]  bg-transparent md:col-span-6 col-span-12 md:border border-t  md:block border-bordergray md:py-5 md:pl-8 md:pr-5 md:mt-0 mt-5 justify-between  ${(status || showCourseInfo[index]==index )?"bg-purple":""}`}
                                                 // onClick={() => { handleClick(index, item) }}
                                                 onClick={() => { handleAddCourse(index, item) }}
                                             >
