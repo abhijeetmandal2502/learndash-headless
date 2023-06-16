@@ -65,7 +65,7 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
     const getAddedCourseFromcookie = getCookie('yourCart')
 
 
-    const removeCart = (productId) => {
+    const removeCart = (productId) => {                               
         removeFromCart(productId)
         setFilterAddedCourse(getCartItems())
     };

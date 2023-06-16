@@ -27,7 +27,7 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-black bg-opacity-25" />
+                        <div className="fixed inset-0  bg-black bg-opacity-25" />
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto ">
@@ -41,12 +41,13 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="relative md:-mt-[40px] pt-[40px] w-[100%]  md:w-[72%] md:p-6 p-2 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
+                                <Dialog.Panel className="relative md:-mt-[40px] pt-[40px] w-[100%]   md:w-[72%] md:p-6 p-2 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
                                     <div className="absolute z-50 text-white md:text-black right-2 -top-0 md:top-24 md:right-10">
                                         <button
                                             type="button"
-                                            className="text-3xl z-50"
+                                            className="text-3xl"
                                             onClick={() => { closeModal() }}
+                                           //onClick={()=>{alert('model')}}
                                         >
                                             x
                                         </button>

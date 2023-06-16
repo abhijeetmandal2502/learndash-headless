@@ -11,15 +11,10 @@ a {
 
 
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Barlow';
-  color: black !important;
+  /* ... */
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
 }
-
-/* font-family: -apple-system-body BlinkMacSystemFont, Segoe UI, Roboto, Barlow Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-
-
 
 textarea {
 

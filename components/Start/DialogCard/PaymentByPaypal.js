@@ -29,7 +29,7 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
                 <div className='md:hidden '>
                     <div className='flex  space-x-5 items-center justify-center'>
                         <div className=''>
-                            <Image src={giftCardDetail.image} width={100} height={100} alt="gift card" />
+                            <Image src={giftCardDetail.image} width={100} height={80} alt="gift card" />
                         </div>
 
                         <div >
@@ -53,10 +53,10 @@ const PaymentByPaypal = ({ giftCardDetail, setPaypalPayment, openModal, setCredi
 
                         </div>
 
-                        <div className={` mx-auto mt-16`}>
+                        <div className={` mx-auto mt-16 w-max`}>
                             <button type="button"
                                 onClick={() => { setPaypalPayment() }}
-                                className={`md:px-16 px-32  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
+                                className={`md:px-16 px-28  py-2 tracking-[0.02em] text-white  ${styles.paymentbyGiftCardBtn}  rounded-3xl smallf font-semibold traking-[0.02em] focus:outline-none`}  >continue
 
                             </button>
                         </div>

@@ -12,6 +12,7 @@ import MobileDrawerRighrt from '../Menu/MobileDrawerRight'
 import AddToCart from './AddToCart'
 import { getCartItems } from 'utils/addToCart';
 import { addToCart } from 'utils/addToCart'
+import Link from 'next/link'
 const ResearchComponent = ({
     drowerClose,
     drowerOpen,
@@ -23,6 +24,7 @@ const ResearchComponent = ({
     filterAddedCourse,
     setFilterAddedCourse,
     showCourseInfo,
+    backtoCourses
 }) => {
 
 
@@ -60,7 +62,7 @@ const ResearchComponent = ({
     return (
         <>
 
-            {showCourseInfo==0?<div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
+            {showCourseInfo == 0 ? <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
                     <div className='flex items-center justify-start space-x-2'>
@@ -180,7 +182,7 @@ const ResearchComponent = ({
                         read our refund policy
                     </div>
                 </div>
-            </div>:<div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
+            </div> : <div className='h-full px-5 pb-16 sm:mt-5 md:mt-1 overflow-y-scroll bg-transparent md:px-0 z-0'>
                 <div className={`py-4 border-b-2 border-bordergray ${styles.authorComMain} `}>
 
                     <div className='flex items-center justify-start space-x-2'>
@@ -303,13 +305,6 @@ const ResearchComponent = ({
             </div>}
 
 
-
-
-
-
-
-            
-
             {/* model popup */}
             <Transition appear show={Open} as={Fragment}>
                 <Dialog as="div" className="relative z-[100]" onClose={closeModal}>
@@ -348,7 +343,7 @@ const ResearchComponent = ({
                                     </div>
                                     <div className='flex items-center justify-center mt-2 md:pb-20'>
                                         {instructor ? <YourInstructor /> : ""}
-                                        {aboutCourse ? <AboutCourse title={selestedCourseData?.title.rendered} content={selestedCourseData?.content.rendered} /> : ""}
+                                        {aboutCourse ? <AboutCourse title={showCourseInfo?.title?.rendered} content={showCourseInfo?.content?.rendered} /> : ""}
                                     </div>
 
 
@@ -363,14 +358,22 @@ const ResearchComponent = ({
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                 <div className="z-50 overflow-y-scroll ">
                     <div className="flex flex-col">
-
                         <Disclosure as="div" className='list-none rounded-full text-gray '>
                             {({ open }) => (
                                 <>
                                     <div className={`w-full `}>
                                         <div className={`bg-lightgray relative pt-10 z-50`}>
+                                            <div className={`flex items-center justify-between px-5 `}>
+                                                <h4 className=' text-left text-black dubblelargef'>simple checkout</h4>
+                                                <div onClick={() => { drowerClose(),backtoCourses() }}>
+                                                <div className={`px-2  py-1 text-black  text-[14px] border-2 border-green  boxshadow-2xl bg-white`}>
+                                                    add more 
+                                                    <span className='border-b ml-1 border-black'>course</span>
+                                                </div>
+                                                </div>
 
-                                            <h4 className='px-5 text-left text-black dubblelargef'>simple checkout</h4>
+                                            </div>
+
                                             <button className='absolute text-black extlargef top-1 right-5' type='btn' onClick={() => { drowerClose() }}>
                                                 x
                                             </button>

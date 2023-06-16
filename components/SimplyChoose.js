@@ -43,12 +43,6 @@ const SimplyChoose = ({ courseData }) => {
         })
     }
 
-
-    // console.log('selected:', selected, filterAddedCourse);
-
-    // useEffect(() => {
-    //     setFilterAddedCourse(getCartItems())
-    // }, [])
     const HandlelobbyClick = () => {
         setTimeout(() => {
             router.push({
@@ -104,20 +98,6 @@ const SimplyChoose = ({ courseData }) => {
         var index = addCourse[i];
         result.push(courseData[index]);
     }
-
-    // const addItems = (id) => {
-
-    //     var tempArray = []
-    //     filterAddedCourse.map((item) => {
-    //         if (item.id !== id) {
-    //             tempArray.push(item)
-    //         }
-    //     })
-
-    //     setFilterAddedCourse(tempArray)
-    // }
-
-    // console.log("filter added course :", filterAddedCourse, addCourse)
 
     const LogoImage = "/images/Logo.svg"
     return (
@@ -427,6 +407,7 @@ const SimplyChoose = ({ courseData }) => {
                                                             filterAddedCourse={filterAddedCourse}
                                                             setFilterAddedCourse={setFilterAddedCourse}
                                                             showCourseInfo={showCourseInfo}
+                                                            backtoCourses={backtoCourses}
                                                         />
                                                     </div>
 

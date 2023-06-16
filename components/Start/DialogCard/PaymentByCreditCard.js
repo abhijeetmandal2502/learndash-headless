@@ -39,7 +39,6 @@ const PaymentByCreditCard = ({ giftCardDetail, setCreditCardPayment, }) => {
                     </div>
                 </div>
                 {/* credit card detail  */}
-
                 <div className={`md:px-48  ${styles.splitPaymentForm} mt-10`}>
                     <div className={``}>
                         <label className="mt-5 mb-1.5  font-bold  leading-4 smallf ">credit card info</label>

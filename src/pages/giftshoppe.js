@@ -31,7 +31,7 @@ const GiftShoppe = ({ }) => {
 
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
     // model for gift dialog form
-    let [isOpenD, setIsOpenD] = useState(false)
+    const [isOpenD, setIsOpenD] = useState(false)
 
     function closeModal() {
         setIsOpenD(false)
@@ -39,7 +39,7 @@ const GiftShoppe = ({ }) => {
     function openModal() {
         setIsOpenD(true)
     }
-    // console.log('isOpenD', isOpenD)
+     console.log('isOpenD', isOpenD)
 
     const data = [
         {

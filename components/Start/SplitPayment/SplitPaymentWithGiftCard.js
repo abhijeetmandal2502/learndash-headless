@@ -69,9 +69,9 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
                 {/* gift card mobile */}
                 <div className='md:hidden'>
                     <div className='flex  md:space-x-5 space-x-2 items-center'>
-                        <Image src={giftCardDetail.image} width={300} height={200} alt="redeem card" />
+                        <Image src={giftCardDetail.image} width={150} height={100} alt="redeem card" />
                         <div >
-                            <h2 className='  text-[22px] leading-tight '>{giftCardDetail.title}</h2>
+                            <h2 className='  text-[19px] leading-tight '>{giftCardDetail.title}</h2>
                         </div>
                     </div>
 
@@ -80,7 +80,6 @@ const SplitPaymentWithGiftCard = ({ giftCardDetail, openModal, setShowSplitPayme
 
 
                 {/* card detail  */}
-
                 <div className=' grid  grid-cols-12 gap-2'>
                     <div className=' md:col-span-5 col-span-12'>
                         <p className='px-9 mb-3 mediumf'>gift card #</p>
