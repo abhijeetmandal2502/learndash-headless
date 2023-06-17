@@ -120,7 +120,7 @@ const ResearchComponent = ({
 
                                 }
                             </div>
-                        </div>
+                            </div>
                         <div className='hidden mt-2  cursor-pointer md:block '>
                             <div className={` relative `}>
 
@@ -210,7 +210,7 @@ const ResearchComponent = ({
 
                         <div className='flex items-center justify-start space-x-2'>
 
-                            <div className='max-w-[75%]'>
+                            <div className='max-w-[80%]'>
                                 <h2 className={`tracking-wide hidden md:block text-black fourxllargef pb-1 ${styles.lineClampContent} `}>
                                     {showCourseInfo?.title?.rendered}
                                 </h2>
@@ -218,8 +218,8 @@ const ResearchComponent = ({
 
                             {/* price component for mobile */}
 
-                            <div className={` relative md:hidden `} onClick={() => { drowerOpen(), setPanel(true) }}>
-                                s
+                            <div className={` relative md:hidden w-max `} onClick={() => { drowerOpen(), setPanel(true) }}>
+                                
                                 {productsRecoil?.find((item) => showCourseInfo?.id === item?.id) ? <div className={`relative flex flex-col justify-start items-center w-max`} >
                                     <Image src="/images/newPriceBackground.svg" width={200} height={200} alt="prceBg" className={`${styles.selectedCoursepriceBg} `} />
                                     <div className='absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-1'>
