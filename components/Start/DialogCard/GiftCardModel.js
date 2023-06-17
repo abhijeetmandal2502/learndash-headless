@@ -43,15 +43,17 @@ const GiftCardModel = ({ isOpenD, closeModal, activePhysicalGift, activeEgift, s
                             >
                                 <Dialog.Panel className="relative md:-mt-[40px] pt-[40px] w-[100%]   md:w-[72%] md:p-6 p-2 overflow-hidden text-left align-middle transition-all transform  max-w-7xl">
                                     <div className="absolute z-50 text-white md:text-black right-2 -top-0 md:top-24 md:right-10">
-                                        <button
+                                        <div
                                             type="button"
                                             className="text-3xl"
                                             onClick={() => { closeModal() }}
                                            //onClick={()=>{alert('model')}}
                                         >
                                             x
-                                        </button>
+                                        </div>
                                     </div>
+
+
                                     <Tab.Group>
 
                                         <Tab.List className="flex w-full max-w-[50rem] sm:px-0">

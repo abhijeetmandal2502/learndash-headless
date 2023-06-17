@@ -63,11 +63,12 @@ const SimplyChoose = ({ courseData }) => {
         addToCart(item, 1);
         setFilterAddedCourse(getCartItems());
         setProductsRecoil(getCartItems());
-
+        setHideForm(false)
     };
 
     const handleAddCourse = (index, item) => {
         setShowCourseInfo(item)
+        setHideForm(false)
     }
 
     // hide addtoCart form 
@@ -169,7 +170,6 @@ const SimplyChoose = ({ courseData }) => {
                                 {/* course checkout */}
                                 <div className={`col-span-12 md:col-span-5 ${styles.addtoCard}`}>
                                     <AddToCart
-                                        filterAddedCourse={filterAddedCourse}
                                         setFilterAddedCourse={setFilterAddedCourse}
                                     />
                                 </div>
@@ -296,7 +296,7 @@ const SimplyChoose = ({ courseData }) => {
                                                 </div>
 
                                                 <div className='hidden md:block'>
-                                                    <div className={` absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
+                                                    <div className={` absolute bottom-0 right-0  ${status ? 'block' : styles.hide1} ${status === false ? styles.hide1 : ""} `} >
                                                         <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
                                                     </div>
                                                 </div>
@@ -304,7 +304,7 @@ const SimplyChoose = ({ courseData }) => {
                                             </div> : ""}
 
                                             {/* for mobile */}
-                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${selectedArray[index] == index ? styles.cardBackground : styles.cardBackgroundHover} ${selected === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(item), handleResearchComp() }}>
+                                            {openResearchComp && item?.course_price ? <div className={`md:hidden p-5   bg-transparent md:col-span-6 relative col-span-12 md:border border-t border-bordergray    flex flex-col justify-between ${status ? styles.cardBackground : styles.cardBackgroundHover} ${status === false ? styles.cardBackgroundHover : ""}  `} onClick={() => { handleClick(item), handleResearchComp() }}>
                                                 <div className='flex justify-between'>
                                                     <div className='flex items-center justify-center space-x-1 font-bold mediumf'>
                                                         <MdOutlineWatchLater size={25} />
@@ -343,11 +343,6 @@ const SimplyChoose = ({ courseData }) => {
                                                     {item?.title?.rendered}
                                                 </p>
 
-                                                <div className='hidden md:block'>
-                                                    <div className={` absolute bottom-0 right-0  ${selectedArray[index] == index ? 'block' : styles.hide1} ${selected === false ? styles.hide1 : ""} `} >
-                                                        <Image src="/images/rectangle .png" height={20} width={20} alt="ncbtmb" />
-                                                    </div>
-                                                </div>
 
                                             </div> : ""}
                                         </Fragment>

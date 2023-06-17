@@ -13,12 +13,23 @@ import { getCartItems, removeFromCart } from 'utils/addToCart'
 import { productCartState } from 'recoil/atoms'
 import { useRecoilState } from 'recoil'
 
-const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
+import { motion } from "framer-motion"
+import { duration } from 'moment'
+
+const variants = {
+    open: { opacity: 1, y: 10 },
+    closed: { opacity: 0, y: "-100%" },
+    transition: {
+        times: [0, 0.4, 0.6, 1]
+    } 
+}
+
+const AddToCart = ({ setFilterAddedCourse }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [ShowPaymentOption, setShowPaymentOption] = useState(false);
     const [lessMoreBtn, setLessMoreBtn] = useState("view more");
     const [addedListData, setAddedListData] = useState(false)
-    const [productsRecoil,setProductsRecoil]=useRecoilState(productCartState)
+    const [productsRecoil, setProductsRecoil] = useRecoilState(productCartState)
 
     const paymentCart = [
         {
@@ -49,7 +60,6 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
         if (ShowPaymentOption) {
             setAddedListData(true)
         }
-
         else {
             setAddedListData(false)
         }
@@ -65,18 +75,15 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
         }
     }
 
-    const getAddedCourseFromcookie = getCookie('yourCart')
-
-
-    const removeCart = (productId) => {                               
+    const removeCart = (productId) => {
         removeFromCart(productId)
         setFilterAddedCourse(getCartItems())
         setProductsRecoil(getCartItems())
     };
 
     var total_price = 0;
-    filterAddedCourse.map((cartProduct, id) => {
-        total_price +=  parseInt((cartProduct?.price)?.replace("$", ""));
+    productsRecoil.map((cartProduct, id) => {
+        total_price += parseInt((cartProduct?.price)?.replace("$", ""));
     })
 
     return (
@@ -133,7 +140,7 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
                     </div> :
                         <div className='col-span-8 pl-4'>
                             {
-                                filterAddedCourse?.slice(0, 2)?.map((item, index) => {
+                                productsRecoil?.slice(0, 2)?.map((item, index) => {
                                     return (
                                         <Fragment key={index}>
                                             <div className={`flex justify-between items-center`}>
@@ -168,6 +175,8 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
                     </div>
                 </div>
 
+
+
                 {/* checkout componets  */}
                 <div className={`${styles.readyToCheckoutBg}   mt-[5%] mx-5 cursor-pointer relative `} onClick={() => { HandlePaymentOption() }}>
 
@@ -187,38 +196,48 @@ const AddToCart = ({ filterAddedCourse,setFilterAddedCourse }) => {
                     </div>
                 </div>
 
-                {/* payment option componet desktop  */}
-                <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? styles.paymentCardShow : styles.paymentCardHide}`}>
+                <motion.div
+                    animate={ShowPaymentOption ? "open" : "closed"}
+                    variants={variants}
+                   // transition={{ delay: 0.8 }}
+                >
 
-                    <div className='px-3'>
-                        <input type="email" placeholder='your email' className={`w-full   mt-4 mb-2 border border-gray bg-white leading-3  smallf p-1  md:p-2 ${styles.emailspaing}`} />
 
-                        <div className='flex items-center justify-between'>
-                            {paymentCart?.map((item, id) => {
-                                return (
-                                    <>
-                                        <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
-                                            <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
-                                                <Image className={`rounded-md ${styles.paymentIcon} `} src={item.icon} width={200} height={60} alt="empty basket" />
-                                            </div>
-                                            <div className="z-10 tooltiptext extsmallf">
-                                                <div className='relative'>
-                                                    <span>{item.cardTooltips}</span>
-                                                    <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />
+                    {/* payment option componet desktop  */}
+                    <div className={` hidden md:block mx-5 bg-white shadow-2xl  ${ShowPaymentOption ? styles.paymentCardShow : styles.paymentCardHide}`}>
+
+                        <div className='px-3'>
+                            <input type="email" placeholder='your email' className={`w-full   mt-4 mb-2 border border-gray bg-white leading-3  smallf p-1  md:p-2 ${styles.emailspaing}`} />
+
+                            <div className='flex items-center justify-between'>
+                                {paymentCart?.map((item, id) => {
+                                    return (
+                                        <>
+                                            <div key={id} className={`tooltip cursor-pointer p-[2.5px] rounded-md  ${activeIndex == id ? styles.coursePriceSelectedBg : ""}`} onClick={() => { setActiveIndex(id) }}>
+                                                <div className={`${!activeIndex && styles.image_wrapper, styles.shine} `}>
+                                                    <Image className={`rounded-md ${styles.paymentIcon} `} src={item.icon} width={200} height={60} alt="empty basket" />
+                                                </div>
+                                                <div className="z-10 tooltiptext extsmallf">
+                                                    <div className='relative'>
+                                                        <span>{item.cardTooltips}</span>
+                                                        <MdArrowDropDown className='absolute right-[40%] text-black -bottom-[16px] ' size={22} />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </>
-                                )
-                            })}
+                                        </>
+                                    )
+                                })}
+                            </div>
+
+                            {/* credit card info  */}
+                            <div className='h-auto duration-1000 transation-all ease'>{paymentCart[activeIndex].content}</div>
+
                         </div>
 
-                        {/* credit card info  */}
-                        <div className='h-auto duration-1000 transation-all ease'>{paymentCart[activeIndex].content}</div>
-
                     </div>
+                </motion.div>
 
-                </div>
+
                 {/* payment option componet mobile  */}
                 <div className={`mx-5 bg-white shadow-2xl pb-14 md:hidden`}>
 

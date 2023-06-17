@@ -824,6 +824,45 @@ screen and (max-height: 700px) {
     overflow: hidden;
 }
 
+/* AddTocart animation  */
+.cartAnimation:hover {
+    transition: background 500ms ease;
+}
+.cartAnimation {
+    background: transparent;
+    transition: background 500ms ease;
+}
+.cartAnimation:hover img {
+    animation: scaleUpImageCart 500ms ease-out both;
+}
+@keyframes scaleUpImageCart {
+    from {
+        transform: scale(1.0);
+        /* transform: translateY(10px); */
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.cartAnimation img {
+    animation: scaleDownImageCart 500ms ease-in-out both;
+}
+@keyframes scaleDownImageCart {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1.0);
+        /* transform: translateY(10px); */
+    }
+}
+
+/* AddTocart animation end */
+
+
+
+
 .cardAnimation:hover {
 
     background: rgba(128, 128, 128, 0.164);

@@ -8,7 +8,7 @@ import { Fragment } from 'react'
 import GiftCardFaq from '../Start/giftForm/GiftCardFaq'
 import CheckCardBalance from '../Start/giftForm/CheckCardBalance'
 
-const GiftCardMobile = () => {
+const GiftCardMobile = ({closeModal,isOpenD,openModal}) => {
     const [activeEgift, setActiveEgift] = useState(false);
     const [activePhysicalGift, setActivePhysicalGift] = useState(false);
 
@@ -19,15 +19,15 @@ const GiftCardMobile = () => {
     }
 
 
-    let [isOpenD, setIsOpenD] = useState(false)
+    // let [isOpenD, setIsOpenD] = useState(false)
 
-    function closeModal() {
-        setIsOpenD(false)
-    }
+    // function closeModal() {
+    //     setIsOpenD(false)
+    // }
 
-    function openModal() {
-        setIsOpenD(true)
-    }
+    // function openModal() {
+    //     setIsOpenD(true)
+    // }
 
     const [giftFaq, setGiftFaq] = useState(false);
     const [checkBalance, setCheckBalance] = useState(false);
@@ -44,7 +44,7 @@ const GiftCardMobile = () => {
 
     let [isOpen, setIsOpen] = useState(false)
 
-    function closeModal() {
+    function closeModalBalInq() {
         setIsOpen(false)
     }
     function openModalBalInq() {
@@ -109,7 +109,7 @@ const GiftCardMobile = () => {
 
             {/* model popup */}
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-50" onClose={closeModal}>
+                <Dialog as="div" className="relative z-50" onClose={closeModalBalInq}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -138,7 +138,7 @@ const GiftCardMobile = () => {
                                         <button
                                             type="button"
                                             className="text-3xl"
-                                            onClick={closeModal}
+                                            onClick={closeModalBalInq}
                                         >
                                             x
                                         </button>

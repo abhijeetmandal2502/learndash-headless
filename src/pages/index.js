@@ -7,8 +7,6 @@ import styles2 from '../styles/Conceierge.module.css'
 import LoginModel from 'components/LoginModel';
 import Conceierge from 'components/Conceierge'
 import Ncbtmb from 'components/Ncbtmb'
-// import SimplyChoose from 'components/SimplyChoose'
-// import SideMenu from 'components/SideMenu'
 import MenuComponent from 'components/Menu/MenuComponent'
 import MusicCard from 'components/card/MusicCard'
 import LogoCard from 'components/card/LogoCard'
@@ -21,9 +19,9 @@ import HomeComponentMobile from 'components/HomeComponentMobile'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
 import TeacherLoginModel from 'components/TeacherLoginModel'
-// import { IoIosMenu } from 'react-icons/io'
-// import { TfiMenu } from 'react-icons/tfi'
-// import { getCourses } from 'apis/AllPostApi'
+import TotalCartItems from 'components/card/TotalCartItems'
+import Nav from 'components/card/TotalCartItems'
+
 
 const Home = (props) => {
 
@@ -101,7 +99,6 @@ const Home = (props) => {
     }
 
     //pass data parent to child
-
     const conceiergeHide = () => {
         setTimeout(() => {
             setShowConceierge(false)
@@ -121,6 +118,7 @@ const Home = (props) => {
     const ncbtmbMethodHide = () => {
         setShowNcbtmb(false)
     }
+
     // conceierge approved 
     const conceiergeMethod = () => {
         setShowConceierge(true)
@@ -157,15 +155,14 @@ const Home = (props) => {
     return (
         <>
             <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
             </Head>
             <div className={`md:grid hidden  grid-cols-12 md:h-screen h-auto   overflow-hidden ${openTeacherLogin === true ? styles.teacherLoungTrue : styles.teacherLoungFalse} bg-cover bg-center bg-no-repeat ${!On ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                 {/* logo and hero components */}
                 <div className='relative flex flex-col justify-between col-span-12 px-5 md:pl-[12%] md:col-span-6 '>
                     <div className='space-x-5 cursor-pointer '>
                         <LogoCard LogoImage={LogoImage} />
+
                         {/* menu icon for small device */}
                         <div className='md:hidden'>
                             <div className='flex items-center justify-center space-x-2' onClick={() => { ShowMenuMethod() }}>
@@ -178,7 +175,6 @@ const Home = (props) => {
 
                             </div>
                         </div>
-
                     </div>
                     <div className={`w-full homepdmng ${!showConceierge && !showNcbtmb ? styles2.opacityAnimation : styles2.opacityAnimation1}`}>
                         <p className='text-black superlargef '>massage ce.</p>
@@ -189,9 +185,9 @@ const Home = (props) => {
                     <div className={`${showConceierge ? styles2.opacityAnimation : styles2.opacityAnimation1} ${showConceierge === undefined ? styles2.hideNcbtmbdiv : ""} absolute top-24 xl:top-32 left-0 w-full `}><Conceierge conceiergeHide={conceiergeHide} /></div>
 
                     {/* ncbtmb components */}
-
                     <div className={`absolute top-24 xl:top-32   left-0  w-full ${showNcbtmb === true ? styles2.opacityAnimation : ""} ${showNcbtmb === false ? styles2.opacityAnimation1 : ""} ${showNcbtmb === undefined ? styles2.hideNcbtmbdiv : ""}`}><Ncbtmb ncbtmbMethodHide={ncbtmbMethodHide} /></div>
                 </div>
+
                 <div className={`col-span-12 md:col-span-5   relative   ${!start ? styles2.opacityAnimation : styles2.opacityAnimation1}  `}>
                     {/*index  grid 6 main div  */}
                     <div className={`   ${!open && !openTeacherLogin ? showParent : hideParent} ${openTeacherLogin === true ? TeacherCss.mainDivHide : TeacherCss.mainDivShow} ${isLoaded ? styles.gridMain : ""} ${openTeacherLogin || open ? styles.hidebgComp : ""} `}>
@@ -206,7 +202,6 @@ const Home = (props) => {
                                     onClick={() => {
                                         router.push({
                                             pathname: '/courses'
-
                                         })
                                     }}
                                 >
@@ -220,7 +215,6 @@ const Home = (props) => {
                                     <div className={`absolute bottom-0 right-0 ${Styles.hide1}`} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
-
                                 </div>
 
                                 {/* concierge components */}
@@ -246,14 +240,11 @@ const Home = (props) => {
                                     onClick={() => {
                                         router.push({
                                             pathname: '/giftshoppe'
-
                                         })
                                     }}>
                                     <div className={` image-card ${styles.mainDiv}`}>
-
                                         <div className={`${styles.gift} absolute -top-5 left-1/2 -translate-x-1/2 -translate-y-0 w-[100%] h-[100%]  `}>
                                         </div>
-
                                         <div className={`w-full ${styles.content}`}>
                                             <h3 className='text-center triplelargef lineUp'>gift shoppe</h3>
                                             <p className={`extxlsmallf ${styles.hide} text-center lineUp`}>gift ce to a friends</p>
@@ -269,7 +260,6 @@ const Home = (props) => {
                             <div className=' md:col-span-6 h-[100vh] border-l 3xl:border-l-2 border-gray w-full '>
                                 {/* i am back */}
                                 <div className={`w-full h-1/2 menuBoxsizebigMenu flex  flex-col relative overflow-hidden z-40 justify-center cursor-pointer  ${styles.cardAnimation}   `} onClick={() => { HandleClick(); }}>
-
                                     <div className='flex space-x-4 md:block md:space-x-0 image-card'>
                                         <div className='mx-auto iamBackImg '>
                                             <Image alt='start' src='/images/iambackkey.svg' height='300' width='300' />
@@ -285,13 +275,11 @@ const Home = (props) => {
                                 </div>
 
                                 {/* ncbtmb approved component */}
-
                                 <div className={` w-full h-1/4 menuBoxsizesmallMenu   relative overflow-hidden border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${showNcbtmb ? styles.onclickCardAanimation : ""}  `} onClick={() => ncbtmbMethod()}>
                                     <div className='cursor-pointer '>
                                         <div className='md:mx-auto ncbtmbImg ncbtmbShadow '>
                                             <Image alt='start' src='/images/NCBTMB.svg' height='400' width='400' />
                                         </div>
-
                                         <div className='w-full '>
                                             <h3 className='text-center triplelargef lineUp'>ncbtmb approved</h3>
                                             <p className={` extxlsmallf ${styles.hide} text-center lineUp`}>check if your state is approved</p>
@@ -302,8 +290,8 @@ const Home = (props) => {
                                     </div>
                                 </div>
 
-                                {/* teacher lounge components */}
 
+                                {/* teacher lounge components */}
                                 <div className={` w-full h-1/4 menuBoxsizesmallMenu  flex flex-col justify-center border-t 3xl:border-t-2 border-gray   ${styles.cardAnimation} ${openTeacherLogin === true ? TeacherCss.hidediveAfterTransform : ""} relative overflow-hidden `} onClick={() => handleTeacherLOginOpen()} >
                                     <div className='flex space-x-4 cursor-pointer md:block md:space-x-0 image-card '>
                                         <div className='mx-auto teacherLounge '>
@@ -317,25 +305,24 @@ const Home = (props) => {
                                     <div className={`absolute bottom-0 right-0 ${styles.hide}`} >
                                         <Image src="/images/rectangle .png" height={20} width={20} alt="rectangle" />
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <div className={` ${TeacherCss.imgTech}  z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}>
 
+                    <div className={` ${TeacherCss.imgTech}  z-40 ${openTeacherLogin === true ? styles.modelOpen : styles.modelClose} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `}>
                         <IwannaTech />
                     </div>
+
                     {/* Login Model For im back */}
                     <div className={` col-span-12 md:col-span-5  z-5 absolute  ${hideChild ? styles.animationEndHideChild : ""} ${open ? showChild : hideChild} ${open === undefined ? styles2.hideNcbtmbdiv : ""} `} >
                         <div className="relative ">
                             <div className={` bg-transparent relative 3xl:max-w-[80%]  border border-bordergray ${open ? styles.modelScaleUpAnimation : styles.modelScaleDownAnimation} `}>
                                 <LoginModel changeDuration={changeDuration} title="welcome back !" />
                             </div>
-
                         </div>
                     </div>
+
                     {/* Login model for Teacher Lounge */}
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
 
@@ -344,15 +331,7 @@ const Home = (props) => {
                         </div>
                     </div>
                 </div>
-                {/* simply choose component for Start button */}
-                {/* <div className={`bg-[url('/images/start-bg.png')] absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full ${start ? styles2.opacityAnimation : styles2.opacityAnimation1}  ${start === undefined ? styles2.hideNcbtmbdiv : ""} grid grid-cols-12`}>
-                    <div className={`col-span-12 md:col-span-11  ${start === undefined ? styles2.hideNcbtmbdiv : ""} `}>
-                        <SimplyChoose setSimplyChoose={setSimplyChoose} simplyChoose={simplyChoose} startMethodHide={startMethodHide} handleGiftComponent={handleGiftComponent} start={start} ShowGiftShoppi={ShowGiftShoppi} setShowGiftShoppi={setShowGiftShoppi} AllCourseData={AllCourseData} />
-                    </div>
-                    <div className={`col-span-12 p-4 max-sm:invisible md:col-span-1 flex items-center relative h-screen w-full border-l border-bodergray  ${start === undefined ? styles2.hideNcbtmbdiv : ""}`}>
-                        <SideMenu ShowMenuMethod={ShowMenuMethod} drowerOpen={drowerOpen} />
-                    </div>
-                </div> */}
+
                 {/*index page main menu sidebar component */}
                 <div className='relative items-center justify-center hidden w-full h-screen col-span-1 p-0 border-l 3xl:border-l-2 border-b-gray md:p-4 max-sm:invisible md:col-span-1 md:flex border-bodergray'>
                     <div className=''>
@@ -364,11 +343,20 @@ const Home = (props) => {
                                     <path d="M0 14L15.6 14" stroke="black" stroke-width="2" />
                                     <path d="M0 19.2L15.6 19.2" stroke="black" stroke-width="2" />
                                 </svg>
-
                             </div>
                         </div>
+
                         <div className='absolute cursor-pointer -translate-x-1/2 bottom-[3.5%] left-1/2'>
                             <MusicCard />
+                        </div>
+                    </div>
+                    {/* cart componet  */}
+                    <div className={`absolute cursor-pointer -translate-x-1/2 top-[10%] left-1/2 z-50 ${styles.cartAnimation}`}>
+                        <div className='relative w-full' >
+                           <Nav/>
+                            <div className='absolute  right-1 w-5 h-5 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet -top-2.5 z-50' onClick={()=>alert('mouse enter')}>
+                                <p className='flex items-center justify-center text-[12px]'>2</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -394,12 +382,11 @@ const Home = (props) => {
                     </div>
                 </MobileDrawerRighrt>
             </div>
-            {/* drowable component for mobile */}
 
+            {/* drowable component for mobile */}
             <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                 <div className="overflow-y-scroll ">
                     <div className="flex flex-col">
-
                         <Disclosure as="div" className='list-none rounded-full text-gray'>
                             {({ open }) => (
                                 <>
@@ -414,6 +401,7 @@ const Home = (props) => {
                     </div>
                 </div>
             </MobileDrawerRighrt>
+
             {/* Index page for mobile  */}
             <div className={`md:hidden bg-transparent w-full ${On === true ? "hidden" : "block"}`}>
                 <HomeComponentMobile ShowMenuMethod={ShowMenuMethod} isOpen={isOpen} drowerOpen={drowerOpen} />

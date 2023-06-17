@@ -117,20 +117,12 @@ const GiftShoppe = ({ }) => {
     const functionHideForm = () => {
         setHideForm(true);
         setSelected(false);
-
         // setSimplyChoose(true)
-
         setActivePaymentCard(false)
-
         router.push({
             pathname: '/courses'
         })
     }
-
-    const stringData = selectedArray.map((item) => {
-        return item;
-    })
-
     //   drower for mobile 
     const router = useRouter();
 
@@ -157,6 +149,14 @@ const GiftShoppe = ({ }) => {
 
  }
 
+//  menu drower mobile
+const handledrower = () => {
+    router.push({
+        pathname: '/',
+        query: { active: 'home' }
+    })
+}
+
     const LogoImage = "/images/Logo.svg"
     return (
         <>
@@ -172,8 +172,6 @@ const GiftShoppe = ({ }) => {
                         alt="bgblog"
                     />
                 </div>
-
-
 
                 <div className={`bg-[url('/images/start-bg.png')] hidden absolute top-0 bg-cover bg-center bg-no-repeat md:col-span-12 w-full  md:grid grid-cols-12`}>
                     <div className={`col-span-12 md:col-span-11`}>
@@ -364,7 +362,6 @@ const GiftShoppe = ({ }) => {
                     <MobileDrawerRighrt isOpen={isOpen} setIsOpen={setIsOpen} basePath={basePath}>
                         <div className="overflow-y-scroll ">
                             <div className="flex flex-col">
-
                                 <Disclosure as="div" className=''>
                                     {({ open }) => (
                                         <>
@@ -393,10 +390,8 @@ const GiftShoppe = ({ }) => {
                                                         <button className={`  flex items-center space-x-1 bg-black text-white px-5 py-2 w-full justify-center hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold   mt-1`} onClick={() => { backtoHome() }} >
                                                             <BiArrowBack size={20} className="text-white " /><span className='font-semibold text-md 3xl:text-2xl'> lobby </span></button>
                                                     </div>
-
                                                     <div className={`text-black mt-[120px] px-5 `}>
-                                                    <GiftCardMobile />
-                                                        {/* <SimplyChoose courseData={courseData} /> */}
+                                                    <GiftCardMobile closeModal={closeModal} openModal={openModal} isOpenD={isOpenD}/>
                                                     </div>
                                                 </div>
                                             </div>
