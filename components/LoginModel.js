@@ -43,8 +43,8 @@ const LoginModel = ({ changeDuration, title }) => {
 
                 if (res2.token) {
                     cookie.set('token', res2.token)
-                    // cookie.set('user', res2.username)
-                    router.push(`/studentLogin`)
+                    cookie.set('user', res2.username)
+                    router.push(`https://cesimple.wpengine.com/auth.php?token=${res2.token}`)
                     toast.success('Success Notification !', {
                         position: toast.POSITION.TOP_RIGHT
                     });

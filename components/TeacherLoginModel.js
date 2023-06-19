@@ -45,9 +45,9 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
 
                 if (res2.token) {
                     cookie.set('token', res2.token)
-                    // cookie.set('user', res2.user)
+                    cookie.set('user', res2.user)
 
-                    router.push(`/welcomeTeacherLogin`)
+                    router.push(`https://cesimple.wpengine.com/auth.php?token=${res2.token}`)
                     toast.success('Success Notification !', {
                         position: toast.POSITION.TOP_RIGHT
                     });

@@ -15,6 +15,7 @@ import stylesScrollBtn from '../Start/Start.module.css'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import TotalCartItems from '../../components/card/TotalCartItems'
+import LogoutBtn from 'components/card/LogoutBtn'
 
 const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
     const [show, setShow] = useState(false);
@@ -362,7 +363,7 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             </ul>
                             {/* logout btn  */}
                             <div className={`w-max mx-auto mt-5`}>
-                                <Image src="/images/LogoutBtnMobile.svg" width={300} height={100} />
+                                <LogoutBtn />
                             </div>
 
                             <div className='pl-5 mt-10 border-t border-gray'>

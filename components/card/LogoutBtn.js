@@ -22,12 +22,18 @@ const LogoutBtn = () => {
     return (
         <>
             {token && <div className={`relative ${styles.logoutBtnShadow}`} onClick={() => handleLogout()} >
-                <div>
-                    <Image src="/images/Logout.svg" width={70} height={70} className='' alt="logout" />
+                <div className='md:block hidden'>
+                    <div>
+                        <Image src="/images/Logout.svg" width={70} height={70} className='' alt="logout" />
+                    </div>
+                    <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
+                        <p className={`text-white drop font-[500] ${styles.shadow}`}>Logout</p>
+                    </div>
                 </div>
-                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
-                    <p className={`text-white drop font-[500] ${styles.shadow}`}>Logout</p>
+                <div className='md:hidden '>
+                    <Image src="/images/LogoutBtnMobile.svg" width={300} height={100} />
                 </div>
+
             </div>}
         </>
     )
