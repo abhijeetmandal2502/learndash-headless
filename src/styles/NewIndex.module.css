@@ -1,14 +1,10 @@
 .gridMain {
-
     transition: all ease-in-out 2s;
     animation: transformUp 500ms ease-in-out forwards;
     position: relative;
-
-
 }
 
 @keyframes transformUp {
-
     from {
         top: 100px;
         opacity: 0;
@@ -21,16 +17,12 @@
     }
 }
 
-
 .parentchildon {
     animation-name: animateparenton;
     animation-fill-mode: forwards;
     animation-duration: 500ms;
     animation-timing-function: linear;
-
 }
-
-
 
 @keyframes animateparenton {
 
@@ -224,7 +216,6 @@
 
 
     .childparenton {
-
         animation-name: animatechildon;
         animation-fill-mode: forwards;
         animation-duration: 500ms;
@@ -601,16 +592,14 @@ screen and (max-height: 700px) {
 
 .animationEndHideChild {
     top: 60px;
-    right: -350px;
+    right: 0px;
     opacity: 0;
     position: absolute;
     z-index: 10;
-
 }
 
 
 .modelScaleUpAnimation {
-
     animation-name: modelScaleUp;
     animation-fill-mode: forwards;
     animation-duration: 500ms;
@@ -619,7 +608,6 @@ screen and (max-height: 700px) {
 
 
 @keyframes modelScaleUp {
-
     0% {
         padding: 25px 25px 25px 25px;
         width: 335px
@@ -639,11 +627,9 @@ screen and (max-height: 700px) {
         padding: 25px 30px 25px 30px;
         width: 390px
     }
-
 }
 
 .modelScaleDownAnimation {
-
     animation-name: modelScaleDown;
     animation-fill-mode: forwards;
     animation-duration: 500ms;
@@ -652,7 +638,6 @@ screen and (max-height: 700px) {
 
 
 @keyframes modelScaleDown {
-
     0% {
         padding: 25px 30px 25px 30px;
         width: 390px
@@ -676,18 +661,14 @@ screen and (max-height: 700px) {
 }
 
 @media only screen and (min-width:2560px) {
-
     .modelScaleUpAnimation {
-
         animation-name: modelScaleUp;
         animation-fill-mode: forwards;
         animation-duration: 500ms;
         animation-timing-function: linear;
     }
 
-
     @keyframes modelScaleUp {
-
         0% {
             padding: 25px 25px 25px 25px;
             width: 600px
@@ -712,7 +693,6 @@ screen and (max-height: 700px) {
 
 
     .modelScaleDownAnimation {
-
         animation-name: modelScaleDown;
         animation-fill-mode: forwards;
         animation-duration: 500ms;
@@ -721,7 +701,6 @@ screen and (max-height: 700px) {
 
 
     @keyframes modelScaleDown {
-
         0% {
             padding: 25px 30px 25px 30px;
             width: 690px
@@ -746,22 +725,17 @@ screen and (max-height: 700px) {
 }
 
 @media only screen and (min-width:1921px) {
-
     .modelScaleUpAnimation {
-
         animation-name: modelScaleUp;
         animation-fill-mode: forwards;
         animation-duration: 500ms;
         animation-timing-function: linear;
     }
 
-
     @keyframes modelScaleUp {
-
         0% {
             padding: 25px 25px 25px 25px;
             width: 450px;
-
         }
 
         25% {
@@ -783,7 +757,6 @@ screen and (max-height: 700px) {
 
 
     .modelScaleDownAnimation {
-
         animation-name: modelScaleDown;
         animation-fill-mode: forwards;
         animation-duration: 500ms;
@@ -828,33 +801,81 @@ screen and (max-height: 700px) {
 .cartAnimation:hover {
     transition: background 500ms ease;
 }
+
 .cartAnimation {
     background: transparent;
     transition: background 500ms ease;
 }
+
 .cartAnimation:hover img {
     animation: scaleUpImageCart 500ms ease-out both;
+    transform: scale(1.0);
+    transition: all ease-in-out 500ms;
 }
+
 @keyframes scaleUpImageCart {
-    from {
+    0% {
         transform: scale(1.0);
+        opacity: 0;
         /* transform: translateY(10px); */
     }
-    to {
+
+    25% {
+        transform: scale(1.02);
+        opacity: 0.1;
+        /* transform: translateY(10px); */
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.2;
+        /* transform: translateY(10px); */
+    }
+
+    75% {
+        transform: scale(1.1);
+        opacity: 0.7;
+        /* transform: translateY(10px); */
+    }
+
+    100% {
         transform: scale(1.2);
+        opacity: 1;
     }
 }
 
 .cartAnimation img {
     animation: scaleDownImageCart 500ms ease-in-out both;
 }
+
 @keyframes scaleDownImageCart {
-    from {
+    0% {
         transform: scale(1.2);
-    }
-    to {
-        transform: scale(1.0);
+        opacity: 1;
         /* transform: translateY(10px); */
+    }
+
+    25% {
+        transform: scale(1.1);
+        opacity: 0.7;
+        /* transform: translateY(10px); */
+    }
+
+    50% {
+        transform: scale(1.07);
+        opacity: 0.5;
+        /* transform: translateY(10px); */
+    }
+
+    75% {
+        transform: scale(1.05);
+        opacity: 0.5;
+        /* transform: translateY(10px); */
+    }
+
+    100% {
+        transform: scale(1.0);
+        opacity: 1;
     }
 }
 
@@ -1869,5 +1890,31 @@ screen and (max-height: 700px) {
     .mainDiv:hover>.content {
         margin-top: 120px;
     }
+}
+
+/* add to component animation  */
+.mainDivCart>.icon {
+    background-image: url(/images/Cart_icon_home.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 90px;
+    position: relative;
+}
+
+.mainDivCart:hover>.icon {
+    background-image: url(/images/Cart_Icon_home_color.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    transition: all ease-in-out 500ms;
+    background-size: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+
+
 
 }

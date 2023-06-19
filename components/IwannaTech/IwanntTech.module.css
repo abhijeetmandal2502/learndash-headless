@@ -22,6 +22,20 @@
 }
 
 
+/* logout btn shadow  */
+.logoutBtnShadow:hover {
+
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.3));
+    transform: scale(1.05);
+    transition: all ease-in-out 500ms;
+}
+
+.logoutBtnShadow {
+    transform: scale(1.0);
+    transition: all ease-in-out 500ms;
+}
+
+
 
 /* start */
 

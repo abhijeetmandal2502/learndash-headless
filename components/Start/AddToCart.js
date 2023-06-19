@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import styles from '../../src/styles/CoursePage.module.css'
 import Image from 'next/image'
-
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import CheckoutForm from './CheckoutForm'
 import PaypalPayment from './PaypalPayment'
@@ -21,7 +20,7 @@ const variants = {
     closed: { opacity: 0, y: "-100%" },
     transition: {
         times: [0, 0.4, 0.6, 1]
-    } 
+    }
 }
 
 const AddToCart = ({ setFilterAddedCourse }) => {
@@ -199,7 +198,7 @@ const AddToCart = ({ setFilterAddedCourse }) => {
                 <motion.div
                     animate={ShowPaymentOption ? "open" : "closed"}
                     variants={variants}
-                   // transition={{ delay: 0.8 }}
+                // transition={{ delay: 0.8 }}
                 >
 
 

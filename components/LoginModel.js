@@ -8,12 +8,12 @@ import styles from '../components/ForgetPassword/ForgetPassword.module.css'
 import styles2 from '../src/styles/LoginModel.module.css'
 import { AiOutlineClose } from 'react-icons/ai';
 
+
 const LoginModel = ({ changeDuration, title }) => {
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [loginTitle, setLoginTitle] = useState(false)
-
     const [forgetPassword, setForgetPassword] = useState();
     const router = useRouter()
 
@@ -21,11 +21,9 @@ const LoginModel = ({ changeDuration, title }) => {
     // show hide forget model
     const HideForgetPasswordModel = () => {
         setForgetPassword(false)
-
     }
 
     const ShowForgetPasswordModel = () => {
-
         setForgetPassword(true)
     }
 
@@ -45,8 +43,7 @@ const LoginModel = ({ changeDuration, title }) => {
 
                 if (res2.token) {
                     cookie.set('token', res2.token)
-                    // cookie.set('user', res2.user)
-
+                    // cookie.set('user', res2.username)
                     router.push(`/studentLogin`)
                     toast.success('Success Notification !', {
                         position: toast.POSITION.TOP_RIGHT
@@ -58,7 +55,6 @@ const LoginModel = ({ changeDuration, title }) => {
                         position: toast.POSITION.TOP_CENTER
                     });
                     // router
-
                 }
             }
         } catch (error) {
@@ -67,14 +63,11 @@ const LoginModel = ({ changeDuration, title }) => {
             });
             // router.push('/')
         }
-
     }
 
     const HandleFormTitle = () => {
-
         setLoginTitle(true);
     }
-
     const titlefogetpass = 'All done! Try it out!';
 
 
@@ -117,10 +110,7 @@ const LoginModel = ({ changeDuration, title }) => {
 
                             <button className='font-[600] mediumf hover:text-voilet  ' type="button" onClick={() => ShowForgetPasswordModel()} >forget password</button>
                         </div>
-
-
                         <button className={`w-full px-4 mt-4 py-2 3xl:py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none ${styles2.loginBtn}`} type="submit">login
-
                         </button>
                     </form>
 

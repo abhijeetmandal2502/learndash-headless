@@ -14,6 +14,7 @@ import { FiArrowDown } from 'react-icons/fi'
 import stylesScrollBtn from '../Start/Start.module.css'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import TotalCartItems from '../../components/card/TotalCartItems'
 
 const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
     const [show, setShow] = useState(false);
@@ -116,20 +117,11 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                 </div>
 
                 <div className='flex flex-col col-span-12 pr-10 md:space-y-5 md:col-span-11 md:pl-[7%] '>
-
-
                     <div>
                         <div className={`flex justify-between items-center space-x-5 cursor-pointer ${!showLogo ? styles.hide : styles.aboutMain}`}>
                             <LogoCard LogoImage={LogoImage} />
                         </div>
-
                         {On ?
-                            // <div className={`w-max`} >
-                            //     <div className={`flex items-center justify-center space-x-1 bg-dakgray text-white px-[80%]  py-2 cursor-pointer   hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4   ${!show ? styles.hide : styles.aboutMain}`} onClick={() => { HandleCloseBtn(), drowerClose() }} >
-                            //         <BiArrowBack className="text-white font-semibold minismallf " />
-                            //         <span className='font-semibold minismallf '>lobby</span>
-                            //     </div> </div> 
-
                             <div className='w-max  '>
                                 <Link href="/" >
                                     <button className={`  hidden  md:flex items-center space-x-1 bg-dakgray text-white px-[30%] py-2  hover:bg-voilet transition-all ease-in-out duration-1000 hover:font-bold  rounded-3xl mt-4`} onClick={() => { HandleCloseBtn(), drowerClose() }} >
@@ -143,7 +135,6 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
 
 
                     {On ? <div className={`grid grid-cols-12 mt-0 gap-0 md:gap-10  ${!show ? styles.hide : styles.aboutMain} pb-5 md:pt-10 `} >
-
                         <div className={` col-span-12  bg-transparent ${(openTab === 4 || openTab === 3 || currentPath == 'blog') ? "col-span-12" : "md:col-span-8"}`}>
                             <div className="">
                                 <div className="tab-content tab-space ">
@@ -153,23 +144,18 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     <div className={`${openTab === 1 ? "block" : "hidden"} ${openTab == 1 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll `} id="link1">
                                         <About />
                                     </div>
-
                                     <div className={`${openTab === 2 ? "block" : "hidden"} ${openTab == 2 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} md:h-screen  md:overflow-y-scroll  `} id="link2">
                                         <Instructors />
                                         <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
                                             <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} 3xl:w-14 3xl:h-14`} />
-
                                         </div>
                                     </div>
                                     <div className={` ${(openTab === 3 || currentPath == 'blog') ? "block" : "hidden"} ${openTab == 3 ? styles.fadeAnimation : ""} ${styles.hidescrollBar} ${currentPath == "home" ? 'hidden' : 'block'}  md:h-screen  overflow-y-scroll`} id="link3">
                                         <BlogListing />
                                         <div className={` absolute bottom-5 left-5 z-[100]  flex justify-center items-center`}>
                                             <FiArrowDown size={25} className={`text-white ${stylesScrollBtn.UpDownAnimation} `} />
-
                                         </div>
                                     </div>
-
-
                                     <div className={`${openTab === 4 ? "block" : "hidden"}`} id="link4">
                                     </div>
                                 </div>
@@ -181,7 +167,6 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                             role="tablist"
                         >
                             <li className={`${styles.navli} w-max text-white xl:my-4 lg:my-1  md:my-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openTab === 1 ? styles.active : ""}`
-
                             }
                                 onClick={e => {
                                     e.preventDefault();
@@ -191,11 +176,10 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link1"
                                 role="tablist"
                             >
-
                                 <span className={`${styles.navlitext}`}>about</span>
-
                                 <div className={`pl-2 triplelargef ${openTab === 1 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
+
                             <li className={`${styles.navli} text-white xl:my-4 my-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${openTab === 2 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
@@ -205,11 +189,10 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link2"
                                 role="tablist"
                             >
-
                                 <span className={`${styles.navlitext}`}>our instructors</span>
-
                                 <div className={`pl-2 triplelargef  ${openTab === 2 ? styles.activeShowLine : styles.hide} `}><AiOutlineMinus /></div>
                             </li>
+
                             <li className={`${styles.navli} text-white xl:my-4 my-2 dubblelargef  text-right flex cursor-pointer  justify-end items-center ${(openTab === 3) ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
@@ -221,10 +204,10 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 href="#link3"
                                 role="tablist"
                             >
-
                                 <span className={`${styles.navlitext}`}>blog central</span>
                                 <div className={`pl-2 triplelargef  ${openTab === 3 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
+
                             <li className={`${styles.navli} text-white xl:my-4 my-2 dubblelargef  cursor-pointer text-right flex justify-end items-center ${openTab === 4 ? styles.active : ""}`}
                                 onClick={e => {
                                     e.preventDefault();
@@ -236,20 +219,26 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 role="tablist"
                             >
                                 <span className={`${styles.navlitext}`}>  i wanna teach!</span>
-
                                 <div className={`pl-2 triplelargef ${openTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                             </li>
+
                         </ul>
                     </div> : ""}
                 </div>
                 <div className='relative flex items-center justify-center w-full h-screen col-span-12 px-4 border-l border-white max-sm:invisible md:col-span-1 '>
-
                     <div className='cursor-pointer '>
                         <div className='absolute -translate-x-1/2 top-[3.5%] left-1/2 '
                             onClick={() => { HandleCloseBtn(), drowerClose() }}>
                             <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                 <p className='font-semibold text-white largef'>Close </p>
                                 <AiOutlineClose className="text-white largef " />
+                            </div>
+
+                            {/* cart componet  */}
+                            <div className={`absolute cursor-pointer -translate-x-1/2 top-[100%]  left-1/2  ${styles.cartAnimation}`}>
+                                <div className='relative w-full' >
+                                    <TotalCartItems />
+                                </div>
                             </div>
                         </div>
                         <div className='absolute -translate-x-1/2 bottom-[3.5%] left-1/2'>
@@ -260,7 +249,6 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
             </div>
             {/* menu for mobile devices */}
             <div className={`md:hidden  relative z-20`}>
-
                 <div className=" transition-all ease-in duration-1000 w-screen h-[100vh] -z-10">
                     <Image
                         className={`${styles.aboutMain}`}
@@ -320,7 +308,6 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                 role="tablist"
                             >
                                 <li className={`${styles.navli} text-white  lg:my-1 xl:my-2  2xl:my-4  py-2 dubblelargef   text-right flex cursor-pointer justify-end items-center ${openMobTab === 1 ? styles.active : ""}`
-
                                 }
                                     onClick={e => {
                                         e.preventDefault();
@@ -373,8 +360,12 @@ const MenuComponent = ({ HideMenuMethod, On, drowerClose }) => {
                                     <div className={`pl-2 triplelargef ${openMobTab === 4 ? styles.activeShowLine : styles.hide}`}><AiOutlineMinus /></div>
                                 </li>
                             </ul>
+                            {/* logout btn  */}
+                            <div className={`w-max mx-auto mt-5`}>
+                                <Image src="/images/LogoutBtnMobile.svg" width={300} height={100} />
+                            </div>
 
-                            <div className='pl-5 mt-16 border-t border-gray'>
+                            <div className='pl-5 mt-10 border-t border-gray'>
                                 <div className='mt-5'>
                                     <Contact />
                                 </div>

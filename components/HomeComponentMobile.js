@@ -15,6 +15,7 @@ import GiftCardMobile from './giftshop/GiftCardMobile';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { duration } from 'moment';
+import TotalCartItems from './card/TotalCartItems';
 
 
 const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
@@ -169,7 +170,7 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                     initial={{ x: -300, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     exit={{ x: 300, opacity: 0 }}
-                                    transition={{duration:0.5}}
+                                    transition={{ duration: 0.5 }}
                                 >
                                     <div className="flex flex-col">
                                         <Disclosure as="div">
@@ -198,9 +199,15 @@ const HomeComponentMobile = ({ ShowMenuMethod, drowerOpen }) => {
                                                                 </div>
 
                                                             </div>
-                                                            <div className='px-6 py-2 mb-5 font-normal text-left text-black '>
-                                                                <p className='text-4xl'>massage ce.</p>
-                                                                <p className='text-4xl'> simplified. </p>
+                                                            <div className='px-6 py-2 mb-5  font-normal text-left text-black flex justify-between items-center '>
+                                                                <div>
+                                                                    <p className='text-3xl'>massage ce.</p>
+                                                                    <p className='text-3xl'> simplified. </p>
+                                                                </div>
+
+                                                                <div className='relative'>
+                                                                    <TotalCartItems />
+                                                                </div>
                                                             </div>
 
                                                             {

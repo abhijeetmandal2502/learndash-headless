@@ -14,6 +14,7 @@ import { getPostPerPage, getSinglePostBySlug } from '../../../apis/AllPostApi'
 import moment from 'moment/moment';
 import Link from 'next/link'
 import { motion } from "framer-motion"
+import TotalCartItems from 'components/card/TotalCartItems';
 
 const Blog = ({ postDataPerPage, singlePostData }) => {
 
@@ -68,7 +69,6 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
                             <div className='hidden md:block'>
                                 <LogoCard LogoImage={LogoImage} />
                             </div>
-
                             <div className='block md:hidden'>
                                 <Link href="/">
                                     <Image src={`${LogoImage}`} height='200' width='150' alt='logo' className='' />
@@ -91,7 +91,6 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
 
                         {/* view all post button for mobile  */}
                         <div className='flex items-center justify-between px-3 pt-5 md:mr-5 md:hidden'>
-
                             <Link href="/blog">
                                 <div
                                     className='text-white bg-[#3A3A3A] md:py-3 py-2 md:px-6 px-3  rounded-3xl flex space-x-3 items-center hover:bg-voilet transition-all ease-in-out duration-500 extsmallf ' onClick={() => { }} >
@@ -113,7 +112,6 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
                                     <HiOutlineArrowSmRight size={15} className='' />
                                 </div> : ""}
                             </div>
-
                         </div>
 
 
@@ -127,7 +125,6 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
 
 
                         {singlePostData ? <div className={`grid max-h-screen grid-cols-12 gap-4 px-3 mt-2 md:pt-10 md:px-0 ${singlePostData ? styles.onlyfadeIn : ""}`}>
-
                             <motion.div
                                 key={router.asPath}
                                 className={`${styles.onlyfadeIn} md:col-span-8 col-span-12`}
@@ -154,7 +151,6 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
 <p className='tracking-wider text-gray md:py-8 minismallf '>{item.subDiscription}</p> */}
 
                                     </div>
-
                                 </div>
                             </motion.div>;
 
@@ -195,6 +191,12 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
                                         <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                             <p className='font-semibold text-white largef '>Close </p>
                                             <AiOutlineClose className="text-white largef" />
+                                        </div>
+                                        {/* cart componet  */}
+                                        <div className={`absolute cursor-pointer -translate-x-1/2 top-[100%]  left-1/2  ${styles.cartAnimation}`}>
+                                            <div className='relative w-full' >
+                                                <TotalCartItems />
+                                            </div>
                                         </div>
                                     </div>
                                 </Link>

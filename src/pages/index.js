@@ -20,11 +20,12 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MobileDrawerRighrt from 'components/Menu/MobileDrawerRight'
 import TeacherLoginModel from 'components/TeacherLoginModel'
 import TotalCartItems from 'components/card/TotalCartItems'
-import Nav from 'components/card/TotalCartItems'
+import LogoutBtn from 'components/card/LogoutBtn'
+import Cookies from 'js-cookie'
+
 
 
 const Home = (props) => {
-
     const router = useRouter();
     // drower for mobile
     const currentPath = router?.query?.active;
@@ -39,6 +40,11 @@ const Home = (props) => {
     const drowerClose = () => {
         setIsOpen(!isOpen)
     }
+
+
+    // user token 
+
+    const token = Cookies.get('token');
 
     //for login
     const [open, setOpen] = useState(false);
@@ -55,10 +61,12 @@ const Home = (props) => {
     // teacher lounge 
     const [openTeacherLogin, setOpenTeacherLogin] = useState();
     const handleTeacherLOginOpen = () => {
-        setOpenTeacherLogin(true)
-        setShowConceierge()
-        setShowNcbtmb()
-        setIsloaded(false)
+        if (!token) {
+            setOpenTeacherLogin(true)
+            setShowConceierge()
+            setShowNcbtmb()
+            setIsloaded(false)
+        }
     }
 
     useEffect(() => {
@@ -84,11 +92,15 @@ const Home = (props) => {
     const [hideChild, setHideChild] = useState(true);
 
     const HandleClick = () => {
-        setTimeout(() => { setOpen(true) }, 100)
-        setHideParent(styles.parentchildoff)
-        setShowChild(styles.childparenton)
-        setShowConceierge()
-        setShowNcbtmb()
+        if (!token) {
+            setTimeout(() => { setOpen(true) }, 100)
+            setHideParent(styles.parentchildoff)
+            setShowChild(styles.childparenton)
+            setShowConceierge()
+            setShowNcbtmb()
+        }
+
+
     }
     const changeDuration = () => {
         setTimeout(() => setOpen(false));
@@ -325,7 +337,6 @@ const Home = (props) => {
 
                     {/* Login model for Teacher Lounge */}
                     <div className={` col-span-12 md:col-span-5 z-5 absolute ${openTeacherLogin === true ? TeacherCss.openModel : TeacherCss.closeModel} ${openTeacherLogin === undefined ? styles2.hideNcbtmbdiv : ""} `} >
-
                         <div className={` bg-white 3xl:max-w-[80%] relative  border border-bordergray xl:p-5 p-7 lg:p-5`}>
                             <TeacherLoginModel changeDuration={handleTeacherLOginClose} title="Teacher s Lounge" />
                         </div>
@@ -351,14 +362,20 @@ const Home = (props) => {
                         </div>
                     </div>
                     {/* cart componet  */}
-                    <div className={`absolute cursor-pointer -translate-x-1/2 top-[10%] left-1/2 z-50 ${styles.cartAnimation}`}>
+                    <div className={`absolute cursor-pointer -translate-x-1/2 top-[10%] left-1/2 z-50 `}>
                         <div className='relative w-full' >
-                           <Nav/>
-                            <div className='absolute  right-1 w-5 h-5 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet -top-2.5 z-50' onClick={()=>alert('mouse enter')}>
-                                <p className='flex items-center justify-center text-[12px]'>2</p>
-                            </div>
+                            <TotalCartItems />
                         </div>
                     </div>
+
+                    {/* logout btn  */}
+                    <div className={`absolute cursor-pointer -translate-x-1/2 top-[23%] left-1/2 z-50 `}>
+                        <div className='relative w-max' >
+                            <LogoutBtn />
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 

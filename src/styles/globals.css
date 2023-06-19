@@ -412,6 +412,11 @@ input {
 
 @media (max-height:992px) {
 
+  .cartImage{
+    width: 120px;
+    height: 120px;
+  }
+
   .logoImg {
 
     width: 360px;
@@ -501,6 +506,10 @@ input {
 }
 
 @media (max-height:840px) {
+  .cartImage{
+    width: 100px;
+    height: 100px;
+  }
 
   .logoImg {
 
@@ -583,9 +592,12 @@ input {
 }
 
 @media (max-height:750px) {
+  .cartImage{
+    width: 90px;
+    height: 90px;
+  }
 
   .logoImg {
-
     width: 230px !important;
     height: 80px !important;
     margin-top: 40px !important;
@@ -667,6 +679,11 @@ input {
 
 @media (max-height:650px) {
 
+  .cartImage{
+    width: 80px;
+    height: 80px;
+  }
+
   .logoImg {
     width: 200px !important;
     height: 65px !important;
@@ -674,7 +691,6 @@ input {
   }
 
   .ncbtmbImg {
-
     height: 70px !important;
     width: 70px !important;
     margin-top: 10px !important;
@@ -683,7 +699,6 @@ input {
   }
 
   .conciergeImg {
-
     height: 50px !important;
     width: 50px !important;
 
@@ -749,6 +764,11 @@ input {
 }
 
 @media (max-height:600px) {
+
+  .cartImage{
+    width: 80px;
+    height: 80px;
+  }
 
   .logoImg {
     width: 177px !important;
@@ -839,8 +859,12 @@ input {
 
 @media (max-height:500px) {
 
-  .logoImg {
+  .cartImage{
+    width: 70px;
+    height: 70px;
+  }
 
+  .logoImg {
     width: 150px !important;
     height: 50px !important;
     margin-top: 40px !important;
@@ -929,8 +953,12 @@ input {
 
 @media (max-height:400px) {
 
-  .logoImg {
+  .cartImage{
+    width: 60px;
+    height: 60px;
+  }
 
+  .logoImg {
     width: 120px !important;
     height: 40px !important;
     margin-top: 40px !important;
@@ -938,7 +966,6 @@ input {
   }
 
   .ncbtmbImg {
-
     height: 30px !important;
     width: 30px !important;
     margin-top: 10px !important;
@@ -1014,8 +1041,12 @@ input {
 
 @media (max-height:250px) {
 
-  .logoImg {
+  .cartImage{
+    width: 60px;
+    height: 60px;
+  }
 
+  .logoImg {
     width: 150px !important;
     height: 50px !important;
     margin-top: 40px !important;
@@ -1023,7 +1054,6 @@ input {
   }
 
   .ncbtmbImg {
-
     height: 20px !important;
     width: 20px !important;
     margin-top: 0px !important;
@@ -1032,14 +1062,12 @@ input {
   }
 
   .conciergeImg {
-
     height: 15px !important;
     width: 15px !important;
 
   }
 
   .giftShoppeImg {
-
     height: 50px !important;
     width: 50px !important;
 

@@ -17,6 +17,7 @@ import HTMLReactParser from 'html-react-parser';
 import useSWR from 'swr'
 import { fetcher } from '../../utils/swrFetcher'
 import { motion } from "framer-motion"
+import TotalCartItems from 'components/card/TotalCartItems';
 
 
 const BlogListing = (props) => {
@@ -26,16 +27,11 @@ const BlogListing = (props) => {
     const [checked, setChecked] = React.useState(false);
 
     //filter post by categories
-
     const allPost = props.allPostData
     const [filterPost, setFilterPost] = useState(allPost)
-
-    console.log('filterPost', allPost)
-
+    // console.log('filterPost', allPost)
     const getFilterPost = async () => {
-
         try {
-
             const getCategoriesPost = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/wp/v2/posts?categories=${catId}`);
             const response = await getCategoriesPost.json()
             setFilterPost(response)
@@ -44,27 +40,20 @@ const BlogListing = (props) => {
             console.error("API Error", e.message);
             return null;
         }
-
     }
 
     useEffect(() => {
-
         if (catId > []) {
             getFilterPost()
         }
-
         if (checked == false) {
-
             setTimeout(() => {
-
                 setFilterPost(allPost)
             }, 100)
         }
-
     }, [catId])
 
     const HandleCloseBtn = () => {
-
         router.push('/')
     }
     const textColor = "text-white"
@@ -73,16 +62,13 @@ const BlogListing = (props) => {
     ///check box toggle 
 
     const handleClickTogle = () => {
-
         setToggleOn(!toggleOn)
     }
 
     const handleChange = (e) => {
-
         setChecked((state) => !state)
         if (e.target.checked) { setCatId((oldArray) => [...oldArray, e.target.value]); }
         else { removeCities(e); }
-
         //console.log('user', catId)
     }
 
@@ -140,8 +126,6 @@ const BlogListing = (props) => {
                                 </Link>
                             </div>
 
-
-
                             {/* for mobile device */}
                             <div className='flex justify-center px-5 mt-5 md:hidden md:mt-0 md:px-0'>
                                 <div className=' border border-white w-max ' >
@@ -160,8 +144,6 @@ const BlogListing = (props) => {
                                                     <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" type="checkbox" value={item.id} onChange={(e) => handleChange(e)} />
                                                     <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                                 </div>}
-
-
                                             </>
                                         )
                                     })}
@@ -170,17 +152,10 @@ const BlogListing = (props) => {
                             </div>
 
                             <div className='grid grid-cols-12 gap-4 px-5 mt-2 md:pt-10 md:px-0'>
-
-
                                 <div className={`bg-transparent md:pb-72 pb-32 md:col-span-8 lg:col-span-8 col-span-12  h-screen overflow-y-scroll ${styles.hidescrollBar}`}>
-
                                     {
                                         filterPost?.map((item, index) => {
                                             return (
-                                                // <Link key={index} href={`/blog/${index + 1}`}>
-
-                                                //     </Link>
-
                                                 <motion.div
                                                     key={index}
                                                     className={`${styles.onlyfadeIn} `}
@@ -206,10 +181,6 @@ const BlogListing = (props) => {
                                                         <div className={`${styles.lineClampContent} text-lightgray max-h-[118px] overflow-hidden`} >
                                                             {HTMLReactParser(item?.content.rendered)}
                                                         </div>
-
-                                                        {/* <div className='py-2 tracking-wider text-gray md:py-5 mediumf' >
-                                                </div> */}
-
                                                         <Link href={`blog/${item?.slug}`} className='text-white flex space-x-1 justify-center items-center border border-white rounded-3xl px-3 max-w-[155px]  hover:border-black py-1 mt-3  mb-3 md:mb-14 hover:bg-voilet transition-all ease-in-out duration-500'
                                                         >
                                                             <span className='ml-1 font-[600]   mediumf'>read more</span>
@@ -222,9 +193,7 @@ const BlogListing = (props) => {
                                     }
                                 </div>
 
-
                                 <div className='hidden col-span-12 mr-10 bg-transparent md:col-span-4 lg:col-span-4 md:block'>
-
                                     <div className='flex justify-end '>
                                         <div className=' pb-2 border border-white w-max ' >
                                             <div className={`text-white mediumf  px-5 py-3 flex items-center justify-between space-x-10 `} onClick={() => { handleClickTogle() }} >
@@ -235,7 +204,6 @@ const BlogListing = (props) => {
                                             </div>
 
                                             {postCategoriesData?.map((item, index) => {
-
                                                 return (
                                                     <>
                                                         {toggleOn && <div className={`px-5 py-0.5 ${toggleOn === true ? styles.selectOptionOpen : ""} ${toggleOn === false ? styles.selectOptionClose : ""}`} key={index}>
@@ -243,34 +211,33 @@ const BlogListing = (props) => {
                                                             <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border-2 rounded-sm appearance-none cursor-pointer form-check-input checked:bg-voilet checked:border-white focus:outline-none" defaultChecked={checked} type="checkbox" value={item.id} onChange={(e) => handleChange(e)} />
                                                             <label className="text-gray mediumf ml-0.2">{item.name}</label>
                                                         </div>}
-
-
                                                     </>
                                                 )
                                             })}
 
                                         </div>
                                     </div>
-
-
                                 </div>
-
-
                             </div>
                         </div>
+
                     </motion.div>
                     <div className='relative hidden max-h-screen col-span-12 border-l border-white md:col-span-1 md:block'>
                         <div className=''>
                             <div className='cursor-pointer '>
-
                                 <div className='   absolute top-[5%] left-1/2 -translate-x-1/2  '
                                     onClick={() => { HandleCloseBtn() }}>
                                     <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                         <p className='font-semibold text-white largef'>Close </p>
                                         <AiOutlineClose className="text-white largef " />
                                     </div>
+                                    {/* cart componet  */}
+                                    <div className={`absolute cursor-pointer -translate-x-1/2 top-[100%]  left-1/2  ${styles.cartAnimation}`}>
+                                        <div className='relative w-full' >
+                                            <TotalCartItems />
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <div className=' absolute bottom-[5%] left-1/2 -translate-x-1/2'>
                                     <MusicCard textColor={textColor} />
                                 </div>
@@ -280,7 +247,6 @@ const BlogListing = (props) => {
                 </div>
                 <div className={` absolute bottom-5 left-5 z-[100]  md:flex hidden justify-center items-center`}>
                     <FiArrowDown size={25} className={`text-white  ${stylesScrollBtn.UpDownAnimation} `} />
-
                 </div>
             </div>
 

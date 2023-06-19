@@ -22,6 +22,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import LogoCard from 'components/card/LogoCard';
 import { motion } from 'framer-motion';
+import TotalCartItems from 'components/card/TotalCartItems';
 
 
 
@@ -373,6 +374,12 @@ const Start = () => {
                                 <div className={`flex space-x-3 bg-transparent items-center [&>*]:hover:text-voilet [&>*]:transition-all [&>*]:ease-in-out  [&>*]:duration-1000 `} >
                                     <p className='font-semibold text-white largef '>Close </p>
                                     <AiOutlineClose className="text-white largef" />
+                                </div>
+                                {/* cart componet  */}
+                                <div className={`absolute cursor-pointer -translate-x-1/2 top-[100%]  left-1/2  ${styles.cartAnimation}`}>
+                                    <div className='relative w-full' >
+                                        <TotalCartItems />
+                                    </div>
                                 </div>
                             </div>
                             <div className='absolute -translate-x-1/2 bottom-[3.5%] left-1/2'>
