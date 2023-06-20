@@ -15,7 +15,6 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
     const [password, setPassword] = useState("")
     const [loginTitle, setLoginTitle] = useState(false)
     const [loading, setLoading] = useState(false)
-
     const [forgetPassword, setForgetPassword] = useState();
     const router = useRouter()
 
@@ -23,11 +22,9 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
     // show hide forget model
     const HideForgetPasswordModel = () => {
         setForgetPassword(false)
-
     }
 
     const ShowForgetPasswordModel = () => {
-
         setForgetPassword(true)
     }
 
@@ -63,12 +60,10 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
                         position: toast.POSITION.TOP_CENTER
                     });
                     // router
-
                 }
             } else {
                 toast.error('Invalid UserName or Password', {
                     position: toast.POSITION.TOP_RIGHT,
-
                 });
                 setLoading(false);
             }
@@ -82,10 +77,8 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
     }
 
     const HandleFormTitle = () => {
-
         setLoginTitle(true);
     }
-
     const titlefogetpass = 'All done! Try it out!';
 
 
@@ -118,14 +111,11 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
                         </div>
                         <div className={`flex justify-between py-3 ${styles2.reminderMe}`}>
                             <div className='flex space-x-[0.5px] items-center'>
-
                                 <div className="form-check">
                                     <input className="float-left w-4 h-4 mt-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border border-gray-300 rounded-sm appearance-none cursor-pointer form-check-input 3xl:w-8 3xl:h-8 checked:bg-blue-600 checked:border-blue-600 focus:outline-none" type="checkbox" value="" id="flexCheckDefault" />
                                 </div>
-
                                 <p className='mediumf'>remember me</p>
                             </div>
-
                             <button className='font-[600] mediumf hover:text-voilet  ' type="button" onClick={() => ShowForgetPasswordModel()} >forget password</button>
                         </div>
 

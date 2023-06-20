@@ -10,26 +10,21 @@ import Link from 'next/link';
 const TotalCartItems = () => {
 
   const [productsRecoil, setProductsRecoil] = useRecoilState(productCartState)
-  const [isHovering, setIsHovered] = useState(false);
-  const onMouseEnter = () => setIsHovered(true);
-  const onMouseLeave = () => setIsHovered(false);
-
   useEffect(() => {
     setProductsRecoil(getCartItems());
   }, [])
 
   return (
     <Link href="/courses">
-      <div
-        className=" container"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <div className={`transition-all ease-in duration-1000 w-max ${styles.cartAnimation}`}>
-          <Image
+      <div className=" container" >
+        <div className={`relative transition-all ease-in duration-1000 w-max`}>
+          {/* <Image
             src={isHovering ? arrowHover : arrow} width={80} height={80}
             className={` ${isHovering ? 'transition-all ease duration-2000' : "transition-all ease- duration-2000"}  cartImage`}
-          />
+          /> */}
+
+          <div className={`${styles.icon} w-[100px] h-[100px]`}>
+          </div>
         </div>
         <div className='absolute  right-2 w-5 h-5 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet top-1 z-50' >
           <p className='flex items-center justify-center text-[12px]'>{productsRecoil.length}</p>

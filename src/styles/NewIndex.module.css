@@ -816,25 +816,25 @@ screen and (max-height: 700px) {
 @keyframes scaleUpImageCart {
     0% {
         transform: scale(1.0);
-        opacity: 0;
+        opacity: 0.5;
         /* transform: translateY(10px); */
     }
 
     25% {
-        transform: scale(1.02);
-        opacity: 0.1;
+        transform: scale(1.03);
+        opacity: 0.6;
         /* transform: translateY(10px); */
     }
 
     50% {
         transform: scale(1.05);
-        opacity: 0.2;
+        opacity: 0.7;
         /* transform: translateY(10px); */
     }
 
     75% {
         transform: scale(1.1);
-        opacity: 0.7;
+        opacity: 0.8;
         /* transform: translateY(10px); */
     }
 
@@ -1059,43 +1059,30 @@ screen and (max-height: 700px) {
 
 
 /* door open animation */
-
-
 .doorOPenAnimation:hover :nth-child(2) {
-
-
     transform: rotateY(15deg);
-
     /* animation: rotateImage 500ms linear; */
 }
 
 
 @keyframes rotateImage {
-
-
     from {
-
         transform: rotate(0);
     }
 
-
     to {
-
         transform: -rotateX(-60deg);
     }
 }
 
 /* this css apply when click any menu */
-
 .onclickCardAanimation {
-
     background-color: rgba(128, 128, 128, 0.164);
     color: #9747FF;
     transition: all ease-in-out;
 }
 
 .onclickCardAanimation h3 {
-
     color: purple;
     transition: color 500ms ease-in;
     animation: textanimateUp 500ms ease-in-out forwards;
@@ -1104,11 +1091,9 @@ screen and (max-height: 700px) {
 
 @keyframes textanimateUp {
     from {
-
         transform: translateY(10px);
         color: black;
     }
-
 
     to {
         color: #9747FF;
@@ -1116,7 +1101,6 @@ screen and (max-height: 700px) {
 }
 
 .onclickCardAanimation .hide {
-
     color: black;
     transition: color 5s ease-in;
     animation: animateText 500ms ease-in-out both;
@@ -1124,12 +1108,10 @@ screen and (max-height: 700px) {
 }
 
 @keyframes animateText {
-
     from {
         opacity: 0;
         transform: translateY(10px);
     }
-
 
     to {
         opacity: 1;
@@ -1140,12 +1122,10 @@ screen and (max-height: 700px) {
 
 
 .onclickCardAanimation img {
-
     animation: scaleUpImage 500ms ease-out both;
 }
 
 @keyframes scaleUpImage {
-
     from {
         transform: scale(1.0);
         transform: translateY(10px);
@@ -1159,14 +1139,12 @@ screen and (max-height: 700px) {
 /* i wanna a tech css  */
 
 .modelOpen {
-
     opacity: 1;
     transition: all linear 500ms;
     animation: passwordShow 500ms linear forwards;
 }
 
 @keyframes passwordShow {
-
     form {
         visibility: hidden;
         opacity: 0;
@@ -1186,9 +1164,7 @@ screen and (max-height: 700px) {
 
 
 @keyframes passwordHide {
-
     form {
-
         opacity: 1;
         z-index: 100;
         visibility: visible;
@@ -1893,27 +1869,30 @@ screen and (max-height: 700px) {
 }
 
 /* add to component animation  */
-.mainDivCart>.icon {
+.icon {
     background-image: url(/images/Cart_icon_home.svg);
     background-repeat: no-repeat;
     background-position: center;
     object-fit: cover;
-    transition: all ease-in-out 500ms;
-    background-size: 90px;
-    position: relative;
+    transition: all ease-in-out 700ms;
+    background-size: 100px;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%); */
 }
 
-.mainDivCart:hover>.icon {
+.icon:hover {
     background-image: url(/images/Cart_Icon_home_color.svg);
     background-repeat: no-repeat;
     background-position: center;
     object-fit: cover;
-    transition: all ease-in-out 500ms;
-    background-size: 90px;
-    position: absolute;
+    transition: all ease-in-out 700ms;
+    background-size: 97px;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
+    transform: translate(-50% -50%); */
 
 
 
