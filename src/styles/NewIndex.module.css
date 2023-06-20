@@ -1298,7 +1298,50 @@ screen and (max-height: 700px) {
 }
 
 /* gift shoppi image size on minheight */
-@media (max-height:650px) {
+
+@media (max-height:880px) and (min-width:992px) {
+    .icon {
+        background-size: 85px !important;
+        width: 85px !important;
+        height: 85px !important;
+    }
+
+    .icon:hover {
+        background-size: 85px !important;
+        width: 85px !important;
+        height: 85px !important;
+    }
+}
+
+@media (max-height:850px) and (min-width:992px) {
+    .icon {
+        background-size: 72px !important;
+        width: 72px !important;
+        height: 72px !important;
+    }
+
+    .icon:hover {
+        background-size: 72px !important;
+        width: 72px !important;
+        height: 72px !important;
+    }
+}
+
+@media (max-height:750px) and (min-width:992px) {
+    .icon {
+        background-size: 70px !important;
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .icon:hover {
+        background-size: 70px !important;
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+@media (max-height:650px) and (min-width:992px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
@@ -1339,9 +1382,22 @@ screen and (max-height: 700px) {
         margin-top: 80px !important;
     }
 
+    .icon {
+        background-size: 60px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .icon:hover {
+        background-size: 60px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+
 }
 
-@media (max-height:600px) {
+@media (max-height:600px) and (min-width:992px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
@@ -1383,7 +1439,7 @@ screen and (max-height: 700px) {
 
 }
 
-@media (max-height:500px) {
+@media (max-height:500px) and (min-width:992px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
@@ -1426,9 +1482,22 @@ screen and (max-height: 700px) {
         margin-top: 60px !important;
     }
 
+    /* add to component animation  */
+    .icon {
+        background-size: 50px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .icon:hover {
+        background-size: 50px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
 }
 
-@media (max-height:400px) {
+@media (max-height:400px) and (min-width:992px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
@@ -1471,10 +1540,24 @@ screen and (max-height: 700px) {
         margin-top: 40px !important;
     }
 
+
+    /* add to component animation  */
+    .icon {
+        background-size: 50px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .icon:hover {
+        background-size: 50px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
 }
 
 
-@media (max-height:250px) {
+@media (max-height:250px) and (min-width:992px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
@@ -1515,6 +1598,42 @@ screen and (max-height: 700px) {
 
     .mainDiv:hover>.content {
         margin-top: 25px !important;
+    }
+
+
+    /* cart icon  */
+
+    .icon {
+        background-image: url(/images/Cart_icon_home.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 700ms;
+        background-size: 50px !important;
+        width: 50px !important;
+        height: 50px !important;
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% -50%); */
+    }
+
+    .icon:hover {
+        background-image: url(/images/Cart_Icon_home_color.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        transition: all ease-in-out 700ms;
+        background-size: 50px !important;
+        width: 50px !important;
+        height: 50px !important;
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% -50%); */
+
+
+
     }
 
 }
@@ -1561,8 +1680,24 @@ screen and (max-height: 700px) {
     .mainDiv:hover>.content {
         margin-top: 80px;
     }
-
 }
+
+@media screen and (min-width:992px) {
+
+    /* add to component animation  */
+    .icon {
+        background-size: 65px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .icon:hover {
+        background-size: 65px;
+        width: 65px;
+        height: 65px;
+    }
+}
+
 
 /* gift shoppe image size 1024px */
 
@@ -1602,6 +1737,18 @@ screen and (max-height: 700px) {
         margin-top: 80px;
     }
 
+    /* add to component animation  */
+    .icon {
+        background-size: 80px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon:hover {
+        background-size: 80px;
+        width: 80px;
+        height: 80px;
+    }
 }
 
 
@@ -1611,28 +1758,16 @@ screen and (max-height: 700px) {
 
     /* gift shoppi css  */
     .mainDiv>.gift {
-        background-image: url(/images/homeBlack.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        object-fit: cover;
-        transition: all ease-in-out 500ms;
         background-size: 90px;
     }
 
     .mainDiv:hover>.gift {
-        background-image: url(/images/homeColor.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        object-fit: cover;
-        transition: all ease-in-out 500ms;
         background-size: 90px;
-
     }
 
     .mainDiv:hover {
         transform: translateY(-10px);
         transition: all ease-in-out 500ms;
-
     }
 
     .mainDiv>.content {
@@ -1642,6 +1777,21 @@ screen and (max-height: 700px) {
     .mainDiv:hover>.content {
         margin-top: 80px;
     }
+
+
+    /* add to component animation  */
+    .icon {
+        background-size: 85px;
+        width: 85px;
+        height: 85px;
+    }
+
+    .icon:hover {
+        background-size: 85px;
+        width: 85px;
+        height: 85px;
+    }
+
 
 }
 
@@ -1673,6 +1823,18 @@ screen and (max-height: 700px) {
         transform: translateY(-10px);
         transition: all ease-in-out 500ms;
 
+    }
+
+    .icon {
+        background-size: 90px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .icon:hover {
+        background-size: 90px;
+        width: 90px;
+        height: 90px;
     }
 
 }
@@ -1868,6 +2030,10 @@ screen and (max-height: 700px) {
     }
 }
 
+
+
+
+
 /* add to component animation  */
 .icon {
     background-image: url(/images/Cart_icon_home.svg);
@@ -1876,6 +2042,8 @@ screen and (max-height: 700px) {
     object-fit: cover;
     transition: all ease-in-out 700ms;
     background-size: 100px;
+    width: 100px;
+    height: 100px;
     /* position: absolute;
     top: 50%;
     left: 50%;
@@ -1889,6 +2057,8 @@ screen and (max-height: 700px) {
     object-fit: cover;
     transition: all ease-in-out 700ms;
     background-size: 97px;
+    width: 97px;
+    height: 97px;
     /* position: absolute;
     top: 50%;
     left: 50%;
