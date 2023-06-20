@@ -3983,3 +3983,10 @@ input {
     transform: rotate(360deg);
   }
 }
+
+
+/* custom toast design  */
+
+.toast-message {
+  color: #9747FF;
+}

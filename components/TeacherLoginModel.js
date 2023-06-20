@@ -7,12 +7,14 @@ import ForgetPasswordModel from '../components/ForgetPassword/ForgetPasswordMode
 import styles from '../components/ForgetPassword/ForgetPassword.module.css'
 import styles2 from '../src/styles/LoginModel.module.css'
 import { AiOutlineClose } from 'react-icons/ai';
+import AnimatedLoader from './card/AnimatedLoader';
 
 const TeacherLoginModel = ({ changeDuration, title }) => {
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [loginTitle, setLoginTitle] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const [forgetPassword, setForgetPassword] = useState();
     const router = useRouter()
@@ -34,7 +36,7 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
         const formData = new FormData();
         formData.append('username', username);
         formData.append('password', password);
-
+        setLoading(true);
         try {
             const res = await fetch(`https://cesimple.wpengine.com/wp-json/jwt-auth/v1/token`, {
                 method: "POST",
@@ -53,6 +55,7 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
                     // });
 
                     alert('Login successfully');
+                    setLoading(false);
 
                 } else {
                     router.push('/')
@@ -127,8 +130,10 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
                         </div>
 
 
-                        <button className={`w-full px-4 mt-4 py-2 3xl:py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none ${styles2.loginBtn}`} type="submit">login
-
+                        <button
+                            className={`w-full px-4 mt-4 py-2 3xl:py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none 
+                            ${styles2.loginBtn}`} type="submit">
+                            {loading ? <AnimatedLoader /> : 'login'}
                         </button>
                     </form>
 

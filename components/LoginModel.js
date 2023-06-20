@@ -66,7 +66,6 @@ const LoginModel = ({ changeDuration, title }) => {
             else {
                 toast.error('Invalid UserName or Password', {
                     position: toast.POSITION.TOP_RIGHT,
-
                 });
                 setLoading(false);
             }
