@@ -27,11 +27,11 @@ const TotalCartItems = () => {
       >
         <div className={`transition-all ease-in duration-1000 w-max ${styles.cartAnimation}`}>
           <Image
-            src={isHovering ? arrowHover : arrow} width={120} height={120}
+            src={isHovering ? arrowHover : arrow} width={80} height={80}
             className={` ${isHovering ? 'transition-all ease duration-2000' : "transition-all ease- duration-2000"}  cartImage`}
           />
         </div>
-        <div className='absolute  right-4 w-5 h-5 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet top-2 z-50' >
+        <div className='absolute  right-2 w-5 h-5 text-white -translate-x-0 -translate-y-0 rounded-full bg-voilet top-1 z-50' >
           <p className='flex items-center justify-center text-[12px]'>{productsRecoil.length}</p>
         </div>
       </div>

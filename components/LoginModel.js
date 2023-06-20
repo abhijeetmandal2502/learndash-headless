@@ -7,6 +7,8 @@ import ForgetPasswordModel from '../components/ForgetPassword/ForgetPasswordMode
 import styles from '../components/ForgetPassword/ForgetPassword.module.css'
 import styles2 from '../src/styles/LoginModel.module.css'
 import { AiOutlineClose } from 'react-icons/ai';
+import AnimatedLoader from './card/AnimatedLoader';
+
 
 
 const LoginModel = ({ changeDuration, title }) => {
@@ -15,6 +17,7 @@ const LoginModel = ({ changeDuration, title }) => {
     const [password, setPassword] = useState("")
     const [loginTitle, setLoginTitle] = useState(false)
     const [forgetPassword, setForgetPassword] = useState();
+    const [loading, setLoading] = useState(false)
     const router = useRouter()
 
 
@@ -32,6 +35,7 @@ const LoginModel = ({ changeDuration, title }) => {
         const formData = new FormData();
         formData.append('username', username);
         formData.append('password', password);
+        setLoading(true)
 
         try {
             const res = await fetch(`https://cesimple.wpengine.com/wp-json/jwt-auth/v1/token`, {
@@ -39,23 +43,32 @@ const LoginModel = ({ changeDuration, title }) => {
                 body: formData
             })
             const res2 = await res.json()
-            if (res.ok) {
 
+            if (res.ok) {
                 if (res2.token) {
                     cookie.set('token', res2.token)
                     cookie.set('user', res2.username)
                     router.push(`https://cesimple.wpengine.com/auth.php?token=${res2.token}`)
-                    toast.success('Success Notification !', {
-                        position: toast.POSITION.TOP_RIGHT
-                    });
+                    alert('Login Successfully')
+                    // toast('Success Notification !', {
+                    //     position: toast.POSITION.TOP_RIGHT
+                    // });
+                    setLoading(false);
 
                 } else {
                     router.push('/')
                     toast.error(res2.message, {
-                        position: toast.POSITION.TOP_CENTER
+                        position: toast.POSITION.TOP_RIGHT
                     });
                     // router
                 }
+            }
+            else {
+                toast.error('Invalid UserName or Password', {
+                    position: toast.POSITION.TOP_RIGHT,
+
+                });
+                setLoading(false);
             }
         } catch (error) {
             toast.error(error.message, {
@@ -110,8 +123,14 @@ const LoginModel = ({ changeDuration, title }) => {
 
                             <button className='font-[600] mediumf hover:text-voilet  ' type="button" onClick={() => ShowForgetPasswordModel()} >forget password</button>
                         </div>
-                        <button className={`w-full px-4 mt-4 py-2 3xl:py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none ${styles2.loginBtn}`} type="submit">login
-                        </button>
+
+                        <div className={`relative`}>
+                            <button
+                                className={`w-full px-4 mt-4 py-2 3xl:py-2 tracking-wide text-white transition-colors duration-200 transform bg-black hover:bg-voilet rounded-3xl focus:outline-none 
+                            ${styles2.loginBtn}`} type="submit">
+                                {loading ? <AnimatedLoader /> : 'login'}
+                            </button>
+                        </div>
                     </form>
 
                 </div>
@@ -121,7 +140,6 @@ const LoginModel = ({ changeDuration, title }) => {
             </div>
         </>
     )
-
 }
 
 export default LoginModel

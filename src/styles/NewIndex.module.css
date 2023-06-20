@@ -799,18 +799,18 @@ screen and (max-height: 700px) {
 
 /* AddTocart animation  */
 .cartAnimation:hover {
-    transition: background 500ms ease;
+    transition: background 1000ms ease;
 }
 
 .cartAnimation {
     background: transparent;
-    transition: background 500ms ease;
+    transition: background 1000ms ease;
 }
 
 .cartAnimation:hover img {
-    animation: scaleUpImageCart 500ms ease-out both;
+    animation: scaleUpImageCart 1000ms ease-out both;
     transform: scale(1.0);
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 1000ms;
 }
 
 @keyframes scaleUpImageCart {

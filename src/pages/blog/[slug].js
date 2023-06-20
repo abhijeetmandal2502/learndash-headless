@@ -192,14 +192,16 @@ const Blog = ({ postDataPerPage, singlePostData }) => {
                                             <p className='font-semibold text-white largef '>Close </p>
                                             <AiOutlineClose className="text-white largef" />
                                         </div>
-                                        {/* cart componet  */}
-                                        <div className={`absolute cursor-pointer -translate-x-1/2 top-[100%]  left-1/2  ${styles.cartAnimation}`}>
-                                            <div className='relative w-full' >
-                                                <TotalCartItems />
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </Link>
+
+                                {/* cart componet  */}
+                                <div className={`absolute cursor-pointer -translate-x-1/2 top-[10%]  left-1/2  ${styles.cartAnimation}`}>
+                                    <div className='relative w-full' >
+                                        <TotalCartItems />
+                                    </div>
+                                </div>
                                 <div className=' absolute bottom-[3.5%] left-1/2 -translate-x-1/2'>
                                     <MusicCard textColor={textColor} />
                                 </div>

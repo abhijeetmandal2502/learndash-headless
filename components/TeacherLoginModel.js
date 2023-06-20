@@ -48,9 +48,11 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
                     cookie.set('user', res2.user)
 
                     router.push(`https://cesimple.wpengine.com/auth.php?token=${res2.token}`)
-                    toast.success('Success Notification !', {
-                        position: toast.POSITION.TOP_RIGHT
-                    });
+                    // toast.success('Success Notification !', {
+                    //     position: toast.POSITION.TOP_RIGHT
+                    // });
+
+                    alert('Login successfully');
 
                 } else {
                     router.push('/')
@@ -60,6 +62,12 @@ const TeacherLoginModel = ({ changeDuration, title }) => {
                     // router
 
                 }
+            } else {
+                toast.error('Invalid UserName or Password', {
+                    position: toast.POSITION.TOP_RIGHT,
+
+                });
+                setLoading(false);
             }
         } catch (error) {
             toast.error(error.message, {

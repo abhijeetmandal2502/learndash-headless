@@ -124,27 +124,27 @@ textarea {
   }
 }
 
-@media (max-width:1366px){
+@media (max-width:1366px) {
 
- .courseDis p{
-  font-size: 12px!important;
+  .courseDis p {
+    font-size: 12px !important;
   }
 }
 
-@media (max-width:1600px){
+@media (max-width:1600px) {
 
-  .courseDis p{
-   font-size: 12px!important;
-   }
- }
+  .courseDis p {
+    font-size: 12px !important;
+  }
+}
 
- @media (max-width:1920px){
+@media (max-width:1920px) {
 
-  .courseDis p{
-   font-size: 13px!important;
-   line-height: 140%;
-   }
- }
+  .courseDis p {
+    font-size: 13px !important;
+    line-height: 140%;
+  }
+}
 
 p {
   @apply text-[16px];
@@ -412,9 +412,9 @@ input {
 
 @media (max-height:992px) {
 
-  .cartImage{
-    width: 120px;
-    height: 120px;
+  .cartImage {
+    width: 100px;
+    height: 100px;
   }
 
   .logoImg {
@@ -506,9 +506,9 @@ input {
 }
 
 @media (max-height:840px) {
-  .cartImage{
-    width: 100px;
-    height: 100px;
+  .cartImage {
+    width: 90px;
+    height: 90px;
   }
 
   .logoImg {
@@ -592,9 +592,9 @@ input {
 }
 
 @media (max-height:750px) {
-  .cartImage{
-    width: 90px;
-    height: 90px;
+  .cartImage {
+    width: 70px;
+    height: 70px;
   }
 
   .logoImg {
@@ -679,9 +679,9 @@ input {
 
 @media (max-height:650px) {
 
-  .cartImage{
-    width: 80px;
-    height: 80px;
+  .cartImage {
+    width: 70px;
+    height: 70px;
   }
 
   .logoImg {
@@ -765,9 +765,9 @@ input {
 
 @media (max-height:600px) {
 
-  .cartImage{
-    width: 80px;
-    height: 80px;
+  .cartImage {
+    width: 75px;
+    height: 75px;
   }
 
   .logoImg {
@@ -859,9 +859,9 @@ input {
 
 @media (max-height:500px) {
 
-  .cartImage{
-    width: 70px;
-    height: 70px;
+  .cartImage {
+    width: 60px;
+    height: 60px;
   }
 
   .logoImg {
@@ -953,9 +953,9 @@ input {
 
 @media (max-height:400px) {
 
-  .cartImage{
-    width: 60px;
-    height: 60px;
+  .cartImage {
+    width: 50px;
+    height: 50px;
   }
 
   .logoImg {
@@ -1041,7 +1041,7 @@ input {
 
 @media (max-height:250px) {
 
-  .cartImage{
+  .cartImage {
     width: 60px;
     height: 60px;
   }
@@ -1230,7 +1230,7 @@ input {
   .smallf {
     letter-spacing: 0.5px !important;
     font-size: 12px !important;
-    line-height:100% !important;
+    line-height: 100% !important;
   }
 
   .mediumf {
@@ -1397,7 +1397,7 @@ input {
 
   .smallfXL {
 
-    font-size: 11px!important;
+    font-size: 11px !important;
   }
 
   .smallf {
@@ -1493,7 +1493,7 @@ input {
 
   .smallfXL {
 
-    font-size: 11px!important;
+    font-size: 11px !important;
   }
 
   .smallf {
@@ -1592,7 +1592,7 @@ input {
 
   .smallfXL {
 
-    font-size: 10px!important;
+    font-size: 10px !important;
   }
 
   .smallf {
@@ -1689,7 +1689,7 @@ input {
 
   .smallfXL {
 
-    font-size: 9.5px!important;
+    font-size: 9.5px !important;
   }
 
   .smallf {
@@ -2933,6 +2933,7 @@ input {
   .minismallf {
     font-size: 15px;
   }
+
   .smallfXL {
 
     font-size: 12.5px;
@@ -3501,7 +3502,7 @@ input {
   }
 
   .smallf {
-    line-height:100%;
+    line-height: 100%;
     font-size: 17px;
   }
 
@@ -3627,8 +3628,8 @@ input {
   }
 
   .smallf {
-    line-height:100% ;
-    font-size:16px ;
+    line-height: 100%;
+    font-size: 16px;
   }
 
   .smallfXL {
@@ -3854,6 +3855,7 @@ input {
     letter-spacing: -1.5px;
     line-height: 130px;
   }
+
   /* custom font for start */
 
   .startFont {
@@ -3934,12 +3936,50 @@ input {
   transition: ease 500ms;
 }
 
-
-
 @media screen and (max-width:1300px) {
-
   .ncbtmbtop {
     margin-top: -10px;
   }
+}
 
+
+
+/* loader animation css  */
+
+/* .loader-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+} */
+
+.loader {
+  margin: auto;
+  border: 3px dotted #dadada;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

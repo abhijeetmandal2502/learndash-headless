@@ -7,12 +7,12 @@ import { RecoilRoot } from 'recoil'
 export default function App({ Component, pageProps }) {
   return (
     <>
-    <RecoilRoot>
-      <Head>Home</Head>
-      <ToastContainer />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <RecoilRoot>
+        <Head>Home</Head>
+        <ToastContainer hideProgressBar={false} progressStyle={false} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </RecoilRoot>
     </>
   )
